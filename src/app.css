@@ -14,8 +14,14 @@
 	--2xl: '1536px';
 }
 
-.b-container {
+.container-b {
 	width: 1280px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.container-b-small {
+	width: 900px;
 	max-width: 100%;
 	margin: 0 auto;
 }
