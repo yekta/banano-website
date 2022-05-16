@@ -1,6 +1,11 @@
-<script>
+<script context="module">
+	export const prerender = true;
+</script>
+
+<script lang="ts">
 	import Advisors from '$lib/components/sections/Advisors.svelte';
 	import CommunityProjects from '$lib/components/sections/CommunityProjects.svelte';
+	import Questions from '$lib/components/sections/Questions.svelte';
 	import Hero from '$lib/components/sections/Hero.svelte';
 	import JoinUs from '$lib/components/sections/JoinUs.svelte';
 	import KeyFeatures from '$lib/components/sections/KeyFeatures.svelte';
@@ -17,5 +22,6 @@
 	<Testimonials />
 	<Advisors />
 	<CommunityProjects />
+	<Questions />
 	<JoinUs />
 </div>

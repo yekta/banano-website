@@ -10,7 +10,7 @@
 </script>
 
 <div
-	id="community-projects"
+	id="testimonials"
 	class="w-full bg-testimonials bg-c-secondary flex justify-center pt-16 pb-24 text-center text-c-bg"
 >
 	<div class="container-b-small flex flex-col items-center px-4">
