@@ -2,12 +2,28 @@
 	import Button from '$lib/components/Button.svelte';
 </script>
 
-<div class="w-full flex flex-col items-center justify-start text-center bg-c-secondary py-64">
-	<div class="w-288 max-w-full flex flex-col justify-start items-center">
-		<h1 class="w-190 max-w-full text-2xl font-bold text-c-bg">
-			Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology
-			disrupting the meme economy.
-		</h1>
-		<Button onClick={() => {}} class="mt-6">Get Banano</Button>
+<div
+	class="hero w-full flex flex-col items-center justify-start text-center bg-cover bg-[position:19%_0%] md:bg-[position:22%_0%] lg:bg-[position:38%_0%] xl:bg-[position:50%_100%]"
+>
+	<div class="w-full relative flex justify-center">
+		<div class="b-container max-w-full h-230 py-64 flex flex-col items-center">
+			<h1 class="w-190 max-w-full text-2xl font-bold text-c-bg">
+				Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology
+				disrupting the meme economy.
+			</h1>
+			<Button onClick={() => {}} class="mt-6">Get Banano</Button>
+		</div>
+		<div class="w-full absolute bottom-0 left-0 overflow-hidden">
+			<div class="w-[105%] h-64 wave bg-left-top bg-cover" />
+		</div>
 	</div>
 </div>
+
+<style>
+	.hero {
+		background-image: url('illustrations/backgrounds/bg-hero.svg');
+	}
+	.wave {
+		background-image: url('illustrations/backgrounds/bg-wave-top.svg');
+	}
+</style>

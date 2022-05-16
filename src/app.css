@@ -6,6 +6,18 @@
 	--c-secondary: 76 191 75;
 	--c-bg: 255 255 255;
 	--c-on-bg: 33 33 36;
+
+	--sm: 640px;
+	--md: 768px;
+	--lg: 1024px;
+	--xl: 1280px;
+	--2xl: '1536px';
+}
+
+.b-container {
+	width: 1280px;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 @tailwind utilities;

@@ -17,11 +17,14 @@ module.exports = {
 				'c-bg': withOpacityValue('--c-bg'),
 				'c-on-bg': withOpacityValue('--c-on-bg')
 			},
-			width: {
+			spacing: {
 				128: '32rem',
 				140: '35rem',
 				190: '45rem',
 				200: '50rem',
+				220: '55rem',
+				230: '57.5rem',
+				240: '60rem',
 				256: '64rem',
 				288: '72rem'
 			}
