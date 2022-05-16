@@ -1,6 +1,8 @@
 <script lang="ts">
 	export let type: ButtonType = 'primary';
-	export let onClick: () => void;
+	export let onClick: (() => void) | undefined = undefined;
+	export let href: string | undefined = undefined;
+	export let targetBlank = false;
 	export { classes as class };
 	let classes = '';
 
@@ -20,9 +22,19 @@
 	}
 </script>
 
-<button
-	on:click={onClick}
-	class="px-8 py-3 font-bold text-lg rounded-lg {getBgAndTextClass()} {classes}"
->
-	<slot />
-</button>
+{#if href}
+	<a
+		{href}
+		target={targetBlank ? '_blank' : null}
+		class="px-8 py-3 font-bold text-lg rounded-lg {getBgAndTextClass()} {classes}"
+	>
+		<slot />
+	</a>
+{:else}
+	<button
+		on:click={onClick}
+		class="px-8 py-3 font-bold text-lg rounded-lg {getBgAndTextClass()} {classes}"
+	>
+		<slot />
+	</button>
+{/if}
