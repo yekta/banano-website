@@ -15,8 +15,15 @@ module.exports = {
 				'c-primary': withOpacityValue('--c-primary'),
 				'c-secondary': withOpacityValue('--c-secondary'),
 				'c-bg': withOpacityValue('--c-bg'),
-				'c-on-bg': withOpacityValue('--c-on-bg')
+				'c-on-bg': withOpacityValue('--c-on-bg'),
+				'c-discord': withOpacityValue('--c-discord'),
+				'c-reddit': withOpacityValue('--c-reddit'),
+				'c-twitter': withOpacityValue('--c-twitter'),
+				'c-instagram': withOpacityValue('--c-instagram'),
+				'c-telegram': withOpacityValue('--c-telegram'),
+				'c-facebook': withOpacityValue('--c-facebook')
 			},
+
 			spacing: {
 				128: '32rem',
 				140: '35rem',
