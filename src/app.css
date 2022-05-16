@@ -1,4 +1,11 @@
 @tailwind base;
 @tailwind components;
 
+:root {
+	--c-primary: 251 221 17;
+	--c-secondary: 76 191 75;
+	--c-bg: 255 255 255;
+	--c-on-bg: 33 33 36;
+}
+
 @tailwind utilities;

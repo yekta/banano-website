@@ -1,3 +1,3 @@
 <div class="w-full min-h-screen flex flex-col justify-start items-center">
-	<h1 class="text-2xl font-bold">Home</h1>
+	<h1 class="text-2xl font-bold">Price Widgets</h1>
 </div>
