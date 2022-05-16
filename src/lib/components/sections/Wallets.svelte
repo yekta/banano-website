@@ -15,14 +15,14 @@
 			description:
 				'Send Banano to all your friends on the go with Kalium. Available on iOS & Android.',
 			buttonText: 'Download Kalium',
-			url: 'https://banano.how',
+			url: 'https://kalium.banano.cc',
 			img: 'kalium-wallet'
 		},
 		{
 			title: 'BananoVault',
 			description: 'Browser-based lightwallet that also supports Ledger Nano S. Ideal for desktop.',
 			buttonText: "Let's Go",
-			url: 'https://banano.bet',
+			url: 'https://vault.banano.cc',
 			img: 'banano-vault'
 		},
 		{
@@ -30,14 +30,14 @@
 			description:
 				'Ideal for small amounts, to tip and get tipped on Discord. It is fully managed.',
 			buttonText: 'Join Discord',
-			url: 'https://jungletv.live',
+			url: 'https://chat.banano.cc',
 			img: 'discord-tipbot'
 		},
 		{
 			title: 'Reddit Tipbot',
 			description: 'Ideal for small amounts, to tip and get tipped on Reddit. It is fully managed.',
 			buttonText: 'I Want This',
-			url: 'https://banano.fun',
+			url: 'https://np.reddit.com/r/bananocoin/wiki/reddit-tipbot',
 			img: 'reddit-tipbot'
 		},
 		{
@@ -45,7 +45,7 @@
 			description:
 				'Ideal for small amounts, to tip and get tipped on Twitter. It is fully managed.',
 			buttonText: 'I Want This',
-			url: 'https://banano.fun',
+			url: 'https://ba.nanotipbot.com',
 			img: 'twitter-tipbot'
 		},
 		{
@@ -53,7 +53,7 @@
 			description:
 				'Ideal for small amounts, to tip and get tipped on Telegram. It is fully managed.',
 			buttonText: 'I Want This',
-			url: 'https://banano.fun',
+			url: 'https://ba.nanotipbot.com',
 			img: 'telegram-tipbot'
 		}
 	];
