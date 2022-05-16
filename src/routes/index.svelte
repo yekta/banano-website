@@ -5,6 +5,7 @@
 	import JoinUs from '$lib/components/sections/JoinUs.svelte';
 	import KeyFeatures from '$lib/components/sections/KeyFeatures.svelte';
 	import Team from '$lib/components/sections/Team.svelte';
+	import Testimonials from '$lib/components/sections/Testimonials.svelte';
 	import Wallets from '$lib/components/sections/Wallets.svelte';
 </script>
 
@@ -13,6 +14,7 @@
 	<KeyFeatures />
 	<Wallets />
 	<Team />
+	<Testimonials />
 	<Advisors />
 	<CommunityProjects />
 	<JoinUs />

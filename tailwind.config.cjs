@@ -23,7 +23,6 @@ module.exports = {
 				'c-telegram': withOpacityValue('--c-telegram'),
 				'c-facebook': withOpacityValue('--c-facebook')
 			},
-
 			spacing: {
 				128: '32rem',
 				140: '35rem',
@@ -34,6 +33,13 @@ module.exports = {
 				240: '60rem',
 				256: '64rem',
 				288: '72rem'
+			},
+			boxShadow: {
+				card: `0 0.75rem 1.5rem -0.25rem`
+			},
+			opacity: {
+				6: '0.06',
+				8: '0.08'
 			}
 		}
 	},

@@ -67,13 +67,13 @@
 </script>
 
 <div id="team" class="w-full bg-c-bg flex justify-center py-12 text-center">
-	<div class="container-b flex flex-col items-center">
+	<div class="container-b flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold">Meet the Overworked Team</h2>
 		<div class="container-b-small flex flex-wrap justify-center mt-5">
 			{#each teamMembersShuffled as teamMember, index}
 				<div class="w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center p-4">
 					<img
-						class="w-full h-auto"
+						class="w-full h-auto max-w-[13rem]"
 						src="/illustrations/dancing-banana/dancing-banana-{index % dancingBananaCount}.svg"
 						alt={teamMember.nickname}
 					/>
