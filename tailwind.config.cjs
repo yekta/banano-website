@@ -16,6 +16,10 @@ module.exports = {
 				'c-secondary': withOpacityValue('--c-secondary'),
 				'c-bg': withOpacityValue('--c-bg'),
 				'c-on-bg': withOpacityValue('--c-on-bg')
+			},
+			width: {
+				256: '64rem',
+				288: '72rem'
 			}
 		}
 	},
