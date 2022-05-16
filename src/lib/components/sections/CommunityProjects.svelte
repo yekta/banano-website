@@ -40,7 +40,7 @@
 		<p class="mt-2 text-xl">
 			Here are some of the projects that are made by our awesome community:
 		</p>
-		<div class="w-full flex justify-center flex-wrap">
+		<div class="w-full flex flex-wrap justify-center">
 			{#each communityProjects as project}
 				<div
 					class="w-full md:w-1/2 lg:w-1/4 max-w-[17rem] flex flex-col items-center text-center px-4 mt-5"

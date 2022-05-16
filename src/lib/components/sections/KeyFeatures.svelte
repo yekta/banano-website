@@ -1,18 +1,20 @@
 <script lang="ts">
 	interface KeyFeature {
-		text: string;
-		svg: string;
+		title: string;
+		img: string;
 	}
 	const keyFeatures: KeyFeature[] = [
-		{ text: 'The Block-Lettuce™ DAG Architecture', svg: 'block-lettuce' },
-		{ text: 'Instant and Feeless Transactions', svg: 'instant-feeless' },
-		{ text: 'Fungible & Edible', svg: 'fungible' },
-		{ text: 'Daily Potassium Airdrops', svg: 'airdrops' },
-		{ text: 'Ripe for Memes', svg: 'memes' },
-		{ text: 'Literally Grows on Trees, No Mining Required', svg: 'trees' },
-		{ text: 'Not a Shitcoin (Until Digested)', svg: 'shitcoin' },
-		{ text: 'No More Confusing Units, 1 Banano = 100 Banoshi', svg: 'units' }
+		{ title: 'The Block-Lettuce™ DAG Architecture', img: 'block-lettuce' },
+		{ title: 'Instant and Feeless Transactions', img: 'instant-feeless' },
+		{ title: 'Fungible & Edible', img: 'fungible' },
+		{ title: 'Daily Potassium Airdrops', img: 'airdrops' },
+		{ title: 'Ripe for Memes', img: 'memes' },
+		{ title: 'Literally Grows on Trees, No Mining Required', img: 'trees' },
+		{ title: 'Not a Shitcoin (Until Digested)', img: 'shitcoin' },
+		{ title: 'No More Confusing Units, 1 Banano = 100 Banoshi', img: 'units' }
 	];
+
+	const imgExtention = 'svg';
 </script>
 
 <div
@@ -26,11 +28,11 @@
 			particles.js background. Our team is top-notch and the project advisors are by a moonshot best
 			in the business.
 		</p>
-		<div class="container-b-small max-w-full flex flex-row flex-wrap mt-5">
+		<div class="container-b-small max-w-full flex flex-row flex-wrap justify-center mt-5">
 			{#each keyFeatures as feature}
 				<div class="w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center p-4">
-					<img src="/illustrations/key-features/{feature.svg}.svg" alt={feature.text} />
-					<p class="mt-3 w-full">{feature.text.toUpperCase()}</p>
+					<img src="/illustrations/key-features/{feature.img}.{imgExtention}" alt={feature.title} />
+					<p class="mt-3 w-full">{feature.title.toUpperCase()}</p>
 				</div>
 			{/each}
 		</div>
