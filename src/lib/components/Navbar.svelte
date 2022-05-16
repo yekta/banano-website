@@ -38,14 +38,13 @@
 	];
 </script>
 
-<nav
-	class="w-288 max-w-full mx-auto flex justify-between items-center 
-  text-c-primary py-3 px-4"
->
-	<Logo />
-	<div class="flex flex-row justify-end items-center">
-		{#each sections as section}
-			<a href="/#{section.id}" class="px-4 py-2">{section.title}</a>
-		{/each}
+<nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary">
+	<div class="w-288 max-w-full flex flex-row items-center justify-between px-4 py-3">
+		<Logo />
+		<div class="flex flex-row justify-end items-center">
+			{#each sections as section}
+				<a href="/#{section.id}" class="px-4 py-2">{section.title}</a>
+			{/each}
+		</div>
 	</div>
 </nav>

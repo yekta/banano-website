@@ -18,6 +18,10 @@ module.exports = {
 				'c-on-bg': withOpacityValue('--c-on-bg')
 			},
 			width: {
+				128: '32rem',
+				140: '35rem',
+				190: '45rem',
+				200: '50rem',
 				256: '64rem',
 				288: '72rem'
 			}

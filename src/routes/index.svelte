@@ -1,3 +1,7 @@
+<script>
+	import Hero from '$lib/components/sections/Hero.svelte';
+</script>
+
 <div class="w-full min-h-screen flex flex-col justify-start items-center">
-	<h1 class="text-2xl font-bold">Home</h1>
+	<Hero />
 </div>
