@@ -21,7 +21,7 @@
 		},
 		{
 			title: 'Team',
-			id: 'news'
+			id: 'team'
 		},
 		{
 			title: 'News',
@@ -38,7 +38,7 @@
 	];
 </script>
 
-<nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary">
+<nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary z-50">
 	<div class="container-b max-w-full flex flex-row items-center justify-between px-4 py-3">
 		<Logo />
 		<div class="flex flex-row justify-end items-center">

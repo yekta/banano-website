@@ -66,12 +66,12 @@
 	});
 </script>
 
-<div class="w-full bg-c-bg flex justify-center py-12">
+<div id="team" class="w-full bg-c-bg flex justify-center py-12 text-center">
 	<div class="container-b flex flex-col items-center">
 		<h2 class="text-3xl font-bold">Meet the Overworked Team</h2>
 		<div class="container-b-small flex justify-center flex-wrap mt-5">
 			{#each teamMembersShuffled as teamMember, index}
-				<div class="w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center p-4 text-center">
+				<div class="w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center p-4">
 					<img
 						class="w-full h-auto"
 						src="/illustrations/dancing-banana/dancing-banana-{index % dancingBananaCount}.svg"
