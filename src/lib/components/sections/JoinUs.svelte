@@ -47,9 +47,11 @@
 		<h2 class="text-3xl font-bold">Join the Crypto-Potassium Revolution</h2>
 		<div class="w-full flex flex-wrap justify-center mt-2">
 			{#each socialButtons as socialButton}
-				<div class="w-full md:w-1/2 lg:w-1/3 flex flex-col items-center text-center px-4 mt-2">
+				<div
+					class="w-full md:w-1/2 lg:w-1/3 max-w-xs flex flex-col items-center text-center px-4 mt-2"
+				>
 					<Button
-						class="mt-4 w-full max-w-xs"
+						class="mt-4 w-full"
 						href={socialButton.url}
 						targetBlank={true}
 						type={socialButton.type}
