@@ -23,7 +23,7 @@
 <div id="roadmap" class="w-full flex justify-center pt-16 pb-24">
 	<div class="container-b flex flex-col items-center px-4 md:px-12">
 		<h2 class="text-3xl font-bold">Bumpy Roadmap</h2>
-		<div class="relative rounded-xl border-2 border-c-secondary overflow-hidden mt-5">
+		<div class="relative rounded-xl border-[3px] border-c-secondary overflow-hidden mt-5">
 			<div
 				bind:this={scrollWindow}
 				on:scroll={onScroll}
