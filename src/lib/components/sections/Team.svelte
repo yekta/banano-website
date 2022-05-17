@@ -1,68 +1,14 @@
 <script lang="ts">
+	import type { TeamMember } from '$lib/ts/types/interfaces/teamMember';
 	import { onMount } from 'svelte';
 
+	export let team: TeamMember[];
+
 	const dancingBananaCount = 8;
-
-	interface TeamMember {
-		nickname: string;
-		description: string;
-	}
-
-	const teamMembers: TeamMember[] = [
-		{
-			nickname: 'Yekta',
-			description: 'Leonardo Da Banano'
-		},
-		{
-			nickname: 'Bbedward',
-			description: 'Ima bot bleep blob'
-		},
-		{
-			nickname: 'Fudcake',
-			description: 'The Banano Republic dictator trainee'
-		},
-		{
-			nickname: 'Renesq',
-			description: 'Gandalf level code wizard and chronice procrastinator'
-		},
-		{
-			nickname: 'Coranos',
-			description: 'Hardware wallet, vulcanology, and burn specialist'
-		},
-		{
-			nickname: 'Anemone',
-			description: 'Chief shitposting orangutan, meme historian'
-		},
-		{
-			nickname: 'Bantano',
-			description: 'Ringleader of media operations'
-		},
-		{
-			nickname: 'SoggyApplePie',
-			description: 'Baked goods connoisseur'
-		},
-		{
-			nickname: 'Just_Dmitry',
-			description: 'бест рашн хацкер'
-		},
-		{
-			nickname: 'Meltingice',
-			description: 'Leader of the curious explorers'
-		},
-		{
-			nickname: 'Mitche50',
-			description: 'Doer of things'
-		},
-		{
-			nickname: 'Losha1x',
-			description: 'Professional life hater'
-		}
-	];
-
-	let teamMembersShuffled = [...teamMembers];
+	let teamShuffled = [...team];
 
 	onMount(() => {
-		teamMembersShuffled = [...teamMembersShuffled.sort(() => Math.random() - 0.5)];
+		teamShuffled = [...teamShuffled.sort(() => Math.random() - 0.5)];
 	});
 </script>
 
@@ -70,7 +16,7 @@
 	<div class="container-b flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold">Meet the Overworked Team</h2>
 		<div class="container-b-small flex flex-wrap justify-center mt-5">
-			{#each teamMembersShuffled as teamMember, index}
+			{#each teamShuffled as teamMember, index}
 				<div class="w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center p-4">
 					<img
 						class="w-full h-auto max-w-[13rem]"
