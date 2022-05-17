@@ -8,10 +8,10 @@
 	import Team from '$lib/components/sections/Team.svelte';
 	import Testimonials from '$lib/components/sections/Testimonials.svelte';
 	import Wallets from '$lib/components/sections/Wallets.svelte';
+	import Explorer from '$lib/components/sections/Explorer.svelte';
 	import type { IFaq } from '$lib/ts/interfaces/IFaq';
 	import type { ITeamMember } from '$lib/ts/interfaces/ITeamMember';
 	import type { ICommunityProject } from '$lib/ts/interfaces/ICommunityProject';
-	import Explorer from '$lib/components/sections/Explorer.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];

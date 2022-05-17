@@ -1,4 +1,5 @@
 import announcements from '$lib/jsons/announcements.json';
+import roadmap from '$lib/jsons/roadmap.json';
 
 interface IAnnouncement {
 	title: string;
@@ -9,14 +10,14 @@ interface IAnnouncement {
 	lastPublishedAt: Date;
 }
 
-interface IRoadmap {
-	year: number;
-	entries: IRoadmapEntry[];
-}
-
 interface IRoadmapEntry {
-	title: string;
-	month: string;
+	year: number;
+	subentries: IRoadmapSubentry[];
+}
+interface IRoadmapSubentry {
+	month: number;
+	monthText: string;
+	text: string;
 }
 
 export function getAnnouncements() {
@@ -34,7 +35,7 @@ export function getAnnouncements() {
 			(date.getDate() < 10 ? '0' : '') +
 			date.getDate();
 
-		let markdownString = `### ${title}<br />#### ${dateFormatted}<br />${bodyMd}`;
+		let markdownString = `## ${title}<br />### ${dateFormatted}<br />${bodyMd}`;
 
 		announcementsArray.push({
 			title: title,
@@ -45,13 +46,43 @@ export function getAnnouncements() {
 			fullMd: markdownString
 		});
 	}
-	let announcementsArraySorted = announcementsArray.sort((a, b) => {
-		return b.date.getTime() - a.date.getTime();
-	});
+	let announcementsArraySorted = announcementsArray.sort(
+		(a, b) => b.date.getTime() - a.date.getTime()
+	);
 
 	let markdown = announcementsArray.map((announcement) => announcement.fullMd).join('<br />');
 
 	return [announcementsArraySorted, markdown];
+}
+
+export function getRoadmap() {
+	let roadmapEntries: IRoadmapEntry[] = [];
+	for (let i = 0; i < roadmap.length; i++) {
+		let year = Number(roadmap[i].node.roadmap_column_name[0].text);
+		let subentries: IRoadmapSubentry[] = [];
+		let items = roadmap[i].node.roadmap_column_items;
+		for (let j = 0; j < items.length; j += 2) {
+			let monthText = items[j].text.replace(':', '');
+			let month = months.indexOf(monthText);
+			let text = items[j + 1].text;
+			subentries.push({
+				month,
+				monthText,
+				text
+			});
+		}
+		roadmapEntries.push({ year, subentries });
+	}
+
+	let roadmapEntriesSorted = roadmapEntries.sort((a, b) => b.year - a.year);
+	let markdown = '';
+	roadmapEntriesSorted.forEach((entry) => {
+		markdown += `## ${entry.year}<br />`;
+		entry.subentries.forEach((subentry) => {
+			markdown += `### ${subentry.monthText}<br />${subentry.text}<br />`;
+		});
+	});
+	return [roadmapEntriesSorted, markdown];
 }
 
 function newsBodyToMarkdown(body: any) {
@@ -85,3 +116,18 @@ function newsBodyToMarkdown(body: any) {
 function replaceString(str: string, indexStart: number, indexEnd: number, chr: string) {
 	return str.substring(0, indexStart) + chr + str.substring(indexEnd);
 }
+
+const months = [
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December'
+];
