@@ -11,6 +11,7 @@
 	import type { IFaq } from '$lib/ts/interfaces/IFaq';
 	import type { ITeamMember } from '$lib/ts/interfaces/ITeamMember';
 	import type { ICommunityProject } from '$lib/ts/interfaces/ICommunityProject';
+	import Explorer from '$lib/components/sections/Explorer.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
@@ -27,5 +28,6 @@
 	<Advisors />
 	<CommunityProjects {communityProjects} />
 	<FAQ {faq} />
+	<Explorer />
 	<JoinUs />
 </div>

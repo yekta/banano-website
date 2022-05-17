@@ -49,7 +49,7 @@
 			{#each socialButtons as socialButton}
 				<div class="w-full md:w-1/2 lg:w-1/3 flex flex-col items-center text-center px-4 mt-2">
 					<Button
-						class="mt-4 w-full"
+						class="mt-4 w-full max-w-xs"
 						href={socialButton.url}
 						targetBlank={true}
 						type={socialButton.type}
