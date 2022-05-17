@@ -13,7 +13,7 @@
 	<div class="container-b flex flex-col items-center px-4 md:px-12">
 		<h2 class="text-3xl font-bold text-center">The Banano Republic Announces</h2>
 		<div class="w-full bg-c-secondary h-[3px] rounded-full mt-8" />
-		<div class="w-full flex flex-wrap justify-center items-start mt-5">
+		<div class="w-full flex flex-wrap justify-center items-start mt-4">
 			{#each announcements as announcement, index}
 				<div class="flex flex-col w-full md:w-1/2 lg:w-1/3 px-3 py-4 md:px-6 md:py-5">
 					<h5 class="text-lg font-bold">{announcement.title}</h5>

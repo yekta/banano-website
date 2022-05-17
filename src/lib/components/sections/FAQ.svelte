@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { IFaq } from '$lib/ts/interfaces/IFaq';
+	import Button from '../Button.svelte';
 
 	export let faq: IFaq[];
 
@@ -20,14 +21,18 @@
 		<h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
 		<div class="w-full flex flex-wrap max-w-2xl justify-center mt-5">
 			{#each editedFaq as singleFaq, index}
-				<div class="w-full p-1">
-					<div class="w-full flex flex-col items-start justify-start bg-c-on-bg/10 rounded-lg">
-						<button
-							on:click={() => toggle(index)}
-							class="w-full text-left font-bold text-lg px-6 py-4">{singleFaq.question}</button
+				<div class="w-full p-1 mt-1.5">
+					<div
+						class="w-full flex flex-col items-start justify-start bg-c-bg-secondary-shaded rounded-lg"
+					>
+						<Button
+							type="bg"
+							onClick={() => toggle(index)}
+							class="w-full text-left font-bold text-base px-6 py-4 md:px-8"
+							>{singleFaq.question}</Button
 						>
 						{#if singleFaq.isOpen}
-							<div class="px-6 py-4 cms">{@html singleFaq.answer}</div>
+							<div class="px-6 md:px-8 py-5 cms">{@html singleFaq.answer}</div>
 						{/if}
 					</div>
 				</div>

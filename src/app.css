@@ -5,6 +5,7 @@
 	--c-primary: 251 221 17;
 	--c-secondary: 76 191 75;
 	--c-bg: 255 255 255;
+	--c-bg-secondary: 245 245 245;
 	--c-on-bg: 33 33 36;
 	--c-discord: 105 118 191;
 	--c-reddit: 255 69 0;
@@ -12,6 +13,18 @@
 	--c-instagram: 225 48 108;
 	--c-telegram: 0 136 204;
 	--c-facebook: 59 89 152;
+
+	--c-primary-shaded: 231 201 0;
+	--c-secondary-shaded: 56 171 46;
+	--c-bg-shaded: 235 235 235;
+	--c-bg-secondary-shaded: 235 235 235;
+	--c-on-bg-shaded: 13 13 16;
+	--c-discord-shaded: 85 98 171;
+	--c-reddit-shaded: 235 49 0;
+	--c-twitter-shaded: 0 152 217;
+	--c-instagram-shaded: 205 28 88;
+	--c-telegram-shaded: 0 116 183;
+	--c-facebook-shaded: 39 69 132;
 
 	--sm: 640px;
 	--md: 768px;

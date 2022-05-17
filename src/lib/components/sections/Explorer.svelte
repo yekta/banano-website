@@ -31,10 +31,10 @@
 						id="explorer-input"
 						bind:value={inputExplorer}
 						type="text"
-						class="text-c-on-bg w-full px-4 py-3.5 mt-3 rounded-lg"
+						class="text-c-on-bg w-full px-4 py-4.5 mt-3 rounded-lg"
 					/>
 				</label>
-				<Button class="w-full md:w-auto max-w-sm px-8 md:px-12 mt-3">Search</Button>
+				<Button class="w-full md:w-auto max-w-sm px-8 md:px-12 mt-3 mb-1.5">Search</Button>
 			</form>
 		</div>
 	</div>
