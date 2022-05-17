@@ -8,8 +8,8 @@
 	import Team from '$lib/components/sections/Team.svelte';
 	import Testimonials from '$lib/components/sections/Testimonials.svelte';
 	import Wallets from '$lib/components/sections/Wallets.svelte';
-	import type { Faq } from '$lib/ts/types/interfaces/faq';
-	import type { TeamMember } from '$lib/ts/types/interfaces/teamMember';
+	import type { Faq } from '$lib/ts/interfaces/faq';
+	import type { TeamMember } from '$lib/ts/interfaces/teamMember';
 
 	export let faq: Faq[];
 	export let testimonials: string[];

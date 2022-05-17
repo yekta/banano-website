@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Faq } from '$lib/ts/types/interfaces/faq';
+	import type { Faq } from '$lib/ts/interfaces/faq';
 
 	export let faq: Faq[];
 
