@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import faqMd from '/src/cms/faq.md';
-import teamMd from '/src/cms/team.md';
-import testimonialsMd from '/src/cms/testimonials.md';
+import faqMd from '/content/faq.md';
+import teamMd from '/content/team.md';
+import testimonialsMd from '/content/testimonials.md';
 import { parse } from 'node-html-parser';
 
 export const get: RequestHandler = async (event) => {
