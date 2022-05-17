@@ -49,7 +49,3 @@ In Banano, wallet addresses/public keys generate a unique MonKey. These MonKeys 
 # What if I have more questions?
 
 Check out a more detailed FAQ at [Reddit](https://www.reddit.com/r/banano/comments/9kiadz/new_to_banano_get_started_here) and ask there if you have any further questions.
-
-```
-
-```
