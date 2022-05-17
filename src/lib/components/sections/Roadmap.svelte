@@ -6,15 +6,14 @@
 	export let roadmap: IRoadmapItem[];
 
 	let scrollWindow: HTMLElement;
-	let innerWindowHeight: number;
 	let isIndicatorVisible = true;
-	const indicatorHideThreshold = 0.15;
+	const indicatorHideThreshold = 100;
 
 	function onScroll(e: Event) {
-		let scrollRate = scrollWindow.scrollTop / (innerWindowHeight - scrollWindow.clientHeight);
-		if (isIndicatorVisible && scrollRate > indicatorHideThreshold) {
+		let scrollTop = scrollWindow.scrollTop;
+		if (isIndicatorVisible && scrollTop > indicatorHideThreshold) {
 			isIndicatorVisible = false;
-		} else if (!isIndicatorVisible && scrollRate <= indicatorHideThreshold) {
+		} else if (!isIndicatorVisible && scrollTop <= indicatorHideThreshold) {
 			isIndicatorVisible = true;
 		}
 	}
@@ -28,19 +27,21 @@
 				bind:this={scrollWindow}
 				on:scroll={onScroll}
 				class="w-full flex flex-wrap justify-center overflow-auto 
-        h-[60vh] min-h-[20rem] max-h-[50rem] relative"
+        h-[65vh] min-h-[20rem] max-h-[50rem] relative"
 			>
-				<div bind:clientHeight={innerWindowHeight} class="w-full flex flex-col">
+				<div class="w-full flex flex-col">
 					{#each roadmap as item, index}
-						<div class="w-full p-2 md:p-4 flex flex-col">
-							<div class="w-full flex flex-row justify-start px-2 mt-1">
+						<div
+							class="w-full p-2 md:p-4 flex flex-col relative {index !== 0 ? 'mt-4 md:mt-2' : ''}"
+						>
+							<div class="w-full flex flex-row justify-start px-2 py-1">
 								<h5
-									class="text-xl font-bold bg-c-secondary px-8 md:px-12 py-2 rounded-lg text-c-bg"
+									class="text-xl font-bold bg-c-secondary px-8 md:px-16 py-2 rounded-lg text-c-bg"
 								>
 									{item.title}
 								</h5>
 							</div>
-							<div class="flex flex-row flex-wrap items-stretch mt-2">
+							<div class="flex flex-row flex-wrap items-stretch mt-1">
 								{#each item.entries as entry}
 									<div class="w-full md:w-1/2 lg:w-1/4 p-2 flex items-stretch">
 										<div
