@@ -15,7 +15,7 @@
 						class="w-full chat-bubble relative bg-c-secondary filter brightness-110 shadow-card shadow-c-on-bg/6
 						rounded-tl-xl rounded-tr-xl rounded-br-xl flex flex-col items-center text-center px-10 py-5"
 					>
-						<p>“{testimonial}”</p>
+						<p>“{@html testimonial}”</p>
 					</div>
 				</div>
 			{/each}

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { TeamMember } from '$lib/ts/interfaces/teamMember';
+	import type { ITeamMember } from '$lib/ts/interfaces/ITeamMember';
 	import { onMount } from 'svelte';
 
-	export let team: TeamMember[];
+	export let team: ITeamMember[];
 
 	const dancingBananaCount = 8;
 	let teamShuffled = [...team];
@@ -23,7 +23,7 @@
 						src="/illustrations/dancing-banana/dancing-banana-{index % dancingBananaCount}.svg"
 						alt={teamMember.nickname}
 					/>
-					<h5 class="font-bold mt-3">{teamMember.nickname.toUpperCase()}</h5>
+					<h5 class="font-bold mt-3">{@html teamMember.nickname.toUpperCase()}</h5>
 					<p class="mt-1">{teamMember.description}</p>
 				</div>
 			{/each}

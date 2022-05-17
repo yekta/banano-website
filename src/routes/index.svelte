@@ -8,12 +8,14 @@
 	import Team from '$lib/components/sections/Team.svelte';
 	import Testimonials from '$lib/components/sections/Testimonials.svelte';
 	import Wallets from '$lib/components/sections/Wallets.svelte';
-	import type { Faq } from '$lib/ts/interfaces/faq';
-	import type { TeamMember } from '$lib/ts/interfaces/teamMember';
+	import type { IFaq } from '$lib/ts/interfaces/IFaq';
+	import type { ITeamMember } from '$lib/ts/interfaces/ITeamMember';
+	import type { ICommunityProject } from '$lib/ts/interfaces/ICommunityProject';
 
-	export let faq: Faq[];
+	export let faq: IFaq[];
 	export let testimonials: string[];
-	export let team: TeamMember[];
+	export let team: ITeamMember[];
+	export let communityProjects: ICommunityProject[];
 </script>
 
 <div class="w-full min-h-screen flex flex-col justify-start items-center pb-64">
@@ -23,7 +25,7 @@
 	<Team {team} />
 	<Testimonials {testimonials} />
 	<Advisors />
-	<CommunityProjects />
+	<CommunityProjects {communityProjects} />
 	<FAQ {faq} />
 	<JoinUs />
 </div>

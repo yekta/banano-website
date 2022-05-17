@@ -4,7 +4,7 @@
 
 ### HALP! I, need, more, Bananos! Addicted. Feelsgoodman 😎
 
-### Sold my house and took a second mortgage (neighbours house) to buy more bananos. WTB 💰
+### Sold my house & took a second mortgage (neighbours house) to buy more bananos. WTB 💰
 
 ### Banano saved our marriage! 👰🤵
 

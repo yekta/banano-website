@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { ButtonType } from '$lib/ts/types/button';
+	import type { TButton } from '$lib/ts/types/TButton';
 	import Button from '../Button.svelte';
 
 	interface SocialButton {
 		text: string;
 		url: string;
-		type: ButtonType;
+		type: TButton;
 	}
 
 	const socialButtons: SocialButton[] = [

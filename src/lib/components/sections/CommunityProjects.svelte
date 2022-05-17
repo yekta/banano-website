@@ -1,34 +1,8 @@
 <script lang="ts">
 	import Button from '../Button.svelte';
+	import type { ICommunityProject } from '$lib/ts/interfaces/ICommunityProject';
 
-	interface CommunityProject {
-		name: string;
-		description: string;
-		url: string;
-	}
-
-	const communityProjects: CommunityProject[] = [
-		{
-			name: 'Banano.how',
-			description: 'A place to get help getting started.',
-			url: 'https://banano.how'
-		},
-		{
-			name: 'Banano.bet',
-			description: 'A provably fair dice game for Banano.',
-			url: 'https://banano.bet'
-		},
-		{
-			name: 'JungleTV.live',
-			description: 'A video sharing platform where you can earn & spend Banano.',
-			url: 'https://jungletv.live'
-		},
-		{
-			name: 'Banano.fun',
-			description: 'Tailor-made Banano memes and animations.',
-			url: 'https://banano.fun'
-		}
-	];
+	export let communityProjects: ICommunityProject[];
 </script>
 
 <div
@@ -45,10 +19,10 @@
 				<div
 					class="w-full md:w-1/2 lg:w-1/4 max-w-[17rem] flex flex-col items-center text-center px-4 mt-5"
 				>
-					<h5 class="font-bold mt-3">{project.name.toUpperCase()}</h5>
-					<p class="mt-1">{project.description}</p>
-					<Button class="mt-4 w-full" href={project.url} targetBlank={true}
-						>{project.name.toLocaleLowerCase()}</Button
+					<h5 class="font-bold mt-3">{project.title.toUpperCase()}</h5>
+					<p class="mt-1">{@html project.description}</p>
+					<Button class="mt-4 w-full" href={project.buttonUrl} targetBlank={true}
+						>{project.buttonName.toLocaleLowerCase()}</Button
 					>
 				</div>
 			{/each}

@@ -1,4 +1,4 @@
-export interface Faq {
+export interface IFaq {
 	question: string;
 	answer: string;
 }

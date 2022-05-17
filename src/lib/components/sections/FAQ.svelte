@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Faq } from '$lib/ts/interfaces/faq';
+	import type { IFaq } from '$lib/ts/interfaces/IFaq';
 
-	export let faq: Faq[];
+	export let faq: IFaq[];
 
 	let editedFaq = faq.map((q) => {
 		return {

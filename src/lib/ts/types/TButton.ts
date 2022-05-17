@@ -1,4 +1,4 @@
-export type ButtonType =
+export type TButton =
 	| 'primary'
 	| 'secondary'
 	| 'bg'
