@@ -20,7 +20,7 @@
 					class="w-full md:w-1/2 lg:w-1/4 max-w-[17rem] flex flex-col items-center text-center px-4 mt-5"
 				>
 					<h5 class="font-bold mt-3">{project.title.toUpperCase()}</h5>
-					<p class="mt-1">{@html project.description}</p>
+					<p class="mt-1">{project.description}</p>
 					<Button class="mt-4 w-full" href={project.buttonUrl} targetBlank={true}
 						>{project.buttonName.toLocaleLowerCase()}</Button
 					>

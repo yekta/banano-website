@@ -12,11 +12,15 @@
 	import type { IFaq } from '$lib/ts/interfaces/IFaq';
 	import type { ITeamMember } from '$lib/ts/interfaces/ITeamMember';
 	import type { ICommunityProject } from '$lib/ts/interfaces/ICommunityProject';
+	import type { IAnnouncement } from '$lib/ts/interfaces/IAnnouncement';
+	import type { IRoadmapItem } from '$lib/ts/interfaces/IRoadmapItem';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
 	export let team: ITeamMember[];
 	export let communityProjects: ICommunityProject[];
+	export let announcements: IAnnouncement[];
+	export let roadmap: IRoadmapItem[];
 </script>
 
 <div class="w-full min-h-screen flex flex-col justify-start items-center pb-64">

@@ -23,7 +23,7 @@
 						src="/illustrations/dancing-banana/dancing-banana-{index % dancingBananaCount}.svg"
 						alt={teamMember.nickname}
 					/>
-					<h5 class="font-bold mt-3">{@html teamMember.nickname.toUpperCase()}</h5>
+					<h5 class="font-bold mt-3">{teamMember.nickname.toUpperCase()}</h5>
 					<p class="mt-1">{teamMember.description}</p>
 				</div>
 			{/each}
