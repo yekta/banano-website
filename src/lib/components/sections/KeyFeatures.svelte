@@ -22,7 +22,7 @@
 	class="w-full flex justify-center bg-c-bg -mt-32 relative pb-12 px-4 text-center"
 >
 	<div class="container-b flex flex-col items-center px-4">
-		<h2 class="text-3xl font-bold">Key Features</h2>
+		<h2 class="text-3xl font-bold px-4">Key Features</h2>
 		<p class="container-b-small max-w-full mt-3 text-lg">
 			Banano is a 4th generation fungible & edible cryptocurrency with a cool yellow logo and
 			particles.js background. Our team is top-notch and the project advisors are by a moonshot best

@@ -7,7 +7,7 @@
 	class="w-full bg-testimonials bg-c-secondary flex justify-center pt-16 pb-24 text-center text-c-bg"
 >
 	<div class="container-b-small flex flex-col items-center px-4 md:px-8">
-		<h2 class="text-3xl font-bold">Testimonials</h2>
+		<h2 class="text-3xl font-bold px-4">Testimonials</h2>
 		<div class="w-full flex flex-wrap justify-center">
 			{#each testimonials as testimonial}
 				<div class="w-full max-w-md md:w-1/2 md:max-w-full mt-5 p-3">

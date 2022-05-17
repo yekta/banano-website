@@ -21,15 +21,15 @@
 
 <div id="roadmap" class="w-full flex justify-center pt-16 pb-24">
 	<div class="container-b flex flex-col items-center px-4 md:px-12">
-		<h2 class="text-3xl font-bold">Bumpy Roadmap</h2>
-		<div class="relative rounded-xl border-[3px] border-c-secondary overflow-hidden mt-5">
+		<h2 class="text-3xl font-bold px-4">Bumpy Roadmap</h2>
+		<div class="relative rounded-xl border-[3px] border-c-secondary overflow-hidden mt-8">
 			<div
 				bind:this={scrollWindow}
 				on:scroll={onScroll}
 				class="w-full flex flex-wrap justify-center overflow-auto 
         h-[65vh] min-h-[20rem] max-h-[50rem] relative"
 			>
-				<div class="w-full flex flex-col">
+				<div class="w-full flex flex-col pb-12">
 					{#each roadmap as item, index}
 						<div
 							class="w-full p-2 md:p-4 flex flex-col relative {index !== 0 ? 'mt-4 md:mt-2' : ''}"
@@ -45,7 +45,7 @@
 								{#each item.entries as entry}
 									<div class="w-full md:w-1/2 lg:w-1/4 p-2 flex items-stretch">
 										<div
-											class="flex flex-col w-full border-2 border-c-secondary/60 border-dotted rounded-lg p-2"
+											class="flex flex-col w-full border-2 border-c-secondary/60 border-dotted rounded-lg p-1.5"
 										>
 											<h6 class="font-bold bg-c-secondary/15 text-c-secondary px-3 py-1 rounded-md">
 												{entry.title}

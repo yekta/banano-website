@@ -11,7 +11,7 @@
 
 <div id="news" class="w-full flex justify-center pt-16 pb-24">
 	<div class="container-b flex flex-col items-center px-4 md:px-12">
-		<h2 class="text-3xl font-bold text-center">The Banano Republic Announces</h2>
+		<h2 class="text-3xl font-bold text-center px-4">The Banano Republic Announces</h2>
 		<div class="w-full bg-c-secondary h-[3px] rounded-full mt-8" />
 		<div class="w-full flex flex-wrap justify-center items-start mt-4">
 			{#each announcements as announcement, index}

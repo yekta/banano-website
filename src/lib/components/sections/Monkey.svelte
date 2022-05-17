@@ -3,6 +3,6 @@
 
 <div id="monkey" class="w-full bg-c-bg flex justify-center py-12 text-center">
 	<div class="container-b flex flex-col items-center px-4">
-		<h2 class="text-3xl font-bold">MonKey</h2>
+		<h2 class="text-3xl font-bold px-4">MonKey</h2>
 	</div>
 </div>

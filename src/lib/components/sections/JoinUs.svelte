@@ -44,7 +44,7 @@
 
 <div id="join-us" class="w-full bg-community flex justify-center pt-20 pb-28 text-center">
 	<div class="container-b-small flex flex-col items-center">
-		<h2 class="text-3xl font-bold">Join the Crypto-Potassium Revolution</h2>
+		<h2 class="text-3xl font-bold px-4">Join the Crypto-Potassium Revolution</h2>
 		<div class="w-full flex flex-wrap justify-center mt-2">
 			{#each socialButtons as socialButton}
 				<div

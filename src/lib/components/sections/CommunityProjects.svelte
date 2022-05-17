@@ -7,19 +7,19 @@
 
 <div
 	id="community-projects"
-	class="w-full bg-community bg-c-secondary flex justify-center pt-20 pb-28 text-center text-c-bg"
+	class="w-full bg-community bg-c-secondary flex justify-center pt-16 pb-20 text-center text-c-bg"
 >
 	<div class="container-b flex flex-col items-center px-4">
-		<h2 class="text-3xl font-bold">Community Projects</h2>
+		<h2 class="text-3xl font-bold px-4">Community Projects</h2>
 		<p class="mt-2 text-xl">
 			Here are some of the projects that are made by our awesome community:
 		</p>
-		<div class="w-full flex flex-wrap justify-center items-end">
-			{#each communityProjects as project}
+		<div class="w-full flex flex-wrap justify-center items-end mt-2 md:mt-6">
+			{#each communityProjects as project, index}
 				<div
-					class="w-full md:w-1/2 lg:w-1/4 max-w-[17rem] flex flex-col items-center text-center px-4 mt-5"
+					class="w-full md:w-1/2 lg:w-1/4 max-w-[17rem] flex flex-col items-center text-center px-4 my-7"
 				>
-					<h5 class="font-bold mt-3">{project.title.toUpperCase()}</h5>
+					<h5 class="font-bold text-lg">{project.title.toUpperCase()}</h5>
 					<p class="mt-1">{project.description}</p>
 					<Button class="mt-4 w-full" href={project.buttonUrl} targetBlank={true}
 						>{project.buttonName.toLocaleLowerCase()}</Button
