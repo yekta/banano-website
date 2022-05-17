@@ -5,6 +5,7 @@
 	export let onClick: (() => void) | undefined = undefined;
 	export let href: string | undefined = undefined;
 	export let targetBlank = false;
+	export let isLeft = false;
 	export { classes as class };
 	let classes = '';
 
@@ -38,14 +39,18 @@
 	<a
 		{href}
 		target={targetBlank ? '_blank' : null}
-		class="px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover transition-all hover:-translate-y-0.5 {getBgAndTextClass()} {classes}"
+		class="flex flex-row items-center {isLeft
+			? 'justify-start'
+			: 'justify-center'} relative px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover transition-all hover:-translate-y-0.5 {getBgAndTextClass()} {classes}"
 	>
 		<slot />
 	</a>
 {:else}
 	<button
 		on:click={onClick}
-		class="px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover transition-all hover:-translate-y-1 {getBgAndTextClass()} {classes}"
+		class="flex flex-row items-center {isLeft
+			? 'justify-start'
+			: 'justify-center'} relative px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover transition-all hover:-translate-y-1 {getBgAndTextClass()} {classes}"
 	>
 		<slot />
 	</button>

@@ -18,7 +18,7 @@
 				<div class="flex flex-col w-full md:w-1/2 lg:w-1/3 px-3 py-4 md:px-6 md:py-5">
 					<h5 class="text-lg font-bold">{announcement.title}</h5>
 					<p class="font-semibold text-sm mt-1.5">{dateFormatter(new Date(announcement.date))}</p>
-					<p class="mt-3 cms">{@html announcement.body}</p>
+					<p class="mt-3  markdown">{@html announcement.body}</p>
 				</div>
 			{/each}
 		</div>

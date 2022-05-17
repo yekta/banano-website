@@ -51,11 +51,11 @@
 	margin: 0 auto;
 }
 
-.cms a {
+. markdown a {
 	color: rgb(var(--c-secondary));
 	font-weight: 700;
 }
-.cms a:hover {
+. markdown a:hover {
 	text-decoration: underline;
 }
 

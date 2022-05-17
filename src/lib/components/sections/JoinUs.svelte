@@ -1,43 +1,52 @@
 <script lang="ts">
 	import type { TButton } from '$lib/ts/types/TButton';
+	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
 	import Button from '../Button.svelte';
+	import IconSocial from '../IconSocial.svelte';
 
 	interface SocialButton {
 		text: string;
 		url: string;
 		type: TButton;
+		icon: TIconSocial;
 	}
 
 	const socialButtons: SocialButton[] = [
 		{
 			text: 'Join our Discord',
 			url: 'https://chat.banano.cc',
-			type: 'discord'
+			type: 'discord',
+			icon: 'discord'
 		},
 		{
 			text: 'Subscribe on Reddit',
 			url: 'https://reddit.com/r/banano',
-			type: 'reddit'
+			type: 'reddit',
+			icon: 'reddit'
 		},
 		{
 			text: 'Follow on Twitter',
 			url: 'https://twitter.com/bananocoin',
-			type: 'twitter'
+			type: 'twitter',
+			icon: 'twitter'
 		},
 		{
 			text: 'Follow on Instagram',
 			url: 'https://instagram/bananocurrency',
-			type: 'instagram'
+			type: 'instagram',
+			icon: 'instagram'
 		},
 		{
 			text: 'Join our Telegram',
 			url: 'https://t.me/banano_official',
-			type: 'telegram'
+			type: 'telegram',
+			icon: 'telegram'
 		},
 		{
 			text: 'Follow on Facebook',
 			url: 'https://www.facebook.com/bananocurrency/',
-			type: 'facebook'
+			type: 'facebook',
+			icon: 'facebook'
 		}
 	];
 </script>
@@ -51,11 +60,12 @@
 					class="w-full md:w-1/2 lg:w-1/3 max-w-xs flex flex-col items-center text-center px-4 mt-2"
 				>
 					<Button
-						class="mt-4 w-full"
+						class="mt-4 w-full px-14"
 						href={socialButton.url}
 						targetBlank={true}
 						type={socialButton.type}
 					>
+						<IconSocial type={socialButton.icon} class="w-8 h-8 ml-3 absolute left-0" />
 						{socialButton.text}
 					</Button>
 				</div>
