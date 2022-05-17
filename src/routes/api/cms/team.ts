@@ -10,7 +10,7 @@ export const get: RequestHandler = async (event) => {
 	let arr = h1s.map((h, i) => {
 		return {
 			nickname: h,
-			description: p1s?.[i]
+			description: p1s[i]
 		};
 	});
 	return {
