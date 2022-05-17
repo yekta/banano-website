@@ -52,13 +52,13 @@ export const get: RequestHandler = async (event) => {
 	// Community Projects
 	let titlesCommunityProjects = parsedHtmlCommunityProjects
 		.getElementsByTagName('h3')
-		.map((n) => n.innerHTML);
+		.map((n) => n.text);
 	let descriptionsCommunityProjects = parsedHtmlCommunityProjects
 		.getElementsByTagName('p')
-		.map((n) => n.innerHTML);
+		.map((n) => n.text);
 	let buttonNameCommunityProjects = parsedHtmlCommunityProjects
 		.getElementsByTagName('a')
-		.map((n) => n.innerText);
+		.map((n) => n.text);
 	let buttonUrlCommunityProjects = parsedHtmlCommunityProjects
 		.getElementsByTagName('a')
 		.map((n) => n.getAttribute('href'));
@@ -70,12 +70,8 @@ export const get: RequestHandler = async (event) => {
 	}));
 
 	// Announcements
-	let titleAnnouncements = parsedHtmlAnnouncements
-		.getElementsByTagName('h3')
-		.map((n) => n.innerHTML);
-	let dateAnnouncements = parsedHtmlAnnouncements
-		.getElementsByTagName('h4')
-		.map((n) => n.innerHTML);
+	let titleAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('h3').map((n) => n.text);
+	let dateAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('h4').map((n) => n.text);
 	let bodyAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('p').map((n) => n.innerHTML);
 	announcements = titleAnnouncements
 		.map((t, i) => ({

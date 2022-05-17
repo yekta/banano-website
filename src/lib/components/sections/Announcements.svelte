@@ -15,7 +15,7 @@
 		<div class="w-full bg-c-secondary h-[3px] rounded-full mt-8" />
 		<div class="w-full flex flex-wrap justify-center items-start mt-5">
 			{#each announcements as announcement, index}
-				<div class="flex flex-col w-full md:w-1/2 lg:w-1/3 px-6 py-4">
+				<div class="flex flex-col w-full md:w-1/2 lg:w-1/3 px-6 py-5">
 					<h5 class="text-lg font-bold">{announcement.title}</h5>
 					<p class="font-semibold text-sm mt-1.5">{dateFormatter(new Date(announcement.date))}</p>
 					<p class="mt-3 cms">{@html announcement.body}</p>

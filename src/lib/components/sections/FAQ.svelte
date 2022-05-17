@@ -16,9 +16,9 @@
 </script>
 
 <div id="faq" class="w-full flex justify-center pt-16 pb-24">
-	<div class="container-b-smallest flex flex-col items-center px-4">
+	<div class="container-b flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
-		<div class="w-full flex flex-wrap justify-center mt-5">
+		<div class="w-full flex flex-wrap max-w-2xl justify-center mt-5">
 			{#each editedFaq as singleFaq, index}
 				<div class="w-full p-1">
 					<div class="w-full flex flex-col items-start justify-start bg-c-on-bg/10 rounded-lg">
