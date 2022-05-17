@@ -33,7 +33,7 @@
 		},
 		{
 			title: 'Social',
-			id: 'social'
+			id: 'join-us'
 		}
 	];
 </script>
