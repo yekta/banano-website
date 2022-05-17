@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"axios": "^0.27.2",
 		"node-html-parser": "^5.3.3"
 	}
 }

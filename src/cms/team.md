@@ -1,47 +1,47 @@
-# Yekta
+### Yekta
 
 Leonardo Da Banano
 
-# Bbedward
+### Bbedward
 
 Ima bot bleep blob
 
-# Fudcake
+### Fudcake
 
 The Banano Republic dictator trainee
 
-# Renesq
+### Renesq
 
 Gandalf level code wizard and chronice procrastinator
 
-# Coranos
+### Coranos
 
 Hardware wallet, vulcanology, and burn specialist
 
-# Anemone
+### Anemone
 
 Chief shitposting orangutan, meme historian
 
-# Bantano
+### Bantano
 
 Ringleader of media operations
 
-# SoggyApplePie
+### SoggyApplePie
 
 Baked goods connoisseur
 
-# Just_Dmitry
+### Just_Dmitry
 
 бест рашн хацкер
 
-# Meltingice
+### Meltingice
 
 Leader of the curious explorers
 
-# Mitche50
+### Mitche50
 
 Doer of things
 
-# Losha1x
+### Losha1x
 
 Professional life hater
