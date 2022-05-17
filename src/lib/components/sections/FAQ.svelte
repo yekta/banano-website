@@ -15,7 +15,7 @@
 	}
 </script>
 
-<div id="faq" class="w-full flex justify-center pt-16 pb-24 cms">
+<div id="faq" class="w-full flex justify-center pt-16 pb-24">
 	<div class="container-b-smallest flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
 		<div class="w-full flex flex-wrap justify-center mt-5">
@@ -27,7 +27,7 @@
 							class="w-full text-left font-bold text-lg px-6 py-4">{singleFaq.question}</button
 						>
 						{#if singleFaq.isOpen}
-							<div class="px-6 py-4">{@html singleFaq.answer}</div>
+							<div class="px-6 py-4 cms">{@html singleFaq.answer}</div>
 						{/if}
 					</div>
 				</div>
