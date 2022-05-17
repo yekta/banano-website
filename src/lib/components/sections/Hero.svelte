@@ -4,7 +4,7 @@
 
 <div
 	id="hero"
-	class="hero w-full flex flex-col items-center justify-start text-center bg-cover bg-[position:19%_0%] md:bg-[position:22%_0%] lg:bg-[position:38%_0%] xl:bg-[position:50%_100%]"
+	class="hero w-full bg-c-secondary flex flex-col items-center justify-start text-center bg-cover bg-[position:19%_0%] md:bg-[position:22%_0%] lg:bg-[position:38%_0%] xl:bg-[position:50%_100%]"
 >
 	<div class="w-full relative flex justify-center px-6">
 		<div class="container-b max-w-full h-230 py-64 flex flex-col items-center">
