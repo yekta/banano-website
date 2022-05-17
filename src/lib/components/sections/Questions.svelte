@@ -2,16 +2,34 @@
 	import type { Question } from '$lib/ts/types/interfaces/question';
 
 	export let questions: Question[];
+
+	let editedQuestions = questions.map((q) => {
+		return {
+			...q,
+			isOpen: false
+		};
+	});
+
+	function toggle(index: number) {
+		editedQuestions[index].isOpen = !editedQuestions[index].isOpen;
+	}
 </script>
 
-<div id="faq" class="w-full flex justify-center pt-16 pb-24">
-	<div class="container-b-small flex flex-col items-center px-4">
+<div id="faq" class="w-full flex justify-center pt-16 pb-24 cms">
+	<div class="container-b-smallest flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
-		<div class="w-full flex flex-wrap justify-center">
-			{#each questions as question}
-				<div class="w-full p-3">
-					<p>{question.question}</p>
-					{@html question.answer}
+		<div class="w-full flex flex-wrap justify-center mt-5">
+			{#each editedQuestions as question, index}
+				<div class="w-full p-1">
+					<div class="w-full flex flex-col items-start justify-start bg-c-on-bg/10 rounded-lg">
+						<button
+							on:click={() => toggle(index)}
+							class="w-full text-left font-bold text-lg px-6 py-4">{question.question}</button
+						>
+						{#if question.isOpen}
+							<div class="px-6 py-4">{@html question.answer}</div>
+						{/if}
+					</div>
 				</div>
 			{/each}
 		</div>

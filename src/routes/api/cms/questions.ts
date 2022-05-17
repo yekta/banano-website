@@ -1,16 +1,16 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import questions from '/src/cms/questions.md';
+import { parse } from 'node-html-parser';
 
 export const get: RequestHandler = async (event) => {
 	let html = questions.render().html;
-	const regexH1 = /(?<=<h1>)(.*)(?=<\/h1>)/g;
-	const regexP1 = /(?<=<p>)(.*)(?=<\/p>)/g;
-	let h1s = html.match(regexH1);
-	let p1s = html.match(regexP1);
-	let arr = h1s?.map((h, i) => {
+	let parsedHtml = parse(html);
+	let h1s = parsedHtml.getElementsByTagName('h1').map((n) => n.innerHTML);
+	let p1s = parsedHtml.getElementsByTagName('p').map((n) => n.innerHTML);
+	let arr = h1s.map((h, index) => {
 		return {
 			question: h,
-			answer: p1s?.[i]
+			answer: p1s[index]
 		};
 	});
 	return {

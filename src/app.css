@@ -32,4 +32,18 @@
 	margin: 0 auto;
 }
 
+.container-b-smallest {
+	width: 768px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.cms a {
+	color: rgb(var(--c-secondary));
+	font-weight: 700;
+}
+.cms a:hover {
+	text-decoration: underline;
+}
+
 @tailwind utilities;

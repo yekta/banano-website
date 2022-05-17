@@ -4,8 +4,7 @@ Banano is a 4th generation fungible & edible cryptocurrency with a cool yellow l
 
 # Is this real life or just a fantasy?
 
-This is serious fun! Our mainnet is stable and highly active since April 1st, 2018. Our blockchain has over 32 million blocks and our mobile wallet is not only beautiful, but also works great for instant transactions. We have a fantastic supportive community that is most active on our [Discord channel](https://chat.banano.cc) with 39,000+ members. We have many official and community projects happening that are pushing forward every day.
-This is not vaporware, this is real, and it is awesome! Join the revolution!
+This is serious fun! Our mainnet is stable and highly active since April 1st, 2018. Our blockchain has over 32 million blocks and our mobile wallet is not only beautiful, but also works great for instant transactions. We have a fantastic supportive community that is most active on our [Discord channel](https://chat.banano.cc) with 39,000+ members. We have many official and community projects happening that are pushing forward every day. This is not vaporware, this is real, and it is awesome! Join the revolution!
 
 # What are we forked from?
 
@@ -50,3 +49,7 @@ In Banano, wallet addresses/public keys generate a unique MonKey. These MonKeys 
 # What if I have more questions?
 
 Check out a more detailed FAQ at [Reddit](https://www.reddit.com/r/banano/comments/9kiadz/new_to_banano_get_started_here) and ask there if you have any further questions.
+
+```
+
+```
