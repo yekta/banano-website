@@ -12,7 +12,7 @@
 	});
 </script>
 
-<div id="team" class="w-full bg-c-bg flex justify-center py-12 text-center">
+<div id="team" class="w-full bg-c-bg flex justify-center py-16 text-center">
 	<div class="container-b flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold px-4">Meet the Overworked Team</h2>
 		<div class="container-b-small flex flex-wrap justify-center mt-5">

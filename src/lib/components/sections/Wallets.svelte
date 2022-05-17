@@ -67,7 +67,7 @@
 		<div class="container-b-small max-w-full flex flex-row flex-wrap justify-center -mt-3">
 			{#each wallets as wallet}
 				<div
-					class="w-full md:w-1/2 lg:w-1/3 max-w-[18rem] flex flex-col items-center px-6 py-4 mt-8"
+					class="w-full md:w-1/2 lg:w-1/3 max-w-[19rem] flex flex-col items-center px-6 py-4 mt-8"
 				>
 					<img src="/images/wallets/{wallet.img}.{imgExtention}" alt={wallet.title} />
 					<h4 class="w-full font-bold text-xl mt-4">{wallet.title.toUpperCase()}</h4>

@@ -2,7 +2,7 @@
 	import type { TButton } from '$lib/ts/types/TButton';
 	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
 	import Button from '../Button.svelte';
-	import IconSocial from '../IconSocial.svelte';
+	import IconSocial from '../icons/IconSocial.svelte';
 
 	interface SocialButton {
 		text: string;
@@ -57,7 +57,7 @@
 		<div class="w-full flex flex-wrap justify-center mt-2">
 			{#each socialButtons as socialButton}
 				<div
-					class="w-full md:w-1/2 lg:w-1/3 max-w-xs flex flex-col items-center text-center px-4 mt-2"
+					class="w-full max-w-sm md:w-1/2 lg:w-1/3 flex flex-col items-center text-center px-4 md:px-2 mt-2"
 				>
 					<Button
 						class="mt-4 w-full px-14"
