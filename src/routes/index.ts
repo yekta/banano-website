@@ -87,21 +87,28 @@ export const get: RequestHandler = async (event) => {
 		return nStr.includes('h2') || nStr.includes('h3') || nStr.includes('p');
 	});
 	let roadmapArrayOfArrays: NodeP[][] = [];
-	let lastSliceIndex = 0;
+	let h2Indexes: number[] = [];
 	filteredRoadmap.forEach((item, index) => {
-		if (index !== 0 && (item.toString().includes('h2') || index === filteredRoadmap.length - 1)) {
-			roadmapArrayOfArrays.push(filteredRoadmap.slice(lastSliceIndex, index));
-			lastSliceIndex = index;
+		if (item.toString().includes('h2')) {
+			h2Indexes.push(index);
 		}
 	});
 
-	roadmap = roadmapArrayOfArrays.map((nArray: unknown[]) => {
-		let nArrayHTML = nArray as HTMLElementP[];
-		let title = nArrayHTML.filter((n) => n.rawTagName === 'h2')[0].text;
-		let entryTitles = nArrayHTML.filter((n) => n.rawTagName === 'h3').map((n) => n.text);
-		let entryBodies = nArrayHTML.filter((n) => n.rawTagName === 'p').map((n) => n.innerHTML);
-		return { title, entries: entryTitles.map((t, i) => ({ title: t, body: entryBodies[i] })) };
-	});
+	for (let i = 0; i < h2Indexes.length; i++) {
+		let startIndex = h2Indexes[i];
+		let endIndex = h2Indexes[i + 1];
+		roadmapArrayOfArrays.push(filteredRoadmap.slice(startIndex, endIndex));
+	}
+
+	roadmap = roadmapArrayOfArrays
+		.map((nArray: unknown[]) => {
+			let nArrayHTML = nArray as HTMLElementP[];
+			let title = nArrayHTML.filter((n) => n.rawTagName === 'h2')[0].text;
+			let entryTitles = nArrayHTML.filter((n) => n.rawTagName === 'h3').map((n) => n.text);
+			let entryBodies = nArrayHTML.filter((n) => n.rawTagName === 'p').map((n) => n.innerHTML);
+			return { title, entries: entryTitles.map((t, i) => ({ title: t, body: entryBodies[i] })) };
+		})
+		.sort((a, b) => b.title.localeCompare(a.title));
 
 	return {
 		status: 200,

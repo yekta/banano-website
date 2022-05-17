@@ -1,102 +1,48 @@
-## 2021
-
-### January
-
-Banano Worldwide Event ended. Banano Trading League Round 4 announced.
+## 2018
 
 ### February
 
-Airdrop to Nano holders. Banano Musical Production.
+Banano idea is born.
 
 ### March
 
-10k+ members on Reddit, 1k+ subscribers on YouTube. New Banano Reddit TipBot.
+First feasibility studies, testnet.
 
 ### April
 
-Banano’s 3rd birthday! 973M BAN burned! Listed on CoinEx with 2M BAN airdrop. 2k+ subscribers on YouTube.
+Mainnet, tipbots and Banano runner launch. Nano airdrop.
 
 ### May
 
-Wrapped Banano (wBAN) introduced. r/Banano on Reddit front page. Ranked #1 on Folding@Home.
+Network explorer launched. MonKey beta released.
 
 ### June
 
-wBAN on BSC & ApeSwap. Endorsement from Dogecoin creator. JungleTV launched.
+Monkey Match faucet launch.
 
 ### July
 
-Discord community calls begin. YellowSpyglass explorer launched.
+First Banano casino launch.
 
 ### August
 
-wBAN PoolTogether prize pool launched.
+Launch of Kalium Wallet. MonKey released.
 
 ### September
 
-Live-streaming comes to r/Banano. wBAN launched on Polygon.
+Mercatox listing, Banano added to Delta and Blockfolio.
 
 ### October
 
-NFT airdrop to early wBAN adopters.
+Blocktoberfest.
 
 ### November
 
-r/Banano reached 30k members. Banano Walker faucet launched.
+Dogecoin airdrop and beginning of Camo.
 
 ### December
 
-6 month wBAN anniversary event.
-
-## 2020
-
-### January
-
-Listed on Vite.net. Included on CoinMarketCap. 5M BAN airdrop on Vite. 3 rounds of Black Monkey.
-
-### February
-
-Airdrop on Publish0x and Uptrennd. BAN in circulation exceeded 1 billion!
-
-### March
-
-3 rounds of Black Monkey. Won 5th community vote.
-
-### April
-
-Banano’s 2nd birthday! Burned 191M BAN. New version of BoomPow.
-
-### May
-
-CAMO Banano wallet released. 3 rounds of Black Monkey faucet.
-
-### June
-
-Won the Blockchain Awards for “Best Community”. 3M BAN airdrop on Vite.
-
-### July
-
-Banano World Event. Banano Trading League launched.
-
-### August
-
-Airdrop for LBRY and Publish0x. Included on Tip.cc. Story2Image launched.
-
-### September
-
-MonKey v2 launched. Story2Image round 2. CryptoMonkeys NFTs launched.
-
-### October
-
-Airdrop on Vite. Halloween MonKey and emoji contests.
-
-### November
-
-Banano Worldwide Event & Chess Tournament.
-
-### December
-
-Christmas gifts. Banano + NFT airdrops to Reddit, Publish0x, and LBRY.
+Launch of the Memefaucet and Xmas Calendar.
 
 ## 2019
 
@@ -148,48 +94,102 @@ Listing on Unnamed.Exchange & CryptocurrencyCheckout.
 
 Pippin developer wallet release and Camo Wallet alpha.
 
-## 2018
+## 2020
+
+### January
+
+Listed on Vite.net. Included on CoinMarketCap. 5M BAN airdrop on Vite. 3 rounds of Black Monkey.
 
 ### February
 
-Banano idea is born.
+Airdrop on Publish0x and Uptrennd. BAN in circulation exceeded 1 billion!
 
 ### March
 
-First feasibility studies, testnet.
+3 rounds of Black Monkey. Won 5th community vote.
 
 ### April
 
-Mainnet, tipbots and Banano runner launch. Nano airdrop.
+Banano’s 2nd birthday! Burned 191M BAN. New version of BoomPow.
 
 ### May
 
-Network explorer launched. MonKey beta released.
+CAMO Banano wallet released. 3 rounds of Black Monkey faucet.
 
 ### June
 
-Monkey Match faucet launch.
+Won the Blockchain Awards for “Best Community”. 3M BAN airdrop on Vite.
 
 ### July
 
-First Banano casino launch.
+Banano World Event. Banano Trading League launched.
 
 ### August
 
-Launch of Kalium Wallet. MonKey released.
+Airdrop for LBRY and Publish0x. Included on Tip.cc. Story2Image launched.
 
 ### September
 
-Mercatox listing, Banano added to Delta and Blockfolio.
+MonKey v2 launched. Story2Image round 2. CryptoMonkeys NFTs launched.
 
 ### October
 
-Blocktoberfest.
+Airdrop on Vite. Halloween MonKey and emoji contests.
 
 ### November
 
-Dogecoin airdrop and beginning of Camo.
+Banano Worldwide Event & Chess Tournament.
 
 ### December
 
-Launch of the Memefaucet and Xmas Calendar.
+Christmas gifts. Banano + NFT airdrops to Reddit, Publish0x, and LBRY.
+
+## 2021
+
+### January
+
+Banano Worldwide Event ended. Banano Trading League Round 4 announced.
+
+### February
+
+Airdrop to Nano holders. Banano Musical Production.
+
+### March
+
+10k+ members on Reddit, 1k+ subscribers on YouTube. New Banano Reddit TipBot.
+
+### April
+
+Banano’s 3rd birthday! 973M BAN burned! Listed on CoinEx with 2M BAN airdrop. 2k+ subscribers on YouTube.
+
+### May
+
+Wrapped Banano (wBAN) introduced. r/Banano on Reddit front page. Ranked #1 on Folding@Home.
+
+### June
+
+wBAN on BSC & ApeSwap. Endorsement from Dogecoin creator. JungleTV launched.
+
+### July
+
+Discord community calls begin. YellowSpyglass explorer launched.
+
+### August
+
+wBAN PoolTogether prize pool launched.
+
+### September
+
+Live-streaming comes to r/Banano. wBAN launched on Polygon.
+
+### October
+
+NFT airdrop to early wBAN adopters.
+
+### November
+
+r/Banano reached 30k members. Banano Walker faucet launched.
+
+### December
+
+6 month wBAN anniversary event.

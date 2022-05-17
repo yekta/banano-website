@@ -15,6 +15,7 @@
 	import type { IAnnouncement } from '$lib/ts/interfaces/IAnnouncement';
 	import type { IRoadmapItem } from '$lib/ts/interfaces/IRoadmapItem';
 	import Announcements from '$lib/components/sections/Announcements.svelte';
+	import Roadmap from '$lib/components/sections/Roadmap.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
@@ -34,6 +35,7 @@
 	<CommunityProjects {communityProjects} />
 	<FAQ {faq} />
 	<Explorer />
+	<Roadmap {roadmap} />
 	<Announcements announcements={announcements.slice(0, 6)} />
 	<JoinUs />
 </div>
