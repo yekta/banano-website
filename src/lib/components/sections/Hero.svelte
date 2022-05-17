@@ -15,16 +15,16 @@
 			<Button onClick={() => {}} class="mt-6">Get Banano</Button>
 		</div>
 		<div class="w-full absolute bottom-0 left-0 overflow-hidden">
-			<div class="w-[105%] h-64 wave bg-left-top bg-cover" />
+			<div class="wave first-line:w-[105%] h-64 bg-left-top bg-cover" />
 		</div>
 	</div>
 </div>
 
 <style>
 	.hero {
-		background-image: url('illustrations/backgrounds/bg-hero.svg');
+		background-image: url('/illustrations/backgrounds/bg-hero.svg');
 	}
 	.wave {
-		background-image: url('illustrations/backgrounds/bg-wave-top.svg');
+		background-image: url('/illustrations/backgrounds/bg-wave-top.svg');
 	}
 </style>
