@@ -36,7 +36,7 @@ body {
 	--c-primary: 251 221 17;
 	--c-secondary: 76 191 75;
 	--c-bg: 255 255 255;
-	--c-bg-secondary: 245 245 245;
+	--c-bg-secondary: 240 240 245;
 	--c-on-bg: 33 33 36;
 	--c-discord: 105 118 191;
 	--c-reddit: 255 69 0;
@@ -48,7 +48,7 @@ body {
 	--c-primary-shaded: 231 201 0;
 	--c-secondary-shaded: 56 171 46;
 	--c-bg-shaded: 235 235 235;
-	--c-bg-secondary-shaded: 235 235 235;
+	--c-bg-secondary-shaded: 230 230 235;
 	--c-on-bg-shaded: 13 13 16;
 	--c-discord-shaded: 85 98 171;
 	--c-reddit-shaded: 235 49 0;

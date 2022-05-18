@@ -33,14 +33,14 @@
 			<div
 				bind:this={scrollWindow}
 				on:scroll={onScroll}
-				class="w-full overflow-auto h-[65vh] min-h-[20rem] max-h-[40rem]"
+				class="w-full overflow-auto h-[65vh] min-h-[20rem] max-h-[50rem]"
 			>
-				<div class="w-full flex flex-wrap justify-center items-stretch mt-4 pb-8 md:px-2">
+				<div class="w-full flex flex-wrap justify-center items-stretch mt-4 md:pt-2 pb-8 md:px-5">
 					{#each announcements as announcement}
 						<div class="w-full flex items-stretch md:w-1/2 lg:w-1/3 p-2">
 							<div
 								class="flex flex-col items-start w-full px-5 py-4 md:px-6 md:py-5 
-								bg-c-secondary/3 border border-c-secondary/20 rounded-xl"
+								bg-c-secondary/8 border border-c-secondary/20 rounded-xl"
 							>
 								<h3 class="text-lg font-bold">{announcement.title}</h3>
 								<p

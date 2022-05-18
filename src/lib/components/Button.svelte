@@ -12,25 +12,25 @@
 	function getBgAndTextClass() {
 		switch (type) {
 			case 'primary':
-				return 'bg-c-primary text-c-on-bg shadow-c-primary-shaded hover:shadow-c-primary-shaded';
+				return 'bg-c-primary text-c-on-bg shadow-c-primary-shaded hover:shadow-c-primary-shaded hover:brightness-108';
 			case 'secondary':
-				return 'bg-c-secondary text-c-bg shadow-c-secondary-shaded hover:shadow-c-secondary-shaded';
+				return 'bg-c-secondary text-c-bg shadow-c-secondary-shaded hover:shadow-c-secondary-shaded hover:brightness-110';
 			case 'bg':
-				return 'bg-c-bg-secondary text-c-on-bg shadow-c-bg-secondary-shaded hover:shadow-c-bg-secondary-shaded';
+				return 'bg-c-bg-secondary text-c-on-bg shadow-c-bg-secondary-shaded hover:shadow-c-bg-secondary-shaded hover:brightness-95';
 			case 'discord':
-				return 'bg-c-discord text-c-bg shadow-c-discord-shaded hover:shadow-c-discord-shaded';
+				return 'bg-c-discord text-c-bg shadow-c-discord-shaded hover:shadow-c-discord-shaded hover:brightness-115';
 			case 'reddit':
-				return 'bg-c-reddit text-c-bg shadow-c-reddit-shaded hover:shadow-c-reddit-shaded';
+				return 'bg-c-reddit text-c-bg shadow-c-reddit-shaded hover:shadow-c-reddit-shaded hover:brightness-110';
 			case 'twitter':
-				return 'bg-c-twitter text-c-bg shadow-c-twitter-shaded hover:shadow-c-twitter-shaded';
+				return 'bg-c-twitter text-c-bg shadow-c-twitter-shaded hover:shadow-c-twitter-shaded hover:brightness-110';
 			case 'instagram':
-				return 'bg-c-instagram text-c-bg shadow-c-instagram-shaded hover:shadow-c-instagram-shaded';
+				return 'bg-c-instagram text-c-bg shadow-c-instagram-shaded hover:shadow-c-instagram-shaded hover:brightness-110';
 			case 'telegram':
-				return 'bg-c-telegram text-c-bg shadow-c-telegram-shaded hover:shadow-c-telegram-shaded';
+				return 'bg-c-telegram text-c-bg shadow-c-telegram-shaded hover:shadow-c-telegram-shaded hover:brightness-110';
 			case 'facebook':
-				return 'bg-c-facebook text-c-bg shadow-c-facebook-shaded hover:shadow-c-facebook-shaded';
+				return 'bg-c-facebook text-c-bg shadow-c-facebook-shaded hover:shadow-c-facebook-shaded hover:brightness-120';
 			default:
-				return 'bg-c-primary text-c-on-bg shadow-c-primary-shaded hover:shadow-c-primary-shaded';
+				return 'bg-c-primary text-c-on-bg shadow-c-primary-shaded hover:shadow-c-primary-shaded hover:brightness-110';
 		}
 	}
 </script>
@@ -41,7 +41,8 @@
 		target={targetBlank ? '_blank' : null}
 		class="flex flex-row items-center {isLeft
 			? 'justify-start'
-			: 'justify-center'} relative px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover transition-all hover:-translate-y-0.5 {getBgAndTextClass()} {classes}"
+			: 'justify-center'} relative px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover 
+			transition-all hover:-translate-y-0.5 filter {getBgAndTextClass()} {classes}"
 	>
 		<slot />
 	</a>
@@ -50,7 +51,8 @@
 		on:click={onClick}
 		class="flex flex-row items-center {isLeft
 			? 'justify-start'
-			: 'justify-center'} relative px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover transition-all hover:-translate-y-1 {getBgAndTextClass()} {classes}"
+			: 'justify-center'} relative px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover 
+			transition-all hover:-translate-y-0.5 filter {getBgAndTextClass()} {classes}"
 	>
 		<slot />
 	</button>
