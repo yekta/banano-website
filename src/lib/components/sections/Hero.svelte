@@ -17,8 +17,8 @@
 <div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
 	<div class="w-full relative flex justify-center">
 		<div
-			class="w-full hero bg-c-secondary h-[550px] md:h-[700px] bg-cover flex flex-row
-			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:50%_100%] xl:bg-[position:50%_100%]"
+			class="w-full hero bg-c-secondary h-[550px] md:h-[720px] bg-cover flex flex-row
+			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
 		>
 			<div class="w-full h-full absolute left-0 top-0">
 				<svelte:component
@@ -29,7 +29,7 @@
 				/>
 			</div>
 			<div
-				class="container-b max-w-full flex flex-col items-center self-center pb-8 md:pb-12 relative z-10"
+				class="container-b max-w-full flex flex-col items-center self-center pb-10 md:pb-12 relative z-10"
 			>
 				<h1 class="w-220 max-w-full text-2xl font-bold text-c-bg leading-relaxed px-6 md:px-12">
 					Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology
@@ -38,8 +38,10 @@
 				<Button href="/#faucets" class="mt-6 px-12 md:px-16">Get Banano</Button>
 			</div>
 		</div>
-		<div class="w-full absolute -bottom-48 left-0 overflow-hidden">
-			<div class="wave w-[103%] h-64 bg-left-top bg-cover" />
+		<div class="w-full absolute bottom-0 left-0 overflow-hidden">
+			<div
+				class="wave h-64 bg-[position:0%_100%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:150%] xl:bg-contain bg-no-repeat"
+			/>
 		</div>
 	</div>
 </div>
@@ -49,6 +51,6 @@
 		background-image: url('/illustrations/backgrounds/bg-hero.svg');
 	}
 	.wave {
-		background-image: url('/illustrations/backgrounds/bg-wave-top.svg');
+		background-image: url('/illustrations/backgrounds/bg-wave-bottom.svg');
 	}
 </style>
