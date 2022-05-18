@@ -33,7 +33,7 @@
 							>{singleFaq.question}</Button
 						>
 						{#if singleFaq.isOpen}
-							<div class="px-6 md:px-8 py-5  markdown">{@html singleFaq.answer}</div>
+							<div class="px-6 md:px-8 py-5 markdown">{@html singleFaq.answer}</div>
 						{/if}
 					</div>
 				</div>

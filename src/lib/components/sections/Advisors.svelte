@@ -47,7 +47,7 @@
 						src="/illustrations/advisors/advisor-{advisor.img}.{imgExtention}"
 						alt={advisor.name}
 					/>
-					<h5 class="font-bold mt-3">{advisor.name.toUpperCase()}</h5>
+					<h3 class="font-bold mt-3">{advisor.name.toUpperCase()}</h3>
 					<p class="mt-1">{advisor.description}</p>
 				</div>
 			{/each}

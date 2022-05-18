@@ -25,7 +25,7 @@
 	export let roadmap: IRoadmapItem[];
 </script>
 
-<div class="w-full min-h-screen flex flex-col justify-start items-center pb-64">
+<div class="w-full min-h-screen flex flex-col justify-start items-center pb-64 bg-c-bg">
 	<Hero />
 	<KeyFeatures />
 	<Wallets />

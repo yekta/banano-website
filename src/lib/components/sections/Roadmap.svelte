@@ -38,11 +38,11 @@
 							class="w-full p-2 md:p-4 flex flex-col relative {index !== 0 ? 'mt-6 md:mt-3' : ''}"
 						>
 							<div class="w-full flex flex-row justify-start px-2 py-1 -ml-6">
-								<h5
+								<h3
 									class="text-xl font-bold bg-c-secondary pl-12 pr-14 py-2 rounded-r-3xl text-c-bg"
 								>
 									{item.title}
-								</h5>
+								</h3>
 							</div>
 							<div class="flex flex-row flex-wrap items-stretch mt-1">
 								{#each item.entries as entry}
