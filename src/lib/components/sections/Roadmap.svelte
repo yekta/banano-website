@@ -32,7 +32,7 @@
 				class="w-full flex flex-wrap justify-center overflow-x-hidden overflow-y-auto 
         h-[65vh] min-h-[20rem] max-h-[50rem] relative"
 			>
-				<div class="w-full flex flex-col pb-12">
+				<div class="w-full flex flex-col pb-8">
 					{#each roadmap as item, index}
 						<div
 							class="w-full p-2 md:p-4 flex flex-col relative {index !== 0 ? 'mt-6 md:mt-3' : ''}"

@@ -17,7 +17,8 @@
 				You have a banano address or a hash that you want to search? Or you just like creeping on
 				people? Go ahead, try our network explorer (creeper) below or visit <a
 					href="https://creeper.banano.cc"
-					target="_blank">creeper.banano.cc</a
+					target="_blank"
+					class="hover:underline font-bold">creeper.banano.cc</a
 				>.
 			</p>
 			<form
@@ -26,8 +27,9 @@
 				text-left"
 			>
 				<label for="explorer-input" class="w-full max-w-sm md:max-w-full flex flex-col md:pr-4">
-					<p class="px-3 text-lg">Enter a Banano address or block hash below to search.</p>
+					<p class="px-3 text-lg font-bold">Enter an address or block hash:</p>
 					<input
+						placeholder="Address or a block hash"
 						id="explorer-input"
 						bind:value={inputExplorer}
 						type="text"

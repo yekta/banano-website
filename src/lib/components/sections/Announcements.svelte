@@ -44,7 +44,7 @@
 							>
 								<h3 class="text-lg font-bold">{announcement.title}</h3>
 								<p
-									class="font-medium text-sm mt-1.5 text-c-on-bg/75 bg-c-on-bg/8 pl-3 pr-3.5 py-1 rounded-l rounded-r-2xl"
+									class="font-medium text-sm mt-2 text-c-on-bg/75 bg-c-on-bg/8 pl-3 pr-3.5 py-1 rounded-l rounded-r-2xl"
 								>
 									{dateFormatter(new Date(announcement.date))}
 								</p>
