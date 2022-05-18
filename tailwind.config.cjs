@@ -72,6 +72,8 @@ module.exports = {
 				'button-hover': '0rem 0.625rem 0rem 0rem'
 			},
 			opacity: {
+				3: '0.03',
+				4: '0.04',
 				6: '0.06',
 				8: '0.08',
 				15: '0.15'
