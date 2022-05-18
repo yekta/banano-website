@@ -15,7 +15,7 @@
 </script>
 
 <div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
-	<div class="w-full relative flex justify-center">
+	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
 			class="w-full hero bg-c-secondary h-[550px] md:h-[720px] bg-cover flex flex-row
 			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
@@ -38,9 +38,9 @@
 				<Button href="/#faucets" class="mt-6 px-12 md:px-16">Get Banano</Button>
 			</div>
 		</div>
-		<div class="w-full absolute bottom-0 left-0 overflow-hidden">
+		<div class="w-[110%] -ml-[5%] absolute bottom-0 left-0 overflow-hidden flex justify-center">
 			<div
-				class="wave h-64 bg-[position:0%_100%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:150%] xl:bg-contain bg-no-repeat"
+				class="w-full wave h-64 bg-[position:0%_100%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:150%] xl:bg-contain bg-no-repeat"
 			/>
 		</div>
 	</div>
