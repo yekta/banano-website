@@ -35,7 +35,7 @@
 					Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology
 					disrupting the meme economy.
 				</h1>
-				<Button href="/#faucets" class="mt-6 px-12 md:px-16">Get Banano</Button>
+				<Button href="/#faucets" padding="px-12 md:px-16 py-3" class="mt-6">Get Banano</Button>
 			</div>
 		</div>
 		<div class="w-[110%] -ml-[5%] absolute bottom-0 left-0 overflow-hidden flex justify-center">

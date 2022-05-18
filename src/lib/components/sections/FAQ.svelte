@@ -29,8 +29,8 @@
 							type="bg"
 							isLeft={true}
 							onClick={() => toggle(index)}
-							class="w-full text-left font-bold text-base px-6 py-4 md:px-8"
-							>{singleFaq.question}</Button
+							padding="px-6 py-4 md:px-8"
+							class="w-full text-left font-bold text-base">{singleFaq.question}</Button
 						>
 						{#if singleFaq.isOpen}
 							<div class="px-6 md:px-8 py-5 markdown">{@html singleFaq.answer}</div>

@@ -6,6 +6,7 @@
 	export let href: string | undefined = undefined;
 	export let targetBlank = false;
 	export let isLeft = false;
+	export let padding = 'px-8 py-3';
 	export { classes as class };
 	let classes = '';
 
@@ -41,7 +42,7 @@
 		target={targetBlank ? '_blank' : null}
 		class="flex flex-row items-center {isLeft
 			? 'justify-start'
-			: 'justify-center'} relative px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover 
+			: 'justify-center'} {padding} relative font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover 
 			transition-all hover:-translate-y-0.5 filter {getBgAndTextClass()} {classes}"
 	>
 		<slot />
@@ -51,7 +52,7 @@
 		on:click={onClick}
 		class="flex flex-row items-center {isLeft
 			? 'justify-start'
-			: 'justify-center'} relative px-8 py-3 font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover 
+			: 'justify-center'} {padding} relative font-bold text-lg rounded-lg shadow-button hover:shadow-button-hover 
 			transition-all hover:-translate-y-0.5 filter {getBgAndTextClass()} {classes}"
 	>
 		<slot />
