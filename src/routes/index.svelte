@@ -36,6 +36,6 @@
 	<FAQ {faq} />
 	<Explorer />
 	<Roadmap {roadmap} />
-	<Announcements announcements={announcements.slice(0, 6)} />
+	<Announcements {announcements} />
 	<JoinUs />
 </div>

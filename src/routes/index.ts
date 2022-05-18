@@ -70,6 +70,7 @@ export const get: RequestHandler = async (event) => {
 	}));
 
 	// Announcements
+	const announcementCount = 18;
 	let titleAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('h3').map((n) => n.text);
 	let dateAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('h4').map((n) => n.text);
 	let bodyAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('p').map((n) => n.innerHTML);
@@ -79,7 +80,7 @@ export const get: RequestHandler = async (event) => {
 			date: new Date(dateAnnouncements[i]),
 			body: bodyAnnouncements[i]
 		}))
-		.slice(0, 12);
+		.slice(0, announcementCount);
 
 	// Roadmap
 	let filteredRoadmap: NodeP[] = parsedHtmlRoadmap.childNodes.filter((n) => {
