@@ -22,7 +22,7 @@
 >
 	<button on:click={onIndicatorClick} class="py-2 px-4 min-h-full group pointer-events-auto">
 		<IconChevron
-			class="w-12 h-12 animate-bounce text-c-secondary transition-all group-hover:brightness-115"
+			class="w-12 h-12 animate-bounce text-c-secondary transition-all group-hover:brightness-80"
 		/>
 	</button>
 </div>
