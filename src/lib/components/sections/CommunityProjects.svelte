@@ -11,7 +11,7 @@
 >
 	<div class="container-b flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold px-4">Community Projects</h2>
-		<p class="mt-2 text-xl">
+		<p class="mt-3 text-xl">
 			Here are some of the projects that are made by our awesome community:
 		</p>
 		<div class="w-full flex flex-wrap justify-center items-end mt-2 md:mt-6">

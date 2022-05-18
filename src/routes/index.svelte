@@ -20,6 +20,7 @@
 	import type { IRoadmapItem } from '$lib/ts/interfaces/IRoadmapItem';
 	import Announcements from '$lib/components/sections/Announcements.svelte';
 	import Roadmap from '$lib/components/sections/Roadmap.svelte';
+	import Monkey from '$lib/components/sections/Monkey.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
@@ -39,6 +40,7 @@
 	<CommunityProjects {communityProjects} />
 	<FAQ {faq} />
 	<Explorer />
+	<Monkey />
 	<Roadmap {roadmap} />
 	<Announcements {announcements} />
 	<JoinUs />
