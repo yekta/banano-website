@@ -1,8 +1,6 @@
 <script lang="ts">
 	import type { IRoadmapItem } from '$lib/ts/interfaces/IRoadmapItem';
-	import { fly } from 'svelte/transition';
-	import { quadOut } from 'svelte/easing';
-	import IconChevron from '../icons/IconChevron.svelte';
+	import MoreIndicator from '../MoreIndicator.svelte';
 
 	export let roadmap: IRoadmapItem[];
 
@@ -63,15 +61,7 @@
 				</div>
 			</div>
 			{#if isIndicatorVisible}
-				<div
-					transition:fly|local={{ duration: 200, easing: quadOut, y: 50 }}
-					class="w-full flex flex-col justify-end items-center absolute bottom-0 left-0 z-10 
-          bg-gradient-to-t from-c-bg to-c-bg/0 rounded-b-xl pointer-events-none"
-				>
-					<div class="p-2 text-c-secondary animate-bounce">
-						<IconChevron class="w-12 h-12" />
-					</div>
-				</div>
+				<MoreIndicator {scrollWindow} />
 			{/if}
 		</div>
 	</div>

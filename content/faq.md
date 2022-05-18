@@ -1,6 +1,6 @@
 ### What is Banano?
 
-Banano is a 4th generation fungible & edible cryptocurrency with a cool yellow logo and particles.js background. Our team is top-notch and the project advisors are by a moonshot best in the business.
+Banano is a 4th generation fungible & edible cryptocurrency with a cool yellow logo. Our team is top-notch and the project advisors are by a moonshot best in the business.
 
 ### Is this real life or just a fantasy?
 
