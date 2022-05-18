@@ -44,7 +44,7 @@
 									{item.title}
 								</h3>
 							</div>
-							<div class="flex flex-row flex-wrap items-stretch mt-1">
+							<div class="flex flex-row flex-wrap items-stretch mt-1 md:mt-2">
 								{#each item.entries as entry}
 									<div class="w-full md:w-1/2 lg:w-1/4 p-2 flex items-stretch">
 										<div
