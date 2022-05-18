@@ -1,3 +1,7 @@
+<script context="module" lang="ts">
+	export const prerender = true;
+</script>
+
 <script lang="ts">
 	import Advisors from '$lib/components/sections/Advisors.svelte';
 	import CommunityProjects from '$lib/components/sections/CommunityProjects.svelte';
