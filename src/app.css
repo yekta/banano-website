@@ -28,8 +28,6 @@
 
 body {
 	font-family: 'now-alt', system-ui, sans-serif;
-	color: rgb(var(--c-on-bg));
-	background-color: rgb(var(--c-secondary));
 }
 
 :root {
