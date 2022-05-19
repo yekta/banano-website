@@ -27,13 +27,13 @@
 				text-left"
 			>
 				<label for="explorer-input" class="w-full max-w-sm md:max-w-full flex flex-col md:pr-4">
-					<p class="px-3 text-lg font-bold">Enter an address or block hash:</p>
+					<p class="px-3 text-lg font-bold">Address or Block Hash</p>
 					<input
 						placeholder="Address or block hash"
 						id="explorer-input"
 						bind:value={inputExplorer}
 						type="text"
-						class="text-c-on-bg w-full px-4 py-4.5 mt-3 rounded-lg"
+						class="text-c-on-bg w-full px-4 py-4.5 mt-2 rounded-lg"
 					/>
 				</label>
 				<Button padding="px-8 md:px-12 py-3.5" class="w-full md:w-auto max-w-sm mt-3 mb-1.5">

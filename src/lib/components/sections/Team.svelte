@@ -15,14 +15,16 @@
 <div id="team" class="w-full bg-c-bg flex justify-center py-16 text-center">
 	<div class="container-b flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold px-4">Meet the Overworked Team</h2>
-		<div class="container-b-small flex flex-wrap justify-center mt-5">
+		<div class="container-b-small flex flex-wrap justify-center mt-4">
 			{#each teamShuffled as teamMember, index}
-				<div class="w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center p-4">
-					<img
-						class="w-full h-auto max-w-[13rem]"
-						src="/illustrations/dancing-banana/dancing-banana-{index % dancingBananaCount}.svg"
-						alt={teamMember.nickname}
-					/>
+				<div class="w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center p-4 mt-2">
+					<div class="w-full h-auto max-w-[13rem] px-3">
+						<img
+							class="w-full h-auto"
+							src="/illustrations/dancing-banana/dancing-banana-{index % dancingBananaCount}.svg"
+							alt={teamMember.nickname}
+						/>
+					</div>
 					<h3 class="font-bold mt-3">{teamMember.nickname.toUpperCase()}</h3>
 					<p class="mt-1">{teamMember.description}</p>
 				</div>
