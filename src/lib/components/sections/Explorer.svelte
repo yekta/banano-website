@@ -13,7 +13,7 @@
 	<div class="bg-creeper bg-c-secondary flex justify-center pt-16 pb-20 text-center text-c-bg">
 		<div class="container-b flex flex-col items-center px-4 md:px-8">
 			<h2 class="text-3xl font-bold px-4">Explorer</h2>
-			<p class="mt-2 container-b-small text-xl">
+			<p class="mt-3 container-b-small text-xl">
 				You have a banano address or a hash that you want to search? Or you just like creeping on
 				people? Go ahead, try our network explorer (creeper) below or visit <a
 					href="https://creeper.banano.cc"
@@ -27,16 +27,19 @@
 				text-left"
 			>
 				<label for="explorer-input" class="w-full max-w-sm md:max-w-full flex flex-col md:pr-4">
-					<p class="px-3 text-lg font-bold">Enter an address or block hash:</p>
+					<p class="px-3 text-lg font-bold">Address or Block Hash</p>
 					<input
-						placeholder="Address or block hash"
+						placeholder="Enter an address or a block hash"
 						id="explorer-input"
 						bind:value={inputExplorer}
 						type="text"
-						class="text-c-on-bg w-full px-4 py-4.5 mt-3 rounded-lg"
+						class="w-full text-c-on-bg px-4 py-4.5 mt-2 rounded-xl font-medium placeholder-c-on-bg/50
+						border-[3px] border-transparent hover:border-c-on-bg/20 focus:border-c-primary transition"
 					/>
 				</label>
-				<Button class="w-full md:w-auto max-w-sm px-8 md:px-12 mt-3 mb-1.5">Search</Button>
+				<Button padding="px-8 md:px-12 py-4" class="w-full md:w-auto max-w-sm mt-3 mb-1.5">
+					Search
+				</Button>
 			</form>
 		</div>
 	</div>

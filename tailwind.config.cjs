@@ -30,6 +30,7 @@ module.exports = {
 				'c-bg': withOpacityValue('--c-bg'),
 				'c-bg-secondary': withOpacityValue('--c-bg-secondary'),
 				'c-on-bg': withOpacityValue('--c-on-bg'),
+				'c-danger': withOpacityValue('--c-danger'),
 				'c-discord': withOpacityValue('--c-discord'),
 				'c-reddit': withOpacityValue('--c-reddit'),
 				'c-twitter': withOpacityValue('--c-twitter'),
@@ -54,6 +55,7 @@ module.exports = {
 				4.5: '1.125rem',
 				5.5: '1.375rem',
 				6.5: '1.625rem',
+				18: '4.5rem',
 				22: '5.5rem',
 				128: '32rem',
 				140: '35rem',
@@ -76,6 +78,7 @@ module.exports = {
 				4: '0.04',
 				6: '0.06',
 				8: '0.08',
+				13: '0.13',
 				15: '0.15'
 			},
 			brightness: {

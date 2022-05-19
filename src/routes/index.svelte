@@ -1,3 +1,7 @@
+<script context="module" lang="ts">
+	export const prerender = true;
+</script>
+
 <script lang="ts">
 	import Advisors from '$lib/components/sections/Advisors.svelte';
 	import CommunityProjects from '$lib/components/sections/CommunityProjects.svelte';
@@ -17,6 +21,7 @@
 	import Announcements from '$lib/components/sections/Announcements.svelte';
 	import Roadmap from '$lib/components/sections/Roadmap.svelte';
 	import WrappedBanano from '$lib/components/sections/WrappedBanano.svelte';
+	import Monkey from '$lib/components/sections/Monkey.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
@@ -30,13 +35,14 @@
 	<Hero />
 	<KeyFeatures />
 	<Wallets />
+	<Explorer />
+	<Monkey />
 	<WrappedBanano />
 	<Team {team} />
 	<Testimonials {testimonials} />
 	<Advisors />
 	<CommunityProjects {communityProjects} />
 	<FAQ {faq} />
-	<Explorer />
 	<Roadmap {roadmap} />
 	<Announcements {announcements} />
 	<JoinUs />

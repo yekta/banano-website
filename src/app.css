@@ -28,16 +28,15 @@
 
 body {
 	font-family: 'now-alt', system-ui, sans-serif;
-	color: rgb(var(--c-on-bg));
-	background-color: rgb(var(--c-secondary));
 }
 
 :root {
 	--c-primary: 251 221 17;
-	--c-secondary: 76 191 75;
+	--c-secondary: 61 176 60;
 	--c-bg: 255 255 255;
 	--c-bg-secondary: 240 240 245;
 	--c-on-bg: 33 33 36;
+	--c-danger: 255 80 80;
 	--c-discord: 105 118 191;
 	--c-reddit: 255 69 0;
 	--c-twitter: 0 172 237;
@@ -46,7 +45,7 @@ body {
 	--c-facebook: 59 89 152;
 
 	--c-primary-shaded: 231 201 0;
-	--c-secondary-shaded: 56 171 46;
+	--c-secondary-shaded: 41 156 31;
 	--c-bg-shaded: 235 235 235;
 	--c-bg-secondary-shaded: 230 230 235;
 	--c-on-bg-shaded: 13 13 16;
@@ -97,6 +96,21 @@ body {
 	padding: 0;
 	top: 0;
 	left: 0;
+}
+
+.square {
+	position: relative;
+	width: 100%;
+}
+
+.square:after {
+	content: '';
+	display: block;
+	padding-bottom: 100%;
+}
+
+input:focus {
+	outline: none;
 }
 
 @tailwind utilities;

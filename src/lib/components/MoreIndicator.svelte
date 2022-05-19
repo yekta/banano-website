@@ -5,9 +5,11 @@
 
 	export let scrollWindow: HTMLElement;
 
+	const scrollAmount = 400;
+
 	function onIndicatorClick(e: Event) {
 		let maxScroll = scrollWindow.scrollHeight - scrollWindow.clientHeight;
-		let scrollTo = Math.min(scrollWindow.scrollTop + 500, maxScroll);
+		let scrollTo = Math.min(scrollWindow.scrollTop + scrollAmount, maxScroll);
 		scrollWindow.scrollTo({
 			top: scrollTo,
 			behavior: 'smooth'
@@ -21,8 +23,9 @@
 	bg-gradient-to-t from-c-bg to-c-bg/0 rounded-b-xl pointer-events-none"
 >
 	<button on:click={onIndicatorClick} class="py-2 px-4 min-h-full group pointer-events-auto">
+		<p class="w-0 h-0 overflow-hidden opacity-0 pointer-events-none">Click to see more</p>
 		<IconChevron
-			class="w-12 h-12 animate-bounce text-c-secondary transition-all group-hover:brightness-80"
+			class="w-12 h-12 animate-bounce text-c-secondary transition-all group-hover:brightness-120"
 		/>
 	</button>
 </div>
