@@ -30,13 +30,11 @@
 		<div class="container-b-small max-w-full flex flex-row flex-wrap justify-center mt-5">
 			{#each keyFeatures as feature}
 				<div class="w-1/2 md:w-1/3 lg:w-1/4 max-w-[14rem] flex flex-col items-center p-4">
-					<div class="w-full px-2">
-						<img
-							class="w-full h-auto"
-							src="/illustrations/key-features/{feature.img}.{imgExtention}"
-							alt={feature.title}
-						/>
-					</div>
+					<img
+						class="w-full h-auto"
+						src="/illustrations/key-features/{feature.img}.{imgExtention}"
+						alt={feature.title}
+					/>
 					<p class="mt-3 w-full">{feature.title.toUpperCase()}</p>
 				</div>
 			{/each}

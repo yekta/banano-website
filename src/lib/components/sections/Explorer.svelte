@@ -33,7 +33,7 @@
 						id="explorer-input"
 						bind:value={inputExplorer}
 						type="text"
-						class="w-full text-c-on-bg px-4 py-4.5 mt-2 rounded-xl font-medium
+						class="w-full text-c-on-bg px-4 py-4.5 mt-2 rounded-xl font-medium placeholder-c-on-bg/50
 						border-[3px] border-transparent hover:border-c-on-bg/20 focus:border-c-primary transition"
 					/>
 				</label>

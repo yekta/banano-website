@@ -30,6 +30,7 @@ module.exports = {
 				'c-bg': withOpacityValue('--c-bg'),
 				'c-bg-secondary': withOpacityValue('--c-bg-secondary'),
 				'c-on-bg': withOpacityValue('--c-on-bg'),
+				'c-danger': withOpacityValue('--c-danger'),
 				'c-discord': withOpacityValue('--c-discord'),
 				'c-reddit': withOpacityValue('--c-reddit'),
 				'c-twitter': withOpacityValue('--c-twitter'),

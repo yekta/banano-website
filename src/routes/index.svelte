@@ -34,13 +34,13 @@
 	<Hero />
 	<KeyFeatures />
 	<Wallets />
+	<Explorer />
+	<Monkey />
 	<Team {team} />
 	<Testimonials {testimonials} />
 	<Advisors />
 	<CommunityProjects {communityProjects} />
 	<FAQ {faq} />
-	<Explorer />
-	<Monkey />
 	<Roadmap {roadmap} />
 	<Announcements {announcements} />
 	<JoinUs />
