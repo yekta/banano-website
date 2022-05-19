@@ -46,8 +46,11 @@
 			<div class="container-b-smallest max-w-full flex flex-row flex-wrap justify-center mt-10">
 				<img class="w-full" src="/illustrations/wban/wban-hero.svg" alt="wBAN Hero" />
 			</div>
-			<Button href="https://wrap.banano.cc/?ref=banano.cc" targetBlank={true} class="mt-10"
-				>Start Wrapping</Button
+			<Button
+				padding="py-3.5 px-8 md:px-14"
+				href="https://wrap.banano.cc/?ref=banano.cc"
+				targetBlank={true}
+				class="mt-10">Start Wrapping</Button
 			>
 		</div>
 		<div class="container-b-small mt-16 px-4 md:px-8">
