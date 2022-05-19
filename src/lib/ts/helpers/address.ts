@@ -1,8 +1,9 @@
-import { blake2bFinal, blake2bInit, blake2bUpdate } from 'blakejs';
-
+import blakejs from 'blakejs';
 import { nacl } from './nacl.js';
 
 const ALPHABET = '13456789abcdefghijkmnopqrstuwxyz';
+
+const { blake2bFinal, blake2bInit, blake2bUpdate } = blakejs;
 
 function getAddressFromPublic(accountPublicKeyBytes: any, prefix = 'ban') {
 	const accountHex = uint8ToHex(accountPublicKeyBytes);

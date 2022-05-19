@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Button from '../Button.svelte';
 	import MonKeyGenerator from '../MonKeyGenerator.svelte';
 
 	const monkeyArray = [0, 1, 2, 3];
