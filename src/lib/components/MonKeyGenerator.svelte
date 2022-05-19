@@ -12,10 +12,12 @@
 	} from '$lib/ts/transitions';
 	import Button from './Button.svelte';
 
+	type TMonkeyLoadState = 'idle' | 'loading' | 'loaded' | 'fullyReady' | 'error';
+
 	let inputValue: string;
 	let inputError = false;
 	let monkeySvg: string | undefined;
-	let monkeyLoadState: 'idle' | 'loading' | 'loaded' | 'fullyReady' | 'error' = 'idle';
+	let monkeyLoadState: TMonkeyLoadState = 'idle';
 
 	async function getMonkey(address: string) {
 		try {
@@ -64,13 +66,13 @@
 	}
 </script>
 
-<div class="w-[32rem] max-w-full p-6">
-	<div class="generator-container">
-		<div class="generator w-full h-full flex flex-col bg-c-bg absolute left-0 top-0">
+<div class="relative w-[32rem] max-w-full p-6">
+	<div class="relative monkey-generator-container w-full">
+		<div class="monkey-generator w-full h-full flex flex-col bg-c-bg absolute left-0 top-0">
 			<!-- MonKey loading animation -->
 			{#if monkeyLoadState === 'loading' || monkeyLoadState === 'loaded'}
 				<div
-					in:monkeyLoadingIn={{ delay: 150 }}
+					in:monkeyLoadingIn|local={{ delay: 150 }}
 					class="w-full h-full flex flex-row justify-center items-center absolute left-0 top-0"
 				>
 					<div class="w-20 h-20 md:w-24 md:h-24 relative">
@@ -84,8 +86,8 @@
 			<!-- MonKey container -->
 			{#if monkeyLoadState === 'fullyReady' || monkeyLoadState === 'loaded' || monkeyLoadState === 'error'}
 				<div
-					in:monkeyContainerIn={{ delay: 100 }}
-					out:monkeyContainerOut
+					in:monkeyContainerIn|local={{ delay: 100 }}
+					out:monkeyContainerOut|local
 					class="square absolute left-0 top-0"
 				>
 					<div class="w-full h-full absolute left-0">
@@ -105,8 +107,8 @@
 			<!-- Again Button -->
 			{#if monkeyLoadState === 'fullyReady' || monkeyLoadState === 'error'}
 				<div
-					in:againIn={{ delay: 400 }}
-					out:againOut
+					in:againIn|local={{ delay: 400 }}
+					out:againOut|local
 					class="w-full flex flex-row justify-center absolute bottom-0 pb-5"
 				>
 					<Button class="px-8 py-3" type="secondary" onClick={resetGeneration}>Again!</Button>
@@ -116,8 +118,8 @@
 			{#if monkeyLoadState === 'idle'}
 				<div class="w-full h-full flex flex-col relative">
 					<form
-						out:formOut
-						in:formIn={{ delay: 100 }}
+						out:formOut|local
+						in:formIn|local={{ delay: 100 }}
 						on:submit|preventDefault={() => generateMonkey(inputValue)}
 						class="flex flex-col items-center my-auto relative mx-4 md:mx-6"
 					>
@@ -141,8 +143,8 @@
 						>
 					</form>
 					<div
-						out:formOut
-						in:formIn={{ delay: 100 }}
+						out:formOut|local
+						in:formIn|local={{ delay: 100 }}
 						class="w-full flex flex-row justify-center absolute bottom-0 pb-5"
 					>
 						<Button class="px-8 py-3" type="secondary" onClick={generateRandomMonkey}>
@@ -154,7 +156,7 @@
 			<!-- Curtain -->
 			{#if monkeyLoadState === 'loaded' || monkeyLoadState === 'fullyReady' || monkeyLoadState === 'error'}
 				<div
-					in:curtainIn
+					in:curtainIn|local
 					class="w-full h-full absolute transform -translate-y-full overflow-hidden z-10"
 				>
 					<div class="w-full h-full bg-c-primary absolute" />
@@ -166,105 +168,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.generator-container {
-		position: relative;
-		width: 100%;
-	}
-	.generator-container:after {
-		content: '';
-		display: block;
-		padding-bottom: calc(100% + 3rem);
-	}
-	.generator {
-		border-radius: 1rem;
-		border-width: 0rem;
-		border-color: rgb(var(--c-secondary));
-		box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-			0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary));
-		transform-origin: top center;
-		overflow: hidden;
-		animation: generatorAnimation 2s infinite;
-	}
-	@keyframes generatorAnimation {
-		0% {
-			box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-				0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary));
-		}
-		25% {
-			box-shadow: 0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				-0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary));
-		}
-		50% {
-			box-shadow: 0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-				-0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary));
-		}
-		75% {
-			box-shadow: -0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				-0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-				0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary));
-		}
-		100% {
-			box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-				0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary));
-		}
-	}
-	.cube {
-		border-radius: 15%;
-		transform: translate(0rem, 0rem);
-	}
-	.cube-0 {
-		background-color: rgb(var(--c-primary));
-		box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-primary-shaded));
-		animation: animation-0 1.2s infinite;
-	}
-	.cube-1 {
-		background-color: rgb(var(--c-secondary));
-		box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-secondary-shaded));
-		animation: animation-1 1.1s -0.25s infinite;
-	}
-	.cube-2 {
-		background-color: rgb(var(--c-primary));
-		box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-primary-shaded));
-		animation: animation-0 1.3s -0.5s infinite;
-	}
-	.cube-3 {
-		background-color: rgb(var(--c-secondary));
-		box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-secondary-shaded));
-		animation: animation-1 1s -0.75s infinite;
-	}
-	@keyframes animation-0 {
-		0% {
-			transform: translate(-2rem, 2rem);
-		}
-		50% {
-			transform: translate(2rem, -2rem);
-		}
-		100% {
-			transform: translate(-2rem, 2rem);
-		}
-	}
-	@keyframes animation-1 {
-		0% {
-			transform: translate(2.5rem, 2.5rem);
-		}
-		50% {
-			transform: translate(-2.5rem, -2.5rem);
-		}
-		100% {
-			transform: translate(2.5rem, 2.5rem);
-		}
-	}
-</style>

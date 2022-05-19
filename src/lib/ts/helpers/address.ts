@@ -158,6 +158,7 @@ export function validateAddress(address: string) {
 	} else if (!address.startsWith('ban_')) {
 		return false;
 	}
+
 	const publicKeyBytes = decodeNanoBase32(address.substr(4, 52));
 	const checksumBytes = decodeNanoBase32(address.substr(4 + 52));
 

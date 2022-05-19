@@ -45,12 +45,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.hero {
-		background-image: url('/illustrations/backgrounds/bg-hero.svg');
-	}
-	.wave {
-		background-image: url('/illustrations/backgrounds/bg-wave-bottom.svg');
-	}
-</style>

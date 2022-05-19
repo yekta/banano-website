@@ -35,7 +35,7 @@
 						href="https://fantom.foundation"
 						target="_blank"
 						class="font-bold text-c-secondary hover:underline">Fantom</a
-					>.<br />Visit
+					>. Visit
 					<a
 						href="https://wrap.banano.cc/?ref=banano.cc"
 						target="_blank"

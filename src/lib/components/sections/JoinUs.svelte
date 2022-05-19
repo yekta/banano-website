@@ -1,52 +1,54 @@
 <script lang="ts">
+	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
+
 	import type { TButton } from '$lib/ts/types/TButton';
 	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
 	import Button from '../Button.svelte';
 	import IconSocial from '../icons/IconSocial.svelte';
 
 	interface SocialButton {
-		text: string;
 		url: string;
+		text: string;
 		type: TButton;
 		icon: TIconSocial;
 	}
 
 	const socialButtons: SocialButton[] = [
 		{
-			text: 'Join our Discord',
-			url: 'https://chat.banano.cc',
-			type: 'discord',
-			icon: 'discord'
+			url: bananoSocials.discord.url,
+			text: bananoSocials.discord.buttonText,
+			type: bananoSocials.discord.buttonType,
+			icon: bananoSocials.discord.iconString
 		},
 		{
-			text: 'Subscribe on Reddit',
-			url: 'https://reddit.com/r/banano',
-			type: 'reddit',
-			icon: 'reddit'
+			url: bananoSocials.reddit.url,
+			text: bananoSocials.reddit.buttonText,
+			type: bananoSocials.reddit.buttonType,
+			icon: bananoSocials.reddit.iconString
 		},
 		{
-			text: 'Follow on Twitter',
-			url: 'https://twitter.com/bananocoin',
-			type: 'twitter',
-			icon: 'twitter'
+			url: bananoSocials.twitter.url,
+			text: bananoSocials.twitter.buttonText,
+			type: bananoSocials.twitter.buttonType,
+			icon: bananoSocials.twitter.iconString
 		},
 		{
-			text: 'Follow on Instagram',
-			url: 'https://instagram/bananocurrency',
-			type: 'instagram',
-			icon: 'instagram'
+			url: bananoSocials.instagram.url,
+			text: bananoSocials.instagram.buttonText,
+			type: bananoSocials.instagram.buttonType,
+			icon: bananoSocials.instagram.iconString
 		},
 		{
-			text: 'Join our Telegram',
-			url: 'https://t.me/banano_official',
-			type: 'telegram',
-			icon: 'telegram'
+			url: bananoSocials.telegram.url,
+			text: bananoSocials.telegram.buttonText,
+			type: bananoSocials.telegram.buttonType,
+			icon: bananoSocials.telegram.iconString
 		},
 		{
-			text: 'Follow on Facebook',
-			url: 'https://www.facebook.com/bananocurrency/',
-			type: 'facebook',
-			icon: 'facebook'
+			url: bananoSocials.facebook.url,
+			text: bananoSocials.facebook.buttonText,
+			type: bananoSocials.facebook.buttonType,
+			icon: bananoSocials.facebook.iconString
 		}
 	];
 </script>
