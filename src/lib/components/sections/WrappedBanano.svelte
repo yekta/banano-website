@@ -21,7 +21,7 @@
 					In case you want to move your Banano to other chains, our monkeys got you covered!
 				</p>
 				<p class="text-lg">
-					They take your banano, wrap it with special ribbons and deliver it to other chains such as <a
+					They take your Banano, wrap it with special ribbons and deliver it to other chains such as <a
 						href="https://polygon.technology/"
 						target="_blank"
 						class="font-bold text-c-secondary hover:underline">Polygon</a
