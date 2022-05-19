@@ -97,4 +97,19 @@ body {
 	left: 0;
 }
 
+.square {
+	position: relative;
+	width: 100%;
+}
+
+.square:after {
+	content: '';
+	display: block;
+	padding-bottom: 100%;
+}
+
+input:focus {
+	outline: none;
+}
+
 @tailwind utilities;

@@ -5,9 +5,11 @@
 
 	export let scrollWindow: HTMLElement;
 
+	const scrollAmount = 400;
+
 	function onIndicatorClick(e: Event) {
 		let maxScroll = scrollWindow.scrollHeight - scrollWindow.clientHeight;
-		let scrollTo = Math.min(scrollWindow.scrollTop + 500, maxScroll);
+		let scrollTo = Math.min(scrollWindow.scrollTop + scrollAmount, maxScroll);
 		scrollWindow.scrollTo({
 			top: scrollTo,
 			behavior: 'smooth'

@@ -17,8 +17,8 @@
 		<h2 class="text-3xl font-bold px-4">Meet the Overworked Team</h2>
 		<div class="container-b-small flex flex-wrap justify-center mt-4">
 			{#each teamShuffled as teamMember, index}
-				<div class="w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center p-4 mt-2">
-					<div class="w-full h-auto max-w-[13rem] px-3">
+				<div class="w-1/2 md:w-1/3 lg:w-1/4 max-w-[14rem] flex flex-col items-center p-4 mt-2">
+					<div class="w-full h-auto px-1">
 						<img
 							class="w-full h-auto"
 							src="/illustrations/dancing-banana/dancing-banana-{index % dancingBananaCount}.svg"

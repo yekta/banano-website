@@ -29,14 +29,15 @@
 				<label for="explorer-input" class="w-full max-w-sm md:max-w-full flex flex-col md:pr-4">
 					<p class="px-3 text-lg font-bold">Address or Block Hash</p>
 					<input
-						placeholder="Address or block hash"
+						placeholder="Enter an address or a block hash"
 						id="explorer-input"
 						bind:value={inputExplorer}
 						type="text"
-						class="text-c-on-bg w-full px-4 py-4.5 mt-2 rounded-lg"
+						class="w-full text-c-on-bg px-4 py-4.5 mt-2 rounded-xl font-medium
+						border-[3px] border-transparent hover:border-c-on-bg/20 focus:border-c-primary transition"
 					/>
 				</label>
-				<Button padding="px-8 md:px-12 py-3.5" class="w-full md:w-auto max-w-sm mt-3 mb-1.5">
+				<Button padding="px-8 md:px-12 py-4" class="w-full md:w-auto max-w-sm mt-3 mb-1.5">
 					Search
 				</Button>
 			</form>
