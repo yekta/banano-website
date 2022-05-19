@@ -73,7 +73,7 @@
 				<a
 					href="https://www.coingecko.com/en/coins/banano"
 					target="_blank"
-					class="bg-c-primary/20 font-medium hover:bg-c-primary/30 transition px-2.5 py-1 rounded-md border border-c-primary/10"
+					class="bg-c-primary/20 font-medium hover:bg-c-primary/30 transition px-2.5 py-1 rounded-lg border border-c-primary/10"
 				>
 					${numberFormatter(bananoPrice)}
 				</a>

@@ -29,13 +29,13 @@
 				/>
 			</div>
 			<div
-				class="container-b max-w-full flex flex-col items-center self-center pb-10 md:pb-12 relative z-10"
+				class="container-b max-w-full flex flex-col items-center self-center pb-10 md:pb-14 relative z-10"
 			>
-				<h1 class="w-220 max-w-full text-2xl font-bold text-c-bg leading-relaxed px-6 md:px-12">
+				<h1 class="w-220 max-w-full text-2xl font-medium text-c-bg leading-relaxed px-6 md:px-12">
 					Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology
 					disrupting the meme economy.
 				</h1>
-				<Button href="/#faucets" padding="px-12 md:px-16 py-3" class="mt-6">Get Banano</Button>
+				<Button href="/#faucets" padding="px-12 md:px-16 py-3.5" class="mt-6">Get Banano</Button>
 			</div>
 		</div>
 		<div class="w-[110%] -ml-[5%] absolute bottom-0 left-0 overflow-hidden flex justify-center">

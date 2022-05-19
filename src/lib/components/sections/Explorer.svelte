@@ -36,9 +36,9 @@
 						class="text-c-on-bg w-full px-4 py-4.5 mt-3 rounded-lg"
 					/>
 				</label>
-				<Button padding="px-8 md:px-12 py-3" class="w-full md:w-auto max-w-sm mt-3 mb-1.5"
-					>Search</Button
-				>
+				<Button padding="px-8 md:px-12 py-3.5" class="w-full md:w-auto max-w-sm mt-3 mb-1.5">
+					Search
+				</Button>
 			</form>
 		</div>
 	</div>

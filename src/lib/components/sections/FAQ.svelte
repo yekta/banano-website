@@ -23,13 +23,13 @@
 			{#each editedFaq as singleFaq, index}
 				<div class="w-full p-1 mt-1.5">
 					<div
-						class="w-full flex flex-col items-start justify-start bg-c-bg-secondary-shaded rounded-lg"
+						class="w-full flex flex-col items-start justify-start bg-c-bg-secondary-shaded rounded-xl"
 					>
 						<Button
 							type="bg"
 							isLeft={true}
 							onClick={() => toggle(index)}
-							padding="px-6 py-4 md:px-8"
+							padding="px-6 py-4.5 md:px-8"
 							class="w-full text-left font-bold text-base">{singleFaq.question}</Button
 						>
 						{#if singleFaq.isOpen}
