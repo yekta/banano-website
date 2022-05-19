@@ -16,6 +16,7 @@
 	import type { IRoadmapItem } from '$lib/ts/interfaces/IRoadmapItem';
 	import Announcements from '$lib/components/sections/Announcements.svelte';
 	import Roadmap from '$lib/components/sections/Roadmap.svelte';
+	import WrappedBanano from '$lib/components/sections/WrappedBanano.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
@@ -29,6 +30,7 @@
 	<Hero />
 	<KeyFeatures />
 	<Wallets />
+	<WrappedBanano />
 	<Team {team} />
 	<Testimonials {testimonials} />
 	<Advisors />
