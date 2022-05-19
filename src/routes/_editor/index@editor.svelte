@@ -1,11 +1,14 @@
 <script lang="ts">
+	import edjsHTML from 'editorjs-html';
+	import showdown from 'showdown';
 	import { onMount } from 'svelte';
-	import { remark } from 'remark';
-	import remarkHtml from 'remark-html';
+	import Button from '$lib/components/Button.svelte';
 
 	let EditorJS: any;
 	let Header: any;
 	let editor: any = undefined;
+	let edjsHTMLParser: any;
+	let showdownConverter: any;
 
 	let saveTimeout: NodeJS.Timeout;
 	const saveDelay = 1000;
@@ -16,7 +19,7 @@
 			editor
 				.save()
 				.then((outputData: any) => {
-					console.log('Article data: ', outputData);
+					console.log('Saved');
 				})
 				.catch((error: any) => {
 					console.log('Saving failed: ', error);
@@ -24,22 +27,32 @@
 		}, saveDelay);
 	}
 
+	function logMarkdown() {
+		editor
+			.save()
+			.then((outputData: any) => {
+				let html = edjsHTMLParser.parse(outputData).join('');
+				let markdown: any[] = showdownConverter.makeMarkdown(html);
+				console.log('Markdown Output', markdown);
+			})
+			.catch((error: Error) => {
+				console.log('Saving failed: ', error);
+			});
+	}
+
 	async function setup() {
+		edjsHTMLParser = edjsHTML();
+		showdownConverter = new showdown.Converter();
 		let [resHtml, editor] = await Promise.all([getData(), loadEditor()]);
 		editor.blocks.renderFromHTML(resHtml);
 	}
 
 	async function getData() {
 		let res = await fetch(
-			'https://raw.githubusercontent.com/yekta/banano-website/master/content/team.md'
+			'https://raw.githubusercontent.com/yekta/banano-website/master/content/announcements.md'
 		);
 		let text = await res.text();
-		let resHtml = await remark()
-			.use(remarkHtml)
-			.process(text)
-			.then((file) => {
-				return String(file);
-			});
+		let resHtml = showdownConverter.makeHtml(text);
 		return resHtml;
 	}
 
@@ -73,5 +86,8 @@
 
 <svelte:window on:keypress={onKeypress} />
 <div class="min-h-screen bg-c-bg flex flex-col py-12">
+	<div class="flex flex-row items-center justify-center mb-6">
+		<Button onClick={logMarkdown}>Log Markdown</Button>
+	</div>
 	<div id="editorjs" />
 </div>
