@@ -6,8 +6,6 @@
 	let EditorJS: any;
 	let Header: any;
 	let editor: any = undefined;
-	let html: string;
-	let isEditorShowing = false;
 
 	let saveTimeout: NodeJS.Timeout;
 	const saveDelay = 1000;
@@ -67,6 +65,7 @@
 		await editor.isReady;
 		return editor;
 	}
+
 	onMount(async () => {
 		setup();
 	});
