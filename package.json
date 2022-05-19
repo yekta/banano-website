@@ -15,6 +15,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
+		"@types/editorjs__header": "^2.6.0",
 		"autoprefixer": "^10.4.7",
 		"mdsvex": "^0.10.5",
 		"postcss": "^8.4.13",
@@ -29,6 +30,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@editorjs/editorjs": "^2.24.3",
+		"@editorjs/header": "^2.6.2",
 		"node-html-parser": "^5.3.3",
 		"svelte-particles": "^2.0.6",
 		"tsparticles": "^2.0.6"

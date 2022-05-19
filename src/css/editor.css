@@ -1,0 +1,28 @@
+#editorjs h1 {
+	font-size: 2.25rem;
+	font-weight: 700;
+}
+#editorjs h2 {
+	font-size: 1.875rem;
+	font-weight: 700;
+}
+#editorjs h3 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 700;
+}
+#editorjs h4 {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	font-weight: 700;
+}
+#editorjs h5 {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	font-weight: 700;
+}
+#editorjs h6 {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	font-weight: 700;
+}
