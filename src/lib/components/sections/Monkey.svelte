@@ -16,7 +16,7 @@
 			> or try it below!
 		</p>
 	</div>
-	<div class="container-b flex flex-row flex-wrap justify-center mt-4 px-4 md:px-12">
+	<div class="container-b flex flex-row flex-wrap justify-center mt-4 md:mt-7 px-4 md:px-12">
 		{#each monkeyArray as number}
 			<img
 				class="w-1/2 lg:w-1/4 max-w-[16rem] md:max-w-[20rem] h-auto"
