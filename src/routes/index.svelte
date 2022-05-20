@@ -39,7 +39,7 @@
 	<Hero />
 	<KeyFeatures />
 	<GetBanano {faucets} />
-	<Monkey />
+	<!-- 	<Monkey /> -->
 	<WrappedBanano />
 	<Explorer />
 	<Wallets />
