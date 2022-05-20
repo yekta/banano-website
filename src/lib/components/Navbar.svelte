@@ -9,6 +9,7 @@
 	import IconMenu from './icons/IconMenu.svelte';
 
 	let bananoPrice: number;
+	const pricePlaceholder = '........';
 
 	interface Section {
 		title: string;
@@ -130,7 +131,7 @@
 					class="w-full text-center bg-c-primary/20 font-medium px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
 						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
 				>
-					${bananoPrice !== undefined ? numberFormatter(bananoPrice) : '.......'}
+					${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
 				</a>
 			</div>
 			<Menu
@@ -191,7 +192,7 @@
 							class="w-full text-center mt-5 font-bold bg-c-secondary/20 px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
 								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
 						>
-							${bananoPrice !== undefined ? numberFormatter(bananoPrice) : '.......'}
+							${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
 						</a>
 					</MenuItems>
 				</Transition>
