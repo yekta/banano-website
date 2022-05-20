@@ -147,7 +147,7 @@
 						in:formIn|local={{ delay: 100 }}
 						class="w-full flex flex-row justify-center absolute bottom-0 pb-5"
 					>
-						<Button class="px-8 py-3" type="primary" onClick={generateRandomMonkey}>
+						<Button class="px-8 py-3" type="secondary" onClick={generateRandomMonkey}>
 							Randomize!
 						</Button>
 					</div>
