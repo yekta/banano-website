@@ -38,9 +38,11 @@
 				<Button href="/#faucets" padding="px-12 md:px-16 py-3.5" class="mt-6">Get Banano</Button>
 			</div>
 		</div>
-		<div class="w-[110%] -ml-[5%] absolute bottom-0 left-0 overflow-hidden flex justify-center">
+		<div
+			class="w-[110%] -ml-[5%] h-64 absolute bottom-0 left-0 overflow-hidden flex justify-center pointer-events-none"
+		>
 			<div
-				class="w-full wave h-64 bg-[position:0%_100%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:150%] xl:bg-contain bg-no-repeat"
+				class="w-full wave-bottom bg-[position:0%_100%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:150%] xl:bg-contain bg-no-repeat"
 			/>
 		</div>
 	</div>

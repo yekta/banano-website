@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div id="faq" class="w-full flex justify-center pt-16 pb-24">
+<div id="faq" class="w-full flex justify-center py-12">
 	<div class="container-b flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold px-4 text-center">Frequently Asked Questions</h2>
 		<div class="w-full flex flex-wrap max-w-2xl justify-center mt-5">

@@ -7,4 +7,5 @@ export type TButton =
 	| 'twitter'
 	| 'instagram'
 	| 'telegram'
-	| 'facebook';
+	| 'facebook'
+	| 'youtube';

@@ -27,7 +27,9 @@
 			case 'instagram':
 				return 'bg-c-instagram text-c-bg shadow-c-instagram-shaded hover:shadow-c-instagram-shaded hover:brightness-110';
 			case 'telegram':
-				return 'bg-c-telegram text-c-bg shadow-c-telegram-shaded hover:shadow-c-telegram-shaded hover:brightness-110';
+				return 'bg-c-telegram text-c-bg shadow-c-telegram-shaded hover:shadow-c-telegram-shaded hover:brightness-115';
+			case 'youtube':
+				return 'bg-c-youtube text-c-bg shadow-c-youtube-shaded hover:shadow-c-youtube-shaded hover:brightness-110';
 			case 'facebook':
 				return 'bg-c-facebook text-c-bg shadow-c-facebook-shaded hover:shadow-c-facebook-shaded hover:brightness-120';
 			default:

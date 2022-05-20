@@ -43,6 +43,7 @@ body {
 	--c-instagram: 225 48 108;
 	--c-telegram: 0 136 204;
 	--c-facebook: 59 89 152;
+	--c-youtube: 240 30 30;
 
 	--c-primary-shaded: 231 201 0;
 	--c-secondary-shaded: 41 156 31;
@@ -55,6 +56,7 @@ body {
 	--c-instagram-shaded: 205 28 88;
 	--c-telegram-shaded: 0 116 183;
 	--c-facebook-shaded: 39 69 132;
+	--c-youtube-shaded: 220 10 10;
 
 	--sm: 640px;
 	--md: 768px;
@@ -84,8 +86,17 @@ body {
 .hero {
 	background-image: url('/illustrations/backgrounds/bg-hero.svg');
 }
-.wave {
+
+.wave-bottom {
 	background-image: url('/illustrations/backgrounds/bg-wave-bottom.svg');
+}
+
+.footer {
+	background-image: url('/illustrations/backgrounds/bg-footer.svg');
+}
+
+.wave-top {
+	background-image: url('/illustrations/backgrounds/bg-wave-top.svg');
 }
 
 .markdown a {
@@ -128,44 +139,44 @@ input:focus {
 .monkey-generator {
 	border-radius: 1rem;
 	border-width: 0rem;
-	border-color: rgb(var(--c-secondary));
-	box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-		0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)), 0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-		-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary));
+	border-color: rgb(var(--c-primary));
+	box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+		0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)), 0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+		-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
 	transform-origin: top center;
 	overflow: hidden;
 	animation: generatorAnimation 2s infinite;
 }
 @keyframes generatorAnimation {
 	0% {
-		box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-			0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary));
+		box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+			0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
+			0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
 	}
 	25% {
-		box-shadow: 0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			-0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary));
+		box-shadow: 0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+			0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
+			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+			-0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary));
 	}
 	50% {
-		box-shadow: 0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-			-0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary));
+		box-shadow: 0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
+			-0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+			0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary));
 	}
 	75% {
-		box-shadow: -0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			-0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-			0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary));
+		box-shadow: -0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+			-0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
+			0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+			0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
 	}
 	100% {
-		box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-			0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary));
+		box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+			0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
+			0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
 	}
 }
 .cube {
@@ -173,23 +184,23 @@ input:focus {
 	transform: translate(0rem, 0rem);
 }
 .cube-0 {
-	background-color: rgb(var(--c-primary));
-	box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-primary-shaded));
+	background-color: rgb(var(--c-secondary));
+	box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-secondary-shaded));
 	animation: animation-0 1.2s infinite;
 }
 .cube-1 {
-	background-color: rgb(var(--c-secondary));
-	box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-secondary-shaded));
+	background-color: rgb(var(--c-primary));
+	box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-primary-shaded));
 	animation: animation-1 1.1s -0.25s infinite;
 }
 .cube-2 {
-	background-color: rgb(var(--c-primary));
-	box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-primary-shaded));
+	background-color: rgb(var(--c-secondary));
+	box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-secondary-shaded));
 	animation: animation-0 1.3s -0.5s infinite;
 }
 .cube-3 {
-	background-color: rgb(var(--c-secondary));
-	box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-secondary-shaded));
+	background-color: rgb(var(--c-primary));
+	box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-primary-shaded));
 	animation: animation-1 1s -0.75s infinite;
 }
 @keyframes animation-0 {

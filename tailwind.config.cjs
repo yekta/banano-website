@@ -34,6 +34,7 @@ module.exports = {
 				'c-discord': withOpacityValue('--c-discord'),
 				'c-reddit': withOpacityValue('--c-reddit'),
 				'c-twitter': withOpacityValue('--c-twitter'),
+				'c-youtube': withOpacityValue('--c-youtube'),
 				'c-instagram': withOpacityValue('--c-instagram'),
 				'c-telegram': withOpacityValue('--c-telegram'),
 				'c-facebook': withOpacityValue('--c-facebook'),
@@ -46,6 +47,7 @@ module.exports = {
 				'c-discord-shaded': withOpacityValue('--c-discord-shaded'),
 				'c-reddit-shaded': withOpacityValue('--c-reddit-shaded'),
 				'c-twitter-shaded': withOpacityValue('--c-twitter-shaded'),
+				'c-youtube-shaded': withOpacityValue('--c-youtube-shaded'),
 				'c-instagram-shaded': withOpacityValue('--c-instagram-shaded'),
 				'c-telegram-shaded': withOpacityValue('--c-telegram-shaded'),
 				'c-facebook-shaded': withOpacityValue('--c-facebook-shaded')

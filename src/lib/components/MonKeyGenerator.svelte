@@ -111,7 +111,7 @@
 					out:againOut|local
 					class="w-full flex flex-row justify-center absolute bottom-0 pb-5"
 				>
-					<Button class="px-8 py-3" type="secondary" onClick={resetGeneration}>Again!</Button>
+					<Button class="px-8 py-3" type="primary" onClick={resetGeneration}>Again!</Button>
 				</div>
 			{/if}
 			<!-- Input, Show Me & Randomize -->
@@ -132,13 +132,13 @@
 								class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
                   border-[3px] bg-c-on-bg/5 {inputError
 									? 'border-c-danger'
-									: 'border-c-on-bg/8 hover:border-c-on-bg/30 focus:border-c-secondary'} transition"
+									: 'border-c-on-bg/8 hover:border-c-on-bg/30 focus:border-c-primary'} transition"
 								type="text"
 								autocomplete="off"
 								placeholder="Enter your address"
 							/>
 						</div>
-						<Button type="secondary" class="w-full mt-3" onClick={() => generateMonkey(inputValue)}
+						<Button type="primary" class="w-full mt-3" onClick={() => generateMonkey(inputValue)}
 							>Show Me</Button
 						>
 					</form>
@@ -147,7 +147,7 @@
 						in:formIn|local={{ delay: 100 }}
 						class="w-full flex flex-row justify-center absolute bottom-0 pb-5"
 					>
-						<Button class="px-8 py-3" type="secondary" onClick={generateRandomMonkey}>
+						<Button class="px-8 py-3" type="primary" onClick={generateRandomMonkey}>
 							Randomize!
 						</Button>
 					</div>

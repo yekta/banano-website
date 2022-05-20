@@ -31,7 +31,7 @@
 	export let roadmap: IRoadmapItem[];
 </script>
 
-<div class="w-full min-h-screen flex flex-col justify-start items-center pb-64 bg-c-bg">
+<div class="w-full min-h-screen flex flex-col justify-start items-center bg-c-bg">
 	<Hero />
 	<KeyFeatures />
 	<Wallets />
@@ -42,8 +42,8 @@
 	<Testimonials {testimonials} />
 	<Advisors />
 	<CommunityProjects {communityProjects} />
-	<FAQ {faq} />
 	<Roadmap {roadmap} />
 	<Announcements {announcements} />
+	<FAQ {faq} />
 	<JoinUs />
 </div>

@@ -33,6 +33,12 @@
 			icon: bananoSocials.twitter.iconString
 		},
 		{
+			url: bananoSocials.youtube.url,
+			text: bananoSocials.youtube.buttonText,
+			type: bananoSocials.youtube.buttonType,
+			icon: bananoSocials.youtube.iconString
+		},
+		{
 			url: bananoSocials.instagram.url,
 			text: bananoSocials.instagram.buttonText,
 			type: bananoSocials.instagram.buttonType,
@@ -43,23 +49,17 @@
 			text: bananoSocials.telegram.buttonText,
 			type: bananoSocials.telegram.buttonType,
 			icon: bananoSocials.telegram.iconString
-		},
-		{
-			url: bananoSocials.facebook.url,
-			text: bananoSocials.facebook.buttonText,
-			type: bananoSocials.facebook.buttonType,
-			icon: bananoSocials.facebook.iconString
 		}
 	];
 </script>
 
-<div id="join-us" class="w-full bg-community flex justify-center pt-20 pb-28 text-center">
+<div id="join-us" class="w-full bg-community flex justify-center py-16 text-center">
 	<div class="container-b-small flex flex-col items-center">
 		<h2 class="text-3xl font-bold px-4">Join the Crypto-Potassium Revolution!</h2>
-		<div class="w-full flex flex-wrap justify-center mt-2">
+		<div class="w-full flex flex-wrap justify-center mt-2 px-4 md:px-8">
 			{#each socialButtons as socialButton}
 				<div
-					class="w-full max-w-sm md:w-1/2 lg:w-1/3 flex flex-col items-center text-center px-4 md:px-2 mt-2"
+					class="w-full max-w-sm md:w-1/2 lg:w-1/2 flex flex-col items-center text-center px-2 mt-2"
 				>
 					<Button
 						padding="px-14 py-3.5"
