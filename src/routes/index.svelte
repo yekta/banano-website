@@ -22,6 +22,7 @@
 	import Roadmap from '$lib/components/sections/Roadmap.svelte';
 	import WrappedBanano from '$lib/components/sections/WrappedBanano.svelte';
 	import Monkey from '$lib/components/sections/Monkey.svelte';
+	import Yellowpaper from '$lib/components/sections/Yellowpaper.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
@@ -38,12 +39,13 @@
 	<Explorer />
 	<Monkey />
 	<WrappedBanano />
-	<Team {team} />
-	<Testimonials {testimonials} />
-	<Advisors />
 	<CommunityProjects {communityProjects} />
+	<Yellowpaper />
 	<Roadmap {roadmap} />
 	<Announcements {announcements} />
+	<Team {team} />
+	<Advisors />
+	<Testimonials {testimonials} />
 	<FAQ {faq} />
 	<JoinUs />
 </div>

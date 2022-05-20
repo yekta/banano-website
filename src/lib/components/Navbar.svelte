@@ -89,7 +89,9 @@
 
 <nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary z-50">
 	<div class="container-b max-w-full flex flex-row items-center justify-between px-4 py-3">
-		<Logo class="text-c-primary w-48 h-auto mr-12 py-2" />
+		<a href="/">
+			<Logo class="text-c-primary w-48 h-auto mr-12 py-2" />
+		</a>
 		<div class="flex justify-end items-center min-w-0 flex-1">
 			<div class="hidden lg:flex justify-end items-center">
 				{#each sections as section}
