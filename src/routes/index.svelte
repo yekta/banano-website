@@ -22,7 +22,7 @@
 	import Announcements from '$lib/components/sections/Announcements.svelte';
 	import Roadmap from '$lib/components/sections/Roadmap.svelte';
 	import WrappedBanano from '$lib/components/sections/WrappedBanano.svelte';
-	/* 	import Monkey from '$lib/components/sections/Monkey.svelte'; */
+	import Monkey from '$lib/components/sections/Monkey.svelte';
 	import Yellowpaper from '$lib/components/sections/Yellowpaper.svelte';
 	import GetBanano from '$lib/components/sections/GetBanano.svelte';
 
@@ -39,7 +39,7 @@
 	<Hero />
 	<KeyFeatures />
 	<GetBanano {faucets} />
-	<!-- 	<Monkey /> -->
+	<Monkey />
 	<WrappedBanano />
 	<Explorer />
 	<Wallets />

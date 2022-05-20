@@ -17,7 +17,7 @@
 <div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
-			class="w-full hero bg-c-secondary h-[550px] md:h-[720px] bg-cover flex flex-row
+			class="w-full hero bg-c-secondary min-h-[550px] md:min-h-[720px] bg-cover flex flex-row
 			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
 		>
 			<div class="w-full h-full absolute left-0 top-0">
@@ -29,7 +29,7 @@
 				/>
 			</div>
 			<div
-				class="container-b max-w-full flex flex-col items-center self-center pb-10 md:pb-14 relative z-10"
+				class="container-b max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10"
 			>
 				<h1 class="w-220 max-w-full text-2xl font-medium text-c-bg leading-relaxed px-6 md:px-12">
 					Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology
