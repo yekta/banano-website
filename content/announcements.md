@@ -1,3 +1,10 @@
+<!--
+  To add more announcements to be displayed on the website, add them in the following form:
+  1- The title for the announcement starts with three hastag symbols -> ### Example Title
+  2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
+  3- The description is the following line after the date without any starting symbols -> This is an example description.
+-->
+
 ### Banano Monthly Update #48 (April 2022)
 
 #### 2022-04-05

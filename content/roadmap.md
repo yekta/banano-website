@@ -1,3 +1,10 @@
+<!--
+  To add more roadmap items to be displayed on the website, add them in the following form:
+  1- The year for the roadmap starts with two hastag symbols -> ## Example Year
+  2- The month for the roadmap starts with three hastag symbols -> ### Example Month
+  3- The description is the following line after the month without any symbols -> This is an example description.
+-->
+
 ## 2018
 
 ### February

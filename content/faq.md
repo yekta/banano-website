@@ -1,3 +1,9 @@
+<!--
+  To add more frequently asked questions to be displayed on the website, add them in the following form:
+  1- The title for frequently asked question starts with three hastag symbols -> ### Example Title
+  2- The description is the following line after the title without any symbols -> This is an example description.
+-->
+
 ### What is Banano?
 
 Banano is a 4th generation fungible & edible cryptocurrency with a cool yellow logo. Our team is top-notch and the project advisors are by a moonshot best in the business.
