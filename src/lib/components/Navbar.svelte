@@ -79,8 +79,6 @@
 				'https://api.coingecko.com/api/v3/simple/price?ids=banano&vs_currencies=usd'
 			);
 			let resJson = await res.json();
-			// await 3 seconds delay
-			await new Promise((resolve) => setTimeout(resolve, 3000));
 			if (resJson?.banano?.usd !== undefined) {
 				bananoPrice = Number(resJson.banano.usd);
 			}
