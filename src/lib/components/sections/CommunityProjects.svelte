@@ -11,13 +11,13 @@
 >
 	<div class="container-b flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold px-4">Community Projects</h2>
-		<p class="mt-3 text-xl">
+		<p class="mt-3 text-xl container-b-smallest">
 			Here are some of the projects that are made by our awesome community:
 		</p>
 		<div class="w-full flex flex-wrap justify-center items-end mt-2 md:mt-6">
 			{#each communityProjects as project, index}
 				<div
-					class="w-full md:w-1/2 lg:w-1/4 max-w-[17rem] flex flex-col items-center text-center px-4 my-7"
+					class="w-full md:w-1/2 lg:w-1/4 max-w-[17rem] flex flex-col items-center text-center px-2 md:px-4 my-7"
 				>
 					<h3 class="font-bold text-lg">{project.title.toUpperCase()}</h3>
 					<p class="mt-1">{project.description}</p>

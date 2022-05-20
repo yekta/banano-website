@@ -1,6 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import faqMd from '/content/faq.md';
 import teamMd from '/content/team.md';
+import faucetsMd from '/content/faucets.md';
 import testimonialsMd from '/content/testimonials.md';
 import communityProjectsMd from '/content/community-projects.md';
 import announcementsMd from '/content/announcements.md';
@@ -10,14 +11,16 @@ import type { Node as NodeP, HTMLElement as HTMLElementP } from 'node-html-parse
 
 export const get: RequestHandler = async (event) => {
 	let faq;
-	let team;
 	let testimonials;
+	let faucets;
+	let team;
 	let communityProjects;
 	let announcements;
 	let roadmap;
 
 	let htmlFaq = faqMd.render().html;
 	let htmlTestimonials = testimonialsMd.render().html;
+	let htmlFaucets = faucetsMd.render().html;
 	let htmlTeam = teamMd.render().html;
 	let htmlCommunityProjects = communityProjectsMd.render().html;
 	let htmlAnnouncements = announcementsMd.render().html;
@@ -25,6 +28,7 @@ export const get: RequestHandler = async (event) => {
 
 	let parsedHtmlFaq = parse(htmlFaq);
 	let parsedHtmlTestimonials = parse(htmlTestimonials);
+	let parsedHtmlFaucets = parse(htmlFaucets);
 	let parsedHtmlTeam = parse(htmlTeam);
 	let parsedHtmlCommunityProjects = parse(htmlCommunityProjects);
 	let parsedHtmlAnnouncements = parse(htmlAnnouncements);
@@ -44,6 +48,21 @@ export const get: RequestHandler = async (event) => {
 	team = nicknamesTeam.map((n, i) => ({
 		nickname: n,
 		description: descriptionsTeam[i]
+	}));
+
+	// Faucets
+	let titlesFaucets = parsedHtmlFaucets.getElementsByTagName('h3').map((n) => n.text);
+	let descriptionsFaucets = parsedHtmlFaucets.getElementsByTagName('p').map((n) => n.text);
+	let buttonNameFaucets = parsedHtmlFaucets.getElementsByTagName('a').map((n) => n.text);
+	let buttonUrlFaucets = parsedHtmlFaucets
+		.getElementsByTagName('a')
+		.map((n) => n.getAttribute('href'));
+	faucets = titlesFaucets.map((t, i) => ({
+		isStopped: t.includes('🛑'),
+		title: t.replaceAll(' 🛑', '').replaceAll('🛑', ''),
+		description: descriptionsFaucets[i],
+		buttonName: buttonNameFaucets[i],
+		buttonUrl: String(buttonUrlFaucets[i])
 	}));
 
 	// Testimonials
@@ -114,9 +133,10 @@ export const get: RequestHandler = async (event) => {
 	return {
 		status: 200,
 		body: {
-			team,
 			faq,
 			testimonials,
+			faucets,
+			team,
 			communityProjects,
 			announcements,
 			roadmap

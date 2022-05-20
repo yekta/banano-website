@@ -2,10 +2,7 @@
 	import Button from '../Button.svelte';
 </script>
 
-<div
-	id="wban"
-	class="w-full flex justify-center bg-c-bg relative -mt-2 pt-8 md:pt-12 pb-12 text-center"
->
+<div id="wban" class="w-full flex justify-center bg-c-bg relative -mt-2 pt-12 pb-16 text-center">
 	<div class="container-b flex flex-col">
 		<div class="container-b-small mb-12 px-4 md:px-8">
 			<div class="w-full relative opacity-75">

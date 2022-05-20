@@ -4,7 +4,7 @@
 
 <div
 	id="yellowpaper"
-	class="w-full flex justify-center bg-c-bg relative -mt-2 pt-12 md:pt-16 pb-12 text-center"
+	class="w-full flex justify-center bg-c-bg relative -mt-2 pt-18 pb-12 text-center"
 >
 	<div class="container-b flex flex-col">
 		<div class="w-full flex flex-col items-center px-4">
