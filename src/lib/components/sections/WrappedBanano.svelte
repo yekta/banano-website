@@ -47,6 +47,7 @@
 				<img class="w-full" src="/illustrations/wban/wban-hero.svg" alt="wBAN Hero" />
 			</div>
 			<Button
+				type="secondary"
 				padding="py-3.5 px-8 md:px-14"
 				href="https://wrap.banano.cc/?ref=banano.cc"
 				targetBlank={true}
