@@ -30,6 +30,13 @@ export const bananoSocials = {
 		buttonType: 'youtube' as TButton,
 		iconString: 'youtube' as TIconSocial
 	},
+	medium: {
+		title: 'Medium',
+		url: 'https://medium.com/banano',
+		buttonText: 'Follow on Medium',
+		buttonType: 'medium' as TButton,
+		iconString: 'medium' as TIconSocial
+	},
 	instagram: {
 		title: 'Instagram',
 		url: 'https://instagram/bananocurrency',

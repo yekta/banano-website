@@ -3,6 +3,11 @@ import { nacl } from './nacl.js';
 
 const ALPHABET = '13456789abcdefghijkmnopqrstuwxyz';
 
+// a function to check if a string is of length 64 and is hexadecimal
+export function isHash(str: string) {
+	return str.length === 64 && /^[0-9a-f]+$/i.test(str);
+}
+
 const { blake2bFinal, blake2bInit, blake2bUpdate } = blakejs;
 
 function getAddressFromPublic(accountPublicKeyBytes: any, prefix = 'ban') {
@@ -150,7 +155,7 @@ export function genAddress() {
 }
 
 // Validate nano address, return true if valid, false if invalid
-export function validateAddress(address: string) {
+export function isAddress(address: string) {
 	if (typeof address != 'string') {
 		return false;
 	} else if (address.length != 64 && address.length != 65) {

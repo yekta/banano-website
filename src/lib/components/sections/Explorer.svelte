@@ -1,12 +1,25 @@
 <script lang="ts">
+	import { isAddress, isHash } from '$lib/ts/helpers/banano';
+
 	import Button from '../Button.svelte';
 
 	let inputExplorer: string;
+	let inputError = false;
 
 	async function handleSubmit(e: Event) {
-		window.open(`https://creeper.banano.cc/explorer/auto/${inputExplorer}`, '_blank');
-		inputExplorer = '';
+		if (isAddress(inputExplorer) || isHash(inputExplorer)) {
+			window.open(`https://creeper.banano.cc/explorer/auto/${inputExplorer}`, '_blank');
+			inputExplorer = '';
+		} else {
+			inputError = true;
+		}
 	}
+
+	const clearInputError = () => {
+		if (inputError) {
+			inputError = false;
+		}
+	};
 </script>
 
 <div id="explorer" class="w-full py-10">
@@ -31,10 +44,13 @@
 					<input
 						placeholder="Enter an address or a block hash"
 						id="explorer-input"
+						on:input={clearInputError}
 						bind:value={inputExplorer}
 						type="text"
 						class="w-full text-c-on-bg px-4 py-4.5 mt-2 rounded-xl font-medium placeholder-c-on-bg/50
-						border-[3px] border-transparent hover:border-c-on-bg/20 focus:border-c-primary transition"
+						border-[3px] {inputError
+							? 'border-c-danger'
+							: 'border-transparent hover:border-c-on-bg/20 focus:border-c-primary'} transition"
 					/>
 				</label>
 				<Button padding="px-8 md:px-12 py-4" class="w-full md:w-auto max-w-sm mt-3 mb-1.5">

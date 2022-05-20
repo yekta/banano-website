@@ -38,6 +38,7 @@ module.exports = {
 				'c-instagram': withOpacityValue('--c-instagram'),
 				'c-telegram': withOpacityValue('--c-telegram'),
 				'c-facebook': withOpacityValue('--c-facebook'),
+				'c-medium': withOpacityValue('--c-medium'),
 				'c-primary-shaded': withOpacityValue('--c-primary-shaded'),
 				'c-secondary-shaded': withOpacityValue('--c-secondary-shaded'),
 				'c-bg-shaded': withOpacityValue('--c-bg-shaded'),
@@ -50,7 +51,8 @@ module.exports = {
 				'c-youtube-shaded': withOpacityValue('--c-youtube-shaded'),
 				'c-instagram-shaded': withOpacityValue('--c-instagram-shaded'),
 				'c-telegram-shaded': withOpacityValue('--c-telegram-shaded'),
-				'c-facebook-shaded': withOpacityValue('--c-facebook-shaded')
+				'c-facebook-shaded': withOpacityValue('--c-facebook-shaded'),
+				'c-medium-shaded': withOpacityValue('--c-medium-shaded')
 			},
 			spacing: {
 				0.75: '0.1875rem',

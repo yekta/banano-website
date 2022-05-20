@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { genAddress, validateAddress } from '$lib/ts/helpers/address';
+	import { genAddress, isAddress } from '$lib/ts/helpers/banano';
 	import {
 		monkeyLoadingIn,
 		monkeyContainerIn,
@@ -32,7 +32,7 @@
 	}
 
 	async function generateMonkey(address: string) {
-		if (validateAddress(address)) {
+		if (isAddress(address)) {
 			monkeyLoadState = 'loading';
 			let monkeyResult = await getMonkey(address);
 			if (monkeyResult !== undefined) {

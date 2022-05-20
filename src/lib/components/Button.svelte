@@ -24,12 +24,14 @@
 				return 'bg-c-reddit text-c-bg shadow-c-reddit-shaded hover:shadow-c-reddit-shaded hover:brightness-110';
 			case 'twitter':
 				return 'bg-c-twitter text-c-bg shadow-c-twitter-shaded hover:shadow-c-twitter-shaded hover:brightness-110';
+			case 'youtube':
+				return 'bg-c-youtube text-c-bg shadow-c-youtube-shaded hover:shadow-c-youtube-shaded hover:brightness-110';
+			case 'medium':
+				return 'bg-c-medium text-c-bg shadow-c-medium-shaded hover:shadow-c-medium-shaded hover:brightness-120';
 			case 'instagram':
 				return 'bg-c-instagram text-c-bg shadow-c-instagram-shaded hover:shadow-c-instagram-shaded hover:brightness-110';
 			case 'telegram':
 				return 'bg-c-telegram text-c-bg shadow-c-telegram-shaded hover:shadow-c-telegram-shaded hover:brightness-115';
-			case 'youtube':
-				return 'bg-c-youtube text-c-bg shadow-c-youtube-shaded hover:shadow-c-youtube-shaded hover:brightness-110';
 			case 'facebook':
 				return 'bg-c-facebook text-c-bg shadow-c-facebook-shaded hover:shadow-c-facebook-shaded hover:brightness-120';
 			default:

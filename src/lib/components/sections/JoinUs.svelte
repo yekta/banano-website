@@ -39,16 +39,28 @@
 			icon: bananoSocials.youtube.iconString
 		},
 		{
-			url: bananoSocials.instagram.url,
-			text: bananoSocials.instagram.buttonText,
-			type: bananoSocials.instagram.buttonType,
-			icon: bananoSocials.instagram.iconString
+			url: bananoSocials.medium.url,
+			text: bananoSocials.medium.buttonText,
+			type: bananoSocials.medium.buttonType,
+			icon: bananoSocials.medium.iconString
 		},
 		{
 			url: bananoSocials.telegram.url,
 			text: bananoSocials.telegram.buttonText,
 			type: bananoSocials.telegram.buttonType,
 			icon: bananoSocials.telegram.iconString
+		},
+		{
+			url: bananoSocials.instagram.url,
+			text: bananoSocials.instagram.buttonText,
+			type: bananoSocials.instagram.buttonType,
+			icon: bananoSocials.instagram.iconString
+		},
+		{
+			url: bananoSocials.facebook.url,
+			text: bananoSocials.facebook.buttonText,
+			type: bananoSocials.facebook.buttonType,
+			icon: bananoSocials.facebook.iconString
 		}
 	];
 </script>
