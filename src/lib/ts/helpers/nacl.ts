@@ -6,7 +6,7 @@ import * as blake from 'blakejs';
 // Implementation derived from TweetNaCl version 20140427.
 // See for details: http://tweetnacl.cr.yp.to/
 
-export var nacl = {};
+export var nacl: any = {};
 
 var u64 = function (h, l) {
 	this.hi = h | (0 >>> 0);
