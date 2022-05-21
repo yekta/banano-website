@@ -6,6 +6,7 @@
 	import { page } from '$app/stores';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
+	import Page1 from '$lib/components/yellowpaper/pages/Page1.svelte';
 
 	const title = 'Yellowpaper™ | Banano';
 	const description =
@@ -39,4 +40,4 @@
 	}}
 />
 
-<h1>Yellowpaper™</h1>
+<Page1 />
