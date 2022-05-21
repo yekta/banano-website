@@ -1,4 +1,18 @@
-import { cubicOut, cubicIn } from 'svelte/easing';
+import { cubicOut, cubicIn, quadOut } from 'svelte/easing';
+
+export const dropdown = (node: Node, { delay = 0, duration = 300 }) => {
+	return {
+		delay,
+		duration,
+		easing: cubicOut,
+		css: (t: number) => {
+			const translateYMaxRem = -1;
+			return `transform: scale(${t / 2 + 0.5}) translateY(${
+				translateYMaxRem + t * translateYMaxRem * -1
+			}rem);opacity: ${t}`;
+		}
+	};
+};
 
 export const monkeyLoadingIn = (node: Node, { delay = 0, duration = 200 }) => {
 	return {
