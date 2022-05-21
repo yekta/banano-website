@@ -11,7 +11,9 @@
 	export { classes as class };
 	let classes = '';
 
-	function getBgAndTextClass() {
+	$: bgAndTextClass = getBgAndTextClass(type);
+
+	function getBgAndTextClass(type: TButton) {
 		switch (type) {
 			case 'primary':
 				return 'bg-c-primary text-c-on-bg shadow-c-primary-shaded hover:shadow-c-primary-shaded hover:brightness-108';
@@ -50,7 +52,7 @@
 			class="flex flex-row items-center {isLeft
 				? 'justify-start'
 				: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button hover:shadow-button-hover 
-			transition-all hover:-translate-y-0.5 filter {getBgAndTextClass()} {classes}"
+			transition-all hover:-translate-y-0.5 filter {bgAndTextClass} {classes}"
 		>
 			<slot />
 		</a>
@@ -61,7 +63,7 @@
 			class="flex flex-row items-center {isLeft
 				? 'justify-start'
 				: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button hover:shadow-button-hover 
-			transition-all hover:-translate-y-0.5 filter {getBgAndTextClass()} {classes}"
+			transition-all hover:-translate-y-0.5 filter {bgAndTextClass} {classes}"
 		>
 			<slot />
 		</a>
@@ -72,7 +74,7 @@
 		class="flex flex-row items-center {isLeft
 			? 'justify-start'
 			: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button hover:shadow-button-hover 
-			transition-all hover:-translate-y-0.5 filter {getBgAndTextClass()} {classes}"
+			transition-all hover:-translate-y-0.5 filter {bgAndTextClass} {classes}"
 	>
 		<slot />
 	</button>

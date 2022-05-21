@@ -38,6 +38,7 @@
 				{ text: 'Yellowpaper™', href: '/yellowpaper' },
 				{ text: 'Blog', href: 'https://medium.com/banano', targetBlank: true },
 				{ text: 'Presskit', href: '/presskit' },
+				{ text: 'Redeem Banano', href: '/redeem' },
 				{ text: 'Contact Us', href: bananoSocials.email.url }
 			]
 		},
