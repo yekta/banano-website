@@ -25,6 +25,8 @@
 	import Monkey from '$lib/components/sections/Monkey.svelte';
 	import Yellowpaper from '$lib/components/sections/Yellowpaper.svelte';
 	import GetBanano from '$lib/components/sections/GetBanano.svelte';
+	import { MetaTags } from 'svelte-meta-tags';
+	import { canonicalUrl } from '$lib/ts/constants/canonical';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
@@ -33,7 +35,38 @@
 	export let announcements: IAnnouncement[];
 	export let roadmap: IRoadmapItem[];
 	export let faucets: IFaucet[];
+
+	const description =
+		'Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology disrupting the meme economy.';
+	const title = "Banano | Don't let your memes be dreams";
+	const canonical = canonicalUrl;
+	const imageUrl = `${canonicalUrl}/previews/home.jpg`;
 </script>
+
+<MetaTags
+	{title}
+	{description}
+	{canonical}
+	openGraph={{
+		type: 'website',
+		url: canonical,
+		title: title,
+		description: description,
+		images: [
+			{
+				url: imageUrl,
+				width: 1200,
+				height: 630
+			}
+		]
+	}}
+	twitter={{
+		cardType: 'summary_large_image',
+		title: title,
+		description: description,
+		image: imageUrl
+	}}
+/>
 
 <div class="w-full min-h-screen flex flex-col justify-start items-center bg-c-bg">
 	<Hero />
