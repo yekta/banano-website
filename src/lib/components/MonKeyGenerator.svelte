@@ -109,9 +109,16 @@
 				<div
 					in:againIn|local={{ delay: 400 }}
 					out:againOut|local
-					class="w-full flex flex-row justify-center absolute bottom-0 pb-5"
+					class="w-full px-4 flex flex-row justify-center absolute bottom-0 pb-5"
 				>
-					<Button class="px-8 py-3" type="primary" onClick={resetGeneration}>Again!</Button>
+					<Button
+						padding="px-8 md:px-16 py-3"
+						class="max-w-full"
+						type="primary"
+						onClick={resetGeneration}
+					>
+						Again!
+					</Button>
 				</div>
 			{/if}
 			<!-- Input, Show Me & Randomize -->
@@ -145,9 +152,14 @@
 					<div
 						out:formOut|local
 						in:formIn|local={{ delay: 100 }}
-						class="w-full flex flex-row justify-center absolute bottom-0 pb-5"
+						class="w-full px-4 flex flex-row justify-center absolute bottom-0 pb-5"
 					>
-						<Button class="px-8 py-3" type="secondary" onClick={generateRandomMonkey}>
+						<Button
+							padding="px-8 md:px-14 py-3"
+							class="max-w-full"
+							type="secondary"
+							onClick={generateRandomMonkey}
+						>
 							Randomize!
 						</Button>
 					</div>
