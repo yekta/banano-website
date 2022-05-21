@@ -21,15 +21,17 @@
 	id="key-features"
 	class="w-full flex justify-center bg-c-bg relative -mt-2 py-10 px-4 text-center"
 >
-	<div class="container-b flex flex-col items-center px-4">
+	<div class="container-b flex flex-col items-center md:px-4">
 		<h2 class="text-3xl font-bold px-4">Key Features</h2>
-		<p class="container-b-small max-w-full mt-3 text-xl md:px-8">
+		<p class="container-b-small max-w-full mt-3 text-xl px-4 md:px-14">
 			Banano is a 4th generation fungible & edible cryptocurrency with a cool yellow logo. Our team
 			is top-notch and the project advisors are by a moonshot best in the business.
 		</p>
 		<div class="container-b-small max-w-full flex flex-row flex-wrap justify-center mt-5">
 			{#each keyFeatures as feature}
-				<div class="w-1/2 md:w-1/3 lg:w-1/4 max-w-[14rem] flex flex-col items-center p-4">
+				<div
+					class="w-1/2 md:w-1/3 lg:w-1/4 max-w-[14rem] flex flex-col items-center px-3 py-4 md:p-4"
+				>
 					<img
 						class="w-full h-auto"
 						src="/illustrations/key-features/{feature.img}.{imgExtention}"

@@ -120,16 +120,17 @@
 					<div class="flex flex-col items-center md:items-start mt-2">
 						{#each section.entries as entry}
 							<a
-								class="w-full text-center md:text-left px-3.5 py-2 transition hover:bg-c-secondary rounded-lg
+								class="w-full flex flex-row items-center justify-center md:justify-start 
+								px-3.5 py-2 transition hover:bg-c-secondary rounded-lg
 								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
 								href={entry.href}
 								target={entry.targetBlank ? '_blank' : undefined}
 							>
-								<div class="flex flex-row items-center justify-start">
+								<div class="flex flex-row items-center justify-center">
 									{#if entry.icon !== undefined}
 										<IconSocial type={entry.icon} class="w-6 h-6 mr-2.5" />
 									{/if}
-									<p class="flex-1 min-w-0">{entry.text}</p>
+									<span>{entry.text}</span>
 								</div>
 							</a>
 						{/each}
