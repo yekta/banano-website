@@ -52,7 +52,10 @@ module.exports = {
 				'c-instagram-shaded': withOpacityValue('--c-instagram-shaded'),
 				'c-telegram-shaded': withOpacityValue('--c-telegram-shaded'),
 				'c-facebook-shaded': withOpacityValue('--c-facebook-shaded'),
-				'c-medium-shaded': withOpacityValue('--c-medium-shaded')
+				'c-medium-shaded': withOpacityValue('--c-medium-shaded'),
+				'c-yellowpaper-bg': withOpacityValue('--c-yellowpaper-bg'),
+				'c-yellowpaper-on-bg': withOpacityValue('--c-yellowpaper-on-bg'),
+				'c-yellowpaper-document-bg': withOpacityValue('--c-yellowpaper-document-bg')
 			},
 			spacing: {
 				'3px': '3px',
@@ -79,7 +82,8 @@ module.exports = {
 				'button-hover': '0rem 0.625rem 0rem 0rem',
 				'navbar-button': '0rem 0rem 0rem 0rem',
 				'navbar-button-hover': '0rem 0.3rem 0rem 0rem',
-				asset: '3rem 0rem 3rem 0rem'
+				asset: '3rem 0rem 3rem 0rem',
+				'yellowpaper-paper': '0rem 0.5rem 1rem 0rem'
 			},
 			opacity: {
 				3: '0.03',

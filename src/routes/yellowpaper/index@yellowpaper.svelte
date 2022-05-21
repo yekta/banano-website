@@ -40,4 +40,8 @@
 	}}
 />
 
-<Page1 />
+<main class="w-full flex justify-center items-start">
+	<div class="yellowpaper-container p-3 md:p-5">
+		<Page1 />
+	</div>
+</main>

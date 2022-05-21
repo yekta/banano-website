@@ -1,5 +1,5 @@
-<script>
-	import '../css/editor.css';
+<script lang="ts">
+	import '$lib/css/yellowpaper.css';
 </script>
 
 <slot />
