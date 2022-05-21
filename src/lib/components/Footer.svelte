@@ -24,7 +24,7 @@
 				{ text: 'MonKey', href: '/#monkey' },
 				{ text: 'wBAN', href: '/#wrapped-banano' },
 				{ text: 'Wallets', href: '/#wallets' },
-				{ text: 'Yellow Paper™', href: '/#yellowpaper' },
+				{ text: 'Roadmap', href: '/#roadmap' },
 				{ text: 'News', href: '/#news' },
 				{ text: 'FAQ', href: '/#faq' }
 			]
@@ -35,6 +35,7 @@
 				{ text: 'Desktop Wallet', href: 'https://vault.banano.cc', targetBlank: true },
 				{ text: 'Mobile Wallet', href: 'https://kalium.banano.cc', targetBlank: true },
 				{ text: 'Network Explorer', href: 'https://creeper.banano.cc', targetBlank: true },
+				{ text: 'Yellowpaper™', href: '/yellowpaper' },
 				{ text: 'Blog', href: 'https://medium.com/banano', targetBlank: true },
 				{ text: 'Presskit', href: '/presskit' },
 				{ text: 'Contact Us', href: bananoSocials.email.url }
@@ -119,7 +120,7 @@
 					<div class="flex flex-col items-center md:items-start mt-2">
 						{#each section.entries as entry}
 							<a
-								class="px-3.5 py-2 transition hover:bg-c-secondary rounded-lg
+								class="w-full px-3.5 py-2 transition hover:bg-c-secondary rounded-lg
 								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
 								href={entry.href}
 								target={entry.targetBlank ? '_blank' : undefined}
