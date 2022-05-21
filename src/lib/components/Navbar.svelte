@@ -134,7 +134,7 @@
 				class="lg:hidden relative flex flex-col justify-start items-end text-c-secondary z-50 -mr-1 md:mr-0"
 			>
 				<MenuButton
-					class="h-12 w-12 p-1.5 md:w-auto md:h-auto md:px-3 md:py-1.5 flex flex-row items-center justify-center rounded-lg transition
+					class="h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3 md:py-1.5 flex flex-row items-center justify-center rounded-lg transition
 					shadow-navbar-button hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary {open
 						? 'text-c-bg'
 						: 'text-c-primary hover:text-c-bg'} shadow-c-on-bg/50"

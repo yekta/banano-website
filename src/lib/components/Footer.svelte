@@ -97,7 +97,7 @@
 	];
 </script>
 
-<footer class="w-full flex flex-row items-start justify-center pt-16 bg-c-bg">
+<footer class="w-full flex flex-row items-start justify-center pt-12 bg-c-bg">
 	<div
 		class="w-full footer bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
     flex flex-col items-center justify-start text-c-bg pt-18 bg-c-secondary relative overflow-hidden"
