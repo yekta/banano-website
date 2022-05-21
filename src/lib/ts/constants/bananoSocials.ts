@@ -39,7 +39,7 @@ export const bananoSocials = {
 	},
 	instagram: {
 		title: 'Instagram',
-		url: 'https://instagram/bananocurrency',
+		url: 'https://instagram.com/bananocurrency',
 		buttonText: 'Follow on Instagram',
 		buttonType: 'instagram' as TButton,
 		iconString: 'instagram' as TIconSocial
