@@ -7,5 +7,5 @@
 		px-6 md:px-24 lg:px-36 pt-8 md:pt-20 lg:pt-32 pb-8 md:pb-16 lg:pb-20"
 >
 	<slot />
-	<p class="w-full text-center mt-8 md:mt-16 lg:mt-20">{pageNumber}</p>
+	<p class="w-full text-center mt-8 md:mt-14 lg:mt-18">{pageNumber}</p>
 </div>

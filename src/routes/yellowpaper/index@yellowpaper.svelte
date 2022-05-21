@@ -3,10 +3,11 @@
 </script>
 
 <script lang="ts">
+	import '$lib/css/yellowpaper.css';
 	import { page } from '$app/stores';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
-	import Page1 from '$lib/components/yellowpaper/pages/Page1.svelte';
+	import Page2 from '$lib/components/yellowpaper/pages/Page2.svelte';
 
 	const title = 'Yellowpaper™ | Banano';
 	const description =
@@ -42,6 +43,6 @@
 
 <main class="w-full flex justify-center items-start">
 	<div class="yellowpaper-container p-3 md:p-5">
-		<Page1 />
+		<Page2 />
 	</div>
 </main>

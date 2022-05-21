@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/css/editor.css';
 	import edjsHTML from 'editorjs-html';
 	import showdown from 'showdown';
 	import { onMount } from 'svelte';

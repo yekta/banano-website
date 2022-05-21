@@ -3,6 +3,7 @@
 </script>
 
 <script lang="ts">
+	import '$lib/css/main.css';
 	import Advisors from '$lib/components/sections/Advisors.svelte';
 	import CommunityProjects from '$lib/components/sections/CommunityProjects.svelte';
 	import FAQ from '$lib/components/sections/FAQ.svelte';
@@ -27,6 +28,7 @@
 	import GetBanano from '$lib/components/sections/GetBanano.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import MainStyles from '$lib/components/MainStyles.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];

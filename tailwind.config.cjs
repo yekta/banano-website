@@ -74,7 +74,11 @@ module.exports = {
 				230: '57.5rem',
 				240: '60rem',
 				256: '64rem',
-				288: '72rem'
+				288: '72rem',
+				'1ch': '1ch',
+				'2ch': '2ch',
+				'3ch': '3ch',
+				'4ch': '4ch'
 			},
 			boxShadow: {
 				card: `0rem 0.75rem 1.5rem -0.25rem`,
