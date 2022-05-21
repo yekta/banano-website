@@ -78,7 +78,8 @@ module.exports = {
 				button: '0rem 0.5rem 0rem 0rem',
 				'button-hover': '0rem 0.625rem 0rem 0rem',
 				'navbar-button': '0rem 0rem 0rem 0rem',
-				'navbar-button-hover': '0rem 0.3rem 0rem 0rem'
+				'navbar-button-hover': '0rem 0.3rem 0rem 0rem',
+				asset: '3rem 0rem 3rem 0rem'
 			},
 			opacity: {
 				3: '0.03',

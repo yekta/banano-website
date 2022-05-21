@@ -6,6 +6,7 @@
 	export let href: string | undefined = undefined;
 	export let targetBlank = false;
 	export let isLeft = false;
+	export let download = false;
 	export let padding = 'px-8 py-3.5';
 	export { classes as class };
 	let classes = '';
@@ -41,16 +42,30 @@
 </script>
 
 {#if href}
-	<a
-		{href}
-		target={targetBlank ? '_blank' : null}
-		class="flex flex-row items-center {isLeft
-			? 'justify-start'
-			: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button hover:shadow-button-hover 
+	{#if download}
+		<a
+			{href}
+			download
+			target={targetBlank ? '_blank' : null}
+			class="flex flex-row items-center {isLeft
+				? 'justify-start'
+				: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button hover:shadow-button-hover 
 			transition-all hover:-translate-y-0.5 filter {getBgAndTextClass()} {classes}"
-	>
-		<slot />
-	</a>
+		>
+			<slot />
+		</a>
+	{:else}
+		<a
+			{href}
+			target={targetBlank ? '_blank' : null}
+			class="flex flex-row items-center {isLeft
+				? 'justify-start'
+				: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button hover:shadow-button-hover 
+			transition-all hover:-translate-y-0.5 filter {getBgAndTextClass()} {classes}"
+		>
+			<slot />
+		</a>
+	{/if}
 {:else}
 	<button
 		on:click={onClick}

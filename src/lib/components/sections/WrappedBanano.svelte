@@ -63,7 +63,7 @@
 
 <style>
 	.squiggle {
-		background-image: url('/illustrations/squiggle.svg');
+		background-image: url('/illustrations/foreground/squiggle.svg');
 		background-size: contain;
 		background-repeat: repeat;
 	}

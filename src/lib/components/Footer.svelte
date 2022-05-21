@@ -140,7 +140,7 @@
 			class="w-full flex flex-col items-center justify-center mt-5 text-center py-7 px-8 border-t-2 border-c-bg/25"
 		>
 			<p>Hundreds of 🍌 have been eaten and digested while coming up with this shit.</p>
-			<p class="mt-3">© {currentYear} BANANO</p>
+			<p class="mt-3">BANANO © {currentYear}</p>
 		</div>
 	</div>
 </footer>

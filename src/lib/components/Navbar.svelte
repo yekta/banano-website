@@ -184,7 +184,7 @@
 						<a
 							href="https://www.coingecko.com/en/coins/banano"
 							target="_blank"
-							class="w-full text-center mt-5 font-bold bg-c-secondary/20 px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+							class="w-full text-center mt-5 font-bold bg-c-secondary/20 px-3 py-2 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
 								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
 						>
 							${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
