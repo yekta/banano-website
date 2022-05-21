@@ -1,0 +1,13 @@
+<script lang='ts'>
+	import Button from '$lib/components/Button.svelte';
+
+  function onClick(){
+    console.log('clicked');
+  }
+</script>
+
+## Test
+
+In the year 2009, we saw the introduction of the first ever decentralized payment network, the mother of all coins, Bitcoin **[1]**. In the years that followed, global interest grew and Bitcoin inspired the genesis of numerous cryptography based projects that also worked towards trustless secure payment systems and storage of value.
+
+<Button onClick={onClick}>Click Me</Button>
