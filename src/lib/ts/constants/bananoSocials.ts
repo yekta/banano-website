@@ -57,5 +57,12 @@ export const bananoSocials = {
 		buttonText: 'Follow on Facebook',
 		buttonType: 'facebook' as TButton,
 		iconString: 'facebook' as TIconSocial
+	},
+	email: {
+		title: 'Email',
+		url: 'mailto:hello@banano.cc',
+		buttonText: 'Contact Us',
+		buttonType: 'primary' as TButton,
+		iconString: 'email' as TIconSocial
 	}
 };

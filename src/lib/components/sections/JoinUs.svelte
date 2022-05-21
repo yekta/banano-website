@@ -61,6 +61,12 @@
 			text: bananoSocials.facebook.buttonText,
 			type: bananoSocials.facebook.buttonType,
 			icon: bananoSocials.facebook.iconString
+		},
+		{
+			url: bananoSocials.email.url,
+			text: bananoSocials.email.buttonText,
+			type: bananoSocials.email.buttonType,
+			icon: bananoSocials.email.iconString
 		}
 	];
 </script>

@@ -7,4 +7,5 @@ export type TIconSocial =
 	| 'facebook'
 	| 'github'
 	| 'medium'
-	| 'youtube';
+	| 'youtube'
+	| 'email';

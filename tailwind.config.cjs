@@ -55,6 +55,7 @@ module.exports = {
 				'c-medium-shaded': withOpacityValue('--c-medium-shaded')
 			},
 			spacing: {
+				'3px': '3px',
 				0.75: '0.1875rem',
 				4.5: '1.125rem',
 				5.5: '1.375rem',

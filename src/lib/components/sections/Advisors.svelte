@@ -36,9 +36,12 @@
 	const imgExtention = 'svg';
 </script>
 
-<div id="advisors" class="w-full bg-c-bg flex justify-center py-12 text-center">
+<div id="advisors" class="w-full bg-c-bg flex justify-center pt-8 pb-12 text-center">
 	<div class="container-b flex flex-col items-center px-4">
-		<h2 class="text-3xl font-bold px-4">Inspired by the industry's least trusted masterminds</h2>
+		<div class="container-b-smallest bg-c-primary h-1 rounded-full w-full" />
+		<h2 class="text-3xl font-bold px-4 mt-16">
+			Inspired by the industry's least trusted masterminds
+		</h2>
 		<div class="container-b-small flex flex-wrap justify-center mt-5">
 			{#each advisors as advisor}
 				<div

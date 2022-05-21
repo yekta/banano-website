@@ -36,7 +36,8 @@
 				{ text: 'Mobile Wallet', href: 'https://kalium.banano.cc', targetBlank: true },
 				{ text: 'Network Explorer', href: 'https://creeper.banano.cc', targetBlank: true },
 				{ text: 'Blog', href: 'https://medium.com/banano', targetBlank: true },
-				{ text: 'Presskit', href: '/presskit' }
+				{ text: 'Presskit', href: '/presskit' },
+				{ text: 'Contact Us', href: bananoSocials.email.url }
 			]
 		},
 		{
