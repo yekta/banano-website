@@ -113,7 +113,7 @@
 		>
 			{#each footerSections as section}
 				<div
-					class="w-full md:max-w-[18rem] md:w-1/3 flex flex-col items-center md:items-start px-4 py-7"
+					class="w-full md:max-w-[18rem] md:w-1/3 flex flex-col items-center md:items-start px-4 pt-4 pb-6 md:pt-7 md:pb-6 2xl:pt-12"
 				>
 					<h5 class="text-xl font-bold px-3.5">{section.title.toUpperCase()}</h5>
 					<div class="flex flex-col items-center md:items-start mt-2">
@@ -136,8 +136,11 @@
 				</div>
 			{/each}
 		</div>
-		<p class="w-full text-center py-7 px-8 border-t-2 border-c-bg/25 mt-5">
-			© {currentYear} BANANO. Hundreds of 🍌 have been eaten and digested while coming up with this shit.
-		</p>
+		<div
+			class="w-full flex flex-col items-center justify-center mt-5 text-center py-7 px-8 border-t-2 border-c-bg/25"
+		>
+			<p>Hundreds of 🍌 have been eaten and digested while coming up with this shit.</p>
+			<p class="mt-3">© {currentYear} BANANO</p>
+		</div>
 	</div>
 </footer>
