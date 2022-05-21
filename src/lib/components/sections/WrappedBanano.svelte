@@ -15,10 +15,8 @@
 			<h2 class="text-3xl font-bold px-4">Wrapped Banano</h2>
 			<div class="mt-3 container-b-smallest">
 				<p class="max-w-full text-lg">
-					In case you want to move your Banano to other chains, our monkeys got you covered!
-				</p>
-				<p class="text-lg">
-					They take your Banano, wrap it with special ribbons and deliver it to other chains such as <a
+					Use Banano to learn about and participate in DeFi in a fun & easy way! Our monkeys take
+					your Banano, wrap it with special ribbons and deliver it to other chains such as <a
 						href="https://polygon.technology/"
 						target="_blank"
 						class="font-bold text-c-secondary hover:underline">Polygon</a
