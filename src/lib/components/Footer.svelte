@@ -120,7 +120,7 @@
 					<div class="flex flex-col items-center md:items-start mt-2">
 						{#each section.entries as entry}
 							<a
-								class="w-full px-3.5 py-2 transition hover:bg-c-secondary rounded-lg
+								class="w-full text-center md:text-left px-3.5 py-2 transition hover:bg-c-secondary rounded-lg
 								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
 								href={entry.href}
 								target={entry.targetBlank ? '_blank' : undefined}
