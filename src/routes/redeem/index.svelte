@@ -79,28 +79,30 @@
 	<div class="w-full bg-c-bg container-b-small flex flex-col relative px-4 md:px-8 pb-16">
 		<div class="w-full flex flex-wrap justify-center items-start -mt-4">
 			{#if !isIosOpen}
-				<div class="w-full md:w-1/2 max-w-xs flex flex-col justify-start items-center mt-12 px-4">
+				<div
+					class="w-full md:w-1/2 max-w-xs flex flex-col justify-start items-center mt-12 px-4 md:px-8"
+				>
 					<h3 class="text-xl font-bold">Android</h3>
 					<img class="w-28 max-w-full h-auto mt-4" src="/redeem/android.svg" alt="Android Phone" />
 					<Button
 						type={isAndroidOpen ? 'secondary' : 'primary'}
 						onClick={toggleAndroid}
-						class="mt-5"
-						padding="px-8 md:px-16 py-3.5"
+						class="w-full max-w-xs mt-5"
 					>
 						{isAndroidOpen ? 'Hide' : 'Show me'}
 					</Button>
 				</div>
 			{/if}
 			{#if !isAndroidOpen}
-				<div class="w-full md:w-1/2 max-w-xs flex flex-col justify-start items-center mt-12 px-4">
+				<div
+					class="w-full md:w-1/2 max-w-xs flex flex-col justify-start items-center mt-12 px-4 md:px-8"
+				>
 					<h3 class="text-xl font-bold">iPhone</h3>
 					<img class="w-28 max-w-full h-auto mt-4" src="/redeem/android.svg" alt="Android Phone" />
 					<Button
 						type={isIosOpen ? 'secondary' : 'primary'}
 						onClick={toggleIos}
-						class="mt-5"
-						padding="px-8 md:px-16 py-3.5"
+						class="w-full max-w-xs mt-5"
 					>
 						{isIosOpen ? 'Hide' : 'Show me'}
 					</Button>
@@ -113,7 +115,7 @@
 				<p class="text-xl mt-4">
 					Download Kalium Wallet from {isAndroidOpen ? 'Play Store' : 'App Store'}.
 				</p>
-				<Button href="https://kalium.banano.cc" targetBlank={true} class="mt-6"
+				<Button class="mt-6 w-full max-w-xs" href="https://kalium.banano.cc" targetBlank={true}
 					>Download Kalium</Button
 				>
 				<h4 class="text-3xl font-bold mt-20">Step 2</h4>
