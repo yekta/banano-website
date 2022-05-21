@@ -2,20 +2,16 @@
 	import Button from '$lib/components/Button.svelte';
 	import { particlesConfig } from '$lib/ts/constants/particlesConfig';
 	import { onMount, tick } from 'svelte';
-	/* 	import { loadFull } from 'tsparticles'; */
+	import { loadFull } from 'tsparticles';
 
-	/* 	let ParticlesComponent: any;
-	let mounted = false;
-
+	let ParticlesComponent: any;
 	const particlesInit = async (main: any) => {
 		await loadFull(main);
 	};
 
 	onMount(async () => {
-		mounted = true;
-		await tick();
 		ParticlesComponent = (await import('svelte-particles')).default;
-	}); */
+	});
 </script>
 
 <div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
@@ -25,14 +21,12 @@
 			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
 		>
 			<div class="w-full h-full absolute left-0 top-0">
-				<!-- 				{#if mounted}
-					<svelte:component
-						this={ParticlesComponent}
-						id="tsparticles"
-						options={particlesConfig}
-						{particlesInit}
-					/>
-				{/if} -->
+				<svelte:component
+					this={ParticlesComponent}
+					id="tsparticles"
+					options={particlesConfig}
+					{particlesInit}
+				/>
 			</div>
 			<div
 				class="container-b max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10"
