@@ -9,7 +9,7 @@
 	import IconMenu from './icons/IconMenu.svelte';
 
 	let bananoPrice: number;
-	const pricePlaceholder = '........';
+	const pricePlaceholder = '..........';
 
 	interface Section {
 		title: string;
