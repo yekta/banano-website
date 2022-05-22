@@ -1,6 +1,5 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
-	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 
 	export { classes as class };
 	let classes: string;

@@ -1,10 +1,10 @@
 export const bananoWallets = {
 	kalium: {
-		name: 'Kalium',
+		title: 'Kalium',
 		url: 'https://kalium.banano.cc'
 	},
 	vault: {
-		name: 'Vault',
+		title: 'Vault',
 		url: 'https://vault.banano.cc'
 	}
 };

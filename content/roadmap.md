@@ -67,7 +67,7 @@ Crane faucet release.
 
 ### April
 
-First anniversary party, 300 million BAN burn. 2nd NANO airdrop. MonkeyTalks & Twitter tipbot release.
+First anniversary party, 300 million BAN burn. 2nd NANO airdrop. MonKeyTalks & Twitter tipbot release.
 
 ### May
 

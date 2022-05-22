@@ -1,7 +1,6 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 
 	export { classes as class };
 	let classes: string;
@@ -18,8 +17,8 @@
 		cryptocurrency projects from the very beginning: <b
 			>Free coin distribution through innovative faucet games</b
 		>. You heard it right, we don’t have just some boring faucets, we have faucet games! The
-		legendary BANANO Runner game (Figure 11) with its first round in April 2018 was a huge success
-		and an unprecedented form of airdropping a new cryptocurrency to its community.
+		legendary BANANO Runner game (<b>Figure 11</b>) with its first round in April 2018 was a huge
+		success and an unprecedented form of airdropping a new cryptocurrency to its community.
 	</p>
 	<video
 		width="800"
@@ -30,7 +29,7 @@
 		<source src="/yellowpaper/banano-runner.mp4" type="video/mp4" />
 		<track kind="captions" />
 	</video>
-	<p class="mt-4 px-4 md:px-12 text-sm">
+	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 11</b>: A video from BANANO Runner - we’ll never forget this legendary BANANO faucet
 		game!
 	</p>
