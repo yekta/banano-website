@@ -1,5 +1,15 @@
 import { cubicOut, cubicIn, quadOut } from 'svelte/easing';
 
+export const menu = (node: Node, { delay = 0, duration = 300, easing = cubicOut }) => {
+	return {
+		delay,
+		duration,
+		easing,
+		css: (t: number) => {
+			return `transform: translateX(${100 - t * 100}%);opacity: ${t}`;
+		}
+	};
+};
 export const dropdown = (node: Node, { delay = 0, duration = 300 }) => {
 	return {
 		delay,

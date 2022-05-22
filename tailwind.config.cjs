@@ -87,7 +87,8 @@ module.exports = {
 				'navbar-button': '0rem 0rem 0rem 0rem',
 				'navbar-button-hover': '0rem 0.3rem 0rem 0rem',
 				asset: '3rem 0rem 3rem 0rem',
-				'yellowpaper-paper': '0rem 0.5rem 1rem 0rem'
+				'yellowpaper-paper': '0rem 0.5rem 1rem 0rem',
+				sidebar: '-0.5rem 0rem 0rem 0rem'
 			},
 			opacity: {
 				3: '0.03',
@@ -95,7 +96,8 @@ module.exports = {
 				6: '0.06',
 				8: '0.08',
 				13: '0.13',
-				15: '0.15'
+				15: '0.15',
+				85: '0.85'
 			},
 			brightness: {
 				80: '0.8',

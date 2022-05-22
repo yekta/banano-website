@@ -5,8 +5,11 @@
 	import { onMount } from 'svelte';
 	import IconSocial from './icons/IconSocial.svelte';
 	import Logo from './Logo.svelte';
-	import { Menu, MenuButton, MenuItems, MenuItem, Transition } from '@rgossiaux/svelte-headlessui';
 	import IconMenu from './icons/IconMenu.svelte';
+	import { clickoutside } from '$lib/ts/actions/clickoutside';
+	import { cubicOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
+	import { menu } from '$lib/ts/transitions';
 
 	let bananoPrice: number;
 	const pricePlaceholder = '..........';
@@ -86,6 +89,11 @@
 	onMount(() => {
 		getAndSetBananoPrice();
 	});
+
+	let isSidebarOpen = false;
+
+	const toggleMenu = () => (isSidebarOpen = !isSidebarOpen);
+	const closeMenu = () => (isSidebarOpen = false);
 </script>
 
 <nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary z-50">
@@ -129,69 +137,71 @@
 					${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
 				</a>
 			</div>
-			<Menu
-				let:open
-				class="lg:hidden relative flex flex-col justify-start items-end text-c-secondary z-50 -mr-1 md:mr-0"
+			<button
+				on:click={toggleMenu}
+				class="lg:hidden h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 flex flex-row items-center justify-center rounded-lg transition
+				shadow-navbar-button hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary {isSidebarOpen
+					? 'text-c-bg'
+					: 'text-c-primary hover:text-c-bg'} shadow-c-on-bg/50"
 			>
-				<MenuButton
-					class="h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 flex flex-row items-center justify-center rounded-lg transition
-					shadow-navbar-button hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary {open
-						? 'text-c-bg'
-						: 'text-c-primary hover:text-c-bg'} shadow-c-on-bg/50"
-				>
-					<IconMenu
-						class="lg:hidden w-full h-full md:w-8 md:h-8 md:mr-1.5 transition transform {open
-							? 'rotate-90'
-							: ''}"
-					/>
-					<div class="font-medium text-lg hidden md:block">Menu</div>
-				</MenuButton>
-				<Transition
-					class="absolute top-14 right-0 transition transform origin-top-right"
-					show={open}
-					enter=""
-					enterFrom="opacity-0 scale-75 -translate-y-4"
-					enterTo="opacity-100 scale-100 translate-y-0"
-					leave="duration-150"
-					leaveFrom="opacity-100"
-					leaveTo="opacity-0 scale-50 -translate-y-2"
-				>
-					<MenuItems
-						class="max-h-[65vh] overflow-y-auto flex flex-row flex-wrap justify-center items-start text-center bg-c-bg rounded-2xl
-						px-2 pt-2 pb-3 shadow-navbar-button-hover shadow-c-secondary-shaded border-[3px] border-c-secondary-shaded"
-					>
-						{#each sections as section}
-							<MenuItem
-								as="a"
-								href={section.href}
-								class="w-56 max-w-full px-6 py-3 font-bold font-lg rounded-xl transition hover:bg-c-secondary hover:text-c-bg
-								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
-							>
-								{section.title}
-							</MenuItem>
-						{/each}
-						{#each socials as social, index}
-							<MenuItem
-								href={social.href}
-								as="a"
-								target="_blank"
-								class="mt-2 p-1.5 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg
-								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
-							>
-								<IconSocial type={social.icon} class="w-10 h-10" />
-							</MenuItem>
-						{/each}
-						<a
-							href="https://www.coingecko.com/en/coins/banano"
-							target="_blank"
-							class="w-full text-center mt-4 font-bold bg-c-secondary/20 px-3 py-2 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
-								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
-						>
-							${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
-						</a>
-					</MenuItems>
-				</Transition>
-			</Menu>
+				<IconMenu
+					class="lg:hidden w-full h-full md:w-8 md:h-8 md:mr-1.5 transition transform {isSidebarOpen
+						? 'rotate-180'
+						: ''}"
+				/>
+				<div class="font-medium text-lg hidden md:block">Menu</div>
+			</button>
 		</div>
 	</div>
 </nav>
+
+{#if isSidebarOpen}
+	<div
+		transition:fade={{ duration: 250, easing: cubicOut }}
+		class="fixed lg:hidden z-50 w-full h-full top-0 right-0 flex flex-row justify-end bg-c-on-bg/85"
+	>
+		<div
+			transition:menu={{ duration: 250, easing: cubicOut }}
+			use:clickoutside={closeMenu}
+			class="w-[70vw] max-w-[16rem] h-full flex flex-col items-start bg-c-bg 
+			rounded-l-xl p-3 overflow-y-auto shadow-sidebar shadow-c-bg-secondary-shaded"
+		>
+			<h4 class="text-2xl font-bold px-6 py-3">Sections</h4>
+			<div class="w-full px-2">
+				<div class="h-1 w-full rounded-full bg-c-secondary mt-2 mb-3" />
+			</div>
+			{#each sections as section}
+				<a
+					on:click={closeMenu}
+					href={section.href}
+					class="text-lg w-full max-w-full px-6 py-3 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg
+					shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
+				>
+					{section.title}
+				</a>
+			{/each}
+			<div class="flex flex-wrap justify-center mt-auto pt-2 pb-1">
+				{#each socials as social, index}
+					<a
+						on:click={closeMenu}
+						href={social.href}
+						target="_blank"
+						class="mt-2 p-1.5 rounded-xl transition hover:bg-c-secondary hover:text-c-bg
+						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
+					>
+						<IconSocial type={social.icon} class="w-11 h-11" />
+					</a>
+				{/each}
+				<a
+					on:click={closeMenu}
+					href="https://www.coingecko.com/en/coins/banano"
+					target="_blank"
+					class="w-full text-center mt-4 font-bold text-lg bg-c-secondary/20 px-3 py-2 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+					shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
+				>
+					${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
+				</a>
+			</div>
+		</div>
+	</div>
+{/if}
