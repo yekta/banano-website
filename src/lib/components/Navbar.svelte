@@ -9,7 +9,7 @@
 	import { clickoutside } from '$lib/ts/actions/clickoutside';
 	import { cubicOut } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
-	import { menu } from '$lib/ts/transitions';
+	import { sidebar } from '$lib/ts/transitions';
 
 	let bananoPrice: number;
 	const pricePlaceholder = '..........';
@@ -161,7 +161,7 @@
 		class="fixed lg:hidden z-50 w-full h-full top-0 right-0 flex flex-row justify-end bg-c-on-bg/85"
 	>
 		<div
-			transition:menu={{ duration: 250, easing: cubicOut }}
+			transition:sidebar={{ duration: 250, easing: cubicOut }}
 			use:clickoutside={closeMenu}
 			class="w-[70vw] max-w-[16rem] h-full flex flex-col items-start bg-c-bg 
 			rounded-l-xl p-3 overflow-y-auto shadow-sidebar shadow-c-bg-secondary-shaded"

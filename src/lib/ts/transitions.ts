@@ -1,6 +1,6 @@
-import { cubicOut, cubicIn, quadOut } from 'svelte/easing';
+import { cubicOut, cubicIn } from 'svelte/easing';
 
-export const menu = (node: Node, { delay = 0, duration = 300, easing = cubicOut }) => {
+export const sidebar = (node: Node, { delay = 0, duration = 300, easing = cubicOut }) => {
 	return {
 		delay,
 		duration,
