@@ -29,11 +29,13 @@
 		class="w-full"
 	>
 		<img
+			width="1000"
+			height="487"
 			class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
 			src="/yellowpaper/camo.jpeg"
 			alt="CAMO Banano"
-		/></a
-	>
+		/>
+	</a>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 10</b>: CAMO BANANO graphic.
 	</p>

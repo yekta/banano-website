@@ -21,7 +21,12 @@
 		legendary BANANO Runner game (Figure 11) with its first round in April 2018 was a huge success
 		and an unprecedented form of airdropping a new cryptocurrency to its community.
 	</p>
-	<video class="w-full h-auto mt-8 rounded-xl relative z-0 overflow-hidden" controls>
+	<video
+		width="800"
+		height="450"
+		class="w-full h-auto mt-8 rounded-xl relative z-0 overflow-hidden"
+		controls
+	>
 		<source src="/yellowpaper/banano-runner.mp4" type="video/mp4" />
 		<track kind="captions" />
 	</video>
@@ -47,17 +52,35 @@
 	</p>
 	<div class="w-full flex flex-wrap justify-center mt-6">
 		<a class="w-full max-w-xs md:flex-1" href={bananoSocials.discord.url} target="_blank">
-			<img class="w-full" src="/yellowpaper/discord-tipbot.png" alt="Discord Tipbot" />
+			<img
+				width="720"
+				height="1203"
+				class="w-full"
+				src="/yellowpaper/discord-tipbot.png"
+				alt="Discord Tipbot"
+			/>
 		</a>
 		<a
 			class="w-full max-w-xs md:flex-1"
 			href="https://www.reddit.com/user/Banano_Tipbot"
 			target="_blank"
 		>
-			<img class="w-full" src="/yellowpaper/reddit-tipbot.png" alt="Reddit Tipbot" />
+			<img
+				width="720"
+				height="1203"
+				class="w-full"
+				src="/yellowpaper/reddit-tipbot.png"
+				alt="Reddit Tipbot"
+			/>
 		</a>
 		<a class="w-full max-w-xs md:flex-1" href="https://twitter.com/bananotipperbot" target="_blank">
-			<img class="w-full" src="/yellowpaper/twitter-tipbot.png" alt="Twitter Tipbot" />
+			<img
+				width="720"
+				height="1203"
+				class="w-full"
+				src="/yellowpaper/twitter-tipbot.png"
+				alt="Twitter Tipbot"
+			/>
 		</a>
 	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">

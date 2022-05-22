@@ -28,7 +28,12 @@
 		redefining the memeconomy on 1 April 2018. Oh, did you know that Colin Lemahieu, the founder of
 		Nano, likes us? Yea, that’s right (<b>Figure 1</b>)!
 	</p>
-	<video class="w-full h-auto mt-8 rounded-xl relative z-0 overflow-hidden" controls>
+	<video
+		width="1280"
+		height="720"
+		class="w-full h-auto mt-8 rounded-xl relative z-0 overflow-hidden"
+		controls
+	>
 		<source src="/yellowpaper/colin-likes-banano.mp4" type="video/mp4" />
 		<track kind="captions" />
 	</video>
@@ -44,6 +49,8 @@
 		<b>Table 1</b>: Feature comparison: BANANO vs. Bitcoin
 	</p>
 	<img
+		width="1500"
+		height="960"
 		class="w-full h-auto mt-5"
 		src="/yellowpaper/banano-vs-bitcoin.png"
 		alt="Feature comparison: Banano vs. Bitcoin"

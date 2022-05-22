@@ -15,7 +15,13 @@
 		<div
 			class="w-full max-w-sm md:max-w-[16rem] lg:max-w-[22rem] flex flex-col items-center justify-start md:mr-8 mt-6"
 		>
-			<img class="w-full h-auto" src="/yellowpaper/block-lettuce.png" alt="Block Lettuce" />
+			<img
+				width="896"
+				height="1250"
+				class="w-full h-auto"
+				src="/yellowpaper/block-lettuce.png"
+				alt="Block Lettuce"
+			/>
 			<p class="mt-4 px-4 md:px-12 text-sm text-center">
 				<b>Figure 6</b>: Block Lettuce.
 			</p>
@@ -52,10 +58,18 @@
 	</p>
 	<div class="w-full flex flex-wrap items-center justify-center">
 		<div class="w-full max-w-[18rem] md:w-1/2 mt-4 p-3">
-			<img class="w-full h-auto" src="/yellowpaper/kalium-send.gif" alt="Kalium Send Process" />
+			<img
+				width="305"
+				height="600"
+				class="w-full h-auto"
+				src="/yellowpaper/kalium-send.gif"
+				alt="Kalium Send Process"
+			/>
 		</div>
 		<div class="w-full max-w-md md:flex-1 md:min-w-0 mt-4 p-3">
 			<img
+				width="534"
+				height="486"
 				class="w-full h-auto rounded-xl relative z-0"
 				src="/yellowpaper/nano-vs-banano-speed.gif"
 				alt="Nano vs Banano Speed"

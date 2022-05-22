@@ -31,6 +31,8 @@
 		account holders (<b>Figure 8</b>).
 	</p>
 	<img
+		width="700"
+		height="700"
 		class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
 		src="/yellowpaper/monkey-change.gif"
 		alt="MonKey Change"

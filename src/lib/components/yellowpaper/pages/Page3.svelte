@@ -35,7 +35,13 @@
 		>).
 	</p>
 	<a href={bananoWallets.kalium.url} target="_blank">
-		<img class="w-full h-auto mt-5" src="/yellowpaper/kalium.png" alt="Kalium Wallet" />
+		<img
+			class="w-full h-auto mt-5"
+			width="1500"
+			height="1194"
+			src="/yellowpaper/kalium.png"
+			alt="Kalium Wallet"
+		/>
 	</a>
 	<p>
 		We also haven’t forgotten the roots of our BANANO tree. We made the tech from Kalium Wallet

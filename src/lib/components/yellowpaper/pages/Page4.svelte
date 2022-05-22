@@ -31,6 +31,8 @@
 		<strike>highly skilled team</strike> dedicated community, and it is very, very, legit.
 	</p>
 	<img
+		width="700"
+		height="700"
 		class="w-full h-auto mt-10 rounded-xl relative z-0 overflow-hidden"
 		src="/yellowpaper/factory.gif"
 		alt="Nano to Banano Factory Animation"
