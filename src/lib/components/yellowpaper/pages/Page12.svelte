@@ -20,6 +20,8 @@
 	</p>
 	<a href={bananoFaucets.bananoMiner.url} target="_blank" class="w-full">
 		<img
+			width="1500"
+			height="788"
 			class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
 			src="/yellowpaper/banano-miner.jpeg"
 			alt="Banano Miner"
@@ -45,6 +47,8 @@
 		<a href={bananoFaucets.bananoMiner.url} target="_blank">bananominer.com</a> to try it out.
 	</p>
 	<img
+		width="800"
+		height="300"
 		class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
 		src="/yellowpaper/banano-miner-animation.gif"
 		alt="Banano Miner Animation"

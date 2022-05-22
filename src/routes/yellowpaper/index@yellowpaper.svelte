@@ -100,14 +100,20 @@
 				/>
 			</div>
 		</div>
-		<Page10 class="mt-3 md:mt-5" />
+		<Page10 />
 		<Page11 class="mt-3 md:mt-5" />
 		<Page12 class="mt-3 md:mt-5" />
 		<div class="w-full relative pt-12 items-start flex flex-col">
 			<div class="w-full -mb-8 md:-mb-16 lg:-mb-28 relative z-10 px-6 md:px-24 lg:px-36">
 				<div class="w-full max-w-md">
 					<a class="w-full" target="_blank" href={bananoFaucets.monkeyTalks.url}>
-						<img class="w-full h-auto " src="/yellowpaper/deadpool.png" alt="Shady MonKey" />
+						<img
+							width="1000"
+							height="639"
+							class="w-full h-auto "
+							src="/yellowpaper/deadpool.png"
+							alt="Shady MonKey"
+						/>
 					</a>
 				</div>
 			</div>
@@ -115,7 +121,7 @@
 		</div>
 		<div class="w-full justify-center items-center flex">
 			<div class="w-full max-w-md">
-				<img src="/yellowpaper/banburner.gif" alt="Banburner" />
+				<img width="600" height="600" src="/yellowpaper/banburner.gif" alt="Banburner" />
 			</div>
 		</div>
 		<Page14 />

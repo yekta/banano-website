@@ -18,6 +18,8 @@
 	</p>
 	<a href={bananoFaucets.blackMonkey.url} target="_blank" class="w-full">
 		<img
+			width="1500"
+			height="989"
 			class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
 			src="/yellowpaper/black-monkey.jpeg"
 			alt="Black Monkey"
@@ -34,6 +36,8 @@
 		Faucet is available on <b>memefaucet.banano.cc</b> while it's active but it's not active currently.
 	</p>
 	<img
+		width="1341"
+		height="645"
 		class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
 		src="/yellowpaper/meme-faucet.jpeg"
 		alt="Meme Faucet"
@@ -48,6 +52,8 @@
 		<b>faucet.banano.coranos.io</b> while it's active but it's not active currently.
 	</p>
 	<img
+		width="1496"
+		height="978"
 		class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8 border-2 border-c-yellowpaper-on-bg"
 		src="/yellowpaper/crane-faucet.jpeg"
 		alt="Crane Faucet"

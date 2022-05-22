@@ -28,6 +28,8 @@
 	</p>
 	<a href={bananoFaucets.monkeyTalks.url} target="_blank" class="w-full">
 		<img
+			width="1500"
+			height="1101"
 			class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
 			src="/yellowpaper/monkey-talks.jpeg"
 			alt="MonKeyTalks"
@@ -54,6 +56,8 @@
 		>). Coin burns unrelated to this program have occurred, and may happen again in the future.
 	</p>
 	<img
+		width="800"
+		height="800"
 		class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
 		src="/yellowpaper/buy-back.jpeg"
 		alt="Buy-Back and Burn"
