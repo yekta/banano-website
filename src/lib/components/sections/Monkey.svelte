@@ -4,7 +4,7 @@
 	const monkeyArray = [0, 1, 2, 3];
 </script>
 
-<div id="monkey" class="w-full bg-c-bg flex flex-col justify-center pt-8 pb-10 text-center">
+<div id="monkey" class="w-full bg-c-bg flex flex-col justify-center pt-12 pb-10 text-center">
 	<div class="container-b-small flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold px-4">Meet MonKey</h2>
 		<p class="mt-3 text-xl md:px-8 lg:px-0">

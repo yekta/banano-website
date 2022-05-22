@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div id="roadmap" class="w-full flex justify-center py-8 pb-16">
+<div id="roadmap" class="w-full flex justify-center pt-12 pb-12">
 	<div class="container-b flex flex-col items-center px-4 md:px-12">
 		<h2 class="text-3xl font-bold px-4">Bumpy Roadmap</h2>
 		<div

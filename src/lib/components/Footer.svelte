@@ -8,6 +8,7 @@
 	interface IFooterSection {
 		title: string;
 		entries: IFooterEntry[];
+		wClass: string;
 	}
 	interface IFooterEntry {
 		text: string;
@@ -19,10 +20,11 @@
 	const footerSections: IFooterSection[] = [
 		{
 			title: 'Sections',
+			wClass: 'w-56',
 			entries: [
 				{ text: 'Get Banano', href: '/#get-banano' },
 				{ text: 'MonKey', href: '/#monkey' },
-				{ text: 'wBAN', href: '/#wrapped-banano' },
+				{ text: 'wBAN', href: '/#wban' },
 				{ text: 'Wallets', href: '/#wallets' },
 				{ text: 'Roadmap', href: '/#roadmap' },
 				{ text: 'News', href: '/#news' },
@@ -31,6 +33,7 @@
 		},
 		{
 			title: 'Resources',
+			wClass: 'w-64',
 			entries: [
 				{ text: 'Desktop Wallet', href: 'https://vault.banano.cc', targetBlank: true },
 				{ text: 'Mobile Wallet', href: 'https://kalium.banano.cc', targetBlank: true },
@@ -44,6 +47,7 @@
 		},
 		{
 			title: 'Community',
+			wClass: 'w-72',
 			entries: [
 				{
 					text: bananoSocials.discord.buttonText,
@@ -115,7 +119,7 @@
 		>
 			{#each footerSections as section}
 				<div
-					class="w-full md:max-w-[18rem] md:w-1/3 flex flex-col items-center md:items-start px-4 pt-4 pb-6 md:pt-7 md:pb-6 2xl:pt-12"
+					class="{section.wClass} max-w-full flex flex-col items-center md:items-start px-4 pt-4 pb-6 md:pt-7 md:pb-6 2xl:pt-12"
 				>
 					<h5 class="text-xl font-bold px-4">{section.title.toUpperCase()}</h5>
 					<div class="flex flex-col items-center md:items-start mt-2">

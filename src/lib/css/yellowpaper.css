@@ -41,7 +41,7 @@
 }
 
 body {
-	font-family: 'lm-roman-10', system-ui, serif;
+	font-family: lm-roman-10, system-ui, serif;
 	color: rgb(var(--c-yellowpaper-on-bg));
 	background-color: rgb(var(--c-yellowpaper-document-bg));
 }

@@ -48,11 +48,6 @@
 	];
 	const sections: Section[] = [
 		{
-			title: 'Wallets',
-			id: 'wallets',
-			href: '/#wallets'
-		},
-		{
 			title: 'MonKey',
 			id: 'monkey',
 			href: '/#monkey'
@@ -61,6 +56,11 @@
 			title: 'wBAN',
 			id: 'wban',
 			href: '/#wban'
+		},
+		{
+			title: 'Wallets',
+			id: 'wallets',
+			href: '/#wallets'
 		},
 		{
 			title: 'News',
