@@ -34,21 +34,40 @@
 	font-style: italic;
 }
 
-:root {
-	--c-yellowpaper-bg: 255 246 186;
-	--c-yellowpaper-on-bg: 42 42 46;
-	--c-yellowpaper-document-bg: 128 128 128;
-}
-
 body {
 	font-family: lm-roman-10, system-ui, serif;
 	color: rgb(var(--c-yellowpaper-on-bg));
 	background-color: rgb(var(--c-yellowpaper-document-bg));
 }
 
+:root {
+	--c-yellowpaper-bg: 255 246 186;
+	--c-yellowpaper-on-bg: 42 42 46;
+	--c-yellowpaper-document-bg: 128 128 128;
+	--c-yellowpaper-primary: 0 115 20;
+}
+
 .yellowpaper-container {
 	width: 100%;
 	max-width: 1024px;
+}
+
+.yellowpaper a {
+	color: rgb(var(--c-yellowpaper-primary));
+	font-weight: 700;
+}
+
+.yellowpaper a:hover {
+	text-decoration: underline;
+}
+
+.yellowpaper ul > li {
+	margin-left: 3ch;
+	line-height: 2;
+}
+.yellowpaper ul > li::before {
+	content: '•';
+	margin-right: 1ch;
 }
 
 @tailwind utilities;

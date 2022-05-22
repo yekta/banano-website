@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
+
 	import Button from '../Button.svelte';
 
 	interface Wallet {
@@ -15,14 +17,14 @@
 			description:
 				'Send Banano to all your friends on the go with Kalium. Available on iOS & Android.',
 			buttonText: 'Download Kalium',
-			url: 'https://kalium.banano.cc',
+			url: bananoWallets.kalium.href,
 			img: 'kalium-wallet'
 		},
 		{
 			title: 'BananoVault',
 			description: 'Browser-based lightwallet that also supports Ledger Nano S. Ideal for desktop.',
 			buttonText: 'Visit BananoVault',
-			url: 'https://vault.banano.cc',
+			url: bananoWallets.vault.href,
 			img: 'banano-vault'
 		},
 		{

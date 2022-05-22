@@ -55,7 +55,8 @@ module.exports = {
 				'c-medium-shaded': withOpacityValue('--c-medium-shaded'),
 				'c-yellowpaper-bg': withOpacityValue('--c-yellowpaper-bg'),
 				'c-yellowpaper-on-bg': withOpacityValue('--c-yellowpaper-on-bg'),
-				'c-yellowpaper-document-bg': withOpacityValue('--c-yellowpaper-document-bg')
+				'c-yellowpaper-document-bg': withOpacityValue('--c-yellowpaper-document-bg'),
+				'c-yellowpaper-primary': withOpacityValue('--c-yellowpaper-primary')
 			},
 			spacing: {
 				'3px': '3px',

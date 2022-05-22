@@ -5,7 +5,7 @@
 	let classes: string;
 </script>
 
-<PageWrapper pageNumber={3} class={classes}>
+<PageWrapper pageNumber={4} class={classes}>
 	<p class="mt-4">
 		BANANO prides itself in its active development and pro-active community. BANANO community
 		members have created fascinating projects, such as an implementation of BANANO into Minecraft,

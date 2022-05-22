@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
+	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
 	import IconSocial from './icons/IconSocial.svelte';
 
@@ -35,8 +36,8 @@
 			title: 'Resources',
 			wClass: 'w-64',
 			entries: [
-				{ text: 'Desktop Wallet', href: 'https://vault.banano.cc', targetBlank: true },
-				{ text: 'Mobile Wallet', href: 'https://kalium.banano.cc', targetBlank: true },
+				{ text: 'Desktop Wallet', href: bananoWallets.vault.href, targetBlank: true },
+				{ text: 'Mobile Wallet', href: bananoWallets.kalium.href, targetBlank: true },
 				{ text: 'Network Explorer', href: 'https://creeper.banano.cc', targetBlank: true },
 				{ text: 'Yellowpaper™', href: '/yellowpaper' },
 				{ text: 'Blog', href: 'https://medium.com/banano', targetBlank: true },

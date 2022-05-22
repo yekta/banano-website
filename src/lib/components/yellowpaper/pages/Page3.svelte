@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
+	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 
 	export { classes as class };
 	let classes: string;
@@ -29,11 +30,11 @@
 	</p>
 	<p class="mt-10 px-4 md:px-12 text-sm text-center">
 		<b>Figure 2</b>: Kalium - BANANO’s mobile wallet (<a
-			href="https://kalium.banano.cc"
+			href={bananoWallets.kalium.href}
 			target="_blank">Download</a
 		>).
 	</p>
-	<a href="https://kalium.banano.cc" target="_blank">
+	<a href={bananoWallets.kalium.href} target="_blank">
 		<img class="w-full h-auto mt-5" src="/yellowpaper/kalium.png" alt="Kalium Wallet" />
 	</a>
 	<p>
