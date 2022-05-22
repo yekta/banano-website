@@ -158,7 +158,7 @@
 {#if isSidebarOpen}
 	<div
 		transition:fade={{ duration: 250, easing: cubicOut }}
-		class="fixed lg:hidden z-50 w-full h-full top-0 right-0 flex flex-row justify-end bg-c-on-bg/85"
+		class="fixed lg:hidden z-50 w-full h-full top-0 right-0 flex flex-row justify-end bg-c-on-bg/85 overflow-hidden"
 	>
 		<div
 			transition:sidebar={{ duration: 250, easing: cubicOut }}
