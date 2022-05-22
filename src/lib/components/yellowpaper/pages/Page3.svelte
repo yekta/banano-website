@@ -7,7 +7,7 @@
 </script>
 
 <PageWrapper pageNumber={3} class={classes}>
-	<h2 class="font-bold text-2xl"><span class="mr-2ch">2.</span>What is BANANO?</h2>
+	<h2 class="font-bold text-2xl"><span class="mr-1ch">2.</span> What is BANANO?</h2>
 	<p class="mt-4">
 		BANANO started as a joke between a devoted group of NANO contributors and resulted in a coin
 		being the product of a considerable amount of effort (without taking itself too seriously).
@@ -30,11 +30,11 @@
 	</p>
 	<p class="mt-10 px-4 md:px-12 text-sm text-center">
 		<b>Figure 2</b>: Kalium - BANANO’s mobile wallet (<a
-			href={bananoWallets.kalium.href}
+			href={bananoWallets.kalium.url}
 			target="_blank">Download</a
 		>).
 	</p>
-	<a href={bananoWallets.kalium.href} target="_blank">
+	<a href={bananoWallets.kalium.url} target="_blank">
 		<img class="w-full h-auto mt-5" src="/yellowpaper/kalium.png" alt="Kalium Wallet" />
 	</a>
 	<p>

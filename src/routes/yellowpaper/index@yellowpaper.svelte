@@ -14,6 +14,9 @@
 	import Page5 from '$lib/components/yellowpaper/pages/Page5.svelte';
 	import Page6 from '$lib/components/yellowpaper/pages/Page6.svelte';
 	import Page7 from '$lib/components/yellowpaper/pages/Page7.svelte';
+	import Page8 from '$lib/components/yellowpaper/pages/Page8.svelte';
+	import Page9 from '$lib/components/yellowpaper/pages/Page9.svelte';
+	import Page10 from '$lib/components/yellowpaper/pages/Page10.svelte';
 
 	const title = 'Yellowpaper™ | Banano';
 	const description =
@@ -56,5 +59,24 @@
 		<Page5 class="mt-3 md:mt-5" />
 		<Page6 class="mt-3 md:mt-5" />
 		<Page7 class="mt-3 md:mt-5" />
+		<Page8 class="mt-3 md:mt-5" />
+		<div class="w-full relative pt-8 items-center flex flex-col">
+			<div class="w-full max-w-[16rem] -mb-12 md:-mb-20 lg:-mb-32 relative z-10">
+				<img src="/yellowpaper/shady-monkey.gif" alt="Shady MonKey" />
+			</div>
+			<Page9 />
+		</div>
+		<div class="w-full flex px-2">
+			<div class="flex-1">
+				<img class="w-full h-auto" src="/yellowpaper/airdrop.gif" alt="Airdrop Animation" />
+			</div>
+			<div class="flex-1">
+				<img class="w-full h-auto" src="/yellowpaper/airdrop.gif" alt="Airdrop Animation" />
+			</div>
+			<div class="flex-1 hidden md:block">
+				<img class="w-full h-auto" src="/yellowpaper/airdrop.gif" alt="Airdrop Animation" />
+			</div>
+		</div>
+		<Page10 />
 	</div>
 </main>

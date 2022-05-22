@@ -7,7 +7,7 @@
 </script>
 
 <PageWrapper pageNumber={6} class={classes}>
-	<h3 class="font-bold text-xl"><span class="mr-2ch">3.2.</span>Rise of the Block Lettuce</h3>
+	<h3 class="font-bold text-xl"><span class="mr-1ch">3.2.</span> Rise of the Block Lettuce</h3>
 	<p class="mt-5">
 		How is BANANO developed to offer feeless, almost instant transactions? Enter the Block Lettuce.
 	</p>
@@ -31,7 +31,7 @@
 			a single-blockchain architecture used by other cryptocurrencies.
 		</p>
 	</div>
-	<h3 class="font-bold text-xl mt-10"><span class="mr-2ch">3.3.</span>BANANOdes</h3>
+	<h3 class="font-bold text-xl mt-10"><span class="mr-1ch">3.3.</span>BANANOdes</h3>
 	<p class="mt-4">
 		The BANANO ledger is secured through Open Representative Voting (previously called ‘delegated
 		Proof-of-Stake’), a powerful decentralization mechanism that has no strong analog in

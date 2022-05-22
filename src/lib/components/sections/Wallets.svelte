@@ -17,14 +17,14 @@
 			description:
 				'Send Banano to all your friends on the go with Kalium. Available on iOS & Android.',
 			buttonText: 'Download Kalium',
-			url: bananoWallets.kalium.href,
+			url: bananoWallets.kalium.url,
 			img: 'kalium-wallet'
 		},
 		{
 			title: 'BananoVault',
 			description: 'Browser-based lightwallet that also supports Ledger Nano S. Ideal for desktop.',
 			buttonText: 'Visit BananoVault',
-			url: bananoWallets.vault.href,
+			url: bananoWallets.vault.url,
 			img: 'banano-vault'
 		},
 		{

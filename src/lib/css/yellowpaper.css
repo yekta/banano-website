@@ -47,6 +47,16 @@ body {
 	--c-yellowpaper-primary: 0 115 20;
 }
 
+.yellowpaper .monkey-generator {
+	--c-bg: 255 246 186;
+	--c-on-bg: 22 22 26;
+	--c-primary: 205 195 125;
+	--c-primary-shaded: 190 180 110;
+	--c-secondary: 50 100 50;
+	--c-secondary-shaded: 30 80 30;
+	--c-danger: 150 50 50;
+}
+
 .yellowpaper-container {
 	width: 100%;
 	max-width: 1024px;
@@ -61,13 +71,21 @@ body {
 	text-decoration: underline;
 }
 
-.yellowpaper ul > li {
-	margin-left: 3ch;
-	line-height: 2;
+.yellowpaper ul {
+	padding-left: 6ch;
+	list-style-type: disc;
 }
-.yellowpaper ul > li::before {
-	content: '•';
-	margin-right: 1ch;
+
+.yellowpaper ol {
+	padding-left: 6ch;
+}
+
+.yellowpaper li {
+	margin-top: 1.5ch;
+}
+
+input:focus {
+	outline: none;
 }
 
 @tailwind utilities;

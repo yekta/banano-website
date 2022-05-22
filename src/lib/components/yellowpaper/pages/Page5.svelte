@@ -7,8 +7,8 @@
 </script>
 
 <PageWrapper pageNumber={5} class={classes}>
-	<h2 class="font-bold text-2xl"><span class="mr-2ch">3.</span>BANANO Specifications</h2>
-	<h3 class="font-bold text-xl mt-5"><span class="mr-2ch">3.1.</span>Accounts</h3>
+	<h2 class="font-bold text-2xl"><span class="mr-1ch">3.</span> BANANO Specifications</h2>
+	<h3 class="font-bold text-xl mt-5"><span class="mr-1ch">3.1.</span> Accounts</h3>
 	<p class="mt-5">
 		In order to keep your precious BANANO safe, you'll need a wallet. A wallet can be accessed using
 		a public key, also known as a wallet address; and a private key, also known as a seed. Together,
@@ -37,11 +37,10 @@
 	</p>
 	<ul class="mt-4">
 		<li>
-			Mobile Wallet: <a target="_blank" href={bananoWallets.kalium.href}>Kalium (Android & iOS)</a>.
+			Mobile Wallet: <a target="_blank" href={bananoWallets.kalium.url}>Kalium (Android & iOS)</a>.
 		</li>
 		<li>
-			Desktop Wallet: <a target="_blank" href={bananoWallets.vault.href}>BANANO Vault Web Wallet</a
-			>.
+			Desktop Wallet: <a target="_blank" href={bananoWallets.vault.url}>BANANO Vault Web Wallet</a>.
 		</li>
 		<li>
 			Hardware wallet: <a target="_blank" href="https://shop.ledger.com/products/ledger-nano-s"
@@ -52,13 +51,13 @@
 	<div class="w-full flex flex-row flex-wrap justify-center items-center">
 		<a
 			class="w-full max-w-xs md:max-w-[16rem] h-auto mt-8 px-4"
-			href={bananoWallets.kalium.href}
+			href={bananoWallets.kalium.url}
 			target="_blank"
 		>
 			<img class="w-full h-auto" src="/yellowpaper/kalium-clay.png" alt="Kalium Wallet" />
 		</a>
 		<div class="w-full md:flex-1 min-w-0 h-auto flex flex-col">
-			<a class="w-full h-auto mt-8 px-4" href={bananoWallets.vault.href} target="_blank">
+			<a class="w-full h-auto mt-8 px-4" href={bananoWallets.vault.url} target="_blank">
 				<img class="w-full h-auto" src="/yellowpaper/vault.png" alt="Banano Vault" />
 			</a>
 			<a

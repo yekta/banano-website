@@ -14,7 +14,7 @@
 
 	type TMonkeyLoadState = 'idle' | 'loading' | 'loaded' | 'fullyReady' | 'error';
 
-	let inputValue: string;
+	let inputValue: string = 'ban_1bananobh5rat99qfgt1ptpieie5swmoth87thi74qgbfrij7dcgjiij94xr';
 	let inputError = false;
 	let monkeySvg: string | undefined;
 	let monkeyLoadState: TMonkeyLoadState = 'idle';
@@ -66,7 +66,7 @@
 	}
 </script>
 
-<div class="relative w-[32rem] max-w-full p-6">
+<div class="relative w-[32rem] max-w-full p-2">
 	<div class="relative monkey-generator-container w-full">
 		<div class="monkey-generator w-full h-full flex flex-col bg-c-bg absolute left-0 top-0">
 			<!-- MonKey loading animation -->
@@ -85,22 +85,24 @@
 			{/if}
 			<!-- MonKey container -->
 			{#if monkeyLoadState === 'fullyReady' || monkeyLoadState === 'loaded' || monkeyLoadState === 'error'}
-				<div
-					in:monkeyContainerIn|local={{ delay: 100 }}
-					out:monkeyContainerOut|local
-					class="square absolute left-0 top-0"
-				>
-					<div class="w-full h-full absolute left-0">
-						{#if monkeySvg !== undefined}
-							<img class="w-full h-auto" src={monkeySvg} alt="Generated MonKey" />
-						{:else if monkeyLoadState === 'error'}
-							<div class="w-full h-full flex flex-col items-center justify-center p-4">
-								<p class="text-5xl font-bold text-c-danger">:(</p>
-								<p class="font-medium text-c-danger mt-6 px-4">
-									Something went wrong.<br />Please try again.
-								</p>
-							</div>
-						{/if}
+				<div class="w-full absolute left-0 top-0">
+					<div
+						in:monkeyContainerIn|local={{ delay: 100 }}
+						out:monkeyContainerOut|local
+						class="relative w-full monkey-svg-container"
+					>
+						<div class="w-full h-full absolute left-0">
+							{#if monkeySvg !== undefined}
+								<img class="w-full h-auto" src={monkeySvg} alt="Generated MonKey" />
+							{:else if monkeyLoadState === 'error'}
+								<div class="w-full h-full flex flex-col items-center justify-center p-4">
+									<p class="text-5xl font-bold text-c-danger">:(</p>
+									<p class="font-medium text-c-danger mt-6 px-4">
+										Something went wrong.<br />Please try again.
+									</p>
+								</div>
+							{/if}
+						</div>
 					</div>
 				</div>
 			{/if}
@@ -148,11 +150,18 @@
 						<Button type="primary" class="w-full mt-3" onClick={() => generateMonkey(inputValue)}
 							>Show Me</Button
 						>
+						<p class="text-c-danger px-4 mt-5 font-bold text-sm">
+							{#if inputError}
+								Enter a valid address or click "Randomize!".
+							{:else}
+								&nbsp;
+							{/if}
+						</p>
 					</form>
 					<div
 						out:formOut|local
 						in:formIn|local={{ delay: 100 }}
-						class="w-full px-4 flex flex-row justify-center absolute bottom-0 pb-5"
+						class="w-full px-4 flex flex-row justify-center absolute bottom-0 py-5"
 					>
 						<Button
 							padding="px-8 md:px-14 py-3"
@@ -180,3 +189,107 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.monkey-svg-container:after {
+		content: '';
+		display: block;
+		padding-bottom: 100%;
+	}
+
+	.monkey-generator-container:after {
+		content: '';
+		display: block;
+		padding-bottom: calc(100% + 3rem);
+	}
+	.monkey-generator {
+		border-radius: 1rem;
+		border-width: 0rem;
+		border-color: rgb(var(--c-primary));
+		box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+			0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
+			0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
+		transform-origin: top center;
+		overflow: hidden;
+		animation: generatorAnimation 2s infinite;
+	}
+	@keyframes generatorAnimation {
+		0% {
+			box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+				0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
+				0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
+		}
+		25% {
+			box-shadow: 0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+				0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
+				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+				-0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary));
+		}
+		50% {
+			box-shadow: 0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
+				-0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+				0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary));
+		}
+		75% {
+			box-shadow: -0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+				-0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
+				0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+				0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
+		}
+		100% {
+			box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
+				0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
+				0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
+				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
+		}
+	}
+	.cube {
+		border-radius: 15%;
+		transform: translate(0rem, 0rem);
+	}
+	.cube-0 {
+		background-color: rgb(var(--c-secondary));
+		box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-secondary-shaded));
+		animation: animation-0 1.2s infinite;
+	}
+	.cube-1 {
+		background-color: rgb(var(--c-primary));
+		box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-primary-shaded));
+		animation: animation-1 1.1s -0.25s infinite;
+	}
+	.cube-2 {
+		background-color: rgb(var(--c-secondary));
+		box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-secondary-shaded));
+		animation: animation-0 1.3s -0.5s infinite;
+	}
+	.cube-3 {
+		background-color: rgb(var(--c-primary));
+		box-shadow: 0rem 0.3rem 0rem 0rem rgb(var(--c-primary-shaded));
+		animation: animation-1 1s -0.75s infinite;
+	}
+	@keyframes animation-0 {
+		0% {
+			transform: translate(-2rem, 2rem);
+		}
+		50% {
+			transform: translate(2rem, -2rem);
+		}
+		100% {
+			transform: translate(-2rem, 2rem);
+		}
+	}
+	@keyframes animation-1 {
+		0% {
+			transform: translate(2.5rem, 2.5rem);
+		}
+		50% {
+			transform: translate(-2.5rem, -2.5rem);
+		}
+		100% {
+			transform: translate(2.5rem, 2.5rem);
+		}
+	}
+</style>

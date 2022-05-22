@@ -25,7 +25,7 @@
 			/>
 		{/each}
 	</div>
-	<div class="container-b-small flex flex-col items-center px-4 mt-6">
+	<div class="container-b-small flex flex-col items-center px-4 mt-4">
 		<h2 class="text-3xl font-bold px-4">Try MonKey Now!</h2>
 		<p class="mt-3 text-xl md:px-8 lg:px-0">
 			Check out how MonKey works below by clicking the randomize button.<br />You can also enter an
@@ -33,7 +33,7 @@
 		</p>
 	</div>
 	<!-- Generator -->
-	<div class="container-b-small flex flex-row flex-wrap items-center justify-center mt-6 md:px-6">
+	<div class="container-b-small flex flex-row flex-wrap items-center justify-center mt-10 px-6">
 		<MonKeyGenerator />
 	</div>
 </div>

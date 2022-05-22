@@ -7,7 +7,7 @@
 </script>
 
 <PageWrapper pageNumber={7} class={classes}>
-	<h3 class="font-bold text-xl"><span class="mr-2ch">3.4.</span>Proof-of-Work</h3>
+	<h3 class="font-bold text-xl"><span class="mr-1ch">3.4.</span> Proof-of-Work</h3>
 	<p class="mt-4">
 		NANO's Proof-of-Work mechanism intends to serve as an anti-spam mechanism at the cost of
 		unnecessarily delaying block generation on low-end machines. This makes community projects and
@@ -22,7 +22,7 @@
 		generation is even mobile friendly! Existing work generator software is backwards compatible,
 		but it should be adjusted to the new threshold to not waste energy unnecessarily.
 	</p>
-	<h3 class="font-bold text-xl mt-10"><span class="mr-2ch">3.5.</span>MonKey</h3>
+	<h3 class="font-bold text-xl mt-10"><span class="mr-1ch">3.5.</span> MonKey</h3>
 	<p class="mt-4">
 		Cryptocurrency wallet addresses are typically long strings of characters that can be nearly
 		indistinguishable from each other. MonKeys solve this long-standing problem through the creation

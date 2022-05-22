@@ -6,7 +6,7 @@
 </script>
 
 <PageWrapper pageNumber={2} class={classes}>
-	<h2 class="font-bold text-2xl"><span class="mr-2ch">1.</span>Introduction</h2>
+	<h2 class="font-bold text-2xl"><span class="mr-1ch">1.</span> Introduction</h2>
 	<p class="mt-4">
 		In the year 2009, we saw the introduction of the first ever decentralized payment network, the
 		mother of all coins, Bitcoin [<b>1</b>]. In the years that followed, global interest grew and

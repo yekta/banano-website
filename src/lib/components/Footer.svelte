@@ -36,8 +36,8 @@
 			title: 'Resources',
 			wClass: 'w-64',
 			entries: [
-				{ text: 'Desktop Wallet', href: bananoWallets.vault.href, targetBlank: true },
-				{ text: 'Mobile Wallet', href: bananoWallets.kalium.href, targetBlank: true },
+				{ text: 'Desktop Wallet', href: bananoWallets.vault.url, targetBlank: true },
+				{ text: 'Mobile Wallet', href: bananoWallets.kalium.url, targetBlank: true },
 				{ text: 'Network Explorer', href: 'https://creeper.banano.cc', targetBlank: true },
 				{ text: 'Yellowpaper™', href: '/yellowpaper' },
 				{ text: 'Blog', href: 'https://medium.com/banano', targetBlank: true },
