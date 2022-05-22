@@ -17,6 +17,11 @@
 	import Page8 from '$lib/components/yellowpaper/pages/Page8.svelte';
 	import Page9 from '$lib/components/yellowpaper/pages/Page9.svelte';
 	import Page10 from '$lib/components/yellowpaper/pages/Page10.svelte';
+	import Page11 from '$lib/components/yellowpaper/pages/Page11.svelte';
+	import Page12 from '$lib/components/yellowpaper/pages/Page12.svelte';
+	import Page13 from '$lib/components/yellowpaper/pages/Page13.svelte';
+	import Page14 from '$lib/components/yellowpaper/pages/Page14.svelte';
+	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
 
 	const title = 'Yellowpaper™ | Banano';
 	const description =
@@ -62,7 +67,7 @@
 		<Page8 class="mt-3 md:mt-5" />
 		<div class="w-full relative pt-8 items-center flex flex-col">
 			<div class="w-full max-w-[16rem] -mb-12 md:-mb-20 lg:-mb-32 relative z-10">
-				<img src="/yellowpaper/shady-monkey.gif" alt="Shady MonKey" />
+				<img class="w-full h-auto" src="/yellowpaper/shady-monkey.gif" alt="Shady MonKey" />
 			</div>
 			<Page9 />
 		</div>
@@ -77,6 +82,24 @@
 				<img class="w-full h-auto" src="/yellowpaper/airdrop.gif" alt="Airdrop Animation" />
 			</div>
 		</div>
-		<Page10 />
+		<Page10 class="mt-3 md:mt-5" />
+		<Page11 class="mt-3 md:mt-5" />
+		<Page12 class="mt-3 md:mt-5" />
+		<div class="w-full relative pt-12 items-start flex flex-col">
+			<div class="w-full -mb-8 md:-mb-16 lg:-mb-28 relative z-10 px-6 md:px-24 lg:px-36">
+				<div class="w-full max-w-md">
+					<a class="w-full" target="_blank" href={bananoFaucets.monkeyTalks.url}>
+						<img class="w-full h-auto " src="/yellowpaper/deadpool.png" alt="Shady MonKey" />
+					</a>
+				</div>
+			</div>
+			<Page13 />
+		</div>
+		<div class="w-full justify-center items-center flex">
+			<div class="w-full max-w-md">
+				<img src="/yellowpaper/banburner.gif" alt="Banburner" />
+			</div>
+		</div>
+		<Page14 />
 	</div>
 </main>

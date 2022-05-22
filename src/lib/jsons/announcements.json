@@ -2727,14 +2727,14 @@
 			"news_title": [
 				{
 					"type": "heading1",
-					"text": "MonkeyTalks & Kalium",
+					"text": "MonKeyTalks & Kalium",
 					"spans": []
 				}
 			],
 			"news_body": [
 				{
 					"type": "paragraph",
-					"text": "We have a new & fun platform for on-chain messaging with Banano, called MonkeyTalks. Also, Kalium v2 is now officially available for Android. Check out the article for more info: Publish0x Article.",
+					"text": "We have a new & fun platform for on-chain messaging with Banano, called MonKeyTalks. Also, Kalium v2 is now officially available for Android. Check out the article for more info: Publish0x Article.",
 					"spans": [
 						{
 							"start": 72,

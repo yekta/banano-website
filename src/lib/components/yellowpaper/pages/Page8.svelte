@@ -1,7 +1,6 @@
 <script lang="ts">
 	import MonKeyGenerator from '$lib/components/MonKeyGenerator.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
-	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 
 	export { classes as class };
 	let classes: string;
