@@ -28,7 +28,6 @@
 	import GetBanano from '$lib/components/sections/GetBanano.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
-	import MainStyles from '$lib/components/MainStyles.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
