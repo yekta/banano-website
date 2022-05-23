@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
-	import Lazy from '$lib/components/LazyImage.svelte';
+	import LazyImage from '$lib/components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -29,20 +29,14 @@
 			target="_blank"
 			class="w-full"
 		>
-			<Lazy
+			<LazyImage
 				width={1000}
 				height={487}
+				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+				src="/yellowpaper/camo.jpeg"
 				placeholderSrc="/yellowpaper/lqip/camo.png"
-				class="rounded-xl"
-			>
-				<img
-					width="1000"
-					height="487"
-					class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-					src="/yellowpaper/camo.jpeg"
-					alt="CAMO Banano"
-				/>
-			</Lazy>
+				alt="CAMO Banano"
+			/>
 		</a>
 	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">

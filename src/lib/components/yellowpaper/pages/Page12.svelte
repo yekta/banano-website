@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
-	import Lazy from '$lib/components/LazyImage.svelte';
+	import LazyImage from '$lib/components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -21,20 +21,14 @@
 	</p>
 	<div class="w-full mt-8">
 		<a href={bananoFaucets.bananoMiner.url} target="_blank" class="w-full">
-			<Lazy
+			<LazyImage
 				width={1500}
 				height={788}
+				src="/yellowpaper/banano-miner.jpeg"
 				placeholderSrc="/yellowpaper/lqip/banano-miner.png"
-				class="rounded-xl"
-			>
-				<img
-					width="1500"
-					height="788"
-					class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-					src="/yellowpaper/banano-miner.jpeg"
-					alt="Banano Miner"
-				/>
-			</Lazy>
+				alt="Banano Miner"
+				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+			/>
 		</a>
 	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
@@ -56,20 +50,14 @@
 		of your computational contribution (<b>Figure 17</b>). Visit
 		<a href={bananoFaucets.bananoMiner.url} target="_blank">bananominer.com</a> to try it out.
 	</p>
-	<Lazy
+	<LazyImage
 		width={800}
 		height={300}
-		class="mt-8 rounded-xl"
+		class="w-full h-auto mt-8 rounded-xl overflow-hidden relative z-0"
+		src="/yellowpaper/banano-miner-animation.gif"
 		placeholderSrc="/yellowpaper/lqip/banano-miner-animation.png"
-	>
-		<img
-			width="800"
-			height="300"
-			class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-			src="/yellowpaper/banano-miner-animation.gif"
-			alt="Banano Miner Animation"
-		/>
-	</Lazy>
+		alt="Banano Miner Animation"
+	/>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 17</b>: Fight diseases with computational power while earning BANANO!
 	</p>

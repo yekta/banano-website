@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
-	import Lazy from '$lib/components/LazyImage.svelte';
+	import LazyImage from '$lib/components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -19,20 +19,14 @@
 	</p>
 	<div class="w-full mt-8">
 		<a href={bananoFaucets.blackMonkey.url} target="_blank" class="w-full">
-			<Lazy
+			<LazyImage
 				width={1500}
 				height={989}
+				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+				src="/yellowpaper/black-monkey.jpeg"
 				placeholderSrc="/yellowpaper/lqip/black-monkey.png"
-				class="rounded-xl"
-			>
-				<img
-					width="1500"
-					height="989"
-					class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-					src="/yellowpaper/black-monkey.jpeg"
-					alt="Black Monkey"
-				/>
-			</Lazy>
+				alt="Black Monkey"
+			/>
 		</a>
 	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
@@ -45,20 +39,14 @@
 		by another user, who will act as both faucet-user and “inspector” (<b>Figure 14</b>). Meme
 		Faucet is available on <b>memefaucet.banano.cc</b> while it's active but it's not active currently.
 	</p>
-	<Lazy
+	<LazyImage
 		width={1341}
 		height={645}
-		class="mt-8 rounded-xl"
+		class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+		src="/yellowpaper/meme-faucet.jpeg"
 		placeholderSrc="/yellowpaper/lqip/meme-faucet.png"
-	>
-		<img
-			width="1341"
-			height="645"
-			class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-			src="/yellowpaper/meme-faucet.jpeg"
-			alt="Meme Faucet"
-		/>
-	</Lazy>
+		alt="Meme Faucet"
+	/>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 14</b>: A screenshot from BANANO Meme Faucet.
 	</p>
@@ -68,20 +56,14 @@
 		as ‘Monkey Match’ or ‘Catch the Monkey’ (<b>Figure 15</b>). Crane Faucet is available on
 		<b>faucet.banano.coranos.io</b> while it's active but it's not active currently.
 	</p>
-	<Lazy
+	<LazyImage
 		width={1496}
 		height={978}
-		class="mt-8 rounded-xl overflow-hidden relative z-0 border-2 border-c-yellowpaper-on-bg"
+		class="w-full h-auto mt-8 rounded-xl overflow-hidden relative z-0 border-2 border-c-yellowpaper-on-bg"
+		src="/yellowpaper/crane-faucet.jpeg"
 		placeholderSrc="/yellowpaper/lqip/crane-faucet.png"
-	>
-		<img
-			width="1496"
-			height="978"
-			class="w-full h-auto"
-			src="/yellowpaper/crane-faucet.jpeg"
-			alt="Crane Faucet"
-		/>
-	</Lazy>
+		alt="Crane Faucet"
+	/>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 15</b>: A screenshot from BANANO Crane Faucet.
 	</p>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
-	import Lazy from '$lib/components/LazyImage.svelte';
+	import LazyImage from '$lib/components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -29,20 +29,14 @@
 	</p>
 	<div class="w-full mt-8">
 		<a href={bananoFaucets.monkeyTalks.url} target="_blank" class="w-full">
-			<Lazy
+			<LazyImage
 				width={1500}
 				height={1101}
+				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+				src="/yellowpaper/monkey-talks.jpeg"
 				placeholderSrc="/yellowpaper/lqip/monkey-talks.png"
-				class="rounded-xl"
-			>
-				<img
-					width="1500"
-					height="1101"
-					class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-					src="/yellowpaper/monkey-talks.jpeg"
-					alt="MonKeyTalks"
-				/>
-			</Lazy>
+				alt="MonKeyTalks"
+			/>
 		</a>
 	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
@@ -65,20 +59,14 @@
 			>Figure 19</b
 		>). Coin burns unrelated to this program have occurred, and may happen again in the future.
 	</p>
-	<Lazy
+	<LazyImage
 		width={800}
 		height={800}
-		class="mt-8 rounded-xl"
+		class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+		src="/yellowpaper/buy-back.jpeg"
 		placeholderSrc="/yellowpaper/lqip/buy-back.png"
-	>
-		<img
-			width="800"
-			height="800"
-			class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-			src="/yellowpaper/buy-back.jpeg"
-			alt="Buy-Back and Burn"
-		/>
-	</Lazy>
+		alt="Buy-Back and Burn"
+	/>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 19</b>: BANANO has a ‘Buy-Back and Burn’ program.
 	</p>

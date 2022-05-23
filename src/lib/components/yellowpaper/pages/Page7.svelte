@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
-	import Lazy from '$lib/components/LazyImage.svelte';
+	import LazyImage from '$lib/components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -30,20 +30,14 @@
 		representations of wallet addresses serve to identify users while protecting the privacy of the
 		account holders (<b>Figure 8</b>).
 	</p>
-	<Lazy
+	<LazyImage
 		width={700}
 		height={700}
-		class="mt-8 rounded-xl"
+		src="/yellowpaper/monkey-change.gif"
 		placeholderSrc="/yellowpaper/lqip/monkey-change.png"
-	>
-		<img
-			width="700"
-			height="700"
-			class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-			src="/yellowpaper/monkey-change.gif"
-			alt="MonKey Change"
-		/>
-	</Lazy>
+		alt="MonKey Change"
+		class="w-full h-auto overflow-hidden relative z-0 mt-8 rounded-xl"
+	/>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 8</b>: Your MonKey is unique! No two wallet addresses share the same MonKey!
 	</p>

@@ -1,23 +1,17 @@
 <script lang="ts">
+	import Lazy from 'svelte-lazy';
 	import AspectRatio from './AspectRatio.svelte';
-	import { LazyImage } from 'svelte-lazy-image';
+	import Lqip from '$lib/components/Lqip.svelte';
 
 	export let width: number;
 	export let height: number;
-	export let src: string;
-	export let alt: string;
 	export let placeholderSrc: string;
 	export { classes as class };
 	let classes: string;
 </script>
 
 <AspectRatio {width} {height} class={classes}>
-	<LazyImage
-		{src}
-		placeholder={placeholderSrc}
-		{alt}
-		{width}
-		{height}
-		options={{ rootMargin: '1000px' }}
-	/>
+	<Lazy offset={1000} placeholder={Lqip} placeholderProps={{ src: placeholderSrc }}>
+		<slot />
+	</Lazy>
 </AspectRatio>

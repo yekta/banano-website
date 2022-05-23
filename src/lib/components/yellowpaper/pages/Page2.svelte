@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
-	import Lazy from '$lib/components/LazyImage.svelte';
+	import LazyImage from '$lib/components/LazyImage.svelte';
+	import Lazy from '$lib/components/Lazy.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -56,18 +57,12 @@
 	<p class="mt-8 px-4 md:px-12 text-sm text-center">
 		<b>Table 1</b>: Feature comparison: BANANO vs. Bitcoin
 	</p>
-	<Lazy
+	<LazyImage
 		width={1500}
 		height={960}
 		class="mt-5"
 		placeholderSrc="/yellowpaper/lqip/banano-vs-bitcoin.png"
-	>
-		<img
-			width="1500"
-			height="960"
-			class="w-full h-auto"
-			src="/yellowpaper/banano-vs-bitcoin.png"
-			alt="Feature comparison: Banano vs. Bitcoin"
-		/>
-	</Lazy>
+		src="/yellowpaper/banano-vs-bitcoin.png"
+		alt="Feature comparison: Banano vs. Bitcoin"
+	/>
 </PageWrapper>

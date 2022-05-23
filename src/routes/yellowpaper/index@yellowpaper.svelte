@@ -22,7 +22,7 @@
 	import Page13 from '$lib/components/yellowpaper/pages/Page13.svelte';
 	import Page14 from '$lib/components/yellowpaper/pages/Page14.svelte';
 	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
-	import Lazy from '$lib/components/LazyImage.svelte';
+	import LazyImage from '$lib/components/LazyImage.svelte';
 
 	const title = 'Yellowpaper™ | Banano';
 	const description =
@@ -68,51 +68,47 @@
 		<Page8 class="mt-3 md:mt-5" />
 		<div class="w-full relative pt-8 items-center flex flex-col">
 			<div class="w-full max-w-[16rem] -mb-12 md:-mb-20 lg:-mb-32 relative z-10">
-				<Lazy width={488} height={601} placeholderSrc="/yellowpaper/lqip/shady-monkey.png">
-					<img
-						class="w-full h-auto"
-						width="488"
-						height="601"
-						src="/yellowpaper/shady-monkey.gif"
-						alt="Shady MonKey"
-					/>
-				</Lazy>
+				<LazyImage
+					width={488}
+					height={601}
+					class="w-full h-auto"
+					src="/yellowpaper/shady-monkey.gif"
+					alt="Shady MonKey"
+					placeholderSrc="/yellowpaper/lqip/shady-monkey.png"
+				/>
 			</div>
 			<Page9 />
 		</div>
 		<div class="w-full flex px-2">
 			<div class="flex-1">
-				<Lazy width={600} height={600} placeholderSrc="/yellowpaper/lqip/airdrop.png">
-					<img
-						width="600"
-						height="600"
-						class="w-full h-auto"
-						src="/yellowpaper/airdrop.gif"
-						alt="Airdrop Animation"
-					/>
-				</Lazy>
+				<LazyImage
+					width={600}
+					height={600}
+					class="w-full h-auto"
+					src="/yellowpaper/airdrop.gif"
+					placeholderSrc="/yellowpaper/lqip/airdrop.png"
+					alt="Airdrop Animation"
+				/>
 			</div>
 			<div class="flex-1">
-				<Lazy width={600} height={600} placeholderSrc="/yellowpaper/lqip/airdrop.png">
-					<img
-						width="600"
-						height="600"
-						class="w-full h-auto"
-						src="/yellowpaper/airdrop.gif"
-						alt="Airdrop Animation"
-					/>
-				</Lazy>
+				<LazyImage
+					width={600}
+					height={600}
+					class="w-full h-auto"
+					src="/yellowpaper/airdrop.gif"
+					placeholderSrc="/yellowpaper/lqip/airdrop.png"
+					alt="Airdrop Animation"
+				/>
 			</div>
 			<div class="flex-1 hidden md:block">
-				<Lazy width={600} height={600} placeholderSrc="/yellowpaper/lqip/airdrop.png">
-					<img
-						width="600"
-						height="600"
-						class="w-full h-auto"
-						src="/yellowpaper/airdrop.gif"
-						alt="Airdrop Animation"
-					/>
-				</Lazy>
+				<LazyImage
+					width={600}
+					height={600}
+					class="w-full h-auto"
+					src="/yellowpaper/airdrop.gif"
+					placeholderSrc="/yellowpaper/lqip/airdrop.png"
+					alt="Airdrop Animation"
+				/>
 			</div>
 		</div>
 		<Page10 />
@@ -122,15 +118,14 @@
 			<div class="w-full -mb-8 md:-mb-16 lg:-mb-28 relative z-10 px-6 md:px-24 lg:px-36">
 				<div class="w-full max-w-md">
 					<a class="w-full" target="_blank" href={bananoFaucets.monkeyTalks.url}>
-						<Lazy width={1000} height={639} placeholderSrc="/yellowpaper/lqip/deadpool.png">
-							<img
-								width="1000"
-								height="639"
-								class="w-full h-auto"
-								src="/yellowpaper/deadpool.png"
-								alt="Shady MonKey"
-							/>
-						</Lazy>
+						<LazyImage
+							width={1000}
+							height={639}
+							class="w-full h-auto"
+							src="/yellowpaper/deadpool.png"
+							alt="Shady MonKey"
+							placeholderSrc="/yellowpaper/lqip/deadpool.png"
+						/>
 					</a>
 				</div>
 			</div>
@@ -138,15 +133,14 @@
 		</div>
 		<div class="w-full justify-center items-center flex">
 			<div class="w-2/3 max-w-md">
-				<Lazy width={600} height={600} placeholderSrc="/yellowpaper/lqip/banburner.png">
-					<img
-						width="600"
-						height="600"
-						class="w-full h-auto"
-						src="/yellowpaper/banburner.gif"
-						alt="Banburner"
-					/>
-				</Lazy>
+				<LazyImage
+					width={600}
+					height={600}
+					class="w-full h-auto"
+					src="/yellowpaper/banburner.gif"
+					placeholderSrc="/yellowpaper/lqip/banburner.png"
+					alt="Banburner"
+				/>
 			</div>
 		</div>
 		<Page14 />

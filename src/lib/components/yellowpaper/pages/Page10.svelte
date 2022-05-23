@@ -1,7 +1,8 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import Lazy from '$lib/components/LazyImage.svelte';
+	import LazyImage from '$lib/components/LazyImage.svelte';
+	import Lazy from '$lib/components/Lazy.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -60,56 +61,38 @@
 	<div class="w-full flex flex-wrap justify-center mt-6">
 		<div class="w-full max-w-xs md:flex-1">
 			<a class="w-full" href={bananoSocials.discord.url} target="_blank">
-				<Lazy
+				<LazyImage
 					width={720}
 					height={1203}
+					src="/yellowpaper/discord-tipbot.png"
 					placeholderSrc="/yellowpaper/lqip/discord-tipbot.png"
-					class="rounded-xl"
-				>
-					<img
-						width="720"
-						height="1203"
-						class="w-full h-auto"
-						src="/yellowpaper/discord-tipbot.png"
-						alt="Discord Tipbot"
-					/>
-				</Lazy>
+					alt="Discord Tipbot"
+					class="w-full h-auto rounded-xl"
+				/>
 			</a>
 		</div>
 		<div class="w-full max-w-xs md:flex-1">
 			<a class="w-full" href="https://www.reddit.com/user/Banano_Tipbot" target="_blank">
-				<Lazy
+				<LazyImage
 					width={720}
 					height={1203}
+					src="/yellowpaper/reddit-tipbot.png"
 					placeholderSrc="/yellowpaper/lqip/reddit-tipbot.png"
-					class="rounded-xl"
-				>
-					<img
-						width="720"
-						height="1203"
-						class="w-full"
-						src="/yellowpaper/reddit-tipbot.png"
-						alt="Reddit Tipbot"
-					/>
-				</Lazy>
+					alt="Reddit Tipbot"
+					class="w-full rounded-xl"
+				/>
 			</a>
 		</div>
 		<div class="w-full max-w-xs md:flex-1">
 			<a class="w-full" href="https://twitter.com/bananotipperbot" target="_blank">
-				<Lazy
+				<LazyImage
 					width={720}
 					height={1203}
+					src="/yellowpaper/twitter-tipbot.png"
 					placeholderSrc="/yellowpaper/lqip/twitter-tipbot.png"
-					class="rounded-xl"
-				>
-					<img
-						width="720"
-						height="1203"
-						class="w-full h-auto"
-						src="/yellowpaper/twitter-tipbot.png"
-						alt="Twitter Tipbot"
-					/>
-				</Lazy>
+					alt="Twitter Tipbot"
+					class="w-full h-auto rounded-xl"
+				/>
 			</a>
 		</div>
 	</div>

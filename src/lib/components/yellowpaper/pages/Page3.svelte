@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Lazy from '$lib/components/LazyImage.svelte';
+	import LazyImage from '$lib/components/LazyImage.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 
@@ -37,20 +37,14 @@
 	</p>
 	<div class="w-full mt-5">
 		<a class="w-full" href={bananoWallets.kalium.url} target="_blank">
-			<Lazy
+			<LazyImage
 				width={1500}
 				height={1194}
 				placeholderSrc="/yellowpaper/lqip/kalium.png"
-				class="rounded-xl"
-			>
-				<img
-					class="w-full h-auto"
-					width={1500}
-					height={1194}
-					src="/yellowpaper/kalium.png"
-					alt="Kalium Wallet"
-				/>
-			</Lazy>
+				class="w-full h-auto rounded-xl"
+				src="/yellowpaper/kalium.png"
+				alt="Kalium Wallet"
+			/>
 		</a>
 	</div>
 	<p>

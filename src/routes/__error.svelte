@@ -12,18 +12,11 @@
 </script>
 
 <script lang="ts">
-	import '$lib/css/main.css';
 	import Button from '$lib/components/Button.svelte';
 	import { onMount } from 'svelte';
 
 	export let status: number;
 	export let error: Error;
-
-	onMount(() => {
-		document.body.style.backgroundColor = 'rgb(var(--c-secondary))';
-		document.body.style.color = 'rgb(var(--c-on-bg))';
-		document.body.style.fontFamily = 'now-alt, system-ui, sans-serif';
-	});
 </script>
 
 <div class="w-full min-h-screen flex flex-col items-center px-4 py-64 bg-c-secondary">
