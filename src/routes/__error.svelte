@@ -13,7 +13,6 @@
 
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import { onMount } from 'svelte';
 
 	export let status: number;
 	export let error: Error;

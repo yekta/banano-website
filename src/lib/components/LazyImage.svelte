@@ -18,6 +18,6 @@
 		{alt}
 		{width}
 		{height}
-		options={{ rootMargin: '1000px' }}
+		options={{ rootMargin: '100%' }}
 	/>
 </AspectRatio>
