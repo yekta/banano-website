@@ -11,7 +11,7 @@
 </script>
 
 <AspectRatio {width} {height} class={classes}>
-	<Lazy offset={1000} placeholder={Lqip} placeholderProps={{ src: placeholderSrc }}>
+	<Lazy offset={-1000} placeholder={Lqip} placeholderProps={{ src: placeholderSrc }}>
 		<slot />
 	</Lazy>
 </AspectRatio>
