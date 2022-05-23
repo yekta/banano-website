@@ -117,20 +117,20 @@
 			</a>
 		</div>
 		<div class="flex items-center justify-end">
-			<div class="hidden lg:flex justify-end items-center">
+			<div class="hidden lg:flex justify-end items-center mx-1.5">
 				{#each sections as section}
 					<a
 						href={section.href}
 						class="{section.classes !== undefined
 							? section.classes
 							: ''} px-4 py-2 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
-				shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
+							shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
 					>
 						{section.title}
 					</a>
 				{/each}
 			</div>
-			<div class="hidden md:flex justify-end items-center mx-2">
+			<div class="hidden md:flex justify-end items-center mx-1.5">
 				{#each socials as social}
 					<a
 						href={social.href}
@@ -142,11 +142,11 @@
 					</a>
 				{/each}
 			</div>
-			<div class="w-22 hidden md:flex justify-end mx-2">
+			<div class="w-19 hidden md:flex justify-end mx-1.5">
 				<a
 					href="https://www.coingecko.com/en/coins/banano"
 					target="_blank"
-					class="w-full text-center bg-c-primary/20 font-medium px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+					class="w-full overflow-hidden text-sm text-center bg-c-primary/20 font-medium px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
 						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
 				>
 					${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
