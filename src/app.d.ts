@@ -12,3 +12,9 @@ declare namespace App {
 declare module '*.md' {
 	const render: () => { html: string };
 }
+
+declare namespace svelte.JSX {
+	interface HTMLAttributes<T> {
+		onenter?: (event: CustomEvent<DndEvent> & { target: EventTarget & T }) => void;
+	}
+}

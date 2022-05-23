@@ -1,4 +1,18 @@
-import { cubicOut, cubicIn } from 'svelte/easing';
+import { cubicOut, cubicIn, linear } from 'svelte/easing';
+
+export const slideAcrossScreen = (node: Node, { delay = 0, easing = linear }) => {
+	let width = Number(getComputedStyle(node as HTMLElement).width.split('px')[0]);
+	let windowWidth = window.innerWidth;
+	let duration = ((windowWidth + 2 * width) / width) * 450;
+	return {
+		delay,
+		duration,
+		easing,
+		css: (t: number) => {
+			return `transform: translateX(${-1 * width + t * (windowWidth + width * 2)}px);`;
+		}
+	};
+};
 
 export const sidebar = (node: Node, { delay = 0, duration = 300, easing = cubicOut }) => {
 	return {
@@ -10,6 +24,7 @@ export const sidebar = (node: Node, { delay = 0, duration = 300, easing = cubicO
 		}
 	};
 };
+
 export const dropdown = (node: Node, { delay = 0, duration = 300 }) => {
 	return {
 		delay,

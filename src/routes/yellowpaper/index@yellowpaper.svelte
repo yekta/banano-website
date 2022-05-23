@@ -23,12 +23,42 @@
 	import Page14 from '$lib/components/yellowpaper/pages/Page14.svelte';
 	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
 	import LazyImage from '$lib/components/LazyImage.svelte';
+	import inView from '$lib/ts/actions/inView';
+	import { slideAcrossScreen } from '$lib/ts/transitions';
 
 	const title = 'Yellowpaper™ | Banano';
 	const description =
 		"Meme-rich, interactive and animated Yellowpaper™ of Banano. Learn about Banano's inner workings.";
 	const canonical = `${canonicalUrl}/${$page.routeId}`;
 	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
+
+	let isRocketTrigged = false;
+	let shouldShowRocket = false;
+
+	let isRickCartTriggered = false;
+	let shouldShowRickCart = false;
+
+	function loadAndSendRocket() {
+		if (isRocketTrigged) return;
+		const rocketSrc = '/yellowpaper/banano-rocket.gif';
+		const rocketImg = new Image();
+		rocketImg.src = rocketSrc;
+		rocketImg.onload = () => {
+			shouldShowRocket = true;
+		};
+		isRocketTrigged = true;
+	}
+
+	function loadAndSendRickCart() {
+		if (isRickCartTriggered) return;
+		const rickCartSrc = '/yellowpaper/rick-cart.gif';
+		const rickCartImg = new Image();
+		rickCartImg.src = rickCartSrc;
+		rickCartImg.onload = () => {
+			shouldShowRickCart = true;
+		};
+		isRickCartTriggered = true;
+	}
 </script>
 
 <MetaTags
@@ -56,10 +86,11 @@
 	}}
 />
 
-<main class="w-full flex justify-center items-start yellowpaper">
+<main class="w-full flex justify-center items-start yellowpaper overflow-hidden relative z-10">
 	<div class="yellowpaper-container p-3 md:p-5">
 		<Page1 />
 		<Page2 class="mt-3 md:mt-5" />
+		<div use:inView class="w-full" on:enter={loadAndSendRocket} />
 		<Page3 class="mt-3 md:mt-5" />
 		<Page4 class="mt-3 md:mt-5" />
 		<Page5 class="mt-3 md:mt-5" />
@@ -144,5 +175,28 @@
 			</div>
 		</div>
 		<Page14 />
+		<div use:inView class="w-full" on:enter={loadAndSendRickCart} />
+	</div>
+	<div
+		class="fixed w-full h-full left-0 top-0 flex flex-row pointer-events-none z-50 overflow-hidden"
+	>
+		{#if shouldShowRocket}
+			<img
+				in:slideAcrossScreen
+				on:introend={() => (shouldShowRocket = false)}
+				src="/yellowpaper/banano-rocket.gif"
+				alt="Banano Rocket"
+				class="w-full h-auto max-w-xs md:max-w-md lg:max-w-lg my-auto"
+			/>
+		{/if}
+		{#if shouldShowRickCart}
+			<img
+				in:slideAcrossScreen
+				on:introend={() => (shouldShowRickCart = false)}
+				src="/yellowpaper/rick-cart.gif"
+				alt="Banano Rick Cart"
+				class="w-full h-auto max-w-[13rem] md:max-w-xs lg:max-w-sm mt-auto -mb-2.5 md:-mb-6"
+			/>
+		{/if}
 	</div>
 </main>
