@@ -1,8 +1,7 @@
 <script lang="ts">
-	import AspectRatio from '$lib/components/AspectRatio.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
-	import Lazy from 'svelte-lazy';
+	import Lazy from '$lib/components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -22,17 +21,20 @@
 	</p>
 	<div class="w-full mt-8">
 		<a href={bananoFaucets.bananoMiner.url} target="_blank" class="w-full">
-			<AspectRatio width={1500} height={788}>
-				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-					<img
-						width="1500"
-						height="788"
-						class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-						src="/yellowpaper/banano-miner.jpeg"
-						alt="Banano Miner"
-					/>
-				</Lazy>
-			</AspectRatio>
+			<Lazy
+				width={1500}
+				height={788}
+				placeholderSrc="/yellowpaper/lqip/banano-miner.png"
+				class="rounded-xl"
+			>
+				<img
+					width="1500"
+					height="788"
+					class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+					src="/yellowpaper/banano-miner.jpeg"
+					alt="Banano Miner"
+				/>
+			</Lazy>
 		</a>
 	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
@@ -54,17 +56,20 @@
 		of your computational contribution (<b>Figure 17</b>). Visit
 		<a href={bananoFaucets.bananoMiner.url} target="_blank">bananominer.com</a> to try it out.
 	</p>
-	<AspectRatio width={800} height={300} class="mt-8">
-		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-			<img
-				width="800"
-				height="300"
-				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-				src="/yellowpaper/banano-miner-animation.gif"
-				alt="Banano Miner Animation"
-			/>
-		</Lazy>
-	</AspectRatio>
+	<Lazy
+		width={800}
+		height={300}
+		class="mt-8 rounded-xl"
+		placeholderSrc="/yellowpaper/lqip/banano-miner-animation.png"
+	>
+		<img
+			width="800"
+			height="300"
+			class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+			src="/yellowpaper/banano-miner-animation.gif"
+			alt="Banano Miner Animation"
+		/>
+	</Lazy>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 17</b>: Fight diseases with computational power while earning BANANO!
 	</p>

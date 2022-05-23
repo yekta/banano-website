@@ -1,8 +1,7 @@
 <script lang="ts">
-	import AspectRatio from '$lib/components/AspectRatio.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import Lazy from 'svelte-lazy';
+	import Lazy from '$lib/components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -22,19 +21,22 @@
 		legendary BANANO Runner game (<b>Figure 11</b>) with its first round in April 2018 was a huge
 		success and an unprecedented form of airdropping a new cryptocurrency to its community.
 	</p>
-	<AspectRatio width={800} height={450} class="mt-8">
-		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-			<video
-				width="800"
-				height="450"
-				class="w-full h-auto rounded-xl relative z-0 overflow-hidden"
-				controls
-			>
-				<source src="/yellowpaper/banano-runner.mp4" type="video/mp4" />
-				<track kind="captions" />
-			</video>
-		</Lazy>
-	</AspectRatio>
+	<Lazy
+		width={800}
+		height={450}
+		class="mt-8 rounded-xl"
+		placeholderSrc="/yellowpaper/lqip/banano-runner.png"
+	>
+		<video
+			width="800"
+			height="450"
+			class="w-full h-auto rounded-xl relative z-0 overflow-hidden"
+			controls
+		>
+			<source src="/yellowpaper/banano-runner.mp4" type="video/mp4" />
+			<track kind="captions" />
+		</video>
+	</Lazy>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 11</b>: A video from BANANO Runner - we’ll never forget this legendary BANANO faucet
 		game!
@@ -58,47 +60,56 @@
 	<div class="w-full flex flex-wrap justify-center mt-6">
 		<div class="w-full max-w-xs md:flex-1">
 			<a class="w-full" href={bananoSocials.discord.url} target="_blank">
-				<AspectRatio width={720} height={1203}>
-					<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-						<img
-							width="720"
-							height="1203"
-							class="w-full"
-							src="/yellowpaper/discord-tipbot.png"
-							alt="Discord Tipbot"
-						/>
-					</Lazy>
-				</AspectRatio>
+				<Lazy
+					width={720}
+					height={1203}
+					placeholderSrc="/yellowpaper/lqip/discord-tipbot.png"
+					class="rounded-xl"
+				>
+					<img
+						width="720"
+						height="1203"
+						class="w-full h-auto"
+						src="/yellowpaper/discord-tipbot.png"
+						alt="Discord Tipbot"
+					/>
+				</Lazy>
 			</a>
 		</div>
 		<div class="w-full max-w-xs md:flex-1">
 			<a class="w-full" href="https://www.reddit.com/user/Banano_Tipbot" target="_blank">
-				<AspectRatio width={720} height={1203}>
-					<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-						<img
-							width="720"
-							height="1203"
-							class="w-full"
-							src="/yellowpaper/reddit-tipbot.png"
-							alt="Reddit Tipbot"
-						/>
-					</Lazy>
-				</AspectRatio>
+				<Lazy
+					width={720}
+					height={1203}
+					placeholderSrc="/yellowpaper/lqip/reddit-tipbot.png"
+					class="rounded-xl"
+				>
+					<img
+						width="720"
+						height="1203"
+						class="w-full"
+						src="/yellowpaper/reddit-tipbot.png"
+						alt="Reddit Tipbot"
+					/>
+				</Lazy>
 			</a>
 		</div>
 		<div class="w-full max-w-xs md:flex-1">
 			<a class="w-full" href="https://twitter.com/bananotipperbot" target="_blank">
-				<AspectRatio width={720} height={1203}>
-					<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-						<img
-							width="720"
-							height="1203"
-							class="w-full"
-							src="/yellowpaper/twitter-tipbot.png"
-							alt="Twitter Tipbot"
-						/>
-					</Lazy>
-				</AspectRatio>
+				<Lazy
+					width={720}
+					height={1203}
+					placeholderSrc="/yellowpaper/lqip/twitter-tipbot.png"
+					class="rounded-xl"
+				>
+					<img
+						width="720"
+						height="1203"
+						class="w-full h-auto"
+						src="/yellowpaper/twitter-tipbot.png"
+						alt="Twitter Tipbot"
+					/>
+				</Lazy>
 			</a>
 		</div>
 	</div>

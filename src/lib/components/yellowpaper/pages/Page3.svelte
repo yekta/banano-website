@@ -1,8 +1,7 @@
 <script lang="ts">
-	import Lazy from 'svelte-lazy';
+	import Lazy from '$lib/components/LazyImage.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
-	import AspectRatio from '$lib/components/AspectRatio.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -38,17 +37,20 @@
 	</p>
 	<div class="w-full mt-5">
 		<a class="w-full" href={bananoWallets.kalium.url} target="_blank">
-			<AspectRatio width={1500} height={1194}>
-				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-					<img
-						class="w-full h-auto"
-						width={1500}
-						height={1194}
-						src="/yellowpaper/kalium.png"
-						alt="Kalium Wallet"
-					/>
-				</Lazy>
-			</AspectRatio>
+			<Lazy
+				width={1500}
+				height={1194}
+				placeholderSrc="/yellowpaper/lqip/kalium.png"
+				class="rounded-xl"
+			>
+				<img
+					class="w-full h-auto"
+					width={1500}
+					height={1194}
+					src="/yellowpaper/kalium.png"
+					alt="Kalium Wallet"
+				/>
+			</Lazy>
 		</a>
 	</div>
 	<p>

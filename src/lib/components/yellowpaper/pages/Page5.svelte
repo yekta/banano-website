@@ -1,8 +1,7 @@
 <script lang="ts">
-	import AspectRatio from '$lib/components/AspectRatio.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
-	import Lazy from 'svelte-lazy';
+	import Lazy from '$lib/components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -25,17 +24,20 @@
 			href="https://creeper.banano.cc/explorer/account/ban_1meme1yacdi5iu69wcu7et3kzrr1s4yoizd9mx7nstqp1c9e69979mjd4fun/history"
 			target="_blank"
 		>
-			<AspectRatio width={1205} height={625}>
-				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-					<img
-						width="1205"
-						height="625"
-						class="w-full h-auto"
-						src="/yellowpaper/share-card.png"
-						alt="Kalium Share Card"
-					/>
-				</Lazy>
-			</AspectRatio>
+			<Lazy
+				width={1205}
+				height={625}
+				placeholderSrc="/yellowpaper/lqip/share-card.png"
+				class="rounded-2xl"
+			>
+				<img
+					width="1205"
+					height="625"
+					class="w-full h-auto rounded-xl"
+					src="/yellowpaper/share-card.png"
+					alt="Kalium Share Card"
+				/>
+			</Lazy>
 		</a>
 	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm">
@@ -66,48 +68,57 @@
 	<div class="w-full flex flex-row flex-wrap justify-center items-center">
 		<div class="w-full max-w-xs md:max-w-[16rem] h-auto mt-8 px-4">
 			<a class="w-full" href={bananoWallets.kalium.url} target="_blank">
-				<AspectRatio width={783} height={1500}>
-					<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-						<img
-							width="783"
-							height="1500"
-							class="w-full h-auto"
-							src="/yellowpaper/kalium-clay.png"
-							alt="Kalium Wallet"
-						/>
-					</Lazy>
-				</AspectRatio>
+				<Lazy
+					width={783}
+					height={1500}
+					placeholderSrc="/yellowpaper/lqip/kalium-clay.png"
+					class="rounded-xl"
+				>
+					<img
+						width="783"
+						height="1500"
+						class="w-full h-auto"
+						src="/yellowpaper/kalium-clay.png"
+						alt="Kalium Wallet"
+					/>
+				</Lazy>
 			</a>
 		</div>
 		<div class="w-full md:flex-1 min-w-0 h-auto flex flex-col">
 			<div class="w-full mt-8 px-4">
 				<a class="w-full" href={bananoWallets.vault.url} target="_blank">
-					<AspectRatio width={1500} height={863}>
-						<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-							<img
-								width="1500"
-								height="863"
-								class="w-full h-auto"
-								src="/yellowpaper/vault.png"
-								alt="Banano Vault"
-							/>
-						</Lazy>
-					</AspectRatio>
+					<Lazy
+						width={1500}
+						height={863}
+						placeholderSrc="/yellowpaper/lqip/vault.png"
+						class="rounded-xl"
+					>
+						<img
+							width="1500"
+							height="863"
+							class="w-full h-auto"
+							src="/yellowpaper/vault.png"
+							alt="Banano Vault"
+						/>
+					</Lazy>
 				</a>
 			</div>
 			<div class="w-full mt-8 px-4">
 				<a class="w-full" href="https://shop.ledger.com/products/ledger-nano-s" target="_blank">
-					<AspectRatio width={1000} height={227}>
-						<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-							<img
-								width="1000"
-								height="227"
-								class="w-full h-auto"
-								src="/yellowpaper/ledger.png"
-								alt="Ledger Hardware Wallet"
-							/>
-						</Lazy>
-					</AspectRatio>
+					<Lazy
+						width={1000}
+						height={227}
+						placeholderSrc="/yellowpaper/lqip/ledger.png"
+						class="rounded-xl"
+					>
+						<img
+							width="1000"
+							height="227"
+							class="w-full h-auto"
+							src="/yellowpaper/ledger.png"
+							alt="Ledger Hardware Wallet"
+						/>
+					</Lazy>
 				</a>
 			</div>
 		</div>

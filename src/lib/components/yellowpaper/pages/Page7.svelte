@@ -1,7 +1,6 @@
 <script lang="ts">
-	import AspectRatio from '$lib/components/AspectRatio.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
-	import Lazy from 'svelte-lazy';
+	import Lazy from '$lib/components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;
@@ -31,17 +30,20 @@
 		representations of wallet addresses serve to identify users while protecting the privacy of the
 		account holders (<b>Figure 8</b>).
 	</p>
-	<AspectRatio width={700} height={700} class="mt-8">
-		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-			<img
-				width="700"
-				height="700"
-				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
-				src="/yellowpaper/monkey-change.gif"
-				alt="MonKey Change"
-			/>
-		</Lazy>
-	</AspectRatio>
+	<Lazy
+		width={700}
+		height={700}
+		class="mt-8 rounded-xl"
+		placeholderSrc="/yellowpaper/lqip/monkey-change.png"
+	>
+		<img
+			width="700"
+			height="700"
+			class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+			src="/yellowpaper/monkey-change.gif"
+			alt="MonKey Change"
+		/>
+	</Lazy>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 8</b>: Your MonKey is unique! No two wallet addresses share the same MonKey!
 	</p>
