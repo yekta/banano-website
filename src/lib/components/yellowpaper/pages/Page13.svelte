@@ -8,39 +8,39 @@
 </script>
 
 <PageWrapper pageNumber={13} class={classes}>
-	<h3 class="font-bold text-xl"><span class="mr-1ch">5.5.</span> MonKeyTalks</h3>
+	<h3 class="font-bold text-xl"><span class="mr-1ch">5.5.</span> MonkeyTalks</h3>
 	<p class="mt-4">
-		MonKeyTalks is a proof-of-concept application showing how versatile BANANO can be, and how easy
-		it can be used in new contexts. MonKeyTalks is a combination of a <b
+		MonkeyTalks is a proof-of-concept application showing how versatile BANANO can be, and how easy
+		it can be used in new contexts. MonkeyTalks is a combination of a <b
 			>self-sustaining BANANO faucet</b
 		>
 		and an <b>on-chain messaging platform (Figure 18)</b>. First it’s a faucet because for sending a
 		message you’ll need to pay a small fee in BANANO. Second, it’s self-sustaining since your
 		payment in turn refills the faucet. And finally, it's on-chain because any message sent through
-		MonKeyTalks it’s engraved into the transaction’s RAW: this means that all of the messages are
+		MonkeyTalks it’s engraved into the transaction’s RAW: this means that all of the messages are
 		publicly visible and basically immutable because they were written into the BANANO blockchain.
-		MonKeyTalks is basically a proof-of-concept website that combines a faucet giving out free
+		MonkeyTalks is basically a proof-of-concept website that combines a faucet giving out free
 		BANANO with an actual application BANANO can be used for. There’s a clear incentive to visit the
 		site to claim the faucet, which in turn incentivizes users to pay BANANO for a message many
 		people will see. To make this more interesting, you can also choose to pay a little more to
 		highlight your message in a different color.
 		<br />
-		Visit <a href={bananoFaucets.monkeyTalks.url} target="_blank">monkeytalks.cc</a> to try it out.
+		Visit <a href={bananoFaucets.MonkeyTalks.url} target="_blank">MonkeyTalks.cc</a> to try it out.
 	</p>
 	<div class="w-full mt-8">
-		<a href={bananoFaucets.monkeyTalks.url} target="_blank" class="w-full">
+		<a href={bananoFaucets.MonkeyTalks.url} target="_blank" class="w-full">
 			<LazyImage
 				width={1500}
 				height={1101}
 				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
 				src="/yellowpaper/monkey-talks.jpeg"
 				placeholderSrc="/yellowpaper/lqip/monkey-talks.png"
-				alt="MonKeyTalks"
+				alt="MonkeyTalks"
 			/>
 		</a>
 	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
-		<b>Figure 18</b>: Monkeytalks - A self-sustaining BANANO faucet including on-chain messaging!
+		<b>Figure 18</b>: MonkeyTalks - A self-sustaining BANANO faucet including on-chain messaging!
 	</p>
 	<h3 class="font-bold text-xl mt-8">
 		<span class="mr-1ch">5.6.</span> Inflation versus Deflation

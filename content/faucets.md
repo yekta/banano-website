@@ -9,11 +9,11 @@
   Note: Any faucet that has the stop sign (🛑) in the title won't be displayed -> ### Example Faucet That Won't Be Displayed 🛑
 -->
 
-### MonKeyTalks
+### MonkeyTalks
 
 An instant & self-sustaining faucet, combined with messaging.
 
-#### [MonKeyTalks](https://monkeytalks.cc)
+#### [MonkeyTalks](https://MonkeyTalks.cc)
 
 ### BananoMiner
 

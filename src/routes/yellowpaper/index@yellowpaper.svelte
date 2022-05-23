@@ -148,7 +148,7 @@
 		<div class="w-full relative pt-12 items-start flex flex-col">
 			<div class="w-full -mb-8 md:-mb-16 lg:-mb-28 relative z-10 px-6 md:px-24 lg:px-36">
 				<div class="w-full max-w-md">
-					<a class="w-full" target="_blank" href={bananoFaucets.monkeyTalks.url}>
+					<a class="w-full" target="_blank" href={bananoFaucets.MonkeyTalks.url}>
 						<LazyImage
 							width={1000}
 							height={639}

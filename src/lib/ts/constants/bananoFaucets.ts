@@ -7,8 +7,8 @@ export const bananoFaucets = {
 		title: 'BananoMiner',
 		url: 'https://bananominer.com'
 	},
-	monkeyTalks: {
-		title: 'MonKeyTalks',
-		url: 'https://monkeytalks.cc'
+	MonkeyTalks: {
+		title: 'MonkeyTalks',
+		url: 'https://MonkeyTalks.cc'
 	}
 };

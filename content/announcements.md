@@ -383,11 +383,11 @@ We are doing another airdrop for Nano hodlers! Read the article for more info: [
 
 We are celebrating our first mainnet anniversary with a 300 million Banano burn! Check out the tweet here: [Twitter](https://twitter.com/bananocoin/status/1112973749064790017). Or read the recap for more info: [Publish0x Article](https://www.publish0x.com/banano/banano-social-media-recap-april-2019-xxepd?a=QJ0dNjvdLO).
 
-### MonKeyTalks & Kalium
+### MonkeyTalks & Kalium
 
 #### 2019-04-01
 
-We have a new & fun platform for on-chain messaging with Banano, called [MonKeyTalks](https://monkeytalks.cc/). Also, [Kalium v2](https://play.google.com/store/apps/details?id=com.banano.kaliumwallet) is now officially available for Android. Check out the article for more info: [Publish0x Article](https://www.publish0x.com/banano/banano-april-1-update-kalium-release-monkeytalks-on-chain-messaging-announcement-xyzdp?a=QJ0dNjvdLO).
+We have a new & fun platform for on-chain messaging with Banano, called [MonkeyTalks](https://MonkeyTalks.cc/). Also, [Kalium v2](https://play.google.com/store/apps/details?id=com.banano.kaliumwallet) is now officially available for Android. Check out the article for more info: [Publish0x Article](https://www.publish0x.com/banano/banano-april-1-update-kalium-release-MonkeyTalks-on-chain-messaging-announcement-xyzdp?a=QJ0dNjvdLO).
 
 ### Meme of the Year
 

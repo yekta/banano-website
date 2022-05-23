@@ -24,7 +24,7 @@
 			target="_blank"
 			href="https://medium.com/banano/introducing-camo-banano-bananos-privacy-layer-98a5bb0ecdb1"
 			>Camo BANANO</a
-		>), on-chain messaging (<a target="_blank" href={bananoFaucets.monkeyTalks.url}>MonkeyTalks</a>)
+		>), on-chain messaging (<a target="_blank" href={bananoFaucets.MonkeyTalks.url}>MonkeyTalks</a>)
 		and more.
 		<br /><br />
 		• In the context of distribution, one major aim of BANANO is using their infrastructure with easy-to-use
