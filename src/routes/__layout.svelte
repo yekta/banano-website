@@ -51,7 +51,7 @@
 
 	:root {
 		--c-primary: 251 221 17;
-		--c-secondary: 61 176 60;
+		--c-secondary: 31 136 40;
 		--c-bg: 255 255 255;
 		--c-bg-secondary: 240 240 245;
 		--c-on-bg: 33 33 36;
@@ -66,7 +66,7 @@
 		--c-medium: 60 60 70;
 
 		--c-primary-shaded: 231 201 0;
-		--c-secondary-shaded: 41 156 31;
+		--c-secondary-shaded: 1 116 10;
 		--c-bg-shaded: 235 235 235;
 		--c-bg-secondary-shaded: 230 230 235;
 		--c-on-bg-shaded: 13 13 16;
