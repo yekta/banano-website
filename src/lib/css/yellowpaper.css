@@ -67,6 +67,15 @@ body {
 	font-weight: 700;
 }
 
+.yellowpaper a > div {
+	transition: all 0.2s cubic-bezier(0.5, 1, 0.89, 1);
+	transform-origin: bottom center;
+}
+.yellowpaper a > div:hover {
+	transform: translateY(-0.4rem) scale(1.005);
+	filter: brightness(1.05);
+}
+
 .yellowpaper a:hover {
 	text-decoration: underline;
 }
