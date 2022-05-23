@@ -98,7 +98,7 @@
 
 <nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary z-50">
 	<div class="container-b max-w-full flex flex-row items-center justify-between px-4 py-3">
-		<a href="/" class="mr-12 py-2 px-1">
+		<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 py-2 px-1">
 			<Logo class="text-c-primary w-48 h-auto" />
 		</a>
 		<div class="flex flex-row justify-end items-center">
@@ -138,6 +138,7 @@
 				</a>
 			</div>
 			<button
+				aria-label="Toggle Menu Button"
 				on:click={toggleMenu}
 				class="lg:hidden h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 flex flex-row items-center justify-center rounded-lg transition
 				shadow-navbar-button hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary {isSidebarOpen
