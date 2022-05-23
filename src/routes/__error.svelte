@@ -12,31 +12,48 @@
 </script>
 
 <script lang="ts">
+	import '$lib/css/main.css';
 	import Button from '$lib/components/Button.svelte';
+	import { onMount } from 'svelte';
 
 	export let status: number;
 	export let error: Error;
+
+	onMount(() => {
+		document.body.style.backgroundColor = 'rgb(var(--c-secondary))';
+	});
 </script>
 
-<div class="w-full min-h-screen flex flex-col items-center px-4 py-64 bg-c-secondary">
-	<div
-		class="max-w-xl min-w-[15rem] my-auto flex flex-col items-center justify-center 
-    rounded-xl bg-c-bg/10 border border-c-bg/10 px-8 py-6"
-	>
-		<div class="w-full flex flex-col gap-3 items-center text-c-bg">
-			<h1 class="font-bold text-3xl">{status}</h1>
-			<p
-				class="w-full font-medium rounded-lg bg-c-bg/10 px-3 py-1.5 border border-c-bg/10 text-center"
+<main class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
+	<div class="w-full relative flex flex-row justify-center overflow-hidden">
+		<div
+			class="w-full hero bg-c-secondary min-h-[550px] md:min-h-[720px] bg-cover flex flex-row
+			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
+		>
+			<div
+				class="container-b max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10"
 			>
-				{#if status === 404}
-					Page not found
-				{:else}
-					{error.message}
-				{/if}
-			</p>
+				<div class="w-full flex flex-col items-center text-c-bg">
+					<h1 class="font-bold text-6xl">{status}</h1>
+					<p
+						class="w-full text-xl max-w-sm font-medium rounded-lg bg-c-bg/10 px-3 py-4 border border-c-bg/10 text-center mt-4"
+					>
+						{#if status === 404}
+							Page not found
+						{:else}
+							{error.message}
+						{/if}
+					</p>
+				</div>
+				<Button href={'/'} class="mt-4 w-full max-w-sm">Go Home</Button>
+			</div>
 		</div>
-		{#if status === 404}
-			<Button href={'/'} class="mt-4">Go Home</Button>
-		{/if}
+		<div
+			class="w-[110%] -ml-[5%] h-64 absolute bottom-0 left-0 overflow-hidden flex justify-center pointer-events-none"
+		>
+			<div
+				class="w-full wave-bottom bg-[position:0%_100%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:150%] xl:bg-contain bg-no-repeat"
+			/>
+		</div>
 	</div>
-</div>
+</main>

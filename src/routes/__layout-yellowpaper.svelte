@@ -3,9 +3,9 @@
 
 	onMount(() => {
 		document.body.style.backgroundColor = 'rgb(var(--c-yellowpaper-document-bg))';
-		document.body.style.color = 'rgb(var(--c-yellowpaper-on-bg))';
-		document.body.style.fontFamily = 'lm-roman-10, system-ui, serif';
 	});
 </script>
 
-<slot />
+<main class="bg-c-yellowpaper-bg text-c-yellowpaper-on-bg">
+	<slot />
+</main>

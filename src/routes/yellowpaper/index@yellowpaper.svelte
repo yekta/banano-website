@@ -40,24 +40,24 @@
 
 	function loadAndSendRocket() {
 		if (isRocketTrigged) return;
+		isRocketTrigged = true;
 		const rocketSrc = '/yellowpaper/banano-rocket.gif';
 		const rocketImg = new Image();
 		rocketImg.src = rocketSrc;
 		rocketImg.onload = () => {
 			shouldShowRocket = true;
 		};
-		isRocketTrigged = true;
 	}
 
 	function loadAndSendRickCart() {
 		if (isRickCartTriggered) return;
+		isRickCartTriggered = true;
 		const rickCartSrc = '/yellowpaper/rick-cart.gif';
 		const rickCartImg = new Image();
 		rickCartImg.src = rickCartSrc;
 		rickCartImg.onload = () => {
 			shouldShowRickCart = true;
 		};
-		isRickCartTriggered = true;
 	}
 </script>
 
@@ -86,7 +86,7 @@
 	}}
 />
 
-<main class="w-full flex justify-center items-start yellowpaper overflow-hidden relative z-10">
+<div class="w-full flex justify-center items-start yellowpaper overflow-hidden relative z-10">
 	<div class="yellowpaper-container p-3 md:p-5">
 		<Page1 />
 		<Page2 class="mt-3 md:mt-5" />
@@ -199,4 +199,4 @@
 			/>
 		{/if}
 	</div>
-</main>
+</div>

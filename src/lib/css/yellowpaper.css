@@ -34,7 +34,7 @@
 	font-style: italic;
 }
 
-body {
+.yellowpaper {
 	font-family: lm-roman-10, Times New Roman, serif;
 	color: rgb(var(--c-yellowpaper-on-bg));
 	background-color: rgb(var(--c-yellowpaper-document-bg));
