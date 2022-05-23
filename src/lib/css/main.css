@@ -1,16 +1,22 @@
 .container-b {
 	width: 1280px;
 	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .container-b-small {
 	width: 960px;
 	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .container-b-smallest {
 	width: 768px;
 	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .hero {
