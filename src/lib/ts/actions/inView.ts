@@ -1,4 +1,4 @@
-export default function inView(node: any, params: any) {
+export default function inView(node: any, params: any = {}) {
 	let observer: IntersectionObserver;
 
 	const handleIntersect = (e: any) => {
