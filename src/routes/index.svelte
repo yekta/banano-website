@@ -24,6 +24,7 @@
 	import GetBanano from '$lib/components/sections/GetBanano.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import { page } from '$app/stores';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
@@ -37,7 +38,7 @@
 		'Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology disrupting the meme economy.';
 	const title = "Banano | Don't let your memes be dreams";
 	const canonical = canonicalUrl;
-	const imageUrl = `${canonicalUrl}/previews/home.jpg`;
+	const imageUrl = `${$page.url.origin}/previews/home.jpg`;
 </script>
 
 <MetaTags
