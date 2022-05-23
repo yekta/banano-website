@@ -38,7 +38,7 @@
 		'Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology disrupting the meme economy.';
 	const title = "Banano | Don't let your memes be dreams";
 	const canonical = canonicalUrl;
-	const imageUrl = `${$page.url.origin}/previews/home.jpg`;
+	const imageUrl = `${canonicalUrl}/previews/home.jpg`;
 </script>
 
 <MetaTags
