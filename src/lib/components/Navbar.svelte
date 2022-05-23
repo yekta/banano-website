@@ -18,6 +18,7 @@
 		title: string;
 		id: string;
 		href: string;
+		classes?: string;
 	}
 	interface SocialButton {
 		title: string;
@@ -63,6 +64,18 @@
 			href: '/#wallets'
 		},
 		{
+			title: 'Explorer',
+			id: 'explorer',
+			href: '/#explorer',
+			classes: 'lg:hidden'
+		},
+		{
+			title: 'Yellowpaper™',
+			id: 'yellowpaper',
+			href: '/#yellowpaper',
+			classes: 'lg:hidden xl:block'
+		},
+		{
 			title: 'News',
 			id: 'news',
 			href: '/#news'
@@ -97,35 +110,37 @@
 </script>
 
 <nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary z-50">
-	<div class="container-b max-w-full flex flex-row items-center justify-between px-4 py-3">
-		<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 py-2 px-1">
-			<Logo class="text-c-primary w-48 h-auto" />
-		</a>
-		<div class="flex flex-row justify-end items-center">
-			<div class="flex justify-end items-center min-w-0 flex-1">
-				<div class="hidden lg:flex justify-end items-center mx-2">
-					{#each sections as section}
-						<a
-							href={section.href}
-							class="px-4 py-2 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
-							shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
-						>
-							{section.title}
-						</a>
-					{/each}
-				</div>
-				<div class="hidden md:flex justify-end items-center mx-2">
-					{#each socials as social}
-						<a
-							href={social.href}
-							target="_blank"
-							class="p-1.5 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
-							shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
-						>
-							<IconSocial type={social.icon} class="w-9 h-9" />
-						</a>
-					{/each}
-				</div>
+	<div class="container-b-larger max-w-full flex flex-row items-center justify-between px-4 py-3">
+		<div class="flex justify-start items-center">
+			<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 py-2 px-1">
+				<Logo class="text-c-primary w-48 h-auto" />
+			</a>
+		</div>
+		<div class="flex items-center justify-end">
+			<div class="hidden lg:flex justify-end items-center">
+				{#each sections as section}
+					<a
+						href={section.href}
+						class="{section.classes !== undefined
+							? section.classes
+							: ''} px-4 py-2 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+				shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
+					>
+						{section.title}
+					</a>
+				{/each}
+			</div>
+			<div class="hidden md:flex justify-end items-center mx-2">
+				{#each socials as social}
+					<a
+						href={social.href}
+						target="_blank"
+						class="p-1.5 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
+					>
+						<IconSocial type={social.icon} class="w-9 h-9" />
+					</a>
+				{/each}
 			</div>
 			<div class="w-22 hidden md:flex justify-end mx-2">
 				<a
@@ -164,10 +179,10 @@
 		<div
 			transition:sidebar={{ duration: 250, easing: cubicOut }}
 			use:clickoutside={closeMenu}
-			class="w-[70vw] max-w-[16rem] h-full flex flex-col items-start bg-c-bg 
+			class="w-[70vw] max-w-[18rem] h-full flex flex-col items-start bg-c-bg 
 			rounded-l-xl p-3 overflow-y-auto shadow-sidebar shadow-c-bg-secondary-shaded"
 		>
-			<h5 class="text-2xl font-bold px-6 py-3">Sections</h5>
+			<p class="text-2xl font-bold px-6 py-3">Sections</p>
 			<div class="w-full px-2">
 				<div class="h-1 w-full rounded-full bg-c-secondary mt-2 mb-3" />
 			</div>

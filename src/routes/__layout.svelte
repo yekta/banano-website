@@ -51,32 +51,32 @@
 
 	:root {
 		--c-primary: 251 221 17;
-		--c-secondary: 31 136 40;
+		--c-secondary: 46 151 55;
 		--c-bg: 255 255 255;
 		--c-bg-secondary: 240 240 245;
 		--c-on-bg: 33 33 36;
 		--c-danger: 255 80 80;
 		--c-discord: 105 118 191;
-		--c-reddit: 235 79 20;
+		--c-reddit: 215 79 20;
 		--c-twitter: 0 162 227;
-		--c-instagram: 225 48 108;
+		--c-instagram: 205 48 108;
 		--c-telegram: 0 136 204;
 		--c-facebook: 59 89 152;
-		--c-youtube: 240 30 30;
+		--c-youtube: 180 20 20;
 		--c-medium: 60 60 70;
 
 		--c-primary-shaded: 231 201 0;
-		--c-secondary-shaded: 1 116 10;
+		--c-secondary-shaded: 26 131 35;
 		--c-bg-shaded: 235 235 235;
 		--c-bg-secondary-shaded: 230 230 235;
 		--c-on-bg-shaded: 13 13 16;
 		--c-discord-shaded: 85 98 171;
-		--c-reddit-shaded: 215 59 0;
+		--c-reddit-shaded: 195 59 0;
 		--c-twitter-shaded: 0 142 207;
-		--c-instagram-shaded: 205 28 88;
+		--c-instagram-shaded: 185 28 88;
 		--c-telegram-shaded: 0 116 183;
 		--c-facebook-shaded: 39 69 132;
-		--c-youtube-shaded: 220 10 10;
+		--c-youtube-shaded: 160 0 0;
 		--c-medium-shaded: 40 40 50;
 
 		--sm: 640px;
