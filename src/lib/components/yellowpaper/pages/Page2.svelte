@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AspectRatio from '$lib/components/AspectRatio.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import Lazy from 'svelte-lazy';
 
@@ -29,17 +30,19 @@
 		redefining the memeconomy on 1 April 2018. Oh, did you know that Colin Lemahieu, the founder of
 		Nano, likes us? Yea, that’s right (<b>Figure 1</b>)!
 	</p>
-	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-		<video
-			width="1280"
-			height="720"
-			class="w-full h-auto mt-8 rounded-xl relative z-0 overflow-hidden"
-			controls
-		>
-			<source src="/yellowpaper/colin-likes-banano.mp4" type="video/mp4" />
-			<track kind="captions" />
-		</video>
-	</Lazy>
+	<AspectRatio width={1280} height={720}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+			<video
+				width="1280"
+				height="720"
+				class="w-full h-auto mt-8 rounded-xl relative z-0 overflow-hidden"
+				controls
+			>
+				<source src="/yellowpaper/colin-likes-banano.mp4" type="video/mp4" />
+				<track kind="captions" />
+			</video>
+		</Lazy>
+	</AspectRatio>
 	<p class="mt-4 px-4 md:px-12 text-sm">
 		<b>Figure 1</b>: “I think memecoins are hilarious, we have one, we have BANANO, I like those
 		guys!” Colin LeMahieu, Nano Founder
@@ -51,13 +54,15 @@
 	<p class="mt-8 px-4 md:px-12 text-sm text-center">
 		<b>Table 1</b>: Feature comparison: BANANO vs. Bitcoin
 	</p>
-	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-		<img
-			width="1500"
-			height="960"
-			class="w-full h-auto mt-5"
-			src="/yellowpaper/banano-vs-bitcoin.png"
-			alt="Feature comparison: Banano vs. Bitcoin"
-		/>
-	</Lazy>
+	<AspectRatio width={1500} height={960}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+			<img
+				width="1500"
+				height="960"
+				class="w-full h-auto mt-5"
+				src="/yellowpaper/banano-vs-bitcoin.png"
+				alt="Feature comparison: Banano vs. Bitcoin"
+			/>
+		</Lazy>
+	</AspectRatio>
 </PageWrapper>

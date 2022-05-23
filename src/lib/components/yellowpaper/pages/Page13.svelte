@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AspectRatio from '$lib/components/AspectRatio.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
 	import Lazy from 'svelte-lazy';
@@ -28,15 +29,17 @@
 		Visit <a href={bananoFaucets.monkeyTalks.url} target="_blank">monkeytalks.cc</a> to try it out.
 	</p>
 	<a href={bananoFaucets.monkeyTalks.url} target="_blank" class="w-full">
-		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-			<img
-				width="1500"
-				height="1101"
-				class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
-				src="/yellowpaper/monkey-talks.jpeg"
-				alt="MonKeyTalks"
-			/>
-		</Lazy>
+		<AspectRatio width={1500} height={1101}>
+			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+				<img
+					width="1500"
+					height="1101"
+					class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+					src="/yellowpaper/monkey-talks.jpeg"
+					alt="MonKeyTalks"
+				/>
+			</Lazy>
+		</AspectRatio>
 	</a>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 18</b>: Monkeytalks - A self-sustaining BANANO faucet including on-chain messaging!
@@ -58,15 +61,17 @@
 			>Figure 19</b
 		>). Coin burns unrelated to this program have occurred, and may happen again in the future.
 	</p>
-	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-		<img
-			width="800"
-			height="800"
-			class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
-			src="/yellowpaper/buy-back.jpeg"
-			alt="Buy-Back and Burn"
-		/>
-	</Lazy>
+	<AspectRatio width={800} height={800}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+			<img
+				width="800"
+				height="800"
+				class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+				src="/yellowpaper/buy-back.jpeg"
+				alt="Buy-Back and Burn"
+			/>
+		</Lazy>
+	</AspectRatio>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 19</b>: BANANO has a ‘Buy-Back and Burn’ program.
 	</p>

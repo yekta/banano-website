@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AspectRatio from '$lib/components/AspectRatio.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import Lazy from 'svelte-lazy';
 
@@ -31,15 +32,17 @@
 		ALSO, it’s important to note: behind all the memes and sh*tposting, the BANANO operation has a
 		<strike>highly skilled team</strike> dedicated community, and it is very, very, legit.
 	</p>
-	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-		<img
-			width="700"
-			height="700"
-			class="w-full h-auto mt-10 rounded-xl relative z-0 overflow-hidden"
-			src="/yellowpaper/factory.gif"
-			alt="Nano to Banano Factory Animation"
-		/>
-	</Lazy>
+	<AspectRatio width={700} height={700}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+			<img
+				width="700"
+				height="700"
+				class="w-full h-auto mt-10 rounded-xl relative z-0 overflow-hidden"
+				src="/yellowpaper/factory.gif"
+				alt="Nano to Banano Factory Animation"
+			/>
+		</Lazy>
+	</AspectRatio>
 	<p class="mt-4 px-4 md:px-12 text-sm">
 		<b>Figure 3</b>: BANANO is the first peel of the NANO cryptocurrency and adheres to the
 		open-source spirit. In the figure above, NANO in its raw form is remodelled through a

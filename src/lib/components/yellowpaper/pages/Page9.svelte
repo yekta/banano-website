@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AspectRatio from '$lib/components/AspectRatio.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import Lazy from 'svelte-lazy';
 
@@ -28,15 +29,17 @@
 		target="_blank"
 		class="w-full"
 	>
-		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-			<img
-				width="1000"
-				height="487"
-				class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
-				src="/yellowpaper/camo.jpeg"
-				alt="CAMO Banano"
-			/>
-		</Lazy>
+		<AspectRatio width={1000} height={487}>
+			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+				<img
+					width="1000"
+					height="487"
+					class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+					src="/yellowpaper/camo.jpeg"
+					alt="CAMO Banano"
+				/>
+			</Lazy>
+		</AspectRatio>
 	</a>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 10</b>: CAMO BANANO graphic.
