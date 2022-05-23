@@ -20,7 +20,7 @@
 		that cryptocurrency mining is not without alternatives!
 	</p>
 	<a href={bananoFaucets.bananoMiner.url} target="_blank" class="w-full">
-		<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="1500"
 				height="788"
@@ -49,7 +49,7 @@
 		of your computational contribution (<b>Figure 17</b>). Visit
 		<a href={bananoFaucets.bananoMiner.url} target="_blank">bananominer.com</a> to try it out.
 	</p>
-	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 		<img
 			width="800"
 			height="300"

@@ -22,7 +22,7 @@
 		href="https://creeper.banano.cc/explorer/account/ban_1meme1yacdi5iu69wcu7et3kzrr1s4yoizd9mx7nstqp1c9e69979mjd4fun/history"
 		target="_blank"
 	>
-		<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="1205"
 				height="625"
@@ -63,7 +63,7 @@
 			href={bananoWallets.kalium.url}
 			target="_blank"
 		>
-			<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 				<img
 					width="783"
 					height="1500"
@@ -75,7 +75,7 @@
 		</a>
 		<div class="w-full md:flex-1 min-w-0 h-auto flex flex-col">
 			<a class="w-full h-auto mt-8 px-4" href={bananoWallets.vault.url} target="_blank">
-				<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 					<img
 						width="1500"
 						height="863"
@@ -90,7 +90,7 @@
 				href="https://shop.ledger.com/products/ledger-nano-s"
 				target="_blank"
 			>
-				<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 					<img
 						width="1000"
 						height="227"

@@ -21,7 +21,7 @@
 		legendary BANANO Runner game (<b>Figure 11</b>) with its first round in April 2018 was a huge
 		success and an unprecedented form of airdropping a new cryptocurrency to its community.
 	</p>
-	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 		<video
 			width="800"
 			height="450"
@@ -54,7 +54,7 @@
 	</p>
 	<div class="w-full flex flex-wrap justify-center mt-6">
 		<a class="w-full max-w-xs md:flex-1" href={bananoSocials.discord.url} target="_blank">
-			<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 				<img
 					width="720"
 					height="1203"
@@ -69,7 +69,7 @@
 			href="https://www.reddit.com/user/Banano_Tipbot"
 			target="_blank"
 		>
-			<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 				<img
 					width="720"
 					height="1203"
@@ -80,7 +80,7 @@
 			</Lazy>
 		</a>
 		<a class="w-full max-w-xs md:flex-1" href="https://twitter.com/bananotipperbot" target="_blank">
-			<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 				<img
 					width="720"
 					height="1203"

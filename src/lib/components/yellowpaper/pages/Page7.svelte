@@ -30,7 +30,7 @@
 		representations of wallet addresses serve to identify users while protecting the privacy of the
 		account holders (<b>Figure 8</b>).
 	</p>
-	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 		<img
 			width="700"
 			height="700"

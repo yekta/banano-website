@@ -29,7 +29,7 @@
 		redefining the memeconomy on 1 April 2018. Oh, did you know that Colin Lemahieu, the founder of
 		Nano, likes us? Yea, that’s right (<b>Figure 1</b>)!
 	</p>
-	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 		<video
 			width="1280"
 			height="720"
@@ -51,7 +51,7 @@
 	<p class="mt-8 px-4 md:px-12 text-sm text-center">
 		<b>Table 1</b>: Feature comparison: BANANO vs. Bitcoin
 	</p>
-	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 		<img
 			width="1500"
 			height="960"

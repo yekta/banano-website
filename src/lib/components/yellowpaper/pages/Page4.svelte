@@ -31,7 +31,7 @@
 		ALSO, it’s important to note: behind all the memes and sh*tposting, the BANANO operation has a
 		<strike>highly skilled team</strike> dedicated community, and it is very, very, legit.
 	</p>
-	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 		<img
 			width="700"
 			height="700"

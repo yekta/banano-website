@@ -15,7 +15,7 @@
 		<div
 			class="w-full max-w-sm md:max-w-[16rem] lg:max-w-[22rem] flex flex-col items-center justify-start md:mr-8 mt-6"
 		>
-			<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 				<img
 					width="896"
 					height="1250"
@@ -60,7 +60,7 @@
 	</p>
 	<div class="w-full flex flex-wrap items-center justify-center">
 		<div class="w-full max-w-[18rem] md:w-1/2 mt-4 p-3">
-			<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 				<img
 					width="305"
 					height="600"
@@ -71,7 +71,7 @@
 			</Lazy>
 		</div>
 		<div class="w-full max-w-md md:flex-1 md:min-w-0 mt-4 p-3">
-			<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 				<img
 					width="534"
 					height="486"

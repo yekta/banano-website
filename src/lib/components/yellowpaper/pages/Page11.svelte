@@ -18,7 +18,7 @@
 		<a href={bananoFaucets.blackMonkey.url} target="_blank">blackmonkey.banano.cc</a> to play.
 	</p>
 	<a href={bananoFaucets.blackMonkey.url} target="_blank" class="w-full">
-		<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="1500"
 				height="989"
@@ -38,7 +38,7 @@
 		by another user, who will act as both faucet-user and “inspector” (<b>Figure 14</b>). Meme
 		Faucet is available on <b>memefaucet.banano.cc</b> while it's active but it's not active currently.
 	</p>
-	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 		<img
 			width="1341"
 			height="645"
@@ -56,7 +56,7 @@
 		as ‘Monkey Match’ or ‘Catch the Monkey’ (<b>Figure 15</b>). Crane Faucet is available on
 		<b>faucet.banano.coranos.io</b> while it's active but it's not active currently.
 	</p>
-	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 		<img
 			width="1496"
 			height="978"

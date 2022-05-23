@@ -28,7 +28,7 @@
 		Visit <a href={bananoFaucets.monkeyTalks.url} target="_blank">monkeytalks.cc</a> to try it out.
 	</p>
 	<a href={bananoFaucets.monkeyTalks.url} target="_blank" class="w-full">
-		<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="1500"
 				height="1101"
@@ -58,7 +58,7 @@
 			>Figure 19</b
 		>). Coin burns unrelated to this program have occurred, and may happen again in the future.
 	</p>
-	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+	<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 		<img
 			width="800"
 			height="800"

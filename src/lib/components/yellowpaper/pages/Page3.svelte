@@ -37,7 +37,7 @@
 		>).
 	</p>
 	<a href={bananoWallets.kalium.url} target="_blank">
-		<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				class="w-full h-auto mt-5"
 				width={1500}

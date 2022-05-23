@@ -68,7 +68,7 @@
 		<Page8 class="mt-3 md:mt-5" />
 		<div class="w-full relative pt-8 items-center flex flex-col">
 			<div class="w-full max-w-[16rem] -mb-12 md:-mb-20 lg:-mb-32 relative z-10">
-				<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 					<img width="488" height="601" src="/yellowpaper/shady-monkey.gif" alt="Shady MonKey" />
 				</Lazy>
 			</div>
@@ -76,7 +76,7 @@
 		</div>
 		<div class="w-full flex px-2">
 			<div class="flex-1">
-				<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 					<img
 						width="600"
 						height="600"
@@ -87,7 +87,7 @@
 				</Lazy>
 			</div>
 			<div class="flex-1">
-				<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 					<img
 						width="600"
 						height="600"
@@ -98,7 +98,7 @@
 				</Lazy>
 			</div>
 			<div class="flex-1 hidden md:block">
-				<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 					<img
 						width="600"
 						height="600"
@@ -116,7 +116,7 @@
 			<div class="w-full -mb-8 md:-mb-16 lg:-mb-28 relative z-10 px-6 md:px-24 lg:px-36">
 				<div class="w-full max-w-md">
 					<a class="w-full" target="_blank" href={bananoFaucets.monkeyTalks.url}>
-						<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+						<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 							<img
 								width="1000"
 								height="639"
@@ -132,7 +132,7 @@
 		</div>
 		<div class="w-full justify-center items-center flex">
 			<div class="w-2/3 max-w-md">
-				<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 					<img
 						width="600"
 						height="600"

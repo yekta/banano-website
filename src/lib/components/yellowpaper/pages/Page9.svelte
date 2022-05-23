@@ -28,7 +28,7 @@
 		target="_blank"
 		class="w-full"
 	>
-		<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="1000"
 				height="487"

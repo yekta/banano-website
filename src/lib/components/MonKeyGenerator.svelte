@@ -68,7 +68,10 @@
 
 <div class="relative w-[32rem] max-w-full p-2">
 	<div class="relative monkey-generator-container w-full">
-		<div class="monkey-generator w-full h-full flex flex-col bg-c-bg absolute left-0 top-0">
+		<div
+			class="monkey-generator w-full h-full flex flex-col bg-c-bg origin-top rounded-2xl
+			overflow-hidden border-c-primary absolute left-0 top-0 z-10"
+		>
 			<!-- MonKey loading animation -->
 			{#if monkeyLoadState === 'loading' || monkeyLoadState === 'loaded'}
 				<div
@@ -203,15 +206,10 @@
 		padding-bottom: calc(100% + 3rem);
 	}
 	.monkey-generator {
-		border-radius: 1rem;
-		border-width: 0rem;
-		border-color: rgb(var(--c-primary));
 		box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
 			0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
 			0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
 			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
-		transform-origin: top center;
-		overflow: hidden;
 		animation: generatorAnimation 2s infinite;
 	}
 	@keyframes generatorAnimation {

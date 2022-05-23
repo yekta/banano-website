@@ -33,7 +33,7 @@
 		</p>
 	</div>
 	<!-- Generator -->
-	<div class="container-b-small flex flex-row flex-wrap items-center justify-center mt-10 px-6">
+	<div class="container-b-small flex flex-row flex-wrap items-center justify-center mt-10 px-4">
 		<MonKeyGenerator />
 	</div>
 </div>
