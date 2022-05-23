@@ -167,7 +167,7 @@
 			class="w-[70vw] max-w-[16rem] h-full flex flex-col items-start bg-c-bg 
 			rounded-l-xl p-3 overflow-y-auto shadow-sidebar shadow-c-bg-secondary-shaded"
 		>
-			<h4 class="text-2xl font-bold px-6 py-3">Sections</h4>
+			<h5 class="text-2xl font-bold px-6 py-3">Sections</h5>
 			<div class="w-full px-2">
 				<div class="h-1 w-full rounded-full bg-c-secondary mt-2 mb-3" />
 			</div>
