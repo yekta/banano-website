@@ -71,7 +71,12 @@
 				<div
 					class="w-full md:w-1/2 lg:w-1/3 max-w-[19rem] flex flex-col items-center px-6 py-4 mt-10 md:mt-12"
 				>
-					<img src="/images/wallets/{wallet.img}.{imgExtention}" alt={wallet.title} />
+					<img
+						width="620"
+						height="1100"
+						src="/images/wallets/{wallet.img}.{imgExtention}"
+						alt={wallet.title}
+					/>
 					<h3 class="w-full font-bold text-xl mt-4">{wallet.title.toUpperCase()}</h3>
 					<p class="mt-2">{wallet.description}</p>
 					<Button class="w-full mt-5" type="secondary" href={wallet.url} targetBlank={true}>

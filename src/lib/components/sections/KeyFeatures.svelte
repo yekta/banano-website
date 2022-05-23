@@ -33,6 +33,8 @@
 					class="w-1/2 md:w-1/3 lg:w-1/4 max-w-[14rem] flex flex-col items-center px-3 py-4 md:p-4"
 				>
 					<img
+						width="512"
+						height="512"
 						class="w-full h-auto"
 						src="/illustrations/key-features/{feature.img}.{imgExtention}"
 						alt={feature.title}

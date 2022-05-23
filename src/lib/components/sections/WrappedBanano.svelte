@@ -39,7 +39,13 @@
 				</p>
 			</div>
 			<div class="container-b-smallest max-w-full flex flex-row flex-wrap justify-center mt-10">
-				<img class="w-full" src="/illustrations/wban/wban-hero.svg" alt="wBAN Hero" />
+				<img
+					width="602"
+					height="401"
+					class="w-full"
+					src="/illustrations/wban/wban-hero.svg"
+					alt="wBAN Hero"
+				/>
 			</div>
 			<Button
 				type="secondary"

@@ -19,7 +19,13 @@
 				Check out Yellowpaper™
 			</Button>
 			<div class="container-b-smallest max-w-full flex flex-row flex-wrap justify-center mt-12">
-				<img class="w-full" src="/illustrations/foreground/yellowpaper.svg" alt="Yellowpaper" />
+				<img
+					width="650"
+					height="358"
+					class="w-full"
+					src="/illustrations/foreground/yellowpaper.svg"
+					alt="Yellowpaper"
+				/>
 			</div>
 		</div>
 	</div>

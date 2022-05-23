@@ -22,6 +22,8 @@
 				>
 					<div class="w-full h-auto px-1">
 						<img
+							width="500"
+							height="500"
 							class="w-full h-auto"
 							src="/illustrations/dancing-banana/dancing-banana-{index % dancingBananaCount}.svg"
 							alt={teamMember.nickname}
