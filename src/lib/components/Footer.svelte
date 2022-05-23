@@ -122,7 +122,7 @@
 				<div
 					class="{section.wClass} max-w-full flex flex-col items-center md:items-start px-4 pt-4 pb-6 md:pt-7 md:pb-6 2xl:pt-12"
 				>
-					<h5 class="text-xl font-bold px-4">{section.title.toUpperCase()}</h5>
+					<h4 class="text-xl font-bold px-4">{section.title.toUpperCase()}</h4>
 					<div class="flex flex-col items-center md:items-start mt-2">
 						{#each section.entries as entry}
 							<a
