@@ -6,7 +6,7 @@
 	font-weight: 400;
 	src: url('/fonts/now-alt/now-alt-400.woff2') format('woff2'),
 		url('/fonts/now-alt/now-alt-400.woff') format('woff');
-	font-display: swap;
+	font-display: auto;
 	font-style: normal;
 }
 @font-face {
@@ -14,7 +14,7 @@
 	font-weight: 500;
 	src: url('/fonts/now-alt/now-alt-500.woff2') format('woff2'),
 		url('/fonts/now-alt/now-alt-500.woff') format('woff');
-	font-display: swap;
+	font-display: auto;
 	font-style: normal;
 }
 @font-face {
@@ -22,12 +22,12 @@
 	font-weight: 700;
 	src: url('/fonts/now-alt/now-alt-700.woff2') format('woff2'),
 		url('/fonts/now-alt/now-alt-700.woff') format('woff');
-	font-display: swap;
+	font-display: auto;
 	font-style: normal;
 }
 
 body {
-	font-family: now-alt, system-ui, sans-serif;
+	font-family: now-alt, Helvetica Neue, sans-serif;
 	color: rgb(var(--c-on-bg));
 	background-color: rgb(var(--c-secondary));
 }
