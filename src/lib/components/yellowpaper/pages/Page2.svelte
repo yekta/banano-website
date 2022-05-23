@@ -30,12 +30,12 @@
 		redefining the memeconomy on 1 April 2018. Oh, did you know that Colin Lemahieu, the founder of
 		Nano, likes us? Yea, that’s right (<b>Figure 1</b>)!
 	</p>
-	<AspectRatio width={1280} height={720}>
+	<AspectRatio width={1280} height={720} class="mt-8">
 		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<video
 				width="1280"
 				height="720"
-				class="w-full h-auto mt-8 rounded-xl relative z-0 overflow-hidden"
+				class="w-full h-auto rounded-xl relative z-0 overflow-hidden"
 				controls
 			>
 				<source src="/yellowpaper/colin-likes-banano.mp4" type="video/mp4" />

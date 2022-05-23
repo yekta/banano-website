@@ -32,12 +32,12 @@
 		ALSO, it’s important to note: behind all the memes and sh*tposting, the BANANO operation has a
 		<strike>highly skilled team</strike> dedicated community, and it is very, very, legit.
 	</p>
-	<AspectRatio width={700} height={700}>
+	<AspectRatio width={700} height={700} class="mt-10">
 		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="700"
 				height="700"
-				class="w-full h-auto mt-10 rounded-xl relative z-0 overflow-hidden"
+				class="w-full h-auto rounded-xl relative z-0 overflow-hidden"
 				src="/yellowpaper/factory.gif"
 				alt="Nano to Banano Factory Animation"
 			/>

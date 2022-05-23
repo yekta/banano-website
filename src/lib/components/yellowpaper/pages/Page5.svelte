@@ -19,22 +19,25 @@
 		world and your BANANO will remain secure. Every BANANO wallet address begins with the prefix,
 		"ban_" (<b>Figure 4</b>).
 	</p>
-	<a
-		href="https://creeper.banano.cc/explorer/account/ban_1meme1yacdi5iu69wcu7et3kzrr1s4yoizd9mx7nstqp1c9e69979mjd4fun/history"
-		target="_blank"
-	>
-		<AspectRatio width={1205} height={625}>
-			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-				<img
-					width="1205"
-					height="625"
-					class="w-full h-auto mt-8"
-					src="/yellowpaper/share-card.png"
-					alt="Kalium Share Card"
-				/>
-			</Lazy>
-		</AspectRatio>
-	</a>
+	<div class="w-full mt-8">
+		<a
+			class="w-full"
+			href="https://creeper.banano.cc/explorer/account/ban_1meme1yacdi5iu69wcu7et3kzrr1s4yoizd9mx7nstqp1c9e69979mjd4fun/history"
+			target="_blank"
+		>
+			<AspectRatio width={1205} height={625}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+					<img
+						width="1205"
+						height="625"
+						class="w-full h-auto"
+						src="/yellowpaper/share-card.png"
+						alt="Kalium Share Card"
+					/>
+				</Lazy>
+			</AspectRatio>
+		</a>
+	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm">
 		<b>Figure 4</b>: A BANANO public address, starting with “ban_”. The QR code shown contains the
 		exact same information and can be read by applications such as Kalium.
@@ -61,54 +64,52 @@
 		</li>
 	</ul>
 	<div class="w-full flex flex-row flex-wrap justify-center items-center">
-		<a
-			class="w-full max-w-xs md:max-w-[16rem] h-auto mt-8 px-4"
-			href={bananoWallets.kalium.url}
-			target="_blank"
-		>
-			<AspectRatio width={783} height={1500}>
-				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-					<img
-						width="783"
-						height="1500"
-						class="w-full h-auto"
-						src="/yellowpaper/kalium-clay.png"
-						alt="Kalium Wallet"
-					/>
-				</Lazy>
-			</AspectRatio>
-		</a>
+		<div class="w-full max-w-xs md:max-w-[16rem] h-auto mt-8 px-4">
+			<a class="w-full" href={bananoWallets.kalium.url} target="_blank">
+				<AspectRatio width={783} height={1500}>
+					<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+						<img
+							width="783"
+							height="1500"
+							class="w-full h-auto"
+							src="/yellowpaper/kalium-clay.png"
+							alt="Kalium Wallet"
+						/>
+					</Lazy>
+				</AspectRatio>
+			</a>
+		</div>
 		<div class="w-full md:flex-1 min-w-0 h-auto flex flex-col">
-			<a class="w-full h-auto mt-8 px-4" href={bananoWallets.vault.url} target="_blank">
-				<AspectRatio width={1500} height={863}>
-					<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-						<img
-							width="1500"
-							height="863"
-							class="w-full h-auto"
-							src="/yellowpaper/vault.png"
-							alt="Banano Vault"
-						/>
-					</Lazy>
-				</AspectRatio>
-			</a>
-			<a
-				class="w-full h-auto mt-8 px-4"
-				href="https://shop.ledger.com/products/ledger-nano-s"
-				target="_blank"
-			>
-				<AspectRatio width={1000} height={227}>
-					<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-						<img
-							width="1000"
-							height="227"
-							class="w-full h-auto"
-							src="/yellowpaper/ledger.png"
-							alt="Ledger Hardware Wallet"
-						/>
-					</Lazy>
-				</AspectRatio>
-			</a>
+			<div class="w-full mt-8 px-4">
+				<a class="w-full" href={bananoWallets.vault.url} target="_blank">
+					<AspectRatio width={1500} height={863}>
+						<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+							<img
+								width="1500"
+								height="863"
+								class="w-full h-auto"
+								src="/yellowpaper/vault.png"
+								alt="Banano Vault"
+							/>
+						</Lazy>
+					</AspectRatio>
+				</a>
+			</div>
+			<div class="w-full mt-8 px-4">
+				<a class="w-full" href="https://shop.ledger.com/products/ledger-nano-s" target="_blank">
+					<AspectRatio width={1000} height={227}>
+						<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+							<img
+								width="1000"
+								height="227"
+								class="w-full h-auto"
+								src="/yellowpaper/ledger.png"
+								alt="Ledger Hardware Wallet"
+							/>
+						</Lazy>
+					</AspectRatio>
+				</a>
+			</div>
 		</div>
 	</div>
 	<p class="mt-6 px-4 md:px-12 text-sm text-center">

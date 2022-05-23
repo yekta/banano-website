@@ -20,19 +20,21 @@
 		faucet as “<b>BANANO Miner” (Figure 16</b>). This naming choice was made as a way of stating
 		that cryptocurrency mining is not without alternatives!
 	</p>
-	<a href={bananoFaucets.bananoMiner.url} target="_blank" class="w-full">
-		<AspectRatio width={1500} height={788}>
-			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-				<img
-					width="1500"
-					height="788"
-					class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
-					src="/yellowpaper/banano-miner.jpeg"
-					alt="Banano Miner"
-				/>
-			</Lazy>
-		</AspectRatio>
-	</a>
+	<div class="w-full mt-8">
+		<a href={bananoFaucets.bananoMiner.url} target="_blank" class="w-full">
+			<AspectRatio width={1500} height={788}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+					<img
+						width="1500"
+						height="788"
+						class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+						src="/yellowpaper/banano-miner.jpeg"
+						alt="Banano Miner"
+					/>
+				</Lazy>
+			</AspectRatio>
+		</a>
+	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 16</b>: BANANO Miner - Contribute to Medical Research while earning BANANO!
 	</p>
@@ -52,12 +54,12 @@
 		of your computational contribution (<b>Figure 17</b>). Visit
 		<a href={bananoFaucets.bananoMiner.url} target="_blank">bananominer.com</a> to try it out.
 	</p>
-	<AspectRatio width={800} height={300}>
+	<AspectRatio width={800} height={300} class="mt-8">
 		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="800"
 				height="300"
-				class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
 				src="/yellowpaper/banano-miner-animation.gif"
 				alt="Banano Miner Animation"
 			/>

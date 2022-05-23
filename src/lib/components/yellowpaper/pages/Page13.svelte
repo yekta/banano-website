@@ -28,19 +28,21 @@
 		<br />
 		Visit <a href={bananoFaucets.monkeyTalks.url} target="_blank">monkeytalks.cc</a> to try it out.
 	</p>
-	<a href={bananoFaucets.monkeyTalks.url} target="_blank" class="w-full">
-		<AspectRatio width={1500} height={1101}>
-			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-				<img
-					width="1500"
-					height="1101"
-					class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
-					src="/yellowpaper/monkey-talks.jpeg"
-					alt="MonKeyTalks"
-				/>
-			</Lazy>
-		</AspectRatio>
-	</a>
+	<div class="w-full mt-8">
+		<a href={bananoFaucets.monkeyTalks.url} target="_blank" class="w-full">
+			<AspectRatio width={1500} height={1101}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+					<img
+						width="1500"
+						height="1101"
+						class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+						src="/yellowpaper/monkey-talks.jpeg"
+						alt="MonKeyTalks"
+					/>
+				</Lazy>
+			</AspectRatio>
+		</a>
+	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 18</b>: Monkeytalks - A self-sustaining BANANO faucet including on-chain messaging!
 	</p>
@@ -61,12 +63,12 @@
 			>Figure 19</b
 		>). Coin burns unrelated to this program have occurred, and may happen again in the future.
 	</p>
-	<AspectRatio width={800} height={800}>
+	<AspectRatio width={800} height={800} class="mt-8">
 		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="800"
 				height="800"
-				class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
 				src="/yellowpaper/buy-back.jpeg"
 				alt="Buy-Back and Burn"
 			/>

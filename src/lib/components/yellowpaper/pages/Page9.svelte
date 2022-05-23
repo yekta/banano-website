@@ -24,23 +24,25 @@
 		transactions, but not for real privacy yet. Ongoing development will include the requirement of adding
 		a new block type to the BANANO protocol and subsequently allow for sum-of-squares private transactions.
 	</p>
-	<a
-		href="https://medium.com/banano/introducing-camo-banano-bananos-privacy-layer-98a5bb0ecdb1"
-		target="_blank"
-		class="w-full"
-	>
-		<AspectRatio width={1000} height={487}>
-			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-				<img
-					width="1000"
-					height="487"
-					class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
-					src="/yellowpaper/camo.jpeg"
-					alt="CAMO Banano"
-				/>
-			</Lazy>
-		</AspectRatio>
-	</a>
+	<div class="w-full mt-8">
+		<a
+			href="https://medium.com/banano/introducing-camo-banano-bananos-privacy-layer-98a5bb0ecdb1"
+			target="_blank"
+			class="w-full"
+		>
+			<AspectRatio width={1000} height={487}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+					<img
+						width="1000"
+						height="487"
+						class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+						src="/yellowpaper/camo.jpeg"
+						alt="CAMO Banano"
+					/>
+				</Lazy>
+			</AspectRatio>
+		</a>
+	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 10</b>: CAMO BANANO graphic.
 	</p>

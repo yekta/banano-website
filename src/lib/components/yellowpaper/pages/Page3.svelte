@@ -36,19 +36,21 @@
 			target="_blank">Download</a
 		>).
 	</p>
-	<a href={bananoWallets.kalium.url} target="_blank">
-		<AspectRatio width={1500} height={1194}>
-			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-				<img
-					class="w-full h-auto mt-5"
-					width={1500}
-					height={1194}
-					src="/yellowpaper/kalium.png"
-					alt="Kalium Wallet"
-				/>
-			</Lazy>
-		</AspectRatio>
-	</a>
+	<div class="w-full mt-5">
+		<a class="w-full" href={bananoWallets.kalium.url} target="_blank">
+			<AspectRatio width={1500} height={1194}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+					<img
+						class="w-full h-auto"
+						width={1500}
+						height={1194}
+						src="/yellowpaper/kalium.png"
+						alt="Kalium Wallet"
+					/>
+				</Lazy>
+			</AspectRatio>
+		</a>
+	</div>
 	<p>
 		We also haven’t forgotten the roots of our BANANO tree. We made the tech from Kalium Wallet
 		available for NANO users with <a href="https://natrium.io" target="_blank">Natrium</a>, a mobile

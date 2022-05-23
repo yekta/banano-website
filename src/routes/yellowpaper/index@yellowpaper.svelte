@@ -71,7 +71,13 @@
 			<div class="w-full max-w-[16rem] -mb-12 md:-mb-20 lg:-mb-32 relative z-10">
 				<AspectRatio width={488} height={601}>
 					<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-						<img width="488" height="601" src="/yellowpaper/shady-monkey.gif" alt="Shady MonKey" />
+						<img
+							class="w-full h-auto"
+							width="488"
+							height="601"
+							src="/yellowpaper/shady-monkey.gif"
+							alt="Shady MonKey"
+						/>
 					</Lazy>
 				</AspectRatio>
 			</div>
@@ -130,7 +136,7 @@
 								<img
 									width="1000"
 									height="639"
-									class="w-full h-auto "
+									class="w-full h-auto"
 									src="/yellowpaper/deadpool.png"
 									alt="Shady MonKey"
 								/>

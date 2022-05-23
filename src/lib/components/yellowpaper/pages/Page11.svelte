@@ -18,19 +18,21 @@
 		that type (<b>Figure 13</b>). Visit
 		<a href={bananoFaucets.blackMonkey.url} target="_blank">blackmonkey.banano.cc</a> to play.
 	</p>
-	<a href={bananoFaucets.blackMonkey.url} target="_blank" class="w-full">
-		<AspectRatio width={1500} height={989}>
-			<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
-				<img
-					width="1500"
-					height="989"
-					class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
-					src="/yellowpaper/black-monkey.jpeg"
-					alt="Black Monkey"
-				/>
-			</Lazy>
-		</AspectRatio>
-	</a>
+	<div class="w-full mt-8">
+		<a href={bananoFaucets.blackMonkey.url} target="_blank" class="w-full">
+			<AspectRatio width={1500} height={989}>
+				<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
+					<img
+						width="1500"
+						height="989"
+						class="w-full h-auto rounded-xl overflow-hidden relative z-0"
+						src="/yellowpaper/black-monkey.jpeg"
+						alt="Black Monkey"
+					/>
+				</Lazy>
+			</AspectRatio>
+		</a>
+	</div>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 13</b>: One of the most popular BANANO faucets: Black Monkey
 	</p>
@@ -41,12 +43,12 @@
 		by another user, who will act as both faucet-user and “inspector” (<b>Figure 14</b>). Meme
 		Faucet is available on <b>memefaucet.banano.cc</b> while it's active but it's not active currently.
 	</p>
-	<AspectRatio width={1341} height={645}>
+	<AspectRatio width={1341} height={645} class="mt-8">
 		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="1341"
 				height="645"
-				class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+				class="w-full h-auto rounded-xl overflow-hidden relative z-0"
 				src="/yellowpaper/meme-faucet.jpeg"
 				alt="Meme Faucet"
 			/>
@@ -61,12 +63,16 @@
 		as ‘Monkey Match’ or ‘Catch the Monkey’ (<b>Figure 15</b>). Crane Faucet is available on
 		<b>faucet.banano.coranos.io</b> while it's active but it's not active currently.
 	</p>
-	<AspectRatio width={1496} height={978}>
+	<AspectRatio
+		width={1496}
+		height={978}
+		class="mt-8 rounded-xl overflow-hidden relative z-0 border-2 border-c-yellowpaper-on-bg"
+	>
 		<Lazy offset={1000} fadeOption={{ duration: 200, delay: 0 }}>
 			<img
 				width="1496"
 				height="978"
-				class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8 border-2 border-c-yellowpaper-on-bg"
+				class="w-full h-auto"
 				src="/yellowpaper/crane-faucet.jpeg"
 				alt="Crane Faucet"
 			/>
