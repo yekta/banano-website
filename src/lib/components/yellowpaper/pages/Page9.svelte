@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
+	import Lazy from 'svelte-lazy';
 
 	export { classes as class };
 	let classes: string;
@@ -27,13 +28,15 @@
 		target="_blank"
 		class="w-full"
 	>
-		<img
-			width="1000"
-			height="487"
-			class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
-			src="/yellowpaper/camo.jpeg"
-			alt="CAMO Banano"
-		/>
+		<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+			<img
+				width="1000"
+				height="487"
+				class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+				src="/yellowpaper/camo.jpeg"
+				alt="CAMO Banano"
+			/>
+		</Lazy>
 	</a>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 10</b>: CAMO BANANO graphic.

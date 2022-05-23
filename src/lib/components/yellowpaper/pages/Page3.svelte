@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Lazy from 'svelte-lazy';
+
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 
@@ -35,13 +37,15 @@
 		>).
 	</p>
 	<a href={bananoWallets.kalium.url} target="_blank">
-		<img
-			class="w-full h-auto mt-5"
-			width="1500"
-			height="1194"
-			src="/yellowpaper/kalium.png"
-			alt="Kalium Wallet"
-		/>
+		<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+			<img
+				class="w-full h-auto mt-5"
+				width={1500}
+				height={1194}
+				src="/yellowpaper/kalium.png"
+				alt="Kalium Wallet"
+			/>
+		</Lazy>
 	</a>
 	<p>
 		We also haven’t forgotten the roots of our BANANO tree. We made the tech from Kalium Wallet

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
+	import Lazy from 'svelte-lazy';
 
 	export { classes as class };
 	let classes: string;
@@ -29,13 +30,15 @@
 		representations of wallet addresses serve to identify users while protecting the privacy of the
 		account holders (<b>Figure 8</b>).
 	</p>
-	<img
-		width="700"
-		height="700"
-		class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
-		src="/yellowpaper/monkey-change.gif"
-		alt="MonKey Change"
-	/>
+	<Lazy offset={500} fadeOption={{ duration: 200, delay: 0 }}>
+		<img
+			width="700"
+			height="700"
+			class="w-full h-auto rounded-xl overflow-hidden relative z-0 mt-8"
+			src="/yellowpaper/monkey-change.gif"
+			alt="MonKey Change"
+		/>
+	</Lazy>
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 8</b>: Your MonKey is unique! No two wallet addresses share the same MonKey!
 	</p>
