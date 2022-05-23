@@ -57,7 +57,7 @@
 		--c-on-bg: 33 33 36;
 		--c-danger: 255 80 80;
 		--c-discord: 105 118 191;
-		--c-reddit: 215 79 20;
+		--c-reddit: 225 79 20;
 		--c-twitter: 0 162 227;
 		--c-instagram: 205 48 108;
 		--c-telegram: 0 136 204;
@@ -71,7 +71,7 @@
 		--c-bg-secondary-shaded: 230 230 235;
 		--c-on-bg-shaded: 13 13 16;
 		--c-discord-shaded: 85 98 171;
-		--c-reddit-shaded: 195 59 0;
+		--c-reddit-shaded: 205 59 0;
 		--c-twitter-shaded: 0 142 207;
 		--c-instagram-shaded: 185 28 88;
 		--c-telegram-shaded: 0 116 183;

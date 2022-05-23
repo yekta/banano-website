@@ -7,7 +7,7 @@
 <div id="monkey" class="w-full bg-c-bg flex flex-col justify-center pt-12 pb-10 text-center">
 	<div class="container-b-small flex flex-col items-center px-4">
 		<h2 class="text-3xl font-bold px-4">Meet MonKey</h2>
-		<p class="mt-3 text-xl md:px-8 lg:px-0">
+		<p class="mt-3 text-lg container-b-small px-2 md:px-16 lg:px-24">
 			You member CryptoKitties? We have something much better. In Banano Republic, every account has
 			its own unique MonKey! Check out your MonKey at <a
 				href="https://monkey.banano.cc"
@@ -29,7 +29,7 @@
 	</div>
 	<div class="container-b-small flex flex-col items-center px-4 mt-4">
 		<h2 class="text-3xl font-bold px-4">Try MonKey Now!</h2>
-		<p class="mt-3 text-xl md:px-8 lg:px-0">
+		<p class="mt-3 text-lg container-b-small px-2 md:px-16 lg:px-24">
 			Check out how MonKey works below by clicking the randomize button.<br />You can also enter an
 			address to see your own MonKey!
 		</p>
