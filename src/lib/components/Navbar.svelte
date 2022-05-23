@@ -112,8 +112,10 @@
 <nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary z-50">
 	<div class="container-b-larger max-w-full flex flex-row items-center justify-between px-4 py-3">
 		<div class="flex justify-start items-center">
-			<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 py-2 px-1">
-				<Logo class="text-c-primary w-48 h-auto" />
+			<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 py-2 px-1 group">
+				<Logo
+					class="text-c-primary group-hover:text-c-bg transition duration-300 w-48 h-auto transform"
+				/>
 			</a>
 		</div>
 		<div class="flex items-center justify-end">
