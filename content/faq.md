@@ -32,7 +32,7 @@ You can contact any of the CORE team via [Discord](https://chat.banano.cc) & [Re
 
 If you want to opt for directly buying Banano instead of participating in any of our free distribution methods, here are the exchanges that Banano or wrapped version of Banano (wBAN) is listed on: [Coinex.com](https://coinex.com), [Hotbit.io](https://hotbit.io/), [Sushi.com (Polygon, wBAN)](https://sushi.com), [PancakeSwap.com (BSC, wBAN)](https://pancakeswap.finance/swap), [Mercatox.com](https://mercatox.com), [Vitex.net](https://vitex.net).
 
-### Do you have an open GitHub repository?
+### Do you have a GitHub repo?
 
 Yes, [github.com/bananocoin](https://github.com/bananocoin)
 
