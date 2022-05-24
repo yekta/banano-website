@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import { particlesConfig } from '$lib/ts/constants/particlesConfig';
-	import { onMount, tick } from 'svelte';
+	import { onMount } from 'svelte';
 	import { loadFull } from 'tsparticles';
 
 	let ParticlesComponent: any;

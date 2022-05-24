@@ -53,7 +53,7 @@ export const particlesConfig = {
 		shape: {
 			type: 'image',
 			image: {
-				src: '/illustrations/banana-for-particles.png',
+				src: '/images/banana-for-particles.png',
 				width: 64,
 				height: 64
 			}
