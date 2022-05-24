@@ -126,6 +126,7 @@
 					<p class="text-xl font-bold px-4 mb-2">{section.title.toUpperCase()}</p>
 					{#each section.entries as entry}
 						<a
+							sveltekit:prefetch
 							class="w-full flex flex-row items-center justify-center md:justify-start 
 								px-4 py-2 transition hover:bg-c-secondary rounded-lg
 								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
