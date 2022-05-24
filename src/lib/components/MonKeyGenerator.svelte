@@ -155,9 +155,7 @@
 								placeholder="Enter your address"
 							/>
 						</div>
-						<Button type="primary" class="w-full mt-3" onClick={() => generateMonkey(inputValue)}
-							>Show Me</Button
-						>
+						<Button type="primary" class="w-full mt-3">Show Me</Button>
 						<p class="text-c-danger px-4 mt-5 font-bold text-sm">
 							{#if inputError}
 								Enter a valid address or click "Randomize!".
