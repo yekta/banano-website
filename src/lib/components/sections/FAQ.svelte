@@ -34,7 +34,7 @@
 						<IconChevron
 							class="{editedFaq[index].isOpen
 								? '-rotate-180'
-								: ''} transition text-c-on-bg/50 group-hover:text-c-secondary h-6 w-6"
+								: ''} transition text-c-on-bg/25 group-hover:text-c-secondary h-6 w-6"
 						/>
 					</button>
 					{#if singleFaq.isOpen}
