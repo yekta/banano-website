@@ -21,6 +21,9 @@
 	import LazyImage from '$lib/components/LazyImage.svelte';
 	import inView from '$lib/ts/actions/inView';
 	import { slideAcrossScreen } from '$lib/ts/transitions';
+	import { afterNavigate } from '$app/navigation';
+	import Button from '$lib/components/Button.svelte';
+	import IconArrow from '$lib/components/icons/IconArrow.svelte';
 
 	const title = 'Yellowpaper™ | Banano';
 	const description =
@@ -55,6 +58,12 @@
 			shouldShowRickCart = true;
 		};
 	}
+
+	let previousPage: string | undefined;
+
+	afterNavigate((navigaton) => {
+		previousPage = navigaton?.from?.pathname;
+	});
 </script>
 
 <MetaTags
@@ -83,7 +92,18 @@
 />
 
 <div class="w-full flex justify-center items-start yellowpaper overflow-hidden relative z-10">
-	<div class="yellowpaper-container p-3 md:p-5">
+	<div class="yellowpaper-container p-3 md:p-5 relative">
+		{#if previousPage !== undefined}
+			<button
+				on:click={() => history.back()}
+				href={previousPage}
+				class="rounded-full p-2 bg-c-yellowpaper-bg text-c-yellowpaper-document-bg mb-3 md:mb-5 shadow-lg
+				shadow-c-yellowpaper-on-bg/30 transition xl:absolute xl:left-0 xl:top-0 xl:mt-5 xl:-ml-10
+				hover:shadow-xl hover:shadow-c-yellowpaper-on-bg/50 group"
+			>
+				<IconArrow class="h-7 w-7 group-hover:text-c-yellowpaper-on-bg transition" />
+			</button>
+		{/if}
 		<Page1 />
 		<Page2 class="mt-3 md:mt-5" />
 		<div use:inView class="w-full" on:enter={loadAndSendRocket} />

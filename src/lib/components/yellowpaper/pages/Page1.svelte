@@ -20,11 +20,11 @@
 		<br />
 		Don't let your memes be dreams.
 	</p>
-	<div class="w-full px-8 md:px-16">
+	<div class="w-full mt-12 flex justify-center">
 		<img
 			width="1200"
 			height="1200"
-			class="w-full h-auto mt-12"
+			class="w-full h-auto max-w-xl"
 			src="/yellowpaper/smug.svg"
 			alt="Smug Illustration"
 		/>

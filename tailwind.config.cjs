@@ -54,6 +54,7 @@ module.exports = {
 				'c-facebook-shaded': withOpacityValue('--c-facebook-shaded'),
 				'c-medium-shaded': withOpacityValue('--c-medium-shaded'),
 				'c-yellowpaper-bg': withOpacityValue('--c-yellowpaper-bg'),
+				'c-yellowpaper-bg-shaded': withOpacityValue('--c-yellowpaper-bg-shaded'),
 				'c-yellowpaper-on-bg': withOpacityValue('--c-yellowpaper-on-bg'),
 				'c-yellowpaper-document-bg': withOpacityValue('--c-yellowpaper-document-bg'),
 				'c-yellowpaper-primary': withOpacityValue('--c-yellowpaper-primary')
