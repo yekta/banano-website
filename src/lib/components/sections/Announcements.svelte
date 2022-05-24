@@ -33,21 +33,19 @@
 				on:scroll={onScroll}
 				class="w-full overflow-auto h-[65vh] min-h-[20rem] max-h-[50rem]"
 			>
-				<div class="w-full flex flex-wrap justify-center items-stretch mt-4 md:pt-2 pb-8 md:px-5">
+				<div class="w-full flex flex-wrap justify-center mt-4 md:pt-2 pb-8 md:px-5">
 					{#each announcements as announcement}
-						<div class="w-full flex items-stretch md:w-1/2 lg:w-1/3 p-2">
-							<div
-								class="flex flex-col items-start w-full px-5 py-4 md:px-6 md:py-5 
+						<div
+							class="flex-grow md:flex-none w-[calc(100%-1rem)] md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)] m-2 flex flex-col items-start px-5 py-4 md:px-6 md:py-5 
 								bg-c-secondary/8 border border-c-secondary/20 rounded-xl"
+						>
+							<h3 class="text-lg font-bold">{announcement.title}</h3>
+							<p
+								class="font-medium text-sm mt-2 text-c-on-bg/75 bg-c-on-bg/8 pl-3 pr-3.5 py-1 rounded-l rounded-r-2xl"
 							>
-								<h3 class="text-lg font-bold">{announcement.title}</h3>
-								<p
-									class="font-medium text-sm mt-2 text-c-on-bg/75 bg-c-on-bg/8 pl-3 pr-3.5 py-1 rounded-l rounded-r-2xl"
-								>
-									{dateFormatter(new Date(announcement.date))}
-								</p>
-								<p class="mt-3 markdown">{@html announcement.body}</p>
-							</div>
+								{dateFormatter(new Date(announcement.date))}
+							</p>
+							<p class="mt-3 markdown">{@html announcement.body}</p>
 						</div>
 					{/each}
 				</div>
