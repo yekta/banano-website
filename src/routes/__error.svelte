@@ -36,7 +36,7 @@
 				<div class="w-full flex flex-col items-center text-c-bg">
 					<h1 class="font-bold text-6xl">{status}</h1>
 					<p
-						class="w-full text-xl max-w-md font-medium rounded-lg bg-c-bg/10 px-3 py-4 border border-c-bg/10 text-center mt-4 break-all"
+						class="w-full text-xl max-w-lg font-medium rounded-lg bg-c-bg/10 px-5 py-4 border border-c-bg/10 text-center mt-4 break-all"
 					>
 						{#if status === 404}
 							Page not found
