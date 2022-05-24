@@ -30,10 +30,12 @@
 				class="w-full flex flex-wrap justify-center overflow-x-hidden overflow-y-auto 
         h-[65vh] min-h-[20rem] max-h-[50rem] relative"
 			>
-				<div class="w-full flex flex-col pb-8">
+				<div class="w-full flex flex-col justify-start items-start pb-8">
 					{#each roadmap as item, index}
 						<div
-							class="w-full p-2 md:p-4 flex flex-col relative {index !== 0 ? 'mt-6 md:mt-3' : ''}"
+							class="w-full p-2 md:p-4 flex flex-col justify-start items-start relative {index !== 0
+								? 'mt-6 md:mt-3'
+								: ''}"
 						>
 							<div class="w-full flex flex-row justify-start px-2 py-1 -ml-6">
 								<h3
