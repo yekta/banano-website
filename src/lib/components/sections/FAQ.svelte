@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { IFaq } from '$lib/ts/interfaces/IFaq';
 	import Button from '../Button.svelte';
+	import IconChevron from '../icons/IconChevron.svelte';
 
 	export let faq: IFaq[];
 
@@ -24,13 +25,18 @@
 				<div
 					class="mt-3.5 w-full flex flex-col items-start justify-start bg-c-bg-secondary-shaded rounded-xl"
 				>
-					<Button
-						type="bg"
-						isLeft={true}
-						onClick={() => toggle(index)}
-						padding="px-6 py-4.5 md:px-8"
-						class="w-full text-left font-bold text-base">{singleFaq.question}</Button
+					<button
+						on:click={() => toggle(index)}
+						class="w-full px-8 py-4.5 text-left font-bold transition rounded-xl text-base bg-c-bg-secondary 
+						shadow-c-bg-secondary-shaded hover:text-c-secondary shadow-button group flex justify-between items-center"
 					>
+						<p class="group-hover:translate-x-2 transition">{singleFaq.question}</p>
+						<IconChevron
+							class="{editedFaq[index].isOpen
+								? '-rotate-180'
+								: ''} transition text-c-on-bg/50 group-hover:text-c-secondary h-6 w-6"
+						/>
+					</button>
 					{#if singleFaq.isOpen}
 						<div class="px-6 md:px-8 py-5 markdown">{@html singleFaq.answer}</div>
 					{/if}

@@ -101,7 +101,7 @@
 	}
 	onMount(() => {
 		getAndSetBananoPrice();
-		handleScroll();
+		setNotAtTheTop();
 	});
 
 	let isSidebarOpen = false;
@@ -111,12 +111,16 @@
 
 	let notAtTheTop = false;
 
-	function handleScroll() {
+	function setNotAtTheTop() {
 		if (window.scrollY > 30) {
 			notAtTheTop = true;
 		} else {
 			notAtTheTop = false;
 		}
+	}
+
+	function handleScroll() {
+		setNotAtTheTop();
 	}
 </script>
 
@@ -140,8 +144,8 @@
 		<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 pt-2 pb-2.5 px-1 group">
 			<Logo
 				class="{notAtTheTop
-					? 'group-hover:text-c-on-bg w-44'
-					: 'group-hover:text-c-bg w-48'} transition-all duration-300 h-auto transform"
+					? 'group-hover:text-c-on-bg scale-90'
+					: 'group-hover:text-c-bg'} transition w-48 duration-300 h-auto transform origin-left"
 			/>
 		</a>
 		<div class="flex items-center justify-end">
