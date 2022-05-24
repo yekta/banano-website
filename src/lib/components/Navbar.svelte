@@ -126,14 +126,14 @@
 
 <svelte:window on:scroll={handleScroll} />
 <nav
-	class="w-full flex justify-center fixed top-0 left-0 right-0 transition z-50 {notAtTheTop
+	class="w-full flex justify-center fixed top-0 left-0 right-0 z-50 {notAtTheTop
 		? 'text-c-secondary'
 		: 'text-c-primary'}"
 >
 	<div
 		class="{notAtTheTop
 			? 'translate-0'
-			: '-translate-y-24'} transform transition duration-300 bg-c-bg shadow-navbar 
+			: '-translate-y-24'} transform transition duration-250 bg-c-bg shadow-navbar 
 			shadow-c-secondary/15 absolute left-0 top-0 w-full h-full pointer-events-none ring-4 ring-c-bg-shaded"
 	/>
 	<div
@@ -149,7 +149,7 @@
 			<Logo
 				class="{notAtTheTop
 					? 'group-hover:text-c-on-bg scale-90'
-					: 'group-hover:text-c-bg'} transition w-48 duration-300 h-auto transform origin-left"
+					: 'group-hover:text-c-bg'} transition duration-250 w-48 h-auto transform origin-left"
 			/>
 		</a>
 		<div class="flex items-center justify-end">
