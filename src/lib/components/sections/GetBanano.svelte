@@ -43,7 +43,7 @@
 	];
 </script>
 
-<div id="get-banano" class="w-full py-8">
+<div id="get-banano" class="w-full pt-8">
 	<div
 		class="w-full bg-get-banano bg-c-secondary flex justify-center pt-18 pb-16 text-center text-c-bg"
 	>

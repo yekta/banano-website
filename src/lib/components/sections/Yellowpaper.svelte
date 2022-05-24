@@ -2,10 +2,7 @@
 	import Button from '../Button.svelte';
 </script>
 
-<div
-	id="yellowpaper"
-	class="w-full flex justify-center bg-c-bg relative -mt-2 pt-18 pb-8 text-center"
->
+<div id="yellowpaper" class="w-full flex justify-center relative -mt-8 pt-24 text-center">
 	<div class="container-b flex flex-col">
 		<div class="w-full flex flex-col items-center px-4">
 			<h2 class="text-3xl font-bold px-4">Yellowpaper™</h2>

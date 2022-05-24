@@ -75,8 +75,8 @@
 <Wallets />
 <CommunityProjects {communityProjects} />
 <Yellowpaper />
-<Roadmap {roadmap} />
 <Announcements {announcements} />
+<Roadmap {roadmap} />
 <Team {team} />
 <Advisors />
 <Testimonials {testimonials} />

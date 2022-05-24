@@ -101,23 +101,47 @@
 	}
 	onMount(() => {
 		getAndSetBananoPrice();
+		handleScroll();
 	});
 
 	let isSidebarOpen = false;
 
 	const toggleMenu = () => (isSidebarOpen = !isSidebarOpen);
 	const closeMenu = () => (isSidebarOpen = false);
+
+	let notAtTheTop = false;
+
+	function handleScroll() {
+		if (window.scrollY > 30) {
+			notAtTheTop = true;
+		} else {
+			notAtTheTop = false;
+		}
+	}
 </script>
 
-<nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary z-50">
-	<div class="container-b-larger max-w-full flex flex-row items-center justify-between px-4 py-3">
-		<div class="flex justify-start items-center">
-			<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 py-2 px-1 group">
-				<Logo
-					class="text-c-primary group-hover:text-c-bg transition duration-300 w-48 h-auto transform"
-				/>
-			</a>
-		</div>
+<svelte:window on:scroll={handleScroll} />
+<nav
+	class="w-full flex justify-center fixed top-0 left-0 right-0 transition z-50 {notAtTheTop
+		? 'text-c-secondary'
+		: 'text-c-primary'}"
+>
+	<div
+		class="{notAtTheTop
+			? 'translate-0'
+			: '-translate-y-24'} transform transition bg-c-bg shadow-navbar 
+			shadow-c-secondary-shaded/15 absolute left-0 top-0 w-full h-full pointer-events-none"
+	/>
+	<div
+		class="container-b-larger max-w-full flex flex-row items-center justify-between px-4 py-3 relative"
+	>
+		<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 py-2 px-1 group">
+			<Logo
+				class="{notAtTheTop
+					? 'group-hover:text-c-secondary-shaded'
+					: 'group-hover:text-c-bg'} transition duration-300 w-48 h-auto transform"
+			/>
+		</a>
 		<div class="flex items-center justify-end">
 			<div class="hidden lg:flex justify-end items-center mx-1.5">
 				{#each sections as section}
@@ -148,7 +172,9 @@
 				<a
 					href="https://www.coingecko.com/en/coins/banano"
 					target="_blank"
-					class="w-full overflow-hidden text-sm text-center bg-c-primary/20 font-medium px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+					class="{notAtTheTop
+						? 'bg-c-secondary/20'
+						: 'bg-c-primary/20'} w-full overflow-hidden text-sm text-center font-medium px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
 						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
 				>
 					${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
@@ -157,10 +183,12 @@
 			<button
 				aria-label="Toggle Menu Button"
 				on:click={toggleMenu}
-				class="lg:hidden h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 flex flex-row items-center justify-center rounded-lg transition
-				shadow-navbar-button hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary {isSidebarOpen
-					? 'text-c-bg'
-					: 'text-c-primary hover:text-c-bg'} shadow-c-on-bg/50"
+				class="{notAtTheTop
+					? 'text-c-secondary'
+					: 'text-c-primary'} lg:hidden h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 
+					flex flex-row items-center justify-center rounded-lg transition shadow-navbar-button 
+					hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary
+					shadow-c-on-bg/50 hover:text-c-bg"
 			>
 				<IconMenu
 					class="lg:hidden w-full h-full md:w-8 md:h-8 md:mr-1.5 transition transform {isSidebarOpen
@@ -171,55 +199,54 @@
 			</button>
 		</div>
 	</div>
-</nav>
-
-{#if isSidebarOpen}
-	<div
-		transition:fade={{ duration: 250, easing: cubicOut }}
-		class="fixed lg:hidden z-50 w-full h-full top-0 right-0 flex flex-row justify-end bg-c-on-bg/85 overflow-hidden"
-	>
+	{#if isSidebarOpen}
 		<div
-			transition:sidebar={{ duration: 250, easing: cubicOut }}
-			use:clickoutside={closeMenu}
-			class="w-[70vw] max-w-[18rem] h-full flex flex-col items-start bg-c-bg 
-			rounded-l-xl p-3 overflow-y-auto shadow-sidebar shadow-c-bg-secondary-shaded"
+			transition:fade={{ duration: 250, easing: cubicOut }}
+			class="fixed lg:hidden z-50 w-full h-full top-0 right-0 flex flex-row justify-end bg-c-on-bg/85 overflow-hidden text-c-on-bg"
 		>
-			<p class="text-2xl font-bold px-6 py-3">Sections</p>
-			<div class="w-full px-2">
-				<div class="h-1 w-full rounded-full bg-c-secondary mt-2 mb-3" />
-			</div>
-			{#each sections as section}
-				<a
-					on:click={closeMenu}
-					href={section.href}
-					class="text-lg w-full max-w-full px-6 py-3 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg
-					shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
-				>
-					{section.title}
-				</a>
-			{/each}
-			<div class="flex flex-wrap justify-center mt-auto pt-2 pb-1">
-				{#each socials as social, index}
+			<div
+				transition:sidebar={{ duration: 250, easing: cubicOut }}
+				use:clickoutside={closeMenu}
+				class="w-[70vw] max-w-[18rem] h-full flex flex-col items-start bg-c-bg 
+				rounded-l-xl p-3 overflow-y-auto shadow-sidebar shadow-c-bg-secondary-shaded"
+			>
+				<p class="text-2xl font-bold px-6 py-3">Sections</p>
+				<div class="w-full px-2">
+					<div class="h-1 w-full rounded-full bg-c-secondary mt-2 mb-3" />
+				</div>
+				{#each sections as section}
 					<a
 						on:click={closeMenu}
-						href={social.href}
-						target="_blank"
-						class="mt-2 p-1.5 rounded-xl transition hover:bg-c-secondary hover:text-c-bg
-						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
+						href={section.href}
+						class="text-lg w-full max-w-full px-6 py-3 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg
+						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
 					>
-						<IconSocial type={social.icon} class="w-11 h-11" />
+						{section.title}
 					</a>
 				{/each}
-				<a
-					on:click={closeMenu}
-					href="https://www.coingecko.com/en/coins/banano"
-					target="_blank"
-					class="w-full text-center mt-4 font-bold text-lg bg-c-secondary/20 px-3 py-2 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+				<div class="flex flex-wrap justify-center mt-auto pt-2 pb-1">
+					{#each socials as social, index}
+						<a
+							on:click={closeMenu}
+							href={social.href}
+							target="_blank"
+							class="mt-2 p-1.5 rounded-xl transition hover:bg-c-secondary hover:text-c-bg
+							shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
+						>
+							<IconSocial type={social.icon} class="w-11 h-11" />
+						</a>
+					{/each}
+					<a
+						on:click={closeMenu}
+						href="https://www.coingecko.com/en/coins/banano"
+						target="_blank"
+						class="w-full text-center mt-4 font-bold text-lg bg-c-secondary/20 px-3 py-2 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
 					shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
-				>
-					${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
-				</a>
+					>
+						${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
+					</a>
+				</div>
 			</div>
 		</div>
-	</div>
-{/if}
+	{/if}
+</nav>

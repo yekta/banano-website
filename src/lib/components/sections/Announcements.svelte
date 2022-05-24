@@ -23,7 +23,7 @@
 	}
 </script>
 
-<div id="news" class="w-full flex justify-center pt-10 pb-12">
+<div id="news" class="w-full flex justify-center -mt-8 pt-24">
 	<div class="container-b flex flex-col items-center px-4 md:px-12">
 		<h2 class="text-3xl font-bold text-center px-4">The Banano Republic Announces</h2>
 		<div class="w-full bg-c-secondary h-3px rounded-full mt-8" />

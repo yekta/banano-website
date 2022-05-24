@@ -2,7 +2,7 @@
 	export let testimonials: string[];
 </script>
 
-<div id="testimonials" class="w-full py-8">
+<div id="testimonials" class="w-full pt-8">
 	<div
 		class="w-full bg-testimonials bg-c-secondary flex justify-center pt-16 pb-24 text-center text-c-bg"
 	>
