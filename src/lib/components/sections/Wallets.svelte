@@ -63,13 +63,16 @@
 	const imgExtention = 'png';
 </script>
 
-<div id="wallets" class="w-full flex justify-center relative -mt-8 pt-24 pb-20 px-4 text-center">
+<div
+	id="wallets"
+	class="w-full flex justify-center relative -mt-8 pt-24 pb-24 px-4 md:px-12 text-center"
+>
 	<div class="container-b flex flex-col items-center">
 		<h2 class="text-3xl font-bold px-4">Wallets</h2>
-		<div class="container-b-small max-w-full flex flex-row flex-wrap justify-center -mt-8">
+		<div class="container-b max-w-full flex flex-row flex-wrap justify-center -mt-8">
 			{#each wallets as wallet}
 				<div
-					class="w-full md:w-1/2 lg:w-1/3 max-w-[19rem] flex flex-col items-center px-6 py-4 mt-10 md:mt-12"
+					class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 max-w-[19rem] flex flex-col items-center px-6 py-4 mt-10 md:mt-12"
 				>
 					<img
 						width="620"

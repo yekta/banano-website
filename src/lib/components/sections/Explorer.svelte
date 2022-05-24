@@ -23,7 +23,7 @@
 </script>
 
 <div id="explorer" class="w-full pt-20">
-	<div class="bg-creeper bg-c-secondary flex justify-center pt-12 pb-12 text-center text-c-bg">
+	<div class="bg-creeper bg-c-secondary flex justify-center pt-12 pb-16 text-center text-c-bg">
 		<div class="container-b flex flex-col items-center px-4 md:px-8">
 			<h2 class="text-3xl font-bold px-4">Explorer</h2>
 			<p class="mt-3 text-lg container-b-small px-2 md:px-16 lg:px-24">
