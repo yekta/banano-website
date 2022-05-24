@@ -41,8 +41,8 @@
 			buttonText: 'Check on Reddit',
 			url: 'https://np.reddit.com/r/bananocoin/wiki/reddit-tipbot',
 			img: 'reddit-tipbot'
-		},
-		{
+		}
+		/* 		{
 			title: 'Twitter Tipbot',
 			description:
 				'Ideal for small amounts, to tip and get tipped on Twitter. It is fully managed.',
@@ -57,7 +57,7 @@
 			buttonText: 'Check on Telegram',
 			url: 'https://ba.nanotipbot.com',
 			img: 'telegram-tipbot'
-		}
+		} */
 	];
 
 	const imgExtention = 'png';
