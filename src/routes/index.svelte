@@ -66,21 +66,19 @@
 	}}
 />
 
-<div class="w-full min-h-screen flex flex-col justify-start items-center bg-c-bg">
-	<Hero />
-	<KeyFeatures />
-	<GetBanano {faucets} />
-	<Monkey />
-	<WrappedBanano />
-	<Explorer />
-	<Wallets />
-	<CommunityProjects {communityProjects} />
-	<Yellowpaper />
-	<Roadmap {roadmap} />
-	<Announcements {announcements} />
-	<Team {team} />
-	<Advisors />
-	<Testimonials {testimonials} />
-	<FAQ {faq} />
-	<JoinUs />
-</div>
+<Hero />
+<KeyFeatures />
+<GetBanano {faucets} />
+<Monkey />
+<WrappedBanano />
+<Explorer />
+<Wallets />
+<CommunityProjects {communityProjects} />
+<Yellowpaper />
+<Roadmap {roadmap} />
+<Announcements {announcements} />
+<Team {team} />
+<Advisors />
+<Testimonials {testimonials} />
+<FAQ {faq} />
+<JoinUs />

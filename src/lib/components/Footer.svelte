@@ -122,25 +122,21 @@
 				<div
 					class="{section.wClass} max-w-full flex flex-col items-center md:items-start px-4 pt-4 pb-6 md:pt-7 md:pb-6 2xl:pt-12"
 				>
-					<p class="text-xl font-bold px-4">{section.title.toUpperCase()}</p>
-					<div class="flex flex-col items-center md:items-start mt-2">
-						{#each section.entries as entry}
-							<a
-								class="w-full flex flex-row items-center justify-center md:justify-start 
+					<p class="text-xl font-bold px-4 mb-2">{section.title.toUpperCase()}</p>
+					{#each section.entries as entry}
+						<a
+							class="w-full flex flex-row items-center justify-center md:justify-start 
 								px-4 py-2 transition hover:bg-c-secondary rounded-lg
 								shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
-								href={entry.href}
-								target={entry.targetBlank ? '_blank' : undefined}
-							>
-								<div class="flex flex-row items-center justify-center">
-									{#if entry.icon !== undefined}
-										<IconSocial type={entry.icon} class="w-6 h-6 mr-2.5" />
-									{/if}
-									<span>{entry.text}</span>
-								</div>
-							</a>
-						{/each}
-					</div>
+							href={entry.href}
+							target={entry.targetBlank ? '_blank' : undefined}
+						>
+							{#if entry.icon !== undefined}
+								<IconSocial type={entry.icon} class="w-6 h-6 mr-2.5" />
+							{/if}
+							<span>{entry.text}</span>
+						</a>
+					{/each}
 				</div>
 			{/each}
 		</div>

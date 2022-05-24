@@ -71,11 +71,11 @@
 	];
 </script>
 
-{#each socialButtons as socialButton}
-	<div class="w-full md:w-1/2 max-w-[23rem] flex flex-col items-center text-center px-2 mt-2">
+<div class="w-full flex flex-wrap justify-center">
+	{#each socialButtons as socialButton}
 		<Button
 			padding="px-14 py-3.5"
-			class="mt-4 w-full"
+			class="mt-6 mx-2 w-[calc(100%-0.5rem)] md:w-[calc(100%-0.5rem)] max-w-[23rem]"
 			href={socialButton.url}
 			targetBlank={true}
 			type={socialButton.type}
@@ -83,5 +83,5 @@
 			<IconSocial type={socialButton.icon} class="w-8 h-8 ml-3 absolute left-0" />
 			{socialButton.text}
 		</Button>
-	</div>
-{/each}
+	{/each}
+</div>

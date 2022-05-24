@@ -8,7 +8,7 @@
 	});
 </script>
 
-<div class="w-full bg-c-bg text-c-on-bg font-now-alt">
+<div class="w-full bg-c-bg text-c-on-bg font-now-alt min-h-screen flex flex-col justify-start">
 	<Navbar />
 	<main>
 		<slot />

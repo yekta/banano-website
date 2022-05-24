@@ -21,21 +21,19 @@
 		<h2 class="text-3xl font-bold px-4 text-center">Frequently Asked Questions</h2>
 		<div class="w-full flex flex-wrap max-w-2xl justify-center mt-6">
 			{#each editedFaq as singleFaq, index}
-				<div class="w-full p-1 mt-1.5">
-					<div
-						class="w-full flex flex-col items-start justify-start bg-c-bg-secondary-shaded rounded-xl"
+				<div
+					class="mt-3.5 w-full flex flex-col items-start justify-start bg-c-bg-secondary-shaded rounded-xl"
+				>
+					<Button
+						type="bg"
+						isLeft={true}
+						onClick={() => toggle(index)}
+						padding="px-6 py-4.5 md:px-8"
+						class="w-full text-left font-bold text-base">{singleFaq.question}</Button
 					>
-						<Button
-							type="bg"
-							isLeft={true}
-							onClick={() => toggle(index)}
-							padding="px-6 py-4.5 md:px-8"
-							class="w-full text-left font-bold text-base">{singleFaq.question}</Button
-						>
-						{#if singleFaq.isOpen}
-							<div class="px-6 md:px-8 py-5 markdown">{@html singleFaq.answer}</div>
-						{/if}
-					</div>
+					{#if singleFaq.isOpen}
+						<div class="px-6 md:px-8 py-5 markdown">{@html singleFaq.answer}</div>
+					{/if}
 				</div>
 			{/each}
 		</div>
