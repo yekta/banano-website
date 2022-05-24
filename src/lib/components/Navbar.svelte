@@ -129,17 +129,19 @@
 	<div
 		class="{notAtTheTop
 			? 'translate-0'
-			: '-translate-y-24'} transform transition bg-c-bg shadow-navbar 
+			: '-translate-y-24'} transform transition duration-300 bg-c-bg shadow-navbar 
 			shadow-c-secondary-shaded/15 absolute left-0 top-0 w-full h-full pointer-events-none"
 	/>
 	<div
-		class="container-b-larger max-w-full flex flex-row items-center justify-between px-4 py-3 relative"
+		class="{notAtTheTop
+			? 'py-2'
+			: 'py-3'} transition-all container-b-larger max-w-full flex flex-row items-center justify-between px-4 relative"
 	>
-		<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 py-2 px-1 group">
+		<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 pt-2 pb-2.5 px-1 group">
 			<Logo
 				class="{notAtTheTop
-					? 'group-hover:text-c-secondary-shaded'
-					: 'group-hover:text-c-bg'} transition duration-300 w-48 h-auto transform"
+					? 'group-hover:text-c-on-bg w-44'
+					: 'group-hover:text-c-bg w-48'} transition-all duration-300 h-auto transform"
 			/>
 		</a>
 		<div class="flex items-center justify-end">

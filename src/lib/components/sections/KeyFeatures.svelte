@@ -19,7 +19,7 @@
 
 <div
 	id="key-features"
-	class="w-full flex justify-center bg-c-bg relative -mt-2 py-10 px-4 text-center"
+	class="w-full flex justify-center bg-c-bg relative -mt-2 pt-10 px-4 text-center"
 >
 	<div class="container-b flex flex-col items-center md:px-4">
 		<h2 class="text-3xl font-bold px-4">Key Features</h2>

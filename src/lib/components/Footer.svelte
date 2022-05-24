@@ -27,8 +27,9 @@
 				{ text: 'MonKey', href: '/#monkey' },
 				{ text: 'wBAN', href: '/#wban' },
 				{ text: 'Wallets', href: '/#wallets' },
-				{ text: 'Roadmap', href: '/#roadmap' },
+				{ text: 'Explorer', href: '/#explorer' },
 				{ text: 'News', href: '/#news' },
+				{ text: 'Roadmap', href: '/#roadmap' },
 				{ text: 'FAQ', href: '/#faq' }
 			]
 		},
