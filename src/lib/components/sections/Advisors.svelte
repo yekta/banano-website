@@ -50,6 +50,8 @@
 					class="w-1/2 md:w-1/3 lg:w-1/3 max-w-[18rem] flex flex-col items-center px-3 py-4 md:p-4 text-center"
 				>
 					<img
+						width="500"
+						height="500"
 						class="w-full h-auto"
 						src="/illustrations/advisors/advisor-{advisor.img}.{imgExtention}"
 						alt={advisor.name}

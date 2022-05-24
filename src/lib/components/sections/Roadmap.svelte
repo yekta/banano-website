@@ -48,9 +48,9 @@
 										<div
 											class="bg-c-bg flex flex-col w-full border-2 border-c-secondary/60 border-dotted rounded-xl p-1.5"
 										>
-											<h6 class="font-bold bg-c-secondary/13 text-c-secondary px-3 py-1 rounded-md">
+											<h4 class="font-bold bg-c-secondary/13 text-c-secondary px-3 py-1 rounded-md">
 												{entry.title}
-											</h6>
+											</h4>
 											<p class="px-3 py-2">{@html entry.body}</p>
 										</div>
 									</div>

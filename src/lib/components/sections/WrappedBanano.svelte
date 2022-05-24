@@ -13,33 +13,37 @@
 		</div>
 		<div class="w-full flex flex-col items-center px-4">
 			<h2 class="text-3xl font-bold px-4">Wrapped Banano</h2>
-			<div class="mt-3 container-b-smallest">
-				<p class="max-w-full text-lg">
-					Use Banano to learn about and participate in DeFi in a fun & easy way! Our monkeys take
-					your Banano, wrap it with special ribbons and deliver it to other chains such as <a
-						href="https://polygon.technology/"
-						target="_blank"
-						class="font-bold text-c-secondary hover:underline">Polygon</a
-					>,
-					<a
-						href="https://www.bnbchain.world/en"
-						target="_blank"
-						class="font-bold text-c-secondary hover:underline">BNB Chain</a
-					>, and
-					<a
-						href="https://fantom.foundation"
-						target="_blank"
-						class="font-bold text-c-secondary hover:underline">Fantom</a
-					>. Visit
-					<a
-						href="https://wrap.banano.cc/?ref=banano.cc"
-						target="_blank"
-						class="font-bold text-c-secondary hover:underline">wrap.banano.cc</a
-					> for more info.
-				</p>
-			</div>
+			<p class="mt-3 text-lg container-b-small px-2 md:px-16 lg:px-24">
+				Use Banano to learn about and participate in DeFi in a fun & easy way! Our monkeys take your
+				Banano, wrap it with special ribbons and deliver it to other chains such as <a
+					href="https://polygon.technology/"
+					target="_blank"
+					class="font-bold text-c-secondary hover:underline">Polygon</a
+				>,
+				<a
+					href="https://www.bnbchain.world/en"
+					target="_blank"
+					class="font-bold text-c-secondary hover:underline">BNB Chain</a
+				>, and
+				<a
+					href="https://fantom.foundation"
+					target="_blank"
+					class="font-bold text-c-secondary hover:underline">Fantom</a
+				>. Visit
+				<a
+					href="https://wrap.banano.cc/?ref=banano.cc"
+					target="_blank"
+					class="font-bold text-c-secondary hover:underline">wrap.banano.cc</a
+				> for more info.
+			</p>
 			<div class="container-b-smallest max-w-full flex flex-row flex-wrap justify-center mt-10">
-				<img class="w-full" src="/illustrations/wban/wban-hero.svg" alt="wBAN Hero" />
+				<img
+					width="602"
+					height="401"
+					class="w-full"
+					src="/illustrations/wban/wban-hero.svg"
+					alt="wBAN Hero"
+				/>
 			</div>
 			<Button
 				type="secondary"

@@ -18,6 +18,7 @@
 		title: string;
 		id: string;
 		href: string;
+		classes?: string;
 	}
 	interface SocialButton {
 		title: string;
@@ -63,6 +64,18 @@
 			href: '/#wallets'
 		},
 		{
+			title: 'Explorer',
+			id: 'explorer',
+			href: '/#explorer',
+			classes: 'lg:hidden'
+		},
+		{
+			title: 'Yellowpaper™',
+			id: 'yellowpaper',
+			href: '/#yellowpaper',
+			classes: 'lg:hidden xl:block'
+		},
+		{
 			title: 'News',
 			id: 'news',
 			href: '/#news'
@@ -97,47 +110,52 @@
 </script>
 
 <nav class="w-full flex justify-center absolute top-0 left-0 right-0 text-c-primary z-50">
-	<div class="container-b max-w-full flex flex-row items-center justify-between px-4 py-3">
-		<a href="/" class="mr-12 py-2 px-1">
-			<Logo class="text-c-primary w-48 h-auto" />
-		</a>
-		<div class="flex flex-row justify-end items-center">
-			<div class="flex justify-end items-center min-w-0 flex-1">
-				<div class="hidden lg:flex justify-end items-center mx-2">
-					{#each sections as section}
-						<a
-							href={section.href}
-							class="px-4 py-2 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+	<div class="container-b-larger max-w-full flex flex-row items-center justify-between px-4 py-3">
+		<div class="flex justify-start items-center">
+			<a aria-label="Logo Link to Homescreen" href="/" class="mr-12 py-2 px-1 group">
+				<Logo
+					class="text-c-primary group-hover:text-c-bg transition duration-300 w-48 h-auto transform"
+				/>
+			</a>
+		</div>
+		<div class="flex items-center justify-end">
+			<div class="hidden lg:flex justify-end items-center mx-1.5">
+				{#each sections as section}
+					<a
+						href={section.href}
+						class="{section.classes !== undefined
+							? section.classes
+							: ''} px-4 py-2 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
 							shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
-						>
-							{section.title}
-						</a>
-					{/each}
-				</div>
-				<div class="hidden md:flex justify-end items-center mx-2">
-					{#each socials as social}
-						<a
-							href={social.href}
-							target="_blank"
-							class="p-1.5 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
-							shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
-						>
-							<IconSocial type={social.icon} class="w-9 h-9" />
-						</a>
-					{/each}
-				</div>
+					>
+						{section.title}
+					</a>
+				{/each}
 			</div>
-			<div class="w-22 hidden md:flex justify-end mx-2">
+			<div class="hidden md:flex justify-end items-center mx-1.5">
+				{#each socials as social}
+					<a
+						href={social.href}
+						target="_blank"
+						class="p-1.5 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
+					>
+						<IconSocial type={social.icon} class="w-9 h-9" />
+					</a>
+				{/each}
+			</div>
+			<div class="w-19 hidden md:flex justify-end mx-1.5">
 				<a
 					href="https://www.coingecko.com/en/coins/banano"
 					target="_blank"
-					class="w-full text-center bg-c-primary/20 font-medium px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
+					class="w-full overflow-hidden text-sm text-center bg-c-primary/20 font-medium px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
 						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
 				>
 					${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
 				</a>
 			</div>
 			<button
+				aria-label="Toggle Menu Button"
 				on:click={toggleMenu}
 				class="lg:hidden h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 flex flex-row items-center justify-center rounded-lg transition
 				shadow-navbar-button hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary {isSidebarOpen
@@ -163,10 +181,10 @@
 		<div
 			transition:sidebar={{ duration: 250, easing: cubicOut }}
 			use:clickoutside={closeMenu}
-			class="w-[70vw] max-w-[16rem] h-full flex flex-col items-start bg-c-bg 
+			class="w-[70vw] max-w-[18rem] h-full flex flex-col items-start bg-c-bg 
 			rounded-l-xl p-3 overflow-y-auto shadow-sidebar shadow-c-bg-secondary-shaded"
 		>
-			<h4 class="text-2xl font-bold px-6 py-3">Sections</h4>
+			<p class="text-2xl font-bold px-6 py-3">Sections</p>
 			<div class="w-full px-2">
 				<div class="h-1 w-full rounded-full bg-c-secondary mt-2 mb-3" />
 			</div>

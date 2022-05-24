@@ -89,7 +89,7 @@ export const get: RequestHandler = async (event) => {
 	}));
 
 	// Announcements
-	const announcementCount = 18;
+	const announcementCount = 12;
 	let titleAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('h3').map((n) => n.text);
 	let dateAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('h4').map((n) => n.text);
 	let bodyAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('p').map((n) => n.innerHTML);

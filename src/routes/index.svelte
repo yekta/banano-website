@@ -1,7 +1,3 @@
-<script context="module" lang="ts">
-	export const prerender = true;
-</script>
-
 <script lang="ts">
 	import '$lib/css/main.css';
 	import Advisors from '$lib/components/sections/Advisors.svelte';
@@ -28,6 +24,7 @@
 	import GetBanano from '$lib/components/sections/GetBanano.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import { page } from '$app/stores';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
