@@ -1,10 +1,13 @@
 <script lang="ts">
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
+	import inView from '$lib/ts/actions/inView';
 	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
 	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
 	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 
 	export { classes as class };
+	export let onTriggered: () => void;
+
 	let classes: string;
 </script>
 
@@ -58,6 +61,7 @@
 	<h2 class="font-bold text-2xl mt-12">
 		<span class="mr-1ch">8.</span> References
 	</h2>
+	<div use:inView class="w-full" on:enter={onTriggered} />
 	<ol class="mt-4">
 		<li>
 			S. Nakamoto, Bitcoin: A peer-to-peer electronic cash system. http://bitcoin.org/bitcoin.pdf.

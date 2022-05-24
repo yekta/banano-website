@@ -170,8 +170,7 @@
 				/>
 			</div>
 		</div>
-		<Page14 />
-		<div use:inView class="w-full" on:enter={loadAndSendRickCart} />
+		<Page14 onTriggered={loadAndSendRickCart} />
 	</div>
 	<div
 		class="fixed w-full h-full left-0 top-0 flex flex-row pointer-events-none z-50 overflow-hidden"
