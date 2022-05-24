@@ -68,8 +68,13 @@
 
 <div class="relative w-[32rem] max-w-full p-2">
 	<div class="relative monkey-generator-container w-full">
+		<!-- Ring animation -->
+		<div class="a-ring a-ring-0 w-full h-full rounded-2xl absolute left-0 top-0 bg-c-secondary" />
+		<div class="a-ring a-ring-1 w-full h-full rounded-2xl absolute left-0 top-0 bg-c-primary" />
+		<div class="a-ring a-ring-2 w-full h-full rounded-2xl absolute left-0 top-0 bg-c-secondary" />
+		<div class="a-ring a-ring-3 w-full h-full rounded-2xl absolute left-0 top-0 bg-c-primary" />
 		<div
-			class="monkey-generator w-full h-full flex flex-col bg-c-bg origin-top rounded-2xl
+			class="w-full h-full flex flex-col bg-c-bg origin-top rounded-2xl
 			overflow-hidden border-c-primary absolute left-0 top-0 z-10"
 		>
 			<!-- MonKey loading animation -->
@@ -205,43 +210,40 @@
 		display: block;
 		padding-bottom: calc(100% + 3rem);
 	}
-	.monkey-generator {
-		box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-			0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-			0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-			-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
-		animation: generatorAnimation 2s infinite;
+	.a-ring-0 {
+		animation-delay: -1.2s;
 	}
-	@keyframes generatorAnimation {
+	.a-ring-1 {
+		animation-delay: -0.8s;
+	}
+	.a-ring-2 {
+		animation-delay: -0.4s;
+	}
+	.a-ring-3 {
+		animation-delay: 0s;
+	}
+	.a-ring {
+		transform: translate(-0.5rem, 0.5rem);
+		animation-name: ring-animation;
+		animation-duration: 1.6s;
+		animation-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+		animation-iteration-count: infinite;
+	}
+	@keyframes ring-animation {
 		0% {
-			box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-				0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
+			transform: translate(-0.5rem, 0.5rem);
 		}
 		25% {
-			box-shadow: 0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-				0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-				-0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary));
+			transform: translate(-0.5rem, -0.5rem);
 		}
 		50% {
-			box-shadow: 0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				-0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-				0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary));
+			transform: translate(0.5rem, -0.5rem);
 		}
 		75% {
-			box-shadow: -0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-				-0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-				0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
+			transform: translate(0.5rem, 0.5rem);
 		}
 		100% {
-			box-shadow: -0.5rem -0.5rem 0rem 0rem rgb(var(--c-primary)),
-				0.5rem -0.5rem 0rem 0rem rgb(var(--c-secondary)),
-				0.5rem 0.5rem 0rem 0rem rgb(var(--c-primary)),
-				-0.5rem 0.5rem 0rem 0rem rgb(var(--c-secondary));
+			transform: translate(-0.5rem, 0.5rem);
 		}
 	}
 	.cube {
