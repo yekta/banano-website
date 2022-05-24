@@ -28,7 +28,7 @@
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
 			class="w-full hero bg-c-secondary min-h-[550px] md:min-h-[720px] bg-cover flex flex-row
-			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
+			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%] px-4"
 		>
 			<div
 				class="container-b max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10"
@@ -36,7 +36,7 @@
 				<div class="w-full flex flex-col items-center text-c-bg">
 					<h1 class="font-bold text-6xl">{status}</h1>
 					<p
-						class="w-full text-xl max-w-sm font-medium rounded-lg bg-c-bg/10 px-3 py-4 border border-c-bg/10 text-center mt-4"
+						class="w-full text-xl max-w-md font-medium rounded-lg bg-c-bg/10 px-3 py-4 border border-c-bg/10 text-center mt-4 break-all"
 					>
 						{#if status === 404}
 							Page not found
@@ -45,7 +45,7 @@
 						{/if}
 					</p>
 				</div>
-				<Button href={'/'} class="mt-4 w-full max-w-sm">Go Home</Button>
+				<Button href={'/'} class="mt-4 w-full max-w-xs">Go Home</Button>
 			</div>
 		</div>
 		<div
