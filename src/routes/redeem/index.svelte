@@ -110,21 +110,21 @@
 		{#if isAndroidOpen || isIosOpen}
 			<div class="container-b-small flex flex-col justify-center items-center px-4">
 				<h4 class="text-3xl font-bold mt-20">Step 1</h4>
-				<p class="text-xl mt-4">
+				<p class="text-lg mt-4">
 					Download Kalium Wallet from {isAndroidOpen ? 'Play Store' : 'App Store'}.
 				</p>
 				<Button class="mt-6 w-full max-w-xs" href={bananoWallets.kalium.url} target="_blank"
 					>Download Kalium</Button
 				>
 				<h4 class="text-3xl font-bold mt-20">Step 2</h4>
-				<p class="text-xl mt-4">Open up Kalium and create a wallet. Be sure to backup your seed!</p>
+				<p class="text-lg mt-4">Open up Kalium and create a wallet. Be sure to backup your seed!</p>
 				<img
 					class="w-full max-w-[17rem] h-auto mt-10"
 					src="/redeem/kalium-new-wallet.png"
 					alt="Kalium New Wallet Screen"
 				/>
 				<h4 class="text-3xl font-bold mt-20">Step 3</h4>
-				<p class="text-xl mt-4">
+				<p class="text-lg mt-4">
 					On the main screen, tap the settings icon on the top left. Then tap "<b
 						>Load from Paper Wallet</b
 					>". Follow the instructions in the menu and scan the QR code on your paper wallet.
@@ -163,9 +163,9 @@
 					</div>
 				</div>
 				<h4 class="text-3xl font-bold mt-20">Done!</h4>
-				<p class="text-xl mt-4">
+				<p class="text-lg mt-4">
 					The Banano that was in the paper wallet is now transferred to your Kalium wallet. Enjoy
-					your potassium. And join us to have some fun!
+					your potassium.<br />Join us to have some fun!
 				</p>
 			</div>
 			<div class="container-b-smallest flex flex-wrap justify-center mt-5">

@@ -128,7 +128,7 @@
 	</div>
 	<div class="w-full bg-c-bg -mt-2 pt-14 pb-12 relative px-8">
 		<h2 class="text-3xl font-bold">Assets</h2>
-		<p class="container-b-small max-w-full text-xl mt-3 md:px-3">
+		<p class="container-b-small max-w-full text-lg mt-3 md:px-3">
 			SVG assets don't lose quality when scaled but they might not be compatible with some
 			platforms.<br />PNG assets lose quality when scaled but they have wide compatibility across
 			all platforms.
@@ -166,7 +166,7 @@
 	</div>
 	<div class="w-full bg-c-bg pt-14 pb-10 relative px-8">
 		<h2 class="text-3xl font-bold">Colors</h2>
-		<p class="container-b-small max-w-full text-xl mt-3 md:px-8">
+		<p class="container-b-small max-w-full text-lg mt-3 md:px-8">
 			We have four colors in total:<br />Yellow and green is for mostly for foreground items, grays
 			are mostly for backgrounds.
 		</p>
@@ -184,7 +184,7 @@
 	</div>
 	<div class="w-full bg-c-bg pt-12 pb-16 relative px-8">
 		<h2 class="text-3xl font-bold">Fonts</h2>
-		<p class="container-b-small max-w-full text-xl mt-3 md:px-8">
+		<p class="container-b-small max-w-full text-lg mt-3 md:px-8">
 			We have 2 fonts, one primary, one secondary. We use the primary font for almost everything,
 			like titles, paragraphs etc. The secondary mono font is mostly used for Banano addresses.
 		</p>
