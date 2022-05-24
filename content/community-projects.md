@@ -21,7 +21,7 @@ A provably fair dice game for Banano.
 
 ### JungleTv.live
 
-A video sharing platfrom where you can earn Banano.
+A video sharing platform where you can earn Banano.
 
 #### [jungletv.live](https://jungletv.live)
 
