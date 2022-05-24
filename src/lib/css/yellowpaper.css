@@ -35,7 +35,7 @@
 }
 
 .yellowpaper {
-	font-family: lm-roman-10, Times New Roman, serif;
+	font-family: lm-roman-10, serif;
 	color: rgb(var(--c-yellowpaper-on-bg));
 	background-color: rgb(var(--c-yellowpaper-document-bg));
 }
