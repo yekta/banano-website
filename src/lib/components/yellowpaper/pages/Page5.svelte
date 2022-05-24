@@ -10,7 +10,7 @@
 <PageWrapper pageNumber={5} class={classes}>
 	<h2 class="font-bold text-2xl"><span class="mr-1ch">3.</span> BANANO Specifications</h2>
 	<h3 class="font-bold text-xl mt-5"><span class="mr-1ch">3.1.</span> Accounts</h3>
-	<p class="mt-5">
+	<p class="mt-4">
 		In order to keep your precious BANANO safe, you'll need a wallet. A wallet can be accessed using
 		a public key, also known as a wallet address; and a private key, also known as a seed. Together,
 		the public key and the private key form a key-pair. The wallet address is its public key, it’s
@@ -38,7 +38,7 @@
 		<b>Figure 4</b>: A BANANO public address, starting with “ban_”. The QR code shown contains the
 		exact same information and can be read by applications such as Kalium.
 	</p>
-	<p class="mt-8">
+	<p class="mt-6">
 		A wallet seed is known as its private key because it absolutely must be kept private. It’s the
 		equivalent to your bank account login information. Never share your BANANO seed! Anyone that has
 		your seed can access your delicious pile of BANANO, which can lead to a potassium deficiency.

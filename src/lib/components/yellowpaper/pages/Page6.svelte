@@ -8,7 +8,7 @@
 
 <PageWrapper pageNumber={6} class={classes}>
 	<h3 class="font-bold text-xl"><span class="mr-1ch">3.2.</span> Rise of the Block Lettuce</h3>
-	<p class="mt-5">
+	<p class="mt-4">
 		How is BANANO developed to offer feeless, almost instant transactions? Enter the Block Lettuce.
 	</p>
 	<div class="w-full flex flex-row flex-wrap justify-center">

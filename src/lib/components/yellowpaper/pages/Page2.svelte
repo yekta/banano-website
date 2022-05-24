@@ -50,7 +50,7 @@
 		<b>Figure 1</b>: “I think memecoins are hilarious, we have one, we have BANANO, I like those
 		guys!” Colin LeMahieu, Nano Founder
 	</p>
-	<p class="mt-10">
+	<p class="mt-8">
 		Similar to NANO, BANANO has quite more properties and advantages over classical cryptocurrencies
 		than simply being high in potassium, obviously (<b>Table 1</b>).
 	</p>

@@ -29,7 +29,7 @@
 		will be able to get started with BANANO in minutes, without requiring any crypto-related
 		knowledge whatsoever.
 	</p>
-	<p class="mt-10 px-4 md:px-12 text-sm text-center">
+	<p class="mt-8 px-4 md:px-12 text-sm text-center">
 		<b>Figure 2</b>: Kalium - BANANO’s mobile wallet (<a
 			href={bananoWallets.kalium.url}
 			target="_blank">Download</a

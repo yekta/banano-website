@@ -34,7 +34,7 @@
 	<LazyImage
 		width={700}
 		height={700}
-		class="mt-10 rounded-xl w-full h-auto relative z-0 overflow-hidden"
+		class="mt-8 rounded-xl w-full h-auto relative z-0 overflow-hidden"
 		placeholderSrc="/yellowpaper/lqip/factory.png"
 		src="/yellowpaper/factory.gif"
 		alt="Nano to Banano Factory Animation"

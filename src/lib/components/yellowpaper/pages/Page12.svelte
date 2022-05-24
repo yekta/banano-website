@@ -34,7 +34,7 @@
 	<p class="mt-4 px-4 md:px-12 text-sm text-center">
 		<b>Figure 16</b>: BANANO Miner - Contribute to Medical Research while earning BANANO!
 	</p>
-	<p class="mt-10">
+	<p class="mt-8">
 		There are 2 separate faucet projects in this category, <b>BANANO Powerplant</b> and the
 		<b>BANANO Miner Faucet</b>.
 		<br /><br />
