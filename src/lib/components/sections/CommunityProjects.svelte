@@ -21,7 +21,7 @@
 				>
 					<h3 class="font-bold text-xl">{project.title}</h3>
 					<p class="mt-2">{project.description}</p>
-					<Button class="mt-5 w-full" href={project.buttonUrl} targetBlank={true}
+					<Button class="mt-5 w-full" href={project.buttonUrl} target="_blank">
 						>{project.buttonName.toLocaleLowerCase()}</Button
 					>
 				</div>

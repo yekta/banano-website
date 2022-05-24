@@ -49,7 +49,7 @@
 				type="secondary"
 				padding="py-3.5 px-8 md:px-14"
 				href="https://wrap.banano.cc/?ref=banano.cc"
-				targetBlank={true}
+				target="_blank"
 				class="mt-10">Start Wrapping</Button
 			>
 		</div>

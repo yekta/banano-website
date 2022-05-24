@@ -79,7 +79,7 @@
 					/>
 					<h3 class="w-full font-bold text-xl mt-4">{wallet.title.toUpperCase()}</h3>
 					<p class="mt-2">{wallet.description}</p>
-					<Button class="w-full mt-5" type="secondary" href={wallet.url} targetBlank={true}>
+					<Button class="w-full mt-5" type="secondary" href={wallet.url} target="_blank">
 						{wallet.buttonText}
 					</Button>
 				</div>

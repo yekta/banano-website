@@ -146,16 +146,20 @@
 					/>
 					<Button
 						href={`/presskit/${asset.assetSlug}.svg`}
-						download={true}
+						download={`${asset.assetSlug}.svg`}
 						padding="px-4 py-3.5"
-						class="mt-8 w-full">Download SVG</Button
+						class="mt-8 w-full"
 					>
+						Download SVG
+					</Button>
 					<Button
 						href={`/presskit/${asset.assetSlug}.png`}
-						download={true}
+						download={`${asset.assetSlug}.png`}
 						padding="px-4 py-3.5"
-						class="mt-5 w-full">Download PNG</Button
+						class="mt-5 w-full"
 					>
+						Download PNG
+					</Button>
 				</div>
 			{/each}
 		</div>
@@ -195,9 +199,9 @@
 						src="/presskit/{font.fontSlug}.svg"
 						alt={font.title}
 					/>
-					<Button padding="px-4 py-3.5" class="mt-8 w-full" href={font.url} targetBlank={true}
-						>Check Out Font</Button
-					>
+					<Button padding="px-4 py-3.5" class="mt-8 w-full" href={font.url} target="_blank">
+						Check Out Font
+					</Button>
 				</div>
 			{/each}
 		</div>

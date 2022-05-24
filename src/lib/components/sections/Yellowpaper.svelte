@@ -10,7 +10,7 @@
 				Check out our meme-rich, interactive and animated Yellowpaper™ to learn more about Banano's
 				inner workings.
 			</p>
-			<Button class="mt-6" padding="py-3.5 px-8 md:px-14" href="/yellowpaper">
+			<Button class="mt-6" padding="py-3.5 px-8 md:px-14" href="/yellowpaper" sveltekit:prefetch>
 				Check out Yellowpaper™
 			</Button>
 			<div class="container-b-smallest max-w-full flex flex-row flex-wrap justify-center mt-12">

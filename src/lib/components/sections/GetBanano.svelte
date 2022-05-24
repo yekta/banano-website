@@ -63,7 +63,7 @@
 							padding="px-14 py-3.5"
 							class="mt-4 w-full"
 							href={socialButton.url}
-							targetBlank={true}
+							target="_blank"
 							type={socialButton.type}
 						>
 							<IconSocial type={socialButton.icon} class="w-8 h-8 ml-3 absolute left-0" />
@@ -85,7 +85,7 @@
 						>
 							<h3 class="font-bold text-xl">{faucet.title}</h3>
 							<p class="mt-2 px-2">{faucet.description}</p>
-							<Button class="mt-5 w-full" href={faucet.buttonUrl} targetBlank={true}
+							<Button class="mt-5 w-full" href={faucet.buttonUrl} target="_blank"
 								>{faucet.buttonName}</Button
 							>
 						</div>
