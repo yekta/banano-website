@@ -1,17 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import { particlesConfig } from '$lib/ts/constants/particlesConfig';
-	import { onMount } from 'svelte';
-	import { loadFull } from 'tsparticles';
-
-	let ParticlesComponent: any;
-	const particlesInit = async (main: any) => {
-		await loadFull(main);
-	};
-
-	onMount(async () => {
-		ParticlesComponent = (await import('svelte-particles')).default;
-	});
+	import Banticles from '../Banticles.svelte';
 </script>
 
 <div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
@@ -20,14 +9,10 @@
 			class="w-full hero bg-c-secondary min-h-[550px] md:min-h-[720px] bg-cover flex flex-row
 			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
 		>
-			<div class="w-full h-full absolute left-0 top-0">
-				<svelte:component
-					this={ParticlesComponent}
-					id="tsparticles"
-					options={particlesConfig}
-					{particlesInit}
-				/>
-			</div>
+			<Banticles
+				particleSrc="/images/banana-for-particles.png"
+				lineColorRgb={{ r: 251, g: 221, b: 16 }}
+			/>
 			<div
 				class="container-b max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10"
 			>

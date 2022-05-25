@@ -41,8 +41,6 @@
 		"@editorjs/header": "^2.6.2",
 		"editorjs-html": "^3.4.2",
 		"node-html-parser": "^5.3.3",
-		"showdown": "^2.1.0",
-		"svelte-particles": "^2.0.6",
-		"tsparticles": "^2.0.6"
+		"showdown": "^2.1.0"
 	}
 }

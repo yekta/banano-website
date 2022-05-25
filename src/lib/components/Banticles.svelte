@@ -3,9 +3,18 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	export const density = 0.13;
-	export const lineOpacity = 0.5;
-	export const lineThreshold = 300;
+	export let density = 0.13;
+	export let lineOpacity = 0.5;
+	export let lineConnectionThreshold = 300;
+	export let animDurationMultiplier = 15;
+	export let particleSrc: string;
+	export let lineColorRgb: IRgb;
+
+	interface IRgb {
+		r: number;
+		g: number;
+		b: number;
+	}
 
 	interface IParticle {
 		startX: number;
@@ -30,18 +39,18 @@
 	let mouseX: number;
 	let mouseY: number;
 	let isBanticlesPaused = false;
-
-	const animDurationMultiplier = 15;
+	let { r, g, b } = lineColorRgb;
 	let particleCount: number;
 
 	let img: HTMLImageElement;
 	let imgLoaded = false;
+	let dpr: number;
 
 	$: if (imgLoaded && canvas) init();
 
 	function init() {
 		context = canvas.getContext('2d');
-		let dpr = window.devicePixelRatio;
+		dpr = window.devicePixelRatio;
 		if (dpr > 1) {
 			canvas.width = containerWidth * dpr;
 			canvas.height = containerHeight * dpr;
@@ -107,12 +116,16 @@
 	}
 
 	function draw() {
+		if (containerHeight > canvas.height / dpr || containerWidth > canvas.width / dpr) {
+			init();
+			return;
+		}
 		particleCount = calculateParticleCount();
 		context?.clearRect(
-			-0.5 * containerWidth,
-			-0.5 * containerHeight,
-			containerWidth * 2,
-			containerHeight * 2
+			-0.5 * canvas.width,
+			-0.5 * canvas.height,
+			canvas.width * 2,
+			canvas.height * 2
 		);
 		let milliseconds = Date.now();
 		for (let i = 0; i < particles.length; i++) {
@@ -140,7 +153,7 @@
 				particle.currentY = currentY;
 				if (isMouseInsideCanvas()) {
 					let distance = Math.sqrt(Math.pow(currentX - mouseX, 2) + Math.pow(currentY - mouseY, 2));
-					let opacity = 1 - distance / lineThreshold;
+					let opacity = 1 - distance / lineConnectionThreshold;
 					drawLine(
 						currentX + particle.scaledWidth / 2,
 						currentY + particle.scaledHeight / 2,
@@ -155,8 +168,8 @@
 						Math.pow(currentX - otherParticle.currentX, 2) +
 							Math.pow(currentY - otherParticle.currentY, 2)
 					);
-					if (distance < lineThreshold) {
-						let opacity = lineOpacity - distance / lineThreshold;
+					if (distance < lineConnectionThreshold) {
+						let opacity = lineOpacity - distance / lineConnectionThreshold;
 						drawLine(
 							currentX + particle.scaledWidth / 2,
 							currentY + particle.scaledHeight / 2,
@@ -178,7 +191,7 @@
 		context?.beginPath();
 		context?.moveTo(x1, y1);
 		context?.lineTo(x2, y2);
-		context.strokeStyle = `rgba(251,221,16,${opacity})`;
+		context.strokeStyle = `rgba(${r},${g},${b},${opacity})`;
 		context?.stroke();
 	}
 
@@ -211,7 +224,7 @@
 
 	onMount(() => {
 		img = new Image();
-		img.src = '/images/banana-for-particles.png';
+		img.src = particleSrc;
 		img.onload = () => {
 			imgLoaded = true;
 			particleCount = calculateParticleCount();
