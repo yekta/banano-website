@@ -27,10 +27,14 @@
 				>
 					<button
 						on:click={() => toggle(index)}
-						class="w-full px-6 md:px-8 py-4.5 text-left font-bold transition rounded-xl text-base bg-c-bg-secondary 
-						shadow-c-bg-secondary-shaded hover:text-c-secondary shadow-button group flex justify-between items-center"
+						class="w-full px-6 md:px-8 py-4.5 text-left font-bold rounded-xl text-base bg-c-bg-secondary 
+						shadow-c-bg-secondary-shaded shadow-button group flex justify-between items-center"
 					>
-						<p class="group-hover:translate-x-2 transition flex-1 pr-4">{singleFaq.question}</p>
+						<p
+							class="group-hover:translate-x-2 text-c-on-bg group-hover:text-c-secondary transition flex-1 pr-4"
+						>
+							{singleFaq.question}
+						</p>
 						<IconChevron
 							class="{editedFaq[index].isOpen
 								? '-rotate-180'
