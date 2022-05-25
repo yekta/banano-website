@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	interface IParticle {
 		startX: number;
@@ -21,10 +22,11 @@
 	let containerHeight: number;
 	let context: any;
 	let canvas: HTMLCanvasElement;
+	let mouseX: number;
+	let mouseY: number;
 
 	const animDurationMultiplier = 15;
 	const lineThreshold = 300;
-	const strokeColor = '#fbdd11';
 	const particleCount = 30;
 
 	let img: HTMLImageElement;
@@ -34,8 +36,17 @@
 
 	function init() {
 		context = canvas.getContext('2d');
-		context.strokeStyle = strokeColor;
-		context.lineWidth = 0.5;
+		let dpr = window.devicePixelRatio;
+		if (dpr > 1) {
+			canvas.width = containerWidth * dpr;
+			canvas.height = containerHeight * dpr;
+			canvas.style.width = containerWidth + 'px';
+			canvas.style.height = containerHeight + 'px';
+			context.scale(dpr, dpr);
+		} else {
+			canvas.width = containerWidth;
+			canvas.height = containerHeight;
+		}
 		window.requestAnimationFrame(draw);
 	}
 
@@ -73,6 +84,7 @@
 		const distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 		const speed = 1;
 		const scale = randSpeedAndScale * 0.6 + 0.1;
+
 		return {
 			startX: x1,
 			startY: y1,
@@ -121,6 +133,17 @@
 				);
 				particle.currentX = currentX;
 				particle.currentY = currentY;
+				if (isMouseInsideCanvas()) {
+					let distance = Math.sqrt(Math.pow(currentX - mouseX, 2) + Math.pow(currentY - mouseY, 2));
+					let opacity = 1 - distance / lineThreshold;
+					drawLine(
+						currentX + particle.scaledWidth / 2,
+						currentY + particle.scaledHeight / 2,
+						mouseX,
+						mouseY,
+						opacity
+					);
+				}
 				for (let y = i; y > 0; y--) {
 					let otherParticle = particles[y];
 					let distance = Math.sqrt(
@@ -128,23 +151,32 @@
 							Math.pow(currentY - otherParticle.currentY, 2)
 					);
 					if (distance < lineThreshold) {
-						context?.beginPath();
-						context?.moveTo(
-							currentX + particle.scaledWidth / 2,
-							currentY + particle.scaledHeight / 2
-						);
-						context?.lineTo(
-							otherParticle.currentX + otherParticle.scaledWidth / 2,
-							otherParticle.currentY + otherParticle.scaledHeight / 2
-						);
 						let opacity = 1 - distance / lineThreshold;
-						context.strokeStyle = `rgba(251,221,16,${opacity})`;
-						context?.stroke();
+						drawLine(
+							currentX + particle.scaledWidth / 2,
+							currentY + particle.scaledHeight / 2,
+							otherParticle.currentX + otherParticle.scaledWidth / 2,
+							otherParticle.currentY + otherParticle.scaledHeight / 2,
+							opacity
+						);
 					}
 				}
 			}
 		}
 		window.requestAnimationFrame(draw);
+	}
+
+	function drawLine(x1: number, y1: number, x2: number, y2: number, opacity: number) {
+		context?.beginPath();
+		context?.moveTo(x1, y1);
+		context?.lineTo(x2, y2);
+		context.strokeStyle = `rgba(251,221,16,${opacity})`;
+		context?.stroke();
+	}
+
+	function handleMouseMove(e: MouseEvent) {
+		mouseX = e.clientX;
+		mouseY = e.clientY;
 	}
 
 	const minX = () => -1 * img.width;
@@ -156,6 +188,11 @@
 	const randomizedY = () => random(minY(), maxY());
 
 	const random = (min: number, max: number) => Math.random() * (max - min) + min;
+	const isMouseInsideCanvas = () => {
+		let rect = canvas.getBoundingClientRect();
+		let { left, top, width, height } = rect;
+		return mouseX > left && mouseX < left + width && mouseY > top && mouseY < top + height;
+	};
 
 	onMount(() => {
 		img = new Image();
@@ -167,12 +204,13 @@
 	});
 </script>
 
+<svelte:window on:mousemove={handleMouseMove} />
 <div
 	bind:clientWidth={containerWidth}
 	bind:clientHeight={containerHeight}
 	class="w-full h-full absolute left-0 top-0 overflow-hidden"
 >
 	{#if containerWidth !== undefined && containerHeight !== undefined}
-		<canvas bind:this={canvas} width={containerWidth} height={containerHeight} />
+		<canvas in:fade={{ duration: 300 }} bind:this={canvas} />
 	{/if}
 </div>
