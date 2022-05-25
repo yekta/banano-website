@@ -1,4 +1,5 @@
 <script lang="ts">
+	import inView from '$lib/ts/actions/inView';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
@@ -28,6 +29,7 @@
 	let canvas: HTMLCanvasElement;
 	let mouseX: number;
 	let mouseY: number;
+	let isBanticlesResumed = false;
 
 	const animDurationMultiplier = 15;
 	let particleCount: number;
@@ -105,13 +107,7 @@
 	}
 
 	function draw() {
-		particleCount = calculateParticleCount(
-			density,
-			img.width,
-			img.height,
-			containerWidth,
-			containerHeight
-		);
+		particleCount = calculateParticleCount();
 		context?.clearRect(
 			-0.5 * containerWidth,
 			-0.5 * containerHeight,
@@ -175,7 +171,7 @@
 				particles.push(createNewParticle());
 			}
 		}
-		window.requestAnimationFrame(draw);
+		if (!isBanticlesResumed) window.requestAnimationFrame(draw);
 	}
 
 	function drawLine(x1: number, y1: number, x2: number, y2: number, opacity: number) {
@@ -207,15 +203,9 @@
 		return mouseX > left && mouseX < left + width && mouseY > top && mouseY < top + height;
 	};
 
-	const calculateParticleCount = (
-		density: number,
-		particleWidth: number,
-		particleHeight: number,
-		containerWidth: number,
-		containerHeight: number
-	) => {
+	const calculateParticleCount = () => {
 		let area = containerWidth * containerHeight;
-		let particleArea = particleWidth * particleHeight;
+		let particleArea = img.width * img.height;
 		return Math.ceil((area / particleArea) * density);
 	};
 
@@ -224,13 +214,7 @@
 		img.src = '/images/banana-for-particles.png';
 		img.onload = () => {
 			imgLoaded = true;
-			particleCount = calculateParticleCount(
-				density,
-				img.width,
-				img.height,
-				containerWidth,
-				containerHeight
-			);
+			particleCount = calculateParticleCount();
 			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
 		};
 	});
@@ -238,6 +222,14 @@
 
 <svelte:window on:mousemove={handleMouseMove} />
 <div
+	use:inView
+	on:enter={() => {
+		if (isBanticlesResumed) {
+			isBanticlesResumed = false;
+			window.requestAnimationFrame(draw);
+		}
+	}}
+	on:exit={() => (isBanticlesResumed = true)}
 	bind:clientWidth={containerWidth}
 	bind:clientHeight={containerHeight}
 	class="w-full h-full absolute left-0 top-0 overflow-hidden"

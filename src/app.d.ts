@@ -16,5 +16,6 @@ declare module '*.md' {
 declare namespace svelte.JSX {
 	interface HTMLAttributes<T> {
 		onenter?: (event: CustomEvent<DndEvent> & { target: EventTarget & T }) => void;
+		onexit?: (event: CustomEvent<DndEvent> & { target: EventTarget & T }) => void;
 	}
 }
