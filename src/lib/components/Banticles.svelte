@@ -29,7 +29,7 @@
 	let canvas: HTMLCanvasElement;
 	let mouseX: number;
 	let mouseY: number;
-	let isBanticlesResumed = false;
+	let isBanticlesPaused = false;
 
 	const animDurationMultiplier = 15;
 	let particleCount: number;
@@ -171,7 +171,7 @@
 				particles.push(createNewParticle());
 			}
 		}
-		if (!isBanticlesResumed) window.requestAnimationFrame(draw);
+		if (!isBanticlesPaused) window.requestAnimationFrame(draw);
 	}
 
 	function drawLine(x1: number, y1: number, x2: number, y2: number, opacity: number) {
@@ -224,12 +224,12 @@
 <div
 	use:inView
 	on:enter={() => {
-		if (isBanticlesResumed) {
-			isBanticlesResumed = false;
+		if (isBanticlesPaused) {
+			isBanticlesPaused = false;
 			window.requestAnimationFrame(draw);
 		}
 	}}
-	on:exit={() => (isBanticlesResumed = true)}
+	on:exit={() => (isBanticlesPaused = true)}
 	bind:clientWidth={containerWidth}
 	bind:clientHeight={containerHeight}
 	class="w-full h-full absolute left-0 top-0 overflow-hidden"
