@@ -2,6 +2,10 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
+	export const density = 0.13;
+	export const lineOpacity = 0.5;
+	export const lineThreshold = 300;
+
 	interface IParticle {
 		startX: number;
 		startY: number;
@@ -26,8 +30,7 @@
 	let mouseY: number;
 
 	const animDurationMultiplier = 15;
-	const lineThreshold = 300;
-	const particleCount = 30;
+	let particleCount: number;
 
 	let img: HTMLImageElement;
 	let imgLoaded = false;
@@ -102,6 +105,13 @@
 	}
 
 	function draw() {
+		particleCount = calculateParticleCount(
+			density,
+			img.width,
+			img.height,
+			containerWidth,
+			containerHeight
+		);
 		context?.clearRect(
 			-0.5 * containerWidth,
 			-0.5 * containerHeight,
@@ -118,7 +128,6 @@
 				particle.startY + (particle.endY - particle.startY) * (diff / particle.duration);
 			if (currentX < minX() || currentX > maxX() || currentY < minY() || currentY > maxY()) {
 				particles.splice(i, 1);
-				particles.push(createNewParticle());
 			} else {
 				context?.drawImage(
 					img,
@@ -151,7 +160,7 @@
 							Math.pow(currentY - otherParticle.currentY, 2)
 					);
 					if (distance < lineThreshold) {
-						let opacity = 1 - distance / lineThreshold;
+						let opacity = lineOpacity - distance / lineThreshold;
 						drawLine(
 							currentX + particle.scaledWidth / 2,
 							currentY + particle.scaledHeight / 2,
@@ -161,6 +170,9 @@
 						);
 					}
 				}
+			}
+			while (particles.length < particleCount) {
+				particles.push(createNewParticle());
 			}
 		}
 		window.requestAnimationFrame(draw);
@@ -188,10 +200,23 @@
 	const randomizedY = () => random(minY(), maxY());
 
 	const random = (min: number, max: number) => Math.random() * (max - min) + min;
+
 	const isMouseInsideCanvas = () => {
 		let rect = canvas.getBoundingClientRect();
 		let { left, top, width, height } = rect;
 		return mouseX > left && mouseX < left + width && mouseY > top && mouseY < top + height;
+	};
+
+	const calculateParticleCount = (
+		density: number,
+		particleWidth: number,
+		particleHeight: number,
+		containerWidth: number,
+		containerHeight: number
+	) => {
+		let area = containerWidth * containerHeight;
+		let particleArea = particleWidth * particleHeight;
+		return Math.ceil((area / particleArea) * density);
 	};
 
 	onMount(() => {
@@ -199,6 +224,13 @@
 		img.src = '/images/banana-for-particles.png';
 		img.onload = () => {
 			imgLoaded = true;
+			particleCount = calculateParticleCount(
+				density,
+				img.width,
+				img.height,
+				containerWidth,
+				containerHeight
+			);
 			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
 		};
 	});

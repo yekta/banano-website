@@ -10,6 +10,7 @@
 	import { cubicOut } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
 	import { sidebar } from '$lib/ts/transitions';
+	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
 
 	let bananoPrice: number;
 	const pricePlaceholder = '..........';
@@ -197,8 +198,9 @@
 					? 'text-c-secondary'
 					: 'text-c-primary'} lg:hidden h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 
 					flex flex-row items-center justify-center rounded-lg transition shadow-navbar-button 
-					hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary
-					shadow-c-on-bg/50 hover:text-c-bg"
+					shadow-c-on-bg/50 hover:text-c-bg {$isTouchscreen
+					? ''
+					: 'hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary'}"
 			>
 				<IconMenu
 					class="lg:hidden w-full h-full md:w-8 md:h-8 md:mr-1.5 transition transform {isSidebarOpen
