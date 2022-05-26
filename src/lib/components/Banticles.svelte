@@ -194,11 +194,6 @@
 		mouseY = e.clientY;
 	};
 
-	const handleMouseDown = (e: MouseEvent) => {
-		mouseX = e.clientX;
-		mouseY = e.clientY;
-	};
-
 	const minX = () => -1 * img.width;
 	const maxX = () => containerWidth + img.width;
 	const minY = () => -1 * img.height;
@@ -240,14 +235,14 @@
 	});
 </script>
 
-<svelte:window on:mousemove={handleMouseMove} on:mousedown={handleMouseDown} />
+<svelte:window on:mousemove={handleMouseMove} />
 <div
 	use:inView
 	on:enter={onEnter}
 	on:exit={onExit}
 	bind:clientWidth={containerWidth}
 	bind:clientHeight={containerHeight}
-	class="w-full h-full absolute left-0 top-0 overflow-hidden"
+	class="w-full h-full absolute left-0 top-0 overflow-hidden z-0"
 >
 	{#if containerWidth !== undefined && containerHeight !== undefined}
 		<canvas in:fade={{ duration: 300 }} bind:this={canvas} />
