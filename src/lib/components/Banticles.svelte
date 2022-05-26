@@ -201,7 +201,7 @@
 		mouseY = e.clientY;
 	};
 
-	const handleTouchMove = (e: TouchEvent) => {
+	const handleTouchStart = (e: TouchEvent) => {
 		mouseX = e.touches[0].clientX;
 		mouseY = e.touches[0].clientY;
 	};
@@ -246,7 +246,7 @@
 	});
 </script>
 
-<svelte:window on:touchstart={handleTouchMove} on:mousemove={handleMouseMove} />
+<svelte:window on:touchstart={handleTouchStart} on:mousemove={handleMouseMove} />
 <div
 	use:inView
 	on:enter={onEnter}
