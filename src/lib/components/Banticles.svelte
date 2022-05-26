@@ -57,8 +57,8 @@
 	function init() {
 		context = canvas.getContext('2d');
 		dpr = Math.max(Math.min(window.devicePixelRatio, 2), 1);
-		canvas.width = containerWidth * dpr;
-		canvas.height = containerHeight * dpr;
+		canvas.width = Math.ceil(containerWidth * dpr);
+		canvas.height = Math.ceil(containerHeight * dpr);
 		if (dpr > 1) context.scale(dpr, dpr);
 		canvas.style.width = containerWidth + 'px';
 		canvas.style.height = containerHeight + 'px';
@@ -66,7 +66,7 @@
 	}
 
 	function createNewParticle(isInitial = false): IParticle {
-		const randFlip = Math.round(Math.random());
+		const randFlip = Math.ceil(Math.random());
 		const randSpeedAndScale = Math.random();
 		let x1: number;
 		let y1: number;
@@ -116,7 +116,10 @@
 	}
 
 	function draw() {
-		if (containerHeight > canvas.height / dpr || containerWidth > canvas.width / dpr) {
+		if (
+			containerHeight > Math.ceil(canvas.height / dpr) ||
+			containerWidth > Math.ceil(canvas.width / dpr)
+		) {
 			init();
 			return;
 		}
