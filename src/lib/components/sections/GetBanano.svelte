@@ -45,7 +45,7 @@
 
 <div id="get-banano" class="w-full pt-18">
 	<div
-		style="background-image: url('/illustrations/backgrounds/bg-faucet.svg');"
+		style="background-image:url('/illustrations/backgrounds/bg-faucet.svg');"
 		class="w-full bg-cover bg-c-secondary flex justify-center pt-18 pb-16 text-center text-c-bg"
 	>
 		<div class="container-b flex flex-col items-center px-4">

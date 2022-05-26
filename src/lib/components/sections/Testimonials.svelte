@@ -4,7 +4,7 @@
 
 <div id="testimonials" class="w-full pt-8">
 	<div
-		style="background-image: url('/illustrations/backgrounds/bg-testimonials.svg');"
+		style="background-image:url('/illustrations/backgrounds/bg-testimonials.svg');"
 		class="w-full bg-c-secondary flex justify-center pt-16 pb-24 text-center text-c-bg"
 	>
 		<div class="container-b-small flex flex-col items-center px-4 md:px-8">

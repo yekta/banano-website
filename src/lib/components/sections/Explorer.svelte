@@ -24,7 +24,7 @@
 
 <div id="explorer" class="w-full pt-20">
 	<div
-		style="background-image: url('/illustrations/backgrounds/bg-creeper.svg');"
+		style="background-image:url('/illustrations/backgrounds/bg-creeper.svg');"
 		class="bg-c-secondary bg-cover flex justify-center pt-12 pb-16 text-center text-c-bg"
 	>
 		<div class="container-b flex flex-col items-center px-4 md:px-8">

@@ -7,7 +7,7 @@
 
 <div
 	id="community-projects"
-	style="background-image: url('/illustrations/backgrounds/bg-community.svg');"
+	style="background-image:url('/illustrations/backgrounds/bg-community.svg');"
 	class="w-full bg-cover bg-c-secondary flex justify-center pt-16 pb-18 text-center text-c-bg"
 >
 	<div class="container-b flex flex-col items-center px-4">

@@ -7,7 +7,7 @@
 		<div class="container-b-small mb-12 px-4 md:px-8">
 			<div class="w-full relative opacity-75">
 				<div
-					style="background-image: url('/illustrations/foreground/squiggle.svg');"
+					style="background-image:url('/illustrations/foreground/squiggle.svg');"
 					class="w-full bg-contain bg-repeat relative h-4 overflow-hidden"
 				/>
 				<div class="w-16 h-full bg-gradient-to-r from-c-bg to-c-bg/0 absolute left-0 top-0" />
@@ -59,7 +59,7 @@
 		<div class="container-b-small mt-16 px-4 md:px-8">
 			<div class="w-full relative opacity-75">
 				<div
-					style="background-image: url('/illustrations/foreground/squiggle.svg');"
+					style="background-image:url('/illustrations/foreground/squiggle.svg');"
 					class="w-full bg-contain bg-repeat relative h-4 overflow-hidden"
 				/>
 				<div class="w-16 h-full bg-gradient-to-r from-c-bg to-c-bg/0 absolute left-0 top-0" />
