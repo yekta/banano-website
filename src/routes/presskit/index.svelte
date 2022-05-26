@@ -67,8 +67,8 @@
 	const fonts: IFont[] = [
 		{
 			title: 'Primary Font',
-			fontSlug: 'now-alt',
-			url: 'https://usemodify.com/fonts/now-alt'
+			fontSlug: 'filson-pro',
+			url: 'https://fonts.adobe.com/fonts/filson'
 		},
 		{
 			title: 'Secondary Font',
