@@ -3,7 +3,7 @@
 	import Banticles from '../Banticles.svelte';
 </script>
 
-<div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
+<div class="text-c-bg w-full bg-c-secondary flex flex-col items-center justify-start text-center">
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
 			style="background-image:url('/illustrations/backgrounds/bg-hero.svg');"
@@ -17,7 +17,7 @@
 			<div
 				class="container-b max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10"
 			>
-				<h1 class="w-220 max-w-full text-2xl font-medium text-c-bg leading-relaxed px-6 md:px-12">
+				<h1 class="w-220 max-w-full text-2xl font-medium leading-relaxed px-6 md:px-12">
 					Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology
 					disrupting the meme economy.
 				</h1>

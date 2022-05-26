@@ -26,10 +26,8 @@
 
 <svelte:window on:touchstart={handleTouch} on:mousemove={disableTouch} />
 
-<div class="w-full bg-c-bg text-c-on-bg font-now-alt min-h-screen flex flex-col justify-start">
-	<Navbar />
-	<main>
-		<slot />
-	</main>
-	<Footer />
-</div>
+<Navbar />
+<main class="w-full bg-c-bg text-c-on-bg font-now-alt min-h-screen flex flex-col justify-start">
+	<slot />
+</main>
+<Footer />

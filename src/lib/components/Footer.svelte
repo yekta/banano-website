@@ -104,11 +104,13 @@
 	];
 </script>
 
-<footer class="w-full flex flex-row items-start justify-center pt-12 bg-c-bg">
+<footer
+	class="bg-c-bg text-c-bg font-now-alt w-full flex flex-row items-start justify-center pt-12"
+>
 	<div
 		style="background-image:url('/illustrations/backgrounds/bg-footer.svg');"
 		class="w-full bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
-    flex flex-col items-center justify-start text-c-bg pt-18 bg-c-secondary relative overflow-hidden"
+    flex flex-col items-center justify-start pt-14 md:pt-16 lg:pt-14 bg-c-secondary relative overflow-hidden"
 	>
 		<div
 			class="w-[110%] -ml-[5%] -mt-1 h-64 absolute top-0 left-0 overflow-hidden flex justify-center pointer-events-none"
