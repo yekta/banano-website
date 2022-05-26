@@ -196,11 +196,14 @@
 		context?.stroke();
 	};
 
-	let counter = 0;
 	const handleMouseMove = (e: MouseEvent) => {
-		counter++;
 		mouseX = e.clientX;
 		mouseY = e.clientY;
+	};
+
+	const handleTouchMove = (e: TouchEvent) => {
+		mouseX = e.touches[0].clientX;
+		mouseY = e.touches[0].clientY;
 	};
 
 	const minX = () => -1 * img.naturalWidth;
@@ -243,7 +246,7 @@
 	});
 </script>
 
-<svelte:window on:mousemove={handleMouseMove} />
+<svelte:window on:touchstart={handleTouchMove} on:mousemove={handleMouseMove} />
 <div
 	use:inView
 	on:enter={onEnter}
@@ -252,9 +255,6 @@
 	bind:clientHeight={containerHeight}
 	class="w-full h-full absolute left-0 top-0 overflow-hidden z-0"
 >
-	<div class="absolute left-0 top-0">
-		<p>{mouseX}, {mouseY}, {counter}</p>
-	</div>
 	{#if containerWidth !== undefined && containerHeight !== undefined}
 		<canvas in:fade={{ duration: 300 }} bind:this={canvas} />
 	{/if}
