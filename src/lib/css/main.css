@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+
 .container-b-larger {
 	width: 1536px;
 	max-width: 100%;
@@ -72,3 +75,5 @@
 input:focus {
 	outline: none;
 }
+
+@tailwind utilities;

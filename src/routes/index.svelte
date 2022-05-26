@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$lib/css/main.css';
 	import Advisors from '$lib/components/sections/Advisors.svelte';
 	import CommunityProjects from '$lib/components/sections/CommunityProjects.svelte';
 	import FAQ from '$lib/components/sections/FAQ.svelte';

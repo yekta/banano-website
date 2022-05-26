@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-
 @font-face {
 	font-family: 'lm-roman-10';
 	font-weight: 400;
@@ -92,9 +89,3 @@
 .yellowpaper li {
 	margin-top: 1.5ch;
 }
-
-input:focus {
-	outline: none;
-}
-
-@tailwind utilities;

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/css/main.css';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
@@ -35,9 +36,6 @@
 </div>
 
 <style>
-	@tailwind base;
-	@tailwind components;
-
 	.font-now-alt {
 		font-family: now-alt, sans-serif;
 	}
@@ -103,6 +101,4 @@
 		--xl: 1280px;
 		--2xl: '1536px';
 	}
-
-	@tailwind utilities;
 </style>

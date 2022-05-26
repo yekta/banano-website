@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$lib/css/main.css';
 	import { page } from '$app/stores';
 	import Button from '$lib/components/Button.svelte';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';

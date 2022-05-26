@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$lib/css/yellowpaper.css';
 	import { page } from '$app/stores';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
