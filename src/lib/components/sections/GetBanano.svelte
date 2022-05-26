@@ -55,10 +55,12 @@
 				airdrops, monkey around with random tips/rains. We also do giveaways on Twitter, real ones.
 				No need to send us any Ethereum.
 			</p>
-			<div class="w-full flex flex-wrap justify-center items-end mt-2 md:mt-4 md:px-16 px-2">
+			<div
+				class="container-b-small flex flex-wrap justify-center items-end mt-2 md:mt-4 md:px-16 px-2"
+			>
 				{#each socialButtons as socialButton}
 					<div
-						class="w-full md:w-1/2 max-w-[24rem] flex flex-col items-center text-center px-2 mt-2"
+						class="w-full md:w-1/2 max-w-[23rem] flex flex-col items-center text-center px-2 mt-2"
 					>
 						<Button
 							padding="px-14 py-3.5"
