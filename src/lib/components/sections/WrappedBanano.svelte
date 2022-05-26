@@ -4,7 +4,7 @@
 
 <div id="wban" class="w-full flex justify-center bg-c-bg relative pt-12 text-center">
 	<div class="container-b flex flex-col">
-		<div class="container-b-small mb-12 px-4 md:px-8">
+		<div class="container-b-small mb-12 md:px-8">
 			<div class="w-full relative opacity-75">
 				<div
 					style="background-image:url('/illustrations/foreground/squiggle.svg');"
@@ -15,8 +15,8 @@
 			</div>
 		</div>
 		<div class="w-full flex flex-col items-center px-4">
-			<h2 class="text-3xl font-bold px-4">Wrapped Banano</h2>
-			<p class="mt-3 text-lg container-b-small px-2 md:px-16 lg:px-24">
+			<h2 class="text-3xl font-bold">Wrapped Banano</h2>
+			<p class="mt-3 text-lg container-b-small md:px-16 lg:px-24">
 				Use Banano to learn about and participate in DeFi in a fun & easy way! Our monkeys take your
 				Banano, wrap it with special ribbons and deliver it to other chains such as <a
 					href="https://polygon.technology/"

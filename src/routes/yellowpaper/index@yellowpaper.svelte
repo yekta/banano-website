@@ -91,7 +91,7 @@
 />
 
 <div class="w-full flex justify-center items-start yellowpaper overflow-hidden relative z-10">
-	<div class="yellowpaper-container p-3 md:p-5 relative">
+	<div class="yellowpaper-container p-2 md:p-5 relative">
 		{#if previousPage !== undefined}
 			<button
 				on:click={() => history.back()}
@@ -104,14 +104,14 @@
 			</button>
 		{/if}
 		<Page1 />
-		<Page2 class="mt-3 md:mt-5" />
+		<Page2 class="mt-2 md:mt-5" />
 		<div use:inView class="w-full" on:enter={loadAndSendRocket} />
-		<Page3 class="mt-3 md:mt-5" />
-		<Page4 class="mt-3 md:mt-5" />
-		<Page5 class="mt-3 md:mt-5" />
-		<Page6 class="mt-3 md:mt-5" />
-		<Page7 class="mt-3 md:mt-5" />
-		<Page8 class="mt-3 md:mt-5" />
+		<Page3 class="mt-2 md:mt-5" />
+		<Page4 class="mt-2 md:mt-5" />
+		<Page5 class="mt-2 md:mt-5" />
+		<Page6 class="mt-2 md:mt-5" />
+		<Page7 class="mt-2 md:mt-5" />
+		<Page8 class="mt-2 md:mt-5" />
 		<div class="w-full relative pt-8 items-center flex flex-col">
 			<div class="w-full max-w-[16rem] -mb-12 md:-mb-20 lg:-mb-32 relative z-10">
 				<LazyImage
@@ -158,8 +158,8 @@
 			</div>
 		</div>
 		<Page10 />
-		<Page11 class="mt-3 md:mt-5" />
-		<Page12 class="mt-3 md:mt-5" />
+		<Page11 class="mt-2 md:mt-5" />
+		<Page12 class="mt-2 md:mt-5" />
 		<div class="w-full relative pt-12 items-start flex flex-col">
 			<div class="w-full -mb-8 md:-mb-16 lg:-mb-28 relative z-10 px-6 md:px-24 lg:px-36">
 				<div class="w-full max-w-md">

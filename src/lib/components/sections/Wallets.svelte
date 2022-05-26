@@ -72,7 +72,7 @@
 		<div class="container-b max-w-full flex flex-row flex-wrap justify-center -mt-8">
 			{#each wallets as wallet}
 				<div
-					class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 max-w-[19rem] flex flex-col items-center px-6 py-4 mt-10 md:mt-12"
+					class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 max-w-[19rem] flex flex-col items-center px-4 md:px-6 py-4 mt-10 md:mt-12"
 				>
 					<img
 						width="620"

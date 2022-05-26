@@ -150,7 +150,7 @@
 			<Logo
 				class="{notAtTheTop
 					? 'group-hover:text-c-on-bg scale-90'
-					: 'group-hover:text-c-bg'} transition w-48 h-auto transform origin-left"
+					: 'group-hover:text-c-bg'} transition w-44 md:w-48 h-auto transform origin-left"
 			/>
 		</a>
 		<div class="flex items-center justify-end">

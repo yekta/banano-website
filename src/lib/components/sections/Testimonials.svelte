@@ -11,7 +11,7 @@
 			<h2 class="text-3xl font-bold px-4">Testimonials</h2>
 			<div class="w-full flex flex-wrap justify-center">
 				{#each testimonials as testimonial}
-					<div class="w-full max-w-md md:w-1/2 md:max-w-full mt-5 p-3">
+					<div class="w-full max-w-md md:w-1/2 md:max-w-full mt-5 py-3 md:px-3">
 						<div
 							class="w-full chat-bubble relative bg-c-secondary filter brightness-115 shadow-card shadow-c-on-bg/10
 							rounded-tl-2xl rounded-tr-2xl rounded-br-2xl flex flex-col items-center text-center px-10 py-5"

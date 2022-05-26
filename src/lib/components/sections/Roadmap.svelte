@@ -20,7 +20,7 @@
 
 <div id="roadmap" class="w-full flex justify-center -mt-8 pt-24 pb-12">
 	<div class="container-b flex flex-col items-center px-4 md:px-12">
-		<h2 class="text-3xl font-bold px-4">Bumpy Roadmap</h2>
+		<h2 class="text-3xl font-bold">Bumpy Roadmap</h2>
 		<div
 			class="relative rounded-xl bg-c-secondary/5 border-2 border-c-secondary/15 overflow-hidden mt-8"
 		>
@@ -33,9 +33,9 @@
 				<div class="w-full flex flex-col justify-start items-start pb-8">
 					{#each roadmap as item, index}
 						<div
-							class="w-full p-2 md:p-4 flex flex-col justify-start items-start relative {index !== 0
+							class="w-full p-1 md:p-4 flex flex-col justify-start items-start relative {index !== 0
 								? 'mt-6 md:mt-3'
-								: ''}"
+								: 'mt-1 md:mt-0'}"
 						>
 							<div class="w-full flex flex-row justify-start px-2 py-1 -ml-6">
 								<h3

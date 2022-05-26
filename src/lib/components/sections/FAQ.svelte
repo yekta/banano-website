@@ -19,7 +19,7 @@
 
 <div id="faq" class="w-full flex justify-center -mt-8 pt-24 pb-8">
 	<div class="container-b flex flex-col items-center px-4">
-		<h2 class="text-3xl font-bold px-4 text-center">Frequently Asked Questions</h2>
+		<h2 class="text-3xl font-bold text-center">Frequently Asked Questions</h2>
 		<div class="w-full flex flex-wrap max-w-2xl justify-center mt-6">
 			{#each editedFaq as singleFaq, index}
 				<div
