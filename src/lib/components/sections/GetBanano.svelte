@@ -45,7 +45,8 @@
 
 <div id="get-banano" class="w-full pt-18">
 	<div
-		class="w-full bg-get-banano bg-c-secondary flex justify-center pt-18 pb-16 text-center text-c-bg"
+		style="background-image: url('/illustrations/backgrounds/bg-faucet.svg');"
+		class="w-full bg-cover bg-c-secondary flex justify-center pt-18 pb-16 text-center text-c-bg"
 	>
 		<div class="container-b flex flex-col items-center px-4">
 			<h2 class="text-3xl font-bold px-4">Get Banano</h2>
@@ -95,12 +96,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.bg-get-banano {
-		background-image: url('/illustrations/backgrounds/bg-faucet.svg');
-		background-size: cover;
-		background-position: 100% 100%;
-		background-repeat: no-repeat;
-	}
-</style>

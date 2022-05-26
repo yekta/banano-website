@@ -6,7 +6,8 @@
 <div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
-			class="w-full hero bg-c-secondary min-h-[550px] md:min-h-[720px] bg-cover flex flex-row
+			style="background-image: url('/illustrations/backgrounds/bg-hero.svg');"
+			class="w-full bg-c-secondary min-h-[550px] md:min-h-[720px] bg-cover flex flex-row
 			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
 		>
 			<Banticles
@@ -27,7 +28,8 @@
 			class="w-[110%] -ml-[5%] h-64 absolute bottom-0 left-0 overflow-hidden flex justify-center pointer-events-none"
 		>
 			<div
-				class="w-full wave-bottom bg-[position:0%_100%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:150%] xl:bg-contain bg-no-repeat"
+				style="background-image: url('/illustrations/backgrounds/bg-wave-bottom.svg');"
+				class="w-full bg-[position:0%_100%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:150%] xl:bg-contain bg-no-repeat"
 			/>
 		</div>
 	</div>

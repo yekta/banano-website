@@ -100,20 +100,18 @@ body {
 	margin-right: auto;
 }
 
-.hero {
-	background-image: url('/illustrations/backgrounds/bg-hero.svg');
-}
-
-.wave-bottom {
-	background-image: url('/illustrations/backgrounds/bg-wave-bottom.svg');
-}
-
-.footer {
-	background-image: url('/illustrations/backgrounds/bg-footer.svg');
-}
-
-.wave-top {
-	background-image: url('/illustrations/backgrounds/bg-wave-top.svg');
+.chat-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-top-color: rgb(var(--c-secondary));
+	border-bottom: 0;
+	border-left: 0;
+	margin-bottom: -20px;
 }
 
 .markdown a {

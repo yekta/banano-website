@@ -27,8 +27,7 @@
 		distance: number;
 		birth: number;
 		duration: number;
-		scaledWidth: number;
-		scaledHeight: number;
+		scaledSize: number;
 	}
 
 	let particles: IParticle[];
@@ -106,8 +105,7 @@
 			endY: y2,
 			currentX: x1,
 			currentY: y1,
-			scaledWidth: scale * img.width,
-			scaledHeight: scale * img.height,
+			scaledSize: scale * img.width,
 			speed: speed,
 			distance: distance,
 			birth: Date.now(),
@@ -146,21 +144,16 @@
 					img.height,
 					currentX,
 					currentY,
-					particle.scaledWidth,
-					particle.scaledHeight
+					particle.scaledSize,
+					particle.scaledSize
 				);
 				particle.currentX = currentX;
 				particle.currentY = currentY;
+				let halfSize = particle.scaledSize / 2;
 				if (isMouseInsideCanvas()) {
 					let distance = Math.sqrt(Math.pow(currentX - mouseX, 2) + Math.pow(currentY - mouseY, 2));
 					let opacity = 1 - distance / lineConnectionThreshold;
-					drawLine(
-						currentX + particle.scaledWidth / 2,
-						currentY + particle.scaledHeight / 2,
-						mouseX,
-						mouseY,
-						opacity
-					);
+					drawLine(currentX + halfSize, currentY + halfSize, mouseX, mouseY, opacity);
 				}
 				for (let y = i; y > 0; y--) {
 					let otherParticle = particles[y];
@@ -170,11 +163,12 @@
 					);
 					if (distance < lineConnectionThreshold) {
 						let opacity = lineOpacity - distance / lineConnectionThreshold;
+						let halfSizeOther = otherParticle.scaledSize / 2;
 						drawLine(
-							currentX + particle.scaledWidth / 2,
-							currentY + particle.scaledHeight / 2,
-							otherParticle.currentX + otherParticle.scaledWidth / 2,
-							otherParticle.currentY + otherParticle.scaledHeight / 2,
+							currentX + halfSize,
+							currentY + halfSize,
+							otherParticle.currentX + halfSizeOther,
+							otherParticle.currentY + halfSizeOther,
 							opacity
 						);
 					}

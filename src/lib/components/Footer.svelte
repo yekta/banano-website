@@ -106,14 +106,16 @@
 
 <footer class="w-full flex flex-row items-start justify-center pt-12 bg-c-bg">
 	<div
-		class="w-full footer bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
+		style="url('/illustrations/backgrounds/bg-footer.svg');"
+		class="w-full bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
     flex flex-col items-center justify-start text-c-bg pt-18 bg-c-secondary relative overflow-hidden"
 	>
 		<div
 			class="w-[110%] -ml-[5%] -mt-1 h-64 absolute top-0 left-0 overflow-hidden flex justify-center pointer-events-none"
 		>
 			<div
-				class="w-full wave-top bg-[position:0%_0%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:100%] xl:bg-contain bg-no-repeat"
+				style="background-image: url('/illustrations/backgrounds/bg-wave-top.svg');"
+				class="w-full bg-[position:0%_0%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:100%] xl:bg-contain bg-no-repeat"
 			/>
 		</div>
 		<div

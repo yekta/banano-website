@@ -4,7 +4,8 @@
 
 <div id="testimonials" class="w-full pt-8">
 	<div
-		class="w-full bg-testimonials bg-c-secondary flex justify-center pt-16 pb-24 text-center text-c-bg"
+		style="background-image: url('/illustrations/backgrounds/bg-testimonials.svg');"
+		class="w-full bg-c-secondary flex justify-center pt-16 pb-24 text-center text-c-bg"
 	>
 		<div class="container-b-small flex flex-col items-center px-4 md:px-8">
 			<h2 class="text-3xl font-bold px-4">Testimonials</h2>
@@ -23,26 +24,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.bg-testimonials {
-		background-image: url('/illustrations/backgrounds/bg-testimonials.svg');
-		background-size: cover;
-		background-position: 100% 100%;
-		background-repeat: no-repeat;
-	}
-
-	.chat-bubble:after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 0;
-		height: 0;
-		border: 25px solid transparent;
-		border-top-color: rgb(var(--c-secondary));
-		border-bottom: 0;
-		border-left: 0;
-		margin-bottom: -20px;
-	}
-</style>
