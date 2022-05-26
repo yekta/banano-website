@@ -248,7 +248,12 @@
 			aWindow.requestAnimationFrame ||
 			aWindow.mozRequestAnimationFrame ||
 			aWindow.webkitRequestAnimationFrame ||
-			aWindow.msRequestAnimationFrame;
+			aWindow.msRequestAnimationFrame ||
+			function (callback: any) {
+				return window.setTimeout(function () {
+					callback(Date.now());
+				}, 1000 / 60);
+			};
 	});
 </script>
 
