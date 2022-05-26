@@ -43,7 +43,7 @@
 	];
 </script>
 
-<div id="get-banano" class="w-full pt-18">
+<div id="get-banano" class="w-full pt-16">
 	<div
 		style="background-image:url('/illustrations/backgrounds/bg-faucet.svg');"
 		class="w-full bg-cover bg-c-secondary flex justify-center pt-18 pb-16 text-center text-c-bg"
