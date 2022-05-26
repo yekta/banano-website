@@ -196,7 +196,9 @@
 		context?.stroke();
 	};
 
+	let counter = 0;
 	const handleMouseMove = (e: MouseEvent) => {
+		counter++;
 		mouseX = e.clientX;
 		mouseY = e.clientY;
 	};
@@ -251,7 +253,7 @@
 	class="w-full h-full absolute left-0 top-0 overflow-hidden z-0"
 >
 	<div class="absolute left-0 top-0">
-		<p>{mouseX}, {mouseY}</p>
+		<p>{mouseX}, {mouseY}, {counter}</p>
 	</div>
 	{#if containerWidth !== undefined && containerHeight !== undefined}
 		<canvas in:fade={{ duration: 300 }} bind:this={canvas} />
