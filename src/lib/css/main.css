@@ -2,38 +2,38 @@
 @tailwind components;
 
 @font-face {
-	font-family: 'now-alt';
+	font-family: 'filson-pro';
 	font-weight: 400;
-	src: url('/fonts/now-alt/now-alt-400.woff2') format('woff2'),
-		url('/fonts/now-alt/now-alt-400.woff') format('woff');
+	src: url('/fonts/filson-pro/filson-pro-400.woff2') format('woff2'),
+		url('/fonts/filson-pro/filson-pro-400.woff') format('woff');
 	font-display: auto;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'now-alt';
+	font-family: 'filson-pro';
 	font-weight: 500;
-	src: url('/fonts/now-alt/now-alt-500.woff2') format('woff2'),
-		url('/fonts/now-alt/now-alt-500.woff') format('woff');
+	src: url('/fonts/filson-pro/filson-pro-500.woff2') format('woff2'),
+		url('/fonts/filson-pro/filson-pro-500.woff') format('woff');
 	font-display: auto;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'now-alt';
+	font-family: 'filson-pro';
 	font-weight: 700;
-	src: url('/fonts/now-alt/now-alt-700.woff2') format('woff2'),
-		url('/fonts/now-alt/now-alt-700.woff') format('woff');
+	src: url('/fonts/filson-pro/filson-pro-700.woff2') format('woff2'),
+		url('/fonts/filson-pro/filson-pro-700.woff') format('woff');
 	font-display: auto;
 	font-style: normal;
 }
 
 body {
-	font-family: now-alt, sans-serif;
+	font-family: filson-pro, sans-serif;
 	color: rgb(var(--c-on-bg));
 	background-color: rgb(var(--c-bg));
 }
 
-.font-now-alt {
-	font-family: now-alt, sans-serif;
+.font-filson-pro {
+	font-family: filson-pro, sans-serif;
 }
 
 :root {

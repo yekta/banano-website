@@ -105,7 +105,7 @@
 </script>
 
 <footer
-	class="bg-c-bg text-c-bg font-now-alt w-full flex flex-row items-start justify-center pt-12"
+	class="bg-c-bg text-c-bg font-filson-pro w-full flex flex-row items-start justify-center pt-12"
 >
 	<div
 		style="background-image:url('/illustrations/backgrounds/bg-footer.svg');"
