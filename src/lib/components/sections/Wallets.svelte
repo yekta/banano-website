@@ -39,7 +39,7 @@
 			title: 'Reddit Tipbot',
 			description: 'Ideal for small amounts, to tip and get tipped on Reddit. It is fully managed.',
 			buttonText: 'Check on Reddit',
-			url: 'https://np.reddit.com/r/bananocoin/wiki/reddit-tipbot',
+			url: 'https://np.reddit.com/r/banano/wiki/reddit-tipbot',
 			img: 'reddit-tipbot'
 		}
 		/* 		{
