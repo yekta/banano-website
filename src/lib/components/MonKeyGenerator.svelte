@@ -206,7 +206,7 @@
 	.monkey-generator-container:after {
 		content: '';
 		display: block;
-		padding-bottom: calc(100% + 3rem);
+		padding-bottom: calc(100% + 4rem);
 	}
 	.a-ring-0 {
 		animation-delay: -1.2s;
