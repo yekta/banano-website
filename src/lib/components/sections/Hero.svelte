@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	/* 	import Banticles from '../Banticles.svelte'; */
+	import Banticles from '../Banticles.svelte';
 </script>
 
 <div class="text-c-bg w-full bg-c-secondary flex flex-col items-center justify-start text-center">
@@ -10,10 +10,10 @@
 			class="w-full bg-c-secondary min-h-[550px] md:min-h-[650px] bg-cover flex flex-row
 			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
 		>
-			<!-- 			<Banticles
+			<Banticles
 				particleSrc="/images/banana-for-particles.png"
 				lineColorRgb={{ r: 251, g: 221, b: 17 }}
-			/> -->
+			/>
 			<div
 				class="container-b max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10"
 			>
