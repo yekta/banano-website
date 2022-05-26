@@ -14,7 +14,7 @@
 				<div class="w-16 h-full bg-gradient-to-r from-c-bg/0 to-c-bg absolute right-0 top-0" />
 			</div>
 		</div>
-		<div class="w-full flex flex-col items-center px-4">
+		<div class="w-full flex flex-col items-center px-5">
 			<h2 class="text-3xl font-bold">Wrapped Banano</h2>
 			<p class="mt-3 text-lg container-b-small md:px-16 lg:px-24">
 				Use Banano to learn about and participate in DeFi in a fun & easy way! Our monkeys take your

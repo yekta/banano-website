@@ -49,8 +49,8 @@
 		class="w-full bg-cover bg-c-secondary flex justify-center pt-18 pb-16 text-center text-c-bg"
 	>
 		<div class="container-b flex flex-col items-center">
-			<h2 class="text-3xl font-bold px-4">Get Banano</h2>
-			<p class="mt-3 text-lg container-b-small px-4 md:px-16 lg:px-24">
+			<h2 class="text-3xl font-bold px-5">Get Banano</h2>
+			<p class="mt-3 text-lg container-b-small px-5 md:px-16 lg:px-24">
 				First, be sure to join our Discord, Reddit & Telegram. Then you can participate in random
 				airdrops, monkey around with random tips/rains. We also do giveaways on Twitter, real ones.
 				No need to send us any Ethereum.
@@ -73,8 +73,8 @@
 					</div>
 				{/each}
 			</div>
-			<h2 class="text-3xl font-bold px-4 mt-20">Banano Faucets</h2>
-			<p class="mt-3 text-lg container-b-small px-4 md:px-16 lg:px-24">
+			<h2 class="text-3xl font-bold px-5 mt-20">Banano Faucets</h2>
+			<p class="mt-3 text-lg container-b-small px-5 md:px-16 lg:px-24">
 				Once you joined our channels and set up a wallet, it's time to try our faucets. We have a
 				lot of them, so be sure to try each one.
 			</p>

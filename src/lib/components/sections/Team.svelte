@@ -13,8 +13,8 @@
 </script>
 
 <div id="team" class="w-full bg-c-bg flex justify-center py-6 text-center">
-	<div class="container-b flex flex-col items-center px-3 md:px-4">
-		<h2 class="text-3xl font-bold px-4">Meet the Overworked Team</h2>
+	<div class="container-b flex flex-col items-center px-4">
+		<h2 class="text-3xl font-bold px-1">Meet the Overworked Team</h2>
 		<div class="container-b flex flex-wrap justify-center mt-4 md:px-16 lg:px-20">
 			{#each teamShuffled as teamMember, index}
 				<div

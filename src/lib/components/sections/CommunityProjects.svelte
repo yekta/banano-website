@@ -10,7 +10,7 @@
 	style="background-image:url('/illustrations/backgrounds/bg-community.svg');"
 	class="w-full bg-cover bg-c-secondary flex justify-center pt-16 pb-18 text-center text-c-bg"
 >
-	<div class="container-b flex flex-col items-center px-4">
+	<div class="container-b flex flex-col items-center px-5">
 		<h2 class="text-3xl font-bold">Community Projects</h2>
 		<p class="mt-3 text-lg container-b-small md:px-16 lg:px-24">
 			Here are some of the projects that are made by our awesome community:

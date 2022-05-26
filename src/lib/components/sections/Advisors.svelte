@@ -41,7 +41,7 @@
 		<div class="container-b-small px-4 md:px-6">
 			<div class="w-full bg-c-primary h-1 rounded-full" />
 		</div>
-		<h2 class="text-3xl font-bold px-4 md:px-12 mt-16">
+		<h2 class="text-3xl font-bold px-3 md:px-12 mt-16">
 			Inspired by the industry's least trusted masterminds
 		</h2>
 		<div class="container-b-small flex flex-wrap justify-center mt-5">

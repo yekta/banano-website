@@ -68,7 +68,7 @@
 	class="w-full flex justify-center relative -mt-8 pt-24 pb-20 px-4 md:px-12 text-center"
 >
 	<div class="container-b flex flex-col items-center">
-		<h2 class="text-3xl font-bold px-4">Wallets</h2>
+		<h2 class="text-3xl font-bold px-5">Wallets</h2>
 		<div class="container-b max-w-full flex flex-row flex-wrap justify-center -mt-8">
 			{#each wallets as wallet}
 				<div

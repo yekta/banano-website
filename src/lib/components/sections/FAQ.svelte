@@ -18,9 +18,9 @@
 </script>
 
 <div id="faq" class="w-full flex justify-center -mt-8 pt-24 pb-8">
-	<div class="container-b flex flex-col items-center px-4">
-		<h2 class="text-3xl font-bold text-center">Frequently Asked Questions</h2>
-		<div class="w-full flex flex-wrap max-w-2xl justify-center mt-6">
+	<div class="container-b flex flex-col items-center">
+		<h2 class="text-3xl font-bold text-center px-5">Frequently Asked Questions</h2>
+		<div class="w-full flex flex-wrap max-w-2xl justify-center mt-6 px-4">
 			{#each editedFaq as singleFaq, index}
 				<div
 					class="mt-3.5 w-full flex flex-col items-start justify-start bg-c-bg-secondary-shaded rounded-xl"

@@ -17,7 +17,7 @@
 			<div
 				class="container-b max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10"
 			>
-				<h1 class="w-220 max-w-full text-2xl font-medium leading-relaxed px-4 md:px-12">
+				<h1 class="w-220 max-w-full text-2xl font-medium leading-relaxed px-5 md:px-12">
 					Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology
 					disrupting the meme economy.
 				</h1>

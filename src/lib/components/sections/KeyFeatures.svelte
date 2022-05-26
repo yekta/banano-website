@@ -19,11 +19,11 @@
 
 <div
 	id="key-features"
-	class="w-full flex justify-center bg-c-bg relative -mt-2 pt-10 px-4 text-center"
+	class="w-full flex justify-center bg-c-bg relative -mt-2 pt-10 px-5 text-center"
 >
 	<div class="container-b flex flex-col items-center md:px-4">
-		<h2 class="text-3xl font-bold px-4">Key Features</h2>
-		<p class="mt-3 text-lg container-b-small px-2 md:px-16 lg:px-24">
+		<h2 class="text-3xl font-bold">Key Features</h2>
+		<p class="mt-3 text-lg container-b-small md:px-16 lg:px-24">
 			Banano is a 4th generation fungible & edible cryptocurrency with a cool yellow logo. Our team
 			is top-notch and the project advisors are by a moonshot best in the business.
 		</p>

@@ -20,7 +20,7 @@
 
 <div id="roadmap" class="w-full flex justify-center -mt-8 pt-24 pb-12">
 	<div class="container-b flex flex-col items-center px-4 md:px-12">
-		<h2 class="text-3xl font-bold">Bumpy Roadmap</h2>
+		<h2 class="text-3xl font-bold px-1">Bumpy Roadmap</h2>
 		<div
 			class="relative rounded-xl bg-c-secondary/5 border-2 border-c-secondary/15 overflow-hidden mt-8"
 		>
