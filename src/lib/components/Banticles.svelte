@@ -48,6 +48,7 @@
 	$: if (imgLoaded && canvas) init();
 
 	function init() {
+		context = canvas.getContext('2d');
 		dpr = window.devicePixelRatio;
 		if (dpr > 1) {
 			canvas.width = containerWidth * dpr;
@@ -59,7 +60,6 @@
 			canvas.width = containerWidth;
 			canvas.height = containerHeight;
 		}
-		context = canvas.getContext('2d');
 		window.requestAnimationFrame(draw);
 	}
 
