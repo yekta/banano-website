@@ -189,10 +189,15 @@
 		context?.stroke();
 	}
 
-	function handleMouseMove(e: MouseEvent) {
+	const handleMouseMove = (e: MouseEvent) => {
 		mouseX = e.clientX;
 		mouseY = e.clientY;
-	}
+	};
+
+	const handleMouseDown = (e: MouseEvent) => {
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+	};
 
 	const minX = () => -1 * img.width;
 	const maxX = () => containerWidth + img.width;
@@ -216,6 +221,14 @@
 		return Math.ceil((area / particleArea) * density);
 	};
 
+	const onEnter = () => {
+		if (isBanticlesPaused) {
+			isBanticlesPaused = false;
+			window.requestAnimationFrame(draw);
+		}
+	};
+	const onExit = () => (isBanticlesPaused = true);
+
 	onMount(() => {
 		img = new Image();
 		img.src = particleSrc;
@@ -227,16 +240,11 @@
 	});
 </script>
 
-<svelte:window on:mousemove={handleMouseMove} />
+<svelte:window on:mousemove={handleMouseMove} on:mousedown={handleMouseDown} />
 <div
 	use:inView
-	on:enter={() => {
-		if (isBanticlesPaused) {
-			isBanticlesPaused = false;
-			window.requestAnimationFrame(draw);
-		}
-	}}
-	on:exit={() => (isBanticlesPaused = true)}
+	on:enter={onEnter}
+	on:exit={onExit}
 	bind:clientWidth={containerWidth}
 	bind:clientHeight={containerHeight}
 	class="w-full h-full absolute left-0 top-0 overflow-hidden"
