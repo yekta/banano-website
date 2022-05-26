@@ -44,7 +44,6 @@
 	let { r, g, b } = lineColorRgb;
 	let particleCount: number;
 	let particleArea: number;
-	let requestAnimationFrameFunc: any;
 
 	let img: HTMLImageElement;
 	let imgLoaded = false;
@@ -56,21 +55,14 @@
 	$: if (imgLoaded && canvas !== undefined) init();
 
 	function init() {
-		canvas.width = containerWidth;
-		canvas.height = containerHeight;
 		context = canvas.getContext('2d');
-		/* 		dpr = window.devicePixelRatio;
-		if (dpr > 1) {
-			canvas.width = containerWidth * dpr;
-			canvas.height = containerHeight * dpr;
-			canvas.style.width = containerWidth + 'px';
-			canvas.style.height = containerHeight + 'px';
-			context.scale(dpr, dpr);
-		} else {
-			canvas.width = containerWidth;
-			canvas.height = containerHeight;
-		} */
-		requestAnimationFrameFunc(draw);
+		dpr = Math.max(Math.min(window.devicePixelRatio, 2), 1);
+		canvas.width = containerWidth * dpr;
+		canvas.height = containerHeight * dpr;
+		context.scale(dpr, dpr);
+		canvas.style.width = containerWidth + 'px';
+		canvas.style.height = containerHeight + 'px';
+		window.requestAnimationFrame(draw);
 	}
 
 	function createNewParticle(isInitial = false): IParticle {
@@ -124,7 +116,7 @@
 	}
 
 	function draw() {
-		if (containerHeight > canvas.height /* / dpr */ || containerWidth > canvas.width /*  / dpr */) {
+		if (containerHeight > canvas.height / dpr || containerWidth > canvas.width / dpr) {
 			init();
 			return;
 		}
@@ -192,7 +184,7 @@
 				particles.push(createNewParticle());
 			}
 		}
-		if (!isBanticlesPaused) requestAnimationFrameFunc(draw);
+		if (!isBanticlesPaused) window.requestAnimationFrame(draw);
 	}
 
 	const drawLine = (x1: number, y1: number, x2: number, y2: number, opacity: number) => {
@@ -227,7 +219,7 @@
 	const onEnter = () => {
 		if (isBanticlesPaused) {
 			isBanticlesPaused = false;
-			requestAnimationFrameFunc(draw);
+			window.requestAnimationFrame(draw);
 		}
 	};
 	const onExit = () => (isBanticlesPaused = true);
@@ -245,17 +237,6 @@
 			setParticleCount();
 			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
 		};
-		const aWindow = window as any;
-		requestAnimationFrameFunc =
-			aWindow.requestAnimationFrame ||
-			aWindow.mozRequestAnimationFrame ||
-			aWindow.webkitRequestAnimationFrame ||
-			aWindow.msRequestAnimationFrame ||
-			function (callback: any) {
-				return window.setTimeout(function () {
-					callback(Date.now());
-				}, 1000 / 60);
-			};
 	});
 </script>
 
