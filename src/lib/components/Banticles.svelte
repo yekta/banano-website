@@ -59,7 +59,7 @@
 		dpr = Math.max(Math.min(window.devicePixelRatio, 2), 1);
 		canvas.width = containerWidth * dpr;
 		canvas.height = containerHeight * dpr;
-		context.scale(dpr, dpr);
+		if (dpr > 1) context.scale(dpr, dpr);
 		canvas.style.width = containerWidth + 'px';
 		canvas.style.height = containerHeight + 'px';
 		window.requestAnimationFrame(draw);
@@ -120,6 +120,7 @@
 			init();
 			return;
 		}
+
 		context?.clearRect(
 			-0.5 * canvas.width,
 			-0.5 * canvas.height,
@@ -249,6 +250,9 @@
 	bind:clientHeight={containerHeight}
 	class="w-full h-full absolute left-0 top-0 overflow-hidden z-0"
 >
+	<div class="absolute left-0 top-0">
+		<p>{mouseX}, {mouseY}</p>
+	</div>
 	{#if containerWidth !== undefined && containerHeight !== undefined}
 		<canvas in:fade={{ duration: 300 }} bind:this={canvas} />
 	{/if}
