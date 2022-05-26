@@ -138,9 +138,9 @@
 			shadow-c-secondary/13 absolute left-0 top-0 w-full h-full pointer-events-none ring-4 ring-c-bg-shaded"
 	/>
 	<div
-		class="{notAtTheTop
-			? 'py-2'
-			: 'py-3'} transition-all container-b-larger max-w-full flex flex-row items-center justify-between px-4 relative"
+		class="py-2 {notAtTheTop
+			? 'translate-y-0'
+			: 'translate-y-1'} transition container-b-larger max-w-full flex flex-row items-center justify-between px-4 relative"
 	>
 		<a
 			aria-label="Logo Link to Homescreen"
