@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$lib/css/yellowpaper.css';
 	import { onMount } from 'svelte';
 
 	onMount(() => {

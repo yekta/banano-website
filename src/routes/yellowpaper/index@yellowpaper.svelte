@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/css/yellowpaper.css';
 	import { page } from '$app/stores';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
@@ -21,7 +22,6 @@
 	import inView from '$lib/ts/actions/inView';
 	import { slideAcrossScreen } from '$lib/ts/transitions';
 	import { afterNavigate } from '$app/navigation';
-	import Button from '$lib/components/Button.svelte';
 	import IconArrow from '$lib/components/icons/IconArrow.svelte';
 
 	const title = 'Yellowpaper™ | Banano';

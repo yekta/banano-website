@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+
 @font-face {
 	font-family: 'lm-roman-10';
 	font-weight: 400;
@@ -29,6 +32,12 @@
 		url('/fonts/lm-roman-10/lm-roman-10-700-italic.woff') format('woff');
 	font-display: auto;
 	font-style: italic;
+}
+
+body {
+	font-family: lm-roman-10, serif;
+	color: rgb(var(--c-yellowpaper-on-bg));
+	background-color: rgb(var(--c-yellowpaper-document-bg));
 }
 
 .yellowpaper {
@@ -89,3 +98,5 @@
 .yellowpaper li {
 	margin-top: 1.5ch;
 }
+
+@tailwind utilities;
