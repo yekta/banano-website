@@ -56,8 +56,10 @@
 	$: if (imgLoaded && canvas !== undefined) init();
 
 	function init() {
+		canvas.width = containerWidth;
+		canvas.height = containerHeight;
 		context = canvas.getContext('2d');
-		dpr = window.devicePixelRatio;
+		/* 		dpr = window.devicePixelRatio;
 		if (dpr > 1) {
 			canvas.width = containerWidth * dpr;
 			canvas.height = containerHeight * dpr;
@@ -67,7 +69,7 @@
 		} else {
 			canvas.width = containerWidth;
 			canvas.height = containerHeight;
-		}
+		} */
 		requestAnimationFrameFunc(draw);
 	}
 
@@ -122,7 +124,7 @@
 	}
 
 	function draw() {
-		if (containerHeight > canvas.height / dpr || containerWidth > canvas.width / dpr) {
+		if (containerHeight > canvas.height /* / dpr */ || containerWidth > canvas.width /*  / dpr */) {
 			init();
 			return;
 		}
@@ -190,7 +192,7 @@
 				particles.push(createNewParticle());
 			}
 		}
-		/* 		if (!isBanticlesPaused) requestAnimationFrameFunc(draw); */
+		if (!isBanticlesPaused) requestAnimationFrameFunc(draw);
 	}
 
 	const drawLine = (x1: number, y1: number, x2: number, y2: number, opacity: number) => {
