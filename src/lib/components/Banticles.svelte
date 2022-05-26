@@ -3,12 +3,14 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	export let density = 0.13;
-	export let lineOpacity = 0.5;
-	export let lineConnectionThreshold = 300;
-	export let animDurationMultiplier = 15;
 	export let particleSrc: string;
 	export let lineColorRgb: IRgb;
+	export const density = 0.13;
+	export const lineOpacity = 0.5;
+	export const lineConnectionThreshold = 400;
+	export const animDurationMultiplier = 15;
+	export const particleScaleMin = 0.1;
+	export const particleScaleMax = 0.7;
 
 	interface IRgb {
 		r: number;
@@ -33,6 +35,7 @@
 	let particles: IParticle[];
 	let containerWidth: number;
 	let containerHeight: number;
+	let containerArea: number;
 	let context: any;
 	let canvas: HTMLCanvasElement;
 	let mouseX: number;
@@ -40,12 +43,16 @@
 	let isBanticlesPaused = false;
 	let { r, g, b } = lineColorRgb;
 	let particleCount: number;
+	let particleArea: number;
 
 	let img: HTMLImageElement;
 	let imgLoaded = false;
 	let dpr: number;
 
-	$: if (imgLoaded && canvas) init();
+	$: if (containerHeight !== undefined && containerWidth !== undefined)
+		containerArea = containerHeight * containerWidth;
+	$: if (containerArea !== undefined && particleArea !== undefined) setParticleCount();
+	$: if (imgLoaded && canvas !== undefined) init();
 
 	function init() {
 		context = canvas.getContext('2d');
@@ -64,8 +71,8 @@
 	}
 
 	function createNewParticle(isInitial = false): IParticle {
-		let randFlip = Math.round(Math.random());
-		let randSpeedAndScale = Math.random();
+		const randFlip = Math.round(Math.random());
+		const randSpeedAndScale = Math.random();
 		let x1: number;
 		let y1: number;
 		let x2: number;
@@ -95,8 +102,8 @@
 		}
 
 		const distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+		const scale = particleScaleMin + randSpeedAndScale * (particleScaleMax - particleScaleMin);
 		const speed = 1;
-		const scale = randSpeedAndScale * 0.6 + 0.1;
 
 		return {
 			startX: x1,
@@ -118,20 +125,19 @@
 			init();
 			return;
 		}
-		particleCount = calculateParticleCount();
 		context?.clearRect(
 			-0.5 * canvas.width,
 			-0.5 * canvas.height,
 			canvas.width * 2,
 			canvas.height * 2
 		);
-		let milliseconds = Date.now();
+		const now = Date.now();
 		for (let i = 0; i < particles.length; i++) {
-			let particle = particles[i];
-			let diff = milliseconds - particle.birth;
-			let currentX =
+			const particle = particles[i];
+			const diff = now - particle.birth;
+			const currentX =
 				particle.startX + (particle.endX - particle.startX) * (diff / particle.duration);
-			let currentY =
+			const currentY =
 				particle.startY + (particle.endY - particle.startY) * (diff / particle.duration);
 			if (currentX < minX() || currentX > maxX() || currentY < minY() || currentY > maxY()) {
 				particles.splice(i, 1);
@@ -147,23 +153,23 @@
 					particle.scaledSize,
 					particle.scaledSize
 				);
-				particle.currentX = currentX;
-				particle.currentY = currentY;
-				let halfSize = particle.scaledSize / 2;
+				const halfSize = particle.scaledSize / 2;
 				if (isMouseInsideCanvas()) {
-					let distance = Math.sqrt(Math.pow(currentX - mouseX, 2) + Math.pow(currentY - mouseY, 2));
-					let opacity = 1 - distance / lineConnectionThreshold;
+					const distance = Math.sqrt(
+						Math.pow(currentX - mouseX, 2) + Math.pow(currentY - mouseY, 2)
+					);
+					const opacity = 1 - distance / lineConnectionThreshold;
 					drawLine(currentX + halfSize, currentY + halfSize, mouseX, mouseY, opacity);
 				}
 				for (let y = i; y > 0; y--) {
-					let otherParticle = particles[y];
-					let distance = Math.sqrt(
+					const otherParticle = particles[y];
+					const distance = Math.sqrt(
 						Math.pow(currentX - otherParticle.currentX, 2) +
 							Math.pow(currentY - otherParticle.currentY, 2)
 					);
 					if (distance < lineConnectionThreshold) {
-						let opacity = lineOpacity - distance / lineConnectionThreshold;
-						let halfSizeOther = otherParticle.scaledSize / 2;
+						const opacity = lineOpacity - distance / lineConnectionThreshold;
+						const halfSizeOther = otherParticle.scaledSize / 2;
 						drawLine(
 							currentX + halfSize,
 							currentY + halfSize,
@@ -174,7 +180,12 @@
 					}
 				}
 			}
-			while (particles.length < particleCount) {
+			particle.currentX = currentX;
+			particle.currentY = currentY;
+		}
+		const countDiff = particleCount - particles.length;
+		if (countDiff > 0) {
+			for (let j = 0; j < countDiff; j++) {
 				particles.push(createNewParticle());
 			}
 		}
@@ -194,10 +205,10 @@
 		mouseY = e.clientY;
 	};
 
-	const minX = () => -1 * img.width;
-	const maxX = () => containerWidth + img.width;
-	const minY = () => -1 * img.height;
-	const maxY = () => containerHeight + img.height;
+	const minX = () => -1 * img.naturalWidth;
+	const maxX = () => containerWidth + img.naturalWidth;
+	const minY = () => -1 * img.naturalHeight;
+	const maxY = () => containerHeight + img.naturalHeight;
 
 	const randomizedX = () => random(minX(), maxX());
 	const randomizedY = () => random(minY(), maxY());
@@ -210,12 +221,6 @@
 		return mouseX > left && mouseX < left + width && mouseY > top && mouseY < top + height;
 	};
 
-	const calculateParticleCount = () => {
-		let area = containerWidth * containerHeight;
-		let particleArea = img.width * img.height;
-		return Math.ceil((area / particleArea) * density);
-	};
-
 	const onEnter = () => {
 		if (isBanticlesPaused) {
 			isBanticlesPaused = false;
@@ -224,12 +229,17 @@
 	};
 	const onExit = () => (isBanticlesPaused = true);
 
+	const setParticleCount = () =>
+		(particleCount = Math.ceil((containerArea / particleArea) * density));
+
 	onMount(() => {
 		img = new Image();
 		img.src = particleSrc;
 		img.onload = () => {
 			imgLoaded = true;
-			particleCount = calculateParticleCount();
+			particleArea = img.naturalWidth * img.naturalHeight;
+			containerArea = containerHeight * containerWidth;
+			setParticleCount();
 			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
 		};
 	});

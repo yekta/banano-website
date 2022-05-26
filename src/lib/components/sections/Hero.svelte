@@ -7,7 +7,7 @@
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
 			style="background-image:url('/illustrations/backgrounds/bg-hero.svg');"
-			class="w-full bg-c-secondary min-h-[550px] md:min-h-[720px] bg-cover flex flex-row
+			class="w-full bg-c-secondary min-h-[550px] md:min-h-[650px] bg-cover flex flex-row
 			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
 		>
 			<Banticles
