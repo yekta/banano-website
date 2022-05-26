@@ -44,6 +44,7 @@
 	let { r, g, b } = lineColorRgb;
 	let particleCount: number;
 	let particleArea: number;
+	let requestAnimationFrameFunc: any;
 
 	let img: HTMLImageElement;
 	let imgLoaded = false;
@@ -67,7 +68,7 @@
 			canvas.width = containerWidth;
 			canvas.height = containerHeight;
 		}
-		window.requestAnimationFrame(draw);
+		requestAnimationFrameFunc(draw);
 	}
 
 	function createNewParticle(isInitial = false): IParticle {
@@ -189,7 +190,7 @@
 				particles.push(createNewParticle());
 			}
 		}
-		if (!isBanticlesPaused) window.requestAnimationFrame(draw);
+		if (!isBanticlesPaused) requestAnimationFrameFunc(draw);
 	}
 
 	const drawLine = (x1: number, y1: number, x2: number, y2: number, opacity: number) => {
@@ -224,7 +225,7 @@
 	const onEnter = () => {
 		if (isBanticlesPaused) {
 			isBanticlesPaused = false;
-			window.requestAnimationFrame(draw);
+			requestAnimationFrameFunc(draw);
 		}
 	};
 	const onExit = () => (isBanticlesPaused = true);
@@ -242,6 +243,12 @@
 			setParticleCount();
 			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
 		};
+		const aWindow = window as any;
+		requestAnimationFrameFunc =
+			aWindow.requestAnimationFrame ||
+			aWindow.mozRequestAnimationFrame ||
+			aWindow.webkitRequestAnimationFrame ||
+			aWindow.msRequestAnimationFrame;
 	});
 </script>
 

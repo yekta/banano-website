@@ -19,3 +19,11 @@ declare namespace svelte.JSX {
 		onexit?: (event: CustomEvent<DndEvent> & { target: EventTarget & T }) => void;
 	}
 }
+
+declare global {
+	interface Window {
+		mozRequestAnimationFrame: any;
+		webkitRequestAnimationFrame: any;
+		msRequestAnimationFrame: any;
+	}
+}
