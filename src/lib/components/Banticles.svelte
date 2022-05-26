@@ -190,7 +190,7 @@
 				particles.push(createNewParticle());
 			}
 		}
-		if (!isBanticlesPaused) requestAnimationFrameFunc(draw);
+		/* 		if (!isBanticlesPaused) requestAnimationFrameFunc(draw); */
 	}
 
 	const drawLine = (x1: number, y1: number, x2: number, y2: number, opacity: number) => {
