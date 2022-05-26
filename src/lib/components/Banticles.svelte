@@ -48,7 +48,6 @@
 	$: if (imgLoaded && canvas) init();
 
 	function init() {
-		context = canvas.getContext('2d');
 		dpr = window.devicePixelRatio;
 		if (dpr > 1) {
 			canvas.width = containerWidth * dpr;
@@ -60,6 +59,7 @@
 			canvas.width = containerWidth;
 			canvas.height = containerHeight;
 		}
+		context = canvas.getContext('2d');
 		window.requestAnimationFrame(draw);
 	}
 
@@ -181,13 +181,13 @@
 		if (!isBanticlesPaused) window.requestAnimationFrame(draw);
 	}
 
-	function drawLine(x1: number, y1: number, x2: number, y2: number, opacity: number) {
+	const drawLine = (x1: number, y1: number, x2: number, y2: number, opacity: number) => {
 		context?.beginPath();
 		context?.moveTo(x1, y1);
 		context?.lineTo(x2, y2);
 		context.strokeStyle = `rgba(${r},${g},${b},${opacity})`;
 		context?.stroke();
-	}
+	};
 
 	const handleMouseMove = (e: MouseEvent) => {
 		mouseX = e.clientX;
