@@ -18,7 +18,7 @@ The Banano Republic dictator trainee
 
 ### Renesq
 
-Gandalf level code wizard and chronice procrastinator
+Gandalf level code wizard and chronic procrastinator
 
 ### Coranos
 
