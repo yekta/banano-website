@@ -145,7 +145,7 @@
 		<a
 			aria-label="Logo Link to Homescreen"
 			href="/"
-			class="mr-12 pt-2 pb-2.5 px-1 group rounded-lg relative z-0"
+			class="mr-12 pt-2 pb-2 md:pb-2.5 px-1 group rounded-lg relative z-0"
 		>
 			<Logo
 				class="{notAtTheTop
