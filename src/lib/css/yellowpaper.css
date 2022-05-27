@@ -1,39 +1,6 @@
 @tailwind base;
 @tailwind components;
 
-@font-face {
-	font-family: 'lm-roman-10';
-	font-weight: 400;
-	src: url('/fonts/lm-roman-10/lm-roman-10-400.woff2') format('woff2'),
-		url('/fonts/lm-roman-10/lm-roman-10-400.woff') format('woff');
-	font-display: swap;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'lm-roman-10';
-	font-weight: 400;
-	src: url('/fonts/lm-roman-10/lm-roman-10-400-italic.woff2') format('woff2'),
-		url('/fonts/lm-roman-10/lm-roman-10-400-italic.woff') format('woff');
-	font-display: swap;
-	font-style: italic;
-}
-@font-face {
-	font-family: 'lm-roman-10';
-	font-weight: 700;
-	src: url('/fonts/lm-roman-10/lm-roman-10-700.woff2') format('woff2'),
-		url('/fonts/lm-roman-10/lm-roman-10-700.woff') format('woff');
-	font-display: swap;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'lm-roman-10';
-	font-weight: 700;
-	src: url('/fonts/lm-roman-10/lm-roman-10-700-italic.woff2') format('woff2'),
-		url('/fonts/lm-roman-10/lm-roman-10-700-italic.woff') format('woff');
-	font-display: swap;
-	font-style: italic;
-}
-
 body {
 	font-family: lm-roman-10, serif;
 	color: rgb(var(--c-yellowpaper-on-bg));

@@ -1,31 +1,6 @@
 @tailwind base;
 @tailwind components;
 
-@font-face {
-	font-family: 'filson-pro';
-	font-weight: 400;
-	src: url('/fonts/filson-pro/filson-pro-400.woff2') format('woff2'),
-		url('/fonts/filson-pro/filson-pro-400.woff') format('woff');
-	font-display: swap;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'filson-pro';
-	font-weight: 500;
-	src: url('/fonts/filson-pro/filson-pro-500.woff2') format('woff2'),
-		url('/fonts/filson-pro/filson-pro-500.woff') format('woff');
-	font-display: swap;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'filson-pro';
-	font-weight: 700;
-	src: url('/fonts/filson-pro/filson-pro-700.woff2') format('woff2'),
-		url('/fonts/filson-pro/filson-pro-700.woff') format('woff');
-	font-display: swap;
-	font-style: normal;
-}
-
 body {
 	font-family: filson-pro, sans-serif;
 	color: rgb(var(--c-on-bg));

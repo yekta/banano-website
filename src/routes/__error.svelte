@@ -24,7 +24,7 @@
 	});
 </script>
 
-<main class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
+<div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
 			style="background-image:url('/illustrations/backgrounds/bg-hero.svg');"
@@ -58,4 +58,4 @@
 			/>
 		</div>
 	</div>
-</main>
+</div>
