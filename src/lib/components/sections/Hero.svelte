@@ -21,7 +21,7 @@
 					Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology
 					disrupting the meme economy.
 				</h1>
-				<div on:click={() => window.plausible('Get Banano Click')}>
+				<div on:click={() => window.plausible('Get Banano Clicked')}>
 					<Button href="/#get-banano" padding="px-14 md:px-16 py-3.5" class="mt-6">
 						Get Banano
 					</Button>
