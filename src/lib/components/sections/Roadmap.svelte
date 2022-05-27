@@ -47,7 +47,7 @@
 							<div class="flex flex-row flex-wrap mt-1 md:mt-2">
 								{#each item.entries as entry}
 									<div
-										class="flex-grow md:flex-none w-[100%-1rem] md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)] xl:w-[calc(25%-1rem)] m-2 bg-c-bg flex flex-col border-2 border-c-secondary/60 border-dotted rounded-xl p-1.5"
+										class="flex-grow md:flex-none w-[100%-1rem] md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)] xl:w-[calc(25%-1rem)] mx-2 my-1 md:m-2 bg-c-bg flex flex-col border-2 border-c-secondary/60 border-dotted rounded-xl p-1.5"
 									>
 										<h4
 											class="w-full font-bold bg-c-secondary/13 text-c-secondary px-3 py-1 rounded-md"
