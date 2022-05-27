@@ -59,6 +59,10 @@ module.exports = {
 				'c-yellowpaper-document-bg': withOpacityValue('--c-yellowpaper-document-bg'),
 				'c-yellowpaper-primary': withOpacityValue('--c-yellowpaper-primary')
 			},
+			maxWidth: {
+				xxs: '16rem',
+				xxxs: '12rem'
+			},
 			spacing: {
 				'3px': '3px',
 				0.75: '0.1875rem',

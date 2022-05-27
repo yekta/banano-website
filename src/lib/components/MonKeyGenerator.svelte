@@ -122,8 +122,8 @@
 					class="w-full px-4 flex flex-row justify-center absolute bottom-0 pb-5"
 				>
 					<Button
-						padding="px-8 md:px-16 py-3"
-						class="max-w-full"
+						padding="px-8 py-3"
+						class="w-full max-w-xxxs"
 						type="primary"
 						onClick={resetGeneration}
 					>
@@ -170,8 +170,8 @@
 						class="w-full px-4 flex flex-row justify-center absolute bottom-0 py-5"
 					>
 						<Button
-							padding="px-8 md:px-14 py-3"
-							class="max-w-full"
+							padding="px-8 py-3"
+							class="w-full max-w-xxxs"
 							type="secondary"
 							onClick={generateRandomMonkey}
 						>

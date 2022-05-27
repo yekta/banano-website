@@ -53,7 +53,7 @@
 				padding="py-3.5 px-8 md:px-14"
 				href="https://wrap.banano.cc/?ref=banano.cc"
 				target="_blank"
-				class="mt-10">Start Wrapping</Button
+				class="mt-10 w-full max-w-xxs">Start Wrapping</Button
 			>
 		</div>
 		<div class="container-b-small mt-16 px-4 md:px-8">
