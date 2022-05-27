@@ -1,0 +1,187 @@
+The logos, illustrations, animations and all artwork including those in the "src/static" folder are copyrighted by Appditto LLC and used by permission for this project only.
+
+Use of these assets without express written consent from Appditto LLC for any reason is strictly forbidden
+
+Copyrighted assets include, but are not limited to:
+- static/apple-touch-icon.png
+- static/icon-192.png
+- static/icon-512.png
+- static/icon.svg
+- static/favicon.png
+- static/illustrations/advisors/advisor-bummer.svg
+- static/illustrations/advisors/advisor-carlos.svg
+- static/illustrations/advisors/advisor-pajeet.svg
+- static/illustrations/advisors/advisor-satoshi.svg
+- static/illustrations/advisors/advisor-trevon.svg
+- static/illustrations/dancing-banana/dancing-banana-0.svg
+- static/illustrations/dancing-banana/dancing-banana-1.svg
+- static/illustrations/dancing-banana/dancing-banana-2.svg
+- static/illustrations/dancing-banana/dancing-banana-3.svg
+- static/illustrations/dancing-banana/dancing-banana-4.svg
+- static/illustrations/dancing-banana/dancing-banana-5.svg
+- static/illustrations/dancing-banana/dancing-banana-6.svg
+- static/illustrations/dancing-banana/dancing-banana-7.svg
+- static/illustrations/foreground/press-kit.svg
+- static/illustrations/foreground/squiggle.svg
+- static/illustrations/foreground/yellowpaper.svg
+- static/illustrations/key-features/airdrops.svg
+- static/illustrations/key-features/block-lettuce.svg
+- static/illustrations/key-features/fungible.svg
+- static/illustrations/key-features/instant-feeless.svg
+- static/illustrations/key-features/memes.svg
+- static/illustrations/key-features/shitcoin.svg
+- static/illustrations/key-features/trees.svg
+- static/illustrations/key-features/units.svg
+- static/images/banano-homepage.png
+- static/images/wallets/banano-vault.png
+- static/images/wallets/discord-tipbot.png
+- static/images/wallets/kalium-wallet.png
+- static/images/wallets/reddit-tipbot.png
+- static/images/wallets/telegram-tipbot.png
+- static/images/wallets/twitter-tipbot.png
+- static/presskit/assets/icon/png/banano-icon@1024px.png
+- static/presskit/assets/icon/png/banano-icon@128px.png
+- static/presskit/assets/icon/png/banano-icon@16px.png
+- static/presskit/assets/icon/png/banano-icon@200px.png
+- static/presskit/assets/icon/png/banano-icon@2048px.png
+- static/presskit/assets/icon/png/banano-icon@256px.png
+- static/presskit/assets/icon/png/banano-icon@32px.png
+- static/presskit/assets/icon/png/banano-icon@4096px.png
+- static/presskit/assets/icon/png/banano-icon@512px.png
+- static/presskit/assets/icon/png/banano-icon@64px.png
+- static/presskit/assets/wban-logo/bsc/logo-100.png
+- static/presskit/assets/wban-logo/bsc/logo-1024.png
+- static/presskit/assets/wban-logo/bsc/logo-16.png
+- static/presskit/assets/wban-logo/bsc/logo-200.png
+- static/presskit/assets/wban-logo/bsc/logo-24.png
+- static/presskit/assets/wban-logo/bsc/logo-256.png
+- static/presskit/assets/wban-logo/bsc/logo-32.png
+- static/presskit/assets/wban-logo/bsc/logo-512.png
+- static/presskit/assets/wban-logo/bsc/logo.svg
+- static/presskit/assets/wban-logo/ftm/logo-100.png
+- static/presskit/assets/wban-logo/ftm/logo-1024.png
+- static/presskit/assets/wban-logo/ftm/logo-16.png
+- static/presskit/assets/wban-logo/ftm/logo-200.png
+- static/presskit/assets/wban-logo/ftm/logo-24.png
+- static/presskit/assets/wban-logo/ftm/logo-256.png
+- static/presskit/assets/wban-logo/ftm/logo-32.png
+- static/presskit/assets/wban-logo/ftm/logo-512.png
+- static/presskit/assets/wban-logo/ftm/logo.svg
+- static/presskit/assets/wban-logo/matic/logo-100.png
+- static/presskit/assets/wban-logo/matic/logo-1024.png
+- static/presskit/assets/wban-logo/matic/logo-16.png
+- static/presskit/assets/wban-logo/matic/logo-200.png
+- static/presskit/assets/wban-logo/matic/logo-24.png
+- static/presskit/assets/wban-logo/matic/logo-256.png
+- static/presskit/assets/wban-logo/matic/logo-32.png
+- static/presskit/assets/wban-logo/matic/logo-512.png
+- static/presskit/assets/wban-logo/matic/logo.svg
+- static/presskit/banano-icon-w.svg
+- static/presskit/banano-icon.png
+- static/presskit/banano-icon.svg
+- static/presskit/banano-logo-vertical-w.svg
+- static/presskit/banano-logo-vertical.png
+- static/presskit/banano-logo-vertical.svg
+- static/presskit/banano-logo-w.svg
+- static/presskit/banano-logo.png
+- static/presskit/banano-logo.svg
+- static/presskit/banano-mark-w.svg
+- static/presskit/banano-mark.png
+- static/presskit/banano-mark.svg
+- static/presskit/filson-pro.svg
+- static/presskit/overpass-mono.svg
+- static/previews/home.jpg
+- static/previews/presskit.jpg
+- static/previews/redeem.jpg
+- static/previews/yellowpaper.jpg
+- static/redeem/android.svg
+- static/redeem/iphone.svg
+- static/redeem/kalium-new-wallet.png
+- static/redeem/kalium-settings-closed.png
+- static/redeem/kalium-settings-open.png
+- static/redeem/kalium-transfer-funds.png
+- static/yellowpaper/banano-miner.jpeg
+- static/yellowpaper/banano-vs-bitcoin.png
+- static/yellowpaper/black-monkey.jpeg
+- static/yellowpaper/block-lettuce.png
+- static/yellowpaper/buy-back.jpeg
+- static/yellowpaper/camo.jpeg
+- static/yellowpaper/crane-faucet.jpeg
+- static/yellowpaper/deadpool.png
+- static/yellowpaper/kalium-clay.png
+- static/yellowpaper/kalium.png
+- static/yellowpaper/ledger.png
+- static/yellowpaper/lqip/airdrop.png
+- static/yellowpaper/lqip/banano-miner-animation.png
+- static/yellowpaper/lqip/banano-miner.png
+- static/yellowpaper/lqip/banano-runner.png
+- static/yellowpaper/lqip/banano-vs-bitcoin.png
+- static/yellowpaper/lqip/bananorocket.png
+- static/yellowpaper/lqip/banburner.png
+- static/yellowpaper/lqip/black-monkey.png
+- static/yellowpaper/lqip/block-lettuce.png
+- static/yellowpaper/lqip/buy-back.png
+- static/yellowpaper/lqip/camo.png
+- static/yellowpaper/lqip/colin-likes-banano.png
+- static/yellowpaper/lqip/crane-faucet.png
+- static/yellowpaper/lqip/deadpool.png
+- static/yellowpaper/lqip/discord-tipbot.png
+- static/yellowpaper/lqip/factory.png
+- static/yellowpaper/lqip/kalium-clay.png
+- static/yellowpaper/lqip/kalium-send.png
+- static/yellowpaper/lqip/kalium.png
+- static/yellowpaper/lqip/ledger.png
+- static/yellowpaper/lqip/meme-faucet.png
+- static/yellowpaper/lqip/monkey-change.png
+- static/yellowpaper/lqip/monkey-talks.png
+- static/yellowpaper/lqip/nano-vs-banano-speed.png
+- static/yellowpaper/lqip/rick-cart.png
+- static/yellowpaper/lqip/shady-monkey.png
+- static/yellowpaper/lqip/share-card.png
+- static/yellowpaper/lqip/vault.png
+- static/yellowpaper/meme-faucet.jpeg
+- static/yellowpaper/monkey-talks.jpeg
+- static/yellowpaper/share-card.png
+- static/yellowpaper/smug.svg
+- static/yellowpaper/vault.png
+- static/presskit/now-alt.svg
+- static/illustrations/banana-for-particles.png
+- static/illustrations/monkeys/monkey-0.svg
+- static/illustrations/monkeys/monkey-1.svg
+- static/illustrations/monkeys/monkey-2.svg
+- static/illustrations/monkeys/monkey-3.svg
+- static/illustrations/monkeys/monkey-4.svg
+- static/illustrations/backgrounds/bg-community.svg
+- static/illustrations/backgrounds/bg-creeper.svg
+- static/illustrations/backgrounds/bg-faucet.svg
+- static/illustrations/backgrounds/bg-footer.svg
+- static/illustrations/backgrounds/bg-hero.svg
+- static/illustrations/backgrounds/bg-testimonials.svg
+- static/illustrations/monkeys/monkey-shader.svg
+- static/illustrations/banana-for-particles.svg
+- static/illustrations/yellowpaper.svg
+- static/illustrations/wban/wban-hero.svg
+- static/illustrations/backgrounds/bg-wave-bottom.svg
+- static/illustrations/backgrounds/bg-wave-top.svg
+
+All code is copyrighted by Appditto LLC under the MIT license.
+
+Copyright (c) 2022 Appditto LLC
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
