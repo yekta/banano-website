@@ -30,8 +30,6 @@
 	const canonical = `${canonicalUrl}/${$page.routeId}`;
 	const imageUrl = `${canonicalUrl}/previews/${$page.routeId?.split('@')[0]}.jpg`;
 
-	console.log(imageUrl);
-
 	let isRocketTrigged = false;
 	let shouldShowRocket = false;
 
@@ -215,7 +213,7 @@
 			<img
 				in:slideAcrossScreen
 				on:introend={() => (shouldShowRickCart = false)}
-				src="/yellowpaper/rick-cart.gif"
+				src="/yellowpaper/rick-roller-coaster.gif"
 				alt="Banano Rick Cart"
 				class="w-full h-auto max-w-[13rem] md:max-w-xs lg:max-w-sm mt-auto -mb-2.5 md:-mb-6"
 			/>
