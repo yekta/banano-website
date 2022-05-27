@@ -28,7 +28,9 @@
 	const description =
 		"Meme-rich, interactive and animated Yellowpaper™ of Banano. Learn about Banano's inner workings.";
 	const canonical = `${canonicalUrl}/${$page.routeId}`;
-	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
+	const imageUrl = `${canonicalUrl}/previews/${$page.routeId?.split('@')[0]}.jpg`;
+
+	console.log(imageUrl);
 
 	let isRocketTrigged = false;
 	let shouldShowRocket = false;
