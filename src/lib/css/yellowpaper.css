@@ -46,7 +46,6 @@ body {
 }
 .yellowpaper a > div:hover {
 	transform: translateY(-0.4rem) scale(1.005);
-	filter: brightness(1.05);
 }
 
 .yellowpaper a:hover {
