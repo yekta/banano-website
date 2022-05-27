@@ -90,7 +90,10 @@
 	async function getAndSetBananoPrice() {
 		try {
 			let res = await fetch(
-				'https://api.coingecko.com/api/v3/simple/price?ids=banano&vs_currencies=usd'
+				'https://api.coingecko.com/api/v3/simple/price?ids=banano&vs_currencies=usd',
+				{
+					credentials: 'omit'
+				}
 			);
 			let resJson = await res.json();
 			if (resJson?.banano?.usd !== undefined) {
