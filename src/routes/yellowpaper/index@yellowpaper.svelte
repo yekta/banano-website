@@ -35,11 +35,12 @@
 	let isRocketTrigged = false;
 	let shouldShowRocket = false;
 
-	let isRickCartTriggered = false;
+	let isRickTriggered = false;
 	let shouldShowRickCart = false;
 
 	function loadAndSendRocket() {
 		if (isRocketTrigged) return;
+		window.plausible('Yellowpaper: Rocket Launched');
 		isRocketTrigged = true;
 		const rocketSrc = '/yellowpaper/banano-rocket.gif';
 		const rocketImg = new Image();
@@ -50,12 +51,13 @@
 	}
 
 	function loadAndSendRickCart() {
-		if (isRickCartTriggered) return;
-		isRickCartTriggered = true;
-		const rickCartSrc = '/yellowpaper/rick-cart.gif';
-		const rickCartImg = new Image();
-		rickCartImg.src = rickCartSrc;
-		rickCartImg.onload = () => {
+		if (isRickTriggered) return;
+		window.plausible('Yellowpaper: Rick Launched');
+		isRickTriggered = true;
+		const rickSrc = '/yellowpaper/rick-roller-coaster.gif';
+		const rickImg = new Image();
+		rickImg.src = rickSrc;
+		rickImg.onload = () => {
 			shouldShowRickCart = true;
 		};
 	}
