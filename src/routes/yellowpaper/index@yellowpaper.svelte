@@ -19,7 +19,7 @@
 	import Page14 from '$lib/components/yellowpaper/pages/Page14.svelte';
 	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
 	import LazyImage from '$lib/components/LazyImage.svelte';
-	import inView from '$lib/ts/actions/inView';
+	import { inview } from 'svelte-inview';
 	import { slideAcrossScreen } from '$lib/ts/transitions';
 	import { afterNavigate } from '$app/navigation';
 	import IconArrow from '$lib/components/icons/IconArrow.svelte';
@@ -59,6 +59,10 @@
 	}
 
 	let previousPage: string | undefined;
+
+	const options = {
+		unobserveOnEnter: true
+	};
 
 	afterNavigate((navigaton) => {
 		previousPage = navigaton?.from?.pathname;
@@ -105,7 +109,7 @@
 		{/if}
 		<Page1 />
 		<Page2 class="mt-2 md:mt-5" />
-		<div use:inView class="w-full" on:enter={loadAndSendRocket} />
+		<div use:inview={options} class="w-full" on:enter={loadAndSendRocket} />
 		<Page3 class="mt-2 md:mt-5" />
 		<Page4 class="mt-2 md:mt-5" />
 		<Page5 class="mt-2 md:mt-5" />

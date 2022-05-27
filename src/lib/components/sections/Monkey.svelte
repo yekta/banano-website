@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MonKeyGenerator from '../MonKeyGenerator.svelte';
+	import MonKeyGeneratorLazy from '../MonKeyGeneratorLazy.svelte';
 
 	const monkeyArray = [0, 1, 2, 3];
 </script>
@@ -38,6 +38,6 @@
 	</div>
 	<!-- Generator -->
 	<div class="container-b-small flex flex-row flex-wrap items-center justify-center mt-10 px-4">
-		<MonKeyGenerator />
+		<MonKeyGeneratorLazy />
 	</div>
 </div>

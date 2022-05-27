@@ -1,5 +1,5 @@
 <script lang="ts">
-	import inView from '$lib/ts/actions/inView';
+	import { inview } from 'svelte-inview';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
@@ -251,7 +251,7 @@
 
 <svelte:window on:touchstart={handleTouchStart} on:mousemove={handleMouseMove} />
 <div
-	use:inView
+	use:inview
 	on:enter={onEnter}
 	on:exit={onExit}
 	bind:clientWidth={containerWidth}

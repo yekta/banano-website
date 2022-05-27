@@ -27,6 +27,7 @@
 		"rehype-external-links": "^1.0.1",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
+		"svelte-inview": "^3.0.0",
 		"svelte-lazy": "^1.1.0",
 		"svelte-lazy-image": "^0.5.1",
 		"svelte-meta-tags": "^2.6.0",

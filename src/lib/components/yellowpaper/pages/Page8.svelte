@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MonKeyGenerator from '$lib/components/MonKeyGenerator.svelte';
+	import MonKeyGeneratorLazy from '$lib/components/MonKeyGeneratorLazy.svelte';
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 
 	export { classes as class };
@@ -25,6 +25,6 @@
 		<b>Figure 9</b>: MonKey Generator
 	</p>
 	<div class="w-full flex flex-row items-center justify-center monkey-generator mt-6">
-		<MonKeyGenerator />
+		<MonKeyGeneratorLazy />
 	</div>
 </PageWrapper>

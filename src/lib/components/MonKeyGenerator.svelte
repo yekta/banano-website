@@ -66,7 +66,7 @@
 	}
 </script>
 
-<div class="relative w-[32rem] max-w-full p-2">
+<div class="relative w-full max-w-[32rem] p-2">
 	<div class="relative monkey-generator-container w-full">
 		<!-- Ring animation -->
 		<div class="a-ring a-ring-0 w-full h-full rounded-2xl absolute left-0 top-0 bg-c-secondary" />
