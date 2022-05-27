@@ -12,8 +12,9 @@
 		};
 	});
 
-	function toggle(index: number) {
+	function onClick(index: number) {
 		editedFaq[index].isOpen = !editedFaq[index].isOpen;
+		if (editedFaq[index].isOpen) window.plausible('FAQ Opened');
 	}
 </script>
 
@@ -26,7 +27,7 @@
 					class="mt-3.5 w-full flex flex-col items-start justify-start bg-c-bg-secondary-shaded rounded-xl"
 				>
 					<button
-						on:click={() => toggle(index)}
+						on:click={() => onClick(index)}
 						class="w-full px-6 md:px-8 py-4.5 text-left font-bold rounded-xl text-base bg-c-bg-secondary 
 						shadow-c-bg-secondary-shaded shadow-button group flex justify-between items-center"
 					>

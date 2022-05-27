@@ -45,6 +45,7 @@
 	<a
 		{...$$restProps}
 		{href}
+		on:click={onClick}
 		class="flex flex-row items-center {isLeft
 			? 'justify-start'
 			: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button hover:shadow-button-hover 

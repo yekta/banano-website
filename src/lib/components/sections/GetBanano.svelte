@@ -68,6 +68,7 @@
 							href={socialButton.url}
 							target="_blank"
 							type={socialButton.type}
+							onClick={() => window.plausible('Monkey Randomize')}
 						>
 							<IconSocial type={socialButton.icon} class="w-8 h-8 ml-3 absolute left-0" />
 							{socialButton.text}

@@ -20,10 +20,9 @@ declare namespace svelte.JSX {
 	}
 }
 
-declare global {
-	interface Window {
-		mozRequestAnimationFrame: any;
-		webkitRequestAnimationFrame: any;
-		msRequestAnimationFrame: any;
-	}
+interface Window {
+	mozRequestAnimationFrame: any;
+	webkitRequestAnimationFrame: any;
+	msRequestAnimationFrame: any;
+	plausible: (str: string) => void;
 }
