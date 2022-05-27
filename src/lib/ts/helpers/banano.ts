@@ -85,17 +85,6 @@ function uint5ToString(uint5: any) {
 	return string;
 }
 
-// Extract banano address candidate from string, return null if not found
-function extractAddress(rawString: string) {
-	let pattern = new RegExp('(ban)(_)(1|3)[13456789abcdefghijkmnopqrstuwxyz]{59}', 'g');
-	rawString = rawString.toLowerCase();
-	let matches = rawString.match(pattern);
-	if (matches == null) {
-		return null;
-	}
-	return matches[0];
-}
-
 function readChar(char: string) {
 	const idx = ALPHABET.indexOf(char);
 

@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { isAddress, isHash } from '$lib/ts/helpers/banano';
-
+	import { inview } from 'svelte-inview';
 	import Button from '../Button.svelte';
 
 	let inputExplorer: string;
 	let inputError = false;
+	let isAddressAsync = (s: string) => true;
+	let isHashAsync = (s: string) => true;
 
 	async function handleSubmit(e: Event) {
-		if (isAddress(inputExplorer) || isHash(inputExplorer)) {
+		if (isAddressAsync(inputExplorer) || isHashAsync(inputExplorer)) {
 			window.open(`https://creeper.banano.cc/explorer/auto/${inputExplorer}`, '_blank');
 			inputExplorer = '';
 		} else {
@@ -20,9 +21,20 @@
 			inputError = false;
 		}
 	};
+
+	const options = {
+		rootMargin: '1000px',
+		unobserveOnEnter: true
+	};
+
+	const onEnter = async () => {
+		let { isAddress, isHash } = await import('../../ts/helpers/banano');
+		isAddressAsync = isAddress;
+		isHashAsync = isHash;
+	};
 </script>
 
-<div id="explorer" class="w-full pt-20">
+<div use:inview={options} on:enter={onEnter} id="explorer" class="w-full pt-20">
 	<div
 		style="background-image:url('/illustrations/backgrounds/bg-creeper.svg');"
 		class="bg-c-secondary bg-cover flex justify-center pt-12 pb-16 text-center text-c-bg"
