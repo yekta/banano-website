@@ -4,6 +4,6 @@
 </script>
 
 <LazyComponent
-	src="../components/MonKeyGenerator.svelte"
+	importFunc={() => import('./MonKeyGenerator.svelte')}
 	placeholderComponent={MonKeyGeneratorPlaceholder}
 />

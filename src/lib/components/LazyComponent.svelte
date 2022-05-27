@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { inview } from 'svelte-inview';
 
-	export let src: string;
+	export let importFunc: () => Promise<any>;
 	export let placeholderComponent: any;
-	export let rootMargin: number = 1500;
+	export let rootMargin: number = 1000;
 
 	let isShowingComponent = false;
 	let componentPromise: Promise<any>;
@@ -19,7 +19,7 @@
 		class="w-0 h-0"
 		use:inview={options}
 		on:enter={() => {
-			componentPromise = import(/* @vite-ignore */ src);
+			componentPromise = importFunc();
 			isShowingComponent = true;
 		}}
 	/>
