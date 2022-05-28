@@ -34,7 +34,7 @@
 					class="font-bold text-c-secondary hover:underline">Fantom</a
 				>. Visit
 				<a
-					href="https://wrap.banano.cc/?ref=banano.cc"
+					href="https://wrap.banano.cc/?utm_source=banano.cc"
 					target="_blank"
 					class="font-bold text-c-secondary hover:underline">wrap.banano.cc</a
 				> for more info.
@@ -51,7 +51,7 @@
 			<Button
 				type="secondary"
 				padding="py-3.5 px-8 md:px-14"
-				href="https://wrap.banano.cc/?ref=banano.cc"
+				href="https://wrap.banano.cc/?utm_source=banano.cc"
 				target="_blank"
 				class="mt-10 w-full max-w-xxs">Start Wrapping</Button
 			>
