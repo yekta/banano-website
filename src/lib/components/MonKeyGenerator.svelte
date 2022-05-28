@@ -37,11 +37,9 @@
 			monkeyLoadState = 'loading';
 			let monkeyResult = await getMonkey(address);
 			if (monkeyResult !== undefined) {
-				if (address !== defaultAddress) {
-					window.plausible('MonKey Viewed (Non-default)');
-				} else {
-					window.plausible('MonKey Viewed');
-				}
+				address !== defaultAddress
+					? window.plausible('MonKey Viewed (Non-default)')
+					: window.plausible('MonKey Viewed');
 				monkeyLoadState = 'loaded';
 				setTimeout(() => {
 					monkeySvg = monkeyResult;
