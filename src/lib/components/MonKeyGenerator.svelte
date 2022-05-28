@@ -14,8 +14,8 @@
 
 	type TMonkeyLoadState = 'idle' | 'loading' | 'loaded' | 'fullyReady' | 'error';
 
-	const defaultInputValue = 'ban_1bananobh5rat99qfgt1ptpieie5swmoth87thi74qgbfrij7dcgjiij94xr';
-	let inputValue: string = defaultInputValue;
+	const defaultAddress = 'ban_1bananobh5rat99qfgt1ptpieie5swmoth87thi74qgbfrij7dcgjiij94xr';
+	let inputValue: string = defaultAddress;
 	let inputError = false;
 	let monkeySvg: string | undefined;
 	let monkeyLoadState: TMonkeyLoadState = 'idle';
@@ -37,7 +37,7 @@
 			monkeyLoadState = 'loading';
 			let monkeyResult = await getMonkey(address);
 			if (monkeyResult !== undefined) {
-				if (inputValue !== defaultInputValue) {
+				if (address !== defaultAddress) {
 					window.plausible('MonKey Viewed (Non-default)');
 				} else {
 					window.plausible('MonKey Viewed');
