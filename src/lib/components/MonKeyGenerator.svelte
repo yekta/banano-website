@@ -36,6 +36,7 @@
 			monkeyLoadState = 'loading';
 			let monkeyResult = await getMonkey(address);
 			if (monkeyResult !== undefined) {
+				window.plausible('MonKey Viewed');
 				monkeyLoadState = 'loaded';
 				setTimeout(() => {
 					monkeySvg = monkeyResult;
