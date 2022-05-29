@@ -2,13 +2,15 @@
 	import Button from '$lib/components/Button.svelte';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import Banticles from '$lib/components/Banticles.svelte';
-	import BgHero from '../backgrounds/BgHero.svelte';
+	import BgHero from '$lib/components/backgrounds/BgHero.svg?src';
 </script>
 
 <div class="text-c-bg w-full bg-c-secondary flex flex-col items-center justify-start text-center">
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div class="w-full bg-c-secondary min-h-[550px] md:min-h-[650px] flex flex-row relative">
-			<BgHero />
+			<div class="w-full h-full overflow-hidden absolute">
+				{@html BgHero}
+			</div>
 			<Banticles
 				particleSrc="/images/banana-for-particles.png"
 				lineColorRgb={{ r: 251, g: 221, b: 17 }}

@@ -8,7 +8,7 @@ function withOpacityValue(variable) {
 }
 
 module.exports = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: ['./src/**/*.{html,js,svelte,ts,svg}'],
 	theme: {
 		transitionDuration: {
 			DEFAULT: '200ms',

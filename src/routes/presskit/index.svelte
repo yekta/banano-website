@@ -4,8 +4,8 @@
 	import Button from '$lib/components/Button.svelte';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
-	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
+	import BgHero from '$lib/components/backgrounds/BgHero.svg?src';
 
 	const title = 'Presskit | Banano';
 	const description = 'Press Kit for Banano assets, colors and fonts.';
@@ -111,7 +111,9 @@
 			style="background-image:url('/illustrations/backgrounds/bg-hero.svg');"
 			class="w-full bg-c-secondary min-h-[550px] md:min-h-[650px] flex flex-row"
 		>
-			<BgHero />
+			<div class="w-full h-full overflow-hidden absolute">
+				{@html BgHero}
+			</div>
 			<BgWaveBottom />
 			<div
 				class="container-b-small px-8 md:px-24 max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10 text-c-bg"

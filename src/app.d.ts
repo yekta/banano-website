@@ -26,3 +26,8 @@ interface Window {
 	msRequestAnimationFrame: any;
 	plausible: (str: string) => void;
 }
+
+declare module '*.svg?src' {
+	const content: string;
+	export default content;
+}
