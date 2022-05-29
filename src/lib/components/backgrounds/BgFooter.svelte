@@ -1,6 +1,6 @@
 <script lang="ts">
 	export { classes as class };
-	let classes = '';
+	let classes = 'w-full h-full overflow-hidden absolute';
 </script>
 
 <div class={classes}>
