@@ -12,6 +12,7 @@
 	let scrollWindow: HTMLElement;
 	let isIndicatorVisible = true;
 	const indicatorHideThreshold = 100;
+	let isEndReached = false;
 
 	function onScroll(e: Event) {
 		let scrollTop = scrollWindow.scrollTop;
@@ -19,6 +20,10 @@
 			isIndicatorVisible = false;
 		} else if (!isIndicatorVisible && scrollTop <= indicatorHideThreshold) {
 			isIndicatorVisible = true;
+		}
+		if (!isEndReached && scrollTop >= scrollWindow.scrollHeight - scrollWindow.clientHeight) {
+			isEndReached = true;
+			window.plausible('Announcements End Reached');
 		}
 	}
 </script>
