@@ -50,7 +50,7 @@
 		},
 		{
 			title: 'Community',
-			wClass: 'w-72',
+			wClass: 'w-68',
 			entries: [
 				{
 					text: bananoSocials.discord.buttonText,
@@ -110,8 +110,8 @@
 >
 	<div
 		style="background-image:url('/illustrations/backgrounds/bg-footer.svg');"
-		class="w-full bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
-			flex flex-col items-center justify-start pt-14 md:pt-16 lg:pt-14 bg-c-bg relative"
+		class="w-full bg-c-secondary bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
+			flex flex-col items-center justify-start pt-14 md:pt-16 lg:pt-14 relative"
 	>
 		<div
 			class="container-b-small flex flex-row flex-wrap items-start justify-center relative px-6 md:px-10"
