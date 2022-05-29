@@ -47,12 +47,27 @@
 	let img: HTMLImageElement;
 	let dpr: number;
 
+	let isInitialSetupTriggered = false;
+	$: if (container !== undefined) initSetup();
 	$: if (containerHeight !== undefined && containerWidth !== undefined)
 		containerArea = containerHeight * containerWidth;
 	$: if (containerArea !== undefined && particleArea !== undefined) setParticleCount();
-	$: if (containerArea && particleArea) init();
+	$: if (containerArea && particleArea) initAnimation();
 
-	function init() {
+	function initSetup() {
+		if (isInitialSetupTriggered) return;
+		isInitialSetupTriggered = true;
+		img = new Image();
+		img.src = particleSrc;
+		img.onload = () => {
+			particleArea = img.naturalWidth * img.naturalHeight;
+			containerArea = containerHeight * containerWidth;
+			setParticleCount();
+			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
+		};
+	}
+
+	function initAnimation() {
 		context = canvas.getContext('2d');
 		dpr = Math.max(Math.min(window.devicePixelRatio, 2), 1);
 		canvas.width = Math.ceil(containerWidth * dpr);
@@ -118,7 +133,7 @@
 			containerHeight > Math.ceil(canvas.height / dpr) ||
 			containerWidth > Math.ceil(canvas.width / dpr)
 		) {
-			init();
+			initAnimation();
 			return;
 		}
 
@@ -233,22 +248,6 @@
 
 	const setParticleCount = () =>
 		(particleCount = Math.ceil((containerArea / particleArea) * density));
-
-	let isInitialSetupTriggered = false;
-	$: if (container !== undefined) initialSetup();
-
-	const initialSetup = () => {
-		if (isInitialSetupTriggered) return;
-		isInitialSetupTriggered = true;
-		img = new Image();
-		img.src = particleSrc;
-		img.onload = () => {
-			particleArea = img.naturalWidth * img.naturalHeight;
-			containerArea = containerHeight * containerWidth;
-			setParticleCount();
-			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
-		};
-	};
 </script>
 
 <svelte:window on:touchstart={handleTouchStart} on:mousemove={handleMouseMove} />
