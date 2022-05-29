@@ -40,6 +40,7 @@
 	let mouseX: number;
 	let mouseY: number;
 	let isBanticlesPaused = false;
+	let isFirstInitAnimation = true;
 	let { r, g, b } = lineColorRgb;
 	let particleCount: number;
 	let particleArea: number;
@@ -52,7 +53,6 @@
 	$: if (containerHeight !== undefined && containerWidth !== undefined)
 		containerArea = containerHeight * containerWidth;
 	$: if (containerArea !== undefined && particleArea !== undefined) setParticleCount();
-	$: if (containerArea && particleArea) initAnimation();
 
 	function initSetup() {
 		if (isInitialSetupTriggered) return;
@@ -64,18 +64,21 @@
 			containerArea = containerHeight * containerWidth;
 			setParticleCount();
 			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
+			context = canvas.getContext('2d');
+			setCanvasSizeAndScaling();
+			initAnimation();
 		};
 	}
 
-	function initAnimation() {
-		context = canvas.getContext('2d');
+	const initAnimation = () => window.requestAnimationFrame(draw);
+
+	function setCanvasSizeAndScaling() {
 		dpr = Math.max(Math.min(window.devicePixelRatio, 2), 1);
 		canvas.width = Math.ceil(containerWidth * dpr);
 		canvas.height = Math.ceil(containerHeight * dpr);
 		if (dpr > 1) context.scale(dpr, dpr);
 		canvas.style.width = containerWidth + 'px';
 		canvas.style.height = containerHeight + 'px';
-		window.requestAnimationFrame(draw);
 	}
 
 	function createNewParticle(isInitial = false): IParticle {
@@ -133,6 +136,7 @@
 			containerHeight > Math.ceil(canvas.height / dpr) ||
 			containerWidth > Math.ceil(canvas.width / dpr)
 		) {
+			setCanvasSizeAndScaling();
 			initAnimation();
 			return;
 		}
