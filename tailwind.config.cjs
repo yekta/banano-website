@@ -27,7 +27,7 @@ module.exports = {
 			screens: {
 				'3xl': '1792px',
 				'4xl': '2048px',
-				'2.8k': '2800px'
+				'5xl': '2800px'
 			},
 			colors: {
 				'c-primary': withOpacityValue('--c-primary'),
