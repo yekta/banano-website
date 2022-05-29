@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { inview } from 'svelte-inview';
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 
 	export let particleSrc: string;
 	export let lineColorRgb: IRgb;
@@ -46,13 +45,12 @@
 	let particleArea: number;
 
 	let img: HTMLImageElement;
-	let imgLoaded = false;
 	let dpr: number;
 
 	$: if (containerHeight !== undefined && containerWidth !== undefined)
 		containerArea = containerHeight * containerWidth;
 	$: if (containerArea !== undefined && particleArea !== undefined) setParticleCount();
-	$: if (imgLoaded && canvas !== undefined) init();
+	$: if (containerArea && particleArea) init();
 
 	function init() {
 		context = canvas.getContext('2d');
@@ -237,15 +235,16 @@
 		(particleCount = Math.ceil((containerArea / particleArea) * density));
 
 	onMount(() => {
+		console.time('setup');
 		img = new Image();
 		img.src = particleSrc;
 		img.onload = () => {
-			imgLoaded = true;
 			particleArea = img.naturalWidth * img.naturalHeight;
 			containerArea = containerHeight * containerWidth;
 			setParticleCount();
 			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
 		};
+		console.timeEnd('setup');
 	});
 </script>
 
@@ -258,7 +257,10 @@
 	bind:clientHeight={containerHeight}
 	class="w-full h-full absolute left-0 top-0 overflow-hidden z-0"
 >
-	{#if containerWidth !== undefined && containerHeight !== undefined}
-		<canvas in:fade={{ duration: 500 }} bind:this={canvas} />
-	{/if}
+	<img
+		src={particleSrc}
+		alt="Banana Particle"
+		style="position:absolute;height:0px;width:0px;opacity:0;"
+	/>
+	<canvas bind:this={canvas} />
 </div>
