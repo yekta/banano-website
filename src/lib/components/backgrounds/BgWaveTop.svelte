@@ -1,7 +1,7 @@
 <script lang="ts">
 	export { classes as class };
 	let classes =
-		'w-[110%] h-full -ml-[5%] absolute bottom-0 left-0 overflow-hidden flex justify-center pointer-events-none';
+		'w-[110%] h-full -ml-[5%] absolute -mt-1 left-0 overflow-hidden flex justify-center pointer-events-none';
 </script>
 
 <div class={classes}>
