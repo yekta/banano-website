@@ -7,6 +7,8 @@
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
+	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
+	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
 
 	const title = 'Redeem | Banano';
 	const description = 'Instructions on how to redeem your BANANO from a paper wallet.';
@@ -49,9 +51,10 @@
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
 			style="background-image:url('/illustrations/backgrounds/bg-hero.svg');"
-			class="w-full bg-c-secondary min-h-[550px] md:min-h-[650px] bg-cover flex flex-row
-			bg-[position:19%_100%] md:bg-[position:20%_100%] lg:bg-[position:40%_50%]"
+			class="w-full bg-c-secondary min-h-[550px] md:min-h-[650px] flex flex-row"
 		>
+			<BgHero />
+			<BgWaveBottom />
 			<div
 				class="container-b-small px-8 md:px-24 max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pb-36 relative z-10 text-c-bg"
 			>
@@ -60,14 +63,6 @@
 					Follow the instructions below to redeem your Banano from a paper wallet.
 				</h1>
 			</div>
-		</div>
-		<div
-			class="w-[110%] -ml-[5%] h-64 absolute bottom-0 left-0 overflow-hidden flex justify-center pointer-events-none"
-		>
-			<div
-				style="background-image:url('/illustrations/backgrounds/bg-wave-bottom.svg');"
-				class="w-full bg-[position:0%_100%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:150%] xl:bg-contain bg-no-repeat"
-			/>
 		</div>
 	</div>
 	<div class="w-full bg-c-bg -mt-2 pt-14 relative px-8">

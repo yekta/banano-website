@@ -2,6 +2,8 @@
 	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
 	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
+	import BgFooter from './backgrounds/BgFooter.svelte';
+	import BgWaveTop from './backgrounds/BgWaveTop.svelte';
 	import IconSocial from './icons/IconSocial.svelte';
 
 	const currentYear = new Date().getFullYear();
@@ -105,21 +107,13 @@
 </script>
 
 <footer
-	class="bg-c-bg text-c-bg font-filson-pro w-full flex flex-row items-start justify-center pt-12"
+	class="bg-c-bg text-c-bg font-filson-pro w-full flex flex-row items-start justify-center pt-12 relative overflow-hidden"
 >
+	<BgFooter />
 	<div
-		style="background-image:url('/illustrations/backgrounds/bg-footer.svg');"
-		class="w-full bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
-    flex flex-col items-center justify-start pt-14 md:pt-16 lg:pt-14 bg-c-secondary relative overflow-hidden"
+		class="w-full flex flex-col items-center justify-start pt-16 md:pt-18 lg:pt-16 xl:pt-14 relative overflow-hidden"
 	>
-		<div
-			class="w-[110%] -ml-[5%] -mt-1 h-64 absolute top-0 left-0 overflow-hidden flex justify-center pointer-events-none"
-		>
-			<div
-				style="background-image:url('/illustrations/backgrounds/bg-wave-top.svg');"
-				class="w-full bg-[position:0%_0%] bg-[length:300%] md:bg-[length:200%] lg:bg-[length:100%] xl:bg-contain bg-no-repeat"
-			/>
-		</div>
+		<BgWaveTop />
 		<div
 			class="container-b-small flex flex-row flex-wrap items-start justify-center relative px-6 md:px-10"
 		>
@@ -147,7 +141,7 @@
 			{/each}
 		</div>
 		<div
-			class="w-full flex flex-col items-center justify-center mt-5 text-center py-7 px-6 md:px-8 border-t-2 border-c-bg/25"
+			class="w-full flex flex-col items-center justify-center mt-5 text-center py-7 px-6 md:px-8 border-t-2 border-c-bg/25 relative"
 		>
 			<p>Hundreds of 🍌 have been eaten and digested while coming up with this shit.</p>
 			<p class="mt-4">Banano © {currentYear}</p>
