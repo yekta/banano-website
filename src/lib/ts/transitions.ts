@@ -1,5 +1,18 @@
 import { cubicOut, cubicIn, linear } from 'svelte/easing';
 
+export const collapseExpand = (node: Node, { delay = 0, easing = cubicOut }) => {
+	let height = Number(getComputedStyle(node as HTMLElement).height.split('px')[0]);
+	const duration = Math.round(height / 2 + 175);
+	return {
+		delay,
+		duration,
+		easing,
+		css: (t: number) => {
+			return `height: ${t * height}px`;
+		}
+	};
+};
+
 export const slideAcrossScreen = (node: Node, { delay = 0, easing = linear }) => {
 	let width = Number(getComputedStyle(node as HTMLElement).width.split('px')[0]);
 	let windowWidth = window.innerWidth;

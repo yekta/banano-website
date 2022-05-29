@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { IFaq } from '$lib/ts/interfaces/IFaq';
+	import { collapseExpand } from '$lib/ts/transitions';
 	import Button from '../Button.svelte';
 	import IconChevron from '../icons/IconChevron.svelte';
 
@@ -43,7 +44,11 @@
 						/>
 					</button>
 					{#if singleFaq.isOpen}
-						<div class="px-6 md:px-8 py-5 markdown">{@html singleFaq.answer}</div>
+						<div transition:collapseExpand class="markdown overflow-hidden">
+							<div class="px-6 md:px-8 py-5">
+								{@html singleFaq.answer}
+							</div>
+						</div>
 					{/if}
 				</div>
 			{/each}
