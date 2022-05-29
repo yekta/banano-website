@@ -1,6 +1,6 @@
 <div class="w-full h-full overflow-hidden absolute">
 	<svg
-		class="absolute h-[100%] w-auto transform bottom-0 left-[20%] translate-x-[-10%] md:translate-x-[-15%] lg:translate-x-[-50%] 5xl:w-full 5xl:h-auto"
+		class="absolute h-[100%] w-auto transform bottom-0 left-[50%] translate-x-[-10%] md:translate-x-[-25%] lg:translate-x-[-50%] lg: 5xl:w-full 5xl:h-auto"
 		fill="none"
 		viewBox="0 0 3000 700"
 		xmlns="http://www.w3.org/2000/svg"
