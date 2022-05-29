@@ -2,7 +2,6 @@ import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
-import svg from '@poppanator/sveltekit-svg';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -18,9 +17,6 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			default: true
-		},
-		vite: {
-			plugins: [svg({ includePaths: ['./src/lib/components/backgrounds/'], svgoOptions: false })]
 		}
 	}
 };

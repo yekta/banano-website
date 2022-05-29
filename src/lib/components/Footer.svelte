@@ -2,7 +2,6 @@
 	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
 	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
-	import BgFooter from './backgrounds/BgFooter.svelte';
 	import BgWaveTop from './backgrounds/BgWaveTop.svelte';
 	import IconSocial from './icons/IconSocial.svelte';
 
@@ -109,9 +108,10 @@
 <footer
 	class="bg-c-bg text-c-bg font-filson-pro w-full flex flex-row items-start justify-center pt-12 relative overflow-hidden"
 >
-	<BgFooter />
 	<div
-		class="w-full flex flex-col items-center justify-start pt-16 md:pt-18 lg:pt-16 xl:pt-14 relative overflow-hidden"
+		style="background-image:url('/illustrations/backgrounds/bg-footer.svg');"
+		class="w-full bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
+			flex flex-col items-center justify-start pt-14 md:pt-16 lg:pt-14 bg-c-secondary relative overflow-hidden"
 	>
 		<BgWaveTop />
 		<div
