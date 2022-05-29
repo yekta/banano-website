@@ -259,6 +259,6 @@
 	class="w-full h-full absolute left-0 top-0 overflow-hidden z-0"
 >
 	{#if containerWidth !== undefined && containerHeight !== undefined}
-		<canvas in:fade={{ duration: 300 }} bind:this={canvas} />
+		<canvas in:fade={{ duration: 500 }} bind:this={canvas} />
 	{/if}
 </div>
