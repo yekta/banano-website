@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { inview } from 'svelte-inview';
-	import { onMount } from 'svelte';
 
 	export let particleSrc: string;
 	export let lineColorRgb: IRgb;
@@ -32,6 +31,7 @@
 	}
 
 	let particles: IParticle[];
+	let container: HTMLDivElement;
 	let containerWidth: number;
 	let containerHeight: number;
 	let containerArea: number;
@@ -234,8 +234,12 @@
 	const setParticleCount = () =>
 		(particleCount = Math.ceil((containerArea / particleArea) * density));
 
-	onMount(() => {
-		console.time('setup');
+	let isInitialSetupTriggered = false;
+	$: if (container !== undefined) initialSetup();
+
+	const initialSetup = () => {
+		if (isInitialSetupTriggered) return;
+		isInitialSetupTriggered = true;
 		img = new Image();
 		img.src = particleSrc;
 		img.onload = () => {
@@ -244,8 +248,7 @@
 			setParticleCount();
 			particles = Array.from(Array(particleCount), (_, i) => createNewParticle(true));
 		};
-		console.timeEnd('setup');
-	});
+	};
 </script>
 
 <svelte:window on:touchstart={handleTouchStart} on:mousemove={handleMouseMove} />
@@ -253,6 +256,7 @@
 	use:inview
 	on:enter={onEnter}
 	on:exit={onExit}
+	bind:this={container}
 	bind:clientWidth={containerWidth}
 	bind:clientHeight={containerHeight}
 	class="w-full h-full absolute left-0 top-0 overflow-hidden z-0"
