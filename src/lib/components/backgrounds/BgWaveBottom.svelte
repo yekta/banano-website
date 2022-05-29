@@ -1,6 +1,10 @@
-<div
-	class="w-[110%] h-full -ml-[5%] absolute bottom-0 left-0 overflow-hidden flex justify-center pointer-events-none"
->
+<script lang="ts">
+	export { classes as class };
+	let classes =
+		'w-[110%] h-full -ml-[5%] absolute bottom-0 left-0 overflow-hidden flex justify-center pointer-events-none';
+</script>
+
+<div class={classes}>
 	<svg
 		class="absolute left-0 w-[300%] md:left-auto md:w-[200%] lg:w-[150%] xl:w-[100%] h-auto bottom-0"
 		viewBox="0 0 1024 40"

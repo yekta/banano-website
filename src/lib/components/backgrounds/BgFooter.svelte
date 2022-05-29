@@ -1,4 +1,9 @@
-<div class="w-full h-full overflow-hidden absolute">
+<script lang="ts">
+	export { classes as class };
+	let classes = 'w-full h-full overflow-hidden absolute';
+</script>
+
+<div class={classes}>
 	<svg
 		class="absolute h-[100%] w-auto transform bottom-0 left-[50%] translate-x-[-10%] md:translate-x-[-25%] lg:translate-x-[-50%] lg: 5xl:w-full 5xl:h-auto"
 		fill="none"
