@@ -1,4 +1,8 @@
-<div class="w-full h-full overflow-hidden absolute">
+<script>
+	let classes = 'w-full h-full overflow-hidden absolute';
+</script>
+
+<div class={classes}>
 	<svg
 		class="absolute h-[100%] w-auto transform bottom-0 left-[50%] translate-x-[-28%] md:translate-x-[-33%] lg:translate-x-[-45%] xl:translate-x-[-50%] 3xl:w-full 3xl:h-auto 5xl:top-[50%] 5xl:translate-y-[-50%]"
 		fill="none"
