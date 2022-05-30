@@ -39,8 +39,12 @@
 			let monkeyResult = await getMonkey(address);
 			if (monkeyResult !== undefined) {
 				address !== defaultAddress && address !== randomizedPreviousAddress
-					? window.plausible('MonKey Viewed (Non-default)')
-					: window.plausible('MonKey Viewed');
+					? window.plausible('MonKey Generator Used', {
+							props: { Address: 'Custom' }
+					  })
+					: window.plausible('MonKey Generator Used', {
+							props: { Address: 'Default' }
+					  });
 				monkeyLoadState = 'loaded';
 				setTimeout(() => {
 					monkeySvg = monkeyResult;
@@ -52,7 +56,9 @@
 		}
 	}
 	function generateRandomMonkey() {
-		window.plausible('MonKey Randomized');
+		window.plausible('MonKey Generator Used', {
+			props: { Address: 'Random' }
+		});
 		let address = genAddress();
 		randomizedPreviousAddress = address;
 		generateMonkey(address);
