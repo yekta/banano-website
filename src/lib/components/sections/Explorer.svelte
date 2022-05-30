@@ -14,12 +14,12 @@
 			inputExplorer !== undefined &&
 			(isAddressAsync(inputExplorer) || isHashAsync(inputExplorer))
 		) {
-			window.plausible('Explorer Used', { props: { addressValidity: 'Valid' } });
+			window.plausible('Explorer Used', { props: { 'Address Validity': 'Valid' } });
 			window.open(`https://creeper.banano.cc/explorer/auto/${inputExplorer}`, '_blank');
 			inputExplorer = '';
 		} else {
 			inputError = true;
-			window.plausible('Explorer Used', { props: { addressValidity: 'Invalid' } });
+			window.plausible('Explorer Used', { props: { 'Address Validity': 'Invalid' } });
 		}
 	}
 
