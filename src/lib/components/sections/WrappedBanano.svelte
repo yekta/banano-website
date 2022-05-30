@@ -51,7 +51,7 @@
 				/>
 			</div>
 			<Button
-				type="secondary"
+				buttonType="secondary"
 				padding="py-3.5 px-8 md:px-14"
 				href="{bananoServices.wBan.url}/?utm_source=banano.cc"
 				target="_blank"

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { TButton } from '$lib/ts/types/TButton';
 
-	export let type: TButton = 'primary';
+	export let buttonType: TButton = 'primary';
 	export let onClick: (() => void) | undefined = undefined;
 	export let href: string | undefined = undefined;
 	export let isLeft = false;
@@ -9,7 +9,7 @@
 	export { classes as class };
 	let classes = '';
 
-	$: bgAndTextClass = getBgAndTextClass(type);
+	$: bgAndTextClass = getBgAndTextClass(buttonType);
 
 	function getBgAndTextClass(type: TButton) {
 		switch (type) {

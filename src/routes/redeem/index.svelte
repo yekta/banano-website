@@ -79,7 +79,7 @@
 					<h3 class="text-xl font-bold">Android</h3>
 					<img class="w-28 max-w-full h-auto mt-4" src="/redeem/android.svg" alt="Android Phone" />
 					<Button
-						type={isAndroidOpen ? 'secondary' : 'primary'}
+						buttonType={isAndroidOpen ? 'secondary' : 'primary'}
 						onClick={toggleAndroid}
 						class="w-full max-w-xs mt-5"
 					>
@@ -94,7 +94,7 @@
 					<h3 class="text-xl font-bold">iPhone</h3>
 					<img class="w-28 max-w-full h-auto mt-4" src="/redeem/android.svg" alt="Android Phone" />
 					<Button
-						type={isIosOpen ? 'secondary' : 'primary'}
+						buttonType={isIosOpen ? 'secondary' : 'primary'}
 						onClick={toggleIos}
 						class="w-full max-w-xs mt-5"
 					>
