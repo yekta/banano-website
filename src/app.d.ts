@@ -20,14 +20,11 @@ declare namespace svelte.JSX {
 	}
 }
 
-interface Window {
-	mozRequestAnimationFrame: any;
-	webkitRequestAnimationFrame: any;
-	msRequestAnimationFrame: any;
-	plausible: (str: string, props?: any) => void;
+interface PlausibleObj {
+	callback?: function;
+	props?: { [key: string]: string };
 }
 
-declare module '*.svg?src' {
-	const content: string;
-	export default content;
+interface Window {
+	plausible: (goalName: string, obj: PlausibleObj) => void;
 }
