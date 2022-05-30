@@ -14,7 +14,9 @@
 
 	function onClick(index: number) {
 		editedFaq[index].isOpen = !editedFaq[index].isOpen;
-		if (editedFaq[index].isOpen) window.plausible('FAQ Opened');
+		if (editedFaq[index].isOpen) {
+			window.plausible('FAQ Opened', { props: { Question: editedFaq[index].question } });
+		}
 	}
 </script>
 
