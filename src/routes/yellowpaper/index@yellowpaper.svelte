@@ -38,7 +38,7 @@
 
 	function loadAndSendRocket() {
 		if (isRocketTrigged) return;
-		window.plausible('Yellowpaper: Rocket Launched');
+		window.plausible('Yellowpaper | Rocket Launched');
 		isRocketTrigged = true;
 		const rocketSrc = '/yellowpaper/banano-rocket.gif';
 		const rocketImg = new Image();
@@ -50,7 +50,7 @@
 
 	function loadAndSendRickCart() {
 		if (isRickTriggered) return;
-		window.plausible('Yellowpaper: Rick Launched');
+		window.plausible('Yellowpaper | Rick Launched');
 		isRickTriggered = true;
 		const rickSrc = '/yellowpaper/rick-roller-coaster.gif';
 		const rickImg = new Image();

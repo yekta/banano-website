@@ -26,5 +26,5 @@ interface PlausibleObj {
 }
 
 interface Window {
-	plausible: (goalName: string, obj: PlausibleObj) => void;
+	plausible: (goalName: string, obj?: PlausibleObj) => void;
 }
