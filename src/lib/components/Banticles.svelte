@@ -132,7 +132,7 @@
 	}
 
 	function draw() {
-		if (canvas === undefined || canvas === null) return;
+		if (canvas === null || canvas === undefined) return;
 		if (
 			containerHeight > Math.ceil(canvas.height / dpr) ||
 			containerWidth > Math.ceil(canvas.width / dpr)
