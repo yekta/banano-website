@@ -8,17 +8,19 @@
 	let isHashAsync = (s: string) => true;
 
 	async function handleSubmit(e: Event) {
-		window.plausible('Explorer Used');
 		if (
 			inputExplorer !== '' &&
 			inputExplorer !== null &&
 			inputExplorer !== undefined &&
 			(isAddressAsync(inputExplorer) || isHashAsync(inputExplorer))
 		) {
-			window.plausible('Explorer Used (Valid)');
+			window.plausible('Explorer Used', { props: { addressValidity: 'Valid' } });
 			window.open(`https://creeper.banano.cc/explorer/auto/${inputExplorer}`, '_blank');
 			inputExplorer = '';
-		} else inputError = true;
+		} else {
+			inputError = true;
+			window.plausible('Explorer Used', { props: { addressValidity: 'Invalid' } });
+		}
 	}
 
 	const clearInputError = () => {

@@ -24,7 +24,7 @@ interface Window {
 	mozRequestAnimationFrame: any;
 	webkitRequestAnimationFrame: any;
 	msRequestAnimationFrame: any;
-	plausible: (str: string) => void;
+	plausible: (str: string, props?: any) => void;
 }
 
 declare module '*.svg?src' {
