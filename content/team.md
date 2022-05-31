@@ -6,7 +6,7 @@
 
 ### Yekta
 
-Leonardo Da Banano
+Leonardo da Banano
 
 ### Bbedward
 
