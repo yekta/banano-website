@@ -24,6 +24,7 @@
 	import GetBanano from '$lib/components/sections/GetBanano.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import BusinessContact from '$lib/components/sections/BusinessContact.svelte';
 
 	export let faq: IFaq[];
 	export let testimonials: string[];
@@ -80,4 +81,5 @@
 <Advisors />
 <Testimonials {testimonials} />
 <FAQ {faq} />
+<BusinessContact />
 <JoinUs />

@@ -2,7 +2,7 @@ import { cubicOut, cubicIn, linear } from 'svelte/easing';
 
 export const expandCollapse = (node: Node, { delay = 0, easing = cubicOut }) => {
 	let height = Number(getComputedStyle(node as HTMLElement).height.split('px')[0]);
-	const duration = Math.round(height / 2 + 175);
+	const duration = Math.min(Math.round(height / 2 + 175), 300);
 	return {
 		delay,
 		duration,
