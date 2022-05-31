@@ -3,19 +3,9 @@
 	import IconSocial from '$lib/components/icons/IconSocial.svelte';
 	import { expandCollapse } from '$lib/ts/transitions';
 
-	let form: HTMLFormElement;
+	let form: { name: string; email: string; message: string } = { name: '', email: '', message: '' };
 	let isFormOpen = false;
 	let inputErrorName = false;
-	async function onSubmit() {
-		const formData = new FormData(form);
-
-		const response = await fetch('https://formspree.io/f/mvolllyn', {
-			body: formData,
-			method: 'POST'
-		});
-		const json = await response.json();
-		console.log(json);
-	}
 </script>
 
 <div
@@ -45,6 +35,7 @@
 					<label for="business-name-input" class="w-full flex flex-col">
 						<p class="px-2 text-lg font-medium">Business Name</p>
 						<input
+							bind:value={form.name}
 							name="Business Name"
 							id="business-name-input"
 							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
@@ -60,6 +51,7 @@
 					<label for="business-email-input" class="w-full flex flex-col">
 						<p class="px-2 text-lg font-medium">Business Email</p>
 						<input
+							bind:value={form.email}
 							name="Business Email"
 							id="business-email-input"
 							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
@@ -75,6 +67,7 @@
 					<label for="business-message-input" class="w-full flex flex-col">
 						<p class="px-2 text-lg font-medium">Message</p>
 						<textarea
+							bind:value={form.message}
 							name="Message"
 							id="business-message-input"
 							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
