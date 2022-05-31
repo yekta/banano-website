@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import IconSocial from '$lib/components/icons/IconSocial.svelte';
+	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
 	import { expandCollapse } from '$lib/ts/transitions';
 
 	let form: { name: string; email: string; message: string } = { name: '', email: '', message: '' };
@@ -15,8 +16,22 @@
 	<h2 class="text-3xl font-bold md:px-24 text-center">Business Contact</h2>
 	<p class="mt-3 text-lg md:px-24 text-center">
 		For business inquiries, you can click the button below and fill the form or reach out to us via
-		Discord, Twitter or Reddit. For general questions, you can contact us via any of our social
-		media accounts.
+		<a
+			target="_blank"
+			href={bananoSocials.discord.url}
+			class="font-bold text-c-secondary hover:underline">Discord</a
+		>,
+		<a
+			target="_blank"
+			href={bananoSocials.twitter.url}
+			class="font-bold text-c-secondary hover:underline">Twitter</a
+		>
+		or
+		<a
+			target="_blank"
+			href={bananoSocials.reddit.url}
+			class="font-bold text-c-secondary hover:underline">Reddit</a
+		>. For general questions, you can contact us via any of our social media accounts.
 	</p>
 	<Button onClick={() => (isFormOpen = !isFormOpen)} class="w-full max-w-[23rem] px-16 mt-6 mb-8">
 		<IconSocial type="email" class="w-8 h-8 ml-3 absolute left-0" />
