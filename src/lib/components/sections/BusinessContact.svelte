@@ -10,7 +10,7 @@
 
 <div
 	id="business-contact"
-	class="container-b-small flex flex-col items-center justify-start -mt-8 pt-24 pb-6 px-4"
+	class="container-b-small flex flex-col items-center justify-start -mt-8 pt-24 pb-4 px-4"
 >
 	<h2 class="text-3xl font-bold px-3 md:px-12 text-center">Business Contact</h2>
 	<p class="mt-3 text-lg px-5 md:px-16 lg:px-24 text-center">
