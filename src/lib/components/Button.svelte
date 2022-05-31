@@ -16,7 +16,7 @@
 			case 'primary':
 				return 'bg-c-primary text-c-on-bg shadow-c-primary-shaded hover:shadow-c-primary-shaded hover:brightness-108';
 			case 'secondary':
-				return 'bg-c-secondary text-c-bg shadow-c-secondary-shaded hover:shadow-c-secondary-shaded hover:brightness-110';
+				return 'bg-c-secondary text-c-bg shadow-c-secondary-shaded hover:shadow-c-secondary-shaded hover:brightness-115';
 			case 'bg':
 				return 'bg-c-bg-secondary text-c-on-bg shadow-c-bg-secondary-shaded hover:shadow-c-bg-secondary-shaded hover:brightness-95';
 			case 'discord':

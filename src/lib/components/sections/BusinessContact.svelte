@@ -43,7 +43,7 @@
 			action="https://formspree.io/f/mvolllyn"
 			method="POST"
 			class="max-w-lg md:max-w-xl mx-auto bg-c-secondary/5 rounded-2xl 
-			ring-2 ring-c-secondary/30 overflow-hidden relative z-0"
+			ring-3 ring-c-secondary/15 overflow-hidden relative z-0"
 		>
 			<div class="w-full flex flex-wrap p-1.5 md:p-4">
 				<div class="w-full md:w-1/2 p-2 mt-1">
@@ -54,9 +54,9 @@
 							name="Business Name"
 							id="business-name-input"
 							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
-										border-[3px] bg-c-on-bg/5 {inputErrorName
+										border-[3px] bg-c-secondary/8 {inputErrorName
 								? 'border-c-danger'
-								: 'border-c-on-bg/8 hover:border-c-on-bg/30 focus:border-c-secondary'} transition"
+								: 'border-c-secondary/10 hover:border-c-secondary/40 focus:border-c-secondary'} transition"
 							type="text"
 							placeholder="Business name"
 						/>
@@ -70,9 +70,9 @@
 							name="Business Email"
 							id="business-email-input"
 							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
-										border-[3px] bg-c-on-bg/5 {inputErrorName
+										border-[3px] bg-c-secondary/8 {inputErrorName
 								? 'border-c-danger'
-								: 'border-c-on-bg/8 hover:border-c-on-bg/30 focus:border-c-secondary'} transition"
+								: 'border-c-secondary/10 hover:border-c-secondary/40 focus:border-c-secondary'} transition"
 							type="email"
 							placeholder="Business email"
 						/>
@@ -86,9 +86,9 @@
 							name="Message"
 							id="business-message-input"
 							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
-									border-[3px] bg-c-on-bg/5 {inputErrorName
+									border-[3px] bg-c-secondary/8 {inputErrorName
 								? 'border-c-danger'
-								: 'border-c-on-bg/8 hover:border-c-on-bg/30 focus:border-c-secondary'} transition"
+								: 'border-c-secondary/10 hover:border-c-secondary/40 focus:border-c-secondary'} transition"
 							type="email"
 							autocomplete="off"
 							placeholder="Enter your message"

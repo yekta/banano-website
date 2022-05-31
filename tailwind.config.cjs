@@ -68,6 +68,9 @@ module.exports = {
 				xxs: '16rem',
 				xxxs: '12rem'
 			},
+			ringWidth: {
+				3: '3px'
+			},
 			spacing: {
 				'3px': '3px',
 				0.75: '0.1875rem',
