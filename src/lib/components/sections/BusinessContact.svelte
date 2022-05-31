@@ -10,15 +10,15 @@
 
 <div
 	id="business-contact"
-	class="container-b-small flex flex-col items-center justify-start -mt-8 pt-24 pb-4 px-4"
+	class="container-b-small flex flex-col items-center justify-start -mt-8 pt-24 px-5 pb-4"
 >
-	<h2 class="text-3xl font-bold px-3 md:px-12 text-center">Business Contact</h2>
-	<p class="mt-3 text-lg px-5 md:px-16 lg:px-24 text-center">
-		For business inquiries, you can click the button below and fill out the form or reach out to us
-		via Discord, Twitter or Reddit. For general questions, you can contact us via any of our social
+	<h2 class="text-3xl font-bold md:px-24 text-center">Business Contact</h2>
+	<p class="mt-3 text-lg md:px-24 text-center">
+		For business inquiries, you can click the button below and fill the form or reach out to us via
+		Discord, Twitter or Reddit. For general questions, you can contact us via any of our social
 		media accounts.
 	</p>
-	<Button onClick={() => (isFormOpen = !isFormOpen)} class="w-full max-w-[23rem] px-16 mt-5 mb-8">
+	<Button onClick={() => (isFormOpen = !isFormOpen)} class="w-full max-w-[23rem] px-16 mt-6 mb-8">
 		<IconSocial type="email" class="w-8 h-8 ml-3 absolute left-0" />
 		{isFormOpen ? 'Close' : 'Contact Us'}
 	</Button>
