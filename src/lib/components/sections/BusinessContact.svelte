@@ -35,15 +35,14 @@
 	</p>
 	<Button onClick={() => (isFormOpen = !isFormOpen)} class="w-full max-w-[23rem] px-16 mt-6 mb-8">
 		<IconSocial type="email" class="w-8 h-8 ml-3 absolute left-0" />
-		{isFormOpen ? 'Close' : 'Contact Us'}
+		{isFormOpen ? 'Close' : 'Contact Form'}
 	</Button>
 	{#if isFormOpen}
 		<form
 			transition:expandCollapse
 			action="https://formspree.io/f/mvolllyn"
 			method="POST"
-			class="max-w-lg md:max-w-xl mx-auto bg-c-secondary/5 rounded-2xl 
-			ring-3 ring-c-secondary/15 overflow-hidden relative z-0"
+			class="max-w-lg md:max-w-xl mx-auto bg-c-bg-secondary rounded-2xl overflow-hidden relative z-0"
 		>
 			<div class="w-full flex flex-wrap p-1.5 md:p-4">
 				<div class="w-full md:w-1/2 p-2 mt-1">
@@ -54,9 +53,9 @@
 							name="Business Name"
 							id="business-name-input"
 							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
-										border-[3px] bg-c-secondary/8 {inputErrorName
+										border-[3px] bg-c-on-bg/5 {inputErrorName
 								? 'border-c-danger'
-								: 'border-c-secondary/10 hover:border-c-secondary/40 focus:border-c-secondary'} transition"
+								: 'border-c-on-bg/5 hover:border-c-on-bg/20 focus:border-c-secondary'} transition"
 							type="text"
 							placeholder="Business name"
 						/>
@@ -70,9 +69,9 @@
 							name="Business Email"
 							id="business-email-input"
 							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
-										border-[3px] bg-c-secondary/8 {inputErrorName
+										border-[3px] bg-c-on-bg/5 {inputErrorName
 								? 'border-c-danger'
-								: 'border-c-secondary/10 hover:border-c-secondary/40 focus:border-c-secondary'} transition"
+								: 'border-c-on-bg/5 hover:border-c-on-bg/20 focus:border-c-secondary'} transition"
 							type="email"
 							placeholder="Business email"
 						/>
@@ -86,9 +85,9 @@
 							name="Message"
 							id="business-message-input"
 							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
-									border-[3px] bg-c-secondary/8 {inputErrorName
+									border-[3px] bg-c-on-bg/5 {inputErrorName
 								? 'border-c-danger'
-								: 'border-c-secondary/10 hover:border-c-secondary/40 focus:border-c-secondary'} transition"
+								: 'border-c-on-bg/5 hover:border-c-on-bg/20 focus:border-c-secondary'} transition"
 							type="email"
 							autocomplete="off"
 							placeholder="Enter your message"
