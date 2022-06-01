@@ -2,10 +2,11 @@
 	import { inview } from 'svelte-inview';
 	import Button from '../Button.svelte';
 
-	let inputExplorer: string;
 	let inputError = false;
 	let isAddressAsync = (s: string) => true;
 	let isHashAsync = (s: string) => true;
+	const defaultAddress = 'ban_1bananobh5rat99qfgt1ptpieie5swmoth87thi74qgbfrij7dcgjiij94xr';
+	let inputExplorer = defaultAddress;
 
 	async function handleSubmit(e: Event) {
 		if (
@@ -14,10 +15,12 @@
 			inputExplorer !== undefined &&
 			(isAddressAsync(inputExplorer) || isHashAsync(inputExplorer))
 		) {
-			window.plausible('Creeper Used', { props: { 'Address Validity': 'Valid' } });
+			window.plausible('Creeper Used', {
+				props: { Address: inputExplorer === defaultAddress ? 'Default' : 'Custom' }
+			});
 			window.open(`https://creeper.banano.cc/explorer/auto/${inputExplorer}`, '_blank');
 		} else {
-			window.plausible('Creeper Used', { props: { 'Address Validity': 'Invalid' } });
+			window.plausible('Creeper Used', { props: { Address: 'Invalid' } });
 			inputError = true;
 		}
 	}
