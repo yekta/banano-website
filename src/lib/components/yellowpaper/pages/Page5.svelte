@@ -2,6 +2,7 @@
 	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
 	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
 	import LazyImage from '$lib/components/LazyImage.svelte';
+	import { bananoServices } from '$lib/ts/constants/bananoServices';
 
 	export { classes as class };
 	let classes: string;
@@ -21,7 +22,8 @@
 	<div class="w-full mt-8">
 		<a
 			class="w-full"
-			href="https://creeper.banano.cc/explorer/account/ban_1meme1yacdi5iu69wcu7et3kzrr1s4yoizd9mx7nstqp1c9e69979mjd4fun/history"
+			href="{bananoServices.creeper
+				.url}/explorer/account/ban_1meme1yacdi5iu69wcu7et3kzrr1s4yoizd9mx7nstqp1c9e69979mjd4fun/history"
 			target="_blank"
 		>
 			<LazyImage
