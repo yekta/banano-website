@@ -12,11 +12,12 @@
 			<div class="w-full flex flex-wrap justify-center">
 				{#each testimonials as testimonial}
 					<div class="w-full max-w-md md:w-1/2 md:max-w-full mt-5 py-3 md:px-3">
-						<div
-							class="w-full chat-bubble relative bg-c-secondary filter brightness-125 shadow-card shadow-c-on-bg/10
-							rounded-tl-2xl rounded-tr-2xl rounded-br-2xl flex flex-col items-center text-center px-10 py-5"
-						>
-							<p>“{testimonial}”</p>
+						<div class="w-full relative flex flex-col items-center text-center px-10 py-5">
+							<div
+								class="w-full h-full absolute left-0 top-0 chat-bubble bg-c-secondary shadow-card 
+								shadow-c-on-bg/10 rounded-tl-2xl rounded-tr-2xl rounded-br-2xl filter brightness-125"
+							/>
+							<p class="relative">“{testimonial}”</p>
 						</div>
 					</div>
 				{/each}
