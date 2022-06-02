@@ -4,7 +4,6 @@ import { mdsvex } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
 
 /** @type {import('@sveltejs/kit').Config} */
-//
 const config = {
 	extensions: ['.svelte', '.md', '.svx'],
 	preprocess: [
