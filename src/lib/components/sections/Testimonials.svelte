@@ -15,7 +15,7 @@
 						<div class="w-full relative flex flex-col items-center text-center px-10 py-5">
 							<div
 								class="w-full h-full absolute left-0 top-0 chat-bubble bg-c-secondary shadow-card 
-								shadow-c-on-bg/10 rounded-tl-2xl rounded-tr-2xl rounded-br-2xl filter brightness-125"
+								shadow-c-on-bg/15 rounded-tl-2xl rounded-tr-2xl rounded-br-2xl"
 							/>
 							<p class="relative">“{testimonial}”</p>
 						</div>
