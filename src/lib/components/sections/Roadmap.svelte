@@ -59,7 +59,7 @@
 										>
 											{entry.title}
 										</h4>
-										<p class="w-full px-3 py-2">{@html entry.body}</p>
+										<p class="w-full px-3 py-2 markdown">{@html entry.body}</p>
 									</div>
 								{/each}
 							</div>

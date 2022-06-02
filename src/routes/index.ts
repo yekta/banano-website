@@ -11,10 +11,6 @@ import type { Node as NodeP, HTMLElement as HTMLElementP } from 'node-html-parse
 import { mdParser } from '$lib/ts/helpers/mdParser';
 
 export const get: RequestHandler = async (event) => {
-	let faucets;
-	let announcements;
-	let roadmap;
-
 	let testimonials = mdParser(testimonialsMd, 'h3', []).map((r) => r[0]);
 
 	let faq = mdParser(faqMd, 'h3', ['p']).map((r) => ({
@@ -24,83 +20,44 @@ export const get: RequestHandler = async (event) => {
 
 	let team = mdParser(teamMd, 'h3', ['p']).map((r) => ({
 		nickname: r[0],
-		description: r[1]
+		description: parse(r[1]).textContent
 	}));
 
-	let communityProjects = mdParser(communityProjectsMd, 'h3', ['p', 'h4']).map((r) => {
-		let buttonEl = parse(r[2]);
-		return {
-			title: r[0],
-			description: r[1],
-			buttonName: buttonEl.innerText,
-			buttonUrl: (buttonEl.firstChild as HTMLElementP).getAttribute('href')
-		};
-	});
-
-	let htmlFaucets = faucetsMd.render().html;
-	let htmlAnnouncements = announcementsMd.render().html;
-	let htmlRoadmap = roadmapMd.render().html;
-
-	let parsedHtmlFaucets = parse(htmlFaucets);
-	let parsedHtmlAnnouncements = parse(htmlAnnouncements);
-	let parsedHtmlRoadmap = parse(htmlRoadmap);
-
-	// Faucets
-	let titlesFaucets = parsedHtmlFaucets.getElementsByTagName('h3').map((n) => n.text);
-	let descriptionsFaucets = parsedHtmlFaucets.getElementsByTagName('p').map((n) => n.text);
-	let buttonNameFaucets = parsedHtmlFaucets.getElementsByTagName('a').map((n) => n.text);
-	let buttonUrlFaucets = parsedHtmlFaucets
-		.getElementsByTagName('a')
-		.map((n) => n.getAttribute('href'));
-	faucets = titlesFaucets.map((t, i) => ({
-		isStopped: t.includes('🛑'),
-		title: t.replaceAll(' 🛑', '').replaceAll('🛑', ''),
-		description: descriptionsFaucets[i],
-		buttonName: buttonNameFaucets[i],
-		buttonUrl: String(buttonUrlFaucets[i])
-	}));
-
-	// Announcements
 	const announcementCount = 12;
-	let titleAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('h3').map((n) => n.text);
-	let dateAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('h4').map((n) => n.text);
-	let bodyAnnouncements = parsedHtmlAnnouncements.getElementsByTagName('p').map((n) => n.innerHTML);
-	announcements = titleAnnouncements
-		.map((t, i) => ({
-			title: t,
-			date: new Date(dateAnnouncements[i]),
-			body: bodyAnnouncements[i]
+	let announcements = mdParser(announcementsMd, 'h3', ['h4', 'p'])
+		.map((r) => ({
+			title: r[0],
+			date: new Date(r[1]),
+			body: r[2]
 		}))
 		.slice(0, announcementCount);
 
-	// Roadmap
-	let filteredRoadmap: NodeP[] = parsedHtmlRoadmap.childNodes.filter((n) => {
-		let nStr = n.toString();
-		return nStr.includes('h2') || nStr.includes('h3') || nStr.includes('p');
-	});
-	let roadmapArrayOfArrays: NodeP[][] = [];
-	let h2Indexes: number[] = [];
-	filteredRoadmap.forEach((item, index) => {
-		if (item.toString().includes('h2')) {
-			h2Indexes.push(index);
-		}
-	});
+	let communityProjects = mdParser(communityProjectsMd, 'h3', ['p', 'h4']).map((r) => ({
+		title: r[0],
+		description: parse(r[1]).textContent,
+		buttonName: parse(r[2]).innerText,
+		buttonUrl: (parse(r[2]).firstChild as HTMLElementP).getAttribute('href')
+	}));
 
-	for (let i = 0; i < h2Indexes.length; i++) {
-		let startIndex = h2Indexes[i];
-		let endIndex = h2Indexes[i + 1];
-		roadmapArrayOfArrays.push(filteredRoadmap.slice(startIndex, endIndex));
-	}
+	let faucets = mdParser(faucetsMd, 'h3', ['p', 'h4']).map((r) => ({
+		title: r[0].replaceAll(' 🛑', '').replaceAll('🛑', ''),
+		isStopped: r[0].includes('🛑'),
+		description: parse(r[1]).textContent,
+		buttonName: parse(r[2]).innerText,
+		buttonUrl: (parse(r[2]).firstChild as HTMLElementP).getAttribute('href')
+	}));
 
-	roadmap = roadmapArrayOfArrays
-		.map((nArray: unknown[]) => {
-			let nArrayHTML = nArray as HTMLElementP[];
-			let title = nArrayHTML.filter((n) => n.rawTagName === 'h2')[0].text;
-			let entryTitles = nArrayHTML.filter((n) => n.rawTagName === 'h3').map((n) => n.text);
-			let entryBodies = nArrayHTML.filter((n) => n.rawTagName === 'p').map((n) => n.innerHTML);
-			return { title, entries: entryTitles.map((t, i) => ({ title: t, body: entryBodies[i] })) };
+	let roadmapYearsEntries = mdParser(roadmapMd, 'h3', ['p']);
+	let roadmap = mdParser(roadmapMd, 'h2', ['h3'])
+		.map((o) => {
+			let len = o[1].split(' ').length;
+			let entries = roadmapYearsEntries.splice(0, len).map((r) => ({ title: r[0], body: r[1] }));
+			return {
+				title: o[0],
+				entries: entries
+			};
 		})
-		.sort((a, b) => b.title.localeCompare(a.title));
+		.reverse();
 
 	return {
 		status: 200,

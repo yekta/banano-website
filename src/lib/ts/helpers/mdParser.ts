@@ -18,7 +18,7 @@ export function mdParser(md: typeof import('*.md'), splitterTag: string, otherTa
 		let start = splitIndexes[i];
 		let end = splitIndexes[i + 1 < splitIndexes.length ? i + 1 : nodes.length];
 		let split = nodes.slice(start, end) as HTMLElementP[];
-		let splitter = split.filter((n) => n.rawTagName === splitterTag)[0].text;
+		let splitter = split.filter((n) => n.rawTagName === splitterTag)[0].textContent;
 		let others: string[] = [];
 		otherTags.forEach((t) => {
 			others.push(
