@@ -8,47 +8,42 @@ import announcementsMd from '/content/announcements.md';
 import roadmapMd from '/content/roadmap.md';
 import { parse } from 'node-html-parser';
 import type { Node as NodeP, HTMLElement as HTMLElementP } from 'node-html-parser';
+import { mdParser } from '$lib/ts/helpers/mdParser';
 
 export const get: RequestHandler = async (event) => {
-	let faq;
-	let testimonials;
 	let faucets;
-	let team;
-	let communityProjects;
 	let announcements;
 	let roadmap;
 
-	let htmlFaq = faqMd.render().html;
-	let htmlTestimonials = testimonialsMd.render().html;
+	let testimonials = mdParser(testimonialsMd, 'h3', []).map((r) => r[0]);
+
+	let faq = mdParser(faqMd, 'h3', ['p']).map((r) => ({
+		question: r[0],
+		answer: r[1]
+	}));
+
+	let team = mdParser(teamMd, 'h3', ['p']).map((r) => ({
+		nickname: r[0],
+		description: r[1]
+	}));
+
+	let communityProjects = mdParser(communityProjectsMd, 'h3', ['p', 'h4']).map((r) => {
+		let buttonEl = parse(r[2]);
+		return {
+			title: r[0],
+			description: r[1],
+			buttonName: buttonEl.innerText,
+			buttonUrl: (buttonEl.firstChild as HTMLElementP).getAttribute('href')
+		};
+	});
+
 	let htmlFaucets = faucetsMd.render().html;
-	let htmlTeam = teamMd.render().html;
-	let htmlCommunityProjects = communityProjectsMd.render().html;
 	let htmlAnnouncements = announcementsMd.render().html;
 	let htmlRoadmap = roadmapMd.render().html;
 
-	let parsedHtmlFaq = parse(htmlFaq);
-	let parsedHtmlTestimonials = parse(htmlTestimonials);
 	let parsedHtmlFaucets = parse(htmlFaucets);
-	let parsedHtmlTeam = parse(htmlTeam);
-	let parsedHtmlCommunityProjects = parse(htmlCommunityProjects);
 	let parsedHtmlAnnouncements = parse(htmlAnnouncements);
 	let parsedHtmlRoadmap = parse(htmlRoadmap);
-
-	// FAQ
-	let questions = parsedHtmlFaq.getElementsByTagName('h3').map((n) => n.text);
-	let answers = parsedHtmlFaq.getElementsByTagName('p').map((n) => n.innerHTML);
-	faq = questions.map((q, index) => ({
-		question: q,
-		answer: answers[index]
-	}));
-
-	// Team
-	let nicknamesTeam = parsedHtmlTeam.getElementsByTagName('h3').map((n) => n.text);
-	let descriptionsTeam = parsedHtmlTeam.getElementsByTagName('p').map((n) => n.text);
-	team = nicknamesTeam.map((n, i) => ({
-		nickname: n,
-		description: descriptionsTeam[i]
-	}));
 
 	// Faucets
 	let titlesFaucets = parsedHtmlFaucets.getElementsByTagName('h3').map((n) => n.text);
@@ -63,29 +58,6 @@ export const get: RequestHandler = async (event) => {
 		description: descriptionsFaucets[i],
 		buttonName: buttonNameFaucets[i],
 		buttonUrl: String(buttonUrlFaucets[i])
-	}));
-
-	// Testimonials
-	testimonials = parsedHtmlTestimonials.getElementsByTagName('h3').map((n) => n.text);
-
-	// Community Projects
-	let titlesCommunityProjects = parsedHtmlCommunityProjects
-		.getElementsByTagName('h3')
-		.map((n) => n.text);
-	let descriptionsCommunityProjects = parsedHtmlCommunityProjects
-		.getElementsByTagName('p')
-		.map((n) => n.text);
-	let buttonNameCommunityProjects = parsedHtmlCommunityProjects
-		.getElementsByTagName('a')
-		.map((n) => n.text);
-	let buttonUrlCommunityProjects = parsedHtmlCommunityProjects
-		.getElementsByTagName('a')
-		.map((n) => n.getAttribute('href'));
-	communityProjects = titlesCommunityProjects.map((t, i) => ({
-		title: t,
-		description: descriptionsCommunityProjects[i],
-		buttonName: buttonNameCommunityProjects[i],
-		buttonUrl: String(buttonUrlCommunityProjects[i])
 	}));
 
 	// Announcements
