@@ -1,4 +1,5 @@
 import adapter from '@sveltejs/adapter-auto';
+import adapterStatic from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
@@ -14,7 +15,7 @@ const config = {
 		})
 	],
 	kit: {
-		adapter: adapter(),
+		adapter: process.env.STATIC ? adapterStatic() : adapter(),
 		prerender: {
 			default: true
 		}
