@@ -83,7 +83,7 @@ body {
 	width: 0;
 	height: 0;
 	border: 25px solid transparent;
-	border-top-color: rgb(var(--c-secondary));
+	border-top-color: rgb(var(--c-secondary-shaded));
 	border-bottom: 0;
 	border-left: 0;
 	margin-bottom: -20px;
