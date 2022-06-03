@@ -14,7 +14,7 @@
 					<div class="w-full max-w-md md:w-1/2 md:max-w-full mt-5 py-3 md:px-3">
 						<div class="w-full relative flex flex-col items-center text-center px-10 py-5">
 							<div
-								class="w-full h-full absolute left-0 top-0 chat-bubble bg-c-secondary-shaded shadow-card 
+								class="w-full h-full absolute left-0 top-0 chat-bubble bg-c-chat-bubble shadow-card 
 								shadow-c-on-bg/15 rounded-tl-2xl rounded-tr-2xl rounded-br-2xl"
 							/>
 							<p class="relative">“{testimonial}”</p>

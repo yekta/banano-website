@@ -26,6 +26,7 @@ body {
 	--c-facebook: 59 89 152;
 	--c-youtube: 180 20 20;
 	--c-medium: 60 60 70;
+	--c-chat-bubble: 60 151 60;
 
 	--c-primary-shaded: 231 201 0;
 	--c-secondary-shaded: 16 121 25;
@@ -83,7 +84,7 @@ body {
 	width: 0;
 	height: 0;
 	border: 25px solid transparent;
-	border-top-color: rgb(var(--c-secondary-shaded));
+	border-top-color: rgb(var(--c-chat-bubble));
 	border-bottom: 0;
 	border-left: 0;
 	margin-bottom: -20px;

@@ -58,6 +58,7 @@ module.exports = {
 				'c-telegram-shaded': withOpacityValue('--c-telegram-shaded'),
 				'c-facebook-shaded': withOpacityValue('--c-facebook-shaded'),
 				'c-medium-shaded': withOpacityValue('--c-medium-shaded'),
+				'c-chat-bubble': withOpacityValue('--c-chat-bubble'),
 				'c-yellowpaper-bg': withOpacityValue('--c-yellowpaper-bg'),
 				'c-yellowpaper-bg-shaded': withOpacityValue('--c-yellowpaper-bg-shaded'),
 				'c-yellowpaper-on-bg': withOpacityValue('--c-yellowpaper-on-bg'),
