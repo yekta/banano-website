@@ -74,7 +74,7 @@
 			title: 'Yellowpaper™',
 			id: 'yellowpaper',
 			href: '/#yellowpaper',
-			classes: 'lg:hidden xl:block'
+			classes: 'lg:hidden xl:flex'
 		},
 		{
 			title: 'News',
@@ -134,47 +134,53 @@
 		class="{notAtTheTop
 			? 'translate-0'
 			: '-translate-y-24'} transform transition duration-250 bg-c-bg shadow-navbar 
-			shadow-c-secondary/13 absolute left-0 top-0 w-full h-full pointer-events-none ring-4 ring-c-bg-shaded"
+			shadow-c-secondary/13 absolute left-0 bottom-2 w-full h-full pointer-events-none ring-4 ring-c-bg-shaded"
 	/>
 	<div
-		class="py-2 {notAtTheTop
-			? 'translate-y-0'
-			: 'translate-y-1'} transition container-b-larger max-w-full flex flex-row items-center justify-between px-4 relative"
+		class="{notAtTheTop
+			? '-translate-y-1'
+			: 'translate-0'} transition container-b-larger max-w-full flex flex-row items-stretch justify-between px-4 relative"
 	>
 		<a
 			aria-label="Logo Link to Homescreen"
 			href="/"
-			class="mr-12 pt-2 pb-2 md:pb-2.5 px-1 group rounded-lg relative z-0"
+			class="mr-12 py-3 group rounded-lg relative z-0 h-full flex flex-row items-center"
 		>
-			<Logo
-				class="{notAtTheTop
-					? 'group-hover:text-c-on-bg scale-90'
-					: 'group-hover:text-c-bg'} transition w-44 md:w-48 h-auto transform origin-left"
-			/>
+			<div class="pt-2 pb-2 md:pb-2.5 px-1">
+				<Logo
+					class="{notAtTheTop
+						? 'group-hover:text-c-on-bg scale-90'
+						: 'group-hover:text-c-bg'} transition w-44 md:w-48 h-auto transform origin-left"
+				/>
+			</div>
 		</a>
-		<div class="flex items-center justify-end">
-			<div class="hidden lg:flex justify-end items-center mx-1.5">
+		<div class="flex justify-end">
+			<div class="hidden lg:flex justify-end mx-1.5">
 				{#each sections as section}
 					<a
 						href={section.href}
 						class="{section.classes !== undefined
 							? section.classes
-							: ''} px-4 py-2 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
-							shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
+							: ''} font-medium group py-3 flex items-center"
 					>
-						{section.title}
+						<p
+							class="px-4 py-2 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
+							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/50 group-hover:shadow-c-secondary-shaded"
+						>
+							{section.title}
+						</p>
 					</a>
 				{/each}
 			</div>
-			<div class="hidden md:flex justify-end items-center mx-1.5">
+			<div class="hidden md:flex justify-end mx-1.5">
 				{#each socials as social}
-					<a
-						href={social.href}
-						target="_blank"
-						class="p-1.5 font-medium rounded-lg transition hover:bg-c-secondary hover:text-c-bg
-						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
-					>
-						<IconSocial type={social.icon} class="w-9 h-9" />
+					<a href={social.href} target="_blank" class="font-medium group flex items-center py-3">
+						<div
+							class="p-1.5 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
+							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/40 group-hover:shadow-c-secondary-shaded"
+						>
+							<IconSocial type={social.icon} class="w-9 h-9" />
+						</div>
 					</a>
 				{/each}
 			</div>
@@ -182,12 +188,16 @@
 				<a
 					href="https://www.coingecko.com/en/coins/banano"
 					target="_blank"
-					class="{notAtTheTop
-						? 'bg-c-secondary/20'
-						: 'bg-c-primary/20'} w-full overflow-hidden text-sm text-center font-medium px-3 py-1.5 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
-						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
+					class="w-full overflow-hidden text-sm text-center font-medium flex items-center group"
 				>
-					${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
+					<p
+						class="{notAtTheTop
+							? 'bg-c-secondary/20'
+							: 'bg-c-primary/20'} w-full px-3 py-1.5 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
+							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/40 group-hover:shadow-c-secondary-shaded"
+					>
+						${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
+					</p>
 				</a>
 			</div>
 			<button
@@ -195,18 +205,21 @@
 				on:click={toggleMenu}
 				class="{notAtTheTop
 					? 'text-c-secondary'
-					: 'text-c-primary'} lg:hidden h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 
-					flex flex-row items-center justify-center rounded-lg transition shadow-navbar-button 
-					shadow-c-on-bg/50 hover:text-c-bg {$isTouchscreen
-					? ''
-					: 'hover:shadow-navbar-button-hover hover:shadow-c-secondary-shaded hover:bg-c-secondary'}"
+					: 'text-c-primary'} lg:hidden h-full flex items-center group py-3"
 			>
-				<IconMenu
-					class="lg:hidden w-full h-full md:w-8 md:h-8 md:mr-1.5 transition transform {isSidebarOpen
-						? 'rotate-180'
-						: ''}"
-				/>
-				<div class="font-medium text-lg hidden md:block">Menu</div>
+				<div
+					class="h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 justify-center rounded-lg transition shadow-navbar-button 
+					shadow-c-on-bg/50 group-hover:text-c-bg flex flex-row items-center {$isTouchscreen
+						? ''
+						: 'group-hover:shadow-navbar-button-hover group-hover:shadow-c-secondary-shaded group-hover:bg-c-secondary'}"
+				>
+					<IconMenu
+						class="lg:hidden w-full h-full md:w-8 md:h-8 md:mr-1.5 transition transform {isSidebarOpen
+							? 'rotate-180'
+							: ''}"
+					/>
+					<div class="font-medium text-lg hidden md:block">Menu</div>
+				</div>
 			</button>
 		</div>
 	</div>
