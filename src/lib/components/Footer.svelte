@@ -139,7 +139,7 @@
 							{#if entry.icon !== undefined}
 								<IconSocial type={entry.icon} class="w-6 h-6 mr-2.5" />
 							{/if}
-							<span>{entry.text}</span>
+							{entry.text}
 						</a>
 					{/each}
 				</div>
