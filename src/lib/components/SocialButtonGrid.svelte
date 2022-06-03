@@ -6,6 +6,10 @@
 	import Button from '$lib/components/Button.svelte';
 	import IconSocial from '$lib/components/icons/IconSocial.svelte';
 
+	export { classes as class };
+
+	let classes = 'w-full flex flex-wrap justify-center';
+
 	interface SocialButton {
 		url: string;
 		text: string;
@@ -65,7 +69,7 @@
 	];
 </script>
 
-<div class="w-full flex flex-wrap justify-center">
+<div class={classes}>
 	{#each socialButtons as socialButton}
 		<Button
 			padding="px-14 py-3.5"
