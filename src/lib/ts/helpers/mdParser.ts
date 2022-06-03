@@ -12,7 +12,7 @@ export function mdParser(md: typeof import('*.md'), splitterTag: string, otherTa
 		.filter((n) => n.rawTagName === splitterTag)
 		.map((n) => n.index);
 
-	let splits = [];
+	let splits: string[][] = [];
 
 	for (let i = 0; i < splitIndexes.length; i++) {
 		let start = splitIndexes[i];
