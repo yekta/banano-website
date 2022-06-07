@@ -7,6 +7,18 @@
   then the link of the community project in paranteses -> #### [Example Button Text](https://example.com)
 -->
 
+### cryptomonKeys
+
+Freely distributed Banano-themed meme-rich NFTs.
+
+#### [cryptomonkeys.cc](https://cryptomonkeys.cc)
+
+### JungleTv.live
+
+A video sharing platform where you can earn Banano.
+
+#### [jungletv.live](https://jungletv.live)
+
 ### Banano.how
 
 A place to get help getting started.
@@ -18,12 +30,6 @@ A place to get help getting started.
 A provably fair dice game for Banano.
 
 #### [banano.bet](https://banano.bet)
-
-### JungleTv.live
-
-A video sharing platform where you can earn Banano.
-
-#### [jungletv.live](https://jungletv.live)
 
 ### Banano.fun
 
