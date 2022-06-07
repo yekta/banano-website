@@ -5,6 +5,18 @@
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
 
+### Banano Monthly Update #50 (June 2022)
+
+#### 2022-06-07
+
+Here's a fresh Monthly Update from the BANANO metaverse, summarizing all important happenings in the BANANO ecosphere in May 2022. [Medium Article](https://medium.com/banano/banano-monthly-update-50-june-2022-48d46b5c26fd). [Publish0x Article](https://www.publish0x.com/banano/banano-monthly-update-50-june-2022-xddryeo?a=QJ0dNjvdLO).
+
+### wBAN — 1 Year Anniversary
+
+#### 2022-06-05
+
+It's already one year since Wrapped BANANO (wBAN) was launched on Binance Smart Chain, and later on Polygon/MATIC and Fantom networks. Check out this recap and NFT airdrop announcement [Medium Article](https://medium.com/banano/wban-1-year-anniversary-2514ff33e6ee). [Publish0x Article](https://www.publish0x.com/banano/wrapped-banano-wban-1-year-anniversary-nft-airdrop-inside-xxzojem?a=QJ0dNjvdLO).
+
 ### Banano Monthly Update #48 (April 2022)
 
 #### 2022-04-05
