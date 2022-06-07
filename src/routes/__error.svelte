@@ -46,7 +46,7 @@
 						{/if}
 					</p>
 				</div>
-				<Button href={'/'} class="mt-4 w-full max-w-xs">Go Home</Button>
+				<Button href={'/'} sveltekit:prefetch class="mt-4 w-full max-w-xs">Go Home</Button>
 			</div>
 		</div>
 		<div
