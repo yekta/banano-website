@@ -11,7 +11,7 @@
 	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
 
 	const title = 'Redeem | Banano';
-	const description = 'Instructions on how to redeem your BANANO from a paper wallet.';
+	const description = 'Instructions on how to redeem your Banano from a paper wallet.';
 	const canonical = `${canonicalUrl}/${$page.routeId}`;
 	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
 
