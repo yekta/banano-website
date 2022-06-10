@@ -1,6 +1,6 @@
 import { cubicOut, cubicIn, linear } from 'svelte/easing';
 
-export const expandCollapse = (node: Node, { delay = 0, easing = cubicOut }) => {
+export const expandCollapse = (node: Node, { delay = 0, easing = cubicOut, y = 0 }) => {
 	let height = Number(getComputedStyle(node as HTMLElement).height.split('px')[0]);
 	const duration = Math.min(Math.round(height / 2 + 175), 300);
 	return {
@@ -8,7 +8,9 @@ export const expandCollapse = (node: Node, { delay = 0, easing = cubicOut }) => 
 		duration,
 		easing,
 		css: (t: number) => {
-			return `height: ${t * height}px`;
+			return `height: ${t * height}px; transform: translateY(${
+				y * (1 - t)
+			}rem); tranform-origin: top;`;
 		}
 	};
 };

@@ -92,6 +92,8 @@ module.exports = {
 				240: '60rem',
 				256: '64rem',
 				288: '72rem',
+				'0.5ch': '0.5ch',
+				'0.75ch': '0.75ch',
 				'1ch': '1ch',
 				'2ch': '2ch',
 				'3ch': '3ch',
