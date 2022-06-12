@@ -8,9 +8,6 @@
 	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
 	import Dropdown from '$lib/components/Dropdown.svelte';
 	import bananojs from '@bananocoin/bananojs';
-	import { flip } from 'svelte/animate';
-	import { quadOut } from 'svelte/easing';
-	import { paperWalletIn } from '$lib/ts/transitions';
 	// @ts-ignore
 	import QR from 'svelte-qr';
 
@@ -68,8 +65,7 @@
 	const quantityOptions: IQuantityOption[] = [
 		{ name: '1', value: 1 },
 		{ name: '5', value: 5 },
-		{ name: '10', value: 10 },
-		{ name: '20', value: 20 }
+		{ name: '10', value: 10 }
 	];
 	let selectedQuantity = quantityOptions[0];
 
@@ -245,11 +241,7 @@
 					text-left border border-c-on-bg/5 h-160 max-h-60vh overflow-y-auto"
 				>
 					{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
-						<div
-							in:paperWalletIn={{ duration: 300, easing: quadOut }}
-							animate:flip={{ duration: 300, easing: quadOut }}
-							class="w-full relative flex items-center"
-						>
+						<div class="w-full relative flex items-center">
 							<div class="flex flex-col items-center w-56 p-4 text-center">
 								<p class="font-bold px-3">ADDRESS</p>
 								<p class="text-xs break-all leading-relaxed px-3 mb-4">
