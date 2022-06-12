@@ -7,11 +7,12 @@
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
 	import Dropdown from '$lib/components/Dropdown.svelte';
-	// @ts-ignore
 	import bananojs from '@bananocoin/bananojs';
 	import { flip } from 'svelte/animate';
 	import { quadOut } from 'svelte/easing';
 	import { paperWalletIn } from '$lib/ts/transitions';
+	// @ts-ignore
+	import QR from 'svelte-qr';
 
 	const title = 'Paper Wallet | Banano';
 	const description =
@@ -19,33 +20,40 @@
 	const canonical = `${canonicalUrl}/${$page.routeId}`;
 	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
 
-	const imgPrefix = 'paperwallet';
+	const imgPrefix = '/paper-wallets/paper-wallet';
+	const placeholderAddress = 'ban_1yekta1xn94qdnbmmj1tqg76zk3apcfd31pjmuy6d879e3mr469a4o4sdhd4';
 
 	interface IPaperWallet {
 		name: string;
 		slug: string;
 		listNumber: number;
+		qrMarginClasses: string;
 	}
+
 	const paperWallets: IPaperWallet[] = [
 		{
 			name: 'Yellow & Gray',
 			slug: 'gray-yellow',
-			listNumber: 1
+			listNumber: 1,
+			qrMarginClasses: 'mt-[32.8%] mr-[16.43%]'
 		},
 		{
 			name: 'Green & White',
 			slug: 'green-white',
-			listNumber: 2
+			listNumber: 2,
+			qrMarginClasses: 'mt-[32.8%] mr-[18.25%]'
 		},
 		{
 			name: 'Green & Gray',
 			slug: 'gray-green',
-			listNumber: 3
+			listNumber: 3,
+			qrMarginClasses: 'mt-[32.8%] mr-[16.43%]'
 		},
 		{
 			name: 'Christmas',
 			slug: 'christmas',
-			listNumber: 4
+			listNumber: 4,
+			qrMarginClasses: 'mt-[20.7%] mr-[15.47%]'
 		}
 	];
 	let selectedPaperWallet = paperWallets[0];
@@ -150,21 +158,24 @@
 					page and load the account with funds. The recepient of your gift can sweep the funds using
 					Kalium.
 				</p>
-				<Button href="#paperwallet-generator" class="mt-6" padding="px-12 md:px-16 py-3.5">
+				<Button href="#paper-wallet-generator" class="mt-6" padding="px-12 md:px-16 py-3.5">
 					Let's Start!
 				</Button>
 			</div>
 		</div>
 	</div>
-	<div id="paperwallet-generator" class="w-full bg-c-bg -mt-2 pt-12 pb-12 relative">
-		<h2 class="text-3xl font-bold">Generator</h2>
+	<div id="paper-wallet-generator" class="w-full bg-c-bg -mt-2 pt-12 pb-12 relative">
+		<h2 class="text-3xl font-bold px-5 md:px-12">Generator</h2>
+		<p class="container-b-smallest max-w-full text-xl mt-3 px-5 md:px-12">
+			Take a look at the design options, then scroll down and start generating paper wallets.
+		</p>
 		<div class="container-b flex flex-wrap justify-center mt-5">
 			{#each paperWallets as paperWallet, index}
 				<div class="w-full max-w-md md:max-w-lg md:w-1/2 py-3 md:p-3 lg:p-4">
 					<div class="w-full flex flex-col items-start relative">
 						<img
-							class="w-full h-auto rounded-2xl relative z-0 border-4 border-c-bg shadow-lg shadow-c-on-bg/15"
-							src="/paperwallets/{imgPrefix}-{paperWallet.slug}.svg"
+							class="w-full h-auto relative z-0 shadow-lg shadow-c-on-bg/15"
+							src="{imgPrefix}-{paperWallet.slug}.svg"
 							alt="{paperWallet.name} Paper Wallet"
 						/>
 						<p
@@ -172,6 +183,9 @@
 						>
 							{index + 1}
 						</p>
+						<div class="absolute right-0 top-0 z-10 w-[15%] {paperWallet.qrMarginClasses}">
+							<QR text={placeholderAddress} level="H" />
+						</div>
 					</div>
 				</div>
 			{/each}
@@ -225,16 +239,26 @@
 				<Button>Print Everything Below</Button>
 				<div
 					class="w-full bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-6 p-5 
-				text-left border border-c-on-bg/5 h-140 max-h-60vh overflow-y-auto"
+				text-left border border-c-on-bg/5 h-160 max-h-60vh overflow-y-auto"
 				>
 					{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
-						<img
-							animate:flip={{ duration: 300, easing: quadOut }}
+						<div
 							in:paperWalletIn={{ duration: 300, easing: quadOut }}
-							class="w-full h-auto relative z-0 mb-2"
-							src="/paperwallets/{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
-							alt="{wallet.address} Paper Wallet"
-						/>
+							animate:flip={{ duration: 300, easing: quadOut }}
+							class="w-full relative"
+						>
+							<img
+								class="w-full h-auto relative z-0 mb-2"
+								src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
+								alt="{wallet.address} Paper Wallet"
+							/>
+							<div
+								class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
+									.qrMarginClasses}"
+							>
+								<QR text={wallet.seed} level="H" />
+							</div>
+						</div>
 					{/each}
 				</div>
 			</div>

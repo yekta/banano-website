@@ -13,6 +13,9 @@ declare module '*.md' {
 	const render: () => { html: string };
 }
 
+declare module '@bananocoin/bananojs';
+declare module 'svelte-qr';
+
 declare namespace svelte.JSX {
 	interface HTMLAttributes<T> {
 		onenter?: (event: CustomEvent<DndEvent> & { target: EventTarget & T }) => void;
