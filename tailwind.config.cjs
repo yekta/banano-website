@@ -77,6 +77,20 @@ module.exports = {
 			ringWidth: {
 				3: '3px'
 			},
+			animation: {
+				pressed: 'pressedScale 0.2s ease-out 1'
+			},
+			keyframes: {
+				pressedScale: {
+					'0%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(0.9)' },
+					'100%': { transform: 'scale(1)' }
+				}
+			},
+			scale: {
+				80: '0.8',
+				85: '0.85'
+			},
 			spacing: {
 				'3px': '3px',
 				0.75: '0.1875rem',

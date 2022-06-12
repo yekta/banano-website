@@ -9,7 +9,9 @@
 	import Dropdown from '$lib/components/Dropdown.svelte';
 	// @ts-ignore
 	import bananojs from '@bananocoin/bananojs';
-	import { tick } from 'svelte';
+	import { flip } from 'svelte/animate';
+	import { quadOut } from 'svelte/easing';
+	import { paperWalletIn } from '$lib/ts/transitions';
 
 	const title = 'Paper Wallet | Banano';
 	const description =
@@ -73,7 +75,10 @@
 
 	async function onGenerate() {
 		clearTimeout(isFreshlyGeneratedTimeout);
-		isFreshlyGenerated = false;
+		isFreshlyGenerated = true;
+		isFreshlyGeneratedTimeout = setTimeout(() => {
+			isFreshlyGenerated = false;
+		}, 1000);
 		let _generatedPaperWallets: IGeneratedPaperWallet[] = [];
 		let designIndex = paperWallets.indexOf(selectedPaperWallet);
 		for (let i = 0; i < selectedQuantity.value; i++) {
@@ -85,10 +90,6 @@
 			});
 		}
 		generatedPaperWallets = [...generatedPaperWallets, ..._generatedPaperWallets];
-		isFreshlyGenerated = true;
-		isFreshlyGeneratedTimeout = setTimeout(() => {
-			isFreshlyGenerated = false;
-		}, 1000);
 	}
 
 	async function generateSeedAddressPair() {
@@ -149,9 +150,9 @@
 					page and load the account with funds. The recepient of your gift can sweep the funds using
 					Kalium.
 				</p>
-				<Button href="#paperwallet-generator" class="mt-6" padding="px-12 md:px-16 py-3.5"
-					>Let's Start!</Button
-				>
+				<Button href="#paperwallet-generator" class="mt-6" padding="px-12 md:px-16 py-3.5">
+					Let's Start!
+				</Button>
 			</div>
 		</div>
 	</div>
@@ -187,7 +188,7 @@
 				</div>
 				<div class="py-2 px-4 w-64">
 					<Button
-						class="w-full"
+						class="w-full active:scale-90"
 						buttonType={isFreshlyGenerated ? 'secondary' : 'primary'}
 						onClick={onGenerate}
 					>
@@ -199,7 +200,7 @@
 		<div class="container-b-smallest flex flex-col items-start mt-8 relative z-0">
 			<h3 class="px-5 font-bold text-xl">Generated Addresses</h3>
 			<div
-				class="w-full h-64 max-h-50vh bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-3 p-5 
+				class="w-full h-56 max-h-50vh bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-3 p-5 
 				text-left border border-c-on-bg/5 rounded-xl overflow-auto"
 			>
 				{#if generatedPaperWallets.length > 0}
@@ -211,20 +212,41 @@
 				{:else}
 					<div class="w-full h-full flex items-center justify-center">
 						<p class="text-c-on-bg/60 text-center">
-							You didn't generate any wallets yet.<br />Start by clicking "Generate"
+							You didn't generate any wallets yet.<br />Start by clicking "<span class="font-bold"
+								>Generate.</span
+							>"
 						</p>
 					</div>
 				{/if}
 			</div>
 		</div>
+		{#if generatedPaperWallets.length > 0}
+			<div class="container-b-smallest flex flex-col items-center mt-8 relative z-0">
+				<Button>Print Everything Below</Button>
+				<div
+					class="w-full bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-6 p-5 
+				text-left border border-c-on-bg/5 h-140 max-h-60vh overflow-y-auto"
+				>
+					{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
+						<img
+							animate:flip={{ duration: 300, easing: quadOut }}
+							in:paperWalletIn={{ duration: 300, easing: quadOut }}
+							class="w-full h-auto relative z-0 mb-2"
+							src="/paperwallets/{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
+							alt="{wallet.address} Paper Wallet"
+						/>
+					{/each}
+				</div>
+			</div>
+		{/if}
 	</div>
 </div>
 
 <style>
 	.colored-fade-in {
-		animation: coloredFadeIn 1s ease;
+		animation: colored-fade-in-keys 1s ease;
 	}
-	@keyframes coloredFadeIn {
+	@keyframes colored-fade-in-keys {
 		0% {
 			opacity: 0.25;
 			color: rgb(var(--c-secondary));

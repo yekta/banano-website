@@ -1,5 +1,18 @@
-import { cubicOut, cubicIn, linear } from 'svelte/easing';
+import { cubicOut, cubicIn, linear, quadOut } from 'svelte/easing';
 
+export const paperWalletIn = (
+	node: Node,
+	{ delay = 0, easing = quadOut, duration = 300, y = 0 }
+) => {
+	return {
+		delay,
+		duration,
+		easing,
+		css: (t: number) => {
+			return `transform: translateY(-${(1 - t) * 100}%); tranform-origin: top;`;
+		}
+	};
+};
 export const expandCollapse = (node: Node, { delay = 0, easing = cubicOut, y = 0 }) => {
 	let height = Number(getComputedStyle(node as HTMLElement).height.split('px')[0]);
 	const duration = Math.min(Math.round(height / 2 + 175), 300);
