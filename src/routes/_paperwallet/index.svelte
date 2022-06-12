@@ -23,6 +23,9 @@
 	const imgPrefix = '/paper-wallets/paper-wallet';
 	const placeholderAddress = 'ban_1yekta1xn94qdnbmmj1tqg76zk3apcfd31pjmuy6d879e3mr469a4o4sdhd4';
 
+	const hightlightChCountStart = 9;
+	const hightlightChCountEnd = 5;
+
 	interface IPaperWallet {
 		name: string;
 		slug: string;
@@ -179,7 +182,7 @@
 							alt="{paperWallet.name} Paper Wallet"
 						/>
 						<p
-							class="font-bold text-lg rounded-md px-3 py-1.5 shadow-lg shadow-c-on-bg/15 bg-c-bg absolute left-0 top-0 -mt-3 -ml-3"
+							class="font-bold text-lg px-3 py-1.5 shadow-lg shadow-c-on-bg/15 bg-c-bg absolute left-0 top-0 -mt-3 -ml-3"
 						>
 							{index + 1}
 						</p>
@@ -215,7 +218,7 @@
 			<h3 class="px-5 font-bold text-xl">Generated Addresses</h3>
 			<div
 				class="w-full h-56 max-h-50vh bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-3 p-5 
-				text-left border border-c-on-bg/5 rounded-xl overflow-auto"
+				text-left border border-c-on-bg/5 overflow-auto"
 			>
 				{#if generatedPaperWallets.length > 0}
 					<p class="w-full leading-loose text-sm font-mono">
@@ -235,28 +238,46 @@
 			</div>
 		</div>
 		{#if generatedPaperWallets.length > 0}
-			<div class="container-b-smallest flex flex-col items-center mt-8 relative z-0">
+			<div class="container-b-small flex flex-col items-center mt-8 relative z-0">
 				<Button>Print Everything Below</Button>
 				<div
 					class="w-full bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-6 p-5 
-				text-left border border-c-on-bg/5 h-160 max-h-60vh overflow-y-auto"
+					text-left border border-c-on-bg/5 h-160 max-h-60vh overflow-y-auto"
 				>
 					{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
 						<div
 							in:paperWalletIn={{ duration: 300, easing: quadOut }}
 							animate:flip={{ duration: 300, easing: quadOut }}
-							class="w-full relative"
+							class="w-full relative flex items-center"
 						>
-							<img
-								class="w-full h-auto relative z-0 mb-2"
-								src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
-								alt="{wallet.address} Paper Wallet"
-							/>
-							<div
-								class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
-									.qrMarginClasses}"
-							>
-								<QR text={wallet.seed} level="H" />
+							<div class="flex flex-col items-center w-56 p-4 text-center">
+								<p class="font-bold px-3">ADDRESS</p>
+								<p class="text-xs break-all leading-relaxed px-3 mb-4">
+									<span class="text-c-secondary font-bold"
+										>{wallet.address.slice(0, hightlightChCountStart)}</span
+									>{wallet.address.slice(
+										hightlightChCountStart,
+										wallet.address.length - hightlightChCountEnd
+									)}<span class="text-c-secondary font-bold"
+										>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
+									>
+								</p>
+								<div class="w-full px-6 pb-6">
+									<QR text={wallet.address} level="H" />
+								</div>
+							</div>
+							<div class="flex-1 relative">
+								<img
+									class="w-full h-auto relative z-0 mb-2"
+									src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
+									alt="{wallet.address} Paper Wallet"
+								/>
+								<div
+									class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
+										.qrMarginClasses}"
+								>
+									<QR text={wallet.seed} level="H" />
+								</div>
 							</div>
 						</div>
 					{/each}
