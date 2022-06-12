@@ -40,6 +40,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@bananocoin/bananojs": "^2.5.14",
 		"@editorjs/editorjs": "^2.24.3",
 		"@editorjs/header": "^2.6.2",
 		"editorjs-html": "^3.4.2",

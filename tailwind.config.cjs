@@ -69,6 +69,11 @@ module.exports = {
 				xxs: '16rem',
 				xxxs: '12rem'
 			},
+			maxHeight: {
+				'40vh': '40vh',
+				'50vh': '50vh',
+				'60vh': '60vh'
+			},
 			ringWidth: {
 				3: '3px'
 			},
@@ -97,7 +102,10 @@ module.exports = {
 				'1ch': '1ch',
 				'2ch': '2ch',
 				'3ch': '3ch',
-				'4ch': '4ch'
+				'4ch': '4ch',
+				'40vh': '40vh',
+				'50vh': '50vh',
+				'60vh': '60vh'
 			},
 			boxShadow: {
 				card: `0rem 0.75rem 1.5rem -0.25rem`,
