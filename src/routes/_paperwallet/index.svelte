@@ -9,6 +9,7 @@
 	import Dropdown from '$lib/components/Dropdown.svelte';
 	// @ts-ignore
 	import bananojs from '@bananocoin/bananojs';
+	import { tick } from 'svelte';
 
 	const title = 'Paper Wallet | Banano';
 	const description =
@@ -59,24 +60,46 @@
 	];
 	let selectedQuantity = quantityOptions[0];
 
-	interface IGeneratedAccount {
+	interface IGeneratedPaperWallet {
 		seed: string;
 		address: string;
+		designIndex: number;
 	}
 
-	let generatedAccounts: IGeneratedAccount[] = [];
+	let generatedPaperWallets: IGeneratedPaperWallet[] = [];
+
+	let isFreshlyGenerated = false;
+	let isFreshlyGeneratedTimeout: NodeJS.Timeout;
 
 	async function onGenerate() {
+		clearTimeout(isFreshlyGeneratedTimeout);
+		isFreshlyGenerated = false;
+		let _generatedPaperWallets: IGeneratedPaperWallet[] = [];
+		let designIndex = paperWallets.indexOf(selectedPaperWallet);
+		for (let i = 0; i < selectedQuantity.value; i++) {
+			const { seed, address } = await generateSeedAddressPair();
+			_generatedPaperWallets.push({
+				seed,
+				address,
+				designIndex
+			});
+		}
+		generatedPaperWallets = [...generatedPaperWallets, ..._generatedPaperWallets];
+		isFreshlyGenerated = true;
+		isFreshlyGeneratedTimeout = setTimeout(() => {
+			isFreshlyGenerated = false;
+		}, 1000);
+	}
+
+	async function generateSeedAddressPair() {
 		let bytes = new Uint8Array(32);
 		window.crypto.getRandomValues(bytes);
 		const seed = bytesToHex(bytes).toUpperCase();
 		const privateKey = bananojs.getPrivateKey(seed, 0);
 		const publicKey = await bananojs.getPublicKey(privateKey);
-		const address = bananojs.getBananoAccount(publicKey);
-		generatedAccounts.push({ seed, address });
-		generatedAccounts = generatedAccounts;
+		const address: string = bananojs.getBananoAccount(publicKey);
+		return { seed, address };
 	}
-
 	// a function to conver uint8 array to hex string
 	function bytesToHex(bytes: Uint8Array) {
 		return Array.from(bytes)
@@ -118,7 +141,7 @@
 			<BgHero />
 			<BgWaveBottom />
 			<div
-				class="container-b-small px-5 md:px-24 max-w-full flex flex-col items-center self-center pt-24 pb-32 relative z-10 text-c-bg"
+				class="container-b-small px-5 md:px-24 max-w-full flex flex-col items-center self-center pt-24 pb-32 md:pb-36 relative z-10 text-c-bg"
 			>
 				<h1 class="font-bold text-4xl md:text-5xl leading-tight">Paper Wallet Generator</h1>
 				<p class="text-xl mt-4">
@@ -132,7 +155,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="paperwallet-generator" class="w-full bg-c-bg -mt-2 pt-12 relative px-5 md:px-8 pb-12">
+	<div id="paperwallet-generator" class="w-full bg-c-bg -mt-2 pt-12 pb-12 relative">
 		<h2 class="text-3xl font-bold">Generator</h2>
 		<div class="container-b flex flex-wrap justify-center mt-5">
 			{#each paperWallets as paperWallet, index}
@@ -152,29 +175,74 @@
 				</div>
 			{/each}
 		</div>
-		<div class="container-b-small flex flex-row items-end justify-center mt-5">
-			<div class="flex flex-col items-start py-2 px-4 max-w-full w-72">
-				<h2 class="font-bold text-xl px-2">Design</h2>
-				<Dropdown items={paperWallets} bind:selectedItem={selectedPaperWallet} />
-			</div>
-			<div class="flex flex-col items-start py-2 px-4 w-44">
-				<h2 class="font-bold text-xl px-2">Quantity</h2>
-				<Dropdown items={quantityOptions} bind:selectedItem={selectedQuantity} />
-			</div>
-			<div class="py-2 px-4 w-64">
-				<Button class="w-full" buttonType="secondary" onClick={onGenerate}>Generate</Button>
+		<div class="w-full mt-2 flex flex-col">
+			<div class="container-b-small flex flex-row items-end justify-center relative z-20">
+				<div class="flex flex-col items-start py-2 px-4 max-w-full w-72">
+					<h2 class="font-bold text-xl px-2">Design</h2>
+					<Dropdown items={paperWallets} bind:selectedItem={selectedPaperWallet} />
+				</div>
+				<div class="flex flex-col items-start py-2 px-4 w-44">
+					<h2 class="font-bold text-xl px-2">Quantity</h2>
+					<Dropdown items={quantityOptions} bind:selectedItem={selectedQuantity} />
+				</div>
+				<div class="py-2 px-4 w-64">
+					<Button
+						class="w-full"
+						buttonType={isFreshlyGenerated ? 'secondary' : 'primary'}
+						onClick={onGenerate}
+					>
+						{isFreshlyGenerated ? 'Generated!' : 'Generate'}
+					</Button>
+				</div>
 			</div>
 		</div>
-		<div class="container-b-small flex flex-col items-start mt-8">
+		<div class="container-b-smallest flex flex-col items-start mt-8 relative z-0">
 			<h3 class="px-5 font-bold text-xl">Generated Addresses</h3>
 			<div
-				class="w-full h-80 max-h-50vh bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-3 px-8 py-6 
+				class="w-full h-64 max-h-50vh bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-3 p-5 
 				text-left border border-c-on-bg/5 rounded-xl overflow-auto"
 			>
-				<p class="w-full leading-relaxed">
-					{generatedAccounts.map((i) => i.address).join(`\n`)}
-				</p>
+				{#if generatedPaperWallets.length > 0}
+					<p class="w-full leading-loose text-sm font-mono">
+						{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
+							<span class="colored-fade-in rounded px-2 py-1">{wallet.address + '\n'}</span>
+						{/each}
+					</p>
+				{:else}
+					<div class="w-full h-full flex items-center justify-center">
+						<p class="text-c-on-bg/60 text-center">
+							You didn't generate any wallets yet.<br />Start by clicking "Generate"
+						</p>
+					</div>
+				{/if}
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	.colored-fade-in {
+		animation: coloredFadeIn 1s ease;
+	}
+	@keyframes coloredFadeIn {
+		0% {
+			opacity: 0.25;
+			color: rgb(var(--c-secondary));
+			background: rgb(var(--c-secondary) / 0.15);
+		}
+		30% {
+			opacity: 1;
+			color: rgb(var(--c-secondary));
+			background: rgb(var(--c-secondary) / 0.15);
+		}
+		70% {
+			opacity: 1;
+			color: rgb(var(--c-secondary));
+			background: rgb(var(--c-secondary) / 0.15);
+		}
+		100% {
+			color: rgb(var(--c-on-bg));
+			background: rgb(var(--c-bg));
+		}
+	}
+</style>

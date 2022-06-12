@@ -52,7 +52,8 @@
 				<ListboxOptions static class="w-full rounded-b-xl">
 					{#each items.filter((i) => i !== selectedItem) as item (item.name)}
 						<ListboxOption
-							class="w-full text-left flex justify-start px-6 py-4 text-lg font-bold transition hover:cursor-pointer hover:bg-c-secondary/25 focus:bg-c-on-bg/15"
+							class="w-full text-left flex justify-start px-6 py-4 text-lg font-bold transition hover:cursor-pointer
+							hover:bg-c-secondary/15 focus:bg-c-on-bg/15 hover:text-c-secondary focus:text-c-on-bg"
 							value={item}
 						>
 							<p>
