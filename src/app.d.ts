@@ -15,11 +15,13 @@ declare module '*.md' {
 
 declare module '@bananocoin/bananojs';
 declare module 'svelte-qr';
+declare module 'svelte-copy-clipboard-action';
 
 declare namespace svelte.JSX {
 	interface HTMLAttributes<T> {
 		onenter?: (event: CustomEvent<DndEvent> & { target: EventTarget & T }) => void;
 		onexit?: (event: CustomEvent<DndEvent> & { target: EventTarget & T }) => void;
+		oncopied?: (event: CustomEvent<DndEvent> & { target: EventTarget & T }) => void;
 	}
 }
 

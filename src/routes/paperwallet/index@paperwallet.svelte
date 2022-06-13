@@ -9,6 +9,10 @@
 	import Dropdown from '$lib/components/Dropdown.svelte';
 	import bananojs from '@bananocoin/bananojs';
 	import QR from 'svelte-qr';
+	import { clipboard } from 'svelte-copy-clipboard-action';
+	import IconCopy from '$lib/components/icons/IconCopy.svelte';
+	import IconMorpher from '$lib/components/IconMorpher.svelte';
+	import IconTick from '$lib/components/icons/IconTick.svelte';
 
 	const title = 'Paper Wallet | Banano';
 	const description = 'Create Banano paper wallets for your family, friends or strangers.';
@@ -122,6 +126,16 @@
 		});
 		window.print();
 	}
+
+	let isRecentlyCopied = false;
+	let isRecentlyCopiedTimeout: NodeJS.Timeout;
+	const activateRecentlyCopied = () => {
+		clearTimeout(isRecentlyCopiedTimeout);
+		isRecentlyCopied = true;
+		isRecentlyCopiedTimeout = setTimeout(() => {
+			isRecentlyCopied = false;
+		}, 1000);
+	};
 </script>
 
 <MetaTags
@@ -223,26 +237,52 @@
 			</div>
 		</div>
 		<div
-			class="container-b-smallest px-3 md:px-8 flex flex-col items-start mt-8 relative z-0 print:hidden"
+			class="container-b-smallest px-3 md:px-8 flex flex-col items-start mt-7 relative z-0 print:hidden"
 		>
-			<h3 class="px-3 font-bold text-xl">Generated Addresses</h3>
-			<div
-				class="w-full h-56 max-h-50vh bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-3 p-3 md:p-5 
-				text-left border border-c-on-bg/10 overflow-auto"
-			>
-				{#if generatedPaperWallets.length > 0}
-					<p class="w-full leading-loose text-sm font-mono">
-						{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
-							<span class="colored-fade-in rounded px-2 py-1">{wallet.address + '\n'}</span>
-						{/each}
-					</p>
-				{:else}
-					<div class="w-full h-full flex items-center justify-center">
-						<p class="text-c-on-bg/60 text-center">
-							You didn't generate any wallets yet.<br />Start by clicking "<span class="font-bold"
-								>Generate.</span
-							>"
+			<div class="w-full flex flex-row justify-between">
+				<h3 class="px-3 font-bold text-xl">Generated Addresses</h3>
+			</div>
+			<div class="w-full relative mt-3">
+				<div
+					class="w-full h-56 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/8 p-3 md:p-5 
+					text-left border border-c-on-bg/10 overflow-auto relative"
+				>
+					{#if generatedPaperWallets.length > 0}
+						<p class="w-full leading-loose text-sm font-mono relative">
+							{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
+								<span class="colored-fade-in rounded px-2 py-1">{wallet.address + '\n'}</span>
+							{/each}
 						</p>
+					{:else}
+						<div class="w-full h-full flex items-center justify-center relative">
+							<p class="text-c-on-bg/60 text-center">
+								You didn't generate any wallets yet.<br />Start by clicking "<span class="font-bold"
+									>Generate.</span
+								>"
+							</p>
+						</div>
+					{/if}
+				</div>
+				{#if generatedPaperWallets.length > 0}
+					<div
+						class="absolute right-0 top-0 mr-2 mt-2 rounded-lg z-10 bg-c-bg shadow-lg shadow-c-on-bg/10"
+					>
+						<button
+							use:clipboard={{
+								trigger: 'click',
+								text: generatedPaperWallets
+									.map((w) => w.address)
+									.reverse()
+									.join('\n')
+							}}
+							on:copied={activateRecentlyCopied}
+							class="w-12 h-12 p-2.5 transition group hover:bg-c-secondary/20 hover:text-c-secondary rounded-lg z-0 flex flex-row items-center justify-center"
+						>
+							<IconMorpher switched={isRecentlyCopied} class="w-full h-full">
+								<IconCopy slot="0" class="w-full h-full" />
+								<IconTick slot="1" class="transform scale-125 w-full h-full" />
+							</IconMorpher>
+						</button>
 					</div>
 				{/if}
 			</div>
