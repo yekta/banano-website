@@ -54,6 +54,7 @@
 				buttonType="secondary"
 				padding="py-3.5 px-8 md:px-14"
 				href="{bananoServices.wBan.url}/?utm_source=banano.cc"
+				onClick={() => window.plausible('Start Wrapping Clicked')}
 				target="_blank"
 				class="mt-10 w-full max-w-xxs">Start Wrapping</Button
 			>
