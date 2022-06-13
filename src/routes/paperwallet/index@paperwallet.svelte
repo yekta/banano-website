@@ -283,8 +283,8 @@
 						<div class="w-full h-full flex items-center justify-center relative">
 							<p class="text-c-on-bg/60 text-center">
 								You didn't generate any wallets yet.<br />Start by clicking "<span class="font-bold"
-									>Generate.</span
-								>"
+									>Generate</span
+								>".
 							</p>
 						</div>
 					{/if}
