@@ -18,16 +18,16 @@
 </script>
 
 <Listbox
-	class="w-full rounded-xl z-0 mt-3 relative"
+	class="w-full rounded-xl mt-3 relative z-0"
 	value={selectedItem}
 	on:change={(e) => (selectedItem = e.detail)}
 	let:open
 >
 	<ListboxButton
-		class="w-full px-6 py-3.5 bg-c-bg-secondary rounded-t-xl z-0 transition-all {open
+		class="w-full px-6 py-3.5 bg-c-bg-secondary rounded-t-xl transition-all {open
 			? 'rounded-b-none'
 			: 'rounded-b-xl'} overflow-hidden shadow-button shadow-c-bg-secondary-shaded text-lg 
-      font-bold flex items-center justify-between group relative hover:text-c-secondary"
+      font-bold flex items-center justify-between group relative z-0 hover:text-c-secondary"
 	>
 		<p>
 			<span class="opacity-50 mr-0.5ch">
@@ -44,7 +44,7 @@
 		/>
 	</ListboxButton>
 	{#if open}
-		<div class="w-full relative z-30">
+		<div class="w-full relative">
 			<div
 				transition:expandCollapse={{ y: -0.5 }}
 				class="w-full absolute bg-c-bg-secondary left-0 top-0 rounded-b-xl overflow-hidden z-0 shadow-button shadow-c-bg-secondary-shaded"

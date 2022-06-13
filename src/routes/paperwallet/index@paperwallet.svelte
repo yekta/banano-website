@@ -198,17 +198,17 @@
 			{/each}
 		</div>
 		<div class="w-full max-w-md md:max-w-full mt-2 flex flex-col">
-			<div class="container-b-small flex flex-row flex-wrap items-end justify-center relative z-20">
-				<div class="w-full md:w-72 flex flex-col items-start p-3 max-w-full relative">
+			<div class="container-b-small flex flex-row flex-wrap items-end justify-center relative z-10">
+				<div class="w-full md:w-72 flex flex-col items-start p-3 max-w-full relative z-10">
 					<h2 class="font-bold text-xl px-2">Design</h2>
 					<Dropdown items={paperWallets} bind:selectedItem={selectedPaperWallet} />
 				</div>
 				<div class="w-full md:w-auto flex items-end relative p-3 mt-1 md:mt-0">
-					<div class="flex flex-col items-start w-28 mr-3 md:mr-6">
+					<div class="flex flex-col items-start w-28 mr-3 md:mr-6 relative">
 						<h2 class="font-bold text-xl px-2">Quantity</h2>
 						<Dropdown items={quantityOptions} bind:selectedItem={selectedQuantity} />
 					</div>
-					<div class="w-64 flex-1 min-w-0 md:flex-auto">
+					<div class="w-64 flex-1 min-w-0 md:flex-auto relative">
 						<Button
 							class="w-full active:scale-90"
 							buttonType={isFreshlyGenerated ? 'secondary' : 'primary'}
