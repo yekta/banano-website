@@ -254,50 +254,50 @@
 <div class="w-full -mt-2 pb-12 print:m-0 print:p-0">
 	{#if generatedPaperWallets.length > 0}
 		<div
-			class="container-b-smallest flex flex-col items-center relative z-0 px-3 md:px-8 print:px-0 print:w-full"
+			class="container-b-smallest flex flex-col items-center relative z-0 px-3 md:px-8 print:px-0 print:w-full print:block"
 		>
 			<Button onClick={printPage} class="print:hidden">Print Everything Below</Button>
 			<div
 				class="w-full bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-6 p-5 
 				text-left border border-c-on-bg/10 h-160 max-h-60vh overflow-auto
-				print:h-full print:max-h-full print:border-none print:p-0 print:m-0 print:shadow-none"
+				print:h-auto print:max-h-full print:border-none print:p-0 print:m-0 print:shadow-none relative"
 			>
-				<div class="w-[650px] md:w-full print:w-full">
+				<div class="w-[650px] md:w-full print:w-full relative">
 					{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
-						<div
-							class="w-full relative flex items-center print:break-inside-avoid mb-4 print:mb-[12pt]"
-						>
-							<div
-								class="flex flex-col items-center w-[29%] mr-[3%] text-center print:w-[22%] print:mr-[6%]"
-							>
-								<p class="font-bold px-3 print:px-0">ADDRESS</p>
-								<p
-									class="text-xs break-all leading-relaxed px-3 mb-4 font-mono print:text-[11px] print:leading-[14px] print:mt-[2pt] print:p-0 print:mb-[12pt]"
-								>
-									<span class="text-c-secondary font-bold"
-										>{wallet.address.slice(0, hightlightChCountStart)}</span
-									>{wallet.address.slice(
-										hightlightChCountStart,
-										wallet.address.length - hightlightChCountEnd
-									)}<span class="text-c-secondary font-bold"
-										>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
-									>
-								</p>
-								<div class="w-full px-[22%] print:px-[8%]">
-									<QR text={wallet.address} level="H" />
-								</div>
-							</div>
-							<div class="flex-1 relative">
-								<img
-									class="w-full h-auto relative z-0"
-									src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
-									alt="{wallet.address} Paper Wallet"
-								/>
+						<div class="w-full relative print:break-inside-avoid block">
+							<div class="w-full relative flex items-center mb-4 print:mb-[12pt]">
 								<div
-									class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
-										.qrMarginClasses}"
+									class="flex flex-col items-center w-[29%] mr-[3%] text-center print:w-[22%] print:mr-[6%]"
 								>
-									<QR text={wallet.seed} level="H" />
+									<p class="font-bold px-3 print:px-0">ADDRESS</p>
+									<p
+										class="text-xs break-all leading-relaxed px-3 mb-4 font-mono print:text-[11px] print:leading-[14px] print:mt-[2pt] print:p-0 print:mb-[12pt]"
+									>
+										<span class="text-c-secondary font-bold"
+											>{wallet.address.slice(0, hightlightChCountStart)}</span
+										>{wallet.address.slice(
+											hightlightChCountStart,
+											wallet.address.length - hightlightChCountEnd
+										)}<span class="text-c-secondary font-bold"
+											>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
+										>
+									</p>
+									<div class="w-full px-[22%] print:px-[8%]">
+										<QR text={wallet.address} level="H" />
+									</div>
+								</div>
+								<div class="flex-1 relative">
+									<img
+										class="w-full h-auto relative z-0"
+										src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
+										alt="{wallet.address} Paper Wallet"
+									/>
+									<div
+										class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
+											.qrMarginClasses}"
+									>
+										<QR text={wallet.seed} level="H" />
+									</div>
 								</div>
 							</div>
 						</div>

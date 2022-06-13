@@ -54,6 +54,7 @@
 				{ text: 'Blog', href: 'https://medium.com/banano', targetBlank: true },
 				{ text: 'Presskit', href: '/presskit' },
 				{ text: 'Redeem Banano', href: '/redeem' },
+				{ text: 'Paper Wallet', href: '/paperwallet' },
 				{ text: 'Business Contact', href: '/#business-contact' }
 			]
 		},
