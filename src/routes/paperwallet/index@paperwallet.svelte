@@ -118,6 +118,9 @@
 	}
 
 	function printPage() {
+		window.plausible('Paper Wallet | Print Clicked', {
+			props: { 'Wallet Count': generatedPaperWallets.length.toString() }
+		});
 		window.print();
 	}
 </script>
