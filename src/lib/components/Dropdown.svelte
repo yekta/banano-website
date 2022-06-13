@@ -22,8 +22,6 @@
 	};
 
 	let dropdownElementHeight: number;
-
-	$: console.log(dropdownElementHeight);
 </script>
 
 <div use:clickoutside={closeDropdown} class="w-full rounded-xl mt-3 relative z-0">

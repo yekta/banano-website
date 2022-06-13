@@ -240,7 +240,11 @@
 			class="container-b-smallest px-3 md:px-8 flex flex-col items-start mt-6 relative z-0 print:hidden"
 		>
 			<div class="w-full flex flex-row justify-between">
-				<h3 class="px-3 font-bold text-xl">Generated Addresses</h3>
+				<h3 class="px-3 font-bold text-xl">
+					Generated Addresses {#if generatedPaperWallets.length > 0}
+						<span class="opacity-50">({generatedPaperWallets.length})</span>
+					{/if}
+				</h3>
 			</div>
 			<div class="w-full relative mt-3">
 				<div
