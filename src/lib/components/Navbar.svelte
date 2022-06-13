@@ -12,6 +12,9 @@
 	import { sidebar } from '$lib/ts/transitions';
 	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
 
+	export { classes as class };
+	let classes = '';
+
 	let bananoPrice: number;
 	const pricePlaceholder = '..........';
 
@@ -128,7 +131,7 @@
 <nav
 	class="{notAtTheTop
 		? 'text-c-secondary'
-		: 'text-c-primary'} font-filson-pro w-full flex justify-center fixed top-0 left-0 right-0 z-50"
+		: 'text-c-primary'} font-filson-pro w-full flex justify-center fixed top-0 left-0 right-0 z-50 {classes}"
 >
 	<div
 		class="{notAtTheTop

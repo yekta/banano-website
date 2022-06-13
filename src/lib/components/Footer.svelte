@@ -7,6 +7,9 @@
 	import BgWaveTop from './backgrounds/BgWaveTop.svelte';
 	import IconSocial from './icons/IconSocial.svelte';
 
+	export { classes as class };
+	let classes = '';
+
 	const currentYear = new Date().getFullYear();
 
 	interface IFooterSection {
@@ -112,7 +115,7 @@
 </script>
 
 <footer
-	class="bg-c-bg text-c-bg font-filson-pro w-full flex flex-row items-start justify-center relative overflow-hidden pt-12"
+	class="bg-c-bg text-c-bg font-filson-pro w-full flex flex-row items-start justify-center relative overflow-hidden pt-12 {classes}"
 >
 	<div
 		style="background-image:url('/illustrations/backgrounds/bg-footer.svg');"
