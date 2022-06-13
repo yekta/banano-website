@@ -11,8 +11,7 @@
 	import QR from 'svelte-qr';
 
 	const title = 'Paper Wallet | Banano';
-	const description =
-		'Create Banano gift cards or paper wallets for your family, friends or strangers.';
+	const description = 'Create Banano paper wallets for your family, friends or strangers.';
 	const canonical = `${canonicalUrl}/${$page.routeId}`;
 	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
 
