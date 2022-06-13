@@ -147,13 +147,13 @@
 		<a
 			aria-label="Logo Link to Homescreen"
 			href="/"
-			class="mr-12 py-3 group rounded-lg relative z-0 h-full flex flex-row items-center"
+			class="mr-4 md:mr-12 py-3 group rounded-lg relative z-0 h-full flex flex-row items-center"
 		>
 			<div class="pt-2 pb-2 md:pb-2.5 px-1">
 				<Logo
 					class="{notAtTheTop
 						? 'group-hover:text-c-on-bg scale-90'
-						: 'group-hover:text-c-bg'} transition w-44 md:w-48 h-auto transform origin-left"
+						: 'group-hover:text-c-bg'} transition max-w-full w-44 md:w-48 h-auto transform origin-left"
 				/>
 			</div>
 		</a>

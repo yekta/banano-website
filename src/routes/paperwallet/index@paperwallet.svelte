@@ -20,7 +20,7 @@
 	const imgPrefix = '/paper-wallets/paper-wallet';
 	const placeholderAddress = 'ban_1yekta1xn94qdnbmmj1tqg76zk3apcfd31pjmuy6d879e3mr469a4o4sdhd4';
 
-	const hightlightChCountStart = 9;
+	const hightlightChCountStart = 10;
 	const hightlightChCountEnd = 5;
 
 	interface IPaperWallet {
@@ -81,6 +81,9 @@
 	let isFreshlyGeneratedTimeout: NodeJS.Timeout;
 
 	async function onGenerate() {
+		window.plausible('Paper Wallet | Generated Used', {
+			props: { Design: selectedPaperWallet.name, Quantity: selectedQuantity.value }
+		});
 		clearTimeout(isFreshlyGeneratedTimeout);
 		isFreshlyGenerated = true;
 		isFreshlyGeneratedTimeout = setTimeout(() => {
@@ -169,14 +172,17 @@
 			</div>
 		</div>
 	</div>
-	<div id="paper-wallet-generator" class="w-full bg-c-bg -mt-2 pt-12 pb-12 relative">
+	<div
+		id="paper-wallet-generator"
+		class="w-full bg-c-bg -mt-2 pt-10 pb-12 relative flex flex-col items-center"
+	>
 		<h2 class="text-3xl font-bold px-5 md:px-12">Generator</h2>
 		<p class="container-b-smallest max-w-full text-xl mt-3 px-5 md:px-12">
 			Take a look at the design options, then scroll down and start generating paper wallets.
 		</p>
-		<div class="container-b flex flex-wrap justify-center mt-5">
+		<div class="container-b flex flex-wrap justify-center mt-5 px-2 md:px-8">
 			{#each paperWallets as paperWallet, index}
-				<div class="w-full max-w-md md:max-w-lg md:w-1/2 py-3 md:p-3 lg:p-4">
+				<div class="w-full max-w-md md:max-w-lg md:w-1/2 p-3 lg:p-4">
 					<div class="w-full flex flex-col items-start relative">
 						<img
 							class="w-full h-auto relative z-0 shadow-lg shadow-c-on-bg/15"
@@ -195,32 +201,36 @@
 				</div>
 			{/each}
 		</div>
-		<div class="w-full mt-2 flex flex-col">
-			<div class="container-b-small flex flex-row items-end justify-center relative z-20">
-				<div class="flex flex-col items-start py-2 px-4 max-w-full w-72">
+		<div class="w-full max-w-md md:max-w-full mt-2 flex flex-col">
+			<div class="container-b-small flex flex-row flex-wrap items-end justify-center relative z-20">
+				<div class="w-full md:w-72 flex flex-col items-start p-3 max-w-full relative">
 					<h2 class="font-bold text-xl px-2">Design</h2>
 					<Dropdown items={paperWallets} bind:selectedItem={selectedPaperWallet} />
 				</div>
-				<div class="flex flex-col items-start py-2 px-4 w-44">
-					<h2 class="font-bold text-xl px-2">Quantity</h2>
-					<Dropdown items={quantityOptions} bind:selectedItem={selectedQuantity} />
-				</div>
-				<div class="py-2 px-4 w-64">
-					<Button
-						class="w-full active:scale-90"
-						buttonType={isFreshlyGenerated ? 'secondary' : 'primary'}
-						onClick={onGenerate}
-					>
-						{isFreshlyGenerated ? 'Generated!' : 'Generate'}
-					</Button>
+				<div class="w-full md:w-auto flex items-end relative p-3 mt-1 md:mt-0">
+					<div class="flex flex-col items-start w-28 mr-3 md:mr-6">
+						<h2 class="font-bold text-xl px-2">Quantity</h2>
+						<Dropdown items={quantityOptions} bind:selectedItem={selectedQuantity} />
+					</div>
+					<div class="w-64 flex-1 min-w-0 md:flex-auto">
+						<Button
+							class="w-full active:scale-90"
+							buttonType={isFreshlyGenerated ? 'secondary' : 'primary'}
+							onClick={onGenerate}
+						>
+							{isFreshlyGenerated ? 'Generated!' : 'Generate'}
+						</Button>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container-b-smallest flex flex-col items-start mt-8 relative z-0 print:hidden">
-			<h3 class="px-5 font-bold text-xl">Generated Addresses</h3>
+		<div
+			class="container-b-smallest px-3 md:px-8 flex flex-col items-start mt-8 relative z-0 print:hidden"
+		>
+			<h3 class="px-3 font-bold text-xl">Generated Addresses</h3>
 			<div
-				class="w-full h-56 max-h-50vh bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-3 p-5 
-				text-left border border-c-on-bg/5 overflow-auto"
+				class="w-full h-56 max-h-50vh bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-3 p-3 md:p-5 
+				text-left border border-c-on-bg/10 overflow-auto"
 			>
 				{#if generatedPaperWallets.length > 0}
 					<p class="w-full leading-loose text-sm font-mono">
@@ -243,46 +253,56 @@
 </div>
 <div class="w-full -mt-2 pb-12 print:m-0 print:p-0">
 	{#if generatedPaperWallets.length > 0}
-		<div class="container-b-small flex flex-col items-center relative z-0">
+		<div
+			class="container-b-smallest flex flex-col items-center relative z-0 px-3 md:px-8 print:px-0 print:w-full"
+		>
 			<Button onClick={printPage} class="print:hidden">Print Everything Below</Button>
 			<div
 				class="w-full bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-6 p-5 
-				text-left border border-c-on-bg/5 h-160 max-h-60vh overflow-y-auto
+				text-left border border-c-on-bg/10 h-160 max-h-60vh overflow-auto
 				print:h-full print:max-h-full print:border-none print:p-0 print:m-0 print:shadow-none"
 			>
-				{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
-					<div class="w-full relative flex items-center print:break-inside-avoid">
-						<div class="flex flex-col items-center w-56 p-4 text-center">
-							<p class="font-bold px-3">ADDRESS</p>
-							<p class="text-xs break-all leading-relaxed px-3 mb-4 font-mono">
-								<span class="text-c-secondary font-bold"
-									>{wallet.address.slice(0, hightlightChCountStart)}</span
-								>{wallet.address.slice(
-									hightlightChCountStart,
-									wallet.address.length - hightlightChCountEnd
-								)}<span class="text-c-secondary font-bold"
-									>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
-								>
-							</p>
-							<div class="w-full px-6 pb-6">
-								<QR text={wallet.address} level="H" />
-							</div>
-						</div>
-						<div class="flex-1 relative">
-							<img
-								class="w-full h-auto relative z-0 mb-2"
-								src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
-								alt="{wallet.address} Paper Wallet"
-							/>
+				<div class="w-[650px] md:w-full print:w-full">
+					{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
+						<div
+							class="w-full relative flex items-center print:break-inside-avoid mb-4 print:mb-[12pt]"
+						>
 							<div
-								class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
-									.qrMarginClasses}"
+								class="flex flex-col items-center w-[29%] mr-[3%] text-center print:w-[22%] print:mr-[6%]"
 							>
-								<QR text={wallet.seed} level="H" />
+								<p class="font-bold px-3 print:px-0">ADDRESS</p>
+								<p
+									class="text-xs break-all leading-relaxed px-3 mb-4 font-mono print:text-[11px] print:leading-[14px] print:mt-[2pt] print:p-0 print:mb-[12pt]"
+								>
+									<span class="text-c-secondary font-bold"
+										>{wallet.address.slice(0, hightlightChCountStart)}</span
+									>{wallet.address.slice(
+										hightlightChCountStart,
+										wallet.address.length - hightlightChCountEnd
+									)}<span class="text-c-secondary font-bold"
+										>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
+									>
+								</p>
+								<div class="w-full px-[22%] print:px-[8%]">
+									<QR text={wallet.address} level="H" />
+								</div>
+							</div>
+							<div class="flex-1 relative">
+								<img
+									class="w-full h-auto relative z-0"
+									src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
+									alt="{wallet.address} Paper Wallet"
+								/>
+								<div
+									class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
+										.qrMarginClasses}"
+								>
+									<QR text={wallet.seed} level="H" />
+								</div>
 							</div>
 						</div>
-					</div>
-				{/each}
+					{/each}
+				</div>
 			</div>
 		</div>
 	{/if}

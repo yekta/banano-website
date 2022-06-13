@@ -18,7 +18,7 @@
 </script>
 
 <Listbox
-	class="w-full rounded-xl mt-3"
+	class="w-full rounded-xl mt-3 relative"
 	value={selectedItem}
 	on:change={(e) => (selectedItem = e.detail)}
 	let:open
@@ -44,7 +44,7 @@
 		/>
 	</ListboxButton>
 	{#if open}
-		<div class="w-full relative">
+		<div class="w-full relative z-30">
 			<div
 				transition:expandCollapse={{ y: -0.5 }}
 				class="w-full absolute bg-c-bg-secondary left-0 top-0 rounded-b-xl overflow-hidden shadow-button shadow-c-bg-secondary-shaded"
