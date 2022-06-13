@@ -13,6 +13,9 @@
 	import IconCopy from '$lib/components/icons/IconCopy.svelte';
 	import IconMorpher from '$lib/components/IconMorpher.svelte';
 	import IconTick from '$lib/components/icons/IconTick.svelte';
+	import VirtualList from '@sveltejs/svelte-virtual-list';
+	import { onMount, tick } from 'svelte';
+	import IconLoading from '$lib/components/icons/IconLoading.svelte';
 
 	const title = 'Paper Wallet | Banano';
 	const description = 'Create Banano paper wallets for your family, friends or strangers.';
@@ -67,7 +70,8 @@
 	const quantityOptions: IQuantityOption[] = [
 		{ name: '1', value: 1 },
 		{ name: '5', value: 5 },
-		{ name: '10', value: 10 }
+		{ name: '10', value: 10 },
+		{ name: '25', value: 25 }
 	];
 	let selectedQuantity = quantityOptions[0];
 
@@ -120,11 +124,22 @@
 			.join('');
 	}
 
-	function printPage() {
+	let isPrinting = false;
+	let shouldRenderPrinting = false;
+
+	async function printPage() {
 		window.plausible('PaperWallet | Print Clicked', {
 			props: { 'Wallet Count': generatedPaperWallets.length.toString() }
 		});
-		window.print();
+		isPrinting = true;
+		await tick();
+		setTimeout(async () => {
+			shouldRenderPrinting = true;
+			await tick();
+			setTimeout(() => {
+				window.print();
+			}, 100);
+		}, 300);
 	}
 
 	let isRecentlyCopied = false;
@@ -136,6 +151,13 @@
 			isRecentlyCopied = false;
 		}, 1000);
 	};
+
+	onMount(() => {
+		window.addEventListener('afterprint', (event) => {
+			shouldRenderPrinting = false;
+			isPrinting = false;
+		});
+	});
 </script>
 
 <MetaTags
@@ -280,7 +302,8 @@
 									.join('\n')
 							}}
 							on:copied={activateRecentlyCopied}
-							class="w-12 h-12 p-2.5 transition group hover:bg-c-secondary/20 hover:text-c-secondary rounded-lg z-0 flex flex-row items-center justify-center"
+							class="w-12 h-12 p-2.5 transition group hover:bg-c-secondary/15 hover:text-c-secondary 
+							rounded-lg z-0 flex flex-row items-center justify-center"
 						>
 							<IconMorpher switched={isRecentlyCopied} class="w-full h-full">
 								<IconCopy slot="0" class="w-full h-full" />
@@ -298,52 +321,113 @@
 		<div
 			class="container-b-smallest flex flex-col items-center relative z-0 px-3 md:px-8 print:px-0 print:w-full print:block"
 		>
-			<Button onClick={printPage} class="print:hidden">Print Everything Below</Button>
+			<Button disabled={isPrinting} onClick={printPage} class="print:hidden">
+				{#if isPrinting}
+					<div class="mr-2"><IconLoading class="w-6 h-6 animate-spin" /></div>
+					Printing...
+				{:else}
+					Print Everything Below
+				{/if}
+			</Button>
 			<div
-				class="w-full bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-6 p-5 
+				class="w-full bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-6
 				text-left border border-c-on-bg/10 h-160 max-h-60vh overflow-auto
 				print:h-auto print:max-h-full print:border-none print:p-0 print:m-0 print:shadow-none relative"
 			>
-				<div class="w-[650px] md:w-full print:w-full print:h-full relative">
-					{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
-						<div class="w-full relative print:break-inside-avoid table h-auto">
-							<div class="w-full relative flex items-center mb-4 print:mb-[12pt]">
-								<div
-									class="flex flex-col items-center w-[29%] mr-[3%] text-center print:w-[24%] print:mr-[4%]"
-								>
-									<p class="font-bold px-3 print:px-0">ADDRESS</p>
-									<p
-										class="text-xs break-all leading-relaxed px-3 mb-4 font-mono print:text-[11px] print:leading-[14px] print:mt-[2pt] print:p-0 print:mb-[12pt]"
-									>
-										<span class="text-c-secondary font-bold"
-											>{wallet.address.slice(0, hightlightChCountStart)}</span
-										>{wallet.address.slice(
-											hightlightChCountStart,
-											wallet.address.length - hightlightChCountEnd
-										)}<span class="text-c-secondary font-bold"
-											>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
-										>
-									</p>
-									<div class="w-full px-[22%] print:px-[12%]">
-										<QR text={wallet.address} level="H" />
-									</div>
-								</div>
-								<div class="flex-1 relative">
-									<img
-										class="w-full h-auto relative z-0"
-										src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
-										alt="{wallet.address} Paper Wallet"
-									/>
+				<div class="w-[650px] md:w-full h-full print:w-full print:h-full relative">
+					<div class="w-full h-full print:hidden">
+						<VirtualList items={[...generatedPaperWallets].reverse()} let:item={wallet}>
+							<div
+								class="w-full relative print:break-inside-avoid table h-auto px-4 pt-4 {wallet.address ===
+								generatedPaperWallets[0].address
+									? 'pb-4'
+									: ''} print:p-0"
+							>
+								<div class="w-full relative flex items-center print:mb-[12pt]">
 									<div
-										class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
-											.qrMarginClasses}"
+										class="flex flex-col items-center w-[30%] mr-[3%] text-center print:w-[24%] print:mr-[4%]"
 									>
-										<QR text={wallet.seed} level="H" />
+										<p class="font-bold px-3 print:px-0">ADDRESS</p>
+										<p
+											class="text-xs break-all leading-relaxed px-3 mb-4 font-mono print:text-[11px] print:leading-[14px] print:mt-[2pt] print:p-0 print:mb-[12pt]"
+										>
+											<span class="text-c-secondary font-bold"
+												>{wallet.address.slice(0, hightlightChCountStart)}</span
+											>{wallet.address.slice(
+												hightlightChCountStart,
+												wallet.address.length - hightlightChCountEnd
+											)}<span class="text-c-secondary font-bold"
+												>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
+											>
+										</p>
+										<div class="w-full px-[22%] print:px-[12%]">
+											<QR text={wallet.address} level="H" />
+										</div>
+									</div>
+									<div class="flex-1 relative">
+										<img
+											class="w-full h-auto relative z-0"
+											src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
+											alt="{wallet.address} Paper Wallet"
+										/>
+										<div
+											class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
+												.qrMarginClasses}"
+										>
+											<QR text={wallet.seed} level="H" />
+										</div>
 									</div>
 								</div>
 							</div>
+						</VirtualList>
+					</div>
+					{#if isPrinting && shouldRenderPrinting}
+						<div class="w-full h-auto hidden print:block p-5">
+							{#each [...generatedPaperWallets].reverse() as wallet}
+								<div
+									class="w-full relative print:break-inside-avoid table h-auto mb-4 print:mb-[12pt]"
+								>
+									<div class="w-full relative flex items-center">
+										<div
+											class="flex flex-col items-center w-[30%] mr-[3%] text-center print:w-[24%] print:mr-[4%]"
+										>
+											<p class="font-bold px-3 print:px-0">ADDRESS</p>
+											<p
+												class="text-xs break-all leading-relaxed px-3 mb-4 font-mono print:text-[11px] print:leading-[14px] print:mt-[2pt] print:p-0 print:mb-[12pt]"
+											>
+												<span class="text-c-secondary font-bold"
+													>{wallet.address.slice(0, hightlightChCountStart)}</span
+												>{wallet.address.slice(
+													hightlightChCountStart,
+													wallet.address.length - hightlightChCountEnd
+												)}<span class="text-c-secondary font-bold"
+													>{wallet.address.slice(
+														wallet.address.length - hightlightChCountEnd
+													)}</span
+												>
+											</p>
+											<div class="w-full px-[22%] print:px-[12%]">
+												<QR text={wallet.address} level="H" />
+											</div>
+										</div>
+										<div class="flex-1 relative">
+											<img
+												class="w-full h-auto relative z-0"
+												src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
+												alt="{wallet.address} Paper Wallet"
+											/>
+											<div
+												class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
+													.qrMarginClasses}"
+											>
+												<QR text={wallet.seed} level="H" />
+											</div>
+										</div>
+									</div>
+								</div>
+							{/each}
 						</div>
-					{/each}
+					{/if}
 				</div>
 			</div>
 		</div>
