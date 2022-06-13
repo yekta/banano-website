@@ -139,7 +139,7 @@
 			setTimeout(() => {
 				window.print();
 			}, 100);
-		}, 300);
+		}, 500);
 	}
 
 	let isRecentlyCopied = false;
