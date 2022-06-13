@@ -192,7 +192,7 @@
 		<p class="container-b-smallest max-w-full text-xl mt-3 px-5 md:px-12">
 			Take a look at the design options, then scroll down and start generating paper wallets.
 		</p>
-		<div class="container-b flex flex-wrap justify-center mt-5 px-2 md:px-8">
+		<div class="container-b flex flex-wrap justify-center mt-6 px-2 md:px-8">
 			{#each paperWallets as paperWallet, index}
 				<div class="w-full max-w-md md:max-w-lg md:w-1/2 p-3 lg:p-4">
 					<div class="w-full flex flex-col items-start relative">
@@ -237,7 +237,7 @@
 			</div>
 		</div>
 		<div
-			class="container-b-smallest px-3 md:px-8 flex flex-col items-start mt-7 relative z-0 print:hidden"
+			class="container-b-smallest px-3 md:px-8 flex flex-col items-start mt-6 relative z-0 print:hidden"
 		>
 			<div class="w-full flex flex-row justify-between">
 				<h3 class="px-3 font-bold text-xl">Generated Addresses</h3>
@@ -289,7 +289,7 @@
 		</div>
 	</div>
 </div>
-<div class="w-full -mt-2 pb-12 print:m-0 print:p-0">
+<div class="w-full -mt-3 pb-12 print:m-0 print:p-0">
 	{#if generatedPaperWallets.length > 0}
 		<div
 			class="container-b-smallest flex flex-col items-center relative z-0 px-3 md:px-8 print:px-0 print:w-full print:block"
