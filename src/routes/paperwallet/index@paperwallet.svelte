@@ -264,7 +264,7 @@
 			>
 				<div class="w-[650px] md:w-full print:w-full relative">
 					{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
-						<div class="w-full relative print:break-inside-avoid block">
+						<div class="w-full relative print:break-inside-avoid table h-auto">
 							<div class="w-full relative flex items-center mb-4 print:mb-[12pt]">
 								<div
 									class="flex flex-col items-center w-[29%] mr-[3%] text-center print:w-[22%] print:mr-[6%]"
