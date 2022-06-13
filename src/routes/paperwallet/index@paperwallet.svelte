@@ -307,7 +307,12 @@
 						>
 							<IconMorpher switched={isRecentlyCopied} class="w-full h-full">
 								<IconCopy slot="0" class="w-full h-full" />
-								<IconTick slot="1" class="transform scale-125 w-full h-full" />
+								<IconTick
+									slot="1"
+									class="transform scale-125 w-full h-full {isRecentlyCopied
+										? 'text-c-secondary'
+										: ''}"
+								/>
 							</IconMorpher>
 						</button>
 					</div>
@@ -321,7 +326,12 @@
 		<div
 			class="container-b-smallest flex flex-col items-center relative z-0 px-3 md:px-8 print:px-0 print:w-full print:block"
 		>
-			<Button disabled={isPrinting} onClick={printPage} class="print:hidden">
+			<Button
+				disabled={isPrinting}
+				buttonType={isPrinting ? 'secondary' : 'primary'}
+				onClick={printPage}
+				class="print:hidden"
+			>
 				{#if isPrinting}
 					<div class="mr-2"><IconLoading class="w-6 h-6 animate-spin" /></div>
 					Printing...
