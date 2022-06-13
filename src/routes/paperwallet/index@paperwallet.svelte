@@ -270,7 +270,7 @@
 			</div>
 			<div class="w-full relative mt-3">
 				<div
-					class="w-full h-56 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/8 p-3 md:p-5 
+					class="w-full h-66 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/8 p-3 md:p-5 
 					text-left border border-c-on-bg/10 overflow-auto relative"
 				>
 					{#if generatedPaperWallets.length > 0}
@@ -331,12 +331,13 @@
 				buttonType={isPrinting ? 'secondary' : 'primary'}
 				onClick={printPage}
 				class="print:hidden"
+				padding="py-3.5 px-8 w-56 max-w-full"
 			>
 				{#if isPrinting}
 					<div class="mr-2"><IconLoading class="w-6 h-6 animate-spin" /></div>
 					Printing...
 				{:else}
-					Print Everything Below
+					Print Wallets
 				{/if}
 			</Button>
 			<div
