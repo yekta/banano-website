@@ -80,7 +80,7 @@
 	let isFreshlyGeneratedTimeout: NodeJS.Timeout;
 
 	async function onGenerate() {
-		window.plausible('Paper Wallet | Generator Used', {
+		window.plausible('PaperWallet | Generator Used', {
 			props: { Design: selectedPaperWallet.name, Quantity: selectedQuantity.value.toString() }
 		});
 		clearTimeout(isFreshlyGeneratedTimeout);
@@ -118,7 +118,7 @@
 	}
 
 	function printPage() {
-		window.plausible('Paper Wallet | Print Clicked', {
+		window.plausible('PaperWallet | Print Clicked', {
 			props: { 'Wallet Count': generatedPaperWallets.length.toString() }
 		});
 		window.print();
