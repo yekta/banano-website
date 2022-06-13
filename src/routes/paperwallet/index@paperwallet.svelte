@@ -8,7 +8,6 @@
 	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
 	import Dropdown from '$lib/components/Dropdown.svelte';
 	import bananojs from '@bananocoin/bananojs';
-	// @ts-ignore
 	import QR from 'svelte-qr';
 
 	const title = 'Paper Wallet | Banano';
@@ -158,7 +157,7 @@
 			<BgHero />
 			<BgWaveBottom />
 			<div
-				class="container-b-small px-5 md:px-24 max-w-full flex flex-col items-center self-center pt-24 pb-32 md:pb-36 relative z-10 text-c-bg"
+				class="container-b-small px-5 md:px-24 max-w-full flex flex-col items-center self-center pt-24 pb-40 md:pb-44 relative z-10 text-c-bg"
 			>
 				<h1 class="font-bold text-4xl md:text-5xl leading-tight">Paper Wallet Generator</h1>
 				<p class="text-xl mt-4">
@@ -166,9 +165,6 @@
 					page and load the account with funds. The recepient of your gift can sweep the funds using
 					Kalium.
 				</p>
-				<Button href="#paper-wallet-generator" class="mt-6" padding="px-12 md:px-16 py-3.5">
-					Let's Start!
-				</Button>
 			</div>
 		</div>
 	</div>
