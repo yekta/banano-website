@@ -18,13 +18,13 @@
 </script>
 
 <Listbox
-	class="w-full rounded-xl mt-3 relative"
+	class="w-full rounded-xl z-0 mt-3 relative"
 	value={selectedItem}
 	on:change={(e) => (selectedItem = e.detail)}
 	let:open
 >
 	<ListboxButton
-		class="w-full px-6 py-3.5 bg-c-bg-secondary rounded-t-xl transition-all {open
+		class="w-full px-6 py-3.5 bg-c-bg-secondary rounded-t-xl z-0 transition-all {open
 			? 'rounded-b-none'
 			: 'rounded-b-xl'} overflow-hidden shadow-button shadow-c-bg-secondary-shaded text-lg 
       font-bold flex items-center justify-between group relative hover:text-c-secondary"
@@ -47,9 +47,9 @@
 		<div class="w-full relative z-30">
 			<div
 				transition:expandCollapse={{ y: -0.5 }}
-				class="w-full absolute bg-c-bg-secondary left-0 top-0 rounded-b-xl overflow-hidden shadow-button shadow-c-bg-secondary-shaded"
+				class="w-full absolute bg-c-bg-secondary left-0 top-0 rounded-b-xl overflow-hidden z-0 shadow-button shadow-c-bg-secondary-shaded"
 			>
-				<ListboxOptions static class="w-full rounded-b-xl">
+				<ListboxOptions static class="w-full rounded-b-xl z-0">
 					{#each items.filter((i) => i !== selectedItem) as item (item.name)}
 						<ListboxOption
 							class="w-full text-left flex justify-start px-6 py-4 text-lg font-bold transition hover:cursor-pointer
