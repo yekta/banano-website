@@ -202,7 +202,7 @@
 							alt="{paperWallet.name} Paper Wallet"
 						/>
 						<p
-							class="font-bold px-2.5 py-0.5 shadow-lg shadow-c-on-bg/15 bg-c-bg absolute left-0 top-0 -mt-3 -ml-3"
+							class="font-bold px-2.5 py-0.5 rounded-md z-0 shadow-lg shadow-c-on-bg/25 bg-c-bg absolute left-0 top-0 -mt-3 -ml-3"
 						>
 							{index + 1}
 						</p>
