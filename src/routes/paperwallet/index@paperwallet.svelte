@@ -80,7 +80,7 @@
 	let isFreshlyGeneratedTimeout: NodeJS.Timeout;
 
 	async function onGenerate() {
-		window.plausible('Paper Wallet | Generated Used', {
+		window.plausible('Paper Wallet | Generator Used', {
 			props: { Design: selectedPaperWallet.name, Quantity: selectedQuantity.value.toString() }
 		});
 		clearTimeout(isFreshlyGeneratedTimeout);
