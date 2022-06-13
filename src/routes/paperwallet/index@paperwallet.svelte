@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '$lib/css/main.css';
+	import '$lib/css/print.css';
 	import { page } from '$app/stores';
 	import Button from '$lib/components/Button.svelte';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
@@ -173,7 +174,7 @@
 			<BgHero />
 			<BgWaveBottom />
 			<div
-				class="container-b-small px-5 md:px-24 max-w-full flex flex-col items-center self-center pt-24 pb-40 md:pb-44 relative z-10 text-c-bg"
+				class="container-b-small px-5 md:px-24 max-w-full flex flex-col items-center self-center pt-24 pb-36 md:pb-44 relative z-10 text-c-bg"
 			>
 				<h1 class="font-bold text-4xl md:text-5xl leading-tight">Paper Wallet Generator</h1>
 				<p class="text-xl mt-4">
@@ -300,12 +301,12 @@
 				text-left border border-c-on-bg/10 h-160 max-h-60vh overflow-auto
 				print:h-auto print:max-h-full print:border-none print:p-0 print:m-0 print:shadow-none relative"
 			>
-				<div class="w-[650px] md:w-full print:w-full relative">
+				<div class="w-[650px] md:w-full print:w-full print:h-full relative">
 					{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
 						<div class="w-full relative print:break-inside-avoid table h-auto">
 							<div class="w-full relative flex items-center mb-4 print:mb-[12pt]">
 								<div
-									class="flex flex-col items-center w-[29%] mr-[3%] text-center print:w-[22%] print:mr-[6%]"
+									class="flex flex-col items-center w-[29%] mr-[3%] text-center print:w-[24%] print:mr-[4%]"
 								>
 									<p class="font-bold px-3 print:px-0">ADDRESS</p>
 									<p
@@ -320,7 +321,7 @@
 											>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
 										>
 									</p>
-									<div class="w-full px-[22%] print:px-[8%]">
+									<div class="w-full px-[22%] print:px-[12%]">
 										<QR text={wallet.address} level="H" />
 									</div>
 								</div>
