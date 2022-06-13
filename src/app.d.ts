@@ -25,7 +25,7 @@ declare namespace svelte.JSX {
 
 interface PlausibleObj {
 	callback?: function;
-	props?: { [key: string]: string | number };
+	props?: { [key: string]: string };
 }
 
 interface Window {

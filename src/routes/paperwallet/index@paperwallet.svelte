@@ -81,7 +81,7 @@
 
 	async function onGenerate() {
 		window.plausible('Paper Wallet | Generated Used', {
-			props: { Design: selectedPaperWallet.name, Quantity: selectedQuantity.value }
+			props: { Design: selectedPaperWallet.name, Quantity: selectedQuantity.value.toString() }
 		});
 		clearTimeout(isFreshlyGeneratedTimeout);
 		isFreshlyGenerated = true;
