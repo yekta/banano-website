@@ -139,7 +139,7 @@
 			setTimeout(() => {
 				window.print();
 			}, 100);
-		}, 500);
+		}, 600);
 	}
 
 	let isRecentlyCopied = false;
@@ -186,7 +186,7 @@
 />
 
 <div
-	class="w-full bg-c-secondary flex flex-col items-center justify-start text-center print:hidden"
+	class="w-full bg-c-secondary print:bg-c-bg flex flex-col items-center justify-start text-center print:hidden"
 >
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
