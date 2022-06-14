@@ -147,6 +147,7 @@
 		<a
 			aria-label="Logo Link to Homescreen"
 			href="/"
+			sveltekit:prefetch
 			class="mr-4 md:mr-12 py-3 group rounded-lg relative z-0 h-full flex flex-row items-center"
 		>
 			<div class="pt-2 pb-2 md:pb-2.5 px-1">

@@ -270,7 +270,7 @@
 			</div>
 			<div class="w-full relative mt-3">
 				<div
-					class="w-full h-66 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/8 p-3 md:p-5 
+					class="w-full h-66 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/8 p-3 md:p-4 
 					text-left border border-c-on-bg/10 overflow-auto relative"
 				>
 					{#if generatedPaperWallets.length > 0}
@@ -346,22 +346,19 @@
 				print:h-auto print:max-h-full print:border-none print:p-0 print:m-0 print:shadow-none relative"
 			>
 				<div class="w-[650px] md:w-full h-full print:w-full print:h-full relative">
+					<!-- Virtual list, hidden in print mode -->
 					<div class="w-full h-full print:hidden">
 						<VirtualList items={[...generatedPaperWallets].reverse()} let:item={wallet}>
 							<div
 								class="w-full relative print:break-inside-avoid table h-auto px-4 pt-4 {wallet.address ===
 								generatedPaperWallets[0].address
 									? 'pb-4'
-									: ''} print:p-0"
+									: ''}"
 							>
-								<div class="w-full relative flex items-center print:mb-[12pt]">
-									<div
-										class="flex flex-col items-center w-[30%] mr-[3%] text-center print:w-[24%] print:mr-[4%]"
-									>
+								<div class="w-full relative flex items-center">
+									<div class="flex flex-col items-center min-w-[30%] mr-[3%] text-center">
 										<p class="font-bold px-3 print:px-0">ADDRESS</p>
-										<p
-											class="text-xs break-all leading-relaxed px-3 mb-4 font-mono print:text-[11px] print:leading-[14px] print:mt-[2pt] print:p-0 print:mb-[12pt]"
-										>
+										<p class="text-xs break-all leading-relaxed mb-4 font-mono w-[22ch]">
 											<span class="text-c-secondary font-bold"
 												>{wallet.address.slice(0, hightlightChCountStart)}</span
 											>{wallet.address.slice(
@@ -371,7 +368,7 @@
 												>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
 											>
 										</p>
-										<div class="w-full px-[22%] print:px-[12%]">
+										<div class="w-full px-[22%]">
 											<QR text={wallet.address} level="H" />
 										</div>
 									</div>
@@ -392,6 +389,7 @@
 							</div>
 						</VirtualList>
 					</div>
+					<!-- The list to print, hidden in normal mode -->
 					{#if isPrinting && shouldRenderPrinting}
 						<div class="w-full h-auto hidden print:block p-5">
 							{#each [...generatedPaperWallets].reverse() as wallet}
@@ -400,11 +398,11 @@
 								>
 									<div class="w-full relative flex items-center">
 										<div
-											class="flex flex-col items-center w-[30%] mr-[3%] text-center print:w-[24%] print:mr-[4%]"
+											class="flex flex-col items-center min-w-[30%] mr-[3%] text-center print:min-w-[24%] print:mr-[4%]"
 										>
 											<p class="font-bold px-3 print:px-0">ADDRESS</p>
 											<p
-												class="text-xs break-all leading-relaxed px-3 mb-4 font-mono print:text-[11px] print:leading-[14px] print:mt-[2pt] print:p-0 print:mb-[12pt]"
+												class="text-xs break-all leading-relaxed mb-4 font-mono w-[22ch] print:text-[10pt] print:leading-[14pt] print:mt-[2pt] print:p-0 print:mb-[12pt]"
 											>
 												<span class="text-c-secondary font-bold"
 													>{wallet.address.slice(0, hightlightChCountStart)}</span
