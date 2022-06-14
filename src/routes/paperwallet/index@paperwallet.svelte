@@ -219,7 +219,7 @@
 				<div class="w-full max-w-md md:max-w-lg md:w-1/2 p-3 lg:p-4">
 					<div class="w-full flex flex-col items-start relative">
 						<img
-							class="w-full h-auto relative z-0 shadow-lg shadow-c-on-bg/15"
+							class="w-full h-auto relative z-0 shadow-lg shadow-c-on-bg/25"
 							src="{imgPrefix}-{paperWallet.slug}.svg"
 							alt="{paperWallet.name} Paper Wallet"
 						/>
@@ -270,7 +270,7 @@
 			</div>
 			<div class="w-full relative mt-3">
 				<div
-					class="w-full h-66 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/8 p-3 md:p-4 
+					class="w-full h-66 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/5 p-3 md:p-4 
 					text-left border border-c-on-bg/10 overflow-auto relative"
 				>
 					{#if generatedPaperWallets.length > 0}
@@ -341,7 +341,7 @@
 				{/if}
 			</Button>
 			<div
-				class="w-full bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/8 mt-6
+				class="w-full bg-c-bg text-c-on-bg shadow-xl shadow-c-on-bg/5 mt-6
 				text-left border border-c-on-bg/10 h-160 max-h-60vh overflow-auto
 				print:h-auto print:max-h-full print:border-none print:p-0 print:m-0 print:shadow-none relative"
 			>
