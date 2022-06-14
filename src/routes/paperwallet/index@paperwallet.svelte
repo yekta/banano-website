@@ -393,7 +393,7 @@
 					{#if isPrinting && shouldRenderPrinting}
 						<div class="w-full h-auto hidden print:block">
 							{#each [...generatedPaperWallets].reverse() as wallet}
-								<div class="w-full relative print:break-inside-avoid table h-auto mb-[12pt]">
+								<div class="w-full relative break-inside-avoid table h-auto mb-[12pt]">
 									<div class="w-full relative flex items-center">
 										<div class="flex flex-col items-center min-w-[24%] mr-[4%] text-center">
 											<p class="font-bold">ADDRESS</p>
