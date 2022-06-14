@@ -391,7 +391,7 @@
 					</div>
 					<!-- The list to print, hidden in normal mode -->
 					{#if isPrinting && shouldRenderPrinting}
-						<div class="w-full h-auto hidden print:block p-5">
+						<div class="w-full h-auto hidden print:block">
 							{#each [...generatedPaperWallets].reverse() as wallet}
 								<div
 									class="w-full relative print:break-inside-avoid table h-auto mb-4 print:mb-[12pt]"
