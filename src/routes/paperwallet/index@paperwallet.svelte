@@ -393,16 +393,12 @@
 					{#if isPrinting && shouldRenderPrinting}
 						<div class="w-full h-auto hidden print:block">
 							{#each [...generatedPaperWallets].reverse() as wallet}
-								<div
-									class="w-full relative print:break-inside-avoid table h-auto mb-4 print:mb-[12pt]"
-								>
+								<div class="w-full relative print:break-inside-avoid table h-auto mb-[12pt]">
 									<div class="w-full relative flex items-center">
-										<div
-											class="flex flex-col items-center min-w-[30%] mr-[3%] text-center print:min-w-[24%] print:mr-[4%]"
-										>
-											<p class="font-bold px-3 print:px-0">ADDRESS</p>
+										<div class="flex flex-col items-center min-w-[24%] mr-[4%] text-center">
+											<p class="font-bold">ADDRESS</p>
 											<p
-												class="text-xs break-all leading-relaxed mb-4 font-mono w-[22ch] print:text-[10pt] print:leading-[14pt] print:mt-[2pt] print:p-0 print:mb-[12pt]"
+												class="text-xs break-all font-mono w-[22ch] text-[10pt] leading-[14pt] mt-[2pt] p-0 mb-[12pt]"
 											>
 												<span class="text-c-secondary font-bold"
 													>{wallet.address.slice(0, hightlightChCountStart)}</span
@@ -415,7 +411,7 @@
 													)}</span
 												>
 											</p>
-											<div class="w-full px-[22%] print:px-[12%]">
+											<div class="w-full px-[12%]">
 												<QR text={wallet.address} level="H" />
 											</div>
 										</div>
