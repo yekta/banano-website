@@ -162,6 +162,7 @@
 			<div class="hidden lg:flex justify-end mx-1.5">
 				{#each sections as section}
 					<a
+						sveltekit:prefetch
 						href={section.href}
 						class="{section.classes !== undefined
 							? section.classes
@@ -244,6 +245,7 @@
 				</div>
 				{#each sections as section}
 					<a
+						sveltekit:prefetch
 						on:click={closeMenu}
 						href={section.href}
 						class="text-lg w-full max-w-full px-6 py-3 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg
