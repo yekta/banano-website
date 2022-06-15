@@ -58,5 +58,5 @@
 			/>
 		</div>
 	</div>
-	<div class="w-full h-2 bg-c-bg -mt-1 z-10" />
+	<div class="w-full h-2 bg-c-bg -mt-1 relative z-10" />
 </div>
