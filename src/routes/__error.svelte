@@ -24,8 +24,8 @@
 	});
 </script>
 
-<div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
-	<div class="w-full relative flex flex-row justify-center overflow-hidden">
+<div class="w-full bg-c-bg flex flex-col items-center justify-start text-center">
+	<div class="w-full bg-c-secondary relative flex flex-row justify-center overflow-hidden">
 		<div
 			style="background-image:url('/illustrations/backgrounds/bg-hero.svg');"
 			class="w-full bg-c-secondary min-h-[550px] md:min-h-[720px] bg-cover flex flex-row
@@ -58,4 +58,5 @@
 			/>
 		</div>
 	</div>
+	<div class="w-full h-2 bg-c-bg -mt-1 z-10" />
 </div>
