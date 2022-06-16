@@ -27,6 +27,7 @@
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.5.0",
 		"rehype-external-links": "^1.0.1",
+		"rss-parser": "^3.12.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
 		"svelte-copy-clipboard-action": "^0.0.3",
@@ -46,6 +47,7 @@
 		"@editorjs/editorjs": "^2.24.3",
 		"@editorjs/header": "^2.6.2",
 		"editorjs-html": "^3.4.2",
+		"medium-to-markdown": "^0.0.3",
 		"node-html-parser": "^5.3.3",
 		"showdown": "^2.1.0"
 	}

@@ -1,0 +1,58 @@
+.blog {
+	font-size: 1.1rem;
+}
+
+.blog h1 {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+.blog h2 {
+	font-size: 1.75rem;
+	font-weight: 700;
+	margin-top: 3rem;
+}
+.blog h3 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-top: 3rem;
+}
+.blog h1 + p,
+.blog h2 + p,
+.blog h3 + p {
+	margin-top: 0.5rem;
+}
+.blog p {
+	font-size: 1.1rem;
+	margin-top: 1.5rem;
+	line-height: 1.8;
+}
+.blog a {
+	text-decoration: underline;
+}
+.blog figure,
+.blog iframe,
+.blog ul,
+.blog ol {
+	margin-top: 1.5rem;
+}
+.blog figure img {
+	width: 100%;
+	height: auto;
+}
+.blog figure figcaption {
+	font-size: 0.9rem;
+	text-align: center;
+	margin-top: 0.75rem;
+	color: rgb(var(--c-on-bg) / 60%);
+}
+.blog ul {
+	list-style-type: disc;
+}
+.blog ol {
+	list-style-type: decimal;
+}
+.blog ul li,
+.blog ol li {
+	margin-top: 0.75rem;
+	margin-left: 2.5ch;
+}
