@@ -126,6 +126,8 @@ module.exports = {
 			},
 			boxShadow: {
 				card: `0rem 0.75rem 1.5rem -0.25rem`,
+				'blog-post': `0rem 0rem 0rem -0.25rem`,
+				'blog-post-hover': `0rem 0.75rem 1.5rem -0.25rem`,
 				button: '0rem 0.5rem 0rem 0rem',
 				'button-hover': '0rem 0.625rem 0rem 0rem',
 				'navbar-button': '0rem 0rem 0rem 0rem',

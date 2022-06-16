@@ -2,8 +2,12 @@
 	font-size: 1.1rem;
 }
 
+.blog :first-child {
+	margin-top: 0;
+}
+
 .blog h1 {
-	font-size: 2.5rem;
+	font-size: 2.25rem;
 	font-weight: 700;
 }
 .blog h2 {
@@ -26,16 +30,27 @@
 	margin-top: 1.5rem;
 	line-height: 1.8;
 }
+.blog blockquote {
+	margin-top: 1.5rem;
+	border-left: 0.25rem solid rgb(var(--c-secondary) / 60%);
+	padding: 0.75rem 1rem;
+	border-radius: 0.3rem;
+	background: rgb(var(--c-secondary) / 8%);
+}
 .blog a {
 	text-decoration: underline;
+}
+.blog a:hover {
+	color: rgb(var(--c-secondary));
 }
 .blog figure,
 .blog iframe,
 .blog ul,
 .blog ol {
-	margin-top: 1.5rem;
+	margin-top: 2.5rem;
 }
-.blog figure img {
+.blog figure img,
+.blog iframe {
 	width: 100%;
 	height: auto;
 }
