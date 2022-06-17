@@ -19,11 +19,11 @@
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
 			style="background-image:url(/illustrations/backgrounds/bg-hero.svg)"
-			class="w-full bg-c-secondary min-h-[400px] bg-cover bg-bottom flex justify-center overflow-hidden"
+			class="w-full bg-c-secondary min-h-[450px] bg-cover bg-bottom flex justify-center overflow-hidden"
 		>
 			<BgWaveBottom />
 			<div
-				class="container-b-smallest px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-28 pb-32 relative z-10 text-c-bg text-center"
+				class="container-b-smallest px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-32 pb-32 relative z-10 text-c-bg text-center"
 			>
 				<h1>{post.title}</h1>
 				<p class="text-c-bg/75">{formatDate(post.publishTimestamp)}</p>
