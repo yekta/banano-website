@@ -1,46 +1,43 @@
 <script lang="ts">
+	import '$lib/css/main.css';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
-	import '$lib/css/blog.css';
-
 	export let posts: any;
 </script>
 
-<div class="w-full">
-	<div class="w-full relative flex flex-row justify-center overflow-hidden">
+<div class="w-full relative flex flex-row justify-center overflow-hidden">
+	<div
+		style="background-image:url(/illustrations/backgrounds/bg-hero.svg)"
+		class="w-full bg-c-secondary min-h-[400px] bg-cover bg-bottom flex justify-center overflow-hidden"
+	>
+		<BgWaveBottom />
 		<div
-			style="background-image:url(/illustrations/backgrounds/bg-hero.svg)"
-			class="w-full bg-c-secondary bg-cover bg-bottom flex justify-center overflow-hidden"
+			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-28 pb-32 relative z-10 text-c-bg text-center"
 		>
-			<BgWaveBottom />
-			<div
-				class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-28 pb-32 relative z-10 text-c-bg text-center"
-			>
-				<h1 class="text-6xl font-bold">Blog</h1>
-				<p class="text-xl mt-4">Latest news on the Banano ecosystem.</p>
-			</div>
+			<h1 class="text-6xl font-bold">Blog</h1>
+			<p class="text-xl mt-4">Latest news on the Banano ecosystem.</p>
 		</div>
 	</div>
-	<div class="container-b flex flex-row flex-wrap py-6">
-		{#each posts as post}
-			<div class="w-full md:w-1/2 lg:w-1/3 p-3 mt-3 bg-c-bg">
-				<a
-					href="/blog/{post.slug}"
-					sveltekit:prefetch
-					class="w-full flex flex-col transition hover:-translate-y-1 shadow-blog-post shadow-c-on-bg/40 hover:shadow-blog-post-hover hover:shadow-c-on-bg/15 rounded-2xl p-1"
-				>
-					<div class="aspect-[16/9] overflow-hidden relative z-0">
-						<img
-							class="w-full h-full object-cover rounded-xl relative z-0"
-							src={post.image}
-							alt={post.title}
-						/>
-					</div>
-					<h2 class="w-full text-xl font-bold mt-4 px-4">
-						{post.title}
-					</h2>
-					<p class="text-c-on-bg/60 px-4 mt-2 mb-4">{post.description}...</p>
-				</a>
-			</div>
-		{/each}
-	</div>
+</div>
+<div class="container-b flex flex-row flex-wrap py-6 md:px-8">
+	{#each posts as post}
+		<div class="w-full md:w-1/2 lg:w-1/3 p-3 mt-3 bg-c-bg">
+			<a
+				href="/blog/{post.slug}"
+				sveltekit:prefetch
+				class="w-full flex flex-col transition hover:-translate-y-1 shadow-blog-post shadow-c-on-bg/40 hover:shadow-blog-post-hover hover:shadow-c-on-bg/15 rounded-2xl p-1"
+			>
+				<div class="aspect-[16/9] overflow-hidden relative z-0">
+					<img
+						class="w-full h-full object-cover rounded-xl relative z-0"
+						src={post.image}
+						alt={post.title}
+					/>
+				</div>
+				<h2 class="w-full text-xl font-bold mt-4 px-4">
+					{post.title}
+				</h2>
+				<p class="text-c-on-bg/60 px-4 mt-2 mb-4">{post.description}...</p>
+			</a>
+		</div>
+	{/each}
 </div>

@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+
 .blog {
 	font-size: 1.1rem;
 }
@@ -32,10 +35,9 @@
 }
 .blog blockquote {
 	margin-top: 1.5rem;
-	border-left: 0.25rem solid rgb(var(--c-secondary) / 60%);
+	border-left: 0.25rem solid rgb(var(--c-on-bg) / 50%);
 	padding: 0.75rem 1rem;
-	border-radius: 0.3rem;
-	background: rgb(var(--c-secondary) / 8%);
+	background: rgb(var(--c-on-bg) / 4%);
 }
 .blog a {
 	text-decoration: underline;
@@ -71,3 +73,5 @@
 	margin-top: 0.75rem;
 	margin-left: 2.5ch;
 }
+
+@tailwind utilities;
