@@ -20,7 +20,7 @@
 	}
 
 	onMount(() => {
-		document.body.style.backgroundColor = 'rgb(var(--c-secondary))';
+		document.body.style.background = `rgb(var(--c-bg))`;
 	});
 </script>
 

@@ -13,11 +13,12 @@
 
 	async function getMorePosts() {
 		if (posts.meta.pagination.next !== null && !isLoadingMore) {
+			let { next, limit } = posts.meta.pagination;
 			isLoadingMore = true;
 			try {
 				const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
 					','
-				)}&limit=12&page=${posts.meta.pagination.next}`;
+				)}&limit=${limit}&page=${next}`;
 				const response = await fetch(url);
 				const data = await response.json();
 				posts = {

@@ -4,7 +4,7 @@
 body {
 	font-family: filson-pro, sans-serif;
 	color: rgb(var(--c-on-bg));
-	background-color: rgb(var(--c-bg));
+	background: rgb(var(--c-bg));
 }
 
 .font-filson-pro {
