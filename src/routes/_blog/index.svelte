@@ -3,6 +3,7 @@
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import { inview } from 'svelte-inview';
 	import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
+	import Button from '$lib/components/Button.svelte';
 	export let initialPosts: any;
 
 	let posts = initialPosts;
@@ -11,25 +12,30 @@
 		rootMargin: '1000px'
 	};
 
+	let hasMoreToLoad = true;
+
 	async function getMorePosts() {
-		if (posts.meta.pagination.next !== null && !isLoadingMore) {
-			let { next, limit } = posts.meta.pagination;
-			isLoadingMore = true;
-			try {
-				const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
-					','
-				)}&limit=${limit}&page=${next}`;
-				const response = await fetch(url);
-				const data = await response.json();
-				posts = {
-					meta: data.meta,
-					posts: [...posts.posts, ...data.posts]
-				};
-			} catch (error) {
-				console.log(error);
-			} finally {
-				isLoadingMore = false;
+		if (isLoadingMore || !hasMoreToLoad) return;
+
+		let { next, limit } = posts.meta.pagination;
+		isLoadingMore = true;
+		try {
+			const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
+				','
+			)}&limit=${limit}&page=${next}`;
+			const response = await fetch(url);
+			const data = await response.json();
+			posts = {
+				meta: data.meta,
+				posts: [...posts.posts, ...data.posts]
+			};
+			if (posts.meta.pagination.next === null) {
+				hasMoreToLoad = false;
 			}
+		} catch (error) {
+			console.log(error);
+		} finally {
+			isLoadingMore = false;
 		}
 	}
 </script>
@@ -70,5 +76,10 @@
 			</a>
 		</div>
 	{/each}
-	<div use:inview={inviewOptions} on:enter={getMorePosts} class="w-full" />
+	{#if hasMoreToLoad}
+		<div use:inview={inviewOptions} on:enter={getMorePosts} class="w-full" />
+		<div class="w-full flex justify-center mt-4">
+			<Button onClick={getMorePosts} class="w-64 max-w-full">Load More</Button>
+		</div>
+	{/if}
 </div>

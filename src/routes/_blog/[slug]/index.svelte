@@ -15,7 +15,7 @@
 	};
 </script>
 
-<div class="w-full blog pb-16">
+<div class="w-full blog">
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
 			style="background-image:url(/illustrations/backgrounds/bg-hero.svg)"
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-b-smallest px-5 py-6 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
+	<div class="container-b-smallest px-5 py-8 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
 		{@html post.html}
 	</div>
 </div>
