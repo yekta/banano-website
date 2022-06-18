@@ -1,10 +1,13 @@
+import { blogApiUrl } from '$lib/ts/constants/blog';
 import type { RequestHandler } from '@sveltejs/kit';
 export const get: RequestHandler = async ({ params }) => {
 	try {
-		const slug = params.slug;
-		const postsUrl = 'https://utils.banano.cc/medium-posts';
-		const res = await fetch(`${postsUrl}/${slug}`);
-		const post = await res.json();
+		const slug = String(params.slug);
+		const key = String(import.meta.env.VITE_GHOST_KEY);
+		const url = `${blogApiUrl}/posts/slug/${slug}?key=${key}`;
+		const res = await fetch(url);
+		const resJson = await res.json();
+		const post = resJson.posts[0];
 		if (post && post.title) {
 			return {
 				status: 200,

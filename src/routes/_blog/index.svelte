@@ -29,14 +29,14 @@
 				<div class="aspect-[16/9] overflow-hidden relative z-0">
 					<img
 						class="w-full h-full object-cover rounded-xl relative z-0"
-						src={post.image}
+						src={post.feature_image}
 						alt={post.title}
 					/>
 				</div>
 				<h2 class="w-full text-xl font-bold mt-4 px-4">
 					{post.title}
 				</h2>
-				<p class="text-c-on-bg/60 px-4 mt-2 mb-4">{post.description}...</p>
+				<p class="text-c-on-bg/60 px-4 mt-2 mb-4">{post.custom_excerpt ?? post.excerpt}...</p>
 			</a>
 		</div>
 	{/each}

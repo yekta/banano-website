@@ -26,11 +26,11 @@
 				class="container-b-smallest px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-32 pb-32 relative z-10 text-c-bg text-center"
 			>
 				<h1>{post.title}</h1>
-				<p class="text-c-bg/75">{formatDate(post.publishTimestamp)}</p>
+				<p class="text-c-bg/75">{formatDate(post.published_at)} • {post.reading_time} min read</p>
 			</div>
 		</div>
 	</div>
 	<div class="container-b-smallest px-5 py-6 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
-		{@html post.content}
+		{@html post.html}
 	</div>
 </div>

@@ -25,7 +25,13 @@
 }
 .blog h1 + p,
 .blog h2 + p,
-.blog h3 + p {
+.blog h3 + p,
+.blog h1 + ul,
+.blog h2 + ul,
+.blog h3 + ul,
+.blog h1 + ol,
+.blog h2 + ol,
+.blog h3 + ol {
 	margin-top: 0.5rem;
 }
 .blog p {
@@ -51,8 +57,11 @@
 .blog ol {
 	margin-top: 2.5rem;
 }
-.blog figure img,
-.blog iframe {
+.blog p + ul,
+.blog p + ol {
+	margin-top: 1rem;
+}
+.blog figure img {
 	width: 100%;
 	height: auto;
 }
@@ -72,6 +81,9 @@
 .blog ol li {
 	margin-top: 0.75rem;
 	margin-left: 2.5ch;
+}
+.blog hr {
+	margin-top: 2.5rem;
 }
 
 @tailwind utilities;
