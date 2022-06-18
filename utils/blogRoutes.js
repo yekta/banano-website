@@ -8,7 +8,7 @@ const shallowPostFields = ['id', 'uuid', 'title', 'slug'];
 const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(',')}&limit=500`;
 const blogDirectory = '/blog';
 
-export async function getBlogPages() {
+export async function getBlogRoutesArray() {
 	const res = await axios.get(url);
 	const resJson = res.data;
 	const routes = resJson.posts.map((p) => `${blogDirectory}/${p.slug}`);
