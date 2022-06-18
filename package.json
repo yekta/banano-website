@@ -3,9 +3,8 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "npm run routes && svelte-kit build",
+		"build": "svelte-kit build",
 		"build-static": "STATIC=true svelte-kit build",
-		"routes": "node --experimental-json-modules ./utils/blogroutelist",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"prepare": "svelte-kit sync",
