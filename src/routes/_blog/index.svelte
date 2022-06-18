@@ -1,7 +1,36 @@
 <script lang="ts">
 	import '$lib/css/main.css';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
-	export let posts: any;
+	import { inview } from 'svelte-inview';
+	import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
+	export let initialPosts: any;
+
+	let posts = initialPosts;
+	let isLoadingMore = false;
+	const inviewOptions = {
+		rootMargin: '1000px'
+	};
+
+	async function getMorePosts() {
+		if (posts.meta.pagination.next !== null && !isLoadingMore) {
+			isLoadingMore = true;
+			try {
+				const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
+					','
+				)}&limit=12&page=${posts.meta.pagination.next}`;
+				const response = await fetch(url);
+				const data = await response.json();
+				posts = {
+					meta: data.meta,
+					posts: [...posts.posts, ...data.posts]
+				};
+			} catch (error) {
+				console.log(error);
+			} finally {
+				isLoadingMore = false;
+			}
+		}
+	}
 </script>
 
 <div class="w-full relative flex flex-row justify-center overflow-hidden">
@@ -19,7 +48,7 @@
 	</div>
 </div>
 <div class="container-b flex flex-row flex-wrap py-6 md:px-8">
-	{#each posts as post}
+	{#each posts.posts as post}
 		<div class="w-full md:w-1/2 lg:w-1/3 p-3 mt-3 bg-c-bg">
 			<a
 				href="/blog/{post.slug}"
@@ -40,4 +69,5 @@
 			</a>
 		</div>
 	{/each}
+	<div use:inview={inviewOptions} on:enter={getMorePosts} class="w-full" />
 </div>

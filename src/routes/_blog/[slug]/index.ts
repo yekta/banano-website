@@ -1,10 +1,9 @@
-import { blogApiUrl } from '$lib/ts/constants/blog';
+import { blogApiKey, blogApiUrl } from '$lib/ts/constants/blog';
 import type { RequestHandler } from '@sveltejs/kit';
 export const get: RequestHandler = async ({ params }) => {
 	try {
 		const slug = String(params.slug);
-		const key = String(import.meta.env.VITE_GHOST_KEY);
-		const url = `${blogApiUrl}/posts/slug/${slug}?key=${key}`;
+		const url = `${blogApiUrl}/posts/slug/${slug}?key=${blogApiKey}`;
 		const res = await fetch(url);
 		const resJson = await res.json();
 		const post = resJson.posts[0];
