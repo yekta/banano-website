@@ -8,6 +8,7 @@
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
+	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
 
 	export let initialPosts: IBlogPosts;
 
@@ -91,25 +92,7 @@
 <div class="container-b flex flex-row flex-wrap py-6 md:px-8">
 	{#each posts.posts as post}
 		<div class="w-full md:w-1/2 lg:w-1/3 p-3 mt-3 bg-c-bg">
-			<a
-				href="/blog/{post.slug}"
-				sveltekit:prefetch
-				class="w-full flex flex-col transition hover:-translate-y-1 shadow-blog-post 
-				shadow-c-on-bg/30 hover:shadow-blog-post-hover hover:shadow-c-on-bg/10 rounded-2xl group p-1"
-			>
-				<div class="aspect-[16/9] overflow-hidden rounded-xl relative z-0">
-					<img
-						class="w-full h-full object-cover rounded-xl relative z-0 transform 
-						transition duration-400 origin-bottom group-hover:scale-101 bg-c-on-bg/15"
-						src={post.feature_image}
-						alt={post.title}
-					/>
-				</div>
-				<h2 class="w-full text-xl font-bold mt-4 px-4">
-					{post.title}
-				</h2>
-				<p class="text-c-on-bg/60 px-4 mt-2 mb-4">{post.custom_excerpt ?? post.excerpt}...</p>
-			</a>
+			<BlogPostCard {post} />
 		</div>
 	{/each}
 	{#if hasMoreToLoad}

@@ -3,12 +3,14 @@
 	import '$lib/css/blog.css';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import { monthsShort } from '$lib/ts/constants/months';
-	import type { IBlogPost } from '$lib/ts/interfaces/Blog';
+	import type { IBlogPost, IBlogPostShallow } from '$lib/ts/interfaces/Blog';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
+	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
 
 	export let post: IBlogPost;
+	export let similarPosts: IBlogPostShallow[];
 
 	const formatDate = (str: string) => {
 		const dateObj = new Date(str);
@@ -126,5 +128,18 @@
 	</div>
 	<div class="container-b-smallest px-5 py-8 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
 		{@html post.html}
+		<hr />
+	</div>
+</div>
+<div class="w-full flex flex-col mt-4 pb-6">
+	<div class="w-full flex justify-center">
+		<p class="text-3xl font-bold">Read More</p>
+	</div>
+	<div class="container-b flex flex-row flex-wrap mt-2">
+		{#each similarPosts as post}
+			<div class="w-full md:w-1/2 lg:w-1/3 p-3 mt-3 bg-c-bg">
+				<BlogPostCard {post} />
+			</div>
+		{/each}
 	</div>
 </div>

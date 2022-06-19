@@ -12,6 +12,7 @@ export interface IBlogPostShallow {
 	custom_excerpt: string;
 	published_at: string;
 	reading_time: number;
+	tags: ITag[];
 }
 
 export interface IBlogPosts {
@@ -22,4 +23,10 @@ export interface IBlogPosts {
 			limit: number;
 		};
 	};
+}
+
+export interface ITag {
+	id: string;
+	name: string;
+	slug: string;
 }
