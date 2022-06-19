@@ -77,11 +77,11 @@
 <div class="w-full relative flex flex-row justify-center overflow-hidden">
 	<div
 		style="background-image:url(/illustrations/backgrounds/bg-hero.svg)"
-		class="w-full bg-c-secondary min-h-[450px] bg-cover bg-bottom flex justify-center overflow-hidden"
+		class="w-full bg-c-secondary bg-cover bg-bottom flex justify-center overflow-hidden"
 	>
 		<BgWaveBottom />
 		<div
-			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-28 pb-32 relative z-10 text-c-bg text-center"
+			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-24 pb-32 md:pb-36 relative z-10 text-c-bg text-center"
 		>
 			<h1 class="text-6xl font-bold">Blog</h1>
 			<p class="text-xl mt-5">Latest news & developments on the Banano ecosystem.</p>
@@ -95,12 +95,12 @@
 				href="/blog/{post.slug}"
 				sveltekit:prefetch
 				class="w-full flex flex-col transition hover:-translate-y-1 shadow-blog-post 
-				shadow-c-on-bg/40 hover:shadow-blog-post-hover hover:shadow-c-on-bg/15 rounded-2xl group p-1"
+				shadow-c-on-bg/30 hover:shadow-blog-post-hover hover:shadow-c-on-bg/10 rounded-2xl group p-1"
 			>
 				<div class="aspect-[16/9] overflow-hidden rounded-xl relative z-0">
 					<img
 						class="w-full h-full object-cover rounded-xl relative z-0 transform 
-						transition duration-300 origin-bottom group-hover:scale-101 bg-c-on-bg/15"
+						transition duration-400 origin-bottom group-hover:scale-101 bg-c-on-bg/15"
 						src={post.feature_image}
 						alt={post.title}
 					/>

@@ -114,7 +114,7 @@
 </svelte:head>
 
 <div class="w-full blog">
-	<div class="container-b-smallest relative flex flex-col overflow-hidden pt-24 md:pt-32 px-5">
+	<div class="container-b-smallest relative flex flex-col overflow-hidden pt-24 md:pt-28 px-5">
 		<h1>{post.title}</h1>
 		<p class="text-c-on-bg/75">
 			{formatDate(post.published_at)} <span class="opacity-40">•</span>
