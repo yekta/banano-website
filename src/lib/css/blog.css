@@ -2,7 +2,8 @@
 @tailwind components;
 
 .blog {
-	font-size: 1.1rem;
+	font-size: 1.15rem;
+	font-family: 'rooney', serif;
 }
 
 .blog :first-child {
@@ -10,18 +11,27 @@
 }
 
 .blog h1 {
-	font-size: 2.25rem;
+	font-family: filson-pro, sans-serif;
 	font-weight: 700;
+	font-size: 2.25rem;
 }
 .blog h2 {
-	font-size: 1.75rem;
+	font-family: filson-pro, sans-serif;
 	font-weight: 700;
-	margin-top: 3rem;
+	font-size: 2rem;
+	margin-top: 3.5rem;
 }
 .blog h3 {
-	font-size: 1.5rem;
+	font-family: filson-pro, sans-serif;
 	font-weight: 700;
-	margin-top: 3rem;
+	font-size: 1.6rem;
+	margin-top: 3.5rem;
+}
+.blog h4 {
+	font-family: filson-pro, sans-serif;
+	font-weight: 700;
+	font-size: 1.4rem;
+	margin-top: 3.5rem;
 }
 .blog h1 + p,
 .blog h2 + p,
@@ -35,7 +45,6 @@
 	margin-top: 0.5rem;
 }
 .blog p {
-	font-size: 1.1rem;
 	margin-top: 1.5rem;
 	line-height: 1.8;
 }
@@ -83,7 +92,7 @@
 	margin-left: 2.5ch;
 }
 .blog hr {
-	margin-top: 2.5rem;
+	margin-top: 3.5rem;
 }
 
 @tailwind utilities;

@@ -4,7 +4,12 @@
 	import { inview } from 'svelte-inview';
 	import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
 	import Button from '$lib/components/Button.svelte';
-	export let initialPosts: any;
+	import type { IBlogPosts } from '$lib/ts/interfaces/Blog';
+	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import { page } from '$app/stores';
+	import { MetaTags } from 'svelte-meta-tags';
+
+	export let initialPosts: IBlogPosts;
 
 	let posts = initialPosts;
 	let isLoadingMore = false;
@@ -24,7 +29,7 @@
 				','
 			)}&limit=${limit}&page=${next}`;
 			const response = await fetch(url);
-			const data = await response.json();
+			const data: IBlogPosts = await response.json();
 			posts = {
 				meta: data.meta,
 				posts: [...posts.posts, ...data.posts]
@@ -38,8 +43,37 @@
 			isLoadingMore = false;
 		}
 	}
+
+	const title = 'Blog | Banano';
+	const description = 'Latest news, developments, and educational content on Banano.';
+	const canonical = `${canonicalUrl}/${$page.routeId}`;
+	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
 </script>
 
+<MetaTags
+	{title}
+	{description}
+	{canonical}
+	openGraph={{
+		type: 'website',
+		url: canonical,
+		title: title,
+		description: description,
+		images: [
+			{
+				url: imageUrl,
+				width: 1200,
+				height: 630
+			}
+		]
+	}}
+	twitter={{
+		cardType: 'summary_large_image',
+		title: title,
+		description: description,
+		image: imageUrl
+	}}
+/>
 <div class="w-full relative flex flex-row justify-center overflow-hidden">
 	<div
 		style="background-image:url(/illustrations/backgrounds/bg-hero.svg)"
@@ -47,7 +81,7 @@
 	>
 		<BgWaveBottom />
 		<div
-			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-32 pb-32 relative z-10 text-c-bg text-center"
+			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-28 pb-32 relative z-10 text-c-bg text-center"
 		>
 			<h1 class="text-6xl font-bold">Blog</h1>
 			<p class="text-xl mt-4">Latest news on the Banano ecosystem.</p>
@@ -60,11 +94,13 @@
 			<a
 				href="/blog/{post.slug}"
 				sveltekit:prefetch
-				class="w-full flex flex-col transition hover:-translate-y-1 shadow-blog-post shadow-c-on-bg/40 hover:shadow-blog-post-hover hover:shadow-c-on-bg/15 rounded-2xl p-1"
+				class="w-full flex flex-col transition hover:-translate-y-1 shadow-blog-post 
+				shadow-c-on-bg/40 hover:shadow-blog-post-hover hover:shadow-c-on-bg/15 rounded-2xl group p-1"
 			>
-				<div class="aspect-[16/9] overflow-hidden relative z-0">
+				<div class="aspect-[16/9] overflow-hidden rounded-xl relative z-0">
 					<img
-						class="w-full h-full object-cover rounded-xl relative z-0"
+						class="w-full h-full object-cover rounded-xl relative z-0 transform 
+						transition duration-300 origin-bottom group-hover:scale-101 bg-c-on-bg/15"
 						src={post.feature_image}
 						alt={post.title}
 					/>

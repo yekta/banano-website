@@ -1,4 +1,5 @@
 import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
+import type { IBlogPosts } from '$lib/ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async ({ params }) => {
@@ -7,11 +8,12 @@ export const get: RequestHandler = async ({ params }) => {
 			','
 		)}&limit=12`;
 		const res = await fetch(url);
-		const resJson = await res.json();
+		const resJson: IBlogPosts = await res.json();
+
 		if (resJson && resJson.posts.length > 0) {
 			return {
 				status: 200,
-				body: { initialPosts: resJson }
+				body: { initialPosts: JSON.stringify(resJson.posts) }
 			};
 		} else {
 			return {

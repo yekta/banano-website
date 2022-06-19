@@ -10,12 +10,12 @@
 	import Testimonials from '$lib/components/sections/Testimonials.svelte';
 	import Wallets from '$lib/components/sections/Wallets.svelte';
 	import Explorer from '$lib/components/sections/Explorer.svelte';
-	import type { IFaq } from '$lib/ts/interfaces/IFaq';
-	import type { ITeamMember } from '$lib/ts/interfaces/ITeamMember';
-	import type { ICommunityProject } from '$lib/ts/interfaces/ICommunityProject';
-	import type { IAnnouncement } from '$lib/ts/interfaces/IAnnouncement';
-	import type { IRoadmapItem } from '$lib/ts/interfaces/IRoadmapItem';
-	import type { IFaucet } from '$lib/ts/interfaces/IFaucet';
+	import type { IFaq } from '$lib/ts/interfaces/Faq';
+	import type { ITeamMember } from '$lib/ts/interfaces/TeamMember';
+	import type { ICommunityProject } from '$lib/ts/interfaces/CommunityProject';
+	import type { IAnnouncement } from '$lib/ts/interfaces/Announcement';
+	import type { IRoadmapItem } from '$lib/ts/interfaces/RoadmapItem';
+	import type { IFaucet } from '$lib/ts/interfaces/Faucet';
 	import Announcements from '$lib/components/sections/Announcements.svelte';
 	import Roadmap from '$lib/components/sections/Roadmap.svelte';
 	import WrappedBanano from '$lib/components/sections/WrappedBanano.svelte';
