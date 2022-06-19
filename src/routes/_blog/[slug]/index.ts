@@ -13,7 +13,7 @@ export const get: RequestHandler = async ({ params }) => {
 		if (post && post.title) {
 			return {
 				status: 200,
-				body: { post: JSON.stringify(post) }
+				body: { post: post as any }
 			};
 		} else {
 			return {

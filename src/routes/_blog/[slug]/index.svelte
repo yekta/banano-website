@@ -20,7 +20,7 @@
 
 	const title = `${post.title} | Blog`;
 	const description = `${post.custom_excerpt ?? post.excerpt}`;
-	const canonical = `${canonicalUrl}/${$page.routeId}`;
+	const canonical = `${canonicalUrl}${$page.url.pathname}`;
 	const imageUrl = `${post.feature_image}`;
 </script>
 
@@ -114,30 +114,15 @@
 </svelte:head>
 
 <div class="w-full blog">
-	<div class="w-full relative flex flex-row justify-center overflow-hidden">
-		<div
-			style="background-image:url(/illustrations/backgrounds/bg-hero.svg)"
-			class="w-full bg-c-secondary min-h-[450px] bg-cover bg-bottom flex justify-center overflow-hidden"
-		>
-			<BgWaveBottom />
-			<div
-				class="min-h-full container-b-smallest px-5 max-w-full flex flex-col
-				self-center pt-28 pb-44 relative z-10 text-c-bg text-left justify-end"
-			>
-				<h1>{post.title}</h1>
-				<p class="text-c-bg/75">
-					{formatDate(post.published_at)} <span class="opacity-50">•</span>
-					{post.reading_time} min read
-				</p>
-			</div>
-		</div>
+	<div class="container-b-smallest relative flex flex-col overflow-hidden pt-24 md:pt-32 px-5">
+		<h1>{post.title}</h1>
+		<p class="text-c-on-bg/75">
+			{formatDate(post.published_at)} <span class="opacity-40">•</span>
+			{post.reading_time} min read
+		</p>
 	</div>
-	<div class="container-b-smallest -mt-36 relative z-10 px-5">
-		<img
-			class="w-full h-auto bg-c-on-bg/15 border-4 border-c-bg"
-			src={post.feature_image}
-			alt={post.title}
-		/>
+	<div class="container-b-smallest relative z-10 px-5 mt-5">
+		<img class="w-full h-auto bg-c-on-bg/15" src={post.feature_image} alt={post.title} />
 	</div>
 	<div class="container-b-smallest px-5 py-8 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
 		{@html post.html}

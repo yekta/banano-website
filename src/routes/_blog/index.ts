@@ -13,7 +13,7 @@ export const get: RequestHandler = async ({ params }) => {
 		if (resJson && resJson.posts.length > 0) {
 			return {
 				status: 200,
-				body: { initialPosts: JSON.stringify(resJson.posts) }
+				body: { initialPosts: resJson as any }
 			};
 		} else {
 			return {

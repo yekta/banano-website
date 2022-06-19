@@ -84,7 +84,7 @@
 			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-28 pb-32 relative z-10 text-c-bg text-center"
 		>
 			<h1 class="text-6xl font-bold">Blog</h1>
-			<p class="text-xl mt-4">Latest news on the Banano ecosystem.</p>
+			<p class="text-xl mt-5">Latest news & developments on the Banano ecosystem.</p>
 		</div>
 	</div>
 </div>

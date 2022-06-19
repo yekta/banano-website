@@ -11,6 +11,7 @@
 	import { fade } from 'svelte/transition';
 	import { sidebar } from '$lib/ts/transitions';
 	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
+	import { page } from '$app/stores';
 
 	export { classes as class };
 	let classes = '';
@@ -82,12 +83,18 @@
 		{
 			title: 'News',
 			id: 'news',
-			href: '/#news'
+			href: '/#news',
+			classes: 'lg:hidden xl:flex'
 		},
 		{
 			title: 'FAQ',
 			id: 'faq',
 			href: '/#faq'
+		},
+		{
+			title: 'Blog',
+			id: 'blog',
+			href: '/blog'
 		}
 	];
 	async function getAndSetBananoPrice() {
@@ -129,7 +136,7 @@
 
 <svelte:window on:scroll={handleScroll} />
 <nav
-	class="{notAtTheTop
+	class="{notAtTheTop || $page.routeId === 'blog/[slug]'
 		? 'text-c-secondary'
 		: 'text-c-primary'} font-filson-pro w-full flex justify-center fixed top-0 left-0 right-0 z-50 {classes}"
 >
@@ -146,15 +153,17 @@
 	>
 		<a
 			aria-label="Logo Link to Homescreen"
-			href="/"
+			href={$page.routeId?.startsWith('blog') ? '/blog' : ''}
 			sveltekit:prefetch
 			class="mr-4 md:mr-12 py-3 group rounded-lg relative z-0 h-full flex flex-row items-center"
 		>
 			<div class="pt-2 pb-2 md:pb-2.5 px-1">
 				<Logo
-					class="{notAtTheTop
-						? 'group-hover:text-c-on-bg scale-90'
-						: 'group-hover:text-c-bg'} transition max-w-full w-44 md:w-48 h-auto transform origin-left"
+					class="{notAtTheTop || $page.routeId === 'blog/[slug]'
+						? 'group-hover:text-c-on-bg'
+						: 'group-hover:text-c-bg'} {notAtTheTop
+						? 'scale-90'
+						: ''} transition max-w-full w-44 md:w-48 h-auto transform origin-left"
 				/>
 			</div>
 		</a>
@@ -179,7 +188,12 @@
 			</div>
 			<div class="hidden md:flex justify-end mx-1.5">
 				{#each socials as social}
-					<a href={social.href} target="_blank" class="font-medium group flex items-center py-3">
+					<a
+						sveltekit:prefetch
+						href={social.href}
+						target="_blank"
+						class="font-medium group flex items-center py-3"
+					>
 						<div
 							class="p-1.5 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/40 group-hover:shadow-c-secondary-shaded"
@@ -196,7 +210,7 @@
 					class="w-full overflow-hidden text-sm text-center font-medium flex items-center group"
 				>
 					<p
-						class="{notAtTheTop
+						class="{notAtTheTop || $page.routeId === 'blog/[slug]'
 							? 'bg-c-secondary/20'
 							: 'bg-c-primary/20'} w-full px-3 py-1.5 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/40 group-hover:shadow-c-secondary-shaded"
@@ -208,7 +222,7 @@
 			<button
 				aria-label="Toggle Menu Button"
 				on:click={toggleMenu}
-				class="{notAtTheTop
+				class="{notAtTheTop || $page.routeId === 'blog/[slug]'
 					? 'text-c-secondary'
 					: 'text-c-primary'} lg:hidden h-full flex items-center group py-3"
 			>
