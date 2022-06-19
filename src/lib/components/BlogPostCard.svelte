@@ -7,7 +7,7 @@
 	href="/blog/{post.slug}"
 	sveltekit:prefetch
 	class="w-full flex flex-col transition hover:-translate-y-1 shadow-blog-post 
-				shadow-c-on-bg/30 hover:shadow-blog-post-hover hover:shadow-c-on-bg/10 rounded-2xl group p-1"
+				shadow-c-on-bg/20 hover:shadow-blog-post-hover hover:shadow-c-on-bg/10 rounded-2xl group p-1"
 >
 	<div class="aspect-[16/9] overflow-hidden rounded-xl relative z-0">
 		<img

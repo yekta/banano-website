@@ -89,9 +89,9 @@
 		</div>
 	</div>
 </div>
-<div class="container-b flex flex-row flex-wrap py-6 md:px-8">
+<div class="container-b flex flex-row flex-wrap justify-center md:pt-6 pb-6 md:px-8">
 	{#each posts.posts as post}
-		<div class="w-full md:w-1/2 lg:w-1/3 p-3 mt-3 bg-c-bg">
+		<div class="w-full md:w-1/2 xl:w-1/3 max-w-lg p-3 mt-3 bg-c-bg">
 			<BlogPostCard {post} />
 		</div>
 	{/each}

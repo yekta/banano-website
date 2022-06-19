@@ -131,15 +131,17 @@
 		<hr />
 	</div>
 </div>
-<div class="w-full flex flex-col mt-4 pb-6">
-	<div class="w-full flex justify-center">
-		<p class="text-3xl font-bold">Read More</p>
+{#if similarPosts.length > 0}
+	<div class="w-full flex flex-col mt-4 pb-6">
+		<div class="w-full flex justify-center">
+			<p class="text-3xl font-bold">Read More</p>
+		</div>
+		<div class="container-b flex flex-row flex-wrap justify-center mt-1 md:px-8">
+			{#each similarPosts as post}
+				<div class="w-full md:w-1/2 xl:w-1/3 max-w-md p-3 mt-3 bg-c-bg">
+					<BlogPostCard {post} />
+				</div>
+			{/each}
+		</div>
 	</div>
-	<div class="container-b flex flex-row flex-wrap mt-2">
-		{#each similarPosts as post}
-			<div class="w-full md:w-1/2 lg:w-1/3 p-3 mt-3 bg-c-bg">
-				<BlogPostCard {post} />
-			</div>
-		{/each}
-	</div>
-</div>
+{/if}
