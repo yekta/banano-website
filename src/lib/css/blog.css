@@ -4,6 +4,7 @@
 .blog {
 	font-size: 1.15rem;
 	font-family: 'rooney', serif;
+	overflow-wrap: break-word;
 }
 
 .blog :first-child {
