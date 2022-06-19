@@ -15,7 +15,7 @@ export const get: RequestHandler = async ({ params }) => {
 		)}&limit=4&filter=tag:[${post.tags.map((i) => i.slug).join(',')}]`;
 		const resSimilars = await fetch(urlSimilars);
 		const resJsonSimilars: IBlogPosts = await resSimilars.json();
-		const similarPosts = resJsonSimilars.posts.filter((i) => i.id !== post.id);
+		const similarPosts = resJsonSimilars.posts.filter((i) => i.id !== post.id).slice(3);
 
 		if (post && post.title) {
 			return {
