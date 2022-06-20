@@ -71,6 +71,9 @@
 .blog p + ol {
 	margin-top: 1rem;
 }
+.blog img {
+	width: 100%;
+}
 .blog figure {
 	width: 100%;
 	display: flex;
