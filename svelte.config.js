@@ -22,6 +22,7 @@ const config = {
 			concurrency: 10,
 			crawl: true /* ,
 			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*'] */
+			//
 		}
 	}
 };
