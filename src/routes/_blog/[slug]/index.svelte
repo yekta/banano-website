@@ -116,18 +116,13 @@
 </svelte:head>
 
 <div class="w-full blog">
-	<div class="container-b-smallest relative flex flex-col overflow-hidden pt-24 md:pt-28 pb-2 px-5">
+	<div class="container-b-smallest relative flex flex-col overflow-hidden pt-24 md:pt-28 px-5">
 		<h1>{post.title}</h1>
 		<p class="text-c-on-bg/60">
 			{formatDate(post.published_at)} <span class="opacity-40">•</span>
 			{post.reading_time} min read
 		</p>
 	</div>
-	{#if notNull(post.feature_image)}
-		<div class="container-b-smallest relative z-10 px-5 mt-5">
-			<img class="w-full h-auto bg-c-on-bg/15" src={post.feature_image} alt={post.title} />
-		</div>
-	{/if}
 	<div class="container-b-smallest px-5 py-8 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
 		{@html post.html}
 		<hr />
