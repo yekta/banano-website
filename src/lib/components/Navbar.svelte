@@ -97,13 +97,13 @@
 			href: '/blog'
 		}
 	];
-	const blogSections: Section[] = [
+	/* 	const blogSections: Section[] = [
 		{
 			title: 'Home',
 			id: 'blog',
 			href: '/'
 		}
-	];
+	]; */
 
 	async function getAndSetBananoPrice() {
 		try {
@@ -177,7 +177,8 @@
 		</a>
 		<div class="flex justify-end">
 			<div class="hidden lg:flex justify-end mx-1.5">
-				{#each $page.routeId?.startsWith('blog') ? blogSections : sections as section}
+				<!-- $page.routeId?.startsWith('blog') ? blogSections : -->
+				{#each sections as section}
 					<a
 						sveltekit:prefetch
 						href={section.href}
@@ -265,7 +266,8 @@
 				<div class="w-full px-2">
 					<div class="h-1 w-full rounded-full bg-c-secondary mt-2 mb-3" />
 				</div>
-				{#each $page.routeId?.startsWith('blog') ? blogSections : sections as section}
+				<!-- $page.routeId?.startsWith('blog') ? blogSections :  -->
+				{#each sections as section}
 					<a
 						sveltekit:prefetch
 						on:click={closeMenu}
