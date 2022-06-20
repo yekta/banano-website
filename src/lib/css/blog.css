@@ -71,9 +71,12 @@
 .blog p + ol {
 	margin-top: 1rem;
 }
-.blog figure img {
+.blog figure {
 	width: 100%;
-	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
 }
 .blog figure figcaption {
 	font-size: 0.9rem;
