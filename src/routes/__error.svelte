@@ -26,7 +26,9 @@
 	});
 </script>
 
-<div class="w-full bg-c-bg flex flex-col items-center justify-start text-center relative">
+<div
+	class="w-full bg-c-bg flex flex-col items-center justify-start text-center relative overflow-hidden"
+>
 	<div
 		class="w-full bg-c-secondary min-h-[550px] md:min-h-[650px] flex justify-center overflow-hidden"
 	>

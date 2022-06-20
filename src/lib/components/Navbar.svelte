@@ -12,6 +12,7 @@
 	import { sidebar } from '$lib/ts/transitions';
 	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
 	import { page } from '$app/stores';
+	import Icon from '$lib/components/icons/Icon.svelte';
 
 	export { classes as class };
 	let classes = '';
@@ -24,6 +25,7 @@
 		id: string;
 		href: string;
 		classes?: string;
+		icon?: string;
 	}
 	interface SocialButton {
 		title: string;
@@ -90,18 +92,19 @@
 			title: 'FAQ',
 			id: 'faq',
 			href: '/#faq'
-		}
-		/* 		{
+		} /* ,
+		{
 			title: 'Blog',
 			id: 'blog',
 			href: '/blog'
 		} */
 	];
-	/* 	const blogSections: Section[] = [
+	/* const blogSections: Section[] = [
 		{
 			title: 'Home',
 			id: 'blog',
-			href: '/'
+			href: '/',
+			icon: 'home'
 		}
 	]; */
 
@@ -161,7 +164,7 @@
 	>
 		<a
 			aria-label="Logo Link to Homescreen"
-			href={$page.routeId?.startsWith('blog') ? '/blog' : ''}
+			href={$page.routeId?.startsWith('blog') ? '/blog' : '/'}
 			sveltekit:prefetch
 			class="mr-4 md:mr-12 py-3 group rounded-lg relative z-0 h-full flex flex-row items-center"
 		>
@@ -186,12 +189,17 @@
 							? section.classes
 							: ''} font-medium group py-3 flex items-center"
 					>
-						<p
-							class="px-4 py-2 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
+						<div
+							class="flex items-center px-4 py-2 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/50 group-hover:shadow-c-secondary-shaded"
 						>
-							{section.title}
-						</p>
+							{#if section.icon}
+								<Icon type={section.icon} class="w-6 h-6 mr-1.5" />
+							{/if}
+							<p>
+								{section.title}
+							</p>
+						</div>
 					</a>
 				{/each}
 			</div>
@@ -272,9 +280,12 @@
 						sveltekit:prefetch
 						on:click={closeMenu}
 						href={section.href}
-						class="text-lg w-full max-w-full px-6 py-3 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg
+						class="flex items-center text-lg w-full max-w-full px-6 py-3 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg
 						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
 					>
+						{#if section.icon}
+							<Icon type={section.icon} class="w-7 h-7 mr-2" />
+						{/if}
 						{section.title}
 					</a>
 				{/each}
