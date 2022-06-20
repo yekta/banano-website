@@ -1,5 +1,6 @@
 import { parse } from 'node-html-parser';
 import type { HTMLElement as HTMLElementP } from 'node-html-parser';
+import type { IBlogPosts, IBlogPostShallow, IBlogPostsShallow } from '../interfaces/Blog';
 
 const ghostUrl = 'https://ghost.banano.cc';
 const blogUrl = 'https://banano.cc/blog';
@@ -38,3 +39,25 @@ export function cleanHtml(html: string) {
 
 const isYoutubeUrl = (url: string | undefined) =>
 	url && (url.startsWith('https://youtube.com') || url.startsWith('https://www.youtube.com'));
+
+export function postsToShallowPosts(p: IBlogPosts) {
+	const shallowPosts: IBlogPostShallow[] = p.posts.map((i) => {
+		const { html, feature_image, ...rest } = i;
+		const extractedFeatureImage = getFeaturedImageFromHtml(html);
+		return { feature_image: feature_image ?? extractedFeatureImage, ...rest };
+	});
+	const res: IBlogPostsShallow = {
+		posts: shallowPosts,
+		meta: p.meta
+	};
+	return res;
+}
+
+const getFeaturedImageFromHtml = (html: string) => {
+	const dom = parse(html);
+	const img = dom.querySelector('img');
+	if (img) {
+		return img.getAttribute('src');
+	}
+	return undefined;
+};
