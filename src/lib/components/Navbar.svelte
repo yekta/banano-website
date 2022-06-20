@@ -90,12 +90,12 @@
 			title: 'FAQ',
 			id: 'faq',
 			href: '/#faq'
-		},
-		{
+		}
+		/* 		{
 			title: 'Blog',
 			id: 'blog',
 			href: '/blog'
-		}
+		} */
 	];
 	/* 	const blogSections: Section[] = [
 		{
