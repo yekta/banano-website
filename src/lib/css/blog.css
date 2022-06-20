@@ -3,7 +3,7 @@
 
 .blog {
 	font-size: 1.15rem;
-	font-family: 'rooney', serif;
+	font-family: 'lora', serif;
 	overflow-wrap: break-word;
 }
 
@@ -97,6 +97,29 @@
 }
 .blog hr {
 	margin-top: 3.5rem;
+}
+
+.blog code {
+	background: rgb(var(--c-on-bg) / 5%);
+	padding: 0.15rem 0.4rem;
+	border-radius: 0.3rem;
+	border: 1px solid rgb(var(--c-on-bg) / 5%);
+	font-size: 1rem;
+}
+
+.blog pre {
+	background: rgb(var(--c-on-bg) / 5%);
+	padding: 0.4rem 0.75rem;
+	border-radius: 0.3rem;
+	border: 1px solid rgb(var(--c-on-bg) / 5%);
+	font-size: 1rem;
+	margin-top: 1rem;
+}
+.blog pre code {
+	background: transparent;
+	padding: 0rem;
+	border-radius: 0rem;
+	border: none;
 }
 
 @tailwind utilities;

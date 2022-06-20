@@ -13,6 +13,7 @@
 	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
 	import { page } from '$app/stores';
 	import Icon from '$lib/components/icons/Icon.svelte';
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
 
 	export { classes as class };
 	let classes = '';
@@ -143,6 +144,14 @@
 	function handleScroll() {
 		setNotAtTheTop();
 	}
+
+	let loadingNewPage = false;
+	beforeNavigate(() => {
+		loadingNewPage = true;
+	});
+	afterNavigate(() => {
+		loadingNewPage = false;
+	});
 </script>
 
 <svelte:window on:scroll={handleScroll} />
@@ -151,6 +160,14 @@
 		? 'text-c-secondary'
 		: 'text-c-primary'} font-filson-pro w-full flex justify-center fixed top-0 left-0 right-0 z-50 {classes}"
 >
+	{#if loadingNewPage}
+		<div
+			class="absolute top-0 origin-left w-full h-3px {notAtTheTop || $page.routeId === 'blog/[slug]'
+				? 'bg-c-secondary'
+				: 'bg-c-primary'} z-10
+		 	pointer-events-none {loadingNewPage ? 'animate-navbar-loading' : ''}"
+		/>
+	{/if}
 	<div
 		class="{notAtTheTop
 			? 'translate-0'

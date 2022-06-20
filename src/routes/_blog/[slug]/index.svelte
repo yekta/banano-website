@@ -53,62 +53,62 @@
 <svelte:head>
 	<link
 		rel="preload"
-		href="/fonts/rooney/rooney-400.woff2"
+		href="/fonts/lora/lora-400.woff2"
 		as="font"
 		type="font/woff2"
 		crossorigin="anonymous"
 	/>
 	<link
 		rel="preload"
-		href="/fonts/rooney/rooney-700.woff2"
+		href="/fonts/lora/lora-700.woff2"
 		as="font"
 		type="font/woff2"
 		crossorigin="anonymous"
 	/>
 	<link
 		rel="preload"
-		href="/fonts/rooney/rooney-400-italic.woff2"
+		href="/fonts/lora/lora-400-italic.woff2"
 		as="font"
 		type="font/woff2"
 		crossorigin="anonymous"
 	/>
 	<link
 		rel="preload"
-		href="/fonts/rooney/rooney-700-italic.woff2"
+		href="/fonts/lora/lora-700-italic.woff2"
 		as="font"
 		type="font/woff2"
 		crossorigin="anonymous"
 	/>
 	<style>
 		@font-face {
-			font-family: 'rooney';
+			font-family: 'lora';
 			font-weight: 400;
-			src: url('/fonts/rooney/rooney-400.woff2') format('woff2'),
-				url('/fonts/rooney/rooney-400.woff') format('woff');
+			src: url('/fonts/lora/lora-400.woff2') format('woff2'),
+				url('/fonts/lora/lora-400.woff') format('woff');
 			font-display: block;
 			font-style: normal;
 		}
 		@font-face {
-			font-family: 'rooney';
+			font-family: 'lora';
 			font-weight: 700;
-			src: url('/fonts/rooney/rooney-700.woff2') format('woff2'),
-				url('/fonts/rooney/rooney-700.woff') format('woff');
+			src: url('/fonts/lora/lora-700.woff2') format('woff2'),
+				url('/fonts/lora/lora-700.woff') format('woff');
 			font-display: block;
 			font-style: normal;
 		}
 		@font-face {
-			font-family: 'rooney';
+			font-family: 'lora';
 			font-weight: 400;
-			src: url('/fonts/rooney/rooney-400.woff2') format('woff2'),
-				url('/fonts/rooney/rooney-400.woff') format('woff');
+			src: url('/fonts/lora/lora-400.woff2') format('woff2'),
+				url('/fonts/lora/lora-400.woff') format('woff');
 			font-display: block;
 			font-style: italic;
 		}
 		@font-face {
-			font-family: 'rooney';
+			font-family: 'lora';
 			font-weight: 700;
-			src: url('/fonts/rooney/rooney-700.woff2') format('woff2'),
-				url('/fonts/rooney/rooney-700.woff') format('woff');
+			src: url('/fonts/lora/lora-700.woff2') format('woff2'),
+				url('/fonts/lora/lora-700.woff') format('woff');
 			font-display: block;
 			font-style: italic;
 		}

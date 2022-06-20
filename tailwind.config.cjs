@@ -79,13 +79,18 @@ module.exports = {
 				3: '3px'
 			},
 			animation: {
-				pressed: 'pressedScale 0.2s ease-out 1'
+				pressed: 'pressedScale 0.2s ease-out 1',
+				'navbar-loading': 'navbar-loading 1.5s ease-out 1'
 			},
 			keyframes: {
 				pressedScale: {
 					'0%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(0.9)' },
 					'100%': { transform: 'scale(1)' }
+				},
+				'navbar-loading': {
+					'0%': { transform: 'scaleX(0)' },
+					'100%': { transform: 'scaleX(1)' }
 				}
 			},
 			scale: {
