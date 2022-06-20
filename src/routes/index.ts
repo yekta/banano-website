@@ -61,10 +61,6 @@ export const get: RequestHandler = async (event) => {
 
 	return {
 		status: 200,
-		cache: {
-			maxage: 300,
-			private: false
-		},
 		body: {
 			faq,
 			testimonials,
