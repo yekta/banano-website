@@ -82,7 +82,7 @@
 	>
 		<BgWaveBottom />
 		<div
-			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-24 pb-32 md:pb-36 relative z-10 text-c-bg text-center"
+			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-28 pb-32 md:pb-36 relative z-10 text-c-bg text-center"
 		>
 			<h1 class="text-6xl font-bold">Blog</h1>
 			<p class="text-xl mt-5">Latest news & developments on the Banano ecosystem.</p>

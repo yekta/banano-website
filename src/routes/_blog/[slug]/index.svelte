@@ -1,13 +1,13 @@
 <script lang="ts">
 	import '$lib/css/main.css';
 	import '$lib/css/blog.css';
-	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import { monthsShort } from '$lib/ts/constants/months';
 	import type { IBlogPost, IBlogPostShallow } from '$lib/ts/interfaces/Blog';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
+	import { notNull } from '$lib/ts/helpers/notNull';
 
 	export let post: IBlogPost;
 	export let similarPosts: IBlogPostShallow[];
@@ -123,9 +123,11 @@
 			{post.reading_time} min read
 		</p>
 	</div>
-	<div class="container-b-smallest relative z-10 px-5 mt-5">
-		<img class="w-full h-auto bg-c-on-bg/15" src={post.feature_image} alt={post.title} />
-	</div>
+	{#if notNull(post.feature_image)}
+		<div class="container-b-smallest relative z-10 px-5 mt-5">
+			<img class="w-full h-auto bg-c-on-bg/15" src={post.feature_image} alt={post.title} />
+		</div>
+	{/if}
 	<div class="container-b-smallest px-5 py-8 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
 		{@html post.html}
 		<hr />

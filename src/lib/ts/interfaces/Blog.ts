@@ -15,8 +15,18 @@ export interface IBlogPostShallow {
 	tags: ITag[];
 }
 
-export interface IBlogPosts {
+export interface IBlogPostsShallow {
 	posts: IBlogPostShallow[];
+	meta: {
+		pagination: {
+			next: number;
+			limit: number;
+		};
+	};
+}
+
+export interface IBlogPosts {
+	posts: IBlogPost[];
 	meta: {
 		pagination: {
 			next: number;
