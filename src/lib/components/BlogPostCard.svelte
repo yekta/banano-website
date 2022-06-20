@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { notNull } from '$lib/ts/helpers/isNull';
+	import { notNull } from '$lib/ts/helpers/notNull';
 
 	import type { IBlogPostShallow } from '$lib/ts/interfaces/Blog';
 	export let post: IBlogPostShallow;
