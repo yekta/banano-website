@@ -9,6 +9,8 @@
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
+	import IconLoading from '$lib/components/icons/IconLoading.svelte';
+	import { tick } from 'svelte';
 
 	export let initialPosts: IBlogPostsShallow;
 
@@ -25,6 +27,7 @@
 
 		let { next, limit } = posts.meta.pagination;
 		isLoadingMore = true;
+		await tick();
 		try {
 			const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
 				','
@@ -97,8 +100,23 @@
 	{/each}
 	{#if hasMoreToLoad}
 		<div use:inview={inviewOptions} on:enter={getMorePosts} class="w-full" />
-		<div class="w-full flex justify-center mt-4">
-			<Button onClick={getMorePosts} class="w-64 max-w-full">Load More</Button>
+		<div class="w-full flex justify-center mt-4 relative">
+			<Button
+				disabled={isLoadingMore}
+				onClick={getMorePosts}
+				class="w-64 max-w-full {isLoadingMore ? 'opacity-0' : ''}"
+			>
+				Load More
+			</Button>
+			<div
+				class="absolute w-full h-full flex justify-center items-center left-0 top-0 pointer-events-none z-10"
+			>
+				<IconLoading
+					class="w-10 h-10 text-c-secondary animate-spin-faster transition {isLoadingMore
+						? 'opacity-100'
+						: 'opacity-0'}"
+				/>
+			</div>
 		</div>
 	{/if}
 </div>

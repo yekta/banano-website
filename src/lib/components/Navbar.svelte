@@ -102,8 +102,14 @@
 	];
 	const blogSections: Section[] = [
 		{
-			title: 'Home',
+			title: 'Blog',
 			id: 'blog',
+			href: '/blog',
+			icon: 'blog'
+		},
+		{
+			title: 'Home',
+			id: 'home',
 			href: '/',
 			icon: 'home'
 		}
@@ -203,12 +209,20 @@
 						href={section.href}
 						class="{section.classes !== undefined
 							? section.classes
-							: ''} font-medium group py-3 flex items-center"
+							: ''} font-medium group py-3 flex items-center relative"
 					>
 						<div
-							class="flex items-center px-4 py-2 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
+							class="flex items-center px-4 py-2 rounded-lg relative transition group-hover:bg-c-secondary group-hover:text-c-bg
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/50 group-hover:shadow-c-secondary-shaded"
 						>
+							{#if $page.routeId?.startsWith('blog') && ($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href)}
+								<div
+									class="w-full h-full group-hover:opacity-0 {notAtTheTop ||
+									$page.routeId === 'blog/[slug]'
+										? 'bg-c-secondary/15 border-c-secondary/15'
+										: 'bg-c-primary/15 border-c-primary/15'} border transition absolute left-0 top-0 rounded-lg"
+								/>
+							{/if}
 							{#if section.icon}
 								<Icon type={section.icon} class="w-6 h-6 mr-1.5" />
 							{/if}
@@ -296,8 +310,14 @@
 						on:click={closeMenu}
 						href={section.href}
 						class="flex items-center text-lg w-full max-w-full px-6 py-3 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg
-						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded"
+						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded relative group"
 					>
+						{#if $page.routeId?.startsWith('blog') && ($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href)}
+							<div
+								class="w-full h-full group-hover:opacity-0 bg-c-secondary/15 border 
+								border-c-secondary/15 transition absolute left-0 top-0 rounded-lg"
+							/>
+						{/if}
 						{#if section.icon}
 							<Icon type={section.icon} class="w-7 h-7 mr-2" />
 						{/if}

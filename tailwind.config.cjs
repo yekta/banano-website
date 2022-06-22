@@ -79,10 +79,15 @@ module.exports = {
 				3: '3px'
 			},
 			animation: {
+				'spin-faster': 'spin-faster 0.6s linear infinite',
 				pressed: 'pressedScale 0.2s ease-out 1',
 				'navbar-loading': 'navbar-loading 1.5s ease-out 1'
 			},
 			keyframes: {
+				'spin-faster': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
 				pressedScale: {
 					'0%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(0.9)' },
@@ -123,6 +128,8 @@ module.exports = {
 				240: '60rem',
 				256: '64rem',
 				288: '72rem',
+				'0.3ch': '0.3ch',
+				'0.4ch': '0.4ch',
 				'0.5ch': '0.5ch',
 				'0.75ch': '0.75ch',
 				'1ch': '1ch',

@@ -334,7 +334,7 @@
 				padding="py-3.5 px-8 w-56 max-w-full"
 			>
 				{#if isPrinting}
-					<div class="mr-2"><IconLoading class="w-6 h-6 animate-spin" /></div>
+					<div class="mr-2"><IconLoading class="w-6 h-6 animate-spin-faster" /></div>
 					Printing...
 				{:else}
 					Print Wallets
