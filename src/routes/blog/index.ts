@@ -22,6 +22,7 @@ export const get: RequestHandler = async ({ params }) => {
 			};
 		}
 	} catch (error) {
+		console.log(error);
 		return {
 			status: 404,
 			body: { error: String(error) }

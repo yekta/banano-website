@@ -51,7 +51,7 @@
 					targetBlank: true
 				},
 				{ text: 'Yellowpaper™', href: '/yellowpaper' },
-				{ text: 'Blog', href: 'https://medium.com/banano', targetBlank: true },
+				{ text: 'Blog', href: '/blog' },
 				{ text: 'Presskit', href: '/presskit' },
 				{ text: 'Redeem Banano', href: '/redeem' },
 				{ text: 'Paper Wallet', href: '/paperwallet' },

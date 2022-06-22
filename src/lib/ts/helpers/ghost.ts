@@ -1,9 +1,12 @@
 import { parse } from 'node-html-parser';
 import type { HTMLElement as HTMLElementP } from 'node-html-parser';
 import type { IBlogPosts, IBlogPostShallow, IBlogPostsShallow } from '../interfaces/Blog';
+import { monthsShort } from '$lib/ts/constants/months';
 
 const ghostUrl = 'https://ghost.banano.cc';
-const blogUrl = 'https://banano.cc/blog';
+const siteUrl = 'https://banano.cc';
+const mediumUrl = 'https://medium.com/banano';
+const bananoMediumUser = 'bananocurrency';
 
 // a function that finds "a" tags that has an href attribute anywhere in the tag that starts with "https://ghost.banano.cc" and replaces it with "/blog"
 export function fixATags(dom: HTMLElementP) {
@@ -11,11 +14,31 @@ export function fixATags(dom: HTMLElementP) {
 	for (let i = 0; i < aTags.length; i++) {
 		const aTag = aTags[i];
 		const href = aTag.getAttribute('href');
-		if (href && href.startsWith(ghostUrl)) {
-			aTag.setAttribute('href', href.replace(ghostUrl, blogUrl));
+		if (href?.startsWith(`${siteUrl}/`)) {
+			aTag.setAttribute('href', href.replace(`${siteUrl}/`, '/'));
+			aTag.setAttribute('rel', '');
+		} else if (href?.startsWith(`${siteUrl}`)) {
+			aTag.setAttribute('href', href.replace(`${siteUrl}`, '/'));
+			aTag.setAttribute('rel', '');
+		} else if (href?.startsWith(ghostUrl)) {
+			if (
+				href.startsWith(`${ghostUrl}/author/${bananoMediumUser}`) ||
+				href.startsWith(`${ghostUrl}/@${bananoMediumUser}`)
+			) {
+				aTag.setAttribute('href', mediumUrl);
+				aTag.setAttribute('target', '_blank');
+			} else {
+				aTag.setAttribute('href', href.replace(ghostUrl, '/blog'));
+				aTag.setAttribute('rel', '');
+			}
+		} else {
+			aTag.setAttribute('target', '_blank');
 		}
-		aTag.setAttribute('rel', 'noopener noreferrer');
 	}
+	return dom;
+}
+
+export function fixYoutubeIframes(dom: HTMLElementP) {
 	const iFrames = dom.querySelectorAll('iframe');
 	for (let i = 0; i < iFrames.length; i++) {
 		const iFrame = iFrames[i];
@@ -33,8 +56,10 @@ export function fixATags(dom: HTMLElementP) {
 
 export function cleanHtml(html: string) {
 	const dom = parse(html);
-	const cleanHtml = fixATags(dom);
-	return cleanHtml.toString();
+	const youtubeCleanedHtml = fixYoutubeIframes(dom);
+	const aTagCleanedHtml = fixATags(youtubeCleanedHtml);
+	const res = aTagCleanedHtml.toString();
+	return res;
 }
 
 const isYoutubeUrl = (url: string | undefined) =>
@@ -60,4 +85,12 @@ const getFeaturedImageFromHtml = (html: string) => {
 		return img.getAttribute('src');
 	}
 	return undefined;
+};
+
+export const formatDate = (str: string) => {
+	const dateObj = new Date(str);
+	const monthShort = monthsShort[dateObj.getMonth()];
+	const day = dateObj.getDate();
+	const year = dateObj.getFullYear();
+	return `${monthShort} ${day}, ${year}`;
 };

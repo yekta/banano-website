@@ -4,13 +4,13 @@
 	import { inview } from 'svelte-inview';
 	import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
 	import Button from '$lib/components/Button.svelte';
-	import type { IBlogPosts } from '$lib/ts/interfaces/Blog';
+	import type { IBlogPosts, IBlogPostsShallow } from '$lib/ts/interfaces/Blog';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
 
-	export let initialPosts: IBlogPosts;
+	export let initialPosts: IBlogPostsShallow;
 
 	let posts = initialPosts;
 	let isLoadingMore = false;
@@ -30,7 +30,7 @@
 				','
 			)}&limit=${limit}&page=${next}`;
 			const response = await fetch(url);
-			const data: IBlogPosts = await response.json();
+			const data: IBlogPostsShallow = await response.json();
 			posts = {
 				meta: data.meta,
 				posts: [...posts.posts, ...data.posts]
@@ -46,7 +46,7 @@
 	}
 
 	const title = 'Blog | Banano';
-	const description = 'Latest news, developments, and educational content on Banano.';
+	const description = 'Latest Banano news, developments, and educational content.';
 	const canonical = `${canonicalUrl}/${$page.routeId}`;
 	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
 </script>
@@ -82,7 +82,7 @@
 	>
 		<BgWaveBottom />
 		<div
-			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-28 pb-32 md:pb-36 relative z-10 text-c-bg text-center"
+			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-28 pb-36 xl:pb-40 relative z-10 text-c-bg text-center"
 		>
 			<h1 class="text-6xl font-bold">Blog</h1>
 			<p class="text-xl mt-5">Latest news & developments on the Banano ecosystem.</p>

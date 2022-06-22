@@ -1,24 +1,15 @@
 <script lang="ts">
 	import '$lib/css/main.css';
 	import '$lib/css/blog.css';
-	import { monthsShort } from '$lib/ts/constants/months';
 	import type { IBlogPost, IBlogPostShallow } from '$lib/ts/interfaces/Blog';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
-	import { notNull } from '$lib/ts/helpers/notNull';
+	import { formatDate } from '$lib/ts/helpers/ghost';
 
 	export let post: IBlogPost;
 	export let similarPosts: IBlogPostShallow[];
-
-	const formatDate = (str: string) => {
-		const dateObj = new Date(str);
-		const monthShort = monthsShort[dateObj.getMonth()];
-		const day = dateObj.getDate();
-		const year = dateObj.getFullYear();
-		return `${monthShort} ${day}, ${year}`;
-	};
 
 	const title = `${post.title} | Blog`;
 	const description = `${post.custom_excerpt ?? post.excerpt}`;
@@ -115,8 +106,8 @@
 	</style>
 </svelte:head>
 
-<div class="w-full blog">
-	<div class="container-b-smallest relative flex flex-col overflow-hidden pt-24 md:pt-28 px-5">
+<article class="w-full blog mt-24 md:mt-28">
+	<div class="container-b-smallest relative flex flex-col overflow-hidden px-5">
 		<h1>{post.title}</h1>
 		<p class="text-c-on-bg/60">
 			{formatDate(post.published_at)} <span class="opacity-40">•</span>
@@ -127,7 +118,7 @@
 		{@html post.html}
 		<hr />
 	</div>
-</div>
+</article>
 {#if similarPosts.length > 0}
 	<div class="w-full flex flex-col mt-4 pb-6">
 		<div class="w-full flex justify-center">

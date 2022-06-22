@@ -10,7 +10,7 @@ export const shallowPostFields = [
 	'created_at',
 	'updated_at',
 	'published_at',
-	'reading_time',
 	'featured',
-	'feature_image'
+	'feature_image',
+	'reading_time'
 ];

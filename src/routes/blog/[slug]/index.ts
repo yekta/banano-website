@@ -13,9 +13,9 @@ export const get: RequestHandler = async ({ params }) => {
 
 		const { html, ...rest } = post;
 
-		console.time('htmlCleaning');
+		/* console.time('htmlCleaning'); */
 		const postCleaned: IBlogPost = { html: cleanHtml(html), ...rest };
-		console.timeEnd('htmlCleaning');
+		/* console.timeEnd('htmlCleaning'); */
 
 		const urlSimilars = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
 			','
@@ -38,6 +38,7 @@ export const get: RequestHandler = async ({ params }) => {
 			};
 		}
 	} catch (e: any) {
+		console.log(e);
 		return {
 			status: 404,
 			body: { error: String(e) }

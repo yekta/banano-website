@@ -3,7 +3,7 @@ import adapterStatic from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
-/* import { getBlogRoutesArray } from './utils/blogRoutes.js'; */
+import { getBlogRoutesArray } from './utils/blogRoutes.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -19,10 +19,8 @@ const config = {
 		adapter: process.env.STATIC ? adapterStatic() : adapter(),
 		prerender: {
 			default: true,
-			concurrency: 10,
-			crawl: true /* ,
-			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*'] */
-			//
+			concurrency: 5,
+			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*']
 		}
 	}
 };
