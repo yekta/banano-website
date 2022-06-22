@@ -19,8 +19,9 @@ const config = {
 		adapter: process.env.STATIC ? adapterStatic() : adapter(),
 		prerender: {
 			default: true,
-			concurrency: 5,
-			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*']
+			concurrency: 10,
+			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*'],
+			onError: 'continue'
 		}
 	}
 };
