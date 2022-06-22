@@ -7,6 +7,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
 	import { formatDate } from '$lib/ts/helpers/ghost';
+	import { inview } from 'svelte-inview';
 
 	export let post: IBlogPost;
 	export let similarPosts: IBlogPostShallow[];
@@ -15,6 +16,16 @@
 	const description = `${post.custom_excerpt ?? post.excerpt}`;
 	const canonical = `${canonicalUrl}${$page.url.pathname}`;
 	const imageUrl = `${post.feature_image}`;
+
+	const inviewOptions = {
+		unobserveOnEnter: true
+	};
+
+	const onInview = () => {
+		window.plausible('Blog | Article End Reached', {
+			props: { Title: post.title, Id: post.id }
+		});
+	};
 </script>
 
 <MetaTags
@@ -118,6 +129,7 @@
 		{@html post.html}
 		<hr />
 	</div>
+	<div use:inview={inviewOptions} class="w-full" on:enter={onInview} />
 </article>
 {#if similarPosts.length > 0}
 	<div class="w-full flex flex-col mt-4 pb-6">

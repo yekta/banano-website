@@ -9,7 +9,7 @@ export const get: RequestHandler = async ({ params }) => {
 		const url = `${blogApiUrl}/posts/slug/${slug}?key=${blogApiKey}&include=tags`;
 		const res = await fetch(url);
 		const resJson: IBlogPosts = await res.json();
-		const post = resJson.posts[0];
+		const post = resJson.posts?.[0];
 
 		const { html, ...rest } = post;
 
