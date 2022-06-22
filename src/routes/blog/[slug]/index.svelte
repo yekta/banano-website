@@ -121,7 +121,7 @@
 	<div class="container-b-smallest relative flex flex-col overflow-hidden px-5">
 		<h1>{post.title}</h1>
 		<p class="text-c-on-bg/60">
-			{formatDate(post.published_at)} <span class="opacity-40">•</span>
+			{formatDate(post.published_at)} <span class="opacity-40 mx-0.3ch">•</span>
 			{post.reading_time} min read
 		</p>
 	</div>
