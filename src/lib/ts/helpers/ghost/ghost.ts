@@ -10,8 +10,7 @@ const bananoMediumUser = 'bananocurrency';
 
 export function cleanHtml(html: string) {
 	const dom = parse(html);
-	const youtubeCleanedHtml = fixYoutubeIframes(dom);
-	const aTagCleanedHtml = fixATags(youtubeCleanedHtml);
+	const aTagCleanedHtml = fixATags(dom);
 	const imgTagCleanedHtml = fixImgTags(aTagCleanedHtml);
 	const iframeTagCleanedHtml = fixIframeTags(imgTagCleanedHtml);
 	const res = iframeTagCleanedHtml.toString();
@@ -33,21 +32,12 @@ export function fixImgTags(dom: HTMLElementP) {
 }
 
 export function fixIframeTags(dom: HTMLElementP) {
-	const iframeTags = dom.querySelectorAll('iframe');
-	iframeTags.forEach((iframeTag) => {
-		iframeTag.setAttribute('loading', 'lazy');
-	});
-	return dom;
-}
-
-export function fixYoutubeIframes(dom: HTMLElementP) {
 	const iFrames = dom.querySelectorAll('iframe');
 	for (let i = 0; i < iFrames.length; i++) {
 		const iFrame = iFrames[i];
-		const src = iFrame.getAttribute('src');
-		if (isYoutubeUrl(src)) {
-			const width = Number(iFrame.getAttribute('width'));
-			const height = Number(iFrame.getAttribute('height'));
+		const width = Number(iFrame.getAttribute('width'));
+		const height = Number(iFrame.getAttribute('height'));
+		if (width && width > 0 && height && height > 0) {
 			const ratio = height / width;
 			iFrame.parentNode.setAttribute('style', `padding-bottom: ${ratio * 100}%`);
 			iFrame.setAttribute('style', `position: absolute; width: 100%; height: 100%`);

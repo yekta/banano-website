@@ -141,6 +141,9 @@ body {
 .blog ol {
 	margin-top: 2.5rem;
 }
+.blog iframe {
+	width: 100%;
+}
 .blog p + ul,
 .blog p + ol {
 	margin-top: 1rem;
