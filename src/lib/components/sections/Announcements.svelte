@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { months } from '$lib/ts/constants/months';
 
-	import type { IAnnouncement } from '$lib/ts/interfaces/IAnnouncement';
+	import type { IAnnouncement } from '$lib/ts/interfaces/Announcement';
 	import MoreIndicator from '../MoreIndicator.svelte';
 
 	export let announcements: IAnnouncement[];

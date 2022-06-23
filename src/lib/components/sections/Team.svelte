@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ITeamMember } from '$lib/ts/interfaces/ITeamMember';
+	import type { ITeamMember } from '$lib/ts/interfaces/TeamMember';
 	import { onMount } from 'svelte';
 
 	export let team: ITeamMember[];

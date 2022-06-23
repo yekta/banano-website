@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '../Button.svelte';
-	import type { ICommunityProject } from '$lib/ts/interfaces/ICommunityProject';
+	import type { ICommunityProject } from '$lib/ts/interfaces/CommunityProject';
 
 	export let communityProjects: ICommunityProject[];
 </script>

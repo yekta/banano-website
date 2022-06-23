@@ -10,9 +10,9 @@
 <a
 	href="/blog/{post.slug}"
 	sveltekit:prefetch
-	class="w-full flex flex-col transition hover:-translate-y-1 
+	class="w-full flex flex-col transition hover:-translate-y-1.5
 	shadow-blog-post shadow-c-on-bg/20 hover:shadow-blog-post-hover 
-	hover:shadow-c-on-bg/10 rounded-2xl group p-1 pb-5"
+	hover:shadow-c-on-bg/10 hover:bg-c-on-bg/5 rounded-2xl group p-1.5 pb-5"
 >
 	<div class="aspect-[16/9] overflow-hidden rounded-xl relative z-0">
 		{#if notNull(post.feature_image)}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { IFaucet } from '$lib/ts/interfaces/IFaucet';
+	import type { IFaucet } from '$lib/ts/interfaces/Faucet';
 	import Button from '$lib/components/Button.svelte';
 	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
 	import type { TButton } from '$lib/ts/types/TButton';
