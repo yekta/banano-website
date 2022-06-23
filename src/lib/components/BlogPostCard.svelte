@@ -1,8 +1,12 @@
 <script lang="ts">
+	import { getSrcAndSrcSetFromUrl } from '$lib/ts/helpers/ghost/utils';
+
 	import { notNull } from '$lib/ts/helpers/notNull';
 
 	import type { IBlogPostShallow } from '$lib/ts/interfaces/Blog';
 	export let post: IBlogPostShallow;
+
+	const { src, srcset } = getSrcAndSrcSetFromUrl(post.feature_image);
 </script>
 
 <a
@@ -18,7 +22,9 @@
 				loading="lazy"
 				class="w-full h-full object-cover rounded-xl relative z-0 transform 
 					transition duration-400 origin-bottom group-hover:scale-101 bg-c-on-bg/15"
-				src={post.feature_image}
+				{src}
+				{srcset}
+				sizes="(min-width: 1280px) 400px, (min-width: 768px) 50vw, 100vw"
 				alt={post.title}
 			/>
 		{:else}

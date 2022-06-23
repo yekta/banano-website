@@ -1,5 +1,5 @@
 import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
-import { cleanHtml } from '$lib/ts/helpers/ghost';
+import { cleanHtml } from '$lib/ts/helpers/ghost/ghost';
 import type { IBlogPost, IBlogPosts } from '$lib/ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 

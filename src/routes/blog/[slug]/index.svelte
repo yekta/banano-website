@@ -6,8 +6,8 @@
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
-	import { formatDate } from '$lib/ts/helpers/ghost';
 	import { inview } from 'svelte-inview';
+	import { formatDate } from '$lib/ts/helpers/ghost/utils';
 
 	export let post: IBlogPost;
 	export let similarPosts: IBlogPostShallow[];

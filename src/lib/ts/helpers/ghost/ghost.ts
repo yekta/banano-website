@@ -1,12 +1,51 @@
 import { parse } from 'node-html-parser';
 import type { HTMLElement as HTMLElementP } from 'node-html-parser';
-import type { IBlogPosts, IBlogPostShallow, IBlogPostsShallow } from '../interfaces/Blog';
-import { monthsShort } from '$lib/ts/constants/months';
+import type { IBlogPosts, IBlogPostShallow, IBlogPostsShallow } from '../../interfaces/Blog';
+import { defaultWidths, getSrcAndSrcSetFromUrl } from '$lib/ts/helpers/ghost/utils';
 
 const ghostUrl = 'https://ghost.banano.cc';
 const siteUrl = 'https://banano.cc';
 const mediumUrl = 'https://medium.com/banano';
 const bananoMediumUser = 'bananocurrency';
+
+export function cleanHtml(html: string) {
+	const dom = parse(html);
+	const youtubeCleanedHtml = fixYoutubeIframes(dom);
+	const aTagCleanedHtml = fixATags(youtubeCleanedHtml);
+	const imgTagCleanedHtml = fixImgTags(aTagCleanedHtml);
+	const res = imgTagCleanedHtml.toString();
+	return res;
+}
+
+export function fixImgTags(dom: HTMLElementP) {
+	const imgTags = dom.querySelectorAll('img');
+	imgTags.forEach((imgTag) => {
+		const srcOld = imgTag.getAttribute('src');
+		if (srcOld && !srcOld.endsWith('.gif')) {
+			const { src, srcset } = getSrcAndSrcSetFromUrl(srcOld, defaultWidths);
+			imgTag.setAttribute('src', src);
+			imgTag.setAttribute('srcset', srcset);
+			imgTag.setAttribute('sizes', '(min-width: 768px) 768px, 100vw');
+		}
+	});
+	return dom;
+}
+
+export function fixYoutubeIframes(dom: HTMLElementP) {
+	const iFrames = dom.querySelectorAll('iframe');
+	for (let i = 0; i < iFrames.length; i++) {
+		const iFrame = iFrames[i];
+		const src = iFrame.getAttribute('src');
+		if (isYoutubeUrl(src)) {
+			const width = Number(iFrame.getAttribute('width'));
+			const height = Number(iFrame.getAttribute('height'));
+			const ratio = height / width;
+			iFrame.parentNode.setAttribute('style', `padding-bottom: ${ratio * 100}%`);
+			iFrame.setAttribute('style', `position: absolute; width: 100%; height: 100%`);
+		}
+	}
+	return dom;
+}
 
 // a function that finds "a" tags that has an href attribute anywhere in the tag that starts with "https://ghost.banano.cc" and replaces it with "/blog"
 export function fixATags(dom: HTMLElementP) {
@@ -38,30 +77,6 @@ export function fixATags(dom: HTMLElementP) {
 	return dom;
 }
 
-export function fixYoutubeIframes(dom: HTMLElementP) {
-	const iFrames = dom.querySelectorAll('iframe');
-	for (let i = 0; i < iFrames.length; i++) {
-		const iFrame = iFrames[i];
-		const src = iFrame.getAttribute('src');
-		if (isYoutubeUrl(src)) {
-			const width = Number(iFrame.getAttribute('width'));
-			const height = Number(iFrame.getAttribute('height'));
-			const ratio = height / width;
-			iFrame.parentNode.setAttribute('style', `padding-bottom: ${ratio * 100}%`);
-			iFrame.setAttribute('style', `position: absolute; width: 100%; height: 100%`);
-		}
-	}
-	return dom;
-}
-
-export function cleanHtml(html: string) {
-	const dom = parse(html);
-	const youtubeCleanedHtml = fixYoutubeIframes(dom);
-	const aTagCleanedHtml = fixATags(youtubeCleanedHtml);
-	const res = aTagCleanedHtml.toString();
-	return res;
-}
-
 const isYoutubeUrl = (url: string | undefined) =>
 	url && (url.startsWith('https://youtube.com') || url.startsWith('https://www.youtube.com'));
 
@@ -85,12 +100,4 @@ const getFeaturedImageFromHtml = (html: string) => {
 		return img.getAttribute('src');
 	}
 	return undefined;
-};
-
-export const formatDate = (str: string) => {
-	const dateObj = new Date(str);
-	const monthShort = monthsShort[dateObj.getMonth()];
-	const day = dateObj.getDate();
-	const year = dateObj.getFullYear();
-	return `${monthShort} ${day}, ${year}`;
 };
