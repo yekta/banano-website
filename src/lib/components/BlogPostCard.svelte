@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { formatDate } from '$lib/ts/helpers/ghost';
-
 	import { notNull } from '$lib/ts/helpers/notNull';
 
 	import type { IBlogPostShallow } from '$lib/ts/interfaces/Blog';
