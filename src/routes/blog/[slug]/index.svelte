@@ -124,14 +124,14 @@
 			{post.reading_time} min read
 		</p>
 	</div>
-	<div class="container-b-smallest px-5 py-8 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
+	<div class="container-b-smallest px-5 py-6 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
 		{@html post.html}
 		<hr />
 	</div>
 	<div use:inview={inviewOptions} class="w-full" on:enter={onInview} />
 </article>
 {#if similarPosts.length > 0}
-	<div class="w-full flex flex-col mt-4 pb-6">
+	<div class="w-full flex flex-col mt-6 pb-6">
 		<div class="w-full flex justify-center">
 			<p class="text-3xl font-bold">Read More</p>
 		</div>
