@@ -235,12 +235,7 @@
 			</div>
 			<div class="hidden md:flex justify-end mx-1.5">
 				{#each socials as social}
-					<a
-						sveltekit:prefetch
-						href={social.href}
-						target="_blank"
-						class="font-medium group flex items-center py-3"
-					>
+					<a href={social.href} target="_blank" class="font-medium group flex items-center py-3">
 						<div
 							class="p-1.5 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/40 group-hover:shadow-c-secondary-shaded"
