@@ -148,6 +148,10 @@
 		setNotAtTheTop();
 	}
 
+	const isBlogAndActive = (section: Section) =>
+		$page.routeId?.startsWith('blog') &&
+		($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href);
+
 	let loadingNewPage = false;
 	beforeNavigate(() => {
 		loadingNewPage = true;
@@ -212,13 +216,13 @@
 							class="flex items-center px-4 py-2 rounded-lg relative transition group-hover:bg-c-secondary group-hover:text-c-bg
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/50 group-hover:shadow-c-secondary-shaded"
 						>
-							{#if $page.routeId?.startsWith('blog') && ($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href)}
-								<div class="w-full h-full px-1 absolute left-0 top-0">
+							{#if isBlogAndActive(section)}
+								<div class="w-full h-full absolute left-0 top-0">
 									<div
 										class="w-full h-full group-hover:opacity-0 {notAtTheTop ||
 										$page.routeId === 'blog/[slug]'
-											? 'bg-c-secondary/15 border-c-secondary/20'
-											: 'bg-c-primary/15 border-c-primary/20'} border transition rounded-lg"
+											? 'bg-c-secondary/20'
+											: 'bg-c-primary/20'} transition rounded-lg"
 									/>
 								</div>
 							{/if}
@@ -254,8 +258,8 @@
 				>
 					<p
 						class="{notAtTheTop || $page.routeId === 'blog/[slug]'
-							? 'bg-c-secondary/20'
-							: 'bg-c-primary/20'} w-full px-3 py-1.5 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
+							? 'bg-c-secondary/10'
+							: 'bg-c-primary/10'} w-full px-3 py-1.5 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/40 group-hover:shadow-c-secondary-shaded"
 					>
 						${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
@@ -311,8 +315,7 @@
 						{#if $page.routeId?.startsWith('blog') && ($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href)}
 							<div class="w-full h-full absolute left-0 top-0">
 								<div
-									class="w-full h-full group-hover:opacity-0 bg-c-secondary/15 border 
-									border-c-secondary/20 transition rounded-lg"
+									class="w-full h-full group-hover:opacity-0 bg-c-secondary/20 transition rounded-xl"
 								/>
 							</div>
 						{/if}
@@ -335,8 +338,9 @@
 						on:click={closeMenu}
 						href="https://www.coingecko.com/en/coins/banano"
 						target="_blank"
-						class="w-full text-center mt-4 font-bold text-lg bg-c-secondary/20 px-3 py-2 rounded-lg transition hover:bg-c-secondary hover:text-c-bg
-					shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
+						class="w-full text-center mt-4 font-bold text-lg bg-c-on-bg/10 px-3 py-2 rounded-lg
+						transition hover:bg-c-secondary hover:text-c-bg shadow-navbar-button 
+						hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
 					>
 						${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
 					</a>
