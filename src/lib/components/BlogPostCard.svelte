@@ -4,6 +4,7 @@
 	import { notNull } from '$lib/ts/helpers/notNull';
 
 	import type { IBlogPostShallow } from '$lib/ts/interfaces/Blog';
+	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
 	export let post: IBlogPostShallow;
 
 	const { src, srcset } = getSrcAndSrcSetFromUrl(post.feature_image);
@@ -12,16 +13,17 @@
 <a
 	href="/blog/{post.slug}"
 	sveltekit:prefetch
-	class="w-full flex flex-col transition hover:-translate-y-1.5
-	shadow-blog-post shadow-c-on-bg/20 hover:shadow-blog-post-hover 
-	hover:shadow-c-on-bg/10 hover:bg-c-on-bg/5 rounded-2xl group p-1.5 pb-5"
+	class="w-full flex flex-col transition shadow-blog-post shadow-c-on-bg/20 
+	 rounded-2xl overflow-hidden relative z-10 group p-1.5 pb-5 {$isTouchscreen
+		? ''
+		: 'hover:-translate-y-1.5 hover:shadow-blog-post-hover hover:shadow-c-on-bg/10 hover:bg-c-on-bg/5'}"
 >
 	<div class="aspect-[16/9] overflow-hidden rounded-xl relative z-0">
 		{#if notNull(post.feature_image)}
 			<img
 				loading="lazy"
-				class="w-full h-full object-cover rounded-xl relative z-0 transform 
-					transition duration-400 origin-bottom group-hover:scale-101 bg-c-on-bg/15"
+				class="w-full h-full object-cover rounded-xl relative z-0 transform transition 
+					duration-400 origin-bottom bg-c-on-bg/15 {$isTouchscreen ? '' : 'group-hover:scale-101'}"
 				{src}
 				{srcset}
 				sizes="(min-width: 1280px) 400px, (min-width: 768px) 50vw, 100vw"

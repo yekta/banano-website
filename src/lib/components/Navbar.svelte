@@ -195,8 +195,12 @@
 			<div class="pt-2 pb-2 md:pb-2.5 px-1">
 				<Logo
 					class="{notAtTheTop || $page.routeId === 'blog/[slug]'
-						? 'group-hover:text-c-on-bg'
-						: 'group-hover:text-c-bg'} {notAtTheTop
+						? $isTouchscreen
+							? ''
+							: 'group-hover:text-c-on-bg'
+						: $isTouchscreen
+						? ''
+						: "'group-hover:text-c-bg'"} {notAtTheTop
 						? 'scale-90'
 						: ''} transition max-w-full w-44 md:w-48 h-auto transform origin-left"
 				/>

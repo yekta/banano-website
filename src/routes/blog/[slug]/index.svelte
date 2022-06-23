@@ -116,7 +116,7 @@
 	</style>
 </svelte:head>
 
-<article class="w-full blog mt-24 md:mt-28">
+<article class="w-full blog mt-24">
 	<div class="container-b-smallest relative flex flex-col overflow-hidden px-5">
 		<h1>{post.title}</h1>
 		<p class="text-c-on-bg/60">
