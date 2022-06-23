@@ -1,6 +1,80 @@
 @tailwind base;
 @tailwind components;
 
+body {
+	font-family: filson-pro, sans-serif;
+	color: rgb(var(--c-on-bg));
+	background: rgb(var(--c-bg));
+}
+
+.font-filson-pro {
+	font-family: filson-pro, sans-serif;
+}
+
+:root {
+	--c-primary: 251 221 17;
+	--c-secondary: 26 130 35;
+	--c-bg: 255 255 255;
+	--c-bg-secondary: 240 240 245;
+	--c-on-bg: 33 33 36;
+	--c-danger: 255 80 80;
+	--c-discord: 82 91 224;
+	--c-reddit: 225 60 0;
+	--c-twitter: 0 142 207;
+	--c-instagram: 205 48 108;
+	--c-telegram: 0 116 184;
+	--c-facebook: 59 89 152;
+	--c-youtube: 180 20 20;
+	--c-medium: 60 60 70;
+	--c-chat-bubble: 60 151 60;
+
+	--c-primary-shaded: 231 201 0;
+	--c-secondary-shaded: 6 110 15;
+	--c-bg-shaded: 235 235 235;
+	--c-bg-secondary-shaded: 230 230 235;
+	--c-on-bg-shaded: 13 13 16;
+	--c-discord-shaded: 62 71 204;
+	--c-reddit-shaded: 200 35 0;
+	--c-twitter-shaded: 0 122 187;
+	--c-instagram-shaded: 185 28 88;
+	--c-telegram-shaded: 0 96 164;
+	--c-facebook-shaded: 39 69 132;
+	--c-youtube-shaded: 160 0 0;
+	--c-medium-shaded: 40 40 50;
+
+	--sm: 640px;
+	--md: 768px;
+	--lg: 1024px;
+	--xl: 1280px;
+	--2xl: '1536px';
+}
+
+.container-b-larger {
+	width: 1536px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.container-b {
+	width: 1280px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container-b-small {
+	width: 960px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container-b-smallest {
+	width: 768px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
 .blog {
 	font-size: 1.15rem;
 	font-family: 'lora', serif;

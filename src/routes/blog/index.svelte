@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/css/main.css';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import { inview } from 'svelte-inview';
 	import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
