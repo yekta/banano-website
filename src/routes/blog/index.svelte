@@ -1,10 +1,9 @@
 <script lang="ts">
-	import '$lib/css/main.css';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import { inview } from 'svelte-inview';
 	import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
 	import Button from '$lib/components/Button.svelte';
-	import type { IBlogPosts, IBlogPostsShallow } from '$lib/ts/interfaces/Blog';
+	import type { IBlogPostsShallow } from '$lib/ts/interfaces/Blog';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
@@ -57,8 +56,8 @@
 
 	const title = 'Blog | Banano';
 	const description = 'Latest Banano news, developments, and educational content.';
-	const canonical = `${canonicalUrl}/${$page.routeId}`;
-	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
+	const canonical = `${canonicalUrl}${$page.url.pathname}`;
+	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}.jpg`;
 </script>
 
 <MetaTags

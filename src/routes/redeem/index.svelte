@@ -12,8 +12,8 @@
 
 	const title = 'Redeem | Banano';
 	const description = 'Instructions on how to redeem your Banano from a paper wallet.';
-	const canonical = `${canonicalUrl}/${$page.routeId}`;
-	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
+	const canonical = `${canonicalUrl}${$page.url.pathname}`;
+	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}.jpg`;
 
 	let isAndroidOpen = false;
 	let isIosOpen = false;

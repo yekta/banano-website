@@ -9,8 +9,8 @@
 
 	const title = 'Presskit | Banano';
 	const description = 'Press Kit for Banano assets, colors and fonts.';
-	const canonical = `${canonicalUrl}/${$page.routeId}`;
-	const imageUrl = `${canonicalUrl}/previews/${$page.routeId}.jpg`;
+	const canonical = `${canonicalUrl}${$page.url.pathname}`;
+	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}.jpg`;
 
 	interface IAsset {
 		title: string;

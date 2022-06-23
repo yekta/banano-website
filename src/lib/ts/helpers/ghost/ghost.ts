@@ -13,7 +13,8 @@ export function cleanHtml(html: string) {
 	const youtubeCleanedHtml = fixYoutubeIframes(dom);
 	const aTagCleanedHtml = fixATags(youtubeCleanedHtml);
 	const imgTagCleanedHtml = fixImgTags(aTagCleanedHtml);
-	const res = imgTagCleanedHtml.toString();
+	const iframeTagCleanedHtml = fixIframeTags(imgTagCleanedHtml);
+	const res = iframeTagCleanedHtml.toString();
 	return res;
 }
 
@@ -27,6 +28,14 @@ export function fixImgTags(dom: HTMLElementP) {
 			imgTag.setAttribute('srcset', srcset);
 			imgTag.setAttribute('sizes', '(min-width: 768px) 768px, 100vw');
 		}
+	});
+	return dom;
+}
+
+export function fixIframeTags(dom: HTMLElementP) {
+	const iframeTags = dom.querySelectorAll('iframe');
+	iframeTags.forEach((iframeTag) => {
+		iframeTag.setAttribute('loading', 'lazy');
 	});
 	return dom;
 }

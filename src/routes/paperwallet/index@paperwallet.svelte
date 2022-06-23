@@ -19,8 +19,8 @@
 
 	const title = 'Paper Wallet | Banano';
 	const description = 'Create Banano paper wallets for your family, friends or strangers.';
-	const canonical = `${canonicalUrl}/${$page.routeId?.split('@')[0]}`;
-	const imageUrl = `${canonicalUrl}/previews/${$page.routeId?.split('@')[0]}.jpg`;
+	const canonical = `${canonicalUrl}${$page.url.pathname}}`;
+	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}}.jpg`;
 
 	const imgPrefix = '/paper-wallets/paper-wallet';
 	const placeholderAddress = 'ban_1yekta1xn94qdnbmmj1tqg76zk3apcfd31pjmuy6d879e3mr469a4o4sdhd4';

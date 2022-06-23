@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$lib/css/main.css';
 	import '$lib/css/blog.css';
 	import type { IBlogPost, IBlogPostShallow } from '$lib/ts/interfaces/Blog';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
