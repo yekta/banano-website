@@ -12,7 +12,6 @@
 	import { sidebar } from '$lib/ts/transitions';
 	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
 	import { page } from '$app/stores';
-	import Icon from '$lib/components/icons/Icon.svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 
 	export { classes as class };
@@ -102,16 +101,14 @@
 	];
 	const blogSections: Section[] = [
 		{
-			title: 'Blog',
-			id: 'blog',
-			href: '/blog',
-			icon: 'blog'
-		},
-		{
 			title: 'Home',
 			id: 'home',
-			href: '/',
-			icon: 'home'
+			href: '/'
+		},
+		{
+			title: 'Blog',
+			id: 'blog',
+			href: '/blog'
 		}
 	];
 
@@ -216,15 +213,14 @@
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/50 group-hover:shadow-c-secondary-shaded"
 						>
 							{#if $page.routeId?.startsWith('blog') && ($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href)}
-								<div
-									class="w-full h-full group-hover:opacity-0 {notAtTheTop ||
-									$page.routeId === 'blog/[slug]'
-										? 'bg-c-secondary/15 border-c-secondary/15'
-										: 'bg-c-primary/15 border-c-primary/15'} border transition absolute left-0 top-0 rounded-lg"
-								/>
-							{/if}
-							{#if section.icon}
-								<Icon type={section.icon} class="w-6 h-6 mr-1.5" />
+								<div class="w-full h-full px-1 absolute left-0 top-0">
+									<div
+										class="w-full h-full group-hover:opacity-0 {notAtTheTop ||
+										$page.routeId === 'blog/[slug]'
+											? 'bg-c-secondary/15 border-c-secondary/20'
+											: 'bg-c-primary/15 border-c-primary/20'} border transition rounded-lg"
+									/>
+								</div>
 							{/if}
 							<p>
 								{section.title}
@@ -313,13 +309,12 @@
 						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded relative group"
 					>
 						{#if $page.routeId?.startsWith('blog') && ($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href)}
-							<div
-								class="w-full h-full group-hover:opacity-0 bg-c-secondary/15 border 
-								border-c-secondary/15 transition absolute left-0 top-0 rounded-lg"
-							/>
-						{/if}
-						{#if section.icon}
-							<Icon type={section.icon} class="w-7 h-7 mr-2" />
+							<div class="w-full h-full absolute left-0 top-0">
+								<div
+									class="w-full h-full group-hover:opacity-0 bg-c-secondary/15 border 
+									border-c-secondary/20 transition rounded-lg"
+								/>
+							</div>
 						{/if}
 						{section.title}
 					</a>
