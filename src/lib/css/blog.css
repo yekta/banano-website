@@ -156,7 +156,7 @@ body {
 	position: relative;
 }
 .blog figure figcaption {
-	font-size: 0.9rem;
+	font-size: 1rem;
 	text-align: center;
 	margin-top: 0.75rem;
 	color: rgb(var(--c-on-bg) / 60%);
@@ -177,18 +177,18 @@ body {
 }
 
 .blog code {
-	background: rgb(var(--c-on-bg) / 5%);
+	background: rgb(var(--c-on-bg) / 8%);
 	padding: 0.15rem 0.4rem;
 	border-radius: 0.3rem;
-	border: 1px solid rgb(var(--c-on-bg) / 5%);
+	border: 1px solid rgb(var(--c-on-bg) / 8%);
 	font-size: 1rem;
 }
 
 .blog pre {
-	background: rgb(var(--c-on-bg) / 5%);
+	background: rgb(var(--c-on-bg) / 8%);
 	padding: 0.4rem 0.75rem;
 	border-radius: 0.3rem;
-	border: 1px solid rgb(var(--c-on-bg) / 5%);
+	border: 1px solid rgb(var(--c-on-bg) / 8%);
 	font-size: 1rem;
 	margin-top: 1rem;
 }
