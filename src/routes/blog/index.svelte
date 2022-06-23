@@ -40,10 +40,14 @@
 			};
 			if (posts.meta.pagination.next === null) {
 				hasMoreToLoad = false;
+				window.plausible('Blog | Loaded More Articles', {
+					props: { 'Total Article Count': `${posts.posts.length.toString()} (Max)` }
+				});
+			} else {
+				window.plausible('Blog | Loaded More Articles', {
+					props: { 'Total Article Count': posts.posts.length.toString() }
+				});
 			}
-			window.plausible('Blog | Loaded More Articles', {
-				props: { 'Total Article Count': posts.posts.length.toString() }
-			});
 		} catch (error) {
 			console.log(error);
 		} finally {
