@@ -139,6 +139,14 @@ body {
 .blog a:hover {
 	color: rgb(var(--c-secondary));
 }
+.blog hr {
+	margin-top: 3.5rem;
+	width: 100%;
+	height: 2px;
+	border-width: 0;
+	border-radius: 9999px;
+	background-color: rgb(var(--c-on-bg) / 0.08);
+}
 .blog figure,
 .blog iframe,
 .blog ul,
@@ -178,9 +186,6 @@ body {
 .blog ol li {
 	margin-top: 0.75rem;
 	margin-left: 2.5ch;
-}
-.blog hr {
-	margin-top: 3.5rem;
 }
 
 .blog code {
