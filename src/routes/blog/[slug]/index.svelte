@@ -7,6 +7,8 @@
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
 	import { inview } from 'svelte-inview';
 	import { formatDate } from '$lib/ts/helpers/ghost/utils';
+	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
 
 	export let post: IBlogPost;
 	export let similarPosts: IBlogPostShallow[];
@@ -25,6 +27,35 @@
 			props: { Title: post.title, Id: post.id }
 		});
 	};
+
+	let mounted = false;
+	$: if (post.title && mounted) {
+		handleImages(true);
+	}
+
+	afterNavigate(() => {
+		handleImages();
+	});
+
+	onMount(() => {
+		mounted = true;
+	});
+
+	function handleImages(onLoad = false) {
+		let images = document.querySelectorAll('img');
+		images.forEach((i) => {
+			if (onLoad) {
+				i.onload = () => {
+					i.classList.remove('img-loading');
+				};
+			}
+			setTimeout(() => {
+				if (i.naturalWidth && i.naturalHeight) {
+					i.classList.remove('img-loading');
+				}
+			}, 50);
+		});
+	}
 </script>
 
 <MetaTags
@@ -136,7 +167,7 @@
 			<p class="text-3xl font-bold">Read More</p>
 		</div>
 		<div class="container-b flex flex-row flex-wrap justify-center mt-1 md:px-8">
-			{#each similarPosts as post}
+			{#each similarPosts as post (post.id)}
 				<div class="w-full md:w-1/2 xl:w-1/3 max-w-md p-3 mt-3 bg-c-bg">
 					<BlogPostCard {post} />
 				</div>

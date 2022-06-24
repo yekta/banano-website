@@ -23,6 +23,7 @@ export function fixImgTags(dom: HTMLElementP) {
 		const srcOld = imgTag.getAttribute('src');
 		if (srcOld && !srcOld.endsWith('.gif')) {
 			const { src, srcset } = getSrcAndSrcSetFromUrl(srcOld, defaultWidths);
+			imgTag.classList.add('img-loading');
 			imgTag.setAttribute('src', src);
 			imgTag.setAttribute('srcset', srcset);
 			imgTag.setAttribute('sizes', '(min-width: 768px) 768px, 100vw');

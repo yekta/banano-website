@@ -81,6 +81,10 @@ body {
 	overflow-wrap: break-word;
 }
 
+.img-loading {
+	background-color: rgb(var(--c-on-bg) / 0.15);
+}
+
 .blog :first-child {
 	margin-top: 0;
 }
