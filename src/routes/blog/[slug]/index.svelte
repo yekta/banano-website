@@ -7,6 +7,9 @@
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
 	import { inview } from 'svelte-inview';
 	import { formatDate } from '$lib/ts/helpers/ghost/utils';
+	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
+	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 
 	export let post: IBlogPost;
 	export let similarPosts: IBlogPostShallow[];
@@ -25,6 +28,35 @@
 			props: { Title: post.title, Id: post.id }
 		});
 	};
+
+	let mounted = false;
+	$: if (post.title && mounted) {
+		handleImages(true);
+	}
+
+	afterNavigate(() => {
+		handleImages();
+	});
+
+	onMount(() => {
+		mounted = true;
+	});
+
+	function handleImages(onLoad = false) {
+		let images = document.querySelectorAll('img');
+		images.forEach((i) => {
+			if (onLoad) {
+				i.onload = () => {
+					i.classList.remove('img-loading');
+				};
+			}
+			setTimeout(() => {
+				if (i.naturalWidth && i.naturalHeight) {
+					i.classList.remove('img-loading');
+				}
+			}, 50);
+		});
+	}
 </script>
 
 <MetaTags
@@ -116,13 +148,23 @@
 	</style>
 </svelte:head>
 
-<article class="w-full blog mt-24">
-	<div class="container-b-smallest relative flex flex-col overflow-hidden px-5">
-		<h1>{post.title}</h1>
-		<p class="text-c-on-bg/60">
-			{formatDate(post.published_at)} <span class="opacity-40 mx-0.3ch">•</span>
-			{post.reading_time} min read
-		</p>
+<article class="w-full blog">
+	<div
+		style="background-image:url(/illustrations/backgrounds/bg-hero.svg)"
+		class="w-full bg-c-secondary min-h-[400px] bg-cover bg-bottom flex justify-center items-center overflow-hidden relative"
+	>
+		<BgWaveBottom />
+		<div
+			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-20 pb-30 relative z-10 text-c-bg text-center"
+		>
+			<h1>
+				{post.title}
+			</h1>
+			<p class="text-c-bg/75">
+				{formatDate(post.published_at)} <span class="opacity-50 mx-0.3ch">•</span>
+				{post.reading_time} min read
+			</p>
+		</div>
 	</div>
 	<div class="container-b-smallest px-5 py-6 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
 		{@html post.html}
@@ -136,7 +178,7 @@
 			<p class="text-3xl font-bold">Read More</p>
 		</div>
 		<div class="container-b flex flex-row flex-wrap justify-center mt-1 md:px-8">
-			{#each similarPosts as post}
+			{#each similarPosts as post (post.id)}
 				<div class="w-full md:w-1/2 xl:w-1/3 max-w-md p-3 mt-3 bg-c-bg">
 					<BlogPostCard {post} />
 				</div>

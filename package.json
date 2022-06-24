@@ -14,24 +14,28 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@bananocoin/bananojs": "^2.5.14",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
 		"@sveltejs/svelte-virtual-list": "^3.0.1",
 		"@tryghost/admin-api": "^1.13.0",
-		"@types/create-hmac": "^1.1.0",
 		"@types/editorjs__header": "^2.6.0",
+		"@types/probe-image-size": "^7.2.0",
 		"@types/showdown": "^2.0.0",
 		"autoprefixer": "^10.4.7",
+		"axios": "^0.27.2",
 		"axios-retry": "^3.2.5",
 		"blakejs": "^1.2.1",
 		"buffer": "^6.0.3",
-		"create-hmac": "^1.1.7",
 		"dotenv": "^16.0.1",
+		"fuse.js": "^6.6.2",
 		"mdsvex": "^0.10.5",
+		"node-html-parser": "^5.3.3",
 		"postcss": "^8.4.13",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.5.0",
+		"probe-image-size": "^7.2.3",
 		"rehype-external-links": "^1.0.1",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
@@ -46,15 +50,5 @@
 		"tslib": "^2.3.1",
 		"typescript": "~4.6.2"
 	},
-	"type": "module",
-	"dependencies": {
-		"@bananocoin/bananojs": "^2.5.14",
-		"@editorjs/editorjs": "^2.24.3",
-		"@editorjs/header": "^2.6.2",
-		"axios": "^0.27.2",
-		"editorjs-html": "^3.4.2",
-		"medium-to-markdown": "^0.0.3",
-		"node-html-parser": "^5.3.3",
-		"showdown": "^2.1.0"
-	}
+	"type": "module"
 }

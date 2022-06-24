@@ -163,13 +163,13 @@
 
 <svelte:window on:scroll={handleScroll} />
 <nav
-	class="{notAtTheTop || $page.routeId === 'blog/[slug]'
+	class="{notAtTheTop
 		? 'text-c-secondary'
 		: 'text-c-primary'} font-filson-pro w-full flex justify-center fixed top-0 left-0 right-0 z-50 {classes}"
 >
 	{#if loadingNewPage}
 		<div
-			class="absolute top-0 origin-left w-full h-3px {notAtTheTop || $page.routeId === 'blog/[slug]'
+			class="absolute top-0 origin-left w-full h-3px {notAtTheTop
 				? 'bg-c-secondary'
 				: 'bg-c-primary'} z-10
 		 	pointer-events-none {loadingNewPage ? 'animate-navbar-loading' : ''}"
@@ -194,7 +194,7 @@
 		>
 			<div class="pt-2 pb-2 md:pb-2.5 px-1">
 				<Logo
-					class="{notAtTheTop || $page.routeId === 'blog/[slug]'
+					class="{notAtTheTop
 						? $isTouchscreen
 							? ''
 							: 'group-hover:text-c-on-bg'
@@ -223,8 +223,7 @@
 							{#if isBlogAndActive(section)}
 								<div class="w-full h-full absolute left-0 top-0">
 									<div
-										class="w-full h-full group-hover:opacity-0 {notAtTheTop ||
-										$page.routeId === 'blog/[slug]'
+										class="w-full h-full group-hover:opacity-0 {notAtTheTop
 											? 'bg-c-secondary/20'
 											: 'bg-c-primary/20'} transition rounded-lg"
 									/>
@@ -256,7 +255,7 @@
 					class="w-full overflow-hidden text-sm text-center font-medium flex items-center group"
 				>
 					<p
-						class="{notAtTheTop || $page.routeId === 'blog/[slug]'
+						class="{notAtTheTop
 							? 'bg-c-secondary/10'
 							: 'bg-c-primary/10'} w-full px-3 py-1.5 rounded-lg transition group-hover:bg-c-secondary group-hover:text-c-bg
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/40 group-hover:shadow-c-secondary-shaded"
@@ -268,7 +267,7 @@
 			<button
 				aria-label="Toggle Menu Button"
 				on:click={toggleMenu}
-				class="{notAtTheTop || $page.routeId === 'blog/[slug]'
+				class="{notAtTheTop
 					? 'text-c-secondary'
 					: 'text-c-primary'} lg:hidden h-full flex items-center group py-3"
 			>
