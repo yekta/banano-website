@@ -19,6 +19,51 @@
 		threshold: 0.1
 	});
 
+	let postTagSets = posts.map((o) => o.tags);
+	let repeatingTagSets: ITag[][] = [];
+
+	let skipList: number[] = [];
+	for (let i = 0; i < postTagSets.length; i++) {
+		if (skipList.includes(i)) continue;
+		let shouldAdd = false;
+		let postTagSet = postTagSets[i];
+		for (let x = i + 1; x < postTagSets.length; x++) {
+			let nextPostTagSet = postTagSets[x];
+			let matchingCount = 0;
+			for (let j = 0; j < postTagSet.length; j++) {
+				let postTag = postTagSet[j];
+				if (nextPostTagSet.map((i) => i.id).includes(postTag?.id)) {
+					matchingCount++;
+				} else break;
+			}
+			if (matchingCount === postTagSet.length && matchingCount > 1) {
+				skipList.push(x);
+				shouldAdd = true;
+			}
+		}
+		if (shouldAdd) repeatingTagSets.push(postTagSet);
+	}
+
+	/* 	for (let i = 0; i < repeatingTagSets.length; i++) {
+		if (i !== 0) {
+			let tagSet = repeatingTagSets[i];
+			for (let x = i; i < repeatingTagSets.length; i++) {
+				let nextTagSet = repeatingTagSets[x];
+				let matchingCount = 0;
+				for (let j = 0; j < tagSet.length; j++) {
+					let tag = tagSet[j];
+					let nextTag = nextTagSet[j];
+					if (tag.id === nextTag.id) {
+						matchingCount++;
+					}
+				}
+				if (matchingCount === tagSet.length) {
+					repeatingTagSets.splice(x, 1);
+				}
+			}
+		}
+	} */
+
 	const inputs = postsCopy.map((i) => {
 		interface Input {
 			input: any;
@@ -77,10 +122,12 @@
 
 	function handleKeyPress(e: any, tags: any, post: any, inputValue: string, index: number) {
 		let arr = tagsFilteredByExisting(tags, post.tags, inputValue);
-		if (e.key === 'Enter') {
-			post.tags = [...post.tags, arr[0]];
-			inputs[index].input.value = '';
-			editPost(post, index);
+		if (arr[0]?.id) {
+			if (e.key === 'Enter') {
+				post.tags = [...post.tags, arr[0]];
+				inputs[index].input.value = '';
+				editPost(post, index);
+			}
 		}
 	}
 </script>
@@ -122,14 +169,15 @@
 									post.tags = [...post.tags];
 								}}
 								placeholder="Enter tags"
-								class="w-64 px-4 py-1.5 bg-c-on-bg/5 border border-c-on-bg/5 rounded-lg peer"
+								class="w-80 px-4 py-2 bg-c-on-bg/5 border-2 border-c-on-bg/5 rounded-lg peer 
+								transition hover:border-c-on-bg/20 focus:border-c-secondary/50"
 								type="text"
 							/>
 							{#if inputs[index].isOpen}
 								<div
-									class="w-full absolute mt-12 top-0 left-0 overflow-hidden rounded-lg shadow-xl shadow-c-on-bg/8 z-50"
+									class="w-full absolute mt-12 top-0 left-0 overflow-hidden border-2 border-c-on-bg/8 rounded-lg shadow-xl shadow-c-on-bg/8 z-50"
 								>
-									<div class="w-full flex flex-col max-h-[20rem] overflow-auto bg-c-bg py-2">
+									<div class="w-full flex flex-col max-h-[30rem] overflow-auto bg-c-bg py-2">
 										{#each [...tagsFilteredByExisting(tags, post.tags, inputs[index].input.value)] as tag}
 											<button
 												on:click={() => {
@@ -137,12 +185,25 @@
 													inputs[index].input.value = '';
 													editPost(post, index);
 												}}
-												class="w-full px-6 py-2 hover:bg-c-secondary/20 hover:text-c-secondary flex transition"
+												class="w-full px-6 py-2.5 hover:bg-c-secondary/20 hover:text-c-secondary flex transition text-left"
 											>
 												<p>{tag.name}</p>
 											</button>
 										{:else}
-											<p class="w-full px-6 py-2 opacity-50">No match.</p>
+											<p class="w-full px-6 py-2.5 opacity-50">No match...</p>
+										{/each}
+										{#each repeatingTagSets as tagArray}
+											<button
+												on:click={() => {
+													post.tags = tagArray;
+													inputs[index].input.value = '';
+													editPost(post, index);
+													inputs[index].isOpen = false;
+												}}
+												class="w-full px-6 py-2.5 hover:bg-c-secondary/20 hover:text-c-secondary flex transition text-left text-xs"
+											>
+												<p>{tagArray.map((i) => i.name).join(', ')}</p>
+											</button>
 										{/each}
 									</div>
 								</div>
