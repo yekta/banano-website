@@ -155,7 +155,7 @@
 	>
 		<BgWaveBottom />
 		<div
-			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-20 pb-30 relative z-10 text-c-bg text-center"
+			class="container-b-smallest px-5 max-w-full flex flex-col items-center self-center pt-20 pb-30 relative z-10 text-c-bg text-center"
 		>
 			<h1>
 				{post.title}
