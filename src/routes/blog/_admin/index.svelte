@@ -16,7 +16,7 @@
 
 	let fuse = new Fuse(tags, {
 		keys: ['name'],
-		threshold: 0.1
+		threshold: 0.15
 	});
 
 	let postTagSets = posts.map((o) => o.tags);
@@ -43,26 +43,6 @@
 		}
 		if (shouldAdd) repeatingTagSets.push(postTagSet);
 	}
-
-	/* 	for (let i = 0; i < repeatingTagSets.length; i++) {
-		if (i !== 0) {
-			let tagSet = repeatingTagSets[i];
-			for (let x = i; i < repeatingTagSets.length; i++) {
-				let nextTagSet = repeatingTagSets[x];
-				let matchingCount = 0;
-				for (let j = 0; j < tagSet.length; j++) {
-					let tag = tagSet[j];
-					let nextTag = nextTagSet[j];
-					if (tag.id === nextTag.id) {
-						matchingCount++;
-					}
-				}
-				if (matchingCount === tagSet.length) {
-					repeatingTagSets.splice(x, 1);
-				}
-			}
-		}
-	} */
 
 	const inputs = postsCopy.map((i) => {
 		interface Input {
@@ -154,8 +134,30 @@
 					{/if}
 				</div>
 				<div class="flex-1 flex-col py-2 pl-6 pr-2">
-					<div class="w-full flex items-center relative">
-						<p class="flex-1 overflow-hidden overflow-ellipsis font-bold mr-4">{post.title}</p>
+					<div class="w-full flex items-start relative">
+						<div class="flex-1 flex flex-col mr-4">
+							<p class="w-full overflow-hidden overflow-ellipsis font-bold">{post.title}</p>
+							<div class="w-full flex flex-wrap items-center mt-4 gap-2">
+								{#each post.tags as tag}
+									<button
+										on:click={() => {
+											post.tags = post.tags.filter((i) => i.id !== tag.id);
+											editPost(post, index);
+										}}
+										class="px-2.5 py-1.5 text-sm rounded-lg bg-c-secondary/10 border border-c-secondary/10
+										hover:bg-c-secondary/25 hover:border-c-secondary/25 transition text-c-secondary font-medium"
+									>
+										<span class="opacity-40 mr-1">X</span>
+										{tag.name}
+									</button>
+								{/each}
+								{#if inputs[index].isLoading}
+									<div class="w-8 h-8 p-2 flex justify-center items-center">
+										<IconLoading class="w-full h-full text-c-secondary animate-spin-faster" />
+									</div>
+								{/if}
+							</div>
+						</div>
 						<div
 							use:clickoutside={() => (inputs[index].isOpen = false)}
 							class="relative flex flex-col"
@@ -209,25 +211,6 @@
 								</div>
 							{/if}
 						</div>
-					</div>
-					<div class="w-2/3 flex flex-wrap items-center mt-8 gap-2">
-						{#each post.tags as tag}
-							<button
-								on:click={() => {
-									post.tags = post.tags.filter((i) => i.id !== tag.id);
-									editPost(post, index);
-								}}
-								class="px-2.5 py-1.5 text-sm rounded-lg bg-c-secondary/15 border border-c-secondary/15 text-c-secondary font-medium"
-							>
-								<span class="opacity-40 mr-1">X</span>
-								{tag.name}
-							</button>
-						{/each}
-						{#if inputs[index].isLoading}
-							<div class="w-8 h-8 p-2 flex justify-center items-center">
-								<IconLoading class="w-full h-full text-c-secondary animate-spin-faster" />
-							</div>
-						{/if}
 					</div>
 				</div>
 			</div>
