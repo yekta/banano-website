@@ -1,11 +1,7 @@
 import GhostAdminAPI from '@tryghost/admin-api';
 import probe from 'probe-image-size';
 
-const ghostUrl = 'https://ghost.banano.cc';
-const siteUrl = 'https://banano.cc';
-const mediumUrl = 'https://medium.com/banano';
-const bananoMediumUser = 'bananocurrency';
-const postGetCount = 30;
+const postGetCount = 10;
 
 const api = new GhostAdminAPI({
 	url: 'https://ghost.banano.cc',
@@ -61,9 +57,15 @@ export async function addWidthAndHeightToImages() {
 	return arr;
 }
 
-export async function fixMediumLinks() {
+export interface IFindReplace {
+	regex: RegExp;
+	replaceWith: string;
+}
+
+export async function findAndReplace(findReplaceArr: IFindReplace[]) {
 	let arr: string[] = [];
 	const res = await api.posts.browse({ limit: postGetCount });
+
 	for (let i = 0; i < res.length; i++) {
 		const post = res[i];
 		console.log(`\n\n--- Started: ${post.title}`);
@@ -72,14 +74,10 @@ export async function fixMediumLinks() {
 
 		let hadAChange = false;
 
-		const regexes = [
-			new RegExp(`${ghostUrl}/author/${bananoMediumUser}`, 'g'),
-			new RegExp(`${ghostUrl}/@${bananoMediumUser}`, 'g')
-		];
 		let newMobileDocString = mobileDocString;
-		for (let i = 0; i < regexes.length; i++) {
-			const regex = regexes[i];
-			newMobileDocString = newMobileDocString.replace(regex, mediumUrl);
+		for (let i = 0; i < findReplaceArr.length; i++) {
+			const { regex, replaceWith } = findReplaceArr[i];
+			newMobileDocString = newMobileDocString.replace(regex, replaceWith);
 		}
 
 		if (newMobileDocString !== mobileDocString) {
