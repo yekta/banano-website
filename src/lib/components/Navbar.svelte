@@ -137,7 +137,7 @@
 	let notAtTheTop = false;
 
 	function setNotAtTheTop() {
-		if (window.scrollY > 30) {
+		if (window.scrollY > 10) {
 			notAtTheTop = true;
 		} else {
 			notAtTheTop = false;
@@ -200,7 +200,7 @@
 							: 'group-hover:text-c-on-bg'
 						: $isTouchscreen
 						? ''
-						: "'group-hover:text-c-bg'"} {notAtTheTop
+						: 'group-hover:text-c-bg'} {notAtTheTop
 						? 'scale-90'
 						: ''} transition max-w-full w-44 md:w-48 h-auto transform origin-left"
 				/>

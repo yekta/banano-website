@@ -155,7 +155,7 @@
 	>
 		<BgWaveBottom />
 		<div
-			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-20 pb-30 relative z-10 text-c-bg text-center"
+			class="container-b-smallest px-5 max-w-full flex flex-col items-center self-center pt-20 pb-26 md:pb-28 relative z-10 text-c-bg text-center"
 		>
 			<h1>
 				{post.title}
@@ -166,9 +166,11 @@
 			</p>
 		</div>
 	</div>
-	<div class="container-b-smallest px-5 py-6 bg-c-bg rounded-xl shadow-2xl shadow-c-bg">
-		{@html post.html}
-		<hr />
+	<div class="w-full bg-c-bg -mt-1 relative z-10">
+		<div class="container-b-smallest px-5 py-6 md:pt-10 rounded-xl shadow-2xl shadow-c-bg">
+			{@html post.html}
+			<hr />
+		</div>
 	</div>
 	<div use:inview={inviewOptions} class="w-full" on:enter={onInview} />
 </article>

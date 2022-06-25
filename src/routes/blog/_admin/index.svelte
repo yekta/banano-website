@@ -14,11 +14,6 @@
 
 	let postsCopy = posts.map((o) => ({ ...o }));
 
-	let fuse = new Fuse(tags, {
-		keys: ['name'],
-		threshold: 0.1
-	});
-
 	let postTagSets = posts.map((o) => o.tags);
 	let repeatingTagSets: ITag[][] = [];
 
@@ -44,25 +39,15 @@
 		if (shouldAdd) repeatingTagSets.push(postTagSet);
 	}
 
-	/* 	for (let i = 0; i < repeatingTagSets.length; i++) {
-		if (i !== 0) {
-			let tagSet = repeatingTagSets[i];
-			for (let x = i; i < repeatingTagSets.length; i++) {
-				let nextTagSet = repeatingTagSets[x];
-				let matchingCount = 0;
-				for (let j = 0; j < tagSet.length; j++) {
-					let tag = tagSet[j];
-					let nextTag = nextTagSet[j];
-					if (tag.id === nextTag.id) {
-						matchingCount++;
-					}
-				}
-				if (matchingCount === tagSet.length) {
-					repeatingTagSets.splice(x, 1);
-				}
-			}
-		}
-	} */
+	let fuse = new Fuse(tags, {
+		keys: ['name'],
+		threshold: 0.3
+	});
+
+	let fuseSets = new Fuse(tagSetStringFromTagSet(repeatingTagSets), {
+		keys: ['name'],
+		threshold: 0.3
+	});
 
 	const inputs = postsCopy.map((i) => {
 		interface Input {
@@ -96,6 +81,30 @@
 				return a.name.localeCompare(b.name);
 			});
 			return orderedTags;
+		}
+	}
+
+	function tagSetStringFromTagSet(s: ITag[][]) {
+		return s.map((i) => {
+			return { name: i.map((y) => y.name).join(',') };
+		});
+	}
+
+	function tagSetsFiltered(tagSets: ITag[][], inputValue: string) {
+		if (inputValue !== undefined && inputValue !== null && inputValue !== '') {
+			let searchedTagSets: ITag[][] = [];
+			const res = fuseSets.search(inputValue);
+			const searchRes = res.map((r) => r.item);
+			const searchResStrings = searchRes.map((r: any) => r.name);
+			repeatingTagSets.forEach((i) => {
+				let tagSetString = i.map((i) => i.name).join(',');
+				if (searchResStrings.includes(tagSetString)) {
+					searchedTagSets.push(i);
+				}
+			});
+			return searchedTagSets;
+		} else {
+			return repeatingTagSets;
 		}
 	}
 
@@ -138,14 +147,17 @@
 <div class="w-full min-h-screen flex justify-center py-8 px-5 md:px-8">
 	<div class="container-b flex flex-col">
 		{#each postsCopy as post, index}
-			<div class="w-full flex flex-row mt-4 p-2 bg-c-bg border-2 border-c-on-bg/8 rounded-lg">
+			<div
+				class="w-full flex flex-row mt-4 bg-c-bg border border-c-on-bg/5 
+				shadow-md shadow-c-on-bg/5 rounded-lg"
+			>
 				<div
-					class="w-48 aspect-video relative bg-c-on-bg/15 rounded-md flex items-center justify-center"
+					class="w-48 min-w-[12rem] aspect-video bg-c-on-bg/15 rounded-l-lg flex items-center justify-center overflow-hidden relative z-0"
 				>
 					{#if post.feature_image}
 						<img
 							loading="lazy"
-							class="w-full h-full object-cover rounded-md"
+							class="w-full h-full object-cover"
 							src={post.feature_image}
 							alt={post.title}
 						/>
@@ -153,79 +165,88 @@
 						<p class="px-6 py-2 text-c-on-bg/40 font-medium">No preview</p>
 					{/if}
 				</div>
-				<div class="flex-1 flex-col py-2 pl-6 pr-2">
-					<div class="w-full flex items-center relative">
-						<p class="flex-1 overflow-hidden overflow-ellipsis font-bold mr-4">{post.title}</p>
-						<div
-							use:clickoutside={() => (inputs[index].isOpen = false)}
-							class="relative flex flex-col"
+				<div class="flex-1 min-w-0 flex items-start relative p-2">
+					<div class="flex-1 min-w-0 flex flex-col px-4 py-2 mr-4">
+						<a
+							href="/blog/{post.slug}"
+							target="_blank"
+							class="w-full overflow-hidden overflow-ellipsis font-bold whitespace-nowrap hover:underline"
 						>
-							<input
-								on:click={() => (inputs[index].isOpen = true)}
-								bind:this={inputs[index].input}
-								on:input={() => (inputs[index].input.value = inputs[index].input.value)}
-								on:keypress={(e) => {
-									handleKeyPress(e, tags, post, inputs[index].input.value, index);
-									post.tags = [...post.tags];
-								}}
-								placeholder="Enter tags"
-								class="w-80 px-4 py-2 bg-c-on-bg/5 border-2 border-c-on-bg/5 rounded-lg peer 
-								transition hover:border-c-on-bg/20 focus:border-c-secondary/50"
-								type="text"
-							/>
-							{#if inputs[index].isOpen}
-								<div
-									class="w-full absolute mt-12 top-0 left-0 overflow-hidden border-2 border-c-on-bg/8 rounded-lg shadow-xl shadow-c-on-bg/8 z-50"
+							{post.title}
+						</a>
+						<div class="w-full flex flex-wrap items-center mt-4 gap-2">
+							{#each post.tags as tag}
+								<button
+									on:click={() => {
+										post.tags = post.tags.filter((i) => i.id !== tag.id);
+										editPost(post, index);
+									}}
+									class="px-2.5 py-1.5 text-sm rounded-md bg-c-secondary/10 border border-c-secondary/10
+									hover:bg-c-secondary/25 hover:border-c-secondary/25 transition text-c-secondary font-medium"
 								>
-									<div class="w-full flex flex-col max-h-[30rem] overflow-auto bg-c-bg py-2">
-										{#each [...tagsFilteredByExisting(tags, post.tags, inputs[index].input.value)] as tag}
-											<button
-												on:click={() => {
-													post.tags = [...post.tags, tag];
-													inputs[index].input.value = '';
-													editPost(post, index);
-												}}
-												class="w-full px-6 py-2.5 hover:bg-c-secondary/20 hover:text-c-secondary flex transition text-left"
-											>
-												<p>{tag.name}</p>
-											</button>
-										{:else}
-											<p class="w-full px-6 py-2.5 opacity-50">No match...</p>
-										{/each}
-										{#each repeatingTagSets as tagArray}
-											<button
-												on:click={() => {
-													post.tags = tagArray;
-													inputs[index].input.value = '';
-													editPost(post, index);
-													inputs[index].isOpen = false;
-												}}
-												class="w-full px-6 py-2.5 hover:bg-c-secondary/20 hover:text-c-secondary flex transition text-left text-xs"
-											>
-												<p>{tagArray.map((i) => i.name).join(', ')}</p>
-											</button>
-										{/each}
-									</div>
+									<span class="opacity-40 mr-1">X</span>
+									{tag.name}
+								</button>
+							{/each}
+							{#if inputs[index].isLoading}
+								<div class="w-8 h-8 p-2 flex justify-center items-center">
+									<IconLoading class="w-full h-full text-c-secondary animate-spin-faster" />
 								</div>
 							{/if}
 						</div>
 					</div>
-					<div class="w-2/3 flex flex-wrap items-center mt-8 gap-2">
-						{#each post.tags as tag}
-							<button
-								on:click={() => {
-									post.tags = post.tags.filter((i) => i.id !== tag.id);
-									editPost(post, index);
-								}}
-								class="px-2.5 py-1.5 text-sm rounded-lg bg-c-secondary/15 border border-c-secondary/15 text-c-secondary font-medium"
+					<div
+						use:clickoutside={() => (inputs[index].isOpen = false)}
+						class="relative flex flex-col w-64 min-w-[16rem]"
+					>
+						<input
+							on:click={() => (inputs[index].isOpen = true)}
+							bind:this={inputs[index].input}
+							on:input={() => (inputs[index].input.value = inputs[index].input.value)}
+							on:keypress={(e) => {
+								handleKeyPress(e, tags, post, inputs[index].input.value, index);
+								post.tags = [...post.tags];
+							}}
+							placeholder="Enter tags"
+							class="w-full px-4 py-2 bg-c-on-bg/5 border border-c-on-bg/5 rounded-md peer 
+							transition hover:border-c-on-bg/20 focus:border-c-secondary/50"
+							type="text"
+						/>
+						{#if inputs[index].isOpen}
+							<div
+								class="w-128 absolute mt-12 top-0 right-0 overflow-hidden border border-c-on-bg/8 rounded-lg shadow-xl shadow-c-on-bg/8 z-50"
 							>
-								<span class="opacity-40 mr-1">X</span>
-								{tag.name}
-							</button>
-						{/each}
-						{#if inputs[index].isLoading}
-							<div class="w-8 h-8 p-2 flex justify-center items-center">
-								<IconLoading class="w-full h-full text-c-secondary animate-spin-faster" />
+								<div class="w-full flex flex-wrap max-h-[30rem] overflow-auto bg-c-bg py-2">
+									{#each [...tagsFilteredByExisting(tags, post.tags, inputs[index].input.value)] as tag}
+										<button
+											on:click={() => {
+												post.tags = [...post.tags, tag];
+												inputs[index].input.value = '';
+												editPost(post, index);
+											}}
+											class="w-1/2 px-6 py-2.5 hover:bg-c-secondary/20 hover:text-c-secondary flex transition text-left"
+										>
+											<p>{tag.name}</p>
+										</button>
+									{:else}
+										<p class="w-full px-6 py-2.5 opacity-50">No matching tags</p>
+									{/each}
+									{#each [...tagSetsFiltered(repeatingTagSets, inputs[index].input.value)] as tagArray}
+										<button
+											on:click={() => {
+												post.tags = tagArray;
+												inputs[index].input.value = '';
+												editPost(post, index);
+												inputs[index].isOpen = false;
+											}}
+											class="w-1/2 px-6 py-4 hover:bg-c-secondary/20 hover:text-c-secondary flex transition text-left text-xs"
+										>
+											<p>{tagArray.map((i) => i.name).join(', ')}</p>
+										</button>
+									{:else}
+										<p class="w-full px-6 py-2.5 opacity-50">No matching sets</p>
+									{/each}
+								</div>
 							</div>
 						{/if}
 					</div>

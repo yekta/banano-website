@@ -75,6 +75,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .blog {
 	font-size: 1.15rem;
 	font-family: 'lora', serif;
@@ -89,56 +90,79 @@ body {
 	margin-top: 0;
 }
 
-.blog h1 {
+.blog h1,
+.blog h2,
+.blog h3,
+.blog h4 {
 	font-family: filson-pro, sans-serif;
 	font-weight: 700;
+}
+.blog h1 {
 	font-size: 2.25rem;
 }
 .blog h2 {
-	font-family: filson-pro, sans-serif;
-	font-weight: 700;
 	font-size: 2rem;
 	margin-top: 3.5rem;
 }
 .blog h3 {
-	font-family: filson-pro, sans-serif;
-	font-weight: 700;
 	font-size: 1.6rem;
 	margin-top: 3.5rem;
 }
 .blog h4 {
-	font-family: filson-pro, sans-serif;
-	font-weight: 700;
 	font-size: 1.4rem;
 	margin-top: 3.5rem;
 }
+
 .blog h1 + p,
-.blog h2 + p,
-.blog h3 + p,
 .blog h1 + ul,
-.blog h2 + ul,
-.blog h3 + ul,
 .blog h1 + ol,
+.blog h2 + p,
+.blog h2 + ul,
 .blog h2 + ol,
-.blog h3 + ol {
+.blog h3 + p,
+.blog h3 + ul,
+.blog h3 + ol,
+.blog h4 + p,
+.blog h4 + ul,
+.blog h4 + ol {
 	margin-top: 0.5rem;
 }
+
+.blog h1 + h1,
+.blog h2 + h2,
+.blog h3 + h3,
+.blog h4 + h4 {
+	margin-top: 1.5rem;
+}
+
 .blog p {
 	margin-top: 1.5rem;
 	line-height: 1.8;
 }
+
 .blog blockquote {
 	margin-top: 1.5rem;
 	border-left: 0.25rem solid rgb(var(--c-on-bg) / 50%);
 	padding: 0.75rem 1rem;
 	background: rgb(var(--c-on-bg) / 4%);
 }
+
 .blog a {
 	text-decoration: underline;
 }
 .blog a:hover {
 	color: rgb(var(--c-secondary));
 }
+
+.blog hr {
+	margin-top: 3.5rem;
+	width: 100%;
+	height: 2px;
+	border-width: 0;
+	border-radius: 9999px;
+	background-color: rgb(var(--c-on-bg) / 0.08);
+}
+
 .blog figure,
 .blog iframe,
 .blog ul,
@@ -153,7 +177,7 @@ body {
 	margin-top: 1rem;
 }
 .blog img {
-	width: 100%;
+	max-width: 100%;
 }
 .blog figure {
 	width: 100%;
@@ -179,9 +203,6 @@ body {
 	margin-top: 0.75rem;
 	margin-left: 2.5ch;
 }
-.blog hr {
-	margin-top: 3.5rem;
-}
 
 .blog code {
 	background: rgb(var(--c-on-bg) / 8%);
@@ -204,6 +225,33 @@ body {
 	padding: 0rem;
 	border-radius: 0rem;
 	border: none;
+}
+
+@media only screen and (max-width: 768px) {
+	.blog {
+		font-size: 1rem;
+	}
+	.blog h1 {
+		font-size: 2rem;
+	}
+	.blog h2 {
+		font-size: 1.75rem;
+	}
+	.blog h3 {
+		font-size: 1.5rem;
+	}
+	.blog h4 {
+		font-size: 1.25rem;
+	}
+	.blog figure figcaption {
+		font-size: 0.9rem;
+	}
+	.blog code {
+		font-size: 0.9rem;
+	}
+	.blog pre {
+		font-size: 0.9rem;
+	}
 }
 
 @tailwind utilities;
