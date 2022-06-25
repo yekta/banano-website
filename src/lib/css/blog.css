@@ -75,6 +75,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .blog {
 	font-size: 1.15rem;
 	font-family: 'lora', serif;
@@ -122,6 +123,11 @@ body {
 .blog h2 + ol,
 .blog h3 + ol {
 	margin-top: 0.5rem;
+}
+.blog h1 + h1,
+.blog h2 + h2,
+.blog h3 + h3 {
+	margin-top: 1.5rem;
 }
 .blog p {
 	margin-top: 1.5rem;
@@ -209,6 +215,33 @@ body {
 	padding: 0rem;
 	border-radius: 0rem;
 	border: none;
+}
+
+@media only screen and (max-width: 768px) {
+	.blog {
+		font-size: 1rem;
+	}
+	.blog h1 {
+		font-size: 2rem;
+	}
+	.blog h2 {
+		font-size: 1.75rem;
+	}
+	.blog h3 {
+		font-size: 1.5rem;
+	}
+	.blog h4 {
+		font-size: 1.25rem;
+	}
+	.blog figure figcaption {
+		font-size: 0.9rem;
+	}
+	.blog code {
+		font-size: 0.9rem;
+	}
+	.blog pre {
+		font-size: 0.9rem;
+	}
 }
 
 @tailwind utilities;

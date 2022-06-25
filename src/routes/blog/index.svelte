@@ -92,14 +92,16 @@
 	>
 		<BgWaveBottom />
 		<div
-			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-20 pb-30 relative z-10 text-c-bg text-center"
+			class="container-b-small px-5 md:px-12 max-w-full flex flex-col items-center self-center pt-20 pb-26 md:pb-28 relative z-10 text-c-bg text-center"
 		>
 			<h1 class="text-6xl font-bold">Blog</h1>
 			<p class="text-xl mt-5">Latest news & developments on the Banano ecosystem.</p>
 		</div>
 	</div>
 </div>
-<div class="container-b flex flex-row flex-wrap justify-center md:pt-6 pb-6 md:px-8">
+<div
+	class="container-b flex flex-row flex-wrap justify-center md:pt-6 pb-6 md:px-8 bg-c-bg -mt-1 relative z-10"
+>
 	{#each posts.posts as post}
 		<div class="w-full md:w-1/2 xl:w-1/3 max-w-lg p-3 mt-3 bg-c-bg">
 			<BlogPostCard {post} />
