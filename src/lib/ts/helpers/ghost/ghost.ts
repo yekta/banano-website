@@ -60,16 +60,8 @@ export function fixATags(dom: HTMLElementP) {
 			aTag.setAttribute('href', href.replace(`${siteUrl}`, '/'));
 			aTag.setAttribute('rel', '');
 		} else if (href?.startsWith(ghostUrl)) {
-			if (
-				href.startsWith(`${ghostUrl}/author/${bananoMediumUser}`) ||
-				href.startsWith(`${ghostUrl}/@${bananoMediumUser}`)
-			) {
-				aTag.setAttribute('href', mediumUrl);
-				aTag.setAttribute('target', '_blank');
-			} else {
-				aTag.setAttribute('href', href.replace(ghostUrl, '/blog'));
-				aTag.setAttribute('rel', '');
-			}
+			aTag.setAttribute('href', href.replace(ghostUrl, '/blog'));
+			aTag.setAttribute('rel', '');
 		} else {
 			aTag.setAttribute('target', '_blank');
 		}

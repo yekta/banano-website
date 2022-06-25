@@ -11,7 +11,7 @@ export const get: RequestHandler = async ({ params }) => {
 	try {
 		const posts = await api.posts.browse({
 			limit: 500,
-			fields: ['id', 'title', 'feature_image', 'updated_at'],
+			fields: ['id', 'title', 'slug', 'feature_image', 'updated_at'],
 			include: ['tags']
 		});
 		const tags = await api.tags.browse({ limit: 500 });
