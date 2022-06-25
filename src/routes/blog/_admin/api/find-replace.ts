@@ -6,17 +6,13 @@ const mediumUrl = 'https://medium.com/banano';
 const bananoMediumUser = 'bananocurrency';
 
 const findAndReplaceArr: IFindReplace[] = [
-	/* {
+	{
 		regex: new RegExp(`${ghostUrl}/author/${bananoMediumUser}`, 'g'),
 		replaceWith: mediumUrl
 	},
 	{
 		regex: new RegExp(`${ghostUrl}/@${bananoMediumUser}`, 'g'),
 		replaceWith: mediumUrl
-	}, */
-	{
-		regex: new RegExp(`This is a test y y y`, 'g'),
-		replaceWith: 'Yekta'
 	}
 ];
 
