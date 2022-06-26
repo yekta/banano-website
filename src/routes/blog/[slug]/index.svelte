@@ -167,7 +167,7 @@
 		</div>
 	</div>
 	<div class="w-full bg-c-bg -mt-1 relative z-10">
-		<div class="container-b-smallest px-5 py-6 md:pt-10 rounded-xl shadow-2xl shadow-c-bg">
+		<div class="container-b-smallest px-5 py-6 md:pt-10">
 			{@html post.html}
 			<hr />
 		</div>

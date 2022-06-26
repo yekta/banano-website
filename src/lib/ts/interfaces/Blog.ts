@@ -1,5 +1,6 @@
 export interface IBlogPost extends IBlogPostShallow {
 	html: string;
+	mobiledoc: string;
 }
 
 export interface IBlogPostShallow {
@@ -11,6 +12,7 @@ export interface IBlogPostShallow {
 	excerpt: string;
 	custom_excerpt: string;
 	published_at: string;
+	updated_at: string;
 	reading_time: number;
 	tags: ITag[];
 }
