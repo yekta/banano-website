@@ -107,6 +107,11 @@ body {
 	left: 0;
 }
 
+mark {
+	background: rgb(var(--c-secondary) / 0.2);
+	border-radius: 0.1rem;
+}
+
 .square {
 	position: relative;
 	width: 100%;

@@ -11,6 +11,7 @@
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
 	import IconLoading from '$lib/components/icons/IconLoading.svelte';
 	import { tick } from 'svelte';
+	import BlogSearchBar from '$lib/components/BlogSearchBar.svelte';
 
 	export let initialPosts: IBlogPostsShallow;
 

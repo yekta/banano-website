@@ -13,16 +13,25 @@ export const paperWalletIn = (
 		}
 	};
 };
-export const expandCollapse = (node: Node, { delay = 0, easing = cubicOut, y = 0 }) => {
+
+interface IExpandCollapseOptions {
+	delay?: number;
+	duration?: number;
+	easing?: (t: number) => number;
+	y?: number;
+}
+export const expandCollapse = (node: Node, options: IExpandCollapseOptions) => {
+	let { delay, duration, easing, y } = options;
 	let height = Number(getComputedStyle(node as HTMLElement).height.split('px')[0]);
-	const duration = Math.min(Math.round(height / 2 + 175), 300);
+	console.log('height', height);
+	const durationCalculated = Math.min(Math.round(height / 2 + 175), 300);
 	return {
-		delay,
-		duration,
-		easing,
+		delay: delay ?? 0,
+		duration: duration ?? durationCalculated,
+		easing: easing ?? cubicOut,
 		css: (t: number) => {
 			return `height: ${t * height}px; transform: translateY(${
-				y * (1 - t)
+				y ?? 0 * (1 - t)
 			}rem); tranform-origin: top;`;
 		}
 	};

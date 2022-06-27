@@ -18,7 +18,7 @@ export function getSrcAndSrcSetFromUrl(url: string, widths = defaultWidths) {
 	return { src, srcset };
 }
 
-function getSpecificWidthSrcFromUrl(url: string, width: number) {
+export function getSpecificWidthSrcFromUrl(url: string, width: number) {
 	let str = '/content/images';
 	let parts = url.split(str);
 	const src = `${parts[0]}${str}/size/w${width}${parts[1]}`;
