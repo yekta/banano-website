@@ -1,5 +1,5 @@
 import { blogApiKey, blogApiUrl, shallowPostFields, typesenseApiKey } from '$lib/ts/constants/blog';
-import type { IBlogPostsShallow, ISearchResult } from '$lib/ts/interfaces/Blog';
+import type { ISearchResult } from '$lib/ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async ({ params }) => {
