@@ -109,21 +109,29 @@
 							class="w-full p-3 md:p-4 hover:bg-c-secondary/10 focus:bg-c-secondary/10 transition group flex items-center"
 						>
 							<div
-								class="w-18 md:w-24 aspect-video relative flex items-center justify-center 
+								class="w-16 md:w-24 aspect-video relative flex items-center justify-center 
                 bg-c-on-bg/15 rounded md:rounded-md z-0 overflow-hidden"
 							>
 								{#if result.document.feature_image}
 									<img
 										class="absolute w-full h-full object-cover"
 										src={getSpecificWidthSrcFromUrl(result.document.feature_image, 256)}
+										srcset={`${getSpecificWidthSrcFromUrl(
+											result.document.feature_image,
+											128
+										)} 128w, ${getSpecificWidthSrcFromUrl(
+											result.document.feature_image,
+											256
+										)} 256w,`}
+										sizes="(min-width: 768px) 6rem, 4rem"
 										alt={result.document.title}
 									/>
 								{/if}
 							</div>
-							<div class="flex-1 min-w-0 flex flex-col px-3 md:px-4">
+							<div class="flex-1 min-w-0 flex flex-col pl-3 pr-1 md:px-4">
 								<p
-									class="w-full text-sm md:text-base overflow-hidden overflow-ellipsis whitespace-nowrap 
-									font-bold group-hover:text-c-secondary group-focus:text-c-secondary transition"
+									class="w-full text-sm md:text-base font-bold group-hover:text-c-secondary 
+									group-focus:text-c-secondary transition"
 								>
 									{#if result.highlights.some((h) => h.field === 'title')}
 										{@html result.highlights.find((h) => h.field == 'title')?.snippet}
@@ -131,9 +139,7 @@
 										{result.document.title}
 									{/if}
 								</p>
-								<p
-									class="w-full overflow-hidden overflow-ellipsis whitespace-nowrap text-xs md:text-sm mt-1"
-								>
+								<p class="w-full text-xs md:text-sm mt-1">
 									{#if result.document.custom_excerpt}
 										{#if result.highlights.some((h) => h.field === 'custom_excerpt')}
 											{@html result.highlights.find((h) => h.field == 'custom_excerpt')?.snippet}
