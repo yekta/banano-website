@@ -30,6 +30,13 @@
 	}
 
 	async function search(q: string) {
+		let now = Date.now();
+		if (now - lastSearchTimestamp > 1000) {
+			window.plausible('Blog | Search Bar Used', {
+				props: { Query: q }
+			});
+		}
+		lastSearchTimestamp = now;
 		try {
 			const url = 'https://typesense.banano.cc/collections/blog-posts/documents/search';
 			const query_by = ['title', 'slug', 'excerpt', 'custom_excerpt'];
@@ -51,6 +58,7 @@
 	}
 
 	let searchTimeout: NodeJS.Timeout;
+	let lastSearchTimestamp = 0;
 
 	async function debouncedSearch(q: string) {
 		isSearchResultsOpen = true;
