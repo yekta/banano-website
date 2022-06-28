@@ -11,7 +11,7 @@
 	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
 	import IconLoading from '$lib/components/icons/IconLoading.svelte';
 	import { tick } from 'svelte';
-	/* 	import BlogSearchBar from '$lib/components/BlogSearchBar.svelte'; */
+	import BlogSearchBar from '$lib/components/BlogSearchBar.svelte';
 
 	export let initialPosts: IBlogPostsShallow;
 
@@ -103,11 +103,11 @@
 <div
 	class="container-b flex flex-row flex-wrap justify-center md:pt-6 pb-6 md:px-8 bg-c-bg -mt-1 relative z-10"
 >
-	<!-- <div class="w-full flex justify-center pt-3 pb-2">
+	<div class="w-full flex justify-center pt-3 pb-2">
 		<div class="w-full max-w-lg md:max-w-2xl px-5">
 			<BlogSearchBar />
 		</div>
-	</div> -->
+	</div>
 	{#each posts.posts as post}
 		<div class="w-full md:w-1/2 xl:w-1/3 max-w-lg p-3 mt-3 bg-c-bg">
 			<BlogPostCard {post} />

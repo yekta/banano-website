@@ -108,8 +108,8 @@ body {
 }
 
 mark {
-	background: rgb(var(--c-secondary) / 0.2);
-	border-radius: 0.1rem;
+	color: rgb(var(--c-secondary));
+	background: transparent;
 }
 
 .square {
