@@ -23,7 +23,6 @@ interface IExpandCollapseOptions {
 export const expandCollapse = (node: Node, options: IExpandCollapseOptions) => {
 	let { delay, duration, easing, y } = options;
 	let height = Number(getComputedStyle(node as HTMLElement).height.split('px')[0]);
-	console.log('height', height);
 	const durationCalculated = Math.min(Math.round(height / 2 + 175), 300);
 	return {
 		delay: delay ?? 0,

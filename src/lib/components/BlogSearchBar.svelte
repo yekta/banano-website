@@ -30,13 +30,15 @@
 	}
 
 	async function search(q: string) {
-		let now = Date.now();
-		if (now - lastSearchTimestamp > 1000) {
-			window.plausible('Blog | Search Bar Used', {
-				props: { Query: q }
-			});
-		}
-		lastSearchTimestamp = now;
+		isSearching = true;
+		clearTimeout(eventTimeout);
+		eventTimeout = setTimeout(() => {
+			if (q !== '') {
+				window.plausible('Blog | Search Bar Used', {
+					props: { Query: q }
+				});
+			}
+		}, 1000);
 		try {
 			const url = 'https://typesense.banano.cc/collections/blog-posts/documents/search';
 			const query_by = ['title', 'slug', 'excerpt', 'custom_excerpt'];
@@ -58,7 +60,7 @@
 	}
 
 	let searchTimeout: NodeJS.Timeout;
-	let lastSearchTimestamp = 0;
+	let eventTimeout: NodeJS.Timeout;
 
 	async function debouncedSearch(q: string) {
 		isSearchResultsOpen = true;
