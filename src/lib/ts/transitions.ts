@@ -19,16 +19,17 @@ interface IExpandCollapseOptions {
 	duration?: number;
 	easing?: (t: number) => number;
 	y?: number;
+	durationMultiplier?: number;
 }
 
 export const expandCollapse = (node: Node, options: IExpandCollapseOptions) => {
-	let { delay, duration, easing, y } = options;
+	let { delay = 0, duration, easing = cubicOut, y, durationMultiplier = 1 } = options;
 	let height = Number(getComputedStyle(node as HTMLElement).height.split('px')[0]);
 	const durationCalculated = Math.min(Math.round(height / 2 + 175), 300);
 	return {
-		delay: delay ?? 0,
-		duration: duration ?? durationCalculated,
-		easing: easing ?? cubicOut,
+		delay,
+		duration: duration ?? durationCalculated * durationMultiplier,
+		easing,
 		css: (t: number) => {
 			return `height: ${t * height}px; transform: translateY(${
 				y ?? 0 * (1 - t)

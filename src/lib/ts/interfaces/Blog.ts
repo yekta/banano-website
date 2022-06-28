@@ -42,3 +42,22 @@ export interface ITag {
 	name: string;
 	slug: string;
 }
+
+export interface ISearchResult {
+	document: {
+		custom_excerpt: string;
+		excerpt: string;
+		published_at: number;
+		slug: string;
+		tags: string[];
+		title: string;
+		feature_image: string;
+	};
+	highlights: ISearchResultHighlight[];
+}
+
+interface ISearchResultHighlight {
+	field: string;
+	matched_tokens: string[];
+	snippet: string;
+}

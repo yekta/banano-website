@@ -2,36 +2,19 @@
 	import { clickoutside } from '$lib/ts/actions/clickoutside';
 	import { typesenseApiKey } from '$lib/ts/constants/blog';
 	import { getSpecificWidthSrcFromUrl } from '$lib/ts/helpers/ghost/utils';
+	import type { ISearchResult } from '$lib/ts/interfaces/Blog';
 	import { expandCollapse } from '$lib/ts/transitions';
-	import { cubicIn, cubicOut } from 'svelte/easing';
+	import { cubicOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 	import IconClose from './icons/IconClose.svelte';
 	import IconSearch from './icons/IconSearch.svelte';
 
-	let searchResult: ISearchResult[];
+	export let searchResult: ISearchResult[];
+
 	let isSearchResultsOpen = false;
 	let inputValue: string = '';
 	let inputElement: HTMLInputElement;
 	let isSearching = false;
-
-	interface ISearchResult {
-		document: {
-			custom_excerpt: string;
-			excerpt: string;
-			published_at: number;
-			slug: string;
-			tags: string[];
-			title: string;
-			feature_image: string;
-		};
-		highlights: IHighlight[];
-	}
-
-	interface IHighlight {
-		field: string;
-		matched_tokens: string[];
-		snippet: string;
-	}
 
 	async function search(q: string) {
 		isSearching = true;
@@ -70,11 +53,11 @@
 		isSearchResultsOpen = true;
 		clearTimeout(searchTimeout);
 		searchTimeout = setTimeout(async () => {
-			if (!isSearching) await search(q);
+			await search(q);
 		}, 100);
 	}
 
-	function onInputClicked() {
+	function onInputFocused() {
 		isSearchResultsOpen = true;
 		if (inputValue == '' && searchResult === undefined && !isSearching) search('');
 	}
@@ -89,27 +72,34 @@
 </script>
 
 <div use:clickoutside={closeSearchBarResults} class="w-full">
-	<div class="relative overflow-hidden z-0 {isSearchResultsOpen ? 'rounded-t-xl' : 'rounded-xl'}">
+	<div
+		class="relative overflow-hidden z-0 transition-all {isSearchResultsOpen
+			? 'rounded-t-xl rounded-b-none'
+			: 'rounded-t-xl rounded-b-xl'}"
+	>
 		<input
 			bind:this={inputElement}
 			bind:value={inputValue}
-			on:click={() => onInputClicked()}
+			on:focus={onInputFocused}
 			on:input={() => debouncedSearch(inputValue)}
 			type="text"
 			placeholder="Search blog posts..."
-			class="w-full bg-c-on-bg/6 {isSearchResultsOpen
-				? 'rounded-t-xl'
-				: 'rounded-xl'} px-12 py-4 placeholder:font-normal placeholder:text-c-on-bg/40 transition-all hover:placeholder:text-c-secondary/60
-				focus:placeholder:text-c-secondary/60 hover:bg-c-secondary/10 focus:bg-c-secondary/10 focus:text-c-secondary font-medium peer"
+			class="w-full bg-c-on-bg/6 rounded-xl {isSearchResultsOpen
+				? 'rounded-t-xl rounded-b-none'
+				: 'rounded-t-xl rounded-b-xl'} px-12 py-4 placeholder:font-normal placeholder:text-c-on-bg/40
+				transition-all hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 
+				hover:bg-c-secondary/10 hover:placeholder:translate-x-1 focus:placeholder:translate-x-0 
+				placeholder:transition placeholder:duration-150 focus:bg-c-secondary/10 focus:text-c-secondary font-medium peer"
 		/>
 		<IconSearch
 			class="absolute text-c-on-bg/30 peer-hover:text-c-secondary/60 peer-focus:text-c-secondary/60 
-			transition left-4 h-5 w-5 top-1/2 -translate-y-1/2"
+			transition left-4 h-5 w-5 top-1/2 -translate-y-1/2 pointer-events-none"
 		/>
 		{#if inputValue !== '' && inputValue !== null && inputValue !== undefined}
 			<button
+				transition:fly={{ duration: 200, easing: cubicOut, x: 32 }}
 				on:click={closeOnClick}
-				class="absolute h-full w-12 right-0 top-0 p-2 flex justify-center items-center transition 
+				class="absolute h-full rounded-tr-xl w-12 right-0 top-0 p-2 flex justify-center items-center transition 
 				text-c-on-bg/40 peer-hover:text-c-secondary/60 peer-focus:text-c-secondary/60 hover:text-c-secondary hover:bg-c-secondary/10"
 			>
 				<IconClose />
@@ -123,11 +113,11 @@
 				class="absolute top-0 left-0 w-full"
 			>
 				<div
-					in:expandCollapse={{ duration: 250 }}
-					out:expandCollapse={{ duration: 150 }}
+					in:expandCollapse={{ durationMultiplier: 0.8 }}
+					out:expandCollapse={{ durationMultiplier: 0.6 }}
 					class="w-full bg-c-bg rounded-b-xl shadow-2xl shadow-c-on-bg/30 overflow-hidden dropdown"
 				>
-					<div class="w-full flex flex-col h-auto max-h-[50vh] overflow-auto">
+					<div class="w-full flex flex-col h-auto max-h-[40vh] overflow-auto">
 						{#each searchResult ? searchResult : [] as result}
 							<a
 								sveltekit:prefetch
@@ -182,7 +172,7 @@
 								</div>
 							</a>
 						{:else}
-							<p class="px-8 py-5 text-c-on-bg/50">No matching results...</p>
+							<p class="px-8 py-5 text-c-on-bg/50">No matching results.</p>
 						{/each}
 					</div>
 				</div>

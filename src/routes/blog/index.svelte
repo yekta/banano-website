@@ -4,7 +4,7 @@
 	import { inview } from 'svelte-inview';
 	import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
 	import Button from '$lib/components/Button.svelte';
-	import type { IBlogPostsShallow } from '$lib/ts/interfaces/Blog';
+	import type { IBlogPostsShallow, ISearchResult } from '$lib/ts/interfaces/Blog';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
@@ -14,6 +14,7 @@
 	import BlogSearchBar from '$lib/components/BlogSearchBar.svelte';
 
 	export let initialPosts: IBlogPostsShallow;
+	export let searchResult: ISearchResult[] = [];
 
 	let posts = initialPosts;
 	let isLoadingMore = false;
@@ -105,7 +106,7 @@
 >
 	<div class="w-full flex justify-center mt-3">
 		<div class="w-full max-w-lg md:max-w-2xl px-4">
-			<BlogSearchBar />
+			<BlogSearchBar {searchResult} />
 		</div>
 	</div>
 	{#each posts.posts as post}
