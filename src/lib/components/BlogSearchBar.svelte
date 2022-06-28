@@ -38,7 +38,7 @@
 					props: { Query: q }
 				});
 			}
-		}, 1000);
+		}, 500);
 		try {
 			const url = 'https://typesense.banano.cc/collections/blog-posts/documents/search';
 			const query_by = ['title', 'slug', 'excerpt', 'custom_excerpt'];
