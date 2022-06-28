@@ -3,10 +3,12 @@
 	import { typesenseApiKey } from '$lib/ts/constants/blog';
 	import { getSpecificWidthSrcFromUrl } from '$lib/ts/helpers/ghost/utils';
 	import { expandCollapse } from '$lib/ts/transitions';
+	import IconSearch from './icons/IconSearch.svelte';
 
 	let searchResult: ISearchResult[];
 	let isSearchResultsOpen = false;
 	let inputValue: string = '';
+	let isSearching = false;
 
 	interface ISearchResult {
 		document: {
@@ -43,6 +45,8 @@
 			}
 		} catch (error) {
 			console.log(error);
+		} finally {
+			isSearching = false;
 		}
 	}
 
@@ -52,45 +56,50 @@
 		isSearchResultsOpen = true;
 		clearTimeout(searchTimeout);
 		searchTimeout = setTimeout(async () => {
-			await search(q);
+			if (!isSearching) await search(q);
 		}, 100);
 	}
 
 	function onInputClicked() {
 		isSearchResultsOpen = true;
-		if (inputValue == '' && searchResult === undefined) search('');
+		if (inputValue == '' && searchResult === undefined && !isSearching) search('');
 	}
 
-	const closeDropdown = () => (isSearchResultsOpen = false);
+	const closeSearchBarResults = () => (isSearchResultsOpen = false);
 </script>
 
-<div use:clickoutside={closeDropdown} class="w-full">
-	<input
-		bind:value={inputValue}
-		on:click={() => onInputClicked()}
-		on:input={() => debouncedSearch(inputValue)}
-		type="text"
-		placeholder="Search blog posts..."
-		class="w-full bg-c-on-bg/4 rounded-xl border-2 border-c-on-bg/4 px-5 py-3.5
-    transition hover:border-c-secondary/40 hover:bg-c-secondary/6 focus:border-c-secondary focus:bg-c-secondary/10"
-	/>
+<div use:clickoutside={closeSearchBarResults} class="w-full">
+	<div class="relative">
+		<input
+			bind:value={inputValue}
+			on:click={() => onInputClicked()}
+			on:input={() => debouncedSearch(inputValue)}
+			type="text"
+			placeholder="Search blog posts..."
+			class="w-full bg-c-on-bg/4 rounded-xl ring-2 ring-c-on-bg/10 pl-12 pr-5 py-3.5 placeholder:text-c-on-bg/40
+    	transition hover:ring-c-secondary/40 hover:bg-c-secondary/6 focus:ring-c-secondary/80 focus:bg-c-secondary/10 peer"
+		/>
+		<IconSearch
+			class="absolute text-c-on-bg/40 peer-hover:text-c-secondary/60 peer-focus:text-c-secondary transition left-4 h-5 w-5 top-1/2 -translate-y-1/2"
+		/>
+	</div>
 	<div class="w-full relative z-20">
 		{#if searchResult && isSearchResultsOpen}
 			<div
 				in:expandCollapse={{ duration: 250 }}
 				out:expandCollapse={{ duration: 250 }}
-				class="absolute top-0 left-0 w-full bg-c-bg rounded-xl shadow-xl shadow-c-on-bg/40 mt-2 overflow-hidden dropdown"
+				class="absolute top-0 left-0 w-full bg-c-bg rounded-xl shadow-xl shadow-c-on-bg/30 ring-2 ring-c-on-bg/6 mt-2 overflow-hidden dropdown"
 			>
 				<div class="w-full flex flex-col h-auto max-h-[50vh] overflow-auto">
 					{#each searchResult as result}
 						<a
+							sveltekit:prefetch
 							href="/blog/{result.document.slug}"
-							on:click={closeDropdown}
-							target="_blank"
-							class="w-full p-5 rounded-lg hover:bg-c-secondary/10 focus:bg-c-secondary/10 transition group flex"
+							on:click={closeSearchBarResults}
+							class="w-full p-3 md:p-4 hover:bg-c-secondary/10 focus:bg-c-secondary/10 transition group flex items-center"
 						>
 							<div
-								class="w-32 aspect-video relative flex items-center justify-center 
+								class="w-24 aspect-video relative flex items-center justify-center 
                 bg-c-on-bg/15 rounded-md z-0 overflow-hidden"
 							>
 								{#if result.document.feature_image}
@@ -101,9 +110,10 @@
 									/>
 								{/if}
 							</div>
-							<div class="flex-1 min-w-0 flex flex-col ml-4">
+							<div class="flex-1 min-w-0 flex flex-col px-3 md:px-4">
 								<p
-									class="font-bold group-hover:text-c-secondary group-focus:text-c-secondary transition"
+									class="w-full overflow-hidden overflow-ellipsis whitespace-nowrap 
+									font-bold group-hover:text-c-secondary group-focus:text-c-secondary transition"
 								>
 									{#if result.highlights.some((h) => h.field === 'title')}
 										{@html result.highlights.find((h) => h.field == 'title')?.snippet}
@@ -111,7 +121,7 @@
 										{result.document.title}
 									{/if}
 								</p>
-								<p class="text-sm mt-1">
+								<p class="w-full overflow-hidden overflow-ellipsis whitespace-nowrap text-sm mt-1">
 									{#if result.document.custom_excerpt}
 										{#if result.highlights.some((h) => h.field === 'custom_excerpt')}
 											{@html result.highlights.find((h) => h.field == 'custom_excerpt')?.snippet}
@@ -127,7 +137,7 @@
 							</div>
 						</a>
 					{:else}
-						<p class="px-8 py-4 text-c-on-bg/50">No matching results...</p>
+						<p class="px-8 py-5 text-c-on-bg/50">No matching results...</p>
 					{/each}
 				</div>
 			</div>
