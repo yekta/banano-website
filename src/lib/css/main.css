@@ -110,6 +110,7 @@ body {
 mark {
 	color: rgb(var(--c-secondary));
 	background: transparent;
+	font-weight: 700;
 }
 
 .square {

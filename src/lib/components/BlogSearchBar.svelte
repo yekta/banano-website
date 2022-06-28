@@ -5,11 +5,13 @@
 	import { expandCollapse } from '$lib/ts/transitions';
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
+	import IconClose from './icons/IconClose.svelte';
 	import IconSearch from './icons/IconSearch.svelte';
 
 	let searchResult: ISearchResult[];
 	let isSearchResultsOpen = false;
 	let inputValue: string = '';
+	let inputElement: HTMLInputElement;
 	let isSearching = false;
 
 	interface ISearchResult {
@@ -78,11 +80,18 @@
 	}
 
 	const closeSearchBarResults = () => (isSearchResultsOpen = false);
+
+	async function closeOnClick() {
+		inputValue = '';
+		inputElement.focus();
+		await search(inputValue);
+	}
 </script>
 
 <div use:clickoutside={closeSearchBarResults} class="w-full">
-	<div class="relative">
+	<div class="relative overflow-hidden z-0 {isSearchResultsOpen ? 'rounded-t-xl' : 'rounded-xl'}">
 		<input
+			bind:this={inputElement}
 			bind:value={inputValue}
 			on:click={() => onInputClicked()}
 			on:input={() => debouncedSearch(inputValue)}
@@ -90,12 +99,22 @@
 			placeholder="Search blog posts..."
 			class="w-full bg-c-on-bg/6 {isSearchResultsOpen
 				? 'rounded-t-xl'
-				: 'rounded-xl'} ring-2 ring-c-on-bg/15 pl-12 pr-5 py-3.5 placeholder:text-c-on-bg/40
-    	transition-all hover:ring-c-on-bg/25 hover:bg-c-on-bg/8 focus:bg-c-secondary/10 focus:ring-c-secondary/50 peer"
+				: 'rounded-xl'} px-12 py-4 placeholder:font-normal placeholder:text-c-on-bg/40 transition-all hover:placeholder:text-c-secondary/60
+				focus:placeholder:text-c-secondary/60 hover:bg-c-secondary/10 focus:bg-c-secondary/10 focus:text-c-secondary font-medium peer"
 		/>
 		<IconSearch
-			class="absolute text-c-on-bg/20 peer-hover:text-c-on-bg/30 peer-focus:text-c-secondary/60 transition left-4 h-5 w-5 top-1/2 -translate-y-1/2"
+			class="absolute text-c-on-bg/30 peer-hover:text-c-secondary/60 peer-focus:text-c-secondary/60 
+			transition left-4 h-5 w-5 top-1/2 -translate-y-1/2"
 		/>
+		{#if inputValue !== '' && inputValue !== null && inputValue !== undefined}
+			<button
+				on:click={closeOnClick}
+				class="absolute h-full w-12 right-0 top-0 p-2 flex justify-center items-center transition 
+				text-c-on-bg/40 peer-hover:text-c-secondary/60 peer-focus:text-c-secondary/60 hover:text-c-secondary hover:bg-c-secondary/10"
+			>
+				<IconClose />
+			</button>
+		{/if}
 	</div>
 	<div class="w-full relative z-20">
 		{#if isSearchResultsOpen}
@@ -106,7 +125,7 @@
 				<div
 					in:expandCollapse={{ duration: 250 }}
 					out:expandCollapse={{ duration: 150 }}
-					class="w-full bg-c-bg rounded-b-xl shadow-2xl shadow-c-on-bg/30 ring-2 ring-c-on-bg/6 mt-1 overflow-hidden dropdown"
+					class="w-full bg-c-bg rounded-b-xl shadow-2xl shadow-c-on-bg/30 overflow-hidden dropdown"
 				>
 					<div class="w-full flex flex-col h-auto max-h-[50vh] overflow-auto">
 						{#each searchResult ? searchResult : [] as result}
