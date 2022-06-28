@@ -3,6 +3,8 @@
 	import { typesenseApiKey } from '$lib/ts/constants/blog';
 	import { getSpecificWidthSrcFromUrl } from '$lib/ts/helpers/ghost/utils';
 	import { expandCollapse } from '$lib/ts/transitions';
+	import { cubicIn, cubicOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
 	import IconSearch from './icons/IconSearch.svelte';
 
 	let searchResult: ISearchResult[];
@@ -86,77 +88,84 @@
 			on:input={() => debouncedSearch(inputValue)}
 			type="text"
 			placeholder="Search blog posts..."
-			class="w-full bg-c-on-bg/4 rounded-xl ring-2 ring-c-on-bg/10 pl-12 pr-5 py-3.5 placeholder:text-c-on-bg/40
-    	transition hover:ring-c-secondary/40 hover:bg-c-secondary/6 focus:ring-c-secondary/80 focus:bg-c-secondary/10 peer"
+			class="w-full bg-c-on-bg/6 {isSearchResultsOpen
+				? 'rounded-t-xl'
+				: 'rounded-xl'} ring-2 ring-c-on-bg/15 pl-12 pr-5 py-3.5 placeholder:text-c-on-bg/40
+    	transition-all hover:ring-c-on-bg/25 hover:bg-c-on-bg/8 focus:bg-c-secondary/10 focus:ring-c-secondary/50 peer"
 		/>
 		<IconSearch
-			class="absolute text-c-on-bg/40 peer-hover:text-c-secondary/60 peer-focus:text-c-secondary transition left-4 h-5 w-5 top-1/2 -translate-y-1/2"
+			class="absolute text-c-on-bg/20 peer-hover:text-c-on-bg/30 peer-focus:text-c-secondary/60 transition left-4 h-5 w-5 top-1/2 -translate-y-1/2"
 		/>
 	</div>
 	<div class="w-full relative z-20">
-		{#if searchResult && isSearchResultsOpen}
+		{#if isSearchResultsOpen}
 			<div
-				in:expandCollapse={{ duration: 250 }}
-				out:expandCollapse={{ duration: 250 }}
-				class="absolute top-0 left-0 w-full bg-c-bg rounded-xl shadow-xl shadow-c-on-bg/30 ring-2 ring-c-on-bg/6 mt-2 overflow-hidden dropdown"
+				in:fly={{ duration: 200, easing: cubicOut, y: -16 }}
+				class="absolute top-0 left-0 w-full"
 			>
-				<div class="w-full flex flex-col h-auto max-h-[50vh] overflow-auto">
-					{#each searchResult as result}
-						<a
-							sveltekit:prefetch
-							href="/blog/{result.document.slug}"
-							on:click={closeSearchBarResults}
-							class="w-full p-3 md:p-4 hover:bg-c-secondary/10 focus:bg-c-secondary/10 transition group flex items-center"
-						>
-							<div
-								class="w-16 md:w-24 aspect-video relative flex items-center justify-center 
-                bg-c-on-bg/15 rounded md:rounded-md z-0 overflow-hidden"
+				<div
+					in:expandCollapse={{ duration: 250 }}
+					out:expandCollapse={{ duration: 150 }}
+					class="w-full bg-c-bg rounded-b-xl shadow-2xl shadow-c-on-bg/30 ring-2 ring-c-on-bg/6 mt-1 overflow-hidden dropdown"
+				>
+					<div class="w-full flex flex-col h-auto max-h-[50vh] overflow-auto">
+						{#each searchResult ? searchResult : [] as result}
+							<a
+								sveltekit:prefetch
+								href="/blog/{result.document.slug}"
+								on:click={closeSearchBarResults}
+								class="w-full p-3 md:p-4 hover:bg-c-secondary/10 focus:bg-c-secondary/10 transition group flex items-center"
 							>
-								{#if result.document.feature_image}
-									<img
-										class="absolute w-full h-full object-cover"
-										src={getSpecificWidthSrcFromUrl(result.document.feature_image, 256)}
-										srcset={`${getSpecificWidthSrcFromUrl(
-											result.document.feature_image,
-											128
-										)} 128w, ${getSpecificWidthSrcFromUrl(
-											result.document.feature_image,
-											256
-										)} 256w,`}
-										sizes="(min-width: 768px) 6rem, 4rem"
-										alt={result.document.title}
-									/>
-								{/if}
-							</div>
-							<div class="flex-1 min-w-0 flex flex-col pl-3 pr-1 md:px-4">
-								<p
-									class="w-full text-sm md:text-base font-bold group-hover:text-c-secondary 
-									group-focus:text-c-secondary transition"
+								<div
+									class="w-16 md:w-24 aspect-video relative flex items-center justify-center 
+                bg-c-on-bg/15 rounded md:rounded-md z-0 overflow-hidden"
 								>
-									{#if result.highlights.some((h) => h.field === 'title')}
-										{@html result.highlights.find((h) => h.field == 'title')?.snippet}
-									{:else}
-										{result.document.title}
+									{#if result.document.feature_image}
+										<img
+											class="absolute w-full h-full object-cover"
+											src={getSpecificWidthSrcFromUrl(result.document.feature_image, 256)}
+											srcset={`${getSpecificWidthSrcFromUrl(
+												result.document.feature_image,
+												128
+											)} 128w, ${getSpecificWidthSrcFromUrl(
+												result.document.feature_image,
+												256
+											)} 256w,`}
+											sizes="(min-width: 768px) 6rem, 4rem"
+											alt={result.document.title}
+										/>
 									{/if}
-								</p>
-								<p class="w-full text-xs md:text-sm mt-1">
-									{#if result.document.custom_excerpt}
-										{#if result.highlights.some((h) => h.field === 'custom_excerpt')}
-											{@html result.highlights.find((h) => h.field == 'custom_excerpt')?.snippet}
+								</div>
+								<div class="flex-1 min-w-0 flex flex-col pl-3 pr-1 md:px-4">
+									<p
+										class="w-full text-sm md:text-base font-bold group-hover:text-c-secondary 
+									group-focus:text-c-secondary transition"
+									>
+										{#if result.highlights.some((h) => h.field === 'title')}
+											{@html result.highlights.find((h) => h.field == 'title')?.snippet}
 										{:else}
-											{result.document.custom_excerpt}
+											{result.document.title}
 										{/if}
-									{:else if result.highlights.some((h) => h.field === 'excerpt')}
-										{@html result.highlights.find((h) => h.field == 'excerpt')?.snippet}
-									{:else}
-										{result.document.excerpt}
-									{/if}
-								</p>
-							</div>
-						</a>
-					{:else}
-						<p class="px-8 py-5 text-c-on-bg/50">No matching results...</p>
-					{/each}
+									</p>
+									<p class="w-full text-xs md:text-sm mt-1">
+										{#if result.document.custom_excerpt}
+											{#if result.highlights.some((h) => h.field === 'custom_excerpt')}
+												{@html result.highlights.find((h) => h.field == 'custom_excerpt')?.snippet}
+											{:else}
+												{result.document.custom_excerpt}
+											{/if}
+										{:else if result.highlights.some((h) => h.field === 'excerpt')}
+											{@html result.highlights.find((h) => h.field == 'excerpt')?.snippet}
+										{:else}
+											{result.document.excerpt}
+										{/if}
+									</p>
+								</div>
+							</a>
+						{:else}
+							<p class="px-8 py-5 text-c-on-bg/50">No matching results...</p>
+						{/each}
+					</div>
 				</div>
 			</div>
 		{/if}

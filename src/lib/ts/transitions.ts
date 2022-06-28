@@ -20,6 +20,7 @@ interface IExpandCollapseOptions {
 	easing?: (t: number) => number;
 	y?: number;
 }
+
 export const expandCollapse = (node: Node, options: IExpandCollapseOptions) => {
 	let { delay, duration, easing, y } = options;
 	let height = Number(getComputedStyle(node as HTMLElement).height.split('px')[0]);
