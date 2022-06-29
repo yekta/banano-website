@@ -73,9 +73,9 @@
 
 <div use:clickoutside={closeSearchBarResults} class="w-full">
 	<div
-		class="relative overflow-hidden z-0 transition-all {isSearchResultsOpen
-			? 'rounded-t-xl rounded-b-none'
-			: 'rounded-t-xl rounded-b-xl'}"
+		class="relative overflow-hidden z-30 transition-all shadow-c-secondary/20 {isSearchResultsOpen
+			? 'rounded-t-xl rounded-b-none shadow-search-bar'
+			: 'rounded-t-xl rounded-b-xl shadow-none'}"
 	>
 		<input
 			bind:this={inputElement}
@@ -115,7 +115,7 @@
 				<div
 					in:expandCollapse={{ durationMultiplier: 0.8 }}
 					out:expandCollapse={{ durationMultiplier: 0.6 }}
-					class="w-full bg-c-bg rounded-b-xl shadow-2xl shadow-c-on-bg/30 overflow-hidden dropdown"
+					class="w-full bg-c-bg rounded-b-xl transition-all shadow-2xl shadow-c-on-bg/30 overflow-hidden dropdown"
 				>
 					<div class="w-full flex flex-col h-auto max-h-[42vh] overflow-auto">
 						{#each searchResult ? searchResult : [] as result}
@@ -127,7 +127,7 @@
 							>
 								<div
 									class="w-16 md:w-24 aspect-video relative flex items-center justify-center 
-                bg-c-on-bg/15 rounded md:rounded-md z-0 overflow-hidden"
+                	 bg-c-on-bg/15 rounded md:rounded-md z-0 overflow-hidden"
 								>
 									{#if result.document.feature_image}
 										<img
