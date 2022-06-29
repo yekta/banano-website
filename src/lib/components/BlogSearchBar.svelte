@@ -89,7 +89,7 @@
 				: 'rounded-t-xl rounded-b-xl'} px-12 py-4 placeholder:font-normal placeholder:text-c-on-bg/40
 				transition-all hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 
 				hover:bg-c-secondary/10 hover:placeholder:translate-x-1 focus:placeholder:translate-x-0 
-				placeholder:transition placeholder:duration-150 focus:bg-c-secondary/10 focus:text-c-secondary font-medium peer"
+				placeholder:transition placeholder:duration-150 hover:text-c-secondary focus:bg-c-secondary/10 focus:text-c-secondary font-medium peer"
 		/>
 		<IconSearch
 			class="absolute text-c-on-bg/30 peer-hover:text-c-secondary/60 peer-focus:text-c-secondary/60 
@@ -117,7 +117,7 @@
 					out:expandCollapse={{ durationMultiplier: 0.6 }}
 					class="w-full bg-c-bg rounded-b-xl shadow-2xl shadow-c-on-bg/30 overflow-hidden dropdown"
 				>
-					<div class="w-full flex flex-col h-auto max-h-[40vh] overflow-auto">
+					<div class="w-full flex flex-col h-auto max-h-[42vh] overflow-auto">
 						{#each searchResult ? searchResult : [] as result}
 							<a
 								sveltekit:prefetch
