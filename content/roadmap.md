@@ -67,7 +67,7 @@ Crane faucet release.
 
 ### April
 
-First anniversary party, 300 million BAN burn. 2nd NANO airdrop. MonkeyTalks & Twitter tipbot release.
+First anniversary party, 300 million BAN burned. 2nd NANO airdrop. MonkeyTalks & Twitter tipbot release.
 
 ### May
 
@@ -117,7 +117,7 @@ Airdrop on Publish0x and Uptrennd. BAN in circulation exceeded 1 billion!
 
 ### April
 
-Banano’s 2nd birthday! Burned 191M BAN. New version of BoomPow.
+Banano’s 2nd birthday! 191M BAN burned! New version of BoomPow.
 
 ### May
 
@@ -199,4 +199,30 @@ r/Banano reached 30k members. Banano Walker faucet launched.
 
 ### December
 
-6 month wBAN anniversary event.
+6 month wBAN anniversary event. Black Monkey faucet on Discord. 
+
+## 2022
+
+### January
+
+BANAcademy awards. JungleTV character art contest. 
+
+### February
+
+Banano Folding@Home team reaches over 1 Trillion points. Banano airdrops to Reddit.
+
+### March
+
+wBAN launched on Fantom. Hemoglo-Ban blood donation event. 
+
+### April
+
+Banano’s 4th birthday! 19 BAN burned! Banano airdrops to Reddit. 50k+ members on Reddit.
+
+### May
+
+Booster results announced. Major website update.
+
+### June
+
+wBAN 1 year anniversary. Banano airdrop to Reddit. JungleTV 1 year anniversary.
