@@ -14,6 +14,7 @@ body {
 :root {
 	--c-primary: 251 221 17;
 	--c-secondary: 26 130 35;
+	--c-secondary-brighter: 126 230 135;
 	--c-bg: 255 255 255;
 	--c-bg-secondary: 240 240 245;
 	--c-on-bg: 33 33 36;

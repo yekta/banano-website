@@ -28,12 +28,26 @@
 		}, 500);
 		try {
 			const url = 'https://typesense.banano.cc/collections/blog-posts/documents/search';
-			const query_by = ['title', 'slug', 'excerpt', 'custom_excerpt'];
-			const include_fields = ['title', 'slug', 'excerpt', 'custom_excerpt', 'feature_image'];
+			const query_by = ['title', 'custom_excerpt', 'excerpt', 'plaintext'];
+			const query_by_weights = ['2', '1', '1', '1'];
+			const infix = ['always', 'off', 'off', 'off'];
+			const include_fields = [
+				'title',
+				'custom_excerpt',
+				'excerpt',
+				'slug',
+				'plaintext',
+				'feature_image'
+			];
+			const affix_num_tokens = 10;
 			let res = await fetch(
 				`${url}?x-typesense-api-key=${typesenseApiKey}&q=${q}&query_by=${query_by.join(
 					','
-				)}&include_fields=${include_fields.join(',')}&page=1&per_page=10`
+				)}&infix=${infix.join(',')}&query_by_weights=${query_by_weights.join(
+					','
+				)}&include_fields=${include_fields.join(
+					','
+				)}&page=1&per_page=10&highlight_affix_num_tokens=${affix_num_tokens}`
 			);
 			let resJson = await res.json();
 			if (resJson && resJson.hits) {
@@ -148,7 +162,7 @@
 								<div class="flex-1 min-w-0 flex flex-col pl-3 pr-1 md:px-4">
 									<p
 										class="w-full text-sm md:text-base font-bold group-hover:text-c-secondary 
-									group-focus:text-c-secondary transition"
+										group-focus:text-c-secondary transition"
 									>
 										{#if result.highlights.some((h) => h.field === 'title')}
 											{@html result.highlights.find((h) => h.field == 'title')?.snippet}
@@ -156,15 +170,13 @@
 											{result.document.title}
 										{/if}
 									</p>
-									<p class="w-full text-xs md:text-sm mt-1">
-										{#if result.document.custom_excerpt}
-											{#if result.highlights.some((h) => h.field === 'custom_excerpt')}
-												{@html result.highlights.find((h) => h.field == 'custom_excerpt')?.snippet}
-											{:else}
-												{result.document.custom_excerpt}
-											{/if}
+									<p class="w-full text-xs md:text-sm mt-1 break-words">
+										{#if result.highlights.some((h) => h.field === 'custom_excerpt')}
+											{@html result.highlights.find((h) => h.field == 'custom_excerpt')?.snippet}
 										{:else if result.highlights.some((h) => h.field === 'excerpt')}
 											{@html result.highlights.find((h) => h.field == 'excerpt')?.snippet}
+										{:else if result.highlights.some((h) => h.field === 'plaintext')}
+											...{@html result.highlights.find((h) => h.field == 'plaintext')?.snippet}...
 										{:else}
 											{result.document.excerpt}
 										{/if}

@@ -22,7 +22,8 @@ export const get: RequestHandler = async () => {
 				custom_excerpt: post.custom_excerpt,
 				excerpt: post.excerpt,
 				tags: tags,
-				feature_image: post.feature_image
+				feature_image: post.feature_image,
+				plaintext: post.plaintext
 			};
 		});
 		return {
