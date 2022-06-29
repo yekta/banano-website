@@ -199,30 +199,30 @@ r/Banano reached 30k members. Banano Walker faucet launched.
 
 ### December
 
-6 month wBAN anniversary event. Black Monkey faucet on Discord. 
+6 month wBAN anniversary event. Black Monkey faucet on Discord.
 
 ## 2022
 
 ### January
 
-BANAcademy awards. JungleTV character art contest. 
+New year events on Discord. BANAcademy awards. Freerice Event #3.
 
 ### February
 
-Banano Folding@Home team reaches over 1 Trillion points. Banano airdrops to Reddit.
+Banano Folding@Home team reaches over 1 Trillion points. Banano airdrops on Reddit.
 
 ### March
 
-wBAN launched on Fantom. Hemoglo-Ban blood donation event. 
+wBAN launched on Fantom. Hemoglo-Ban blood donation event.
 
 ### April
 
-Banano’s 4th birthday! 19 BAN burned! Banano airdrops to Reddit. 50k+ members on Reddit.
+Banano’s 4th birthday! 19 BAN burned! Banano airdrops on Reddit. 50k+ members on Reddit.
 
 ### May
 
-Booster results announced. Major website update.
+Booster results announced. Major website update. Banano on DeBank.
 
 ### June
 
-wBAN 1 year anniversary. Banano airdrop to Reddit. JungleTV 1 year anniversary.
+wBAN 1 year anniversary. Banano airdrops on Reddit.
