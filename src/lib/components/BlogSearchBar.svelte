@@ -137,7 +137,7 @@
 								sveltekit:prefetch
 								href="/blog/{result.document.slug}"
 								on:click={closeSearchBarResults}
-								class="w-full p-3 md:p-4 hover:bg-c-secondary/10 focus:bg-c-secondary/10 transition group flex items-center"
+								class="w-full p-3 md:p-4 hover:bg-c-secondary/20 focus:bg-c-secondary/20 transition group flex items-center"
 							>
 								<div
 									class="w-16 md:w-24 aspect-video relative flex items-center justify-center 
@@ -160,10 +160,7 @@
 									{/if}
 								</div>
 								<div class="flex-1 min-w-0 flex flex-col pl-3 pr-1 md:px-4">
-									<p
-										class="w-full text-sm md:text-base font-bold group-hover:text-c-secondary 
-										group-focus:text-c-secondary transition"
-									>
+									<p class="w-full text-sm md:text-base font-bold transition">
 										{#if result.highlights.some((h) => h.field === 'title')}
 											{@html result.highlights.find((h) => h.field == 'title')?.snippet}
 										{:else}

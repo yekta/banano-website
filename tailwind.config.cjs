@@ -33,6 +33,7 @@ module.exports = {
 			colors: {
 				'c-primary': withOpacityValue('--c-primary'),
 				'c-secondary': withOpacityValue('--c-secondary'),
+				'c-secondary-brighter': withOpacityValue('--c-secondary-brighter'),
 				'c-bg': withOpacityValue('--c-bg'),
 				'c-bg-secondary': withOpacityValue('--c-bg-secondary'),
 				'c-on-bg': withOpacityValue('--c-on-bg'),
