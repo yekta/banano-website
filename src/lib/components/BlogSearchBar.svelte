@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { clickoutside } from '$lib/ts/actions/clickoutside';
 	import { typesenseApiKey } from '$lib/ts/constants/blog';
+	import { debounce } from '$lib/ts/helpers/debounce';
 	import { getSpecificWidthSrcFromUrl } from '$lib/ts/helpers/ghost/utils';
 	import type { ISearchResult } from '$lib/ts/interfaces/Blog';
 	import { expandCollapse } from '$lib/ts/transitions';
@@ -18,8 +19,8 @@
 
 	async function search(q: string) {
 		isSearching = true;
-		clearTimeout(eventTimeout);
-		eventTimeout = setTimeout(() => {
+		isSearchResultsOpen = true;
+		debounce(() => {
 			if (q !== '') {
 				window.plausible('Blog | Search Bar Used', {
 					props: { Query: q }
@@ -60,17 +61,6 @@
 		}
 	}
 
-	let searchTimeout: NodeJS.Timeout;
-	let eventTimeout: NodeJS.Timeout;
-
-	async function debouncedSearch(q: string) {
-		isSearchResultsOpen = true;
-		clearTimeout(searchTimeout);
-		searchTimeout = setTimeout(async () => {
-			await search(q);
-		}, 100);
-	}
-
 	function onInputFocused() {
 		isSearchResultsOpen = true;
 		if (inputValue == '' && searchResult === undefined && !isSearching) search('');
@@ -95,7 +85,7 @@
 			bind:this={inputElement}
 			bind:value={inputValue}
 			on:focus={onInputFocused}
-			on:input={() => debouncedSearch(inputValue)}
+			on:input={() => debounce(() => search(inputValue), 100)}
 			type="text"
 			placeholder="Search blog posts..."
 			class="w-full bg-c-on-bg/6 rounded-xl {isSearchResultsOpen
