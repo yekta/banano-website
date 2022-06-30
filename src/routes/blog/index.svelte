@@ -104,7 +104,7 @@
 <div
 	class="container-b flex flex-row flex-wrap justify-center md:pt-6 pb-6 md:px-8 bg-c-bg -mt-1 relative z-10"
 >
-	<div class="w-full flex justify-center mt-3">
+	<div class="w-full flex justify-center mt-3 md:mb-1">
 		<div class="w-full max-w-lg md:max-w-2xl px-4">
 			<BlogSearchBar {searchResult} />
 		</div>
