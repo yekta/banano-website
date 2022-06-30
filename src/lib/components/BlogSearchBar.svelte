@@ -135,6 +135,7 @@
 								>
 									{#if result.document.feature_image}
 										<img
+											loading="lazy"
 											class="absolute w-full h-full object-cover"
 											src={getSpecificWidthSrcFromUrl(result.document.feature_image, 256)}
 											srcset={`${getSpecificWidthSrcFromUrl(
