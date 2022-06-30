@@ -109,9 +109,8 @@ body {
 }
 
 mark {
-	background: rgb(var(--c-secondary-brighter) / 0.1);
-	color: rgb(var(--c-secondary));
-	font-weight: 700;
+	background: rgb(var(--c-secondary-brighter) / 0.4);
+	border-radius: 2px;
 	position: relative;
 }
 
