@@ -10,9 +10,11 @@
 	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
+	import { browser } from '$app/env';
 
 	export let post: IBlogPost;
 	export let similarPosts: IBlogPostShallow[];
+	export let hasTwitterEmbed = false;
 
 	const title = `${post.title} | Blog`;
 	const description = `${post.custom_excerpt ?? post.excerpt}`;
@@ -169,6 +171,9 @@
 	<div class="w-full bg-c-bg -mt-1 relative z-10">
 		<div class="container-b-smallest px-5 py-6 md:pt-10">
 			{@html post.html}
+			{#if browser && hasTwitterEmbed}
+				<script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			{/if}
 			<hr />
 		</div>
 	</div>

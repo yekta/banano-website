@@ -5,16 +5,15 @@ import { defaultWidths, getSrcAndSrcSetFromUrl } from '$lib/ts/helpers/ghost/uti
 
 const ghostUrl = 'https://ghost.banano.cc';
 const siteUrl = 'https://banano.cc';
-const mediumUrl = 'https://medium.com/banano';
-const bananoMediumUser = 'bananocurrency';
 
 export function cleanHtml(html: string) {
 	const dom = parse(html);
-	const aTagCleanedHtml = fixATags(dom);
+	const { dom: twitterCleanedDom, hasTwitterEmbed } = fixTwitterEmbed(dom);
+	const aTagCleanedHtml = fixATags(twitterCleanedDom);
 	const imgTagCleanedHtml = fixImgTags(aTagCleanedHtml);
 	const iframeTagCleanedHtml = fixIframeTags(imgTagCleanedHtml);
 	const res = iframeTagCleanedHtml.toString();
-	return res;
+	return { html: res, hasTwitterEmbed };
 }
 
 export function fixImgTags(dom: HTMLElementP) {
@@ -84,6 +83,19 @@ export function postsToShallowPosts(p: IBlogPosts) {
 	};
 	return res;
 }
+
+const fixTwitterEmbed = (dom: HTMLElementP) => {
+	const script = dom.querySelectorAll('script');
+	let hasTwitterEmbed = false;
+	for (let i = 0; i < script.length; i++) {
+		const s = script[i];
+		if (s.getAttribute('src') == 'https://platform.twitter.com/widgets.js') {
+			s.remove();
+			hasTwitterEmbed = true;
+		}
+	}
+	return { dom, hasTwitterEmbed };
+};
 
 const getFeaturedImageFromHtml = (html: string) => {
 	const dom = parse(html);

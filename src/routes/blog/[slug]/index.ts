@@ -14,7 +14,8 @@ export const get: RequestHandler = async ({ params }) => {
 		const { html, ...rest } = post;
 
 		/* console.time('htmlCleaning'); */
-		const postCleaned: IBlogPost = { html: cleanHtml(html), ...rest };
+		const { html: cleanedHtml, hasTwitterEmbed } = cleanHtml(html);
+		const postCleaned: IBlogPost = { html: cleanedHtml, ...rest };
 		/* console.timeEnd('htmlCleaning'); */
 
 		const urlSimilars = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
@@ -27,7 +28,7 @@ export const get: RequestHandler = async ({ params }) => {
 		if (postCleaned && postCleaned.title) {
 			return {
 				status: 200,
-				body: { post: postCleaned as any, similarPosts: similarPosts as any }
+				body: { post: postCleaned as any, similarPosts: similarPosts as any, hasTwitterEmbed }
 			};
 		} else {
 			return {
