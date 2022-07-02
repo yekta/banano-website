@@ -6,7 +6,7 @@ export const get: RequestHandler = async (event) => {
 	const blogRoutes = allBlogRoutes.slice(1);
 	const allRoutes = [...definedRoutes, ...blogRoutes];
 	const headers = {
-		'Cache-Control': `max-age=${3600}, s-max-age=${3600}`,
+		'Cache-Control': `max-age=${14400}, s-max-age=${14400}`,
 		'Content-Type': 'text/xml'
 	};
 	const body = render(allRoutes);
