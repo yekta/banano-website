@@ -23,7 +23,9 @@
 			<img
 				loading="lazy"
 				class="w-full h-full object-cover rounded-xl relative z-0 transform transition 
-					duration-400 origin-bottom bg-c-on-bg/15 {$isTouchscreen ? '' : 'group-hover:scale-101'}"
+					duration-400 origin-bottom bg-c-on-bg/15 overflow-hidden {$isTouchscreen
+					? ''
+					: 'group-hover:scale-101'}"
 				{src}
 				{srcset}
 				sizes="(min-width: 1280px) 400px, (min-width: 768px) 50vw, 100vw"
@@ -36,7 +38,7 @@
 			>
 				<img
 					loading="lazy"
-					class="w-full h-full object-cover absolute saturate-0 opacity-75"
+					class="w-full h-full object-cover absolute saturate-0 opacity-75 overflow-hidden"
 					src="/illustrations/backgrounds/bg-hero.svg"
 					alt={post.title}
 				/>

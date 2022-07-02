@@ -222,6 +222,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
+	overflow: hidden;
 }
 
 .kg-bookmark-metadata {
@@ -243,6 +244,7 @@ body {
 }
 .blog img {
 	max-width: 100%;
+	overflow: hidden;
 }
 .blog figure {
 	width: 100%;
