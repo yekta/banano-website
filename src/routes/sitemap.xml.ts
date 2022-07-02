@@ -47,7 +47,7 @@ async function getBlogRoutesArray() {
 			let route: IRoute = {
 				loc: `${blogDirectory}/${p.slug}`,
 				lastmod: dateString,
-				changefreq: 'daily'
+				changefreq: 'weekly'
 			};
 			return route;
 		});
