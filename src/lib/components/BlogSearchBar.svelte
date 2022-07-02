@@ -11,6 +11,7 @@
 	import IconSearch from './icons/IconSearch.svelte';
 
 	export let searchResult: ISearchResult[];
+	let lastSearchTimestamp = 0;
 
 	let isSearchResultsOpen = false;
 	let inputValue: string = '';
@@ -20,13 +21,16 @@
 	async function search(q: string) {
 		isSearching = true;
 		isSearchResultsOpen = true;
+		const now = Date.now();
+
 		debounce(() => {
-			if (q !== '') {
+			if (q !== '' && now > lastSearchTimestamp) {
 				window.plausible('Blog | Search Bar Used', {
 					props: { Query: q }
 				});
 			}
 		}, 500);
+
 		try {
 			const url = 'https://typesense.banano.cc/collections/blog-posts/documents/search';
 			const query_by = ['title', 'custom_excerpt', 'excerpt', 'plaintext'];
@@ -51,7 +55,7 @@
 				)}&page=1&per_page=10&highlight_affix_num_tokens=${affix_num_tokens}`
 			);
 			let resJson = await res.json();
-			if (resJson && resJson.hits) {
+			if (resJson && resJson.hits && now > lastSearchTimestamp) {
 				searchResult = resJson.hits;
 			}
 		} catch (error) {
@@ -88,12 +92,12 @@
 			on:input={() => debounce(() => search(inputValue), 100)}
 			type="text"
 			placeholder="Search blog posts..."
-			class="w-full bg-c-on-bg/6 rounded-xl {isSearchResultsOpen
+			class="w-full bg-c-on-bg/8 rounded-xl {isSearchResultsOpen
 				? 'rounded-t-xl rounded-b-none'
 				: 'rounded-t-xl rounded-b-xl'} px-12 py-4 placeholder:font-normal placeholder:text-c-on-bg/40
 				transition-all hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 
-				hover:bg-c-secondary/10 hover:placeholder:translate-x-1 focus:placeholder:translate-x-0 
-				placeholder:transition placeholder:duration-150 hover:text-c-secondary focus:bg-c-secondary/10 focus:text-c-secondary font-medium peer"
+				hover:bg-c-secondary/12 hover:placeholder:translate-x-1 focus:placeholder:translate-x-0 
+				placeholder:transition placeholder:duration-150 hover:text-c-secondary focus:bg-c-secondary/12 focus:text-c-secondary font-medium peer"
 		/>
 		<IconSearch
 			class="absolute text-c-on-bg/30 peer-hover:text-c-secondary/60 peer-focus:text-c-secondary/60 
