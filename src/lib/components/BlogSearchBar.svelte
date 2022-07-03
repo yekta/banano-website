@@ -34,7 +34,6 @@
 		try {
 			const url = 'https://typesense.banano.cc/collections/blog-posts/documents/search';
 			const query_by = ['title', 'custom_excerpt', 'excerpt', 'plaintext'];
-			const query_by_weights = ['2', '1', '1', '1'];
 			const infix = ['always', 'off', 'off', 'off'];
 			const include_fields = [
 				'title',
@@ -48,9 +47,7 @@
 			let res = await fetch(
 				`${url}?x-typesense-api-key=${typesenseApiKey}&q=${q}&query_by=${query_by.join(
 					','
-				)}&infix=${infix.join(',')}&query_by_weights=${query_by_weights.join(
-					','
-				)}&include_fields=${include_fields.join(
+				)}&infix=${infix.join(',')}&include_fields=${include_fields.join(
 					','
 				)}&page=1&per_page=10&highlight_affix_num_tokens=${affix_num_tokens}`
 			);
