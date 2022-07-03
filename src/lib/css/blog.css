@@ -184,6 +184,10 @@ body {
 
 .kg-bookmark-card a {
 	text-decoration: none;
+	border-radius: 0.75rem;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
 }
 .kg-bookmark-card a:hover {
 	color: rgb(var(--c-on-bg));
