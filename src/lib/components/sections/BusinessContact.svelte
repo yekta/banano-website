@@ -52,7 +52,7 @@
 							bind:value={form.name}
 							name="Business Name"
 							id="business-name-input"
-							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
+							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-3.5 mt-2 rounded-xl
 										border-[3px] bg-c-on-bg/5 {inputErrorName
 								? 'border-c-danger'
 								: 'border-c-on-bg/5 hover:border-c-on-bg/20 focus:border-c-secondary'} transition"
@@ -68,7 +68,7 @@
 							bind:value={form.email}
 							name="Business Email"
 							id="business-email-input"
-							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
+							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-3.5 mt-2 rounded-xl
 										border-[3px] bg-c-on-bg/5 {inputErrorName
 								? 'border-c-danger'
 								: 'border-c-on-bg/5 hover:border-c-on-bg/20 focus:border-c-secondary'} transition"
@@ -84,7 +84,7 @@
 							bind:value={form.message}
 							name="Message"
 							id="business-message-input"
-							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4.5 mt-2 rounded-xl
+							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4 mt-2 rounded-xl
 									border-[3px] bg-c-on-bg/5 {inputErrorName
 								? 'border-c-danger'
 								: 'border-c-on-bg/5 hover:border-c-on-bg/20 focus:border-c-secondary'} transition"
