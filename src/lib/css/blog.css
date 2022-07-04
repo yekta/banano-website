@@ -184,6 +184,10 @@ body {
 
 .kg-bookmark-card a {
 	text-decoration: none;
+	border-radius: 0.75rem;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
 }
 .kg-bookmark-card a:hover {
 	color: rgb(var(--c-on-bg));
@@ -254,6 +258,9 @@ body {
 	position: relative;
 }
 .blog figure figcaption {
+	width: 100%;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 	font-size: 1rem;
 	text-align: center;
 	margin-top: 0.75rem;
