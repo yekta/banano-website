@@ -61,8 +61,12 @@ async function getBlogRoutesArray() {
 const blogApiUrl = 'https://ghost.banano.cc/ghost/api/content';
 const blogApiKey = String(import.meta.env.VITE_GHOST_KEY);
 const shallowPostFields = ['slug', 'updated_at'];
+const limit = 1000;
 
-const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(',')}&limit=500`;
+const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
+	','
+)}&limit=${limit}`;
+
 const blogDirectory = '/blog';
 
 const today = new Date();
