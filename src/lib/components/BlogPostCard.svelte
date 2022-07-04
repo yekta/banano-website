@@ -6,8 +6,6 @@
 	import type { IBlogPostShallow } from '$lib/ts/interfaces/Blog';
 	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
 	export let post: IBlogPostShallow;
-
-	const { src, srcset } = getSrcAndSrcSetFromUrl(post.feature_image);
 </script>
 
 <a
@@ -20,6 +18,7 @@
 >
 	<div class="aspect-[16/9] overflow-hidden rounded-xl relative z-0">
 		{#if notNull(post.feature_image)}
+			{@const { src, srcset } = getSrcAndSrcSetFromUrl(post.feature_image)}
 			<img
 				loading="lazy"
 				class="w-full h-full object-cover rounded-xl relative z-0 transform transition 
