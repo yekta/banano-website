@@ -1,4 +1,5 @@
 import { monthsShort } from '$lib/ts/constants/months';
+import { getSignedProxyUrl } from '../imgproxy';
 
 export const defaultWidths = [512, 768, 1024, 1536, 2048];
 
@@ -11,10 +12,8 @@ export const formatDate = (str: string) => {
 };
 
 export function getSrcAndSrcSetFromUrl(url: string, widths = defaultWidths) {
-	const src = url;
-	const srcset = widths
-		.map((width) => `${getSpecificWidthSrcFromUrl(url, width)} ${width}w`)
-		.join(', ');
+	const src = getSignedProxyUrl(url, 2048);
+	const srcset = widths.map((width) => `${getSignedProxyUrl(url, width)} ${width}w`).join(', ');
 	return { src, srcset };
 }
 
