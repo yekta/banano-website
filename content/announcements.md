@@ -5,6 +5,12 @@
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
 
+### BANANO Monthly Update #51 (July 2022)
+
+#### 2022-07-05
+
+Check out this ripe summary of all the important happenings in the BANANO ecosystem in June 2022. [Banano Blog](https://banano.cc/blog/banano-monthly-update-51-july-2022). [Medium Article](https://medium.com/banano/banano-monthly-update-51-july-2022-fbf7449bfe71).
+
 ### Banano Monthly Update #50 (June 2022)
 
 #### 2022-06-07
