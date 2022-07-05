@@ -20,7 +20,7 @@
 	const title = `${post.title} | Blog`;
 	const description = `${post.custom_excerpt ?? post.excerpt}`;
 	const canonical = `${canonicalUrl}${$page.url.pathname}`;
-	const imageUrl = `${post.feature_image ? getSignedProxyUrl(post.feature_image) : ''}`;
+	const imageUrl = `${post.feature_image ? getSignedProxyUrl(post.feature_image, 1200) : ''}`;
 
 	const inviewOptions = {
 		unobserveOnEnter: true
