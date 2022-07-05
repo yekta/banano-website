@@ -23,7 +23,9 @@ const config = {
 			concurrency: 10,
 			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*'],
 			onError: 'continue'
-		}
+		},
+		// inline all stylesheets smaller than 15kb
+		inlineStyleThreshold: 15360
 	}
 };
 
