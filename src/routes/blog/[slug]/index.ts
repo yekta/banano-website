@@ -13,10 +13,8 @@ export const get: RequestHandler = async ({ params }) => {
 
 		const { html, ...rest } = post;
 
-		/* console.time('htmlCleaning'); */
 		const { html: cleanedHtml, hasTwitterEmbed } = cleanHtml(html);
 		const postCleaned: IBlogPost = { html: cleanedHtml, ...rest };
-		/* console.timeEnd('htmlCleaning'); */
 
 		const urlSimilars = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
 			','

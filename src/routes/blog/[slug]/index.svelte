@@ -11,6 +11,7 @@
 	import { afterNavigate } from '$app/navigation';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import { browser } from '$app/env';
+	import { getSignedProxyUrl } from '$lib/ts/helpers/imgproxy';
 
 	export let post: IBlogPost;
 	export let similarPosts: IBlogPostShallow[];
@@ -19,7 +20,7 @@
 	const title = `${post.title} | Blog`;
 	const description = `${post.custom_excerpt ?? post.excerpt}`;
 	const canonical = `${canonicalUrl}${$page.url.pathname}`;
-	const imageUrl = `${post.feature_image}`;
+	const imageUrl = `${post.feature_image ? getSignedProxyUrl(post.feature_image) : ''}`;
 
 	const inviewOptions = {
 		unobserveOnEnter: true
