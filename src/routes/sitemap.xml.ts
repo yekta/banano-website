@@ -32,29 +32,35 @@ function render(routes: IRoute[]) {
 
 async function getBlogRoutesArray() {
 	const routes: IRoute[] = [];
+	let url = 'https://utils.banano.cc/blog/posts-for-sitemap';
+	let res: Response | undefined;
 	try {
-		const res = await fetch(url);
-		const resJson = await res.json();
-		const posts: IPost[] = resJson.posts;
-		const blogRoutes = posts.map((p) => {
-			let date = new Date(p.updated_at);
-			let year = date.getFullYear();
-			let month = date.getMonth() + 1;
-			let day = date.getDate();
-			let dateString = `${year}-${month >= 10 ? month : '0' + month}-${
-				day >= 10 ? day : '0' + day
-			}`;
-			let route: IRoute = {
-				loc: `${blogDirectory}/${p.slug}`,
-				lastmod: dateString,
-				changefreq: 'weekly'
-			};
-			return route;
-		});
-		routes.push(...blogRoutes);
+		res = await fetch(url);
 	} catch (error) {
 		console.log(error);
+		try {
+			res = await fetch(ghostUrl);
+		} catch (error) {
+			console.log(error);
+			return routes;
+		}
 	}
+	const resJson = await res?.json();
+	const posts: IPost[] = resJson.posts;
+	const blogRoutes = posts.map((p) => {
+		let date = new Date(p.updated_at);
+		let year = date.getFullYear();
+		let month = date.getMonth() + 1;
+		let day = date.getDate();
+		let dateString = `${year}-${month >= 10 ? month : '0' + month}-${day >= 10 ? day : '0' + day}`;
+		let route: IRoute = {
+			loc: `${blogDirectory}/${p.slug}`,
+			lastmod: dateString,
+			changefreq: 'weekly'
+		};
+		return route;
+	});
+	routes.push(...blogRoutes);
 	return routes;
 }
 
@@ -63,7 +69,7 @@ const blogApiKey = String(import.meta.env.VITE_GHOST_KEY);
 const shallowPostFields = ['slug', 'updated_at'];
 const limit = 1000;
 
-const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
+const ghostUrl = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
 	','
 )}&limit=${limit}`;
 
