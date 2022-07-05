@@ -57,7 +57,7 @@
 				if (i.naturalWidth && i.naturalHeight) {
 					i.classList.remove('img-loading');
 				}
-			}, 50);
+			}, 200);
 		});
 	}
 </script>
