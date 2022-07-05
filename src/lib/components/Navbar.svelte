@@ -20,6 +20,9 @@
 	let bananoPrice: number;
 	const pricePlaceholder = '..........';
 
+	let notAtTheTop = false;
+	let isSidebarOpen = false;
+
 	interface Section {
 		title: string;
 		id: string;
@@ -124,17 +127,14 @@
 			console.error(error);
 		}
 	}
+
 	onMount(() => {
 		getAndSetBananoPrice();
 		setNotAtTheTop();
 	});
 
-	let isSidebarOpen = false;
-
 	const toggleMenu = () => (isSidebarOpen = !isSidebarOpen);
 	const closeMenu = () => (isSidebarOpen = false);
-
-	let notAtTheTop = false;
 
 	function setNotAtTheTop() {
 		if (window.scrollY > 10) {
