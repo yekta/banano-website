@@ -163,9 +163,9 @@
 
 <svelte:window on:scroll={handleScroll} />
 <nav
-	class="{notAtTheTop
+	class="text-c-primary {notAtTheTop
 		? 'text-c-secondary'
-		: 'text-c-primary'} font-filson-pro w-full flex justify-center fixed top-0 left-0 right-0 z-50 {classes}"
+		: ''} font-filson-pro w-full flex justify-center fixed top-0 left-0 right-0 z-50 {classes}"
 >
 	{#if loadingNewPage}
 		<div
