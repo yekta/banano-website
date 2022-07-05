@@ -178,9 +178,9 @@
 		/>
 	{/if}
 	<div
-		class="{notAtTheTop
-			? 'translate-0'
-			: '-translate-y-24'} transform transition duration-250 bg-c-bg shadow-navbar 
+		class="transform -translate-y-24 {notAtTheTop
+			? 'translate-y-0'
+			: ''} transition duration-250 bg-c-bg shadow-navbar 
 			shadow-c-secondary/13 absolute left-0 bottom-2 w-full h-full pointer-events-none ring-4 ring-c-bg-shaded"
 	/>
 	<div
