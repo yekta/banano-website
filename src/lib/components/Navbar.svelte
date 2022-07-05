@@ -23,6 +23,8 @@
 	let notAtTheTop = false;
 	let isSidebarOpen = false;
 
+	$: console.log('Not at the top:', notAtTheTop);
+
 	interface Section {
 		title: string;
 		id: string;
