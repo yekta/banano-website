@@ -6,7 +6,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 export const get: RequestHandler = async ({ params }) => {
 	try {
 		const slug = String(params.slug);
-		const url = `${blogApiUrl}/posts/slug/${slug}?key=${blogApiKey}&include=tags`;
+		const url = `${blogApiUrl}/posts/slug/${slug}/?key=${blogApiKey}&include=tags`;
 		const res = await fetch(url);
 		const resJson: IBlogPosts = await res.json();
 		const post = resJson.posts?.[0];

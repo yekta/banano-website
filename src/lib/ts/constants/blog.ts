@@ -15,3 +15,4 @@ export const shallowPostFields = [
 	'feature_image',
 	'reading_time'
 ];
+export const excerptLength = 150;

@@ -2,7 +2,7 @@
 	import '$lib/css/main.css';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import { inview } from 'svelte-inview';
-	import { blogApiKey, blogApiUrl, shallowPostFields } from '$lib/ts/constants/blog';
+	import { blogApiKey, blogApiUrl, excerptLength, shallowPostFields } from '$lib/ts/constants/blog';
 	import Button from '$lib/components/Button.svelte';
 	import type { IBlogPostsShallow, ISearchResult } from '$lib/ts/interfaces/Blog';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
@@ -31,14 +31,19 @@
 		isLoadingMore = true;
 		await tick();
 		try {
-			const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
+			const url = `${blogApiUrl}/posts/?key=${blogApiKey}&fields=${shallowPostFields.join(
 				','
-			)}&limit=${limit}&page=${next}`;
+			)}&formats=plaintext&limit=${limit}&page=${next}`;
 			const response = await fetch(url);
 			const data: IBlogPostsShallow = await response.json();
+			let editedPosts = data.posts.map((post) => {
+				let { excerpt, ...rest } = post;
+				let editedExcerpt = excerpt.slice(0, excerptLength) + '...';
+				return { excerpt: editedExcerpt, ...rest };
+			});
 			posts = {
 				meta: data.meta,
-				posts: [...posts.posts, ...data.posts]
+				posts: [...posts.posts, ...editedPosts]
 			};
 			if (posts.meta.pagination.next === null) {
 				hasMoreToLoad = false;

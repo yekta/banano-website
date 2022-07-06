@@ -1,12 +1,18 @@
-import { blogApiKey, blogApiUrl, shallowPostFields, typesenseApiKey } from '$lib/ts/constants/blog';
+import {
+	blogApiKey,
+	blogApiUrl,
+	excerptLength,
+	shallowPostFields,
+	typesenseApiKey
+} from '$lib/ts/constants/blog';
 import type { ISearchResult } from '$lib/ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async ({ params }) => {
 	try {
-		const urlPosts = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
+		const urlPosts = `${blogApiUrl}/posts/?key=${blogApiKey}&fields=${shallowPostFields.join(
 			','
-		)}&limit=12`;
+		)}&formats=plaintext&limit=12`;
 
 		let searchResult: ISearchResult[] = [];
 		const urlSearch = 'https://typesense.banano.cc/collections/blog-posts/documents/search';
@@ -27,10 +33,18 @@ export const get: RequestHandler = async ({ params }) => {
 			searchResult = resJsonSearch.hits;
 		}
 
+		const postsWithoutPlaintext = resPostsJson.posts.map((p: any) => {
+			let { plaintext, excerpt, ...rest } = p;
+			let editedExcerpt = excerpt.slice(0, excerptLength) + '...';
+			return { excerpt: editedExcerpt, ...rest };
+		});
+		let posts = resPostsJson;
+		posts.posts = postsWithoutPlaintext;
+
 		if (resPostsJson && resPostsJson.posts.length > 0) {
 			return {
 				status: 200,
-				body: { initialPosts: resPostsJson as any, searchResult: searchResult as any }
+				body: { initialPosts: posts as any, searchResult: searchResult as any }
 			};
 		} else {
 			return {

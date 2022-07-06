@@ -12,13 +12,14 @@
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import { browser } from '$app/env';
 	import { getSignedProxyUrl } from '$lib/ts/helpers/imgproxy';
+	import { excerptLength } from '$lib/ts/constants/blog';
 
 	export let post: IBlogPost;
 	export let similarPosts: IBlogPostShallow[];
 	export let hasTwitterEmbed = false;
 
 	const title = `${post.title} | Blog`;
-	const description = `${post.custom_excerpt ?? post.excerpt}`;
+	const description = `${post.custom_excerpt ?? post.excerpt.slice(0, excerptLength) + '...'}`;
 	const canonical = `${canonicalUrl}${$page.url.pathname}`;
 	const imageUrl = `${post.feature_image ? getSignedProxyUrl(post.feature_image, 1200) : ''}`;
 
