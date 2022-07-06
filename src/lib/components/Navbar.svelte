@@ -317,7 +317,15 @@
 								/>
 							</div>
 						{/if}
-						{section.title}
+						<p
+							class={$page.routeId?.startsWith('blog') &&
+							($page.url.pathname.startsWith(`${section.href}/`) ||
+								$page.url.pathname === section.href)
+								? 'text-c-secondary group-hover:text-c-bg'
+								: ''}
+						>
+							{section.title}
+						</p>
 					</a>
 				{/each}
 				<div class="flex flex-wrap justify-center mt-auto pt-2 pb-1">
