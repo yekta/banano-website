@@ -69,7 +69,7 @@ const blogApiKey = String(import.meta.env.VITE_GHOST_KEY);
 const shallowPostFields = ['slug', 'updated_at'];
 const limit = 1000;
 
-const ghostUrl = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
+const ghostUrl = `${blogApiUrl}/posts/?key=${blogApiKey}&fields=${shallowPostFields.join(
 	','
 )}&limit=${limit}`;
 

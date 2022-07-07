@@ -14,7 +14,7 @@ const blogApiKey = process.env.VITE_GHOST_KEY;
 const shallowPostFields = ['id', 'slug'];
 const limit = 1000;
 
-const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
+const url = `${blogApiUrl}/posts/?key=${blogApiKey}&fields=${shallowPostFields.join(
 	','
 )}&limit=${limit}`;
 const blogDirectory = '/blog';

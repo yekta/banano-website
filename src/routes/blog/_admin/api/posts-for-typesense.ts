@@ -5,7 +5,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 const limit = 500;
 export const get: RequestHandler = async () => {
 	try {
-		const url = `${blogApiUrl}/posts?key=${blogApiKey}&fields=${fields.join(
+		const url = `${blogApiUrl}/posts/?key=${blogApiKey}&fields=${fields.join(
 			','
 		)}&formats=${formats.join(',')}&include=${include.join(',')}?limit=${limit}`;
 		const res = await fetch(url);
