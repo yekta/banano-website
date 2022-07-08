@@ -47,11 +47,11 @@
 			</div>
 		{/if}
 	</div>
-	<h2 class="w-full text-xl font-bold mt-4 px-4">
+	<h2 class="w-full text-xl font-bold mt-4 px-2 md:px-4">
 		{post.title}
 	</h2>
 	{#if notNull(post.custom_excerpt) || notNull(post.excerpt)}
-		<p class="text-c-on-bg/60 px-4 mt-2">{post.custom_excerpt ?? post.excerpt}</p>
+		<p class="text-c-on-bg/60 px-2 md:px-4 mt-2">{post.custom_excerpt ?? post.excerpt}</p>
 	{/if}
 	<!-- <p class="text-c-on-bg/40 text-sm px-4 mt-2">
 		{formatDate(post.published_at)} <span class="opacity-40">•</span>
