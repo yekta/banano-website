@@ -1,3 +1,4 @@
+import { utilsBlogApiUrl } from '$lib/ts/constants/blog';
 import { canonicalUrl } from '$lib/ts/constants/canonical';
 import type { RequestHandler } from '@sveltejs/kit';
 
@@ -32,7 +33,11 @@ function render(routes: IRoute[]) {
 
 async function getBlogRoutesArray() {
 	const routes: IRoute[] = [];
-	let url = 'https://utils.banano.cc/blog/posts-for-sitemap';
+	const fields = ['slug', 'updated_at'];
+	const limit = 1000;
+	const url = `${utilsBlogApiUrl}/posts?key=${blogApiKey}&fields=${fields.join(
+		','
+	)}&limit=${limit}`;
 	let res: Response | undefined;
 	try {
 		res = await fetch(url);
@@ -121,7 +126,6 @@ interface IRoute {
 }
 
 interface IPost {
-	id: string;
 	slug: string;
 	updated_at: string;
 }

@@ -15,7 +15,6 @@
 	import { excerptLength } from '$lib/ts/constants/blog';
 
 	export let post: IBlogPost;
-	export let similarPosts: IBlogPostShallow[];
 	export let hasTwitterEmbed = false;
 
 	const title = `${post.title} | Blog`;
@@ -181,13 +180,13 @@
 	</div>
 	<div use:inview={inviewOptions} class="w-full" on:enter={onInview} />
 </article>
-{#if similarPosts.length > 0}
+{#if post.similars?.length > 0}
 	<div class="w-full flex flex-col mt-6 pb-6">
 		<div class="w-full flex justify-center">
 			<p class="text-3xl font-bold">Read More</p>
 		</div>
 		<div class="container-b flex flex-row flex-wrap justify-center mt-1 md:px-8">
-			{#each similarPosts as post (post.id)}
+			{#each post.similars as post (post.slug)}
 				<div class="w-full md:w-1/2 xl:w-1/3 max-w-md p-3 mt-3 bg-c-bg">
 					<BlogPostCard {post} />
 				</div>

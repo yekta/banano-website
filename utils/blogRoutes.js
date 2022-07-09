@@ -9,15 +9,15 @@ axiosRetry(axios, {
 	}
 });
 
-const blogApiUrl = 'https://ghost.banano.cc/ghost/api/content';
+const utilsBlogApiUrl = 'https://utils.banano.cc/blog';
 const blogApiKey = process.env.VITE_GHOST_KEY;
-const shallowPostFields = ['id', 'slug'];
+const shallowPostFields = ['slug'];
 const limit = 1000;
+const blogDirectory = '/blog';
 
-const url = `${blogApiUrl}/posts/?key=${blogApiKey}&fields=${shallowPostFields.join(
+const url = `${utilsBlogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
 	','
 )}&limit=${limit}`;
-const blogDirectory = '/blog';
 
 export async function getBlogRoutesArray() {
 	const pages = ['*'];

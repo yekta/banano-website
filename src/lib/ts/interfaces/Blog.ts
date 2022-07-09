@@ -1,6 +1,7 @@
 export interface IBlogPost extends IBlogPostShallow {
 	html: string;
 	mobiledoc: string;
+	similars: IBlogPostShallow[];
 }
 
 export interface IBlogPostShallow {
