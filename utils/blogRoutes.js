@@ -12,7 +12,7 @@ axiosRetry(axios, {
 const utilsBlogApiUrl = 'https://utils.banano.cc/blog';
 const blogApiKey = process.env.VITE_GHOST_KEY;
 const shallowPostFields = ['slug'];
-const limit = 1000;
+const limit = 2000;
 const blogDirectory = '/blog';
 
 const url = `${utilsBlogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(

@@ -4,10 +4,9 @@ import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async (event) => {
 	const allBlogRoutes = await getBlogRoutesArray();
-	const blogRoutes = allBlogRoutes.slice(1);
-	const allRoutes = [...definedRoutes, ...blogRoutes];
+	const allRoutes = [...definedRoutes, ...allBlogRoutes];
 	const headers = {
-		'Cache-Control': `max-age=${14400}, s-max-age=${14400}`,
+		'Cache-Control': `max-age=${3600}, s-max-age=${3600}`,
 		'Content-Type': 'text/xml'
 	};
 	const body = render(allRoutes);
@@ -34,7 +33,7 @@ function render(routes: IRoute[]) {
 async function getBlogRoutesArray() {
 	const routes: IRoute[] = [];
 	const fields = ['slug', 'updated_at'];
-	const limit = 1000;
+	const limit = 2000;
 	const url = `${utilsBlogApiUrl}/posts?key=${blogApiKey}&fields=${fields.join(
 		','
 	)}&limit=${limit}`;

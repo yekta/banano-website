@@ -20,7 +20,7 @@ const config = {
 		prerender: {
 			default: true,
 			crawl: true,
-			concurrency: 10,
+			concurrency: 20,
 			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*'],
 			onError: 'continue'
 		},
