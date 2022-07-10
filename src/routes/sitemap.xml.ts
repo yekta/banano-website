@@ -33,7 +33,7 @@ function render(routes: IRoute[]) {
 async function getBlogRoutesArray() {
 	const routes: IRoute[] = [];
 	const fields = ['slug', 'updated_at'];
-	const limit = 1000;
+	const limit = 2000;
 	const url = `${utilsBlogApiUrl}/posts?key=${blogApiKey}&fields=${fields.join(
 		','
 	)}&limit=${limit}`;
