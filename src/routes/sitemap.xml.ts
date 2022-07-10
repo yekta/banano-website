@@ -4,8 +4,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async (event) => {
 	const allBlogRoutes = await getBlogRoutesArray();
-	const blogRoutes = allBlogRoutes.slice(1);
-	const allRoutes = [...definedRoutes, ...blogRoutes];
+	const allRoutes = [...definedRoutes, ...allBlogRoutes];
 	const headers = {
 		'Cache-Control': `max-age=${14400}, s-max-age=${14400}`,
 		'Content-Type': 'text/xml'
@@ -52,6 +51,7 @@ async function getBlogRoutesArray() {
 	}
 	const resJson = await res?.json();
 	const posts: IPost[] = resJson.posts;
+	console.log(posts[0]);
 	const blogRoutes = posts.map((p) => {
 		let date = new Date(p.updated_at);
 		let year = date.getFullYear();
