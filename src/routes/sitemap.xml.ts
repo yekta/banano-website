@@ -51,7 +51,6 @@ async function getBlogRoutesArray() {
 	}
 	const resJson = await res?.json();
 	const posts: IPost[] = resJson.posts;
-	console.log(posts[0]);
 	const blogRoutes = posts.map((p) => {
 		let date = new Date(p.updated_at);
 		let year = date.getFullYear();
