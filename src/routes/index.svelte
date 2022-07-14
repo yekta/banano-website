@@ -1,15 +1,3 @@
-<script context="module" lang="ts">
-	/** @type {import('./__types/[slug]').Load} */
-	export async function load() {
-		return {
-			cache: {
-				maxage: 120,
-				private: false
-			}
-		};
-	}
-</script>
-
 <script lang="ts">
 	import '$lib/css/main.css';
 	import Advisors from '$lib/components/sections/Advisors.svelte';
