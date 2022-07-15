@@ -4,6 +4,11 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Wrapped Banano (wBAN) Update: Gasless Wraps/Swaps & Translations
+
+#### 2022-07-11
+
+A new version of wBAN app has been released (v2.2.0), introducing new hot features including gasless onboarding on Polygon and translations of the wBAN website. [Banano Blog](https://banano.cc/blog/wrapped-banano-gasless-wraps-swaps-and-translations). [Medium Article](https://medium.com/banano/wrapped-banano-wban-update-gasless-wraps-swaps-translations-83c0b1d889fb).
 
 ### BANANO Monthly Update #51 (July 2022)
 
