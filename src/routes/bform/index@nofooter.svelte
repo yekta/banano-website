@@ -1,0 +1,89 @@
+<script lang="ts">
+	import '$lib/css/main.css';
+	import { page } from '$app/stores';
+	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import { MetaTags } from 'svelte-meta-tags';
+	import type { TFormQuestion, TFormQuestionSubmitResult } from '$lib/ts/types/TFormQuestion';
+	import Form from '$lib/components/Form.svelte';
+
+	const title = 'BForm | Banano';
+	const description = 'BForm';
+	const canonical = `${canonicalUrl}${$page.url.pathname}`;
+	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}.jpg`;
+
+	let questions: TFormQuestion[] = [
+		{
+			fieldName: 'b-id',
+			question: 'What is your B?',
+			placeholder: 'Enter your B here...',
+			isValid: (value: string | undefined) =>
+				value === undefined ? false : value.startsWith('a') && value.length < 65,
+			pageElement: undefined,
+			inputElement: undefined,
+			inputError: false
+		},
+		{
+			fieldName: 'address',
+			question: 'What is your address?',
+			placeholder: 'Enter your address here...',
+			isValid: (value: string | undefined) =>
+				value === undefined ? false : value.startsWith('b') && value.length < 65,
+			pageElement: undefined,
+			inputElement: undefined,
+			inputError: false
+		}
+	];
+
+	async function submit() {
+		const url = '/api/v1/bform-submit';
+		let postBody = {
+			bId: questions[0].inputElement?.value,
+			address: questions[1].inputElement?.value
+		};
+		let res = await fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(postBody)
+		});
+		let { data, error } = await res.json();
+		let ret: TFormQuestionSubmitResult = {
+			data,
+			error
+		};
+		return ret;
+	}
+</script>
+
+<MetaTags
+	{title}
+	{description}
+	{canonical}
+	openGraph={{
+		type: 'website',
+		url: canonical,
+		title: title,
+		description: description,
+		images: [
+			{
+				url: imageUrl,
+				width: 1200,
+				height: 630
+			}
+		]
+	}}
+	twitter={{
+		cardType: 'summary_large_image',
+		title: title,
+		description: description,
+		image: imageUrl
+	}}
+/>
+
+<div
+	style="background-image:url('/illustrations/backgrounds/bg-hero.svg');"
+	class="w-full min-h-screen bg-cover bg-c-secondary flex flex-col items-center justify-start text-center"
+>
+	<Form bind:questions {submit} />
+</div>

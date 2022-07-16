@@ -3,16 +3,43 @@
 	import { onMount } from 'svelte';
 	import IconChevron from '$lib/components/icons/IconChevron.svelte';
 	import Button from '$lib/components/Button.svelte';
-	import type { TFormQuestion } from '$lib/ts/types/TFormQuestion';
+	import type { TFormQuestion, TFormQuestionSubmitResult } from '$lib/ts/types/TFormQuestion';
+	import IconLoading from './icons/IconLoading.svelte';
+	import IconTick from './icons/IconTick.svelte';
 
 	export let questions: TFormQuestion[];
+	export let submit: () => Promise<TFormQuestionSubmitResult>;
+
+	type TSubmitStatus = 'idle' | 'loading' | 'success' | 'error';
 
 	let activePageIndex = 0;
 	let maxHeight: number | undefined = undefined;
+	let submitStatus: TSubmitStatus = 'idle';
 
-	function nextOrSubmit(index: number) {
-		if (index < questions.length) {
+	async function nextOrSubmit() {
+		let isValid = questions[activePageIndex].isValid;
+		let value = questions[activePageIndex].inputElement?.value;
+		if (!isValid(value)) {
+			questions[activePageIndex].inputError = true;
+			return;
+		}
+		if (activePageIndex < questions.length - 1) {
 			activePageIndex++;
+		}
+		if (activePageIndex === questions.length - 1) {
+			submitStatus = 'loading';
+			try {
+				let { data, error } = await submit();
+				if (data && !error) {
+					submitStatus = 'success';
+					activePageIndex++;
+				} else {
+					submitStatus = 'error';
+				}
+			} catch (error) {
+				console.log(error);
+				submitStatus = 'error';
+			}
 		}
 	}
 
@@ -23,13 +50,19 @@
 	};
 
 	const nextPage = () => {
+		let isValid = questions[activePageIndex].isValid;
+		let value = questions[activePageIndex].inputElement?.value;
+		if (!isValid(value)) {
+			questions[activePageIndex].inputError = true;
+			return;
+		}
 		if (activePageIndex < questions.length - 1) {
 			activePageIndex++;
 		}
 	};
 
 	onMount(() => {
-		maxHeight = Math.max(...questions.map((question) => question.pageElement?.clientHeight || 0));
+		maxHeight = Math.max(...questions.map((q) => q.pageElement?.clientHeight || 0));
 	});
 </script>
 
@@ -43,14 +76,14 @@
 	>
 		<!-- Progress bar -->
 		<div
-			class="w-full h-1 absolute top-0 left-0 bg-c-secondary/30 transition {activePageIndex ===
+			class="w-full h-1 absolute top-0 left-0 bg-c-secondary/20 transition {activePageIndex ===
 			questions.length
 				? 'opacity-0'
 				: ''}"
 		>
 			<div
 				style="transform: scaleX({((activePageIndex + 1) / questions.length) * 100}%)"
-				class="h-full w-full bg-c-secondary/60 transition origin-left"
+				class="h-full w-full bg-c-secondary/50 transition origin-left"
 			/>
 		</div>
 		<!-- Next, Prev Buttons -->
@@ -84,40 +117,54 @@
 			style={maxHeight !== undefined
 				? `transform: translateY(-${maxHeight * activePageIndex}px)`
 				: ''}
-			class="w-full flex flex-col items-center overflow-hidden transition duration-300 relative z-10"
+			class="w-full flex flex-col items-center overflow-hidden transition duration-350 relative z-10"
 		>
-			{#each questions as question, index}
+			{#each questions as q, index}
 				<div
-					bind:this={question.pageElement}
+					bind:this={q.pageElement}
 					style={maxHeight ? `height:${maxHeight}px` : ''}
-					class="w-full px-5 py-24 md:p-24 flex flex-col items-start justify-center transition {index ===
+					class="w-full px-5 pt-10 pb-20 md:px-24 md:pt-20 md:pb-24 flex flex-col items-start justify-center transition {index ===
 					activePageIndex
 						? 'opacity-100'
 						: 'opacity-0'}"
 				>
-					<label for="address" class="w-full font-medium text-2xl text-left px-2">
-						{question.question}
+					<label for={q.fieldName} class="w-full font-medium text-xl text-left px-2">
+						{q.question}
 					</label>
 					<input
+						bind:this={q.inputElement}
 						type="text"
-						name="adress"
-						id="address"
-						placeholder={question.placeholder}
+						name={q.fieldName}
+						id={q.fieldName}
+						placeholder={q.placeholder}
 						autocomplete="off"
-						on:keypress={(e) => (e.key === 'Enter' ? nextOrSubmit(activePageIndex) : null)}
-						class="w-full mt-4 px-2 py-3 text-2xl bg-transparent text-c-secondary placeholder:text-c-secondary/40 
-              shadow-input shadow-c-secondary/40 hover:shadow-c-secondary/60 
-              focus:shadow-input-active focus:shadow-c-secondary hover:placeholder:text-c-secondary/60 placeholder:transition transition"
+						on:input={() => (q.inputError = false)}
+						on:click={() => (q.inputError = false)}
+						on:keypress={(e) => (e.key === 'Enter' ? nextOrSubmit() : null)}
+						class="w-full mt-4 px-2 py-3 text-xl md:text-2xl bg-transparent
+              shadow-input focus:shadow-input-active {q.inputError
+							? 'focus:shadow-c-danger text-c-danger shadow-c-danger/40 hover:shadow-c-danger/60 placeholder:hover:text-c-danger/60 placeholder:text-c-danger/40'
+							: 'focus:shadow-c-secondary text-c-secondary shadow-c-secondary/40 hover:shadow-c-secondary/60 hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 placeholder:text-c-secondary/40'} placeholder:transition transition"
 					/>
 					<div class="w-full flex justify-start items-center mt-6 ">
 						<Button
-							onClick={() => nextOrSubmit(activePageIndex)}
+							loading={submitStatus === 'loading'}
+							onClick={nextOrSubmit}
 							class="w-auto mr-4"
 							buttonType="secondary"
 						>
-							{activePageIndex == questions.length - 1 ? 'Finish' : 'Continue'}
+							{#if submitStatus === 'loading'}
+								<IconLoading class="animate-spin-faster w-6 h-6 mr-3" />
+							{/if}
+							<p>
+								{submitStatus === 'loading'
+									? 'Submitting'
+									: activePageIndex == questions.length - 1
+									? 'Finish'
+									: 'Continue'}
+							</p>
 						</Button>
-						<div class="flex justify-start items-center text-sm">
+						<div class="flex justify-start items-center text-sm text-c-on-bg/60">
 							<p class="mr-1">Press <span class="font-bold">Enter</span></p>
 							<IconEnter class="w-4 h-4" />
 						</div>
@@ -126,15 +173,16 @@
 			{/each}
 			<div
 				style={maxHeight ? `height:${maxHeight}px` : ''}
-				class="w-full max-w-[50rem] px-5 py-24 md:p-24 flex flex-col items-start justify-center transition {questions.length ===
+				class="w-full max-w-[50rem] px-5 py-24 md:p-24 flex flex-col items-center justify-center transition {questions.length ===
 				activePageIndex
 					? 'opacity-100'
 					: 'opacity-0'}"
 			>
-				<p class="text-2xl text-c-secondary font-bold text-left">
-					Thanks for your submission!<br />
-					<span class="text-c-on-bg/60 text-xl font-normal">We'll be in touch...</span>
+				<IconTick class="text-c-secondary w-20 h-20" />
+				<p class="text-2xl text-c-secondary font-bold text-center mt-2">
+					We got your submission!<br />
 				</p>
+				<p class="text-xl text-c-on-bg/60 font-normal mt-2 text-center">We'll be in touch...</p>
 			</div>
 		</div>
 	</div>

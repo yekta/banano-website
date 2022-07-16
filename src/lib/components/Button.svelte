@@ -8,6 +8,7 @@
 	export let padding = 'px-8 py-3.5';
 	export { classes as class };
 	export let disabled = false;
+	export let loading = false;
 	let classes = '';
 
 	$: bgAndTextClass = getBgAndTextClass(buttonType);
@@ -58,10 +59,12 @@
 	<button
 		{...$$restProps}
 		on:click|preventDefault={onClick}
-		{disabled}
+		disabled={disabled || loading}
 		class="flex flex-row items-center {isLeft
 			? 'justify-start'
-			: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button {disabled
+			: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button {loading
+			? 'opacity-85'
+			: disabled
 			? 'opacity-75'
 			: 'opacity-100 hover:shadow-button-hover hover:-translate-y-0.5'} 
 			transition-all filter {bgAndTextClass} {classes}"
