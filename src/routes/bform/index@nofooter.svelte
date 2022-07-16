@@ -83,7 +83,7 @@
 	}}
 />
 
-<svelte:window {innerHeight} />
+<svelte:window bind:innerHeight />
 <div
 	style="background-image:url('/illustrations/backgrounds/bg-hero.svg'); min-height: {innerHeight ===
 	undefined

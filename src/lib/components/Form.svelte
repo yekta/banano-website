@@ -123,7 +123,7 @@
 				<div
 					bind:this={q.pageElement}
 					style={maxHeight ? `height:${maxHeight}px` : ''}
-					class="w-full px-5 pt-10 pb-20 md:px-24 md:pt-20 md:pb-24 flex flex-col items-start justify-center transition {index ===
+					class="w-full px-5 pt-10 pb-24 md:px-24 md:pt-20 md:pb-24 flex flex-col items-start justify-center transition {index ===
 					activePageIndex
 						? 'opacity-100'
 						: 'opacity-0'}"
@@ -180,9 +180,7 @@
 					: 'opacity-0'}"
 			>
 				<IconTick class="text-c-secondary w-20 h-20" />
-				<p class="text-2xl text-c-secondary font-bold text-center mt-2">
-					We got your submission!<br />
-				</p>
+				<p class="text-2xl text-c-secondary font-bold text-center mt-2">We got your submission!</p>
 				<p class="text-xl text-c-on-bg/60 font-normal mt-2 text-center">We'll be in touch...</p>
 			</div>
 		</div>
