@@ -76,14 +76,14 @@
 	>
 		<!-- Progress bar -->
 		<div
-			class="w-full h-1 absolute top-0 left-0 bg-c-secondary-shaded/25 transition {activePageIndex ===
+			class="w-full h-1 absolute top-0 left-0 bg-c-secondary/25 transition {activePageIndex ===
 			questions.length
 				? 'opacity-0'
 				: ''}"
 		>
 			<div
 				style="transform: scaleX({((activePageIndex + 1) / questions.length) * 100}%)"
-				class="h-full w-full bg-c-secondary-shaded/50 transition origin-left"
+				class="h-full w-full bg-c-secondary/50 transition origin-left"
 			/>
 		</div>
 		<!-- Next, Prev Buttons -->
