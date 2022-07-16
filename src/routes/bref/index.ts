@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { createClient } from '@supabase/supabase-js';
 import 'dotenv/config';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export const get: RequestHandler = async ({ params, clientAddress, request }) => {
 	const supabase = createClient(
@@ -21,7 +21,7 @@ export const get: RequestHandler = async ({ params, clientAddress, request }) =>
 		const { data, error } = await supabase
 			.from('testlogs')
 			.insert([{ 'country-code': countryCode, 'user-agent': userAgent, 'ip-hashed': ipHashed }]);
-		console.log('\nData: ', data, '\nError: ', error);
+		console.log('\nData: ', data, '\nError:', error);
 	} catch (error) {
 		console.log(error);
 	}
