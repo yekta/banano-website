@@ -11,6 +11,8 @@
 	const canonical = `${canonicalUrl}${$page.url.pathname}`;
 	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}.jpg`;
 
+	let innerHeight: number;
+
 	let questions: TFormQuestion[] = [
 		{
 			fieldName: 'b-id',
@@ -81,9 +83,13 @@
 	}}
 />
 
+<svelte:window {innerHeight} />
 <div
-	style="background-image:url('/illustrations/backgrounds/bg-hero.svg');"
-	class="w-full min-h-screen bg-cover bg-c-secondary flex flex-col items-center justify-start text-center"
+	style="background-image:url('/illustrations/backgrounds/bg-hero.svg'); min-height: {innerHeight ===
+	undefined
+		? '100vh'
+		: innerHeight + 'px'};"
+	class="w-full bg-cover bg-c-secondary flex flex-col items-center justify-start text-center"
 >
 	<Form bind:questions {submit} />
 </div>
