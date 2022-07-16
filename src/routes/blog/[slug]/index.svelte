@@ -17,10 +17,10 @@
 	export let post: IBlogPost;
 	export let hasTwitterEmbed = false;
 
-	const title = `${post.title} | Blog`;
-	const description = `${post.custom_excerpt ?? post.excerpt.slice(0, excerptLength) + '...'}`;
-	const canonical = `${canonicalUrl}${$page.url.pathname}`;
-	const imageUrl = `${post.feature_image ? getSignedProxyUrl(post.feature_image, 1200) : ''}`;
+	$: title = `${post.title} | Blog`;
+	$: description = `${post.custom_excerpt ?? post.excerpt.slice(0, excerptLength) + '...'}`;
+	$: canonical = `${canonicalUrl}${$page.url.pathname}`;
+	$: imageUrl = `${post.feature_image ? getSignedProxyUrl(post.feature_image, 1200) : ''}`;
 
 	const inviewOptions = {
 		unobserveOnEnter: true

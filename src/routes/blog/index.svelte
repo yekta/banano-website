@@ -31,8 +31,12 @@
 
 	async function getMorePosts() {
 		if (isLoadingMore || !hasMoreToLoad) return;
-
 		let { next, limit } = posts.meta.pagination;
+		if (next === null || next === undefined) {
+			hasMoreToLoad = false;
+			isLoadingMore = false;
+			return;
+		}
 		isLoadingMore = true;
 		await tick();
 		try {
@@ -50,7 +54,8 @@
 				meta: data.meta,
 				posts: [...posts.posts, ...editedPosts]
 			};
-			if (posts.meta.pagination.next === null) {
+			console.log(posts.meta.pagination.next);
+			if (posts.meta.pagination.next === null || posts.meta.pagination.next === undefined) {
 				hasMoreToLoad = false;
 				window.plausible('Blog | Loaded More Articles', {
 					props: { 'Total Article Count': `${posts.posts.length.toString()} (Max)` }
