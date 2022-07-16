@@ -25,7 +25,7 @@ export const get: RequestHandler = async ({ params, clientAddress, request }) =>
 		const countryData: TCountryResponse = await countryRes.json();
 		const countryCode = countryData.country;
 		const { data, error } = await supabase
-			.from('testlogs')
+			.from('dev-b-logs')
 			.insert([{ 'country-code': countryCode, 'user-agent': userAgent, 'ip-hashed': ipHashed }]);
 		console.log('\nData: ', data, '\nError:', error);
 	} catch (error) {
