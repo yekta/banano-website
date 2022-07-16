@@ -66,7 +66,7 @@
 	});
 </script>
 
-<div class="w-full flex justify-center pt-24 pb-32 px-2 my-auto">
+<div class="w-full flex justify-center pt-24 pb-32 px-3 md:px-12 my-auto">
 	<div
 		style="height: {maxHeight ?? 0}px"
 		class="{maxHeight
@@ -150,8 +150,9 @@
 						<Button
 							loading={submitStatus === 'loading'}
 							onClick={nextOrSubmit}
-							class="w-auto mr-4"
+							class="mr-4 w-full max-w-xxxs"
 							buttonType="secondary"
+							padding="py-3.5 px-6"
 						>
 							{#if submitStatus === 'loading'}
 								<IconLoading class="animate-spin-faster w-6 h-6 mr-3" />
@@ -164,7 +165,7 @@
 									: 'Continue'}
 							</p>
 						</Button>
-						<div class="flex justify-start items-center text-sm text-c-on-bg/60">
+						<div class="hidden md:flex justify-start items-center text-sm text-c-on-bg/60">
 							<p class="mr-1">Press <span class="font-bold">Enter</span></p>
 							<IconEnter class="w-4 h-4" />
 						</div>
@@ -173,7 +174,7 @@
 			{/each}
 			<div
 				style={maxHeight ? `height:${maxHeight}px` : ''}
-				class="w-full max-w-[50rem] px-5 py-16 md:p-24 flex flex-col items-center justify-center transition {questions.length ===
+				class="w-full max-w-[50rem] px-5 py-12 md:p-12 flex flex-col items-center justify-center transition {questions.length ===
 				activePageIndex
 					? 'opacity-100'
 					: 'opacity-0'}"
