@@ -5,6 +5,7 @@ import { defaultWidths, getSrcAndSrcSetFromUrl } from '$lib/ts/helpers/ghost/uti
 
 const ghostUrl = 'https://ghost.banano.cc';
 const siteUrl = 'https://banano.cc';
+const cdnGhost = 'https://cdng.banano.cc';
 
 export function cleanHtml(html: string) {
 	const dom = parse(html);
@@ -20,12 +21,17 @@ export function fixImgTags(dom: HTMLElementP) {
 	const imgTags = dom.querySelectorAll('img');
 	imgTags.forEach((imgTag) => {
 		const srcOld = imgTag.getAttribute('src');
-		if (srcOld && !srcOld.endsWith('.gif')) {
-			const { src, srcset } = getSrcAndSrcSetFromUrl(srcOld, defaultWidths);
-			imgTag.classList.add('img-loading');
-			imgTag.setAttribute('src', src);
-			imgTag.setAttribute('srcset', srcset);
-			imgTag.setAttribute('sizes', '(min-width: 768px) 768px, 100vw');
+		if (srcOld && srcOld.startsWith(ghostUrl)) {
+			if (srcOld.endsWith('.gif')) {
+				const srcNew = srcOld.replace(ghostUrl, cdnGhost);
+				imgTag.setAttribute('src', srcNew);
+			} else {
+				const { src, srcset } = getSrcAndSrcSetFromUrl(srcOld, defaultWidths);
+				imgTag.classList.add('img-loading');
+				imgTag.setAttribute('src', src);
+				imgTag.setAttribute('srcset', srcset);
+				imgTag.setAttribute('sizes', '(min-width: 768px) 768px, 100vw');
+			}
 		}
 	});
 	return dom;

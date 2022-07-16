@@ -1,6 +1,6 @@
 import { Buffer } from 'buffer';
 
-const imgproxyUrl = 'https://imgproxy.banano.cc';
+const imgproxyUrl = 'https://cdni.banano.cc';
 /* const IMGPROXY_KEY = String(import.meta.env.VITE_IMGPROXY_KEY);
 const IMGPROXY_SALT = String(import.meta.env.VITE_IMGPROXY_SALT); */
 
