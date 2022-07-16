@@ -76,14 +76,14 @@
 	>
 		<!-- Progress bar -->
 		<div
-			class="w-full h-1 absolute top-0 left-0 bg-c-secondary/20 transition {activePageIndex ===
+			class="w-full h-1 absolute top-0 left-0 bg-c-secondary-shaded/25 transition {activePageIndex ===
 			questions.length
 				? 'opacity-0'
 				: ''}"
 		>
 			<div
 				style="transform: scaleX({((activePageIndex + 1) / questions.length) * 100}%)"
-				class="h-full w-full bg-c-secondary/50 transition origin-left"
+				class="h-full w-full bg-c-secondary-shaded/50 transition origin-left"
 			/>
 		</div>
 		<!-- Next, Prev Buttons -->
@@ -100,7 +100,7 @@
 				padding="p-2"
 				buttonType="secondary"
 			>
-				<IconChevron class="transform w-8 h-8 rotate-180" />
+				<IconChevron class="transform w-7 h-7 rotate-180" />
 			</Button>
 			<Button
 				disabled={activePageIndex === questions.length - 1 || activePageIndex === questions.length}
@@ -109,7 +109,7 @@
 				padding="p-2"
 				buttonType="secondary"
 			>
-				<IconChevron class="transform w-8 h-8" />
+				<IconChevron class="transform w-7 h-7" />
 			</Button>
 		</div>
 		<!-- Form -->
@@ -173,7 +173,7 @@
 			{/each}
 			<div
 				style={maxHeight ? `height:${maxHeight}px` : ''}
-				class="w-full max-w-[50rem] px-5 py-24 md:p-24 flex flex-col items-center justify-center transition {questions.length ===
+				class="w-full max-w-[50rem] px-5 py-16 md:p-24 flex flex-col items-center justify-center transition {questions.length ===
 				activePageIndex
 					? 'opacity-100'
 					: 'opacity-0'}"
