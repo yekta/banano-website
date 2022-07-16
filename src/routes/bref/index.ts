@@ -1,23 +1,29 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { createClient } from '@supabase/supabase-js';
-import 'dotenv/config';
 import bcrypt from 'bcryptjs';
 
+interface TCountryResponse {
+	country: string;
+}
+
 export const get: RequestHandler = async ({ params, clientAddress, request }) => {
+	const ipEndpoint = 'https://api.country.is';
 	const supabase = createClient(
 		'https://lmtpfftjdzugvfawylzg.supabase.co',
 		// @ts-ignore
-		process.env.SUPABASE_ADMIN_KEY,
+		String(import.meta.env.VITE_SUPABASE_ADMIN_KEY),
 		{
 			fetch: (...args) => fetch(...args)
 		}
 	);
-	let { headers } = request;
-	let countryCode = headers.get('CF-IPCountry');
-	let userAgent = headers.get('User-Agent');
+	const { headers } = request;
+	const userAgent = headers.get('User-Agent');
 	// @ts-ignore
-	let ipHashed = bcrypt.hashSync(clientAddress, 10);
+	const ipHashed = bcrypt.hashSync(clientAddress, 10);
 	try {
+		const countryRes = await fetch(`${ipEndpoint}/${clientAddress}`);
+		const countryData: TCountryResponse = await countryRes.json();
+		const countryCode = countryData.country;
 		const { data, error } = await supabase
 			.from('testlogs')
 			.insert([{ 'country-code': countryCode, 'user-agent': userAgent, 'ip-hashed': ipHashed }]);
