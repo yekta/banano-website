@@ -17,6 +17,7 @@ module.exports = {
 			250: '250ms',
 			300: '300ms',
 			400: '400ms',
+			500: '500ms',
 			1000: '1000ms'
 		},
 		transitionTimingFunction: {
@@ -123,6 +124,7 @@ module.exports = {
 				100: '25rem',
 				128: '32rem',
 				140: '35rem',
+				150: '37.5rem',
 				160: '40rem',
 				190: '45rem',
 				200: '50rem',
@@ -156,7 +158,9 @@ module.exports = {
 				asset: '3rem 0rem 3rem 0rem',
 				'yellowpaper-paper': '0rem 0.5rem 1rem 0rem',
 				sidebar: '-0.5rem 0rem 0rem 0rem',
-				navbar: '0rem 0.5rem 0.8rem 0rem'
+				navbar: '0rem 0.5rem 0.8rem 0rem',
+				input: '0rem 1.5px 0rem 0rem',
+				'input-active': '0rem 2.5px 0rem 0rem'
 			},
 			opacity: {
 				3: '0.03',
