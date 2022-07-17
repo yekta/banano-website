@@ -91,5 +91,12 @@
 		: innerHeight + 'px'};"
 	class="w-full bg-cover bg-c-secondary flex flex-col items-center justify-start text-center"
 >
-	<Form bind:questions {submit} />
+	<div class="w-full flex justify-center pt-24 pb-32 px-3 md:px-12 my-auto">
+		<div
+			class="w-full max-w-lg md:max-w-3xl bg-c-bg rounded-2xl md:rounded-3xl 
+			shadow-button shadow-c-bg-secondary-shaded overflow-hidden relative z-0 transition"
+		>
+			<Form bind:questions {submit} />
+		</div>
+	</div>
 </div>
