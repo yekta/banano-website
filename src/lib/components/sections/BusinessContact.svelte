@@ -41,7 +41,7 @@
 			isValid: (value: string | undefined) =>
 				value === undefined
 					? false
-					: typeof value === 'string' && value.length > 0 && value.length < 1000,
+					: typeof value === 'string' && value.length > 0 && value.length < 2000,
 			pageElement: undefined,
 			inputElement: undefined,
 			inputError: false,

@@ -106,7 +106,7 @@ function isEmailValid(email: string): boolean {
 }
 
 function isMessageValid(message: string): boolean {
-	return typeof message === 'string' && message.length > 0 && message.length < 1000;
+	return typeof message === 'string' && message.length > 0 && message.length < 2000;
 }
 
 function getDiscordWebhookBody(name: string, email: string, message: string) {
