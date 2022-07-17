@@ -72,15 +72,15 @@
 		style="height: {maxHeight ?? 0}px"
 		class="{maxHeight
 			? 'opacity-100'
-			: 'opacity-0'} w-full max-w-lg md:max-w-3xl bg-c-bg rounded-2xl md:rounded-3xl shadow-2xl shadow-c-on-bg/30 
+			: 'opacity-0'} w-full max-w-lg md:max-w-3xl bg-c-bg rounded-2xl md:rounded-3xl shadow-button shadow-c-bg-secondary-shaded 
       overflow-hidden relative z-0 transition"
 	>
 		<!-- Progress bar -->
 		<div
-			class="w-full h-1 absolute top-0 left-0 bg-c-secondary/25 transition {activePageIndex ===
+			class="w-full h-1 absolute top-0 left-0 bg-c-secondary/25 transition transform {activePageIndex ===
 			questions.length
-				? 'opacity-0'
-				: ''}"
+				? '-translate-y-1'
+				: 'translate-0'}"
 		>
 			<div
 				style="transform: scaleX({((activePageIndex + 1) / questions.length) * 100}%)"
@@ -89,10 +89,10 @@
 		</div>
 		<!-- Next, Prev Buttons -->
 		<div
-			class="absolute bottom-0 right-0 flex justify-end items-center px-3 py-5 z-20 transition {activePageIndex ===
+			class="absolute bottom-0 right-0 flex justify-end items-center px-3 py-5 z-20 transition transform {activePageIndex ===
 			questions.length
-				? 'opacity-0'
-				: ''}"
+				? 'translate-y-20'
+				: 'translate-0'}"
 		>
 			<Button
 				disabled={activePageIndex === 0 || activePageIndex === questions.length}
@@ -151,7 +151,7 @@
 						<Button
 							loading={submitStatus === 'loading'}
 							onClick={nextOrSubmit}
-							class="w-full md:max-w-xxxs"
+							class="w-full md:max-w-xxs"
 							buttonType="secondary"
 							padding="py-3.5 px-6"
 						>
@@ -162,14 +162,10 @@
 								{submitStatus === 'loading'
 									? 'Submitting'
 									: index == questions.length - 1
-									? 'Finish'
+									? 'Submit'
 									: 'Continue'}
 							</p>
 						</Button>
-						<div class="hidden md:flex justify-start items-center text-sm text-c-on-bg/60 ml-4">
-							<p class="mr-1">Press <span class="font-bold">Enter</span></p>
-							<IconEnter class="w-4 h-4" />
-						</div>
 					</div>
 				</div>
 			{/each}

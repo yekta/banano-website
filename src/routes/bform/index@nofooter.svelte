@@ -37,7 +37,7 @@
 	];
 
 	async function submit() {
-		const url = '/api/v1/bform-submit';
+		const url = '/api/v1/bform/submit';
 		let postBody = {
 			bId: questions[0].inputElement?.value,
 			address: questions[1].inputElement?.value
