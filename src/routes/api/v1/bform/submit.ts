@@ -1,4 +1,5 @@
 import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
+import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
 import { createClient, type PostgrestResponse } from '@supabase/supabase-js';
 import type { RequestHandler } from '@sveltejs/kit';
@@ -112,7 +113,10 @@ function getDiscordWebhookBody(
 						name: 'Device OS',
 						value: deviceOs ?? 'Unknown'
 					}
-				]
+				],
+				footer: {
+					text: getFormattedNow()
+				}
 			}
 		],
 		attachments: []

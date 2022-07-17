@@ -3,6 +3,7 @@ import { createClient, type PostgrestResponse } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
 import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
+import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
 
 const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
@@ -96,7 +97,10 @@ function getDiscordWebhookBody(
 						name: 'Device OS',
 						value: deviceOs ?? 'Unknown'
 					}
-				]
+				],
+				footer: {
+					text: getFormattedNow()
+				}
 			}
 		],
 		attachments: []

@@ -1,4 +1,5 @@
 import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
+import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
 import { isEmail } from '$lib/ts/helpers/isEmail';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
 import { createClient, type PostgrestResponse } from '@supabase/supabase-js';
@@ -129,7 +130,10 @@ function getDiscordWebhookBody(name: string, email: string, message: string) {
 						name: 'Message',
 						value: message
 					}
-				]
+				],
+				footer: {
+					text: getFormattedNow()
+				}
 			}
 		],
 		attachments: []
