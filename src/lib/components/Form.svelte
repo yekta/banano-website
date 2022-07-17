@@ -142,7 +142,7 @@
 						on:input={() => (q.inputError = false)}
 						on:click={() => (q.inputError = false)}
 						on:keypress={(e) => (e.key === 'Enter' ? nextOrSubmit() : null)}
-						class="w-full mt-4 px-2 py-3 text-xl md:text-2xl bg-transparent
+						class="w-full rounded-none mt-4 px-2 py-3 text-xl md:text-2xl bg-transparent
               shadow-input focus:shadow-input-active {q.inputError
 							? 'focus:shadow-c-danger text-c-danger shadow-c-danger/40 hover:shadow-c-danger/60 placeholder:hover:text-c-danger/60 placeholder:text-c-danger/40'
 							: 'focus:shadow-c-secondary text-c-secondary shadow-c-secondary/40 hover:shadow-c-secondary/60 hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 placeholder:text-c-secondary/40'} placeholder:transition transition"
