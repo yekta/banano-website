@@ -1,4 +1,3 @@
-import { isAddress } from '$lib/ts/helpers/banano';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
 import { createClient } from '@supabase/supabase-js';
 import type { RequestHandler } from '@sveltejs/kit';
@@ -14,7 +13,7 @@ function isBIdValid(bId: string): boolean {
 }
 
 function isAddressValid(address: string): boolean {
-	return typeof address === 'string' && isAddress(address);
+	return typeof address === 'string' && address.startsWith('ban_') && address.length === 64;
 }
 
 const ipEndpoint = 'https://api.country.is';
