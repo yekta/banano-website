@@ -72,7 +72,7 @@
 	}
 
 	const successMessage: TFormSuccessMessage = {
-		title: 'We got your inquiry!',
+		title: 'We got your message!',
 		paragraph: "We'll be in touch..."
 	};
 
