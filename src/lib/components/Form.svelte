@@ -124,7 +124,7 @@
 				<div
 					bind:this={q.pageElement}
 					style={maxHeight ? `height:${maxHeight}px` : ''}
-					class="w-full px-5 pt-10 pb-24 md:px-24 md:pt-20 md:pb-24 flex flex-col items-start justify-center transition {index ===
+					class="w-full px-5 pt-16 pb-28 md:px-24 md:pt-20 md:pb-24 flex flex-col items-start justify-center transition {index ===
 					activePageIndex
 						? 'opacity-100'
 						: 'opacity-0'}"
@@ -142,7 +142,7 @@
 						on:input={() => (q.inputError = false)}
 						on:click={() => (q.inputError = false)}
 						on:keypress={(e) => (e.key === 'Enter' ? nextOrSubmit() : null)}
-						class="w-full rounded-none mt-4 px-2 py-3 text-xl md:text-2xl bg-transparent
+						class="w-full rounded-none mt-4 px-2 py-3.5 text-xl md:text-2xl bg-transparent
               shadow-input focus:shadow-input-active {q.inputError
 							? 'focus:shadow-c-danger text-c-danger shadow-c-danger/40 hover:shadow-c-danger/60 placeholder:hover:text-c-danger/60 placeholder:text-c-danger/40'
 							: 'focus:shadow-c-secondary text-c-secondary shadow-c-secondary/40 hover:shadow-c-secondary/60 hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 placeholder:text-c-secondary/40'} placeholder:transition transition"
