@@ -25,6 +25,7 @@
 		}
 		if (activePageIndex < questions.length - 1) {
 			activePageIndex++;
+			return;
 		}
 		if (activePageIndex === questions.length - 1) {
 			submitStatus = 'loading';
@@ -71,7 +72,7 @@
 		style="height: {maxHeight ?? 0}px"
 		class="{maxHeight
 			? 'opacity-100'
-			: 'opacity-0'} w-full max-w-[50rem] bg-c-bg rounded-2xl md:rounded-3xl shadow-2xl shadow-c-on-bg/30 
+			: 'opacity-0'} w-full max-w-lg md:max-w-3xl bg-c-bg rounded-2xl md:rounded-3xl shadow-2xl shadow-c-on-bg/30 
       overflow-hidden relative z-0 transition"
 	>
 		<!-- Progress bar -->
@@ -83,7 +84,7 @@
 		>
 			<div
 				style="transform: scaleX({((activePageIndex + 1) / questions.length) * 100}%)"
-				class="h-full w-full bg-c-secondary/50 transition origin-left"
+				class="h-full w-full bg-c-secondary/60 transition origin-left"
 			/>
 		</div>
 		<!-- Next, Prev Buttons -->
@@ -117,7 +118,7 @@
 			style={maxHeight !== undefined
 				? `transform: translateY(-${maxHeight * activePageIndex}px)`
 				: ''}
-			class="w-full flex flex-col items-center overflow-hidden transition duration-350 relative z-10"
+			class="w-full flex flex-col items-center overflow-hidden transition duration-400 relative z-10"
 		>
 			{#each questions as q, index}
 				<div
@@ -146,11 +147,11 @@
 							? 'focus:shadow-c-danger text-c-danger shadow-c-danger/40 hover:shadow-c-danger/60 placeholder:hover:text-c-danger/60 placeholder:text-c-danger/40'
 							: 'focus:shadow-c-secondary text-c-secondary shadow-c-secondary/40 hover:shadow-c-secondary/60 hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 placeholder:text-c-secondary/40'} placeholder:transition transition"
 					/>
-					<div class="w-full flex justify-start items-center mt-6 ">
+					<div class="w-full flex justify-start items-center mt-7">
 						<Button
 							loading={submitStatus === 'loading'}
 							onClick={nextOrSubmit}
-							class="mr-4 w-full max-w-xxxs"
+							class="w-full md:max-w-xxxs"
 							buttonType="secondary"
 							padding="py-3.5 px-6"
 						>
@@ -160,12 +161,12 @@
 							<p>
 								{submitStatus === 'loading'
 									? 'Submitting'
-									: activePageIndex == questions.length - 1
+									: index == questions.length - 1
 									? 'Finish'
 									: 'Continue'}
 							</p>
 						</Button>
-						<div class="hidden md:flex justify-start items-center text-sm text-c-on-bg/60">
+						<div class="hidden md:flex justify-start items-center text-sm text-c-on-bg/60 ml-4">
 							<p class="mr-1">Press <span class="font-bold">Enter</span></p>
 							<IconEnter class="w-4 h-4" />
 						</div>
@@ -174,14 +175,19 @@
 			{/each}
 			<div
 				style={maxHeight ? `height:${maxHeight}px` : ''}
-				class="w-full max-w-[50rem] px-5 py-12 md:p-12 flex flex-col items-center justify-center transition {questions.length ===
+				class="w-full max-w-[50rem] px-5 py-8 md:p-8 flex flex-col items-center justify-center transition {questions.length ===
 				activePageIndex
 					? 'opacity-100'
 					: 'opacity-0'}"
 			>
-				<IconTick class="text-c-secondary w-20 h-20" />
+				<IconTick
+					class="text-c-secondary w-20 h-20 transform transition duration-800 ease-bounce-out {questions.length ===
+					activePageIndex
+						? 'scale-100'
+						: 'scale-0'}"
+				/>
 				<p class="text-2xl text-c-secondary font-bold text-center mt-2">We got your submission!</p>
-				<p class="text-xl text-c-on-bg/60 font-normal mt-2 text-center">We'll be in touch...</p>
+				<p class="text-xl text-c-on-bg/60 font-normal mt-3 text-center">We'll be in touch...</p>
 			</div>
 		</div>
 	</div>

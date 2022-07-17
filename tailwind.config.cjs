@@ -19,12 +19,16 @@ module.exports = {
 			350: '350ms',
 			400: '400ms',
 			500: '500ms',
+			600: '600ms',
+			700: '700ms',
+			800: '800ms',
 			1000: '1000ms'
 		},
 		transitionTimingFunction: {
 			DEFAULT: 'cubic-bezier(0.5, 1, 0.89, 1)',
 			in: 'ease-in',
-			out: 'ease-out'
+			out: 'ease-out',
+			'bounce-out': 'cubic-bezier(.2,1.5,.7,1)'
 		},
 		extend: {
 			screens: {

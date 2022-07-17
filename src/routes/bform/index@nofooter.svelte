@@ -5,6 +5,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import type { TFormQuestion, TFormQuestionSubmitResult } from '$lib/ts/types/TFormQuestion';
 	import Form from '$lib/components/Form.svelte';
+	import { isAddress } from '$lib/ts/helpers/banano';
 
 	const title = 'BForm | Banano';
 	const description = 'BForm';
@@ -28,8 +29,7 @@
 			fieldName: 'address',
 			question: 'What is your address?',
 			placeholder: 'Enter your address here...',
-			isValid: (value: string | undefined) =>
-				value === undefined ? false : value.startsWith('b') && value.length < 65,
+			isValid: (value: string | undefined) => (value === undefined ? false : isAddress(value)),
 			pageElement: undefined,
 			inputElement: undefined,
 			inputError: false
