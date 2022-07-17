@@ -1,3 +1,4 @@
+import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
 import { createClient } from '@supabase/supabase-js';
 import type { RequestHandler } from '@sveltejs/kit';
@@ -32,6 +33,7 @@ export const post: RequestHandler = async ({ request, clientAddress }) => {
 		);
 		const { headers } = request;
 		const userAgent = headers.get('User-Agent');
+		const deviceInfo = getDeviceInfo(userAgent);
 		// @ts-ignore
 		const ipHashed = bcrypt.hashSync(clientAddress, 10);
 		let countryCode: null | string = null;
@@ -49,10 +51,14 @@ export const post: RequestHandler = async ({ request, clientAddress }) => {
 					address: address,
 					'country-code': countryCode,
 					'user-agent': userAgent,
-					'ip-hashed': ipHashed
+					'ip-hashed': ipHashed,
+					'device-type': deviceInfo.type,
+					'device-os': deviceInfo.os,
+					'device-browser': deviceInfo.browser
 				}
 			]);
 			if (data && !error) {
+				console.log('\nData: ', data, '\nError:', error);
 				return {
 					status: 200,
 					body: {
