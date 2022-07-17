@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
-	import type { TFormQuestion, TFormQuestionSubmitResult } from '$lib/ts/types/TFormQuestion';
+	import type { TFormQuestion, TFormQuestionSubmitResult } from '$lib/ts/types/TForm';
 	import Form from '$lib/components/Form.svelte';
 	import { isAddress } from '$lib/ts/helpers/banano';
 

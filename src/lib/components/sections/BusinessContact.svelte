@@ -2,11 +2,81 @@
 	import Button from '$lib/components/Button.svelte';
 	import IconSocial from '$lib/components/icons/IconSocial.svelte';
 	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import { expandCollapse } from '$lib/ts/transitions';
+	import { isEmail } from '$lib/ts/helpers/isEmail';
+	import type {
+		TFormQuestion,
+		TFormQuestionSubmitResult,
+		TFormSuccessMessage
+	} from '$lib/ts/types/TForm';
+	import Form from '../Form.svelte';
 
-	let form: { name: string; email: string; message: string } = { name: '', email: '', message: '' };
 	let isFormOpen = false;
-	let inputErrorName = false;
+
+	let questions: TFormQuestion[] = [
+		{
+			fieldName: 'business-name',
+			question: 'What is the name of your business?',
+			placeholder: 'Enter the name here...',
+			isValid: (value: string | undefined) =>
+				value === undefined
+					? false
+					: typeof value === 'string' && value.length > 0 && value.length < 100,
+			pageElement: undefined,
+			inputElement: undefined,
+			inputError: false
+		},
+		{
+			fieldName: 'business-email',
+			question: 'What is your business email?',
+			placeholder: 'Enter the email here...',
+			isValid: (value: string | undefined) => (value === undefined ? false : isEmail(value)),
+			pageElement: undefined,
+			inputElement: undefined,
+			inputError: false
+		},
+		{
+			fieldName: 'business-message',
+			question: 'What is your inquiry?',
+			placeholder: 'Enter your message here...',
+			isValid: (value: string | undefined) =>
+				value === undefined
+					? false
+					: typeof value === 'string' && value.length > 0 && value.length < 1000,
+			pageElement: undefined,
+			inputElement: undefined,
+			inputError: false,
+			inputElementType: 'textarea'
+		}
+	];
+
+	async function submit() {
+		const url = '/api/v1/business-form/submit';
+		let postBody = {
+			businessName: questions[0].inputElement?.value,
+			businessEmail: questions[1].inputElement?.value,
+			message: questions[2].inputElement?.value
+		};
+		let res = await fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(postBody)
+		});
+		let { data, error } = await res.json();
+		let ret: TFormQuestionSubmitResult = {
+			data,
+			error
+		};
+		return ret;
+	}
+
+	const successMessage: TFormSuccessMessage = {
+		title: 'We got your inquiry!',
+		paragraph: "We'll be in touch..."
+	};
+
+	let maxHeight: number | undefined;
 </script>
 
 <div
@@ -37,68 +107,13 @@
 		<IconSocial type="email" class="w-8 h-8 ml-3 absolute left-0" />
 		{isFormOpen ? 'Close' : 'Contact Form'}
 	</Button>
-	{#if isFormOpen}
-		<form
-			transition:expandCollapse
-			action="https://formspree.io/f/mvolllyn"
-			method="POST"
-			class="max-w-lg md:max-w-xl mx-auto bg-c-bg-secondary rounded-2xl overflow-hidden relative z-0"
+	<div class="w-full md:px-8 flex justify-center">
+		<div
+			style="height:{isFormOpen ? maxHeight : 0}px"
+			class="w-full max-w-xl md:max-w-3xl relative z-0 rounded-2xl overflow-hidden bg-c-bg-secondary 
+			shadow-button shadow-c-bg-secondary-shaded transition-all duration-250"
 		>
-			<div class="w-full flex flex-wrap p-1.5 md:p-4">
-				<div class="w-full md:w-1/2 p-2 mt-1">
-					<label for="business-name-input" class="w-full flex flex-col">
-						<p class="px-2 text-lg font-medium">Business Name</p>
-						<input
-							bind:value={form.name}
-							name="Business Name"
-							id="business-name-input"
-							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-3.5 mt-2 rounded-xl
-										border-[3px] bg-c-on-bg/5 {inputErrorName
-								? 'border-c-danger'
-								: 'border-c-on-bg/5 hover:border-c-on-bg/20 focus:border-c-secondary'} transition"
-							type="text"
-							placeholder="Business name"
-						/>
-					</label>
-				</div>
-				<div class="w-full md:w-1/2 p-2 mt-1">
-					<label for="business-email-input" class="w-full flex flex-col">
-						<p class="px-2 text-lg font-medium">Business Email</p>
-						<input
-							bind:value={form.email}
-							name="Business Email"
-							id="business-email-input"
-							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-3.5 mt-2 rounded-xl
-										border-[3px] bg-c-on-bg/5 {inputErrorName
-								? 'border-c-danger'
-								: 'border-c-on-bg/5 hover:border-c-on-bg/20 focus:border-c-secondary'} transition"
-							type="email"
-							placeholder="Business email"
-						/>
-					</label>
-				</div>
-				<div class="w-full p-2 mt-1">
-					<label for="business-message-input" class="w-full flex flex-col">
-						<p class="px-2 text-lg font-medium">Message</p>
-						<textarea
-							bind:value={form.message}
-							name="Message"
-							id="business-message-input"
-							class="w-full font-medium placeholder-c-on-bg/50 text-c-on-bg px-4 py-4 mt-2 rounded-xl
-									border-[3px] bg-c-on-bg/5 {inputErrorName
-								? 'border-c-danger'
-								: 'border-c-on-bg/5 hover:border-c-on-bg/20 focus:border-c-secondary'} transition"
-							type="email"
-							autocomplete="off"
-							placeholder="Enter your message"
-							rows="6"
-						/>
-					</label>
-				</div>
-				<div class="w-full p-2 my-2">
-					<Button class="w-full" buttonType="secondary" type="submit">Send</Button>
-				</div>
-			</div>
-		</form>
-	{/if}
+			<Form bind:questions {submit} {successMessage} bind:maxHeight isRepeatable={true} />
+		</div>
+	</div>
 </div>

@@ -3,17 +3,27 @@
 	import { onMount } from 'svelte';
 	import IconChevron from '$lib/components/icons/IconChevron.svelte';
 	import Button from '$lib/components/Button.svelte';
-	import type { TFormQuestion, TFormQuestionSubmitResult } from '$lib/ts/types/TFormQuestion';
+	import type {
+		TFormQuestion,
+		TFormQuestionSubmitResult,
+		TFormSuccessMessage
+	} from '$lib/ts/types/TForm';
 	import IconLoading from './icons/IconLoading.svelte';
 	import IconTick from './icons/IconTick.svelte';
+	import IconRefresh from './icons/IconRefresh.svelte';
 
 	export let questions: TFormQuestion[];
 	export let submit: () => Promise<TFormQuestionSubmitResult>;
+	export let maxHeight: number | undefined = undefined;
+	export let successMessage: TFormSuccessMessage = {
+		title: 'We got your submission!',
+		paragraph: "We'll be in touch..."
+	};
+	export let isRepeatable: boolean = false;
 
 	type TSubmitStatus = 'idle' | 'loading' | 'success' | 'error';
 
 	let activePageIndex = 0;
-	let maxHeight: number | undefined = undefined;
 	let submitStatus: TSubmitStatus = 'idle';
 
 	async function nextOrSubmit() {
@@ -62,6 +72,17 @@
 		}
 	};
 
+	const repeat = () => {
+		activePageIndex = 0;
+		submitStatus = 'idle';
+		questions.forEach((question) => {
+			question.inputError = false;
+			if (question.inputElement) {
+				question.inputElement.value = '';
+			}
+		});
+	};
+
 	onMount(() => {
 		maxHeight = Math.max(...questions.map((q) => q.pageElement?.clientHeight || 0));
 	});
@@ -83,6 +104,25 @@
 			class="h-full w-full bg-c-secondary/60 transition origin-left"
 		/>
 	</div>
+	<!-- Repeat Button -->
+	{#if isRepeatable}
+		<div
+			class="absolute bottom-0 right-0 flex justify-end items-center px-3 py-5 z-20 transition transform {activePageIndex ===
+			questions.length
+				? 'translate-0'
+				: 'translate-y-20'}"
+		>
+			<Button
+				disabled={activePageIndex !== questions.length}
+				onClick={repeat}
+				class="px-3 py-2"
+				padding="p-2"
+				buttonType="secondary"
+			>
+				<IconRefresh class="transform w-7 h-7" />
+			</Button>
+		</div>
+	{/if}
 	<!-- Next, Prev Buttons -->
 	<div
 		class="absolute bottom-0 right-0 flex justify-end items-center px-3 py-5 z-20 transition transform {activePageIndex ===
@@ -91,7 +131,9 @@
 			: 'translate-0'}"
 	>
 		<Button
-			disabled={activePageIndex === 0 || activePageIndex === questions.length}
+			disabled={activePageIndex === 0 ||
+				activePageIndex === questions.length ||
+				submitStatus == 'loading'}
 			onClick={prevPage}
 			class="px-2 py-1 mr-2"
 			padding="p-2"
@@ -100,7 +142,9 @@
 			<IconChevron class="transform w-7 h-7 rotate-180" />
 		</Button>
 		<Button
-			disabled={activePageIndex === questions.length - 1 || activePageIndex === questions.length}
+			disabled={activePageIndex === questions.length - 1 ||
+				activePageIndex === questions.length ||
+				submitStatus == 'loading'}
 			onClick={nextPage}
 			class="px-2 py-1"
 			padding="p-2"
@@ -128,7 +172,7 @@
 				<label for={q.fieldName} class="w-full font-medium text-xl text-left px-2">
 					{q.question}
 				</label>
-				{#if q.inputSize === 'textarea'}
+				{#if q.inputElementType === 'textarea'}
 					<textarea
 						bind:this={q.inputElement}
 						type={q.inputType === 'email'
@@ -142,6 +186,8 @@
 						id={q.fieldName}
 						placeholder={q.placeholder}
 						autocomplete="off"
+						rows="4"
+						disabled={submitStatus == 'loading'}
 						on:input={() => (q.inputError = false)}
 						on:click={() => (q.inputError = false)}
 						on:keypress={(e) => (e.key === 'Enter' ? nextOrSubmit() : null)}
@@ -164,6 +210,7 @@
 						id={q.fieldName}
 						placeholder={q.placeholder}
 						autocomplete="off"
+						disabled={submitStatus == 'loading'}
 						on:input={() => (q.inputError = false)}
 						on:click={() => (q.inputError = false)}
 						on:keypress={(e) => (e.key === 'Enter' ? nextOrSubmit() : null)}
@@ -208,8 +255,8 @@
 					? 'scale-100'
 					: 'scale-0'}"
 			/>
-			<p class="text-2xl text-c-secondary font-bold text-center mt-2">We got your submission!</p>
-			<p class="text-xl text-c-on-bg/60 font-normal mt-3 text-center">We'll be in touch...</p>
+			<p class="text-2xl text-c-secondary font-bold text-center mt-2">{successMessage.title}</p>
+			<p class="text-xl text-c-on-bg/60 font-normal mt-3 text-center">{successMessage.paragraph}</p>
 		</div>
 	</div>
 </div>

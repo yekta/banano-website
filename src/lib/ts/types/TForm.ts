@@ -7,7 +7,7 @@ export interface TFormQuestion {
 	inputElement: HTMLInputElement | HTMLTextAreaElement | undefined;
 	inputError: boolean;
 	inputType?: TInputType;
-	inputSize?: TInputSize;
+	inputElementType?: TInputElementType;
 }
 
 export interface TFormQuestionSubmitResult {
@@ -15,5 +15,10 @@ export interface TFormQuestionSubmitResult {
 	error: string | null | undefined;
 }
 
+export interface TFormSuccessMessage {
+	title: string;
+	paragraph: string;
+}
+
 type TInputType = 'text' | 'number' | 'email' | 'password';
-type TInputSize = 'input' | 'textarea';
+type TInputElementType = 'input' | 'textarea';

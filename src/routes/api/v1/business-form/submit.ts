@@ -1,17 +1,25 @@
 import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
+import { isEmail } from '$lib/ts/helpers/isEmail';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
 import { createClient, type PostgrestResponse } from '@supabase/supabase-js';
 import type { RequestHandler } from '@sveltejs/kit';
 import bcrypt from 'bcryptjs';
 
 const ipEndpoint = 'https://api.country.is';
-const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
-const tableName = 'dev-b-form-responses';
+const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_BUSINESS_FORM_WEBHOOK_URL);
+const tableName = 'business-form-responses';
 
 export const post: RequestHandler = async ({ request, clientAddress }) => {
-	let { bId, address } = (await request.json()) as TPostBody;
+	let { businessName, businessEmail, message } = (await request.json()) as TPostBody;
 
-	if (bId && address && isBIdValid(bId) && isAddressValid(address)) {
+	if (
+		businessName &&
+		businessEmail &&
+		message &&
+		isNameValid(businessName) &&
+		isEmailValid(businessEmail) &&
+		isMessageValid(message)
+	) {
 		const supabase = createClient(
 			'https://lmtpfftjdzugvfawylzg.supabase.co',
 			// @ts-ignore
@@ -37,8 +45,9 @@ export const post: RequestHandler = async ({ request, clientAddress }) => {
 			const promises = [
 				supabase.from(tableName).insert([
 					{
-						'b-id': bId,
-						address: address,
+						'business-name': businessName,
+						'business-email': businessEmail,
+						message: message,
 						'country-code': countryCode,
 						'user-agent': userAgent,
 						'ip-hashed': ipHashed,
@@ -52,15 +61,14 @@ export const post: RequestHandler = async ({ request, clientAddress }) => {
 					headers: {
 						'Content-Type': 'application/json'
 					},
-					body: JSON.stringify(
-						getDiscordWebhookBody(countryCode, deviceInfo.type, deviceInfo.os, deviceInfo.browser)
-					)
+					body: JSON.stringify(getDiscordWebhookBody(businessName, businessEmail, message))
 				})
 			];
 			const [supabaseRes, webhoookRes] = await Promise.all(promises);
 			const { data, error } = supabaseRes as PostgrestResponse<any>;
 
 			if (data && !error) {
+				console.log('\nData: ', data, '\nError:', error);
 				return {
 					status: 200,
 					body: {
@@ -83,51 +91,47 @@ export const post: RequestHandler = async ({ request, clientAddress }) => {
 	};
 };
 
-function getDiscordWebhookBody(
-	countryCode: string | null | undefined,
-	deviceType: string | null | undefined,
-	deviceOs: string | null | undefined,
-	deviceBrowser: string | null | undefined
-) {
+interface TPostBody {
+	businessName: string;
+	businessEmail: string;
+	message: string;
+}
+
+function isNameValid(name: string): boolean {
+	return typeof name === 'string' && name.length > 0 && name.length < 100;
+}
+
+function isEmailValid(email: string): boolean {
+	return typeof email === 'string' && email.length > 0 && isEmail(email);
+}
+
+function isMessageValid(message: string): boolean {
+	return typeof message === 'string' && message.length > 0 && message.length < 1000;
+}
+
+function getDiscordWebhookBody(name: string, email: string, message: string) {
 	return {
 		content: null,
 		embeds: [
 			{
-				title: '📃 Someone has filled the b form!',
-				color: 5029707,
+				title: '💼 Someone has filled the business form!',
+				color: 11953728,
 				fields: [
 					{
-						name: 'Country',
-						value: countryCode ?? 'Unknown'
+						name: 'Business Name',
+						value: name
 					},
 					{
-						name: 'Device Type',
-						value: deviceType ?? 'Unknown'
+						name: 'Business Email',
+						value: email
 					},
 					{
-						name: 'Device Browser',
-						value: deviceBrowser ?? 'Unknown'
-					},
-					{
-						name: 'Device OS',
-						value: deviceOs ?? 'Unknown'
+						name: 'Message',
+						value: message
 					}
 				]
 			}
 		],
 		attachments: []
 	};
-}
-
-interface TPostBody {
-	bId: string;
-	address: string;
-}
-
-function isBIdValid(bId: string): boolean {
-	return typeof bId === 'string' && bId.startsWith('a') && bId.length < 65;
-}
-
-function isAddressValid(address: string): boolean {
-	return typeof address === 'string' && address.startsWith('ban_') && address.length === 64;
 }
