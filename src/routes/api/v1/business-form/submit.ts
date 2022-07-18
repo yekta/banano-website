@@ -112,7 +112,7 @@ function isMessageValid(message: string): boolean {
 }
 
 function getDiscordWebhookBody(name: string, email: string, message: string) {
-	let body = {
+	return {
 		content: null,
 		embeds: [
 			{
@@ -126,6 +126,10 @@ function getDiscordWebhookBody(name: string, email: string, message: string) {
 					{
 						name: 'Business Email',
 						value: email
+					},
+					{
+						name: 'Message',
+						value: message
 					}
 				],
 				footer: {
