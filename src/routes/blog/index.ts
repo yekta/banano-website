@@ -7,7 +7,7 @@ import {
 import type { ISearchResult } from '$lib/ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 
-export const get: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ params }) => {
 	try {
 		const urlPosts = `${utilsBlogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
 			','

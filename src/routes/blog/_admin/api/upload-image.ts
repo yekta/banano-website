@@ -13,7 +13,7 @@ const token = jwt.sign({}, Buffer.from(secret, 'hex'), {
 	audience: `/admin/`
 });
 
-export const get: RequestHandler = async ({ request, params, url }) => {
+export const GET: RequestHandler = async ({ request, params, url }) => {
 	try {
 		const _url = String(url.searchParams.get('url'));
 		const res = await fetch(_url);

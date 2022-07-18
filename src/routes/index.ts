@@ -7,10 +7,10 @@ import communityProjectsMd from '/content/community-projects.md';
 import announcementsMd from '/content/announcements.md';
 import roadmapMd from '/content/roadmap.md';
 import { parse } from 'node-html-parser';
-import type { Node as NodeP, HTMLElement as HTMLElementP } from 'node-html-parser';
+import type { HTMLElement as HTMLElementP } from 'node-html-parser';
 import { mdParser } from '$lib/ts/helpers/mdParser';
 
-export const get: RequestHandler = async (event) => {
+export const GET: RequestHandler = async (event) => {
 	let testimonials = mdParser(testimonialsMd, 'h3', []).map((r) => r[0]);
 
 	let faq = mdParser(faqMd, 'h3', ['p']).map((r) => ({

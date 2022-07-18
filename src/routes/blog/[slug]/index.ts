@@ -3,7 +3,7 @@ import { cleanHtml } from '$lib/ts/helpers/ghost/ghost';
 import type { IBlogPost } from '$lib/ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 
-export const get: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ params }) => {
 	try {
 		const slug = String(params.slug);
 		const url = `${utilsBlogApiUrl}/posts/slug/${slug}?key=${blogApiKey}`;

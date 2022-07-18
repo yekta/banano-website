@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import GhostAdminAPI from '@tryghost/admin-api';
 
-export const get: RequestHandler = async ({ params, request }) => {
+export const GET: RequestHandler = async ({ params, request }) => {
 	try {
 		const res = await fixATags();
 		return {

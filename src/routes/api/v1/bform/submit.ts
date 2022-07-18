@@ -9,7 +9,7 @@ const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
 const tableName = 'dev-b-form-responses';
 
-export const post: RequestHandler = async ({ request, clientAddress }) => {
+export const POST: RequestHandler = async ({ request, clientAddress }) => {
 	let { bId, address } = (await request.json()) as TPostBody;
 
 	if (bId && address && isBIdValid(bId) && isAddressValid(address)) {

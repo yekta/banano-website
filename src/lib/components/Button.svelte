@@ -58,7 +58,7 @@
 {:else}
 	<button
 		{...$$restProps}
-		on:click|preventDefault={onClick}
+		on:click={onClick}
 		disabled={disabled || loading}
 		class="flex flex-row items-center {isLeft
 			? 'justify-start'

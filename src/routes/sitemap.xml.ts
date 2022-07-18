@@ -2,7 +2,7 @@ import { utilsBlogApiUrl } from '$lib/ts/constants/blog';
 import { canonicalUrl } from '$lib/ts/constants/canonical';
 import type { RequestHandler } from '@sveltejs/kit';
 
-export const get: RequestHandler = async (event) => {
+export const GET: RequestHandler = async (event) => {
 	const allBlogRoutes = await getBlogRoutesArray();
 	const allRoutes = [...definedRoutes, ...allBlogRoutes];
 	const headers = {

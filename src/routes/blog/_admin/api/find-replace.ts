@@ -16,7 +16,7 @@ const findAndReplaceArr: IFindReplace[] = [
 	}
 ];
 
-export const get: RequestHandler = async ({ params, request }) => {
+export const GET: RequestHandler = async ({ params, request }) => {
 	try {
 		const res = await findAndReplace(findAndReplaceArr);
 		return {

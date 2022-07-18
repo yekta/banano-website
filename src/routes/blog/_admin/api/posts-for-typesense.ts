@@ -3,7 +3,7 @@ import type { ITag } from '$lib/ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 
 const limit = 500;
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
 	try {
 		const url = `${blogApiUrl}/posts/?key=${blogApiKey}&fields=${fields.join(
 			','

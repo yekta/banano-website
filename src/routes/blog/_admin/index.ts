@@ -7,7 +7,7 @@ const api = new GhostAdminAPI({
 	version: 'v5.2'
 });
 
-export const get: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ params }) => {
 	try {
 		const posts = await api.posts.browse({
 			limit: 500,

@@ -10,7 +10,7 @@ const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_BUSINESS_FORM_WEBHOOK_URL);
 const tableName = 'business-form-responses';
 
-export const post: RequestHandler = async ({ request, clientAddress }) => {
+export const POST: RequestHandler = async ({ request, clientAddress }) => {
 	let { businessName, businessEmail, message } = (await request.json()) as TPostBody;
 
 	if (

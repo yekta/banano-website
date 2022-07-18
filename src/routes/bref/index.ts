@@ -9,7 +9,7 @@ const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
 const tableName = 'dev-b-ref-logs';
 
-export const get: RequestHandler = async ({ params, clientAddress, request }) => {
+export const GET: RequestHandler = async ({ params, clientAddress, request }) => {
 	const supabase = createClient(
 		'https://lmtpfftjdzugvfawylzg.supabase.co',
 		// @ts-ignore
