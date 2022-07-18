@@ -190,9 +190,9 @@
 						disabled={submitStatus == 'loading'}
 						on:input={() => (q.inputError = false)}
 						on:click={() => (q.inputError = false)}
-						on:keypress={(e) => (e.key === 'Enter' ? nextOrSubmit() : null)}
 						class="w-full rounded-none mt-4 px-2 py-3.5 text-lg md:text-xl bg-transparent
-              shadow-input focus:shadow-input-active {q.inputError
+              shadow-input focus:shadow-input-active {q.inputError ||
+						(q.lengthLimit && q.inputElement?.value?.length > q.lengthLimit)
 							? 'focus:shadow-c-danger text-c-danger shadow-c-danger/40 hover:shadow-c-danger/60 placeholder:hover:text-c-danger/60 placeholder:text-c-danger/40'
 							: 'focus:shadow-c-secondary text-c-secondary shadow-c-secondary/40 hover:shadow-c-secondary/60 hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 placeholder:text-c-secondary/40'} placeholder:transition transition"
 					/>
@@ -215,12 +215,24 @@
 						on:click={() => (q.inputError = false)}
 						on:keypress={(e) => (e.key === 'Enter' ? nextOrSubmit() : null)}
 						class="w-full rounded-none mt-4 px-2 py-3.5 text-xl md:text-2xl bg-transparent
-              shadow-input focus:shadow-input-active {q.inputError
+              shadow-input focus:shadow-input-active {q.inputError ||
+						(q.lengthLimit && q.inputElement?.value?.length > q.lengthLimit)
 							? 'focus:shadow-c-danger text-c-danger shadow-c-danger/40 hover:shadow-c-danger/60 placeholder:hover:text-c-danger/60 placeholder:text-c-danger/40'
 							: 'focus:shadow-c-secondary text-c-secondary shadow-c-secondary/40 hover:shadow-c-secondary/60 hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 placeholder:text-c-secondary/40'} placeholder:transition transition"
 					/>
 				{/if}
-				<div class="w-full flex justify-start items-center mt-7">
+				<div
+					class="w-full flex justify-end text-xs mt-2 {q.lengthLimit ? 'opacity-100' : 'opacity-0'}"
+				>
+					<p class="text-c-secondary/50 font-medium">
+						<span
+							class="{q.lengthLimit && q.inputElement?.value?.length > q.lengthLimit
+								? 'text-c-danger'
+								: ''} transition">{q.inputElement?.value?.length}</span
+						>/{q.lengthLimit}
+					</p>
+				</div>
+				<div class="w-full flex justify-start items-center mt-3">
 					<Button
 						loading={submitStatus === 'loading'}
 						onClick={nextOrSubmit}

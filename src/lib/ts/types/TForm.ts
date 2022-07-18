@@ -8,6 +8,7 @@ export interface TFormQuestion {
 	inputError: boolean;
 	inputType?: TInputType;
 	inputElementType?: TInputElementType;
+	lengthLimit?: number;
 }
 
 export interface TFormQuestionSubmitResult {

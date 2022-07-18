@@ -68,6 +68,7 @@ export const post: RequestHandler = async ({ request, clientAddress }) => {
 			const [supabaseRes, webhoookRes] = await Promise.all(promises);
 			const { data, error } = supabaseRes as PostgrestResponse<any>;
 
+			console.log(webhoookRes);
 			if (data && !error) {
 				console.log('\nData: ', data, '\nError:', error);
 				return {
@@ -107,11 +108,11 @@ function isEmailValid(email: string): boolean {
 }
 
 function isMessageValid(message: string): boolean {
-	return typeof message === 'string' && message.length > 0 && message.length < 2000;
+	return typeof message === 'string' && message.length > 0 && message.length <= 1000;
 }
 
 function getDiscordWebhookBody(name: string, email: string, message: string) {
-	return {
+	let body = {
 		content: null,
 		embeds: [
 			{
@@ -125,10 +126,6 @@ function getDiscordWebhookBody(name: string, email: string, message: string) {
 					{
 						name: 'Business Email',
 						value: email
-					},
-					{
-						name: 'Message',
-						value: message
 					}
 				],
 				footer: {
