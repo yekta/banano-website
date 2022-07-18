@@ -9,13 +9,13 @@
 	import Dropdown from '$lib/components/Dropdown.svelte';
 	import bananojs from '@bananocoin/bananojs';
 	import QR from 'svelte-qr';
-	import { clipboard } from 'svelte-copy-clipboard-action';
 	import IconCopy from '$lib/components/icons/IconCopy.svelte';
 	import IconMorpher from '$lib/components/IconMorpher.svelte';
 	import IconTick from '$lib/components/icons/IconTick.svelte';
 	import VirtualList from '@sveltejs/svelte-virtual-list';
 	import { onMount, tick } from 'svelte';
 	import IconLoading from '$lib/components/icons/IconLoading.svelte';
+	import { copy } from 'svelte-copy';
 
 	const title = 'Paper Wallet | Banano';
 	const description = 'Create Banano paper wallets for your family, friends or strangers.';
@@ -294,14 +294,11 @@
 						class="absolute right-0 top-0 mr-2 mt-2 rounded-lg z-10 bg-c-bg shadow-lg shadow-c-on-bg/15"
 					>
 						<button
-							use:clipboard={{
-								trigger: 'click',
-								text: generatedPaperWallets
-									.map((w) => w.address)
-									.reverse()
-									.join('\n')
-							}}
-							on:copied={activateRecentlyCopied}
+							use:copy={generatedPaperWallets
+								.map((w) => w.address)
+								.reverse()
+								.join('\n')}
+							on:svelte-copy={activateRecentlyCopied}
 							class="w-12 h-12 p-2.5 transition group hover:bg-c-secondary/15 hover:text-c-secondary 
 							rounded-lg z-0 flex flex-row items-center justify-center"
 						>

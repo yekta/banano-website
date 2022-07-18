@@ -15,7 +15,6 @@ declare module '*.md' {
 
 declare module '@bananocoin/bananojs';
 declare module 'svelte-qr';
-declare module 'svelte-copy-clipboard-action';
 declare module '@tryghost/admin-api';
 
 declare namespace svelte.JSX {
