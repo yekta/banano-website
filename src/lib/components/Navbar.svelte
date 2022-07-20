@@ -152,14 +152,16 @@
 		$page.routeId?.startsWith('blog') &&
 		($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href);
 
-	const waitTimeBeforeAnimation = 300;
+	const waitTimeBeforeAnimation = 250;
 	let loadingNewPage = false;
+	let loadingTimeout: NodeJS.Timeout;
 	beforeNavigate(() => {
-		setTimeout(() => {
+		loadingTimeout = setTimeout(() => {
 			loadingNewPage = true;
 		}, waitTimeBeforeAnimation);
 	});
 	afterNavigate(() => {
+		clearTimeout(loadingTimeout);
 		loadingNewPage = false;
 	});
 </script>
