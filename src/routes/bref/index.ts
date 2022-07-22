@@ -8,6 +8,7 @@ import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
 const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
 const tableName = 'dev-b-ref-logs';
+const refLink = 'https://banano.cc';
 
 export const GET: RequestHandler = async ({ params, clientAddress, request }) => {
 	const supabase = createClient(
@@ -63,7 +64,7 @@ export const GET: RequestHandler = async ({ params, clientAddress, request }) =>
 	return {
 		status: 302,
 		headers: {
-			Location: 'https://banano.cc'
+			Location: refLink
 		}
 	};
 };
