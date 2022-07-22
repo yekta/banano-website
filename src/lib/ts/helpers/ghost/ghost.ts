@@ -5,7 +5,7 @@ import { defaultWidths, getSrcAndSrcSetFromUrl } from '$lib/ts/helpers/ghost/uti
 
 const ghostUrl = 'https://ghost.banano.cc';
 const siteUrl = 'https://banano.cc';
-const cdnGhost = 'https://cdng.banano.cc';
+const cdnGhost = 'https://ghost.banano.cc';
 
 export function cleanHtml(html: string) {
 	const dom = parse(html);
