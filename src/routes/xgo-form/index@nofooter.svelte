@@ -7,8 +7,8 @@
 	import Form from '$lib/components/Form.svelte';
 	import { isAddress } from '$lib/ts/helpers/banano';
 
-	const title = 'BForm | Banano';
-	const description = 'BForm';
+	const title = 'XGo Form | Banano';
+	const description = 'Form for XGo.';
 	const canonical = `${canonicalUrl}${$page.url.pathname}`;
 	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}.jpg`;
 
@@ -16,19 +16,18 @@
 
 	let questions: TFormQuestion[] = [
 		{
-			fieldName: 'b-id',
-			question: 'What is your B?',
-			placeholder: 'Enter your B here...',
-			isValid: (value: string | undefined) =>
-				value === undefined ? false : value.startsWith('a') && value.length < 65,
+			fieldName: 'xgo-id',
+			question: 'What is your XGo ID?',
+			placeholder: 'Enter your ID here...',
+			isValid: (value: string | undefined) => (value === undefined ? false : value.length < 100),
 			pageElement: undefined,
 			inputElement: undefined,
 			inputError: false
 		},
 		{
 			fieldName: 'address',
-			question: 'What is your address?',
-			placeholder: 'Enter your address here...',
+			question: 'What is the Banano address associated with your XGo account?',
+			placeholder: 'Enter the address here...',
 			isValid: (value: string | undefined) => (value === undefined ? false : isAddress(value)),
 			pageElement: undefined,
 			inputElement: undefined,
@@ -37,9 +36,9 @@
 	];
 
 	async function submit() {
-		const url = '/api/v1/bform/submit';
+		const url = '/api/v1/xgo-form/submit';
 		let postBody = {
-			bId: questions[0].inputElement?.value,
+			xgoId: questions[0].inputElement?.value,
 			address: questions[1].inputElement?.value
 		};
 		let res = await fetch(url, {

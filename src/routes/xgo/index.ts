@@ -7,8 +7,8 @@ import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
 
 const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
-const tableName = 'dev-b-ref-logs';
-const refLink = 'https://banano.cc';
+const tableName = 'xgo-ref-logs';
+const refLink = 'https://xgo.com/referral/658ab71c1ac86008';
 
 export const GET: RequestHandler = async ({ params, clientAddress, request }) => {
 	const supabase = createClient(
@@ -79,7 +79,7 @@ function getDiscordWebhookBody(
 		content: null,
 		embeds: [
 			{
-				title: '🚘 Someone has passed through the ref!',
+				title: '🚘 Someone has passed through the XGo ref!',
 				color: 16506129,
 				fields: [
 					{

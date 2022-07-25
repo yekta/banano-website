@@ -7,12 +7,12 @@ import bcrypt from 'bcryptjs';
 
 const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
-const tableName = 'dev-b-form-responses';
+const tableName = 'xgo-form-responses';
 
 export const POST: RequestHandler = async ({ request, clientAddress }) => {
-	let { bId, address } = (await request.json()) as TPostBody;
+	let { xgoId, address } = (await request.json()) as TPostBody;
 
-	if (bId && address && isBIdValid(bId) && isAddressValid(address)) {
+	if (xgoId && address && isXgoIdValid(xgoId) && isAddressValid(address)) {
 		const supabase = createClient(
 			'https://lmtpfftjdzugvfawylzg.supabase.co',
 			// @ts-ignore
@@ -38,7 +38,7 @@ export const POST: RequestHandler = async ({ request, clientAddress }) => {
 			const promises = [
 				supabase.from(tableName).insert([
 					{
-						'b-id': bId,
+						'xgo-id': xgoId,
 						address: address,
 						'country-code': countryCode,
 						'user-agent': userAgent,
@@ -94,7 +94,7 @@ function getDiscordWebhookBody(
 		content: null,
 		embeds: [
 			{
-				title: '📃 Someone has filled the b form!',
+				title: '📃 Someone has filled the XGo form!',
 				color: 5029707,
 				fields: [
 					{
@@ -124,12 +124,12 @@ function getDiscordWebhookBody(
 }
 
 interface TPostBody {
-	bId: string;
+	xgoId: string;
 	address: string;
 }
 
-function isBIdValid(bId: string): boolean {
-	return typeof bId === 'string' && bId.startsWith('a') && bId.length < 65;
+function isXgoIdValid(id: string): boolean {
+	return typeof id === 'string' && id.length < 100;
 }
 
 function isAddressValid(address: string): boolean {
