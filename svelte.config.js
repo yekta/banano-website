@@ -24,8 +24,7 @@ const config = {
 			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*'],
 			onError: 'continue'
 		},
-		// inline all stylesheets smaller than 15kb
-		inlineStyleThreshold: 15360
+		inlineStyleThreshold: 60 * 1024
 	}
 };
 
