@@ -13,6 +13,7 @@
 	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
 	import { page } from '$app/stores';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import ProgressBar from '$lib/components/ProgressBar.svelte';
 
 	export { classes as class };
 	let classes = '';
@@ -151,19 +152,6 @@
 	const isBlogAndActive = (section: Section) =>
 		$page.routeId?.startsWith('blog') &&
 		($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href);
-
-	const waitTimeBeforeAnimation = 250;
-	let loadingNewPage = false;
-	let loadingTimeout: NodeJS.Timeout;
-	beforeNavigate(() => {
-		loadingTimeout = setTimeout(() => {
-			loadingNewPage = true;
-		}, waitTimeBeforeAnimation);
-	});
-	afterNavigate(() => {
-		clearTimeout(loadingTimeout);
-		loadingNewPage = false;
-	});
 </script>
 
 <svelte:window on:scroll={handleScroll} />
@@ -172,14 +160,7 @@
 		? 'text-c-secondary'
 		: 'text-c-primary'} font-filson-pro w-full flex justify-center fixed top-0 left-0 right-0 z-50 {classes}"
 >
-	{#if loadingNewPage}
-		<div
-			class="absolute top-0 origin-left w-full h-3px {notAtTheTop
-				? 'bg-c-secondary'
-				: 'bg-c-primary'} z-10
-		 	pointer-events-none {loadingNewPage ? 'animate-navbar-loading' : ''}"
-		/>
-	{/if}
+	<ProgressBar {notAtTheTop} />
 	<div
 		class="{notAtTheTop
 			? 'translate-0'
