@@ -1,30 +1,13 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
-	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
 	import { onMount } from 'svelte';
-
-	let lastTouchTime = 0;
-	function handleTouch() {
-		lastTouchTime = Date.now();
-		if (!$isTouchscreen) {
-			$isTouchscreen = true;
-		}
-	}
-	async function disableTouch() {
-		if (Date.now() - lastTouchTime < 1000) {
-			return;
-		} else if ($isTouchscreen) {
-			$isTouchscreen = false;
-		}
-	}
 
 	onMount(() => {
 		document.body.style.backgroundColor = 'rgb(var(--c-secondary))';
 	});
 </script>
 
-<svelte:window on:touchstart={handleTouch} on:mousemove={disableTouch} />
 <svelte:head>
 	<link
 		rel="preload"
