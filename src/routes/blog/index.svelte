@@ -54,7 +54,6 @@
 				meta: data.meta,
 				posts: [...posts.posts, ...editedPosts]
 			};
-			console.log(posts.meta.pagination.next);
 			if (posts.meta.pagination.next === null || posts.meta.pagination.next === undefined) {
 				hasMoreToLoad = false;
 				window.plausible('Blog | Loaded More Articles', {
