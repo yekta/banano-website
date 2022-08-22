@@ -3,7 +3,7 @@ import axiosRetry from 'axios-retry';
 import 'dotenv/config';
 
 axiosRetry(axios, {
-	retries: 5,
+	retries: 10,
 	retryDelay: (retryCount) => {
 		return retryCount * 500;
 	}
