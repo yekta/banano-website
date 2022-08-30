@@ -4,6 +4,30 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### BANANO Monthly Update #52 (August 2022)
+
+#### 2022-08-30
+
+Here's a ripe Monthly Update summarizing all important happenings in the BANANO ecosystem in July 2022. [Banano Blog](https://banano.cc/blog/banano-monthly-update-52-august-2022). [Medium Article](https://medium.com/banano/banano-monthly-update-52-august-2022-9925be64497b).
+
+### Announcing BoomPoW v2 - The Next Generation of BANANO's Distributed Proof of Work System
+
+#### 2022-08-11
+
+Announcing BoomPoW v2, a complete rewrite and redesign of the original BoomPoW protocol. [Banano Blog](https://banano.cc/blog/announcing-boompow-v2-the-next-generation-of-bananos-distributed-proof-of-work-system). [Medium Article](https://medium.com/banano/announcing-boompow-v2-the-next-generation-of-bananos-distributed-proof-of-work-system-ecc7f6d88c26).
+
+### Banano is being listed on its first regulated exchange: XGo!
+
+#### 2022-07-25
+
+We are incredibly excited to announce that BANANO is being listed on our first regulated exchange, with monKeys having increased trading pair options, fiat on/off ramps, staking and lots more! [Banano Blog](https://banano.cc/blog/banano-is-being-listed-on-xgo). [Medium Article](https://medium.com/banano/banano-is-being-listed-on-its-first-regulated-exchange-xgo-3f053c63d086).
+
+### Ready for Round 2? Announcing Booster 2 - Banano Hackathon Competition
+
+#### 2022-07-24
+
+Announcing Booster 2, a 6-week hackathon for creating and maintaining projects within the BANANO ecosystem. With 500K BAN in prizes - show us what you got! [Banano Blog](https://banano.cc/blog/booster2-banano-hackathon). [Medium Article](https://medium.com/banano/ready-for-round-2-booster-2-banano-hackathon-competition-cc507195551b).
+
 ### Wrapped Banano (wBAN) Update: Gasless Wraps/Swaps & Translations
 
 #### 2022-07-11
