@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Kalium APIs & Backend Rebuilt From the Ground Up
+
+#### 2022-09-01
+
+Kalium, BANANO's official mobile wallet, turned 4 years old last month. Today we are announcing the third generation of the Kalium APIs and Backend. [Banano Blog](https://banano.cc/blog/kalium-apis-backend-rebuilt-from-the-ground-up). [Medium Article](https://medium.com/banano/kalium-apis-backend-rebuilt-from-the-ground-up-4296b0696c4b).
+
 ### BANANO Monthly Update #52 (August 2022)
 
 #### 2022-08-30
