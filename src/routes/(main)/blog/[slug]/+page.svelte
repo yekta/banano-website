@@ -91,34 +91,6 @@
 	}}
 />
 <svelte:head>
-	<link
-		rel="preload"
-		href="/fonts/lora/lora-400.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/fonts/lora/lora-700.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/fonts/lora/lora-400-italic.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/fonts/lora/lora-700-italic.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
 	<style>
 		@font-face {
 			font-family: 'lora';

@@ -7,34 +7,6 @@
 </script>
 
 <svelte:head>
-	<link
-		rel="preload"
-		href="/fonts/lm-roman-10/lm-roman-10-400.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/fonts/lm-roman-10/lm-roman-10-700.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/fonts/lm-roman-10/lm-roman-10-400-italic.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/fonts/lm-roman-10/lm-roman-10-700-italic.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
 	<style>
 		@font-face {
 			font-family: 'lm-roman-10';
