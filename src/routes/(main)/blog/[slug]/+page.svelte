@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '$lib/css/blog.css';
-	import type { IBlogPost, IBlogPostShallow } from '$lib/ts/interfaces/Blog';
+	import type { IBlogPost } from '$lib/ts/interfaces/Blog';
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
