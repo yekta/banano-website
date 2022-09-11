@@ -1,4 +1,4 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import { redirect, type RequestHandler } from '@sveltejs/kit';
 import { createClient, type PostgrestResponse } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
@@ -10,7 +10,7 @@ const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
 const tableName = 'xgo-ref-logs';
 const refLink = 'https://xgo.com/referral/658ab71c1ac86008';
 
-export const GET: RequestHandler = async ({ params, clientAddress, request }) => {
+export const GET: RequestHandler = async ({ params, getClientAddress, request }) => {
 	const supabase = createClient(
 		'https://lmtpfftjdzugvfawylzg.supabase.co',
 		// @ts-ignore
@@ -19,6 +19,7 @@ export const GET: RequestHandler = async ({ params, clientAddress, request }) =>
 			fetch: (...args) => fetch(...args)
 		}
 	);
+	const clientAddress = getClientAddress();
 	const { headers } = request;
 	const userAgent = headers.get('User-Agent');
 	const deviceInfo = getDeviceInfo(userAgent);
@@ -61,12 +62,7 @@ export const GET: RequestHandler = async ({ params, clientAddress, request }) =>
 	} catch (error) {
 		console.log(error);
 	}
-	return {
-		status: 302,
-		headers: {
-			Location: refLink
-		}
-	};
+	throw redirect(302, refLink);
 };
 
 function getDiscordWebhookBody(

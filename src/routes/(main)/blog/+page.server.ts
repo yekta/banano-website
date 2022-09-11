@@ -5,9 +5,9 @@ import {
 	utilsBlogApiUrl
 } from '$lib/ts/constants/blog';
 import type { ISearchResult } from '$lib/ts/interfaces/Blog';
-import type { RequestHandler } from '@sveltejs/kit';
+import { error, type ServerLoad } from '@sveltejs/kit';
 
-export const GET: RequestHandler = async ({ params }) => {
+export const load: ServerLoad = async ({ params }) => {
 	try {
 		const urlPosts = `${utilsBlogApiUrl}/posts?key=${blogApiKey}&fields=${shallowPostFields.join(
 			','
@@ -35,21 +35,12 @@ export const GET: RequestHandler = async ({ params }) => {
 		let posts = resPostsJson;
 
 		if (resPostsJson && resPostsJson.posts.length > 0) {
-			return {
-				status: 200,
-				body: { initialPosts: posts as any, searchResult: searchResult as any }
-			};
+			return { initialPosts: posts, searchResult: searchResult };
 		} else {
-			return {
-				status: 404,
-				body: { error: 'Posts not found' }
-			};
+			throw error(404, 'Posts not found');
 		}
-	} catch (error) {
-		console.log(error);
-		return {
-			status: 404,
-			body: { error: String(error) }
-		};
+	} catch (err) {
+		console.log(err);
+		throw error(404, 'Posts not found');
 	}
 };

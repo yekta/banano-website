@@ -175,7 +175,7 @@
 		<a
 			aria-label="Logo Link to Homescreen"
 			href={$page.routeId?.startsWith('blog') ? '/blog' : '/'}
-			sveltekit:prefetch
+			data-sveltekit-prefetch
 			class="mr-4 md:mr-12 py-3 group rounded-lg relative z-0 h-full flex flex-row items-center"
 		>
 			<div class="pt-2 pb-2 md:pb-2.5 px-1">
@@ -196,7 +196,7 @@
 			<div class="hidden lg:flex justify-end mx-1.5">
 				{#each $page.routeId?.startsWith('blog') ? blogSections : sections as section}
 					<a
-						sveltekit:prefetch
+						data-sveltekit-prefetch
 						href={section.href}
 						class="{section.classes !== undefined
 							? section.classes
@@ -290,7 +290,7 @@
 				</div>
 				{#each $page.routeId?.startsWith('blog') ? blogSections : sections as section}
 					<a
-						sveltekit:prefetch
+						data-sveltekit-prefetch
 						on:click={closeMenu}
 						href={section.href}
 						class="flex items-center text-lg w-full max-w-full px-6 py-3 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg

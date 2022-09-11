@@ -67,7 +67,7 @@
 	};
 
 	afterNavigate((navigaton) => {
-		previousPage = navigaton?.from?.pathname;
+		previousPage = navigaton?.from?.url.pathname;
 	});
 </script>
 

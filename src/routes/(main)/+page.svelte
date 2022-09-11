@@ -26,13 +26,17 @@
 	import { canonicalUrl } from '$lib/ts/constants/canonical';
 	import BusinessContact from '$lib/components/sections/BusinessContact.svelte';
 
-	export let faq: IFaq[];
-	export let testimonials: string[];
-	export let team: ITeamMember[];
-	export let communityProjects: ICommunityProject[];
-	export let announcements: IAnnouncement[];
-	export let roadmap: IRoadmapItem[];
-	export let faucets: IFaucet[];
+	export let data: {
+		faq: IFaq[];
+		team: ITeamMember[];
+		communityProjects: ICommunityProject[];
+		announcements: IAnnouncement[];
+		roadmap: IRoadmapItem[];
+		faucets: IFaucet[];
+		testimonials: string[];
+	};
+
+	const { faq, team, communityProjects, announcements, roadmap, faucets, testimonials } = data;
 
 	const description =
 		'Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology disrupting the meme economy.';

@@ -18,7 +18,6 @@ const config = {
 	kit: {
 		adapter: process.env.STATIC ? adapterStatic() : adapter(),
 		prerender: {
-			default: true,
 			crawl: true,
 			concurrency: 20,
 			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*'],

@@ -125,7 +125,7 @@
 					<div class="w-full flex flex-col h-auto max-h-[42vh] overflow-auto">
 						{#each searchResult ? searchResult : [] as result}
 							<a
-								sveltekit:prefetch
+								data-sveltekit-prefetch
 								href="/blog/{result.document.slug}"
 								on:click={closeSearchBarResults}
 								class="w-full p-3 md:p-4 hover:bg-c-secondary/20 focus:bg-c-secondary/20 transition group flex items-center"

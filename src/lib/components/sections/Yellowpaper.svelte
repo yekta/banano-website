@@ -14,7 +14,7 @@
 				class="mt-6"
 				padding="w-full max-w-[20rem] py-3.5 px-6"
 				href="/yellowpaper"
-				sveltekit:prefetch
+				data-sveltekit-prefetch
 			>
 				Check out Yellowpaper™
 			</Button>

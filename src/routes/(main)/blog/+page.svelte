@@ -18,8 +18,13 @@
 	import { tick } from 'svelte';
 	import BlogSearchBar from '$lib/components/BlogSearchBar.svelte';
 
-	export let initialPosts: IBlogPostsShallow;
-	export let searchResult: ISearchResult[] = [];
+	export let data: {
+		initialPosts: IBlogPostsShallow;
+		searchResult: ISearchResult[];
+		error: string | undefined;
+	};
+
+	const { initialPosts, searchResult, error } = data;
 
 	let posts = initialPosts;
 	let isLoadingMore = false;

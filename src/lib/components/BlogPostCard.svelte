@@ -10,7 +10,7 @@
 
 <a
 	href="/blog/{post.slug}"
-	sveltekit:prefetch
+	data-sveltekit-prefetch
 	class="w-full flex flex-col transition shadow-blog-post shadow-c-on-bg/20 
 	 rounded-2xl overflow-hidden relative z-10 group p-1.5 pb-5 {$isTouchscreen
 		? ''

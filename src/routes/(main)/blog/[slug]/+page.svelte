@@ -10,12 +10,16 @@
 	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 	import { getSignedProxyUrl } from '$lib/ts/helpers/imgproxy';
 	import { excerptLength } from '$lib/ts/constants/blog';
 
-	export let post: IBlogPost;
-	export let hasTwitterEmbed = false;
+	export let data: {
+		post: IBlogPost;
+		hasTwitterEmbed: boolean;
+	};
+
+	const { post, hasTwitterEmbed } = data;
 
 	$: title = `${post.title} | Blog`;
 	$: description = `${post.custom_excerpt ?? post.excerpt.slice(0, excerptLength) + '...'}`;

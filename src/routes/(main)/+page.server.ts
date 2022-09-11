@@ -1,4 +1,4 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import type { ServerLoad } from '@sveltejs/kit';
 import faqMd from '/content/faq.md';
 import teamMd from '/content/team.md';
 import faucetsMd from '/content/faucets.md';
@@ -10,7 +10,7 @@ import { parse } from 'node-html-parser';
 import type { HTMLElement as HTMLElementP } from 'node-html-parser';
 import { mdParser } from '$lib/ts/helpers/mdParser';
 
-export const GET: RequestHandler = async (event) => {
+export const load: ServerLoad = async (event) => {
 	let testimonials = mdParser(testimonialsMd, 'h3', []).map((r) => r[0]);
 
 	let faq = mdParser(faqMd, 'h3', ['p']).map((r) => ({
@@ -60,15 +60,12 @@ export const GET: RequestHandler = async (event) => {
 		.reverse();
 
 	return {
-		status: 200,
-		body: {
-			faq,
-			testimonials,
-			faucets,
-			team,
-			communityProjects,
-			announcements,
-			roadmap
-		}
+		faq,
+		testimonials,
+		faucets,
+		team,
+		communityProjects,
+		announcements,
+		roadmap
 	};
 };
