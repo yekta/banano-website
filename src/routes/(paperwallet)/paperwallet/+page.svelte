@@ -7,7 +7,6 @@
 	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
 	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
 	import Dropdown from '$lib/components/Dropdown.svelte';
-	import bananojs from '@bananocoin/bananojs';
 	import QR from 'svelte-qr';
 	import IconCopy from '$lib/components/icons/IconCopy.svelte';
 	import IconMorpher from '$lib/components/IconMorpher.svelte';
@@ -16,6 +15,7 @@
 	import { onMount, tick } from 'svelte';
 	import IconLoading from '$lib/components/icons/IconLoading.svelte';
 	import { copy } from 'svelte-copy';
+	import { bytesToHex } from '$lib/ts/helpers/banano';
 
 	const title = 'Paper Wallet | Banano';
 	const description = 'Create Banano paper wallets for your family, friends or strangers.';
@@ -27,6 +27,8 @@
 
 	const hightlightChCountStart = 10;
 	const hightlightChCountEnd = 5;
+
+	let bananojs: any;
 
 	interface IPaperWallet {
 		name: string;
@@ -117,12 +119,6 @@
 		const address: string = bananojs.getBananoAccount(publicKey);
 		return { seed, address };
 	}
-	// a function to conver uint8 array to hex string
-	function bytesToHex(bytes: Uint8Array) {
-		return Array.from(bytes)
-			.map((b) => b.toString(16).padStart(2, '0'))
-			.join('');
-	}
 
 	let isPrinting = false;
 	let shouldRenderPrinting = false;
@@ -152,7 +148,8 @@
 		}, 1000);
 	};
 
-	onMount(() => {
+	onMount(async () => {
+		bananojs = (await import('@bananocoin/bananojs')).default;
 		window.addEventListener('afterprint', (event) => {
 			shouldRenderPrinting = false;
 			isPrinting = false;

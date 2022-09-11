@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { genAddress, isAddress } from '$lib/ts/helpers/banano';
+	import { bytesToHex } from '$lib/ts/helpers/banano';
+
 	import {
 		monkeyLoadingIn,
 		monkeyContainerIn,
@@ -10,6 +11,7 @@
 		againIn,
 		againOut
 	} from '$lib/ts/transitions';
+	import { onMount } from 'svelte';
 	import Button from './Button.svelte';
 
 	type TMonkeyLoadState = 'idle' | 'loading' | 'loaded' | 'fullyReady' | 'error';
@@ -20,6 +22,8 @@
 	let monkeySvg: string | undefined;
 	let monkeyLoadState: TMonkeyLoadState = 'idle';
 	let randomizedAddresses: string[] = [];
+	let isAddress: (address: string) => boolean;
+	let genAddress: () => Promise<string>;
 
 	async function getMonkey(address: string) {
 		try {
@@ -55,11 +59,11 @@
 			inputError = true;
 		}
 	}
-	function generateRandomMonkey() {
+	async function generateRandomMonkey() {
 		window.plausible('MonKey Generator Used', {
 			props: { Address: 'Random' }
 		});
-		let address = genAddress();
+		let address = await genAddress();
 		randomizedAddresses.push(address);
 		generateMonkey(address);
 		setTimeout(() => {
@@ -77,6 +81,21 @@
 			inputError = false;
 		}
 	}
+
+	onMount(async () => {
+		let bananojs = (await import('@bananocoin/bananojs')).default;
+		let { getBananoAccountValidationInfo } = bananojs;
+		isAddress = (str) => getBananoAccountValidationInfo(str).valid;
+		genAddress = async () => {
+			let bytes = new Uint8Array(32);
+			window.crypto.getRandomValues(bytes);
+			const seed = bytesToHex(bytes).toUpperCase();
+			const privateKey = bananojs.getPrivateKey(seed, 0);
+			const publicKey = await bananojs.getPublicKey(privateKey);
+			const address: string = bananojs.getBananoAccount(publicKey);
+			return address;
+		};
+	});
 </script>
 
 <div class="relative w-full max-w-[32rem] p-2">

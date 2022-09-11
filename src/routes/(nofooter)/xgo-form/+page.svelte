@@ -5,7 +5,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import type { TFormQuestion, TFormQuestionSubmitResult } from '$lib/ts/types/TForm';
 	import Form from '$lib/components/Form.svelte';
-	import { isAddress } from '$lib/ts/helpers/banano';
+	import { onMount } from 'svelte';
 
 	const title = 'XGo Form | Banano';
 	const description = 'Form for XGo.';
@@ -13,6 +13,7 @@
 	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}.jpg`;
 
 	let innerHeight: number;
+	let isAddress: (address: string) => boolean;
 
 	let questions: TFormQuestion[] = [
 		{
@@ -55,6 +56,11 @@
 		};
 		return ret;
 	}
+
+	onMount(async () => {
+		let { getBananoAccountValidationInfo } = await import('@bananocoin/bananojs');
+		isAddress = (str) => getBananoAccountValidationInfo(str).valid;
+	});
 </script>
 
 <MetaTags

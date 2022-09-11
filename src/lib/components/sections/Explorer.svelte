@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { bananoServices } from '$lib/ts/constants/bananoServices';
-
+	import { isHash } from '$lib/ts/helpers/banano';
 	import { inview } from 'svelte-inview';
 	import Button from '../Button.svelte';
 
 	let inputError = false;
-	let isAddressAsync = (s: string) => true;
-	let isHashAsync = (s: string) => true;
+	let isAddress: (s: string) => boolean;
 	const defaultAddress = 'ban_1bananobh5rat99qfgt1ptpieie5swmoth87thi74qgbfrij7dcgjiij94xr';
 	let inputExplorer = defaultAddress;
 
@@ -15,7 +14,7 @@
 			inputExplorer !== '' &&
 			inputExplorer !== null &&
 			inputExplorer !== undefined &&
-			(isAddressAsync(inputExplorer) || isHashAsync(inputExplorer))
+			(isAddress(inputExplorer) || isHash(inputExplorer))
 		) {
 			window.plausible('Creeper Used', {
 				props: { Address: inputExplorer === defaultAddress ? 'Default' : 'Custom' }
@@ -39,9 +38,8 @@
 	};
 
 	const onEnter = async () => {
-		let { isAddress, isHash } = await import('../../ts/helpers/banano');
-		isAddressAsync = isAddress;
-		isHashAsync = isHash;
+		let { getBananoAccountValidationInfo } = await import('@bananocoin/bananojs');
+		isAddress = (str) => getBananoAccountValidationInfo(str).valid;
 	};
 </script>
 

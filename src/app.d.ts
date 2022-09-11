@@ -16,6 +16,7 @@ declare module '*.md' {
 declare module '@bananocoin/bananojs';
 declare module 'svelte-qr';
 declare module '@tryghost/admin-api';
+declare module '@sveltejs/svelte-virtual-list';
 
 declare namespace svelte.JSX {
 	interface HTMLAttributes<T> {
