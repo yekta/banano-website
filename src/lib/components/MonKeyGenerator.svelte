@@ -22,8 +22,8 @@
 	let monkeySvg: string | undefined;
 	let monkeyLoadState: TMonkeyLoadState = 'idle';
 	let randomizedAddresses: string[] = [];
-	let isAddress: (address: string) => boolean;
-	let genAddress: () => Promise<string>;
+	let isAddress: (a: string) => boolean = (a: string) => true;
+	let genAddress: () => Promise<string> = async () => defaultAddress;
 
 	async function getMonkey(address: string) {
 		try {

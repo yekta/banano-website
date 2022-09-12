@@ -5,7 +5,7 @@
 	import Button from '../Button.svelte';
 
 	let inputError = false;
-	let isAddress: (s: string) => boolean;
+	let isAddress: (a: string) => boolean = (a: string) => true;
 	const defaultAddress = 'ban_1bananobh5rat99qfgt1ptpieie5swmoth87thi74qgbfrij7dcgjiij94xr';
 	let inputExplorer = defaultAddress;
 
