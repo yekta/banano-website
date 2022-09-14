@@ -171,7 +171,7 @@ Banano’s 3rd birthday! 973M BAN burned! Listed on CoinEx with 2M BAN airdrop. 
 
 ### May
 
-Wrapped Banano (wBAN) introduced. r/Banano on Reddit front page. Ranked #1 on Folding@Home.
+Wrapped Banano (wBAN) introduced. r/Banano on Reddit front page. Ranked #1 on Folding@Home. Booster hackathon announced.
 
 ### June
 
@@ -226,3 +226,15 @@ Booster results announced. Major website update. Banano on DeBank.
 ### June
 
 wBAN 1 year anniversary. Banano airdrops on Reddit.
+
+### July
+
+Booster 2 launched. Gasless wBAN wraps and swaps. Banano listed on XGo.
+
+### August
+
+BoomPoW v2 launched.
+
+### September
+
+Kalium APIs & backend rebuilt from the ground up.
