@@ -1,8 +1,9 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import jwt from 'jsonwebtoken';
 import { FormData } from 'formdata-node';
+import { GHOST_ADMIN_KEY } from '$env/static/private';
 
-const key = String(import.meta.env.VITE_GHOST_ADMIN_KEY);
+const key = GHOST_ADMIN_KEY;
 const [id, secret] = key.split(':');
 
 // Create the token (including decoding secret)

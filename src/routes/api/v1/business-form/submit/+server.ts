@@ -1,3 +1,4 @@
+import { DISCORD_BUSINESS_FORM_WEBHOOK_URL, SUPABASE_ADMIN_KEY } from '$env/static/private';
 import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
 import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
 import { isEmail } from '$lib/ts/helpers/isEmail';
@@ -7,7 +8,7 @@ import { error, type RequestHandler } from '@sveltejs/kit';
 import bcrypt from 'bcryptjs';
 
 const ipEndpoint = 'https://api.country.is';
-const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_BUSINESS_FORM_WEBHOOK_URL);
+const discordWebhookUrl = DISCORD_BUSINESS_FORM_WEBHOOK_URL;
 const tableName = 'business-form-responses';
 
 export const POST: RequestHandler = async ({ request, getClientAddress }) => {
@@ -21,14 +22,9 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 		isEmailValid(businessEmail) &&
 		isMessageValid(message)
 	) {
-		const supabase = createClient(
-			'https://lmtpfftjdzugvfawylzg.supabase.co',
-			// @ts-ignore
-			String(import.meta.env.VITE_SUPABASE_ADMIN_KEY),
-			{
-				fetch: (...args) => fetch(...args)
-			}
-		);
+		const supabase = createClient('https://lmtpfftjdzugvfawylzg.supabase.co', SUPABASE_ADMIN_KEY, {
+			fetch: (...args) => fetch(...args)
+		});
 		const { headers } = request;
 		const userAgent = headers.get('User-Agent');
 		const deviceInfo = getDeviceInfo(userAgent);

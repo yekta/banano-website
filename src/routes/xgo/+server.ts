@@ -4,21 +4,17 @@ import bcrypt from 'bcryptjs';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
 import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
 import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
+import { DISCORD_B_WEBHOOK_URL, SUPABASE_ADMIN_KEY } from '$env/static/private';
 
 const ipEndpoint = 'https://api.country.is';
-const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
+const discordWebhookUrl = DISCORD_B_WEBHOOK_URL;
 const tableName = 'xgo-ref-logs';
 const refLink = 'https://xgo.com/referral/658ab71c1ac86008';
 
 export const GET: RequestHandler = async ({ params, getClientAddress, request }) => {
-	const supabase = createClient(
-		'https://lmtpfftjdzugvfawylzg.supabase.co',
-		// @ts-ignore
-		String(import.meta.env.VITE_SUPABASE_ADMIN_KEY),
-		{
-			fetch: (...args) => fetch(...args)
-		}
-	);
+	const supabase = createClient('https://lmtpfftjdzugvfawylzg.supabase.co', SUPABASE_ADMIN_KEY, {
+		fetch: (...args) => fetch(...args)
+	});
 	const clientAddress = getClientAddress();
 	const { headers } = request;
 	const userAgent = headers.get('User-Agent');

@@ -1,3 +1,4 @@
+import { DISCORD_B_WEBHOOK_URL, SUPABASE_ADMIN_KEY } from '$env/static/private';
 import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
 import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
@@ -6,7 +7,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 import bcrypt from 'bcryptjs';
 
 const ipEndpoint = 'https://api.country.is';
-const discordWebhookUrl = String(import.meta.env.VITE_DISCORD_B_WEBHOOK_URL);
+const discordWebhookUrl = DISCORD_B_WEBHOOK_URL;
 const tableName = 'xgo-form-responses';
 
 export const POST: RequestHandler = async ({ request, getClientAddress }) => {
@@ -14,14 +15,9 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 	const clientAddress = getClientAddress();
 
 	if (xgoId && address && isXgoIdValid(xgoId) && isAddressValid(address)) {
-		const supabase = createClient(
-			'https://lmtpfftjdzugvfawylzg.supabase.co',
-			// @ts-ignore
-			String(import.meta.env.VITE_SUPABASE_ADMIN_KEY),
-			{
-				fetch: (...args) => fetch(...args)
-			}
-		);
+		const supabase = createClient('https://lmtpfftjdzugvfawylzg.supabase.co', SUPABASE_ADMIN_KEY, {
+			fetch: (...args) => fetch(...args)
+		});
 		const { headers } = request;
 		const userAgent = headers.get('User-Agent');
 		const deviceInfo = getDeviceInfo(userAgent);

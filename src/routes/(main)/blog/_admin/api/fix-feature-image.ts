@@ -1,3 +1,4 @@
+import { GHOST_ADMIN_KEY } from '$env/static/private';
 import type { IBlogPost } from '$lib/ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 import GhostAdminAPI from '@tryghost/admin-api';
@@ -20,7 +21,7 @@ export const GET: RequestHandler = async ({ params, request }) => {
 
 const api = new GhostAdminAPI({
 	url: 'https://ghost.banano.cc',
-	key: String(import.meta.env.VITE_GHOST_ADMIN_KEY),
+	key: GHOST_ADMIN_KEY,
 	version: 'v5.2'
 });
 

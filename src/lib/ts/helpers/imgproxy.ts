@@ -1,8 +1,6 @@
 import { Buffer } from 'buffer';
 
 const imgproxyUrl = 'https://imgproxy.banano.cc';
-/* const IMGPROXY_KEY = String(import.meta.env.VITE_IMGPROXY_KEY);
-const IMGPROXY_SALT = String(import.meta.env.VITE_IMGPROXY_SALT); */
 
 export function getSignedProxyUrl(url: string, width = 1024) {
 	const urlSafeBase64 = (string: string | Buffer) => {

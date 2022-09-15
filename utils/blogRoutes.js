@@ -11,7 +11,7 @@ axiosRetry(axios, {
 //
 
 const utilsBlogApiUrl = 'https://utils.banano.cc/blog';
-const blogApiKey = process.env.VITE_GHOST_KEY;
+const blogApiKey = process.env.PUBLIC_GHOST_KEY;
 const shallowPostFields = ['slug'];
 const limit = 2000;
 const blogDirectory = '/blog';

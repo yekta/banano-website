@@ -1,3 +1,4 @@
+import { GHOST_ADMIN_KEY } from '$env/static/private';
 import GhostAdminAPI from '@tryghost/admin-api';
 import probe from 'probe-image-size';
 
@@ -5,7 +6,7 @@ const postGetCount = 10;
 
 const api = new GhostAdminAPI({
 	url: 'https://ghost.banano.cc',
-	key: String(import.meta.env.VITE_GHOST_ADMIN_KEY),
+	key: GHOST_ADMIN_KEY,
 	version: 'v5.2'
 });
 

@@ -1,3 +1,4 @@
+import { PUBLIC_GHOST_KEY } from '$env/static/public';
 import { utilsBlogApiUrl } from '$lib/ts/constants/blog';
 import { canonicalUrl } from '$lib/ts/constants/canonical';
 import type { RequestHandler } from '@sveltejs/kit';
@@ -65,7 +66,7 @@ async function getBlogRoutesArray() {
 }
 
 const blogApiUrl = 'https://ghost.banano.cc/ghost/api/content';
-const blogApiKey = String(import.meta.env.VITE_GHOST_KEY);
+const blogApiKey = PUBLIC_GHOST_KEY;
 const shallowPostFields = ['slug', 'updated_at'];
 const limit = 1000;
 
