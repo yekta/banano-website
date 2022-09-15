@@ -1,17 +1,16 @@
-import { redirect, type RequestHandler } from '@sveltejs/kit';
 import { createClient, type PostgrestResponse } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
 import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
 import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
 import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
 import { DISCORD_B_WEBHOOK_URL, SUPABASE_ADMIN_KEY } from '$env/static/private';
+import type { ServerLoad } from '@sveltejs/kit';
 
 const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = DISCORD_B_WEBHOOK_URL;
 const tableName = 'xgo-ref-logs';
-const refLink = 'https://xgo.com/referral/658ab71c1ac86008';
 
-export const GET: RequestHandler = async ({ params, getClientAddress, request }) => {
+export const load: ServerLoad = async ({ params, getClientAddress, request }) => {
 	const supabase = createClient('https://lmtpfftjdzugvfawylzg.supabase.co', SUPABASE_ADMIN_KEY, {
 		fetch: (...args) => fetch(...args)
 	});
@@ -58,7 +57,9 @@ export const GET: RequestHandler = async ({ params, getClientAddress, request })
 	} catch (error) {
 		console.log(error);
 	}
-	throw redirect(302, refLink);
+	return {
+		data: 'ok'
+	};
 };
 
 function getDiscordWebhookBody(
