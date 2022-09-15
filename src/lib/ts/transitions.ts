@@ -38,7 +38,14 @@ export const expandCollapse = (node: Node, options: IExpandCollapseOptions) => {
 	};
 };
 
-export const slideAcrossScreen = (node: Node, { delay = 0, easing = linear }) => {
+interface TSlideAcrossScreenOptions {
+	delay?: number;
+	easing?: (t: number) => number;
+}
+
+export const slideAcrossScreen = (node: Node, options?: TSlideAcrossScreenOptions) => {
+	const delay = options?.delay ?? 0;
+	const easing = options?.easing ?? linear;
 	let width = Number(getComputedStyle(node as HTMLElement).width.split('px')[0]);
 	let windowWidth = window.innerWidth;
 	let duration = ((windowWidth + 2 * width) / width) * 450;
