@@ -6,6 +6,8 @@ import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
 import { DISCORD_B_WEBHOOK_URL, SUPABASE_ADMIN_KEY } from '$env/static/private';
 import type { ServerLoad } from '@sveltejs/kit';
 
+export const prerender = false;
+
 const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = DISCORD_B_WEBHOOK_URL;
 const tableName = 'xgo-ref-logs';

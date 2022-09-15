@@ -7,6 +7,8 @@
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 
+	export const prerender = false;
+
 	const refLink = 'https://xgo.com/referral/658ab71c1ac86008';
 
 	const title = 'Banano + XGo';
