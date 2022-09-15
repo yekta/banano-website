@@ -67,7 +67,7 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 			console.log(webhoookRes);
 			if (data && !error) {
 				console.log('\nData: ', data, '\nError:', error);
-				return new Response(JSON.stringify({ success: true }), {
+				return new Response(JSON.stringify({ data: 'Successful' }), {
 					status: 200,
 					headers: {
 						'Content-Type': 'application/json'

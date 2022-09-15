@@ -1,5 +1,4 @@
 <script lang="ts">
-	import IconEnter from '$lib/components/icons/IconEnter.svelte';
 	import { onMount } from 'svelte';
 	import IconChevron from '$lib/components/icons/IconChevron.svelte';
 	import Button from '$lib/components/Button.svelte';
@@ -192,7 +191,9 @@
 						on:click={() => (q.inputError = false)}
 						class="w-full rounded-none mt-4 px-2 py-3.5 text-lg md:text-xl bg-transparent
               shadow-input focus:shadow-input-active {q.inputError ||
-						(q.lengthLimit && q.inputElement?.value?.length > q.lengthLimit)
+						(q.lengthLimit &&
+							q.inputElement?.value &&
+							q.inputElement?.value?.length > q.lengthLimit)
 							? 'focus:shadow-c-danger text-c-danger shadow-c-danger/40 hover:shadow-c-danger/60 placeholder:hover:text-c-danger/60 placeholder:text-c-danger/40'
 							: 'focus:shadow-c-secondary text-c-secondary shadow-c-secondary/40 hover:shadow-c-secondary/60 hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 placeholder:text-c-secondary/40'} placeholder:transition transition"
 					/>
@@ -216,7 +217,9 @@
 						on:keypress={(e) => (e.key === 'Enter' ? nextOrSubmit() : null)}
 						class="w-full rounded-none mt-4 px-2 py-3.5 text-xl md:text-2xl bg-transparent
               shadow-input focus:shadow-input-active {q.inputError ||
-						(q.lengthLimit && q.inputElement?.value?.length > q.lengthLimit)
+						(q.lengthLimit &&
+							q.inputElement?.value &&
+							q.inputElement?.value?.length > q.lengthLimit)
 							? 'focus:shadow-c-danger text-c-danger shadow-c-danger/40 hover:shadow-c-danger/60 placeholder:hover:text-c-danger/60 placeholder:text-c-danger/40'
 							: 'focus:shadow-c-secondary text-c-secondary shadow-c-secondary/40 hover:shadow-c-secondary/60 hover:placeholder:text-c-secondary/60 focus:placeholder:text-c-secondary/60 placeholder:text-c-secondary/40'} placeholder:transition transition"
 					/>
