@@ -39,8 +39,8 @@
 	const { faq, team, communityProjects, announcements, roadmap, faucets, testimonials } = data;
 
 	const description =
-		'Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology disrupting the meme economy.';
-	const title = "Banano | Don't let your memes be dreams";
+		"Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology disrupting the meme economy. Don't let your memes be dreams.";
+	const title = 'Banano';
 	const canonical = canonicalUrl;
 	const imageUrl = `${canonicalUrl}/previews/home.jpg`;
 </script>
