@@ -12,7 +12,7 @@ export function getSignedProxyUrl(url: string, width = 1024) {
 	};
 
 	const resizing_type = 'fit';
-	const extension = url.split('.')[url.split('.').length - 1].toLowerCase();
+	const extension = url.split('.').pop()?.toLowerCase();
 	const encoded_url = urlSafeBase64(url);
 	const path = `/insecure/rs:${resizing_type}:${width}:${width}/${encoded_url}.${extension}`;
 	return imgproxyUrl + path;
