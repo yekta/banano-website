@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### BANANO Hackathon - Booster 2 Winners Announcement
+
+#### 2022-09-15
+
+With 20 new projects and 12 existing projects submitted, our panel of judges have deliberated and the top-ranked projects of this latest BANANO Hackathon are announced here: [Banano Blog](https://banano.cc/blog/booster2-winners-announcement). [Medium Article](https://medium.com/banano/booster-2-winners-announcement-a8d9b31c9a5).
+
 ### Kalium APIs & Backend Rebuilt From the Ground Up
 
 #### 2022-09-01
