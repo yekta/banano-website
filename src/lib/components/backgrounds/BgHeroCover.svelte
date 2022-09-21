@@ -91,4 +91,8 @@
 			/></g
 		></svg
 	>
+	<div
+		style="background:linear-gradient(0deg, rgb(17,51,13, 0) 50%, rgba(17,51,13, 0.3) 100%);"
+		class="w-full h-full absolute left-0 top-0"
+	/>
 </div>
