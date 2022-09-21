@@ -16,8 +16,8 @@
 </script>
 
 <div class="w-full min-h-screen flex flex-col justify-center items-center text-c-bg relative">
-	<Navbar />
 	<BgHeroCover />
+	<Navbar />
 	<div class="flex-1 w-full flex flex-col items-center justify-center">
 		<div
 			class="container-b max-w-full flex flex-col items-center self-center pt-32 pb-24 relative z-10 px-5"
