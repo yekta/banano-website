@@ -100,6 +100,7 @@
 	<div class="yellowpaper-container p-2 md:p-5 relative">
 		{#if previousPage !== undefined}
 			<button
+				aria-label="Go Back"
 				on:click={() => history.back()}
 				href={previousPage}
 				class="rounded-full p-2 bg-c-yellowpaper-bg text-c-yellowpaper-document-bg mb-3 md:mb-5 shadow-lg

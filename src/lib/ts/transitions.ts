@@ -22,8 +22,12 @@ interface IExpandCollapseOptions {
 	durationMultiplier?: number;
 }
 
-export const expandCollapse = (node: Node, options: IExpandCollapseOptions) => {
-	let { delay = 0, duration, easing = cubicOut, y, durationMultiplier = 1 } = options;
+export const expandCollapse = (node: Node, options?: IExpandCollapseOptions) => {
+	const delay = options?.delay || 0;
+	const duration = options?.duration;
+	const easing = options?.easing || cubicOut;
+	const y = options?.y;
+	const durationMultiplier = options?.durationMultiplier || 1;
 	let height = Number(getComputedStyle(node as HTMLElement).height.split('px')[0]);
 	const durationCalculated = Math.min(Math.round(height / 2 + 175), 300);
 	return {
@@ -70,7 +74,14 @@ export const sidebar = (node: Node, { delay = 0, duration = 300, easing = cubicO
 	};
 };
 
-export const dropdown = (node: Node, { delay = 0, duration = 300 }) => {
+interface TPropsDelayAndDuration {
+	delay?: number;
+	duration?: number;
+}
+
+export const dropdown = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 300;
 	return {
 		delay,
 		duration,
@@ -84,7 +95,9 @@ export const dropdown = (node: Node, { delay = 0, duration = 300 }) => {
 	};
 };
 
-export const monkeyLoadingIn = (node: Node, { delay = 0, duration = 200 }) => {
+export const monkeyLoadingIn = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 200;
 	return {
 		delay,
 		duration,
@@ -95,7 +108,9 @@ export const monkeyLoadingIn = (node: Node, { delay = 0, duration = 200 }) => {
 	};
 };
 
-export const formIn = (node: Node, { delay = 0, duration = 300 }) => {
+export const formIn = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 300;
 	return {
 		delay,
 		duration,
@@ -106,7 +121,9 @@ export const formIn = (node: Node, { delay = 0, duration = 300 }) => {
 	};
 };
 
-export const formOut = (node: Node, { delay = 0, duration = 300 }) => {
+export const formOut = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 300;
 	return {
 		delay,
 		duration,
@@ -117,7 +134,9 @@ export const formOut = (node: Node, { delay = 0, duration = 300 }) => {
 	};
 };
 
-export const curtainIn = (node: Node, { delay = 0, duration = 750 }) => {
+export const curtainIn = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 750;
 	return {
 		delay,
 		duration,
@@ -128,7 +147,9 @@ export const curtainIn = (node: Node, { delay = 0, duration = 750 }) => {
 	};
 };
 
-export const againIn = (node: Node, { delay = 0, duration = 400 }) => {
+export const againIn = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 400;
 	return {
 		delay,
 		duration,
@@ -139,7 +160,9 @@ export const againIn = (node: Node, { delay = 0, duration = 400 }) => {
 	};
 };
 
-export const againOut = (node: Node, { delay = 0, duration = 400 }) => {
+export const againOut = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 400;
 	return {
 		delay,
 		duration,
@@ -150,7 +173,9 @@ export const againOut = (node: Node, { delay = 0, duration = 400 }) => {
 	};
 };
 
-export const monkeyContainerIn = (node: Node, { delay = 0, duration = 700 }) => {
+export const monkeyContainerIn = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 700;
 	return {
 		delay,
 		duration,
@@ -161,7 +186,9 @@ export const monkeyContainerIn = (node: Node, { delay = 0, duration = 700 }) => 
 	};
 };
 
-export const monkeyContainerOut = (node: Node, { delay = 0, duration = 600 }) => {
+export const monkeyContainerOut = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 600;
 	return {
 		delay,
 		duration,
@@ -172,7 +199,9 @@ export const monkeyContainerOut = (node: Node, { delay = 0, duration = 600 }) =>
 	};
 };
 
-export const modalIn = (node: Node, { delay = 0, duration = 200 }) => {
+export const modalIn = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 200;
 	return {
 		delay,
 		duration,
@@ -183,7 +212,9 @@ export const modalIn = (node: Node, { delay = 0, duration = 200 }) => {
 	};
 };
 
-export const modalOut = (node: Node, { delay = 0, duration = 200 }) => {
+export const modalOut = (node: Node, props?: TPropsDelayAndDuration) => {
+	const delay = props?.delay || 0;
+	const duration = props?.duration || 200;
 	return {
 		delay,
 		duration,

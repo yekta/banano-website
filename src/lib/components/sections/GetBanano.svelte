@@ -88,9 +88,9 @@
 						>
 							<h3 class="font-bold text-xl">{faucet.title}</h3>
 							<p class="mt-2 px-2">{faucet.description}</p>
-							<Button class="mt-5 w-full" href={faucet.buttonUrl} target="_blank"
-								>{faucet.buttonName}</Button
-							>
+							<Button class="mt-5 w-full" href={faucet.buttonUrl} target="_blank">
+								{faucet.buttonName}
+							</Button>
 						</div>
 					{/if}
 				{/each}

@@ -102,6 +102,7 @@
 		/>
 		{#if inputValue !== '' && inputValue !== null && inputValue !== undefined}
 			<button
+				aria-label="Clear Search"
 				transition:fly={{ duration: 200, easing: cubicOut, x: 32 }}
 				on:click={closeOnClick}
 				class="absolute h-full rounded-tr-xl w-12 right-0 top-0 p-2 flex justify-center items-center transition 

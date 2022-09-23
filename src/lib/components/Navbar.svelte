@@ -251,7 +251,7 @@
 				</a>
 			</div>
 			<button
-				aria-label="Toggle Menu Button"
+				aria-label="Toggle Menu"
 				on:click={toggleMenu}
 				class="{notAtTheTop
 					? 'text-c-secondary'

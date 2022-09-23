@@ -112,6 +112,7 @@
 				: 'translate-y-20'}"
 		>
 			<Button
+				aria-label="Start Again"
 				disabled={activePageIndex !== questions.length}
 				onClick={repeat}
 				class="px-3 py-2"
@@ -130,6 +131,7 @@
 			: 'translate-0'}"
 	>
 		<Button
+			aria-label="Previous Page"
 			disabled={activePageIndex === 0 ||
 				activePageIndex === questions.length ||
 				submitStatus == 'loading'}
@@ -141,6 +143,7 @@
 			<IconChevron class="transform w-7 h-7 rotate-180" />
 		</Button>
 		<Button
+			aria-label="Next Page"
 			disabled={activePageIndex === questions.length - 1 ||
 				activePageIndex === questions.length ||
 				submitStatus == 'loading'}

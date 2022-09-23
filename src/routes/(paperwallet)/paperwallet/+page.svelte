@@ -291,6 +291,7 @@
 						class="absolute right-0 top-0 mr-2 mt-2 rounded-lg z-10 bg-c-bg shadow-lg shadow-c-on-bg/15"
 					>
 						<button
+							aria-label="Copy Addresses"
 							use:copy={generatedPaperWallets
 								.map((w) => w.address)
 								.reverse()

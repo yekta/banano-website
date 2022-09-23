@@ -109,9 +109,9 @@
 				<p class="text-lg mt-4">
 					Download Kalium Wallet from {isAndroidOpen ? 'Play Store' : 'App Store'}.
 				</p>
-				<Button class="mt-6 w-full max-w-xs" href={bananoWallets.kalium.url} target="_blank"
-					>Download Kalium</Button
-				>
+				<Button class="mt-6 w-full max-w-xs" href={bananoWallets.kalium.url} target="_blank">
+					Download Kalium
+				</Button>
 				<h4 class="text-3xl font-bold mt-20">Step 2</h4>
 				<p class="text-lg mt-4">Open up Kalium and create a wallet. Be sure to backup your seed!</p>
 				<img
