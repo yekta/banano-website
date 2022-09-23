@@ -155,7 +155,9 @@
 			<hr />
 		</div>
 	</div>
-	<div use:inview={inviewOptions} class="w-full" on:enter={onInview} />
+	{#key post.title}
+		<div use:inview={inviewOptions} class="w-full" on:enter={onInview} />
+	{/key}
 </article>
 {#if post.similars?.length > 0}
 	<div class="w-full flex flex-col mt-6 pb-6">
