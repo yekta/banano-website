@@ -7,6 +7,7 @@
 	import BgWaveTop from './backgrounds/BgWaveTop.svelte';
 	import IconSocial from './icons/IconSocial.svelte';
 
+	export let hasBg = true;
 	export { classes as class };
 	let classes = '';
 
@@ -116,12 +117,15 @@
 </script>
 
 <footer
-	class="bg-c-bg text-c-bg font-filson-pro w-full flex flex-row items-start justify-center relative overflow-hidden pt-12 {classes}"
+	class="text-c-bg font-filson-pro w-full flex flex-row items-start justify-center 
+	relative overflow-hidden {classes} {hasBg ? 'bg-c-bg pt-12' : ''}"
 >
 	<div
-		style="background-image:url('/illustrations/backgrounds/bg-footer.svg');"
-		class="w-full bg-c-secondary bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
-			flex flex-col items-center justify-start pt-14 md:pt-16 lg:pt-14 relative"
+		style={hasBg ? "background-image:url('/illustrations/backgrounds/bg-footer.svg')" : ''}
+		class="w-full bg-cover bg-[position:85%_100%] md:bg-[position:10%_100%] lg:bg-[position:50%_100%] 
+			flex flex-col items-center justify-start relative {hasBg
+			? 'bg-c-secondary pt-14 md:pt-16 lg:pt-14'
+			: ''}"
 	>
 		<div
 			class="container-b-small flex flex-row flex-wrap items-start justify-center relative px-6 md:px-10"
@@ -156,5 +160,7 @@
 			<p class="mt-4">Banano © {currentYear}</p>
 		</div>
 	</div>
-	<BgWaveTop />
+	{#if hasBg}
+		<BgWaveTop />
+	{/if}
 </footer>
