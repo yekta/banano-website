@@ -19,7 +19,8 @@
 		hasTwitterEmbed: boolean;
 	};
 
-	const { post, hasTwitterEmbed } = data;
+	$: post = data.post;
+	$: hasTwitterEmbed = data.hasTwitterEmbed;
 
 	$: title = `${post.title} | Blog`;
 	$: description = `${post.custom_excerpt ?? post.excerpt.slice(0, excerptLength) + '...'}`;
@@ -162,9 +163,9 @@
 			<p class="text-3xl font-bold">Read More</p>
 		</div>
 		<div class="container-b flex flex-row flex-wrap justify-center mt-1 md:px-8">
-			{#each post.similars as post (post.slug)}
+			{#each post.similars as p (p.slug)}
 				<div class="w-full md:w-1/2 xl:w-1/3 max-w-md p-3 mt-3 bg-c-bg">
-					<BlogPostCard {post} />
+					<BlogPostCard post={p} />
 				</div>
 			{/each}
 		</div>
