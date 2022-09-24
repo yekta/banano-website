@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { clickoutside } from '$lib/ts/actions/clickoutside';
-	import { typesenseApiKey } from '$lib/ts/constants/blog';
-	import { debounce } from '$lib/ts/helpers/debounce';
-	import { getSpecificWidthSrcFromUrl } from '$lib/ts/helpers/ghost/utils';
-	import type { ISearchResult } from '$lib/ts/interfaces/Blog';
-	import { expandCollapse } from '$lib/ts/transitions';
+	import { clickoutside } from '$ts/actions/clickoutside';
+	import { typesenseApiKey } from '$ts/constants/blog';
+	import { debounce } from '$ts/helpers/debounce';
+	import { getSpecificWidthSrcFromUrl } from '$ts/helpers/ghost/utils';
+	import type { ISearchResult } from '$ts/interfaces/Blog';
+	import { expandCollapse } from '$ts/transitions';
 	import { cubicOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 	import IconClose from './icons/IconClose.svelte';

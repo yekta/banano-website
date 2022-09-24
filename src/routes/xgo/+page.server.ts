@@ -1,8 +1,8 @@
 import { createClient, type PostgrestResponse } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
-import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
-import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
-import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
+import type { TCountryResponse } from '$ts/types/TCountryResponse';
+import { getDeviceInfo } from '$ts/helpers/getDeviceInfo';
+import { getFormattedNow } from '$ts/helpers/getFormattedNow';
 import { DISCORD_B_WEBHOOK_URL, SUPABASE_ADMIN_KEY } from '$env/static/private';
 import type { ServerLoad } from '@sveltejs/kit';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { bytesToHex } from '$lib/ts/helpers/banano';
+	import { bytesToHex } from '$ts/helpers/banano';
 
 	import {
 		monkeyLoadingIn,
@@ -10,7 +10,7 @@
 		curtainIn,
 		againIn,
 		againOut
-	} from '$lib/ts/transitions';
+	} from '$ts/transitions';
 	import { onMount } from 'svelte';
 	import Button from './Button.svelte';
 

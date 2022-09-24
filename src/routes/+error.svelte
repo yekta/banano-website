@@ -3,12 +3,12 @@
 </script>
 
 <script lang="ts">
-	import '$lib/css/main.css';
-	import Button from '$lib/components/Button.svelte';
+	import '$css/main.css';
+	import Button from '$components/Button.svelte';
 	import { onMount } from 'svelte';
-	import Navbar from '$lib/components/Navbar.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import BgHeroCover from '$lib/components/backgrounds/BgHeroCover.svelte';
+	import Navbar from '$components/Navbar.svelte';
+	import Footer from '$components/Footer.svelte';
+	import BgHeroCover from '$components/backgrounds/BgHeroCover.svelte';
 
 	onMount(() => {
 		document.body.style.backgroundColor = 'rgb(var(--c-secondary))';

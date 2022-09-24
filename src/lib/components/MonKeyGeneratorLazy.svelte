@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LazyComponent from '$lib/components/LazyComponent.svelte';
+	import LazyComponent from '$components/LazyComponent.svelte';
 	import MonKeyGeneratorPlaceholder from './MonKeyGeneratorPlaceholder.svelte';
 </script>
 

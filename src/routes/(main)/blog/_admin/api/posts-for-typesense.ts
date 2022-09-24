@@ -1,5 +1,5 @@
-import { blogApiKey, blogApiUrl } from '$lib/ts/constants/blog';
-import type { ITag } from '$lib/ts/interfaces/Blog';
+import { blogApiKey, blogApiUrl } from '$ts/constants/blog';
+import type { ITag } from '$ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 
 const limit = 500;

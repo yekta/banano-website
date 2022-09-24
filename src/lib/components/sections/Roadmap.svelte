@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { IRoadmapItem } from '$lib/ts/interfaces/RoadmapItem';
+	import type { IRoadmapItem } from '$ts/interfaces/RoadmapItem';
 	import MoreIndicator from '../MoreIndicator.svelte';
 
 	export let roadmap: IRoadmapItem[];

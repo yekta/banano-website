@@ -1,6 +1,6 @@
-import { blogApiKey, utilsBlogApiUrl } from '$lib/ts/constants/blog';
-import { cleanHtml } from '$lib/ts/helpers/ghost/ghost';
-import type { IBlogPost } from '$lib/ts/interfaces/Blog';
+import { blogApiKey, utilsBlogApiUrl } from '$ts/constants/blog';
+import { cleanHtml } from '$ts/helpers/ghost/ghost';
+import type { IBlogPost } from '$ts/interfaces/Blog';
 import { error, type ServerLoad } from '@sveltejs/kit';
 
 export const load: ServerLoad = async ({ params }) => {

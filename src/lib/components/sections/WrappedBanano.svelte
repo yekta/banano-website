@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { bananoServices } from '$lib/ts/constants/bananoServices';
+	import { bananoServices } from '$ts/constants/bananoServices';
 
 	import Button from '../Button.svelte';
 </script>

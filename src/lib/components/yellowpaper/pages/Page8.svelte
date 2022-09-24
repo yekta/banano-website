@@ -1,6 +1,6 @@
 <script lang="ts">
-	import MonKeyGeneratorLazy from '$lib/components/MonKeyGeneratorLazy.svelte';
-	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
+	import MonKeyGeneratorLazy from '$components/MonKeyGeneratorLazy.svelte';
+	import PageWrapper from '$components/yellowpaper/PageWrapper.svelte';
 
 	export { classes as class };
 	let classes: string;

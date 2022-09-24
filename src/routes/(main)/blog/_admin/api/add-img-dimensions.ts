@@ -1,4 +1,4 @@
-import { addWidthAndHeightToImages } from '$lib/ts/helpers/ghost/admin';
+import { addWidthAndHeightToImages } from '$ts/helpers/ghost/admin';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async ({ params, request }) => {

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { getSrcAndSrcSetFromUrl } from '$lib/ts/helpers/ghost/utils';
+	import { getSrcAndSrcSetFromUrl } from '$ts/helpers/ghost/utils';
 
-	import { notNull } from '$lib/ts/helpers/notNull';
+	import { notNull } from '$ts/helpers/notNull';
 
-	import type { IBlogPostShallow } from '$lib/ts/interfaces/Blog';
-	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
+	import type { IBlogPostShallow } from '$ts/interfaces/Blog';
+	import { isTouchscreen } from '$ts/stores/isTouchscreen';
 	export let post: IBlogPostShallow;
 </script>
 

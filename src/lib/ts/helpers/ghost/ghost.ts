@@ -1,7 +1,7 @@
 import { parse } from 'node-html-parser';
 import type { HTMLElement as HTMLElementP } from 'node-html-parser';
 import type { IBlogPosts, IBlogPostShallow, IBlogPostsShallow } from '../../interfaces/Blog';
-import { defaultWidths, getSrcAndSrcSetFromUrl } from '$lib/ts/helpers/ghost/utils';
+import { defaultWidths, getSrcAndSrcSetFromUrl } from '$ts/helpers/ghost/utils';
 
 const ghostUrl = 'https://ghost.banano.cc';
 const siteUrl = 'https://banano.cc';

@@ -1,4 +1,4 @@
-import { monthsShort } from '$lib/ts/constants/months';
+import { monthsShort } from '$ts/constants/months';
 
 export const getFormattedNow = (): string => {
 	const now = new Date();

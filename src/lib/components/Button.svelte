@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TButton } from '$lib/ts/types/TButton';
+	import type { TButton } from '$ts/types/TButton';
 
 	export let buttonType: TButton = 'primary';
 	export let onClick: (() => void) | undefined = undefined;

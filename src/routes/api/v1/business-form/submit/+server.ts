@@ -1,8 +1,8 @@
 import { DISCORD_BUSINESS_FORM_WEBHOOK_URL, SUPABASE_ADMIN_KEY } from '$env/static/private';
-import { getDeviceInfo } from '$lib/ts/helpers/getDeviceInfo';
-import { getFormattedNow } from '$lib/ts/helpers/getFormattedNow';
-import { isEmail } from '$lib/ts/helpers/isEmail';
-import type { TCountryResponse } from '$lib/ts/types/TCountryResponse';
+import { getDeviceInfo } from '$ts/helpers/getDeviceInfo';
+import { getFormattedNow } from '$ts/helpers/getFormattedNow';
+import { isEmail } from '$ts/helpers/isEmail';
+import type { TCountryResponse } from '$ts/types/TCountryResponse';
 import { createClient, type PostgrestResponse } from '@supabase/supabase-js';
 import { error, type RequestHandler } from '@sveltejs/kit';
 import bcrypt from 'bcryptjs';

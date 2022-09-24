@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
+	import { bananoWallets } from '$ts/constants/bananoWallets';
 
 	import Button from '../Button.svelte';
 

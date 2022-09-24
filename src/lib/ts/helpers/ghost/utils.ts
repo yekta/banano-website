@@ -1,4 +1,4 @@
-import { monthsShort } from '$lib/ts/constants/months';
+import { monthsShort } from '$ts/constants/months';
 import { getSignedProxyUrl } from '../imgproxy';
 
 export const defaultWidths = [512, 768, 1024, 1536, 2048];

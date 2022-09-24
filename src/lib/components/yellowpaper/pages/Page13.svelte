@@ -1,7 +1,7 @@
 <script lang="ts">
-	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
-	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
-	import LazyImage from '$lib/components/LazyImage.svelte';
+	import PageWrapper from '$components/yellowpaper/PageWrapper.svelte';
+	import { bananoFaucets } from '$ts/constants/bananoFaucets';
+	import LazyImage from '$components/LazyImage.svelte';
 
 	export { classes as class };
 	let classes: string;

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Lazy from 'svelte-lazy';
 	import AspectRatio from './AspectRatio.svelte';
-	import Lqip from '$lib/components/Lqip.svelte';
+	import Lqip from '$components/Lqip.svelte';
 
 	export let width: number;
 	export let height: number;

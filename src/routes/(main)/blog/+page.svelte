@@ -1,22 +1,22 @@
 <script lang="ts">
-	import '$lib/css/main.css';
-	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
+	import '$css/main.css';
+	import BgWaveBottom from '$components/backgrounds/BgWaveBottom.svelte';
 	import { inview } from 'svelte-inview';
 	import {
 		blogApiKey,
 		excerptLength,
 		shallowPostFields,
 		utilsBlogApiUrl
-	} from '$lib/ts/constants/blog';
-	import Button from '$lib/components/Button.svelte';
-	import type { IBlogPostsShallow, ISearchResult } from '$lib/ts/interfaces/Blog';
-	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	} from '$ts/constants/blog';
+	import Button from '$components/Button.svelte';
+	import type { IBlogPostsShallow, ISearchResult } from '$ts/interfaces/Blog';
+	import { canonicalUrl } from '$ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
-	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
-	import IconLoading from '$lib/components/icons/IconLoading.svelte';
+	import BlogPostCard from '$components/BlogPostCard.svelte';
+	import IconLoading from '$components/icons/IconLoading.svelte';
 	import { tick } from 'svelte';
-	import BlogSearchBar from '$lib/components/BlogSearchBar.svelte';
+	import BlogSearchBar from '$components/BlogSearchBar.svelte';
 
 	export let data: {
 		initialPosts: IBlogPostsShallow;

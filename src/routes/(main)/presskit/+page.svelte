@@ -1,11 +1,11 @@
 <script lang="ts">
-	import '$lib/css/main.css';
+	import '$css/main.css';
 	import { page } from '$app/stores';
-	import Button from '$lib/components/Button.svelte';
-	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import Button from '$components/Button.svelte';
+	import { canonicalUrl } from '$ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
-	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
-	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
+	import BgWaveBottom from '$components/backgrounds/BgWaveBottom.svelte';
+	import BgHero from '$components/backgrounds/BgHero.svelte';
 
 	const title = 'Presskit | Banano';
 	const description = 'Press Kit for Banano assets, colors and fonts.';

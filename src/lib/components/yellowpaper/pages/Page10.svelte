@@ -1,8 +1,8 @@
 <script lang="ts">
-	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
-	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import LazyImage from '$lib/components/LazyImage.svelte';
-	import Lazy from '$lib/components/Lazy.svelte';
+	import PageWrapper from '$components/yellowpaper/PageWrapper.svelte';
+	import { bananoSocials } from '$ts/constants/bananoSocials';
+	import LazyImage from '$components/LazyImage.svelte';
+	import Lazy from '$components/Lazy.svelte';
 
 	export { classes as class };
 	let classes: string;

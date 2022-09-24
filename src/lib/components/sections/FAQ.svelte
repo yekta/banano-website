@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { IFaq } from '$lib/ts/interfaces/Faq';
-	import { expandCollapse } from '$lib/ts/transitions';
+	import type { IFaq } from '$ts/interfaces/Faq';
+	import { expandCollapse } from '$ts/transitions';
 	import IconChevron from '../icons/IconChevron.svelte';
 
 	export let faq: IFaq[];

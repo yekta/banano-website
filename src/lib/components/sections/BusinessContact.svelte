@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
-	import IconSocial from '$lib/components/icons/IconSocial.svelte';
-	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import { isEmail } from '$lib/ts/helpers/isEmail';
+	import Button from '$components/Button.svelte';
+	import IconSocial from '$components/icons/IconSocial.svelte';
+	import { bananoSocials } from '$ts/constants/bananoSocials';
+	import { isEmail } from '$ts/helpers/isEmail';
 	import type {
 		TFormQuestion,
 		TFormQuestionSubmitResult,
 		TFormSuccessMessage
-	} from '$lib/ts/types/TForm';
+	} from '$ts/types/TForm';
 	import Form from '../Form.svelte';
 
 	let isFormOpen = false;

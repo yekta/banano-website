@@ -1,28 +1,28 @@
 <script lang="ts">
-	import '$lib/css/yellowpaper.css';
+	import '$css/yellowpaper.css';
 	import { page } from '$app/stores';
-	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import { canonicalUrl } from '$ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
-	import Page1 from '$lib/components/yellowpaper/pages/Page1.svelte';
-	import Page2 from '$lib/components/yellowpaper/pages/Page2.svelte';
-	import Page3 from '$lib/components/yellowpaper/pages/Page3.svelte';
-	import Page4 from '$lib/components/yellowpaper/pages/Page4.svelte';
-	import Page5 from '$lib/components/yellowpaper/pages/Page5.svelte';
-	import Page6 from '$lib/components/yellowpaper/pages/Page6.svelte';
-	import Page7 from '$lib/components/yellowpaper/pages/Page7.svelte';
-	import Page8 from '$lib/components/yellowpaper/pages/Page8.svelte';
-	import Page9 from '$lib/components/yellowpaper/pages/Page9.svelte';
-	import Page10 from '$lib/components/yellowpaper/pages/Page10.svelte';
-	import Page11 from '$lib/components/yellowpaper/pages/Page11.svelte';
-	import Page12 from '$lib/components/yellowpaper/pages/Page12.svelte';
-	import Page13 from '$lib/components/yellowpaper/pages/Page13.svelte';
-	import Page14 from '$lib/components/yellowpaper/pages/Page14.svelte';
-	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
-	import LazyImage from '$lib/components/LazyImage.svelte';
+	import Page1 from '$components/yellowpaper/pages/Page1.svelte';
+	import Page2 from '$components/yellowpaper/pages/Page2.svelte';
+	import Page3 from '$components/yellowpaper/pages/Page3.svelte';
+	import Page4 from '$components/yellowpaper/pages/Page4.svelte';
+	import Page5 from '$components/yellowpaper/pages/Page5.svelte';
+	import Page6 from '$components/yellowpaper/pages/Page6.svelte';
+	import Page7 from '$components/yellowpaper/pages/Page7.svelte';
+	import Page8 from '$components/yellowpaper/pages/Page8.svelte';
+	import Page9 from '$components/yellowpaper/pages/Page9.svelte';
+	import Page10 from '$components/yellowpaper/pages/Page10.svelte';
+	import Page11 from '$components/yellowpaper/pages/Page11.svelte';
+	import Page12 from '$components/yellowpaper/pages/Page12.svelte';
+	import Page13 from '$components/yellowpaper/pages/Page13.svelte';
+	import Page14 from '$components/yellowpaper/pages/Page14.svelte';
+	import { bananoFaucets } from '$ts/constants/bananoFaucets';
+	import LazyImage from '$components/LazyImage.svelte';
 	import { inview } from 'svelte-inview';
-	import { slideAcrossScreen } from '$lib/ts/transitions';
+	import { slideAcrossScreen } from '$ts/transitions';
 	import { afterNavigate } from '$app/navigation';
-	import IconArrow from '$lib/components/icons/IconArrow.svelte';
+	import IconArrow from '$components/icons/IconArrow.svelte';
 
 	const title = 'Yellowpaper™ | Banano';
 	const description =

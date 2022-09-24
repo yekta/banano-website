@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { IFaucet } from '$lib/ts/interfaces/Faucet';
-	import Button from '$lib/components/Button.svelte';
-	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import type { TButton } from '$lib/ts/types/TButton';
-	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
-	import IconSocial from '$lib/components/icons/IconSocial.svelte';
+	import type { IFaucet } from '$ts/interfaces/Faucet';
+	import Button from '$components/Button.svelte';
+	import { bananoSocials } from '$ts/constants/bananoSocials';
+	import type { TButton } from '$ts/types/TButton';
+	import type { TIconSocial } from '$ts/types/TIconSocial';
+	import IconSocial from '$components/icons/IconSocial.svelte';
 
 	export let faucets: IFaucet[];
 

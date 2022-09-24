@@ -1,5 +1,5 @@
 import { GHOST_ADMIN_KEY } from '$env/static/private';
-import type { IBlogPost } from '$lib/ts/interfaces/Blog';
+import type { IBlogPost } from '$ts/interfaces/Blog';
 import type { RequestHandler } from '@sveltejs/kit';
 import GhostAdminAPI from '@tryghost/admin-api';
 

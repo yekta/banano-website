@@ -1,18 +1,18 @@
 <script lang="ts">
-	import '$lib/css/blog.css';
-	import type { IBlogPost } from '$lib/ts/interfaces/Blog';
-	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import '$css/blog.css';
+	import type { IBlogPost } from '$ts/interfaces/Blog';
+	import { canonicalUrl } from '$ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
-	import BlogPostCard from '$lib/components/BlogPostCard.svelte';
+	import BlogPostCard from '$components/BlogPostCard.svelte';
 	import { inview } from 'svelte-inview';
-	import { formatDate } from '$lib/ts/helpers/ghost/utils';
+	import { formatDate } from '$ts/helpers/ghost/utils';
 	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
-	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
+	import BgWaveBottom from '$components/backgrounds/BgWaveBottom.svelte';
 	import { browser } from '$app/environment';
-	import { getSignedProxyUrl } from '$lib/ts/helpers/imgproxy';
-	import { excerptLength } from '$lib/ts/constants/blog';
+	import { getSignedProxyUrl } from '$ts/helpers/imgproxy';
+	import { excerptLength } from '$ts/constants/blog';
 
 	export let data: {
 		post: IBlogPost;

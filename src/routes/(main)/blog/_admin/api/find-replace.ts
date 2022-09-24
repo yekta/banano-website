@@ -1,4 +1,4 @@
-import { findAndReplace, type IFindReplace } from '$lib/ts/helpers/ghost/admin';
+import { findAndReplace, type IFindReplace } from '$ts/helpers/ghost/admin';
 import type { RequestHandler } from '@sveltejs/kit';
 
 const ghostUrl = 'https://ghost.banano.cc';

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import '$lib/css/main.css';
+	import '$css/main.css';
 	import { page } from '$app/stores';
-	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import { canonicalUrl } from '$ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
-	import type { TFormQuestion, TFormQuestionSubmitResult } from '$lib/ts/types/TForm';
-	import Form from '$lib/components/Form.svelte';
+	import type { TFormQuestion, TFormQuestionSubmitResult } from '$ts/types/TForm';
+	import Form from '$components/Form.svelte';
 	import { onMount } from 'svelte';
 
 	const title = 'XGo Form | Banano';

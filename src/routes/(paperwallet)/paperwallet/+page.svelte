@@ -1,21 +1,21 @@
 <script lang="ts">
-	import '$lib/css/main.css';
+	import '$css/main.css';
 	import { page } from '$app/stores';
-	import Button from '$lib/components/Button.svelte';
-	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import Button from '$components/Button.svelte';
+	import { canonicalUrl } from '$ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
-	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
-	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
-	import Dropdown from '$lib/components/Dropdown.svelte';
+	import BgWaveBottom from '$components/backgrounds/BgWaveBottom.svelte';
+	import BgHero from '$components/backgrounds/BgHero.svelte';
+	import Dropdown from '$components/Dropdown.svelte';
 	import QR from 'svelte-qr';
-	import IconCopy from '$lib/components/icons/IconCopy.svelte';
-	import IconMorpher from '$lib/components/IconMorpher.svelte';
-	import IconTick from '$lib/components/icons/IconTick.svelte';
+	import IconCopy from '$components/icons/IconCopy.svelte';
+	import IconMorpher from '$components/IconMorpher.svelte';
+	import IconTick from '$components/icons/IconTick.svelte';
 	import VirtualList from '@sveltejs/svelte-virtual-list';
 	import { onMount, tick } from 'svelte';
-	import IconLoading from '$lib/components/icons/IconLoading.svelte';
+	import IconLoading from '$components/icons/IconLoading.svelte';
 	import { copy } from 'svelte-copy';
-	import { bytesToHex } from '$lib/ts/helpers/banano';
+	import { bytesToHex } from '$ts/helpers/banano';
 
 	const title = 'Paper Wallet | Banano';
 	const description = 'Create Banano paper wallets for your family, friends or strangers.';

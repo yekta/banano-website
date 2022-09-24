@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
+	import { bananoSocials } from '$ts/constants/bananoSocials';
 
-	import type { TButton } from '$lib/ts/types/TButton';
-	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
-	import Button from '$lib/components/Button.svelte';
-	import IconSocial from '$lib/components/icons/IconSocial.svelte';
+	import type { TButton } from '$ts/types/TButton';
+	import type { TIconSocial } from '$ts/types/TIconSocial';
+	import Button from '$components/Button.svelte';
+	import IconSocial from '$components/icons/IconSocial.svelte';
 
 	export { classes as class };
 

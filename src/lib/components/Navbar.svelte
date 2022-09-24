@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import { numberFormatter } from '$lib/ts/helpers/numberFormatter';
-	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
+	import { bananoSocials } from '$ts/constants/bananoSocials';
+	import { numberFormatter } from '$ts/helpers/numberFormatter';
+	import type { TIconSocial } from '$ts/types/TIconSocial';
 	import { onMount } from 'svelte';
 	import IconSocial from './icons/IconSocial.svelte';
 	import Logo from './Logo.svelte';
 	import IconMenu from './icons/IconMenu.svelte';
-	import { clickoutside } from '$lib/ts/actions/clickoutside';
+	import { clickoutside } from '$ts/actions/clickoutside';
 	import { cubicOut } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
-	import { sidebar } from '$lib/ts/transitions';
-	import { isTouchscreen } from '$lib/ts/stores/isTouchscreen';
+	import { sidebar } from '$ts/transitions';
+	import { isTouchscreen } from '$ts/stores/isTouchscreen';
 	import { page } from '$app/stores';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import ProgressBar from '$lib/components/ProgressBar.svelte';
+	import ProgressBar from '$components/ProgressBar.svelte';
 
 	export { classes as class };
 	let classes = '';

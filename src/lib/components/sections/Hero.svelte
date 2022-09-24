@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
-	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
-	import Banticles from '$lib/components/Banticles.svelte';
+	import Button from '$components/Button.svelte';
+	import BgWaveBottom from '$components/backgrounds/BgWaveBottom.svelte';
+	import Banticles from '$components/Banticles.svelte';
 	import BgHero from '../backgrounds/BgHero.svelte';
 </script>
 

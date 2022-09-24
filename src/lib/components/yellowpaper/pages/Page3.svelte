@@ -1,7 +1,7 @@
 <script lang="ts">
-	import LazyImage from '$lib/components/LazyImage.svelte';
-	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
-	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
+	import LazyImage from '$components/LazyImage.svelte';
+	import PageWrapper from '$components/yellowpaper/PageWrapper.svelte';
+	import { bananoWallets } from '$ts/constants/bananoWallets';
 
 	export { classes as class };
 	let classes: string;

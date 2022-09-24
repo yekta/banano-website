@@ -5,8 +5,8 @@
 	};
 
 	import IconChevron from './icons/IconChevron.svelte';
-	import { expandCollapse } from '$lib/ts/transitions';
-	import { clickoutside } from '$lib/ts/actions/clickoutside';
+	import { expandCollapse } from '$ts/transitions';
+	import { clickoutside } from '$ts/actions/clickoutside';
 
 	export let items: T[];
 	export let selectedItem: T;

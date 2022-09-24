@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
+	import type { TIconSocial } from '$ts/types/TIconSocial';
 	export let type: TIconSocial;
 	export { classes as class };
 	let classes = 'w-8 h-8';

@@ -3,10 +3,10 @@
 </script>
 
 <script lang="ts">
-	import IconLoading from '$lib/components/icons/IconLoading.svelte';
-	import '$lib/css/main.css';
-	import { clickoutside } from '$lib/ts/actions/clickoutside';
-	import type { IBlogPostShallow, ITag } from '$lib/ts/interfaces/Blog';
+	import IconLoading from '$components/icons/IconLoading.svelte';
+	import '$css/main.css';
+	import { clickoutside } from '$ts/actions/clickoutside';
+	import type { IBlogPostShallow, ITag } from '$ts/interfaces/Blog';
 	import Fuse from 'fuse.js';
 
 	export let posts: IBlogPostShallow[];

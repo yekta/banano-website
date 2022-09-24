@@ -3,8 +3,8 @@ import {
 	shallowPostFields,
 	typesenseApiKey,
 	utilsBlogApiUrl
-} from '$lib/ts/constants/blog';
-import type { ISearchResult } from '$lib/ts/interfaces/Blog';
+} from '$ts/constants/blog';
+import type { ISearchResult } from '$ts/interfaces/Blog';
 import { error, type ServerLoad } from '@sveltejs/kit';
 
 export const load: ServerLoad = async ({ params }) => {

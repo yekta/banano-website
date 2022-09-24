@@ -1,14 +1,14 @@
 <script lang="ts">
-	import '$lib/css/main.css';
+	import '$css/main.css';
 	import { page } from '$app/stores';
-	import Button from '$lib/components/Button.svelte';
-	import IconChevron from '$lib/components/icons/IconChevron.svelte';
-	import SocialButtonGrid from '$lib/components/SocialButtonGrid.svelte';
-	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import Button from '$components/Button.svelte';
+	import IconChevron from '$components/icons/IconChevron.svelte';
+	import SocialButtonGrid from '$components/SocialButtonGrid.svelte';
+	import { canonicalUrl } from '$ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
-	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
-	import BgWaveBottom from '$lib/components/backgrounds/BgWaveBottom.svelte';
-	import BgHero from '$lib/components/backgrounds/BgHero.svelte';
+	import { bananoWallets } from '$ts/constants/bananoWallets';
+	import BgWaveBottom from '$components/backgrounds/BgWaveBottom.svelte';
+	import BgHero from '$components/backgrounds/BgHero.svelte';
 
 	const title = 'Redeem | Banano';
 	const description = 'Instructions on how to redeem your Banano from a paper wallet.';

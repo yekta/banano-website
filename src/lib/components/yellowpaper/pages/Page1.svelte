@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
+	import PageWrapper from '$components/yellowpaper/PageWrapper.svelte';
 
 	export { classes as class };
 	let classes: string;

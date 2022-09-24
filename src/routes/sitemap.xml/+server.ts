@@ -1,6 +1,6 @@
 import { PUBLIC_GHOST_KEY } from '$env/static/public';
-import { utilsBlogApiUrl } from '$lib/ts/constants/blog';
-import { canonicalUrl } from '$lib/ts/constants/canonical';
+import { utilsBlogApiUrl } from '$ts/constants/blog';
+import { canonicalUrl } from '$ts/constants/canonical';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async (event) => {

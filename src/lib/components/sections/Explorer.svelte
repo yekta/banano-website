@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { bananoServices } from '$lib/ts/constants/bananoServices';
-	import { isHash } from '$lib/ts/helpers/banano';
+	import { bananoServices } from '$ts/constants/bananoServices';
+	import { isHash } from '$ts/helpers/banano';
 	import { inview } from 'svelte-inview';
 	import Button from '../Button.svelte';
 

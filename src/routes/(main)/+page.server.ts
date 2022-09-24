@@ -8,7 +8,7 @@ import announcementsMd from '/content/announcements.md';
 import roadmapMd from '/content/roadmap.md';
 import { parse } from 'node-html-parser';
 import type { HTMLElement as HTMLElementP } from 'node-html-parser';
-import { mdParser } from '$lib/ts/helpers/mdParser';
+import { mdParser } from '$ts/helpers/mdParser';
 
 export const load: ServerLoad = async (event) => {
 	let testimonials = mdParser(testimonialsMd, 'h3', []).map((r) => r[0]);

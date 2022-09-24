@@ -1,9 +1,9 @@
 <script lang="ts">
-	import PageWrapper from '$lib/components/yellowpaper/PageWrapper.svelte';
+	import PageWrapper from '$components/yellowpaper/PageWrapper.svelte';
 	import { inview } from 'svelte-inview';
-	import { bananoFaucets } from '$lib/ts/constants/bananoFaucets';
-	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
+	import { bananoFaucets } from '$ts/constants/bananoFaucets';
+	import { bananoSocials } from '$ts/constants/bananoSocials';
+	import { bananoWallets } from '$ts/constants/bananoWallets';
 
 	export { classes as class };
 	export let onTriggered: () => void;

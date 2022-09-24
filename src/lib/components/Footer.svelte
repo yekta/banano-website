@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { bananoServices } from '$lib/ts/constants/bananoServices';
+	import { bananoServices } from '$ts/constants/bananoServices';
 
-	import { bananoSocials } from '$lib/ts/constants/bananoSocials';
-	import { bananoWallets } from '$lib/ts/constants/bananoWallets';
-	import type { TIconSocial } from '$lib/ts/types/TIconSocial';
+	import { bananoSocials } from '$ts/constants/bananoSocials';
+	import { bananoWallets } from '$ts/constants/bananoWallets';
+	import type { TIconSocial } from '$ts/types/TIconSocial';
 	import BgWaveTop from './backgrounds/BgWaveTop.svelte';
 	import IconSocial from './icons/IconSocial.svelte';
 

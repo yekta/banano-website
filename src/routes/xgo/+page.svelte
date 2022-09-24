@@ -1,9 +1,9 @@
 <script lang="ts">
-	import '$lib/css/main.css';
-	import IconLoading from '$lib/components/icons/IconLoading.svelte';
+	import '$css/main.css';
+	import IconLoading from '$components/icons/IconLoading.svelte';
 	import { onMount } from 'svelte';
-	import BgHeroCover from '$lib/components/backgrounds/BgHeroCover.svelte';
-	import { canonicalUrl } from '$lib/ts/constants/canonical';
+	import BgHeroCover from '$components/backgrounds/BgHeroCover.svelte';
+	import { canonicalUrl } from '$ts/constants/canonical';
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 

@@ -17,6 +17,11 @@ const config = {
 	],
 	kit: {
 		adapter: process.env.STATIC ? adapterStatic() : adapter(),
+		alias: {
+			'$components/*': './src/lib/components',
+			'$ts/*': './src/lib/ts',
+			'$css/*': './src/lib/css'
+		},
 		prerender: {
 			crawl: true,
 			concurrency: 20,

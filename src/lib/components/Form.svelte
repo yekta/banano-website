@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import IconChevron from '$lib/components/icons/IconChevron.svelte';
-	import Button from '$lib/components/Button.svelte';
+	import IconChevron from '$components/icons/IconChevron.svelte';
+	import Button from '$components/Button.svelte';
 	import type {
 		TFormQuestion,
 		TFormQuestionSubmitResult,
 		TFormSuccessMessage
-	} from '$lib/ts/types/TForm';
+	} from '$ts/types/TForm';
 	import IconLoading from './icons/IconLoading.svelte';
 	import IconTick from './icons/IconTick.svelte';
 	import IconRefresh from './icons/IconRefresh.svelte';
