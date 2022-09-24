@@ -27,10 +27,9 @@ export async function getBlogRoutesArray() {
 		const resJson = res.data;
 		const routes = resJson.posts.map((p) => `${blogDirectory}/${p.slug}`);
 		pages.push(...routes);
-		console.log('Pages to fetch:', pages);
 	} catch (error) {
 		console.log(error);
 	}
-	console.log(pages);
+	console.log('Pages to fetch:', pages);
 	return pages;
 }
