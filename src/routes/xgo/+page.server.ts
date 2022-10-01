@@ -1,6 +1,5 @@
 import { createClient, type PostgrestResponse } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
-import type { TCountryResponse } from '$ts/types/TCountryResponse';
 import { getDeviceInfo } from '$ts/helpers/getDeviceInfo';
 import { getFormattedNow } from '$ts/helpers/getFormattedNow';
 import { DISCORD_B_WEBHOOK_URL, SUPABASE_ADMIN_KEY } from '$env/static/private';
@@ -8,7 +7,6 @@ import type { ServerLoad } from '@sveltejs/kit';
 
 export const prerender = false;
 
-const ipEndpoint = 'https://api.country.is';
 const discordWebhookUrl = DISCORD_B_WEBHOOK_URL;
 const tableName = 'xgo-ref-logs';
 
@@ -18,18 +16,11 @@ export const load: ServerLoad = async ({ params, getClientAddress, request }) =>
 	});
 	const clientAddress = getClientAddress();
 	const { headers } = request;
-	const userAgent = headers.get('User-Agent');
+	const userAgent = headers.get('user-agent');
 	const deviceInfo = getDeviceInfo(userAgent);
 	// @ts-ignore
 	const ipHashed = bcrypt.hashSync(clientAddress, 10);
-	let countryCode: null | string = null;
-	try {
-		const countryRes = await fetch(`${ipEndpoint}/${clientAddress}`);
-		const countryData: TCountryResponse = await countryRes.json();
-		countryCode = countryData.country;
-	} catch (error) {
-		console.log(error);
-	}
+	const countryCode = headers.get('cf-ipcountry');
 	try {
 		const promises = [
 			supabase.from(tableName).insert([
