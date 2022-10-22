@@ -3,11 +3,11 @@ import { utilsBlogApiUrl } from '$ts/constants/blog';
 import { canonicalUrl } from '$ts/constants/canonical';
 import type { RequestHandler } from '@sveltejs/kit';
 
-export const GET: RequestHandler = async (event) => {
+export const GET: RequestHandler = async () => {
 	const allBlogRoutes = await getBlogRoutesArray();
 	const allRoutes = [...definedRoutes, ...allBlogRoutes];
 	const headers = {
-		'Cache-Control': `max-age=${3600}, s-max-age=${3600}`,
+		'Cache-Control': `public, max-age=${3600}, s-max-age=${3600}`,
 		'Content-Type': 'text/xml'
 	};
 	const body = render(allRoutes);
