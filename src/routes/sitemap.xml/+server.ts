@@ -11,7 +11,7 @@ export const GET: RequestHandler = async (event) => {
 		'Content-Type': 'text/xml'
 	};
 	const body = render(allRoutes);
-	return new Response(body, { status: 200, headers });
+	return new Response(body, { headers });
 };
 
 function render(routes: IRoute[]) {
