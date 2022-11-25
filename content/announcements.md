@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Wrapped Banano (wBAN) is now Live on Ethereum and Uniswap!
+
+#### 2022-11-01
+
+Plus, we launched a wBAN-ETH farm rewarding 500k BAN over 28 days. Check it out and learn all important details here: [Banano Blog](https://banano.cc/blog/wrapped-banano-wban-available-on-ethereum). [Medium Article](https://medium.com/banano/wrapped-banano-wban-is-now-live-on-ethereum-and-uniswap-9c6554bcc310).
+
 ### BANANO Monthly Update #54 (October 2022)
 
 #### 2022-10-27
