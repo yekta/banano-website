@@ -20,15 +20,25 @@
 			<h2 class="text-3xl font-bold">Wrapped Banano</h2>
 			<p class="mt-3 text-lg container-b-small md:px-16 lg:px-24">
 				Use Banano to learn about and participate in DeFi in a fun & easy way! Our monkeys take your
-				Banano, wrap it with special ribbons and deliver it to other chains such as <a
+				Banano, wrap it with special ribbons and deliver it to other chains: <a
+					href="https://ethereum.org"
+					target="_blank"
+					class="font-bold text-c-secondary hover:underline">Ethereum</a
+				>,
+				<a
 					href="https://polygon.technology/"
 					target="_blank"
 					class="font-bold text-c-secondary hover:underline">Polygon</a
 				>,
 				<a
-					href="https://www.bnbchain.world/en"
+					href="https://www.bnbchain.org"
 					target="_blank"
 					class="font-bold text-c-secondary hover:underline">BNB Chain</a
+				>,
+				<a
+					href="https://arbitrum.io"
+					target="_blank"
+					class="font-bold text-c-secondary hover:underline">Arbitrum</a
 				>, and
 				<a
 					href="https://fantom.foundation"
