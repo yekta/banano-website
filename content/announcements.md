@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### BANANO Monthly Update #56 (December 2022)
+
+#### 2022-12-22
+
+Here's a fresh Monthly Update summarizing all relevant news from the BANANO ecosystem in November 2022: [Banano Blog](https://banano.cc/blog/banano-monthly-update-56-december-2022). [Medium Article](https://medium.com/banano/banano-monthly-update-56-december-2022-be7b679723a6).
+
 ### Wrapped Banano (wBAN) is now available on Arbitrum and SushiSwap!
 
 #### 2022-12-11
