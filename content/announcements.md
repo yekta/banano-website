@@ -4,6 +4,24 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### BANANO Monthly Update #56 (December 2022)
+
+#### 2022-12-22
+
+Here's a fresh Monthly Update summarizing all relevant news from the BANANO ecosystem in November 2022: [Banano Blog](https://banano.cc/blog/banano-monthly-update-56-december-2022). [Medium Article](https://medium.com/banano/banano-monthly-update-56-december-2022-be7b679723a6).
+
+### Wrapped Banano (wBAN) is now available on Arbitrum and SushiSwap!
+
+#### 2022-12-11
+
+Also, a wBAN-ETH farm has been deployed and will distribute 500k BAN until December 31, 2022: [Banano Blog](https://banano.cc/blog/wrapped-banano-wban-available-on-arbitrum). [Medium Article](https://medium.com/banano/wrapped-banano-wban-is-now-live-on-arbitrum-and-sushiswap-3eda4d917a04).
+
+### BANANO Monthly Update #55 (November 2022)
+
+#### 2022-11-29
+
+Here's our ripe Monthly Update containing all relevant news from the BANANO ecosphere in September 2022: [Banano Blog](https://banano.cc/blog/banano-monthly-update-55-november-2022). [Medium Article](https://medium.com/banano/banano-monthly-update-55-november-2022-324d4e7b8b8a).
+
 ### Wrapped Banano (wBAN) is now Live on Ethereum and Uniswap!
 
 #### 2022-11-01
