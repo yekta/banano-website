@@ -22,11 +22,6 @@
 			img: 'satoshi'
 		},
 		{
-			name: 'Crypto Pajeet',
-			description: 'TA guru. “Fibbanacci confettis suggest 10000% growth in the next 24hrs.”',
-			img: 'pajeet'
-		},
-		{
 			name: 'Trevon',
 			description: 'Insecurity engineer and a trendsetter in dank hairstyles.',
 			img: 'trevon'
