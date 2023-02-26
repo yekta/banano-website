@@ -39,10 +39,10 @@
 		<h2 class="text-3xl font-bold px-3 md:px-12 mt-16">
 			Inspired by the industry's least trusted masterminds
 		</h2>
-		<div class="container-b-small flex flex-wrap justify-center mt-5">
+		<div class="w-full max-w-7xl flex flex-wrap justify-center mt-5">
 			{#each advisors as advisor}
 				<div
-					class="w-1/2 md:w-1/3 lg:w-1/3 max-w-[18rem] flex flex-col items-center px-3 py-4 md:p-4 text-center"
+					class="w-1/2 md:w-1/3 lg:w-1/4 max-w-[18rem] flex flex-col items-center px-3 py-4 md:p-4 text-center"
 				>
 					<img
 						width="500"
