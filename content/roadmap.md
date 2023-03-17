@@ -238,3 +238,17 @@ BoomPoW v2 launched.
 ### September
 
 Kalium APIs & backend rebuilt from the ground up.
+
+### November
+
+Wrapped Banano on Ethereum. BananoPie launch (community project).
+
+### December
+
+Wrapped Banano on Arbitrum. Christmas Reddit airdrops.
+
+## 2023
+
+### January
+
+Wrapped Banano dApp update, Zaps support.
