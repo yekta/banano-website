@@ -247,8 +247,10 @@ Wrapped Banano on Ethereum. BananoPie launch (community project).
 
 Wrapped Banano on Arbitrum. Christmas Reddit airdrops.
 
+<!--
 ## 2023
 
 ### January
 
 Wrapped Banano dApp update, Zaps support.
+-->
