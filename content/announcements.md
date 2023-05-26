@@ -4,6 +4,18 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### BANANO Monthly Update #60 (April 2023)
+
+#### 2023-05-17
+
+Here's the (more than ripe) Banano Monthly Update April 2023, summarizing all important happenings in the Banano Ecosystem from March 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-60-april-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-60-april-2023-6ba43924c53a).
+
+### BANANO Monthly Update #59 (March 2023)
+
+#### 2023-04-26
+
+Check out this Banano Monthly Update March 2023 containing all updates from the Banano MonKeyverse within February 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-59-march-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-59-march-2023-4fc8b2b4acd8).
+
 ### Banano is Turning 5! Join the Birthday Party on April 1st!
 
 #### 2023-03-31
