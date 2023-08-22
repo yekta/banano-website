@@ -4,6 +4,54 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Show us what you got! Banano Booster 3 Announcement
+
+#### 2023-07-22
+
+Announcing Booster 3, a 6-week hackathon for developers to create or maintain projects in the BANANO ecosystem: [Banano Blog](https://banano.cc/blog/booster-3-announcement). [Medium Article](https://medium.com/banano/show-us-what-you-got-banano-booster-3-announcement-f019a22fae27).
+
+### BANANO Monthly Update #63 (July 2023)
+
+#### 2023-07-20
+
+Here's a fresh BANANO Monthly Update July 2023 summarizing all the news and updates from the BANANO ecosystem in June 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-63-july-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-63-july-2023-fc09fd669fcf).
+
+### BANANO Monthly Update #62 (June 2023)
+
+#### 2023-06-13
+
+Check out this BANANO Monthly Update June 2023 which recaps all the news and updates from the BANANO ecosystem in May 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-62-june-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-62-june-2023-38f476a02ff3).
+
+### wBAN (wrapped Banano) — 2 Year Anniversary
+
+#### 2023-06-05
+
+Wrapped Banano turns 2! Check out what we’ve done those last 12 months and get your NFT from the airdrop: [Banano Blog](https://banano.cc/blog/wban-2-year-anniversary). [Medium Article](https://medium.com/banano/wban-2-year-anniversary-928413f68a6e).
+
+### BANANO Monthly Update #61 (May 2023)
+
+#### 2023-05-31
+
+Here's the newest freshly pressed Banano Monthly Update May 2023 with all relevant news from the Banano MonKeyverse from April 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-61-may-2023-2). [Medium Article](https://medium.com/banano/banano-monthly-update-61-may-2023-599328acfd68).
+
+### BANANO Monthly Update #60 (April 2023)
+
+#### 2023-05-17
+
+Here's the (more than ripe) Banano Monthly Update April 2023, summarizing all important happenings in the Banano Ecosystem from March 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-60-april-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-60-april-2023-6ba43924c53a).
+
+### BANANO Monthly Update #59 (March 2023)
+
+#### 2023-04-26
+
+Check out this Banano Monthly Update March 2023 containing all updates from the Banano MonKeyverse within February 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-59-march-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-59-march-2023-4fc8b2b4acd8).
+
+### Banano is Turning 5! Join the Birthday Party on April 1st!
+
+#### 2023-03-31
+
+Banano is turning 5 on April 1st, 2023 — come and celebrate with one of the most wholesome communities in the whole cryptoverse: [Banano Blog](https://banano.cc/blog/banano-is-turning-5-join-the-birthday-party-on-april-1st). [Medium Article](https://medium.com/banano/banano-is-turning-5-join-the-birthday-party-on-april-1st-36cbdd22fafb).
+
 ### BANANO Monthly Update #58 (February 2023)
 
 #### 2023-03-01
