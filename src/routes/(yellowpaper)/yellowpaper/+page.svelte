@@ -102,7 +102,6 @@
 			<button
 				aria-label="Go Back"
 				on:click={() => history.back()}
-				href={previousPage}
 				class="rounded-full p-2 bg-c-yellowpaper-bg text-c-yellowpaper-document-bg mb-3 md:mb-5 shadow-lg
 				shadow-c-yellowpaper-on-bg/30 transition xl:absolute xl:left-0 xl:top-0 xl:mt-5 xl:-ml-10
 				hover:shadow-xl hover:shadow-c-yellowpaper-on-bg/50 group"

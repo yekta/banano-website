@@ -18,7 +18,7 @@
 </script>
 
 <div
-	transition:fly|local={{ duration: 200, easing: quadOut, y: 50 }}
+	transition:fly={{ duration: 200, easing: quadOut, y: 50 }}
 	class="w-full flex flex-col justify-end items-center absolute bottom-0 left-0 z-10 
 	bg-gradient-to-t from-c-bg to-c-bg/0 rounded-b-xl pointer-events-none"
 >

@@ -112,7 +112,7 @@
 			<!-- MonKey loading animation -->
 			{#if monkeyLoadState === 'loading' || monkeyLoadState === 'loaded'}
 				<div
-					in:monkeyLoadingIn|local={{ delay: 150 }}
+					in:monkeyLoadingIn={{ delay: 150 }}
 					class="w-full h-full flex flex-row justify-center items-center absolute left-0 top-0"
 				>
 					<div class="w-20 h-20 md:w-24 md:h-24 relative">
@@ -127,8 +127,8 @@
 			{#if monkeyLoadState === 'fullyReady' || monkeyLoadState === 'loaded' || monkeyLoadState === 'error'}
 				<div class="w-full absolute left-0 top-0">
 					<div
-						in:monkeyContainerIn|local={{ delay: 100 }}
-						out:monkeyContainerOut|local
+						in:monkeyContainerIn={{ delay: 100 }}
+						out:monkeyContainerOut
 						class="relative w-full monkey-svg-container"
 					>
 						<div class="w-full h-full absolute left-0">
@@ -149,8 +149,8 @@
 			<!-- Again Button -->
 			{#if monkeyLoadState === 'fullyReady' || monkeyLoadState === 'error'}
 				<div
-					in:againIn|local={{ delay: 400 }}
-					out:againOut|local
+					in:againIn={{ delay: 400 }}
+					out:againOut
 					class="w-full px-4 flex flex-row justify-center absolute bottom-0 pb-5"
 				>
 					<Button
@@ -167,8 +167,8 @@
 			{#if monkeyLoadState === 'idle'}
 				<div class="w-full h-full flex flex-col relative">
 					<form
-						out:formOut|local
-						in:formIn|local={{ delay: 100 }}
+						out:formOut
+						in:formIn={{ delay: 100 }}
 						on:submit|preventDefault={() => generateMonkey(inputValue)}
 						class="flex flex-col items-center my-auto relative mx-4 md:mx-6"
 						id="monkey-input"
@@ -201,8 +201,8 @@
 						</p>
 					</form>
 					<div
-						out:formOut|local
-						in:formIn|local={{ delay: 100 }}
+						out:formOut
+						in:formIn={{ delay: 100 }}
 						class="w-full px-4 flex flex-row justify-center absolute bottom-0 py-5"
 					>
 						<Button
@@ -219,7 +219,7 @@
 			<!-- Curtain -->
 			{#if monkeyLoadState === 'loaded' || monkeyLoadState === 'fullyReady' || monkeyLoadState === 'error'}
 				<div
-					in:curtainIn|local
+					in:curtainIn
 					class="w-full h-full absolute transform -translate-y-full overflow-hidden z-10"
 				>
 					<div class="w-full h-full bg-c-primary absolute" />
