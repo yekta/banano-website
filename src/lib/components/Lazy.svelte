@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Lazy from 'svelte-lazy';
+	import Lazy from '$components/svelte-lazy/SvelteLazy.svelte';
 	import AspectRatio from './AspectRatio.svelte';
 	import Lqip from '$components/Lqip.svelte';
 

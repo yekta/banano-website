@@ -1,6 +1,6 @@
 <script lang="ts">
 	import AspectRatio from './AspectRatio.svelte';
-	import { LazyImage } from 'svelte-lazy-image';
+	import LazyImage from '$components/svelte-lazy-image/SvelteLazyImage.svelte';
 
 	export let width: number;
 	export let height: number;
