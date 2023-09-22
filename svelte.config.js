@@ -26,7 +26,8 @@ const config = {
 			crawl: true,
 			concurrency: 20,
 			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*'],
-			handleHttpError: 'ignore'
+			handleHttpError: 'ignore',
+			handleMissingId: 'ignore'
 		},
 		inlineStyleThreshold: 60 * 1024
 	}
