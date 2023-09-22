@@ -25,8 +25,7 @@ const config = {
 		prerender: {
 			crawl: true,
 			concurrency: 20,
-			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*'],
-			onError: 'continue'
+			entries: process.env.BUILD ? [...(await getBlogRoutesArray())] : ['*']
 		},
 		inlineStyleThreshold: 60 * 1024
 	}
