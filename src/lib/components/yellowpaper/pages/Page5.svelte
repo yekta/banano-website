@@ -58,7 +58,7 @@
 		<li>
 			Hardware wallet: <a target="_blank" href="https://shop.ledger.com/products/ledger-nano-s"
 				>Ledger Nano S</a
-			> model is supported with the TheBananoStand.
+			> model is supported with TheBananoStand.
 		</li>
 	</ul>
 	<div class="w-full flex flex-row flex-wrap justify-center items-center">
