@@ -44,7 +44,7 @@
 			title: 'Resources',
 			wClass: 'w-64',
 			entries: [
-				{ text: 'Desktop Wallet', href: bananoWallets.vault.url, targetBlank: true },
+				{ text: 'Desktop Wallet', href: bananoWallets.thebananostand.url, targetBlank: true },
 				{ text: 'Mobile Wallet', href: bananoWallets.kalium.url, targetBlank: true },
 				{
 					text: 'Network Explorer',
