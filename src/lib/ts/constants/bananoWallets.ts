@@ -6,5 +6,9 @@ export const bananoWallets = {
 	vault: {
 		title: 'Vault',
 		url: 'https://vault.banano.cc'
+	},
+	thebananostand: {
+		title: 'TheBananoStand',
+		url: 'https://thebananostand.com/'
 	}
 };

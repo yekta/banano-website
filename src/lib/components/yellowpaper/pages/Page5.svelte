@@ -53,12 +53,12 @@
 			Mobile Wallet: <a target="_blank" href={bananoWallets.kalium.url}>Kalium (Android & iOS)</a>.
 		</li>
 		<li>
-			Desktop Wallet: <a target="_blank" href={bananoWallets.vault.url}>BANANO Vault Web Wallet</a>.
+			Desktop Wallet: <a target="_blank" href={bananoWallets.thebananostand.url}>TheBananoStand Web Wallet</a>.
 		</li>
 		<li>
 			Hardware wallet: <a target="_blank" href="https://shop.ledger.com/products/ledger-nano-s"
 				>Ledger Nano S</a
-			> model is supported with the BANANO Vault.
+			> model is supported with TheBananoStand.
 		</li>
 	</ul>
 	<div class="w-full flex flex-row flex-wrap justify-center items-center">
@@ -76,12 +76,12 @@
 		</div>
 		<div class="w-full md:flex-1 min-w-0 h-auto flex flex-col">
 			<div class="w-full mt-8 px-4">
-				<a class="w-full" href={bananoWallets.vault.url} target="_blank">
+				<a class="w-full" href={bananoWallets.thebananostand.url} target="_blank">
 					<LazyImage
 						width={1500}
 						height={863}
-						src="/yellowpaper/vault.png"
-						placeholderSrc="/yellowpaper/lqip/vault.png"
+						src="/yellowpaper/thebananostand.png"
+						placeholderSrc="/yellowpaper/lqip/thebananostand.png"
 						alt="Banano Vault"
 						class="w-full h-auto rounded-xl"
 					/>
