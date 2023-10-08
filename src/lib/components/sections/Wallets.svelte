@@ -21,11 +21,11 @@
 			img: 'kalium-wallet'
 		},
 		{
-			title: 'BananoVault',
+			title: 'TheBananoStand',
 			description: 'Browser-based lightwallet that also supports Ledger Nano S. Ideal for desktop.',
-			buttonText: 'Visit BananoVault',
-			url: bananoWallets.vault.url,
-			img: 'banano-vault'
+			buttonText: 'Visit BananoStand',
+			url: bananoWallets.thebananostand.url,
+			img: 'thebananostand'
 		},
 		{
 			title: 'Discord Tipbot',
