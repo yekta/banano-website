@@ -251,4 +251,40 @@ Wrapped Banano on Arbitrum. Christmas Reddit airdrops.
 
 ### January
 
-Wrapped Banano dApp update, Zaps support.
+Wrapped Banano dApp update, Zaps support.  100th cryptomonKeys NFT released. Launch of monKeyRice.
+
+### February
+
+Balentines celebration and events. 45M Banano block party.
+
+### March
+
+Banano airdrop on Reddit. wBAN Arbitrum airdrop. Even more Dungeons & Banano events.
+
+### April
+
+Banano turns 5 years old, celebrating 'new transaction fees'. Meme contest and Eggcellent Easter events/giveaways. Pelion vault release.
+
+### May
+
+JungleTV hits 1 year milestone of non-stop videos. wBAN v2.6.5 release.
+
+### June
+
+Banano protesting Reddit API changes. 2 year wBAN anniversary & NFT airdrop. 50M blocks party. Stack wallet integration. Banano vision. BoomPow update.
+
+### July
+
+IRL Banano event. Banano party at r/place. Booster 3 hackathon announcement. Swole Torchic month begins.
+
+### August
+
+wBAN v2.6.7 released and multi-chain farms updated. 
+
+### September
+
+Booster 3 winners announced. cryptomonKeys turn 3 years old. MonKeymerch.cc launch.
+
+### October
+
+TheBananoStand announced as official web wallet. Lots of community events. 55M blocks party. 
