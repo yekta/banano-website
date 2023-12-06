@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### BANANO Advent calendar is up! Daily free BANANO or NFTs!
+
+#### 2023-12-05
+
+It's this time of the year again: In the spirit of Xmas, we’re giving away daily free BANANO and cryptomonKeys NFT gifts at Discord: [Banano Blog](https://banano.cc/blog/the-banano-advent). [Medium Article](https://medium.com/banano/banano-advent-calendar-is-up-daily-free-banano-or-nfts-ffcf09341d7e).
+
 ### BANANO Monthly Update #68 (December 2023)
 
 #### 2023-12-02
