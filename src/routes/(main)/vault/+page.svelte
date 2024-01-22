@@ -64,19 +64,26 @@
 <div class="w-full bg-c-secondary flex flex-col items-center justify-start text-center">
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
 		<div
-			class="w-full bg-c-secondary min-h-[450px] md:min-h-[450px] flex justify-center overflow-hidden"
+			class="w-full bg-c-secondary min-h-[500px] md:min-h-[500px] flex justify-center overflow-hidden"
 		>
 			<BgHero />
 			<BgWaveBottom />
 			<div
-				class="container-b-small px-8 md:px-24 max-w-full flex flex-col items-center self-center pt-24 pb-28 md:pb-36 relative z-10 text-c-bg"
+				class="container-b-small px-8 md:px-24 max-w-full flex flex-col items-center self-center pt-24 pb-32 md:pb-36 relative z-10 text-c-bg"
 			>
 				<h1 class="font-bold text-4xl md:text-5xl">Time to move on!</h1>
 				<p class="text-xl mt-5">
 					Banano Vault is no longer supported. We have a better official browser-based wallet now:
 					TheBananoVault.
 				</p>
-				<p />
+				<Button
+					class="mt-6"
+					buttonType="primary"
+					href={bananoWallets.thebananostand.url}
+					target="_blank"
+				>
+					Visit TheBananoStand
+				</Button>
 			</div>
 		</div>
 	</div>
