@@ -149,8 +149,10 @@
 		setNotAtTheTop();
 	}
 
-	const isBlogAndActive = (section: Section) =>
-		$page.routeId?.startsWith('blog') &&
+	$: isBlogRoute = $page.url.pathname.startsWith('/blog');
+
+	const isBlogRouteAndActive = (section: Section) =>
+		isBlogRoute &&
 		($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href);
 </script>
 
@@ -164,7 +166,7 @@
 	<div
 		class="{notAtTheTop
 			? 'translate-0'
-			: '-translate-y-24'} transform transition duration-250 bg-c-bg shadow-navbar 
+			: '-translate-y-24'} transform transition duration-250 bg-c-bg shadow-navbar
 			shadow-c-secondary/13 absolute left-0 bottom-2 w-full h-full pointer-events-none ring-4 ring-c-bg-shaded"
 	/>
 	<div
@@ -174,7 +176,7 @@
 	>
 		<a
 			aria-label="Logo Link to Homescreen"
-			href={$page.routeId?.startsWith('blog') ? '/blog' : '/'}
+			href={isBlogRoute ? '/blog' : '/'}
 			data-sveltekit-prefetch
 			class="mr-4 md:mr-12 py-3 group rounded-lg relative z-0 h-full flex flex-row items-center"
 		>
@@ -194,7 +196,7 @@
 		</a>
 		<div class="flex justify-end">
 			<div class="hidden lg:flex justify-end mx-1.5">
-				{#each $page.routeId?.startsWith('blog') ? blogSections : sections as section}
+				{#each isBlogRoute ? blogSections : sections as section}
 					<a
 						data-sveltekit-prefetch
 						href={section.href}
@@ -206,7 +208,7 @@
 							class="flex items-center px-4 py-2 rounded-lg relative transition group-hover:bg-c-secondary group-hover:text-c-bg
 							shadow-navbar-button group-hover:shadow-navbar-button-hover shadow-c-on-bg/50 group-hover:shadow-c-secondary-shaded"
 						>
-							{#if isBlogAndActive(section)}
+							{#if isBlogRouteAndActive(section)}
 								<div class="w-full h-full absolute left-0 top-0">
 									<div
 										class="w-full h-full group-hover:opacity-0 {notAtTheTop
@@ -258,7 +260,7 @@
 					: 'text-c-primary'} lg:hidden h-full flex items-center group py-3"
 			>
 				<div
-					class="h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 justify-center rounded-lg transition shadow-navbar-button 
+					class="h-12 w-12 p-1.5 md:w-auto md:h-auto md:pl-2 md:pr-3.5 md:py-1.5 justify-center rounded-lg transition shadow-navbar-button
 					shadow-c-on-bg/50 group-hover:text-c-bg flex flex-row items-center {$isTouchscreen
 						? ''
 						: 'group-hover:shadow-navbar-button-hover group-hover:shadow-c-secondary-shaded group-hover:bg-c-secondary'}"
@@ -281,14 +283,14 @@
 			<div
 				transition:sidebar={{ duration: 250, easing: cubicOut }}
 				use:clickoutside={closeMenu}
-				class="w-[70vw] max-w-[18rem] h-full flex flex-col items-start bg-c-bg 
+				class="w-[70vw] max-w-[18rem] h-full flex flex-col items-start bg-c-bg
 				rounded-l-xl p-3 overflow-y-auto shadow-sidebar shadow-c-bg-secondary-shaded"
 			>
 				<p class="text-2xl font-bold px-6 py-3">Sections</p>
 				<div class="w-full px-2">
 					<div class="h-1 w-full rounded-full bg-c-secondary mt-2 mb-3" />
 				</div>
-				{#each $page.routeId?.startsWith('blog') ? blogSections : sections as section}
+				{#each isBlogRoute ? blogSections : sections as section}
 					<a
 						data-sveltekit-prefetch
 						on:click={closeMenu}
@@ -296,7 +298,7 @@
 						class="flex items-center text-lg w-full max-w-full px-6 py-3 font-medium rounded-xl transition hover:bg-c-secondary hover:text-c-bg
 						shadow-navbar-button hover:shadow-navbar-button-hover shadow-c-on-bg/50 hover:shadow-c-secondary-shaded relative group"
 					>
-						{#if $page.routeId?.startsWith('blog') && ($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href)}
+						{#if isBlogRoute && ($page.url.pathname.startsWith(`${section.href}/`) || $page.url.pathname === section.href)}
 							<div class="w-full h-full absolute left-0 top-0">
 								<div
 									class="w-full h-full group-hover:opacity-0 bg-c-secondary/20 transition rounded-xl"
@@ -304,7 +306,7 @@
 							</div>
 						{/if}
 						<p
-							class={$page.routeId?.startsWith('blog') &&
+							class={isBlogRoute &&
 							($page.url.pathname.startsWith(`${section.href}/`) ||
 								$page.url.pathname === section.href)
 								? 'text-c-secondary group-hover:text-c-bg'
@@ -331,7 +333,7 @@
 						href="https://www.coingecko.com/en/coins/banano"
 						target="_blank"
 						class="w-full text-center mt-4 font-bold text-lg bg-c-on-bg/10 px-3 py-2 rounded-lg
-						transition hover:bg-c-secondary hover:text-c-bg shadow-navbar-button 
+						transition hover:bg-c-secondary hover:text-c-bg shadow-navbar-button
 						hover:shadow-navbar-button-hover shadow-c-on-bg/40 hover:shadow-c-secondary-shaded"
 					>
 						${bananoPrice !== undefined ? numberFormatter(bananoPrice) : pricePlaceholder}
