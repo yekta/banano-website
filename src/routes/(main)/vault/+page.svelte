@@ -74,7 +74,7 @@
 				<h1 class="font-bold text-4xl md:text-5xl">Time to move on!</h1>
 				<p class="text-xl mt-5">
 					Banano Vault is no longer supported. We have a better official browser-based wallet now:
-					TheBananoVault.
+					TheBananoStand.
 				</p>
 				<Button
 					class="mt-6"
@@ -88,9 +88,9 @@
 		</div>
 	</div>
 	<div class="w-full bg-c-bg -mt-2 pt-14 pb-12 relative px-8">
-		<h2 class="text-3xl font-bold">Use TheBananoVault</h2>
+		<h2 class="text-3xl font-bold">Use TheBananoStand</h2>
 		<p class="container-b-small max-w-full text-lg mt-3 md:px-3">
-			TheBananoVault is the official browser-based wallet for Banano going forward. You can use it
+			TheBananoStand is the official browser-based wallet for Banano going forward. You can use it
 			instead of Banano Vault. Alternatively, you can use Kalium which is our mobile wallet for iOS
 			and Android.
 		</p>
