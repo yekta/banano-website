@@ -11,13 +11,13 @@
 
 	const title = 'Vault | Banano';
 	const description =
-		'Banano Vault is now deprecated. Our new browser-based official Banano wallet is TheBananoStand. Time to move on.';
+		'Banano Vault is now deprecated. Our new browser-based official Banano wallet is The Banano Stand. Time to move on.';
 	const canonical = `${canonicalUrl}${$page.url.pathname}`;
 	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}.jpg`;
 
 	const wallets: TWallet[] = [
 		{
-			title: 'TheBananoStand',
+			title: 'The Banano Stand',
 			description: 'Browser-based lightwallet that also supports Ledger Nano S. Ideal for desktop.',
 			buttonText: 'Visit BananoStand',
 			url: bananoWallets.thebananostand.url,
@@ -74,7 +74,7 @@
 				<h1 class="font-bold text-4xl md:text-5xl">Time to move on!</h1>
 				<p class="text-xl mt-5">
 					Banano Vault is no longer supported. We have a better official browser-based wallet now:
-					TheBananoStand.
+					The Banano Stand.
 				</p>
 				<Button
 					class="mt-6"
@@ -82,15 +82,15 @@
 					href={bananoWallets.thebananostand.url}
 					target="_blank"
 				>
-					Visit TheBananoStand
+					Visit The Banano Stand
 				</Button>
 			</div>
 		</div>
 	</div>
 	<div class="w-full bg-c-bg -mt-2 pt-14 pb-12 relative px-8">
-		<h2 class="text-3xl font-bold">Use TheBananoStand</h2>
+		<h2 class="text-3xl font-bold">Use The Banano Stand</h2>
 		<p class="container-b-small max-w-full text-lg mt-3 md:px-3">
-			TheBananoStand is the official browser-based wallet for Banano going forward. You can use it
+			The Banano Stand is the official browser-based wallet for Banano going forward. You can use it
 			instead of Banano Vault. Alternatively, you can use Kalium which is our mobile wallet for iOS
 			and Android.
 		</p>

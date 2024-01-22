@@ -5,7 +5,7 @@
 	export let onClick: (() => void) | undefined = undefined;
 	export let href: string | undefined = undefined;
 	export let isLeft = false;
-	export let padding = 'px-8 py-3.5';
+	export let padding = 'px-6 py-3.5';
 	export { classes as class };
 	export let disabled = false;
 	export let loading = false;
@@ -50,7 +50,7 @@
 		on:click={onClick}
 		class="flex flex-row items-center {isLeft
 			? 'justify-start'
-			: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button hover:shadow-button-hover 
+			: 'justify-center'} {padding} relative font-bold text-lg rounded-xl shadow-button hover:shadow-button-hover
 			transition-all hover:-translate-y-0.5 filter {bgAndTextClass} {classes}"
 	>
 		<slot />
