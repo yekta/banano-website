@@ -69,7 +69,7 @@
 			<BgHero />
 			<BgWaveBottom />
 			<div
-				class="container-b-small px-8 md:px-24 max-w-full flex flex-col items-center self-center pt-24 pb-32 md:pb-36 relative z-10 text-c-bg"
+				class="container-b-small px-8 md:px-24 max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pt-24 md:pb-36 relative z-10 text-c-bg"
 			>
 				<h1 class="font-bold text-4xl md:text-5xl">Time to move on!</h1>
 				<p class="text-xl mt-5">
