@@ -88,7 +88,7 @@
 		</div>
 	</div>
 	<div class="w-full bg-c-bg -mt-2 pt-14 pb-12 relative px-8">
-		<h2 class="text-3xl font-bold">Use The Banano Stand</h2>
+		<h2 class="text-3xl font-bold">Switch to The Banano Stand</h2>
 		<p class="container-b-small max-w-full text-lg mt-3 md:px-3">
 			The Banano Stand is the official browser-based wallet for Banano going forward. You can use it
 			instead of Banano Vault. Alternatively, you can use Kalium which is our mobile wallet for iOS
