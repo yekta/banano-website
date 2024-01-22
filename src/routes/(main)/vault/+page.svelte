@@ -73,8 +73,8 @@
 			>
 				<h1 class="font-bold text-4xl md:text-5xl">Time to move on!</h1>
 				<p class="text-xl mt-5">
-					Banano Vault is no longer supported. We have a much better official browser-based wallet
-					now: TheBananoVault.
+					Banano Vault is no longer supported. We have a better official browser-based wallet now:
+					TheBananoVault.
 				</p>
 				<p />
 			</div>
