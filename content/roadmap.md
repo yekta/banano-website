@@ -251,7 +251,7 @@ Wrapped Banano on Arbitrum. Christmas Reddit airdrops.
 
 ### January
 
-Wrapped Banano dApp update, Zaps support.  100th cryptomonKeys NFT released. Launch of monKeyRice.
+Wrapped Banano dApp update, Zaps support. 100th cryptomonKeys NFT released. Launch of monKeyRice.
 
 ### February
 
@@ -279,7 +279,7 @@ IRL Banano event. Banano party at r/place. Booster 3 hackathon announcement. Swo
 
 ### August
 
-wBAN v2.6.7 released and multi-chain farms updated. 
+wBAN v2.6.7 released and multi-chain farms updated.
 
 ### September
 
@@ -287,4 +287,4 @@ Booster 3 winners announced. cryptomonKeys turn 3 years old. MonKeymerch.cc laun
 
 ### October
 
-TheBananoStand announced as official web wallet. Lots of community events. 55M blocks party. 
+The Banano Stand announced as official web wallet. Lots of community events. 55M blocks party.

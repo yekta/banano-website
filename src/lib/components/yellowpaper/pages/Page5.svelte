@@ -53,12 +53,14 @@
 			Mobile Wallet: <a target="_blank" href={bananoWallets.kalium.url}>Kalium (Android & iOS)</a>.
 		</li>
 		<li>
-			Desktop Wallet: <a target="_blank" href={bananoWallets.thebananostand.url}>TheBananoStand Web Wallet</a>.
+			Desktop Wallet: <a target="_blank" href={bananoWallets.thebananostand.url}
+				>The Banano Stand Web Wallet</a
+			>.
 		</li>
 		<li>
 			Hardware wallet: <a target="_blank" href="https://shop.ledger.com/products/ledger-nano-s"
 				>Ledger Nano S</a
-			> model is supported with TheBananoStand.
+			> model is supported with The Banano Stand.
 		</li>
 	</ul>
 	<div class="w-full flex flex-row flex-wrap justify-center items-center">

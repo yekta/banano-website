@@ -8,7 +8,7 @@ export const bananoWallets = {
 		url: 'https://vault.banano.cc'
 	},
 	thebananostand: {
-		title: 'TheBananoStand',
+		title: 'The Banano Stand',
 		url: 'https://thebananostand.com/'
 	}
 };
