@@ -5,9 +5,9 @@
 	import { canonicalUrl } from '$ts/constants/canonical';
 	import { MetaTags } from 'svelte-meta-tags';
 	import BgWaveBottom from '$components/backgrounds/BgWaveBottom.svelte';
-	import BgHero from '$components/backgrounds/BgHero.svelte';
 	import { bananoWallets } from '$ts/constants/bananoWallets';
 	import type { TWallet } from '$ts/types/Wallets';
+	import BgHeroCover from '$components/backgrounds/BgHeroCover.svelte';
 
 	const title = 'Vault | Banano';
 	const description =
@@ -66,7 +66,7 @@
 		<div
 			class="w-full bg-c-secondary min-h-[500px] md:min-h-[500px] flex justify-center overflow-hidden"
 		>
-			<BgHero />
+			<BgHeroCover />
 			<BgWaveBottom />
 			<div
 				class="container-b-small px-8 md:px-24 max-w-full flex flex-col items-center self-center pt-20 pb-32 md:pt-24 md:pb-36 relative z-10 text-c-bg"
