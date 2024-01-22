@@ -122,6 +122,7 @@ mark {
 
 input,
 textarea {
+	appearance: none;
 	-webkit-appearance: none;
 }
 
