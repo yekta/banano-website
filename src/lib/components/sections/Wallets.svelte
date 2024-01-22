@@ -1,17 +1,10 @@
 <script lang="ts">
 	import { bananoWallets } from '$ts/constants/bananoWallets';
+	import type { TWallet } from '$ts/types/Wallets';
 
 	import Button from '../Button.svelte';
 
-	interface Wallet {
-		title: string;
-		description: string;
-		buttonText: string;
-		url: string;
-		img: string;
-	}
-
-	const wallets: Wallet[] = [
+	const wallets: TWallet[] = [
 		{
 			title: 'Kalium',
 			description:
