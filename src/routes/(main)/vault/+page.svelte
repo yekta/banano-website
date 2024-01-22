@@ -11,7 +11,7 @@
 
 	const title = 'Vault | Banano';
 	const description =
-		'Banano Vault is now deprecated. Our new browser-based official Banano wallet is The Banano Stand. Time to move on.';
+		'Banano Vault has been deprecated. Our new browser-based official Banano wallet is The Banano Stand. Time to move on.';
 	const canonical = `${canonicalUrl}${$page.url.pathname}`;
 	const imageUrl = `${canonicalUrl}/previews${$page.url.pathname}.jpg`;
 
