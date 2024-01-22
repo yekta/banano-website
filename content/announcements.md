@@ -4,6 +4,42 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### BANANO Advent calendar is up! Daily free BANANO or NFTs!
+
+#### 2023-12-05
+
+It's this time of the year again: In the spirit of Xmas, we’re giving away daily free BANANO and cryptomonKeys NFT gifts at Discord: [Banano Blog](https://banano.cc/blog/the-banano-advent). [Medium Article](https://medium.com/banano/banano-advent-calendar-is-up-daily-free-banano-or-nfts-ffcf09341d7e).
+
+### BANANO Monthly Update #68 (December 2023)
+
+#### 2023-12-02
+
+This fresh BANANO Monthly Update December 2023 summarizes all updates from the BANANO ecosystem in November 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-68-december-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-68-december-2023-6261adb874e8).
+
+### BANANO Monthly Update #67 (November 2023)
+
+#### 2023-11-23
+
+Check out this BANANO Monthly Update November 2023 summarizing all news from the BANANO ecosphere in October 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-67-november-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-67-november-2023-0f91c293899d).
+
+### BANANO Monthly Update #66 (October 2023)
+
+#### 2023-10-07
+
+Here's the fresh and ripe BANANO Monthly Update October 2023 with all the BANANO ecosystem news from September 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-66-october-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-66-october-2023-277be1c88516).
+
+### BANANO Monthly Update #65 (September 2023)
+
+#### 2023-10-05
+
+Here's the latest BANANO Monthly Update September 2023 summarizing all updates from the BANANO ecosphere from August 2023: [Banano Blog](https://banano.cc/blog/banano-monthly-update-65-september-2023). [Medium Article](https://medium.com/banano/banano-monthly-update-65-september-2023-68108ed3e1aa).
+
+### Banano Hackathon: Booster 3 Winners Announcement!
+
+#### 2023-09-22
+
+Check out this summary of all winning projects from this year's competition, with 15 New and 10 Existing projects submitted: [Banano Blog](https://banano.cc/blog/booster-3-winners-announcement). [Medium Article](https://medium.com/banano/banano-hackathon-booster-3-winners-announcement-772e4478c007).
+
 ### BANANO Monthly Update #64 (August 2023)
 
 #### 2023-08-19
