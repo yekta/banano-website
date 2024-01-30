@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### PSA: Many Insecure Banano Vault Seeds Have Been Compromised
+
+#### 2024-01-25
+
+After the recent shutdown of the Banano web-wallet Vault, it was discovered that multiple users had used insecure seeds for Vault. Here, the team explains all details: [Banano Blog](https://banano.cc/blog/psa-many-insecure-banano-vault-seeds-have-been-compromised). [Medium Article](https://medium.com/banano/psa-many-insecure-banano-vault-seeds-have-been-compromised-d2b8a6152f25).
+
 ### BANANO Advent calendar is up! Daily free BANANO or NFTs!
 
 #### 2023-12-05
