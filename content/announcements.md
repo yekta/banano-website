@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Banano is now on Farcaster/Warpcast (100k BAN airdrop!)
+
+#### 2024-02-17
+
+Banano is now also on Warpcast, a client for the decentralized social media protocol farcaster. Since the Banano Warpcast channel grew to 600+ members within a day and we were warmly welcomed, we’re now doing a 100k Banano airdrop over there! Details here: [Banano Blog](https://banano.cc/blog/banano-is-now-on-farcaster-warpcast). [Medium Article](https://medium.com/banano/banano-is-now-on-farcaster-warpcast-100k-ban-airdrop-6565526ebe99).
+
 ### BANANO Monthly Update #70 (February 2024)
 
 #### 2024-02-02
