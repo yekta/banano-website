@@ -12,7 +12,7 @@
 	import IconMorpher from '$components/IconMorpher.svelte';
 	import IconTick from '$components/icons/IconTick.svelte';
 	import VirtualList from '@sveltejs/svelte-virtual-list';
-	import { onMount, tick } from 'svelte';
+	import { onDestroy, onMount, tick } from 'svelte';
 	import IconLoading from '$components/icons/IconLoading.svelte';
 	import { copy } from 'svelte-copy';
 	import { bytesToHex } from '$ts/helpers/banano';
@@ -81,6 +81,7 @@
 		seed: string;
 		address: string;
 		designIndex: number;
+		createdAt: number;
 	}
 
 	let generatedPaperWallets: IGeneratedPaperWallet[] = [];
@@ -104,7 +105,8 @@
 			_generatedPaperWallets.push({
 				seed,
 				address,
-				designIndex
+				designIndex,
+				createdAt: Date.now()
 			});
 		}
 		generatedPaperWallets = [...generatedPaperWallets, ..._generatedPaperWallets];
@@ -125,7 +127,7 @@
 
 	async function printPage() {
 		window.plausible('PaperWallet | Print Clicked', {
-			props: { 'Wallet Count': generatedPaperWallets.length.toString() }
+			props: { 'Wallet Count': generatedPaperWalletsReversed.length.toString() }
 		});
 		isPrinting = true;
 		await tick();
@@ -148,12 +150,24 @@
 		}, 1000);
 	};
 
+	let now = Date.now();
+	let nowInterval: NodeJS.Timeout;
+
+	$: generatedPaperWalletsReversed = [...generatedPaperWallets].reverse();
+
 	onMount(async () => {
 		bananojs = (await import('@bananocoin/bananojs')).default;
 		window.addEventListener('afterprint', (event) => {
 			shouldRenderPrinting = false;
 			isPrinting = false;
 		});
+		nowInterval = setInterval(() => {
+			now = Date.now();
+		}, 500);
+	});
+
+	onDestroy(() => {
+		clearInterval(nowInterval);
 	});
 </script>
 
@@ -182,13 +196,9 @@
 	}}
 />
 
-<div
-	class="w-full bg-c-secondary print:bg-c-bg flex flex-col items-center justify-start text-center print:hidden"
->
+<div class="w-full flex flex-col items-center justify-start text-center print:hidden">
 	<div class="w-full relative flex flex-row justify-center overflow-hidden">
-		<div
-			class="w-full bg-c-secondary min-h-[550px] md:min-h-[650px] flex justify-center overflow-hidden"
-		>
+		<div class="w-full min-h-[550px] md:min-h-[650px] flex justify-center overflow-hidden">
 			<BgHero />
 			<BgWaveBottom />
 			<div
@@ -260,8 +270,8 @@
 		>
 			<div class="w-full flex flex-row justify-between">
 				<h3 class="px-3 font-bold text-xl">
-					Generated Addresses {#if generatedPaperWallets.length > 0}
-						<span class="opacity-50">({generatedPaperWallets.length})</span>
+					Generated Addresses {#if generatedPaperWalletsReversed.length > 0}
+						<span class="opacity-50">({generatedPaperWalletsReversed.length})</span>
 					{/if}
 				</h3>
 			</div>
@@ -270,9 +280,9 @@
 					class="w-full h-66 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/5 p-3 md:p-4
 					text-left border border-c-on-bg/10 overflow-auto relative"
 				>
-					{#if generatedPaperWallets.length > 0}
+					{#if generatedPaperWalletsReversed.length > 0}
 						<p class="w-full leading-loose text-sm font-mono relative">
-							{#each [...generatedPaperWallets].reverse() as wallet (wallet.address)}
+							{#each generatedPaperWalletsReversed as wallet (wallet.address)}
 								<span class="colored-fade-in rounded px-2 py-1">{wallet.address + '\n'}</span>
 							{/each}
 						</p>
@@ -286,16 +296,13 @@
 						</div>
 					{/if}
 				</div>
-				{#if generatedPaperWallets.length > 0}
+				{#if generatedPaperWalletsReversed.length > 0}
 					<div
 						class="absolute right-0 top-0 mr-2 mt-2 rounded-lg z-10 bg-c-bg shadow-lg shadow-c-on-bg/15"
 					>
 						<button
 							aria-label="Copy Addresses"
-							use:copy={generatedPaperWallets
-								.map((w) => w.address)
-								.reverse()
-								.join('\n')}
+							use:copy={generatedPaperWalletsReversed.map((w) => w.address).join('\n')}
 							on:svelte-copy={activateRecentlyCopied}
 							class="w-12 h-12 p-2.5 transition group hover:bg-c-secondary/15 hover:text-c-secondary
 							rounded-lg z-0 flex flex-row items-center justify-center"
@@ -317,7 +324,7 @@
 	</div>
 </div>
 <div class="w-full -mt-3 pb-12 print:m-0 print:p-0">
-	{#if generatedPaperWallets.length > 0}
+	{#if generatedPaperWalletsReversed.length > 0}
 		<div
 			class="container-b-smallest flex flex-col items-center relative z-0 px-3 md:px-8 print:px-0 print:w-full print:block"
 		>
@@ -343,75 +350,45 @@
 				<div class="w-[650px] md:w-full h-full print:w-full print:h-full relative">
 					<!-- Virtual list, hidden in print mode -->
 					<div class="w-full h-full print:hidden">
-						<VirtualList items={[...generatedPaperWallets].reverse()} let:item={wallet}>
-							<div
-								class="w-full relative print:break-inside-avoid table h-auto px-4 pt-4 transition
-								{wallet.address === generatedPaperWallets[0].address ? 'pb-4' : ''}"
-							>
-								<div class="w-full relative flex items-center">
-									<div class="flex flex-col items-center min-w-[30%] mr-[3%] text-center">
-										<p class="font-bold px-3 print:px-0">ADDRESS</p>
-										<p class="text-xs break-all leading-relaxed mb-4 font-mono w-[22ch]">
-											<span class="text-c-secondary font-bold"
-												>{wallet.address.slice(0, hightlightChCountStart)}</span
-											>{wallet.address.slice(
-												hightlightChCountStart,
-												wallet.address.length - hightlightChCountEnd
-											)}<span class="text-c-secondary font-bold"
-												>{wallet.address.slice(wallet.address.length - hightlightChCountEnd)}</span
-											>
-										</p>
-										<div class="w-full px-[22%]">
-											{#key wallet}
-												<QR text={wallet.address} level="H" />
-											{/key}
-										</div>
-									</div>
-									<div class="flex-1 relative">
-										<img
-											class="w-full h-auto relative z-0"
-											src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
-											alt="{wallet.address} Paper Wallet"
-										/>
-										<div
-											class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
-												.qrMarginClasses}"
-										>
-											{#key wallet}
-												<QR text={wallet.seed} level="H" />
-											{/key}
-										</div>
-									</div>
-								</div>
-							</div>
-						</VirtualList>
-					</div>
-					<!-- The list to print, hidden in normal mode -->
-					{#if isPrinting && shouldRenderPrinting}
-						<div class="w-full h-auto hidden print:block">
-							{#each [...generatedPaperWallets].reverse() as wallet}
-								<div class="w-full relative break-inside-avoid table h-auto mb-[12pt]">
-									<div class="w-full relative flex items-center">
-										<div class="flex flex-col items-center min-w-[24%] mr-[4%] text-center">
-											<p class="font-bold">ADDRESS</p>
+						<VirtualList items={generatedPaperWalletsReversed} let:item={wallet}>
+							{#key wallet.address}
+								<div
+									class="w-full relative print:break-inside-avoid table h-auto px-4 py-4 {generatedPaperWalletsReversed[0]
+										.address === wallet.address
+										? ''
+										: '-mt-5'}"
+								>
+									<div
+										class="w-full relative flex items-center transition p-1
+										{now - wallet.createdAt < 500 ? 'bg-c-secondary/25' : 'bg-transparent'}"
+									>
+										<div class="flex flex-col items-center min-w-[30%] mr-[3%] text-center">
 											<p
-												class="text-xs break-all font-mono w-[22ch] text-[10pt] leading-[14pt] mt-[2pt] p-0 mb-[12pt]"
+												class="font-bold px-3 print:px-0 transition {now - wallet.createdAt < 500
+													? 'text-c-secondary'
+													: 'text-c-on-bg'}"
 											>
+												ADDRESS
+											</p>
+											<p class="text-xs break-all leading-relaxed mb-4 font-mono w-[22ch]">
 												<span class="text-c-secondary font-bold"
 													>{wallet.address.slice(0, hightlightChCountStart)}</span
-												>{wallet.address.slice(
-													hightlightChCountStart,
-													wallet.address.length - hightlightChCountEnd
-												)}<span class="text-c-secondary font-bold"
+												><span
+													class="transition {now - wallet.createdAt < 500
+														? 'text-c-secondary'
+														: 'text-c-on-bg'}"
+													>{wallet.address.slice(
+														hightlightChCountStart,
+														wallet.address.length - hightlightChCountEnd
+													)}</span
+												><span class="text-c-secondary font-bold"
 													>{wallet.address.slice(
 														wallet.address.length - hightlightChCountEnd
 													)}</span
 												>
 											</p>
-											<div class="w-full px-[12%]">
-												{#key wallet}
-													<QR text={wallet.address} level="H" />
-												{/key}
+											<div class="w-full px-[22%]">
+												<QR text={wallet.address} level="H" />
 											</div>
 										</div>
 										<div class="flex-1 relative">
@@ -424,13 +401,58 @@
 												class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
 													.qrMarginClasses}"
 											>
-												{#key wallet}
-													<QR text={wallet.seed} level="H" />
-												{/key}
+												<QR text={wallet.seed} level="H" />
 											</div>
 										</div>
 									</div>
 								</div>
+							{/key}
+						</VirtualList>
+					</div>
+					<!-- The list to print, hidden in normal mode -->
+					{#if isPrinting && shouldRenderPrinting}
+						<div class="w-full h-auto hidden print:block">
+							{#each generatedPaperWalletsReversed as wallet}
+								{#key wallet.address}
+									<div class="w-full relative break-inside-avoid table h-auto mb-[12pt]">
+										<div class="w-full relative flex items-center">
+											<div class="flex flex-col items-center min-w-[24%] mr-[4%] text-center">
+												<p class="font-bold">ADDRESS</p>
+												<p
+													class="text-xs break-all font-mono w-[22ch] text-[10pt] leading-[14pt] mt-[2pt] p-0 mb-[12pt]"
+												>
+													<span class="text-c-secondary font-bold"
+														>{wallet.address.slice(0, hightlightChCountStart)}</span
+													>{wallet.address.slice(
+														hightlightChCountStart,
+														wallet.address.length - hightlightChCountEnd
+													)}<span class="text-c-secondary font-bold"
+														>{wallet.address.slice(
+															wallet.address.length - hightlightChCountEnd
+														)}</span
+													>
+												</p>
+												<div class="w-full px-[12%]">
+													<QR text={wallet.address} level="H" />
+												</div>
+											</div>
+											<div class="flex-1 relative">
+												<img
+													class="w-full h-auto relative z-0"
+													src="{imgPrefix}-{paperWallets[wallet.designIndex].slug}.svg"
+													alt="{wallet.address} Paper Wallet"
+												/>
+												<div
+													class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[
+														wallet.designIndex
+													].qrMarginClasses}"
+												>
+													<QR text={wallet.seed} level="H" />
+												</div>
+											</div>
+										</div>
+									</div>
+								{/key}
 							{/each}
 						</div>
 					{/if}
