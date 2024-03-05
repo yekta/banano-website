@@ -267,7 +267,7 @@
 			</div>
 			<div class="w-full relative mt-3">
 				<div
-					class="w-full h-66 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/5 p-3 md:p-4 
+					class="w-full h-66 max-h-50vh bg-c-bg text-c-on-bg rounded-xl z-0 shadow-xl shadow-c-on-bg/5 p-3 md:p-4
 					text-left border border-c-on-bg/10 overflow-auto relative"
 				>
 					{#if generatedPaperWallets.length > 0}
@@ -297,7 +297,7 @@
 								.reverse()
 								.join('\n')}
 							on:svelte-copy={activateRecentlyCopied}
-							class="w-12 h-12 p-2.5 transition group hover:bg-c-secondary/15 hover:text-c-secondary 
+							class="w-12 h-12 p-2.5 transition group hover:bg-c-secondary/15 hover:text-c-secondary
 							rounded-lg z-0 flex flex-row items-center justify-center"
 						>
 							<IconMorpher switched={isRecentlyCopied} class="w-full h-full">
@@ -345,10 +345,8 @@
 					<div class="w-full h-full print:hidden">
 						<VirtualList items={[...generatedPaperWallets].reverse()} let:item={wallet}>
 							<div
-								class="w-full relative print:break-inside-avoid table h-auto px-4 pt-4 {wallet.address ===
-								generatedPaperWallets[0].address
-									? 'pb-4'
-									: ''}"
+								class="w-full relative print:break-inside-avoid table h-auto px-4 pt-4 transition
+								{wallet.address === generatedPaperWallets[0].address ? 'pb-4' : ''}"
 							>
 								<div class="w-full relative flex items-center">
 									<div class="flex flex-col items-center min-w-[30%] mr-[3%] text-center">
@@ -364,7 +362,9 @@
 											>
 										</p>
 										<div class="w-full px-[22%]">
-											<QR text={wallet.address} level="H" />
+											{#key wallet}
+												<QR text={wallet.address} level="H" />
+											{/key}
 										</div>
 									</div>
 									<div class="flex-1 relative">
@@ -377,7 +377,9 @@
 											class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
 												.qrMarginClasses}"
 										>
-											<QR text={wallet.seed} level="H" />
+											{#key wallet}
+												<QR text={wallet.seed} level="H" />
+											{/key}
 										</div>
 									</div>
 								</div>
@@ -407,7 +409,9 @@
 												>
 											</p>
 											<div class="w-full px-[12%]">
-												<QR text={wallet.address} level="H" />
+												{#key wallet}
+													<QR text={wallet.address} level="H" />
+												{/key}
 											</div>
 										</div>
 										<div class="flex-1 relative">
@@ -420,7 +424,9 @@
 												class="absolute right-0 top-0 z-10 w-[15%] {paperWallets[wallet.designIndex]
 													.qrMarginClasses}"
 											>
-												<QR text={wallet.seed} level="H" />
+												{#key wallet}
+													<QR text={wallet.seed} level="H" />
+												{/key}
 											</div>
 										</div>
 									</div>
