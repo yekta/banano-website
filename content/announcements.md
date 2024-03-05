@@ -4,6 +4,30 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Banano is now on Farcaster/Warpcast (100k BAN airdrop!)
+
+#### 2024-02-17
+
+Banano is now also on Warpcast, a client for the decentralized social media protocol farcaster. Since the Banano Warpcast channel grew to 600+ members within a day and we were warmly welcomed, we’re now doing a 100k Banano airdrop over there! Details here: [Banano Blog](https://banano.cc/blog/banano-is-now-on-farcaster-warpcast). [Medium Article](https://medium.com/banano/banano-is-now-on-farcaster-warpcast-100k-ban-airdrop-6565526ebe99).
+
+### BANANO Monthly Update #70 (February 2024)
+
+#### 2024-02-02
+
+Check out this fresh BANANO Monthly Update February 2024 with all the BANANO ecosystem news in January 2024, which was the 70th month since the BANANO main-net launch: [Banano Blog](https://banano.cc/blog/banano-monthly-update-70-february-2024). [Medium Article](https://medium.com/banano/banano-monthly-update-70-february-2024-bd7640fc0c52).
+
+### BANANO Monthly Update #69 (January 2024)
+
+#### 2024-01-30
+
+Here's the more than ripe BANANO Monthly Update January 2024 summarizing all updates from the BANANO ecosphere in December 2023, which was the 69th month since the BANANO main-net launch: [Banano Blog](https://banano.cc/blog/banano-monthly-update-69-january-2024). [Medium Article](https://medium.com/banano/banano-monthly-update-69-january-2024-2e1514aeb8c4).
+
+### PSA: Many Insecure Banano Vault Seeds Have Been Compromised
+
+#### 2024-01-25
+
+After the recent shutdown of the Banano web-wallet Vault, it was discovered that multiple users had used insecure seeds for Vault. Here, the team explains all details: [Banano Blog](https://banano.cc/blog/psa-many-insecure-banano-vault-seeds-have-been-compromised). [Medium Article](https://medium.com/banano/psa-many-insecure-banano-vault-seeds-have-been-compromised-d2b8a6152f25).
+
 ### BANANO Advent calendar is up! Daily free BANANO or NFTs!
 
 #### 2023-12-05
