@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Exchange Listing: Banano Listed On MEXC!
+
+#### 2024-03-13
+
+Today, the cryptocurrency exchange MEXC has listed Banano, which is our biggest exchange listing so far: [Banano Blog](https://banano.cc/blog/banano-to-be-listed-on-mexc-exchange). [Medium Article](https://medium.com/banano/exchange-listing-banano-listed-on-mexc-a3d73afeb447).
+
 ### BANANO Monthly Update #71 (March 2024)
 
 #### 2024-03-05
