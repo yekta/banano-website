@@ -288,3 +288,25 @@ Booster 3 winners announced. cryptomonKeys turn 3 years old. MonKeymerch.cc laun
 ### October
 
 The Banano Stand announced as official web wallet. Lots of community events. 55M blocks party.
+
+### November
+
+Thanksgiving giveaways.  BANacademy nominations open.
+
+### December
+
+BANacademy awards ceremony.  Holiday giveaways. More than 81% of total BAN distributed.
+
+## 2024 
+
+### January
+
+The first 'major' app was released for JAF (JungleTV Application Framework). Vault web wallet taken offline.
+
+### February
+
+Banano joins Farcaster/Warpcast.  r/ethtrader x Banano AMA.
+
+### March
+
+Banano gets listed on MEXC.  Kalium now supports multiple wallets. wBAN v2.6.9 released.
