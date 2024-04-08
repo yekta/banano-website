@@ -18,7 +18,7 @@ This is serious fun! Our mainnet is stable and highly active since April 1st, 20
 
 ### What is the total supply?
 
-1.91 billion coins. You can find further details at: [Coingecko](https://www.coingecko.com/en/coins/banano).
+1.91 billion coins. You can find further details at: [Coingecko](https://www.coingecko.com/en/coins/banano) and [Coinmarketcap](https://coinmarketcap.com/currencies/banano/).
 
 ### How do I get some Banano?
 
@@ -30,7 +30,7 @@ You can contact any of the CORE team via [Discord](https://chat.banano.cc) & [Re
 
 ### Where can I buy Banano?
 
-If you want to opt for directly buying Banano instead of participating in any of our free distribution methods, here are the exchanges that Banano or wrapped version of Banano (wBAN) is listed on: [Coinex.com](https://coinex.com), [Hotbit.io](https://hotbit.io/), [Sushi.com (Polygon, wBAN)](https://sushi.com), [PancakeSwap.com (BSC, wBAN)](https://pancakeswap.finance/swap), [Mercatox.com](https://mercatox.com), [Vitex.net](https://vitex.net).
+If you want to opt for directly buying Banano instead of participating in any of our free distribution methods, here are the exchanges that Banano or wrapped version of Banano (wBAN) is listed on: [MEXC.com](https://www.mexc.com/), [Coinex.com](https://coinex.com), [Sushi.com (Polygon, wBAN)](https://sushi.com), [PancakeSwap.com (BSC, wBAN)](https://pancakeswap.finance/swap), [Mercatox.com](https://mercatox.com).
 
 ### Do you have a GitHub repo?
 
@@ -54,4 +54,4 @@ In Banano, wallet addresses/public keys generate a unique MonKey. These MonKeys 
 
 ### What if I have more questions?
 
-Check out a more detailed FAQ at [Reddit](https://www.reddit.com/r/banano/comments/9kiadz/new_to_banano_get_started_here) and ask there if you have any further questions.
+Check out a more detailed FAQ at [Reddit](https://www.reddit.com/r/banano/comments/11m3u52/new_to_banano_get_started_here_dont_let_your/) and ask there if you have any further questions.

@@ -4,6 +4,36 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Banano Birthday Bonus Airdrop Announcement
+
+#### 2024-04-01
+
+Banano just turned 6, and there have been loads of things going today. The following is not an April Fool's joke, it's a real airdrop announcement. Check it out here: [Banano Blog](https://banano.cc/blog/banano-birthday-bonus-airdrop-announcement). [Medium Article](https://medium.com/banano/banano-birthday-bonus-airdrop-announcement-f75592a3b34e).
+
+### Banano is Turning 6! Join the Birthday Party on April 1st!
+
+#### 2024-03-28
+
+Banano is turning 6 on April 1st — and you are invited to join us and celebrate with one of the most wholesome communities in the whole cryptoverse! [Banano Blog](https://banano.cc/blog/banano-is-turning-6-join-the-birthday-party-on-april-1st). [Medium Article](https://medium.com/banano/banano-is-turning-6-join-the-birthday-party-on-april-1st-614e1db29781).
+
+### A Brief Banano Infrastructure Update
+
+#### 2024-03-15
+
+Here’s a brief summary of recent Banano infrastructure updates for those who are not on our discord and might have missed them: [Banano Blog](https://banano.cc/blog/a-brief-banano-infrastructure-update). [Medium Article](https://medium.com/banano/a-brief-banano-infrastructure-update-3b77c296c201).
+
+### Exchange Listing: Banano Listed On MEXC!
+
+#### 2024-03-13
+
+Today, the cryptocurrency exchange MEXC has listed Banano, which is our biggest exchange listing so far: [Banano Blog](https://banano.cc/blog/banano-to-be-listed-on-mexc-exchange). [Medium Article](https://medium.com/banano/exchange-listing-banano-listed-on-mexc-a3d73afeb447).
+
+### BANANO Monthly Update #71 (March 2024)
+
+#### 2024-03-05
+
+Time's ripe for another BANANO Monthly Update March 2024 containing all the BANANO ecosystem news and updates from February 2024: [Banano Blog](https://banano.cc/blog/banano-monthly-update-71-march-2024). [Medium Article](https://medium.com/banano/banano-monthly-update-71-march-2024-076d52f0be7b).
+
 ### Banano is now on Farcaster/Warpcast (100k BAN airdrop!)
 
 #### 2024-02-17
