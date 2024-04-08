@@ -31,8 +31,8 @@ A provably fair dice game for Banano.
 
 #### [banano.bet](https://banano.bet)
 
-### Banano.fun
+<!-- ### Banano.fun
 
 Tailor-made Banano memes and animations.
 
-#### [banano.fun](https://banano.fun)
+#### [banano.fun](https://banano.fun) -->
