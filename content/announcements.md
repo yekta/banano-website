@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Banano 6th Banniversary Party and Airdrop Recap
+
+#### 2024-04-14
+
+Banano celebrated its 6th Birthday just a few days ago. After a little hangover, here's now a brief recap of major events from that day including a summary of the Banano Bday Airdrop: [Banano Blog](https://banano.cc/blog/banano-6th-banniversary-party-and-airdrop-recap). [Medium Article](https://medium.com/banano/banano-6th-banniversary-party-and-airdrop-recap-1e925759a926).
+
 ### Banano Birthday Bonus Airdrop Announcement
 
 #### 2024-04-01
