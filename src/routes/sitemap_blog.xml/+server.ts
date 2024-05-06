@@ -5,7 +5,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async () => {
 	const allBlogRoutes = await getBlogRoutesArray();
-	const allRoutes = [...definedRoutes];
+	const allRoutes = [...allBlogRoutes];
 	const headers = {
 		'Cache-Control': `public, max-age=${3600}, s-max-age=${3600}`,
 		'Content-Type': 'text/xml'
@@ -81,39 +81,6 @@ const year = today.getFullYear();
 const month = today.getMonth() + 1;
 const day = today.getDate();
 const todayString = `${year}-${month >= 10 ? month : '0' + month}-${day >= 10 ? day : '0' + day}`;
-
-const definedRoutes: IRoute[] = [
-	{
-		loc: '/',
-		lastmod: todayString,
-		changefreq: 'daily'
-	},
-	{
-		loc: '/blog',
-		lastmod: todayString,
-		changefreq: 'daily'
-	},
-	{
-		loc: '/paperwallet',
-		lastmod: todayString,
-		changefreq: 'daily'
-	},
-	{
-		loc: '/yellowpaper',
-		lastmod: todayString,
-		changefreq: 'daily'
-	},
-	{
-		loc: '/redeem',
-		lastmod: todayString,
-		changefreq: 'daily'
-	},
-	{
-		loc: '/presskit',
-		lastmod: todayString,
-		changefreq: 'daily'
-	}
-];
 
 interface IRoute {
 	loc: string;
