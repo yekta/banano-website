@@ -20,10 +20,10 @@ function render(routes: ISitemap[]) {
 
 const sitemaps: ISitemap[] = [
 	{
-		loc: canonicalUrl + '/sitemap.xml'
+		loc: '/sitemap.xml'
 	},
 	{
-		loc: canonicalUrl + '/sitemap_blog.xml'
+		loc: '/sitemap_blog.xml'
 	}
 ];
 
