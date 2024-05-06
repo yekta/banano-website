@@ -4,7 +4,6 @@ import { canonicalUrl } from '$ts/constants/canonical';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async () => {
-	const allBlogRoutes = await getBlogRoutesArray();
 	const allRoutes = [...definedRoutes];
 	const headers = {
 		'Cache-Control': `public, max-age=${3600}, s-max-age=${3600}`,
@@ -112,6 +111,11 @@ const definedRoutes: IRoute[] = [
 		loc: '/presskit',
 		lastmod: todayString,
 		changefreq: 'daily'
+	},
+	{
+		loc: '/vault',
+		lastmod: todayString,
+		changefreq: 'weekly'
 	}
 ];
 
