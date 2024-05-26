@@ -1,20 +1,14 @@
 import { PUBLIC_GHOST_KEY } from '$env/static/public';
 import { utilsBlogApiUrl } from '$ts/constants/blog';
 import { canonicalUrl } from '$ts/constants/canonical';
-import type { RequestHandler } from '@sveltejs/kit';
 
-export const GET: RequestHandler = async () => {
-	const allBlogRoutes = await getBlogRoutesArray();
-	const allRoutes = [...allBlogRoutes];
-	const headers = {
-		'Cache-Control': `public, max-age=${3600}, s-max-age=${3600}`,
-		'Content-Type': 'text/xml'
-	};
-	const body = render(allRoutes);
-	return new Response(body, { headers });
-};
+export async function getAllRoutes() {
+	const blogRoutes = await getBlogRoutesArray();
+	const allRoutes = [...definedRoutes, ...blogRoutes];
+	return allRoutes;
+}
 
-function render(routes: IRoute[]) {
+export function renderSitemap(routes: IRoute[]) {
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     	${routes
@@ -82,7 +76,45 @@ const month = today.getMonth() + 1;
 const day = today.getDate();
 const todayString = `${year}-${month >= 10 ? month : '0' + month}-${day >= 10 ? day : '0' + day}`;
 
-interface IRoute {
+const definedRoutes: IRoute[] = [
+	{
+		loc: '/',
+		lastmod: todayString,
+		changefreq: 'daily'
+	},
+	{
+		loc: '/blog',
+		lastmod: todayString,
+		changefreq: 'daily'
+	},
+	{
+		loc: '/paperwallet',
+		lastmod: todayString,
+		changefreq: 'daily'
+	},
+	{
+		loc: '/yellowpaper',
+		lastmod: todayString,
+		changefreq: 'daily'
+	},
+	{
+		loc: '/redeem',
+		lastmod: todayString,
+		changefreq: 'daily'
+	},
+	{
+		loc: '/presskit',
+		lastmod: todayString,
+		changefreq: 'daily'
+	},
+	{
+		loc: '/vault',
+		lastmod: todayString,
+		changefreq: 'weekly'
+	}
+];
+
+export interface IRoute {
 	loc: string;
 	lastmod: string;
 	changefreq: string;
