@@ -255,7 +255,7 @@
 					</div>
 					<div class="w-64 flex-1 min-w-0 md:flex-auto relative">
 						<Button
-							class="w-full active:scale-90"
+							class="w-full active:scale-90 touch-manipulation"
 							buttonType={isFreshlyGenerated ? 'secondary' : 'primary'}
 							onClick={onGenerate}
 						>
