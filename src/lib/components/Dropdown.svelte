@@ -29,8 +29,8 @@
 		on:click={toggleDropdown}
 		class="w-full px-6 py-3.5 bg-c-bg-secondary rounded-t-xl transition-all {isDropdownOpen
 			? 'rounded-b-none'
-			: 'rounded-b-xl'} overflow-hidden shadow-button shadow-c-bg-secondary-shaded text-lg 
-      font-bold flex items-center justify-between group relative z-0 hover:text-c-secondary"
+			: 'rounded-b-xl'} overflow-hidden shadow-button shadow-c-bg-secondary-shaded text-lg
+      font-bold flex items-center justify-between group relative z-0 hover:text-c-secondary touch-manipulation"
 	>
 		<p>
 			<span class="opacity-50 mr-0.5ch">
@@ -59,7 +59,7 @@
 					<button
 						disabled={!isDropdownOpen}
 						class="w-full text-left flex justify-start px-6 py-4 text-lg font-bold transition hover:cursor-pointer
-							hover:bg-c-secondary/15 focus:bg-c-on-bg/15 hover:text-c-secondary focus:text-c-on-bg"
+							hover:bg-c-secondary/15 focus:bg-c-on-bg/15 hover:text-c-secondary focus:text-c-on-bg touch-manipulation"
 						on:click={() => setSelectedItem(item)}
 					>
 						<p>
