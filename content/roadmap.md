@@ -310,3 +310,23 @@ Banano joins Farcaster/Warpcast.  r/ethtrader x Banano AMA.
 ### March
 
 Banano gets listed on MEXC.  Kalium now supports multiple wallets. wBAN v2.6.9 released.
+
+### April
+
+Banano celebrates its 6th birthday, with a Banano Runner 2.0 video leak and a RepChange Airdrop.  Giveaways at Telegram, Reddit and Twitter.  JungleTV announces Boosted AF Hackathon.
+
+### May
+
+Several third party launch/integration announcements including cwallet, Wodo, nanexplorer, GetBAN.  Banano Burger Degustation event.
+
+### June
+
+Telegram and monKey Pick'em events.  60 Million blocks party. Banani 1.0. Javascript/Typescript Library release.
+
+### July
+
+Twitter/X giveaways.  BANXNO prediction market launch.  JungleTV hackathon winners announcement.  Swole Bango event.
+
+### August
+
+Banano powered AI photo generator released.  NanoGPT accepting Banano payments.
