@@ -330,3 +330,15 @@ Twitter/X giveaways.  BANXNO prediction market launch.  JungleTV hackathon winne
 ### August
 
 Banano powered AI photo generator released.  NanoGPT accepting Banano payments.
+
+### September
+
+Banano Name System protocol specification and web wallet released.
+
+### October
+
+Banano overtakes default team on Folding@Home leaderboard, now truly #1.  banano.place released.  Monthly Reddit Team AMAs started.
+
+### Q4
+
+Runner v2?  .ban BNS domain registrar?
