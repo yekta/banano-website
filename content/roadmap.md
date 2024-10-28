@@ -337,7 +337,7 @@ Banano Name System protocol specification and web wallet released.
 
 ### October
 
-Banano overtakes default team on Folding@Home leaderboard, now truly #1.  banano.place released.  Reddit Team AMAs started.
+Banano overtakes default team on Folding@Home leaderboard, now truly #1.  banano.place released.  Monthly Reddit Team AMAs started.
 
 ### Q4
 
