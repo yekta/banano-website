@@ -27,8 +27,9 @@ A game of comparing monKeys & finding the unique one to earn Banano.
 
 #### [BlackMonkey](https://blackmonkey.banano.cc)
 
-### BoomPoW
+<!-- ### BoomPoW
 
 Provide Proof-of-Work (PoW) for apps & services and earn Banano.
 
 #### [BoomPoW](https://bpow.banano.cc)
+ -->
