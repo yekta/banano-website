@@ -4,6 +4,12 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Banano Chan AI Image Generation Contest
+
+#### 2024-12-04
+
+Two years ago, the first potassium rich AI model with the likeness of Banano Chan was released. To celebrate, we are organizing a Banano Chan AI image generation contest with Banano and cryptomonKeys NFT prizes: [Banano Blog](https://banano.cc/blog/banano-chan-ai-image-generation-contest). [Publish0x Article](https://www.publish0x.com/banano/banano-chan-ai-image-generation-contest-xpxgzqv?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/6750df1911d1e96e66c71c00/).
+
 ### Hi, some bad news from Banano
 
 #### 2024-11-27
