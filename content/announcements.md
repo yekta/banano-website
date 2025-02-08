@@ -4,6 +4,18 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### Introducing .ban domains on the BANANO Name System (BNS)
+
+#### 2025-02-06
+
+Here's all you need to know about recently introduced .ban domains on the decentralised, on-chain BANANO Name System (BNS): [Banano Blog](https://banano.cc/blog/introducing-ban-domains-on-the-banano-name-system-bns-2). [Publish0x Article](https://www.publish0x.com/banano/introducing-ban-domains-on-the-banano-name-system-bns-xzqmxqe?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67a4f461e44b6b5de3d6646e/).
+
+### BANANO Monthly Update #80 (December 2024)
+
+#### 2025-02-06
+
+Better late than never: Here's the BANANO Monthly Update December 2024 with all BANANO updates from November 2024: [Banano Blog](https://banano.cc/blog/banano-monthly-update-80-december-2024). [Publish0x Article](https://www.publish0x.com/banano/banano-monthly-update-80-december-2024-xxvkqoz?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67a7b8cde1534458bc887e22/).
+
 ### Banano Chan AI Image Generation Contest
 
 #### 2024-12-04
