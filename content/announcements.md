@@ -4,6 +4,24 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### BANANO Monthly Update #82 (February 2025)
+
+#### 2025-02-15
+
+Here's a fresh BANANO Monthly Update (February 2025) with all BANANO news from January 2025: [Banano Blog](https://banano.cc/blog/banano-monthly-update-82-february-2025). [Publish0x Article](https://www.publish0x.com/banano/banano-monthly-update-82-february-2025-xoqpvyl?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67b10c4ec70d81434fe15caa/).
+
+### BANANO Monthly Update #81 (January 2025)
+
+#### 2025-02-15
+
+Welcome to the BANANO Monthly Update January 2025 with all news and updates from the BANANO ecosphere from December 2024: [Banano Blog](https://banano.cc/blog/banano-monthly-update-81-january-2025). [Publish0x Article](https://www.publish0x.com/banano/banano-monthly-update-81-january-2025-xmjnzxq?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67b10a5e53606260465c744d/).
+
+### BANANO Community Event: Heart-O-Grams 2025
+
+#### 2025-02-09
+
+Check out this community-organized BANANO Event around Valentine's day: [Banano Blog](https://banano.cc/blog/banano-community-event-heart-o-grams-2025). [Publish0x Article](https://www.publish0x.com/banano/banano-community-event-heart-o-grams-2025-xvzgode?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67a9330201c7d025528fb96c/).
+
 ### Introducing .ban domains on the BANANO Name System (BNS)
 
 #### 2025-02-06
