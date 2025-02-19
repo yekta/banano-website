@@ -4,6 +4,54 @@
   2- The date for the announcement starts with four hastag symbols (#) and is in year-month-day format -> #### 2020-01-29
   3- The description is the following line after the date without any starting symbols -> This is an example description.
 -->
+### BANANO Monthly Update #82 (February 2025)
+
+#### 2025-02-15
+
+Here's a fresh BANANO Monthly Update (February 2025) with all BANANO news from January 2025: [Banano Blog](https://banano.cc/blog/banano-monthly-update-82-february-2025). [Publish0x Article](https://www.publish0x.com/banano/banano-monthly-update-82-february-2025-xoqpvyl?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67b10c4ec70d81434fe15caa/).
+
+### BANANO Monthly Update #81 (January 2025)
+
+#### 2025-02-15
+
+Welcome to the BANANO Monthly Update January 2025 with all news and updates from the BANANO ecosphere from December 2024: [Banano Blog](https://banano.cc/blog/banano-monthly-update-81-january-2025). [Publish0x Article](https://www.publish0x.com/banano/banano-monthly-update-81-january-2025-xmjnzxq?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67b10a5e53606260465c744d/).
+
+### BANANO Community Event: Heart-O-Grams 2025
+
+#### 2025-02-09
+
+Check out this community-organized BANANO Event around Valentine's day: [Banano Blog](https://banano.cc/blog/banano-community-event-heart-o-grams-2025). [Publish0x Article](https://www.publish0x.com/banano/banano-community-event-heart-o-grams-2025-xvzgode?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67a9330201c7d025528fb96c/).
+
+### Introducing .ban domains on the BANANO Name System (BNS)
+
+#### 2025-02-06
+
+Here's all you need to know about recently introduced .ban domains on the decentralised, on-chain BANANO Name System (BNS): [Banano Blog](https://banano.cc/blog/introducing-ban-domains-on-the-banano-name-system-bns-2). [Publish0x Article](https://www.publish0x.com/banano/introducing-ban-domains-on-the-banano-name-system-bns-xzqmxqe?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67a4f461e44b6b5de3d6646e/).
+
+### BANANO Monthly Update #80 (December 2024)
+
+#### 2025-02-06
+
+Better late than never: Here's the BANANO Monthly Update December 2024 with all BANANO updates from November 2024: [Banano Blog](https://banano.cc/blog/banano-monthly-update-80-december-2024). [Publish0x Article](https://www.publish0x.com/banano/banano-monthly-update-80-december-2024-xxvkqoz?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67a7b8cde1534458bc887e22/).
+
+### Banano Chan AI Image Generation Contest
+
+#### 2024-12-04
+
+Two years ago, the first potassium rich AI model with the likeness of Banano Chan was released. To celebrate, we are organizing a Banano Chan AI image generation contest with Banano and cryptomonKeys NFT prizes: [Banano Blog](https://banano.cc/blog/banano-chan-ai-image-generation-contest). [Publish0x Article](https://www.publish0x.com/banano/banano-chan-ai-image-generation-contest-xpxgzqv?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/6750df1911d1e96e66c71c00/).
+
+### Hi, some bad news from Banano
+
+#### 2024-11-27
+
+Here's a statement we already shared with the community few days back, however for transparency we're now also crossposting this in our blogs: [Banano Blog](https://banano.cc/blog/hi-some-bad-news-from-banano). [Publish0x Article](https://www.publish0x.com/banano/hi-some-bad-news-from-banano-xmjvkym?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/6747887ed24fe423a35c5354/).
+
+### BANANO Monthly Update #79 (November 2024)
+
+#### 2024-11-01
+
+Here's the BANANO Monthly Update November 2024 with all news and updates from the Banano ecosystem from October 2024: [Banano Blog](https://banano.cc/blog/banano-monthly-update-79-november-2024). [Publish0x Article](https://www.publish0x.com/banano/banano-monthly-update-79-november-2024-xkeqypk?a=QJ0dNjvdLO). [CoinMarketCap Article](https://coinmarketcap.com/community/articles/67477f57561b134152650517/).
+
 ### BANANO Monthly Update #78 (October 2024)
 
 #### 2024-10-02
