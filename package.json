@@ -58,5 +58,8 @@
 		"ua-parser-js": "^1.0.2",
 		"vite": "^4.4.9"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"discord.js": "^14.18.0"
+	}
 }
